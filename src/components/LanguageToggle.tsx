@@ -1,41 +1,47 @@
 import { useState, useEffect } from 'react';
 
 export default function LanguageToggle() {
-  const [lang, setLang] = useState<'ko' | 'en'>('ko');
+  const [currentLang, setCurrentLang] = useState<'ko' | 'en'>('ko');
 
   useEffect(() => {
     // URL 쿼리 파라미터에서 언어 확인
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
+    
     if (urlLang === 'en' || urlLang === 'ko') {
-      setLang(urlLang);
+      setCurrentLang(urlLang);
       localStorage.setItem('lang', urlLang);
     } else {
-      // 저장된 언어 또는 브라우저 언어 확인
+      // 저장된 언어 확인
       const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-      const browserLang = navigator.language.startsWith('ko') ? 'ko' : 'en';
-      const currentLang = saved || browserLang;
-      setLang(currentLang);
-      
-      // URL에 언어 파라미터가 없으면 현재 언어로 추가 (ko가 아닌 경우만)
-      if (currentLang !== 'ko') {
-        const newUrl = new URL(window.location.href);
-        newUrl.searchParams.set('lang', currentLang);
-        window.history.replaceState({}, '', newUrl.toString());
-        // 페이지 리로드하여 언어 적용
-        window.location.reload();
-      }
+      const lang = saved || 'ko';
+      setCurrentLang(lang);
     }
   }, []);
 
-  const toggleLang = () => {
-    const newLang = lang === 'ko' ? 'en' : 'ko';
-    setLang(newLang);
+  const toggleLang = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // 현재 URL에서 언어 파라미터 확인
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentUrlLang = urlParams.get('lang');
+    const currentLangFromUrl = (currentUrlLang === 'en' || currentUrlLang === 'ko') ? currentUrlLang : 'ko';
+    
+    // 토글: ko -> en, en -> ko
+    const newLang = currentLangFromUrl === 'ko' ? 'en' : 'ko';
+    
+    // localStorage 저장
     localStorage.setItem('lang', newLang);
     
-    // URL 쿼리 파라미터 업데이트
+    // URL 업데이트하고 페이지 리로드
     const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set('lang', newLang);
+    if (newLang === 'ko') {
+      newUrl.searchParams.delete('lang');
+    } else {
+      newUrl.searchParams.set('lang', newLang);
+    }
+    
+    // 페이지 리로드
     window.location.href = newUrl.toString();
   };
 
@@ -45,7 +51,7 @@ export default function LanguageToggle() {
       className="text-sm px-3 py-1 rounded border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
       aria-label="Toggle language"
     >
-      {lang === 'ko' ? 'EN' : 'KO'}
+      {currentLang === 'ko' ? 'EN' : 'KO'}
     </button>
   );
 }
