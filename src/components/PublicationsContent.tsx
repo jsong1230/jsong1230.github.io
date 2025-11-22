@@ -249,9 +249,7 @@ export default function PublicationsContent() {
               <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.ubcDesc}</p>
             </a>
             <a 
-              href={t.papers.searchLinks.ubcPage}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={lang === 'ko' ? '/ubc-papers?lang=ko' : '/ubc-papers?lang=en'}
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
               <h3 className="font-semibold mb-2">{t.papers.labels.ubcPage}</h3>

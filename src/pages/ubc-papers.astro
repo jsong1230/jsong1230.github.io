@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const url = Astro.url;
+const langParam = url.searchParams.get('lang');
+const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
+
+// UBC 논문 목록 (Vincent Wong 페이지에서 추출)
+const papers = [
+  {
+    year: '2010',
+    title: 'Wireless Location Privacy Protection in Vehicular Ad-Hoc Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, and Victor C.M. Leung',
+    venue: 'ACM/Springer Mobile Networks and Applications (MONET), vol. 15, no. 1, pp. 160-171, February 2010',
+    link: 'http://www.ece.ubc.ca/~vincentw/J/SWLjMONET09.pdf',
+    type: 'journal',
+  },
+  {
+    year: '2009',
+    title: 'Cooperative MAC and Routing Protocols Design for Wireless Ad-hoc Networks',
+    authors: 'Yuxia Lin, Joo-Han Song, and Vincent W.S. Wong',
+    venue: 'ACM/Springer Mobile Networks and Applications (MONET), vol. 14, no. 2, pp. 143-153, April 2009',
+    link: 'http://www.ece.ubc.ca/~vincentw/J/LSWjMONET09.pdf',
+    type: 'journal',
+  },
+  {
+    year: '2009',
+    title: 'Wireless Location Privacy Protection in Vehicular Ad-Hoc Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, and Victor C.M. Leung',
+    venue: 'Proc. of IEEE ICC, Dresden, Germany, June 2009',
+    link: 'http://www.ece.ubc.ca/~vincentw/C/SWLcICC09.pdf',
+    type: 'conference',
+  },
+  {
+    year: '2008',
+    title: 'Secure Location Verification for Vehicular Ad-Hoc Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, and Victor C.M. Leung',
+    venue: 'Proc. of IEEE Globecom, New Orleans, LA, November/December 2008',
+    link: 'http://www.ece.ubc.ca/~vincentw/C/SWLcGC08.pdf',
+    type: 'conference',
+  },
+  {
+    year: '2008',
+    title: 'Cooperative Protocols Design for Wireless Ad-Hoc Networks with Multi-hop Routing',
+    authors: 'Yuxia Lin, Joo-Han Song, and Vincent W.S. Wong',
+    venue: 'Proc. of International ICST Conference on Heterogeneous Networking for Quality, Reliability, Security and Robustness (QShine), Hong Kong, China, July 2008',
+    link: 'http://www.ece.ubc.ca/~vincentw/C/LSWcQShine08.pdf',
+    type: 'conference',
+  },
+  {
+    year: '2007',
+    title: 'Secure Position-based Routing Protocol for Mobile Ad Hoc Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, and Victor C.M. Leung',
+    venue: 'Elsevier Ad Hoc Networks Journal, vol. 5, issue 1, pp. 76-86, January 2007',
+    link: 'http://www.ece.ubc.ca/~vincentw/J/SWLj07.pdf',
+    type: 'journal',
+  },
+  {
+    year: '2006',
+    title: 'Secure AODV Routing Protocol with Table Entry Protection for Mobile Ad Hoc Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, Victor C.M. Leung, and Yoji Kawamoto',
+    venue: 'Resource, Mobility and Security Management in Wireless Networks and Mobile Communications, edited by Y. Zhang, H. Hu, and M. Fujise, Auerbach Publications, CRC Press, 2006',
+    link: '',
+    type: 'book',
+  },
+  {
+    year: '2005',
+    title: 'Experimental Comparisons between SAODV and AODV Routing Protocols',
+    authors: 'Yuxia Lin, Amir Hamed Mohsenian Rad, Vincent W.S. Wong, and Joo-Han Song',
+    venue: 'Proc. of 1st ACM Workshop on Wireless Multimedia Networking and Performance Modeling (WMuNeP), Montreal, Quebec, pp. 113-122, Oct. 2005',
+    link: 'http://www.ece.ubc.ca/~vincentw/C/LRWSc05.pdf',
+    type: 'conference',
+  },
+  {
+    year: '2004',
+    title: 'Efficient On-Demand Routing for Mobile Ad-Hoc Wireless Access Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, and Victor C.M. Leung',
+    venue: 'IEEE Journal on Selected Areas in Communications, vol. 22, no. 7, pp. 1374-1383, September 2004',
+    link: 'http://www.ece.ubc.ca/~vincentw/J/SWLj04.pdf',
+    type: 'journal',
+  },
+  {
+    year: '2004',
+    title: 'A Framework of Secure Location Service for Position-based Ad-hoc Routing',
+    authors: 'Joo-Han Song, Vincent Wong, and Victor Leung',
+    venue: 'Proc. of ACM International Workshop on Performance Evaluation of Wireless Ad Hoc, Sensor, and Ubiquitous Networks (PE-WASUN), Venice, Italy, pp. 99-106, October 2004',
+    link: 'http://www.ece.ubc.ca/~vincentw/C/SWLc04.pdf',
+    type: 'conference',
+  },
+  {
+    year: '2003',
+    title: 'Efficient On-Demand Routing for Mobile Ad-Hoc Wireless Access Networks',
+    authors: 'Joo-Han Song, Vincent W.S. Wong, and Victor C.M. Leung',
+    venue: 'Proc. of IEEE Global Telecommunications Conference (Globecom), San Francisco, California, pp. 558-563, December 2003',
+    link: 'http://www.ece.ubc.ca/~vincentw/C/SWLc03.pdf',
+    type: 'conference',
+  },
+  {
+    year: '2003',
+    title: 'Secure Routing with Tamper Resistant Module for Mobile Ad Hoc Networks',
+    authors: 'Joo-Han Song, Vincent Wong, Victor Leung, and Yoji Kawamoto',
+    venue: 'ACM International Symposium on Mobile Ad Hoc Networking and Computing (MobiHoc), Annapolis, Maryland, June 2003',
+    link: '',
+    type: 'conference',
+  },
+  {
+    year: '2003',
+    title: 'Load-Aware On-demand Routing (LAOR) Protocol for Mobile Ad Hoc Networks',
+    authors: 'Joo-Han Song, Vincent Wong, and Victor Leung',
+    venue: 'Proc. of IEEE Vehicular Technology Conference (VTC-Spring), Jeju, Korea, pp. 1753-1757, April 2003',
+    link: '',
+    type: 'conference',
+  },
+];
+
+const content = {
+  ko: {
+    title: 'UBC 논문 목록',
+    description: 'University of British Columbia에서 발표한 논문 목록입니다.',
+    back: '← Publications로 돌아가기',
+    viewPaper: '→ 논문 보기',
+    journal: '저널',
+    conference: '학회',
+    book: '도서',
+  },
+  en: {
+    title: 'UBC Papers',
+    description: 'List of papers published during the University of British Columbia period.',
+    back: '← Back to Publications',
+    viewPaper: '→ View Paper',
+    journal: 'Journal',
+    conference: 'Conference',
+    book: 'Book',
+  },
+};
+
+const t = content[lang];
+---
+
+<BaseLayout title="UBC Papers - Jeffrey Song" lang={lang}>
+  <div class="container-narrow py-12">
+    <h1 class="text-4xl font-bold mb-6">{t.title}</h1>
+    
+    <p class="text-gray-600 dark:text-gray-400 mb-8">
+      {t.description}
+    </p>
+
+    <div class="space-y-6">
+      {papers.map((paper) => (
+        <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+          <div class="flex items-start justify-between mb-3">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1">
+              {paper.title}
+            </h2>
+            <div class="flex items-center gap-2 ml-4">
+              <span class="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                {paper.type === 'journal' ? t.journal : paper.type === 'conference' ? t.conference : t.book}
+              </span>
+              <span class="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                {paper.year}
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+            {paper.authors}
+          </p>
+          <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">
+            {paper.venue}
+          </p>
+          {paper.link && (
+            <a 
+              href={paper.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+            >
+              {t.viewPaper}
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12">
+      <a 
+        href={lang === 'ko' ? '/publications?lang=ko' : '/publications?lang=en'}
+        class="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {t.back}
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
