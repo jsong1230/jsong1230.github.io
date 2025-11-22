@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-white dark:bg-black text-gray-900 dark:text-gray-100;
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply max-w-content mx-auto px-6;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+

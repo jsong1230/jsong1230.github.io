@@ -1,0 +1,20 @@
+---
+import LanguageToggle from './LanguageToggle';
+import DarkModeToggle from './DarkModeToggle';
+---
+
+<header class="border-b border-gray-200 dark:border-gray-800">
+  <nav class="container-narrow py-6 flex items-center justify-between">
+    <a href="/" class="text-xl font-semibold hover:opacity-70 transition-opacity">
+      Jeffrey Song
+    </a>
+    <div class="flex items-center gap-4">
+      <a href="/about" class="text-sm hover:opacity-70 transition-opacity">About</a>
+      <a href="/work" class="text-sm hover:opacity-70 transition-opacity">Work</a>
+      <a href="/writing" class="text-sm hover:opacity-70 transition-opacity">Writing</a>
+      <LanguageToggle client:load />
+      <DarkModeToggle client:load />
+    </div>
+  </nav>
+</header>
+
