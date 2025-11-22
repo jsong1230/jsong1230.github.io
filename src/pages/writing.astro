@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WritingContent from '../components/WritingContent';
 
 const url = Astro.url;
 const langParam = url.searchParams.get('lang');
@@ -7,14 +8,6 @@ const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
 ---
 
 <BaseLayout title="Writing - Jeffrey Song" lang={lang}>
-  <div class="container-narrow py-12">
-    <h1 class="text-4xl font-bold mb-12">Writing</h1>
-    
-    <div class="space-y-8">
-      <p class="text-gray-600 dark:text-gray-400">
-        블로그 포스트가 여기에 표시됩니다. (준비 중)
-      </p>
-    </div>
-  </div>
+  <WritingContent client:load />
 </BaseLayout>
 
