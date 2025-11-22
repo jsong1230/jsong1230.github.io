@@ -21,6 +21,7 @@ const publicationsContent = {
       description: 'UBC, 삼성전자 시절 발표한 논문 및 연구 자료',
       searchLinks: {
         ubc: 'https://scholar.google.com/scholar?q=joohans@ece.ubc.ca',
+        ubcPage: 'https://people.ece.ubc.ca/~vincentw/Homepage/Publication.html',
         samsung: 'https://scholar.google.com/scholar?q=joohan.song@samsung.com',
         general: 'https://scholar.google.com/scholar?q=joohans@gmail.com',
         dblp: 'https://dblp.org/search?q=Joo-Han+Song',
@@ -69,6 +70,7 @@ const publicationsContent = {
       description: 'Papers and research materials published during UBC and Samsung Electronics periods',
       searchLinks: {
         ubc: 'https://scholar.google.com/scholar?q=joohans@ece.ubc.ca',
+        ubcPage: 'https://people.ece.ubc.ca/~vincentw/Homepage/Publication.html',
         samsung: 'https://scholar.google.com/scholar?q=joohan.song@samsung.com',
         general: 'https://scholar.google.com/scholar?q=joohans@gmail.com',
         dblp: 'https://dblp.org/search?q=Joo-Han+Song',
