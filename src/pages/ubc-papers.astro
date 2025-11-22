@@ -118,7 +118,6 @@ const content = {
     title: 'UBC 논문 목록',
     description: 'University of British Columbia에서 발표한 논문 목록입니다.',
     back: '← Publications로 돌아가기',
-    viewPaper: '→ 논문 보기',
     journal: '저널',
     conference: '학회',
     book: '도서',
@@ -127,7 +126,6 @@ const content = {
     title: 'UBC Papers',
     description: 'List of papers published during the University of British Columbia period.',
     back: '← Back to Publications',
-    viewPaper: '→ View Paper',
     journal: 'Journal',
     conference: 'Conference',
     book: 'Book',
@@ -149,9 +147,20 @@ const t = content[lang];
       {papers.map((paper) => (
         <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
           <div class="flex items-start justify-between mb-3">
-            <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1">
-              {paper.title}
-            </h2>
+            {paper.link ? (
+              <a 
+                href={paper.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {paper.title}
+              </a>
+            ) : (
+              <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100 flex-1">
+                {paper.title}
+              </h2>
+            )}
             <div class="flex items-center gap-2 ml-4">
               <span class="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
                 {paper.type === 'journal' ? t.journal : paper.type === 'conference' ? t.conference : t.book}
@@ -164,19 +173,9 @@ const t = content[lang];
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
             {paper.authors}
           </p>
-          <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">
+          <p class="text-sm text-gray-700 dark:text-gray-300">
             {paper.venue}
           </p>
-          {paper.link && (
-            <a 
-              href={paper.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
-            >
-              {t.viewPaper}
-            </a>
-          )}
         </div>
       ))}
     </div>
