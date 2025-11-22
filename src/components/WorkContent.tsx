@@ -10,6 +10,7 @@ const workContent = {
       period: '2014 – 현재',
       role: 'CTO / R&D Director',
       website: 'https://cplabs.io',
+      web2x: 'https://web2x.io',
       daepa: 'https://daepa.ai',
       patents: '320+ 블록체인 특허 보유',
       description: '2014년 Coinplug로 시작하여 현재 CPLABS로 운영 중입니다. Web3 플랫폼 아키텍처 설계, DID/SSI 기술 개발, 블록체인 특허 기반 서비스 기획을 총괄하고 있습니다. 주요 프로젝트로는 <strong>Metadium</strong> (블록체인 기반 자기주권 신원 인프라), <strong>Wemix</strong> (게임 중심 Web3 플랫폼) 등의 기술 아키텍처를 리딩했습니다. 현재는 <strong>대파(Daepa)</strong> AI 기반 개인화 비서 서비스를 주력으로 개발하고 있으며, MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC도 진행하고 있습니다.',
@@ -30,6 +31,7 @@ const workContent = {
       period: '2017 – 현재',
       role: 'CTO',
       website: 'https://metadium.com',
+      medium: 'https://medium.com/metadium',
       description: '블록체인 기반 자기주권 신원(Self-Sovereign Identity, SSI) 인프라 구축, DID 프로토콜 구조 확립, 아이덴티티 생태계 확장',
       highlights: [
         '블록체인 기반 SSI 인프라 구축',
@@ -55,7 +57,7 @@ const workContent = {
       title: 'Reading Town Learning Centre',
       period: '2009 – 2014',
       role: 'Regional Manager / IT Lead',
-      website: '',
+      website: 'https://www.readingtown.com',
       description: '메트로 밴쿠버 지역 12개 지점의 네트워크 인프라를 구축하고 운영했습니다. 중소형 조직의 컴퓨터, 서버, 네트워크 지원을 총괄하며 실무 IT 관리 경험을 쌓았습니다.',
       highlights: [
         '메트로 밴쿠버 12개 지점 네트워크 인프라 구축',
@@ -72,6 +74,7 @@ const workContent = {
       period: '2014 – Present',
       role: 'CTO / R&D Director',
       website: 'https://cplabs.io',
+      web2x: 'https://web2x.io',
       daepa: 'https://daepa.ai',
       patents: '320+ blockchain patents',
       description: 'Started as Coinplug in 2014 and currently operating as CPLABS. I lead Web3 platform architecture design, DID/SSI technology development, and blockchain patent-based service planning. I have led the technical architecture for major projects including <strong>Metadium</strong> (blockchain-based self-sovereign identity infrastructure) and <strong>Wemix</strong> (game-centric Web3 platform). Currently, I am focusing on developing <strong>Daepa</strong>, an AI-powered personal assistant service, and also working on MLFF (Malaysia Free Flow) technology review and PoC.',
@@ -92,6 +95,7 @@ const workContent = {
       period: '2017 – Present',
       role: 'CTO',
       website: 'https://metadium.com',
+      medium: 'https://medium.com/metadium',
       description: 'Built blockchain-based Self-Sovereign Identity (SSI) infrastructure, established DID protocol structure, expanded identity ecosystem',
       highlights: [
         'Blockchain-based SSI infrastructure development',
@@ -117,7 +121,7 @@ const workContent = {
       title: 'Reading Town Learning Centre',
       period: '2009 – 2014',
       role: 'Regional Manager / IT Lead',
-      website: '',
+      website: 'https://www.readingtown.com',
       description: 'Built and operated network infrastructure for 12 Metro Vancouver branches. Managed IT support for computers, servers, and networks for small-to-medium organizations, gaining hands-on IT management experience.',
       highlights: [
         'Network infrastructure for 12 Metro Vancouver branches',
@@ -178,6 +182,26 @@ export default function WorkContent() {
                 className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
               >
                 Website →
+              </a>
+            )}
+            {work.medium && (
+              <a 
+                href={work.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+              >
+                Medium →
+              </a>
+            )}
+            {work.web2x && (
+              <a 
+                href={work.web2x}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+              >
+                Web2X →
               </a>
             )}
             {work.daepa && (
