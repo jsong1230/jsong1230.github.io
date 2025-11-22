@@ -9,6 +9,7 @@ export default function LanguageToggle() {
     const urlLang = urlParams.get('lang');
     if (urlLang === 'en' || urlLang === 'ko') {
       setLang(urlLang);
+      localStorage.setItem('lang', urlLang);
     } else {
       // 저장된 언어 또는 브라우저 언어 확인
       const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
@@ -16,11 +17,13 @@ export default function LanguageToggle() {
       const currentLang = saved || browserLang;
       setLang(currentLang);
       
-      // URL에 언어 파라미터가 없으면 현재 언어로 추가
-      if (!urlLang && currentLang !== 'ko') {
+      // URL에 언어 파라미터가 없으면 현재 언어로 추가 (ko가 아닌 경우만)
+      if (currentLang !== 'ko') {
         const newUrl = new URL(window.location.href);
         newUrl.searchParams.set('lang', currentLang);
         window.history.replaceState({}, '', newUrl.toString());
+        // 페이지 리로드하여 언어 적용
+        window.location.reload();
       }
     }
   }, []);

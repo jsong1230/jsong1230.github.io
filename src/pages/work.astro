@@ -1,8 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const url = Astro.url;
+const langParam = url.searchParams.get('lang');
+const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
 ---
 
-<BaseLayout title="Work - Jeffrey Song" lang="ko">
+<BaseLayout title="Work - Jeffrey Song" lang={lang}>
   <div class="container-narrow py-12">
     <h1 class="text-4xl font-bold mb-12">Work</h1>
     
