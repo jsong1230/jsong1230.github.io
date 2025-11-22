@@ -21,7 +21,7 @@ const publicationsContent = {
       description: 'UBC, 삼성전자 시절 발표한 논문 및 연구 자료',
       searchLinks: {
         ubc: 'https://scholar.google.com/scholar?q=joohans@ece.ubc.ca',
-        samsung: 'https://scholar.google.com/scholar?q=joohans@samsung.com',
+        samsung: 'https://scholar.google.com/scholar?q=joohan.song@samsung.com',
         general: 'https://scholar.google.com/scholar?q=joohans@gmail.com',
         dblp: 'https://dblp.org/search?q=Joo-Han+Song',
       },
@@ -66,7 +66,7 @@ const publicationsContent = {
       description: 'Papers and research materials published during UBC and Samsung Electronics periods',
       searchLinks: {
         ubc: 'https://scholar.google.com/scholar?q=joohans@ece.ubc.ca',
-        samsung: 'https://scholar.google.com/scholar?q=joohans@samsung.com',
+        samsung: 'https://scholar.google.com/scholar?q=joohan.song@samsung.com',
         general: 'https://scholar.google.com/scholar?q=joohans@gmail.com',
         dblp: 'https://dblp.org/search?q=Joo-Han+Song',
       },
@@ -205,7 +205,7 @@ export default function PublicationsContent() {
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
               <h3 className="font-semibold mb-2">Samsung 논문</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohans@samsung.com</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohan.song@samsung.com</p>
             </a>
             <a 
               href={t.papers.searchLinks.general}
