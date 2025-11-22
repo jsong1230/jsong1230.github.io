@@ -303,7 +303,7 @@ export default function PublicationsContent() {
                 <h3 className="font-semibold mb-1">{book.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{book.role}</p>
                 <p className="text-xs text-blue-600 dark:text-blue-400 hover:underline">
-                  {lang === 'ko' ? '→ 검색하기' : '→ Search'}
+                  → 검색하기
                 </p>
               </a>
             ))}
