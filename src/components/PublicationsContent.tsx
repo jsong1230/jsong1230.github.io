@@ -48,9 +48,10 @@ const publicationsContent = {
         dblpDesc: 'Joo-Han Song 검색',
       },
     },
-    books: {
+                books: {
       title: '저서',
       description: '비트코인 및 블록체인 관련 번역서 및 공저',
+      searchText: '→ 검색하기',
       items: [
         {
           title: '비트코인, 디지털 화폐의 미래를 열다',
@@ -118,9 +119,10 @@ const publicationsContent = {
         dblpDesc: 'Search: Joo-Han Song',
       },
     },
-    books: {
+                books: {
       title: 'Books',
       description: 'Translations and co-authored books on Bitcoin and blockchain',
+      searchText: '→ Search',
       items: [
         {
           title: 'Bitcoin: Opening the Future of Digital Currency',
@@ -320,7 +322,7 @@ export default function PublicationsContent() {
                 <h3 className="font-semibold mb-1">{book.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{book.role}</p>
                 <p className="text-xs text-blue-600 dark:text-blue-400 hover:underline">
-                  → 검색하기
+                  {t.books.searchText}
                 </p>
               </a>
             ))}
