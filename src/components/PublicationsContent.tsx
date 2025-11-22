@@ -147,28 +147,45 @@ const publicationsContent = {
 
 export default function PublicationsContent() {
   const [lang, setLang] = useState<'ko' | 'en'>('ko');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
+    setMounted(true);
     
-    if (urlLang === 'en' || urlLang === 'ko') {
-      setLang(urlLang);
-      localStorage.setItem('lang', urlLang);
-    } else {
-      const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-      setLang(saved || 'ko');
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      
+      if (urlLang === 'en' || urlLang === 'ko') {
+        setLang(urlLang);
+        localStorage.setItem('lang', urlLang);
+      } else {
+        const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
+        setLang(saved || 'ko');
+      }
+
+      const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
+        setLang(e.detail);
+      };
+      window.addEventListener('langchange', handleLangChange as EventListener);
+
+      return () => {
+        window.removeEventListener('langchange', handleLangChange as EventListener);
+      };
+    } catch (error) {
+      console.error('Error in PublicationsContent:', error);
+      setLang('ko');
     }
-
-    const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
-      setLang(e.detail);
-    };
-    window.addEventListener('langchange', handleLangChange as EventListener);
-
-    return () => {
-      window.removeEventListener('langchange', handleLangChange as EventListener);
-    };
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="container-narrow py-12">
+        <h1 className="text-4xl font-bold mb-12">Publications & Research</h1>
+        <div className="text-gray-600 dark:text-gray-400">Loading...</div>
+      </div>
+    );
+  }
 
   const t = publicationsContent[lang];
 
