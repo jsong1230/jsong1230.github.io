@@ -24,13 +24,13 @@ const timelineDataKo = [
     description: '블록체인 인증·지불·문서 검증 서비스 개발, 블록체인 특허 320+ 기술 기반 플랫폼 구축, 국내 최초 DID/블록체인 상용화 사례 다수',
   },
   {
-    year: '2009-2014',
+    year: '2010-2014',
     title: 'Reading Town Learning Centre',
     role: 'Regional Manager / IT Lead',
     description: '메트로 밴쿠버 12개 지점 네트워크 인프라 구축 및 운영, 중소형 조직의 컴퓨터·서버·네트워크 지원',
   },
   {
-    year: '2007-2008',
+    year: '2007-2009',
     title: 'University of British Columbia',
     role: 'Postdoc & Teaching',
     description: 'Electrical & Computer Engineering에서 포닥(Postdoc) 및 강의',
@@ -70,13 +70,13 @@ const timelineDataEn = [
     description: 'Developed blockchain authentication, payment, and document verification services, built platform based on 320+ blockchain patents, multiple first-in-Korea DID/blockchain commercialization cases',
   },
   {
-    year: '2009-2014',
+    year: '2010-2014',
     title: 'Reading Town Learning Centre',
     role: 'Regional Manager / IT Lead',
     description: 'Built and operated network infrastructure for 12 Metro Vancouver branches, IT support for computers, servers, and networks for small-to-medium organizations',
   },
   {
-    year: '2007-2008',
+    year: '2007-2009',
     title: 'University of British Columbia',
     role: 'Postdoc & Teaching',
     description: 'Postdoctoral research and teaching in the Department of Electrical and Computer Engineering',

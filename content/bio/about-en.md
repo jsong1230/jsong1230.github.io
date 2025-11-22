@@ -28,10 +28,11 @@ University of British Columbia (2001–2005)
 
 ## Key Experience
 
-- **CPLABS** – CTO / R&D Director (2020s–Present)
+- **CPLABS** – CTO / R&D Director (2023s–Present)
+- **Coinplug** – CTO (2014–2023)
 - **Metadium** – CTO (2017–Present)
-- **Coinplug** – CTO (2014–Present)
-- **Reading Town Learning Centre** – Regional Manager / IT Lead (2013–2015)
+- **Reading Town Learning Centre** – Regional Manager / IT Lead (2010–2014)
+- **University of British Columbia** – Postdoc & Teaching (2007–2009)
 - **Samsung Electronics** – Senior Engineer, Telecommunication R&D Centre (2005–2007)
 - **University of British Columbia** – Graduate Researcher (2001–2005)
 
