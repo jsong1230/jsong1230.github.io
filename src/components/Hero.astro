@@ -75,9 +75,7 @@ const t = content[lang];
           {lang === 'ko' ? '현재' : 'Current'}
         </h3>
         <p class="text-gray-900 dark:text-gray-100 font-medium mb-2" set:html={t.current.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
-        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          {t.current.description}
-        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed" set:html={t.current.description.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900 dark:text-gray-100">$1</strong>')} />
       </div>
 
       <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50">
