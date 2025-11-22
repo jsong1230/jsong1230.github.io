@@ -1,9 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+
+const url = Astro.url;
+const langParam = url.searchParams.get('lang');
+const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
 ---
 
-<BaseLayout title="Jeffrey Song - CTO, Web3 & Blockchain Expert" lang="ko">
-  <Hero lang="ko" />
+<BaseLayout title="Jeffrey Song - CTO, Web3 & Blockchain Expert" lang={lang}>
+  <Hero lang={lang} />
 </BaseLayout>
 

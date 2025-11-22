@@ -4,18 +4,36 @@ export default function LanguageToggle() {
   const [lang, setLang] = useState<'ko' | 'en'>('ko');
 
   useEffect(() => {
-    // 브라우저 언어 또는 저장된 언어 설정 확인
-    const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-    const browserLang = navigator.language.startsWith('ko') ? 'ko' : 'en';
-    setLang(saved || browserLang);
+    // URL 쿼리 파라미터에서 언어 확인
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    if (urlLang === 'en' || urlLang === 'ko') {
+      setLang(urlLang);
+    } else {
+      // 저장된 언어 또는 브라우저 언어 확인
+      const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
+      const browserLang = navigator.language.startsWith('ko') ? 'ko' : 'en';
+      const currentLang = saved || browserLang;
+      setLang(currentLang);
+      
+      // URL에 언어 파라미터가 없으면 현재 언어로 추가
+      if (!urlLang && currentLang !== 'ko') {
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set('lang', currentLang);
+        window.history.replaceState({}, '', newUrl.toString());
+      }
+    }
   }, []);
 
   const toggleLang = () => {
     const newLang = lang === 'ko' ? 'en' : 'ko';
     setLang(newLang);
     localStorage.setItem('lang', newLang);
-    // 실제로는 라우팅이나 i18n 라이브러리와 연동 필요
-    window.location.reload(); // 임시: 실제로는 더 나은 방법 사용
+    
+    // URL 쿼리 파라미터 업데이트
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('lang', newLang);
+    window.location.href = newUrl.toString();
   };
 
   return (

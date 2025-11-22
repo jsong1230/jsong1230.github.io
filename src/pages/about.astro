@@ -2,7 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Timeline from '../components/Timeline';
 
-const timelineData = [
+const url = Astro.url;
+const langParam = url.searchParams.get('lang');
+const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
+
+const timelineDataKo = [
   {
     year: '2020s',
     title: 'CPLABS',
@@ -47,37 +51,112 @@ const timelineData = [
     description: 'Ph.D 연구, RA(Research Assistant), TA(Teaching Assistant). Wireless Networking, Network Security 연구, Academic research & teaching',
   },
 ];
+
+const timelineDataEn = [
+  {
+    year: '2020s',
+    title: 'CPLABS',
+    role: 'CTO / R&D Director',
+    description: 'Web3 platform architecture design, DID/SSI technology development, blockchain patent-based service planning, MLFF technology review and PoC, AI-powered personal assistant platform architecture leadership',
+    current: true,
+  },
+  {
+    year: '2017',
+    title: 'Metadium',
+    role: 'CTO',
+    description: 'Built blockchain-based Self-Sovereign Identity (SSI) infrastructure, established DID protocol structure, expanded identity ecosystem',
+  },
+  {
+    year: '2014',
+    title: 'Coinplug',
+    role: 'CTO',
+    description: 'Developed blockchain authentication, payment, and document verification services, built platform based on 320+ blockchain patents, multiple first-in-Korea DID/blockchain commercialization cases',
+  },
+  {
+    year: '2009-2014',
+    title: 'Reading Town Learning Centre',
+    role: 'Regional Manager / IT Lead',
+    description: 'Built and operated network infrastructure for 12 Metro Vancouver branches, IT support for computers, servers, and networks for small-to-medium organizations',
+  },
+  {
+    year: '2007-2008',
+    title: 'University of British Columbia',
+    role: 'Postdoc & Teaching',
+    description: 'Postdoctoral research and teaching',
+  },
+  {
+    year: '2005-2007',
+    title: 'Samsung Electronics',
+    role: 'Senior Engineer, Telecommunication R&D Centre',
+    description: 'Telecommunications/wireless network R&D, protocol, security, network stack research',
+  },
+  {
+    year: '2001-2005',
+    title: 'University of British Columbia',
+    role: 'Graduate Researcher',
+    description: 'Ph.D research, RA (Research Assistant), TA (Teaching Assistant). Wireless Networking, Network Security research, Academic research & teaching',
+  },
+];
+
+const timelineData = lang === 'en' ? timelineDataEn : timelineDataKo;
+
+const aboutContent = {
+  ko: {
+    title: 'About',
+    intro: 'Hi, I\'m Jeffrey Joo-Han Song — a technologist, engineer, and CTO with over 20 years of experience across <strong>Blockchain, Web3, DID, and AI</strong>.',
+    education: 'Education',
+    educationDegree: 'Ph.D., Electrical & Computer Engineering',
+    educationSchool: 'University of British Columbia (2001–2005)',
+    educationDetail: 'Wireless Networking, Network Security 연구',
+    experience: 'Experience',
+    skills: 'Skills',
+    technical: 'Technical',
+    management: 'Management',
+  },
+  en: {
+    title: 'About',
+    intro: 'Hi, I\'m Jeffrey Joo-Han Song — a technologist, engineer, and CTO with over 20 years of experience across <strong>Blockchain, Web3, DID, and AI</strong>.',
+    education: 'Education',
+    educationDegree: 'Ph.D., Electrical & Computer Engineering',
+    educationSchool: 'University of British Columbia (2001–2005)',
+    educationDetail: 'Wireless Networking, Network Security research',
+    experience: 'Experience',
+    skills: 'Skills',
+    technical: 'Technical',
+    management: 'Management',
+  },
+};
+
+const t = aboutContent[lang];
 ---
 
-<BaseLayout title="About - Jeffrey Song" lang="ko">
+<BaseLayout title="About - Jeffrey Song" lang={lang}>
   <div class="container-narrow py-12">
     <div class="space-y-16">
       <section>
-        <h1 class="text-4xl font-bold mb-6">About</h1>
-        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
-          Hi, I'm Jeffrey Joo-Han Song — a technologist, engineer, and CTO with over 20 years of experience across <strong>Blockchain, Web3, DID, and AI</strong>.
-        </p>
+        <h1 class="text-4xl font-bold mb-6">{t.title}</h1>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" set:html={t.intro.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
       </section>
       
       <section>
-        <h2 class="text-2xl font-semibold mb-6">Education</h2>
+        <h2 class="text-2xl font-semibold mb-6">{t.education}</h2>
         <div class="space-y-2">
-          <p class="text-lg font-medium">Ph.D., Electrical & Computer Engineering</p>
-          <p class="text-gray-600 dark:text-gray-400">University of British Columbia (2001–2005)</p>
-          <p class="text-gray-700 dark:text-gray-300">Wireless Networking, Network Security 연구</p>
+          <p class="text-lg font-medium">{t.educationDegree}</p>
+          <p class="text-gray-600 dark:text-gray-400">{t.educationSchool}</p>
+          <p class="text-gray-700 dark:text-gray-300">{t.educationDetail}</p>
         </div>
       </section>
       
       <section>
-        <h2 class="text-2xl font-semibold mb-8">Experience</h2>
-        <Timeline client:load items={timelineData} lang="ko" />
+        <h2 class="text-2xl font-semibold mb-8">{t.experience}</h2>
+        <Timeline client:load items={timelineData} lang={lang} />
       </section>
       
       <section>
-        <h2 class="text-2xl font-semibold mb-6">Skills</h2>
+        <h2 class="text-2xl font-semibold mb-6">{t.skills}</h2>
         <div class="grid md:grid-cols-2 gap-8">
           <div>
-            <h3 class="font-semibold mb-3">Technical</h3>
+            <h3 class="font-semibold mb-3">{t.technical}</h3>
             <ul class="space-y-2 text-gray-700 dark:text-gray-300">
               <li>• Blockchain, DID, SSI, Web3 Infra</li>
               <li>• AI Agents, GPT/Claude Integration</li>
@@ -86,11 +165,21 @@ const timelineData = [
             </ul>
           </div>
           <div>
-            <h3 class="font-semibold mb-3">Management</h3>
+            <h3 class="font-semibold mb-3">{t.management}</h3>
             <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-              <li>• R&D 조직 리딩</li>
-              <li>• PM/PMO/Stakeholder Coordination</li>
-              <li>• AI · Web3 · Infra 아키텍처 설계</li>
+              {lang === 'ko' ? (
+                <>
+                  <li>• R&D 조직 리딩</li>
+                  <li>• PM/PMO/Stakeholder Coordination</li>
+                  <li>• AI · Web3 · Infra 아키텍처 설계</li>
+                </>
+              ) : (
+                <>
+                  <li>• R&D organization leadership</li>
+                  <li>• PM/PMO/Stakeholder Coordination</li>
+                  <li>• AI · Web3 · Infrastructure architecture design</li>
+                </>
+              )}
             </ul>
           </div>
         </div>
