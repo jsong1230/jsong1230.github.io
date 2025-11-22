@@ -148,8 +148,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">CPLABS 특허</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents에서 검색</p>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'CPLABS 특허' : 'CPLABS Patents'}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'Google Patents에서 검색' : 'Search on Google Patents'}</p>
             </a>
             <a 
               href={t.patents.searchLinks.coinplug}
@@ -157,8 +157,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">Coinplug 특허</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents에서 검색</p>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'Coinplug 특허' : 'Coinplug Patents'}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'Google Patents에서 검색' : 'Search on Google Patents'}</p>
             </a>
             <a 
               href={t.patents.searchLinks.personal}
@@ -166,7 +166,7 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">개인명 특허</h3>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? '개인명 특허' : 'Personal Patents'}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents: "Joo-Han Song"</p>
             </a>
             <a 
@@ -175,7 +175,7 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">Samsung 특허</h3>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'Samsung 특허' : 'Samsung Patents'}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents: "Joo-Han Song" at Samsung</p>
             </a>
             <a 
@@ -184,8 +184,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">한국 특허</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">KIPRIS에서 검색</p>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? '한국 특허' : 'Korean Patents'}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'KIPRIS에서 검색' : 'Search on KIPRIS'}</p>
             </a>
           </div>
         </section>
@@ -203,8 +203,17 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">UBC 논문</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohans@ece.ubc.ca</p>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'UBC 논문 (Google Scholar)' : 'UBC Papers (Google Scholar)'}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">joohans@ece.ubc.ca</p>
+            </a>
+            <a 
+              href={t.papers.searchLinks.ubcPage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
+            >
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'UBC 논문 목록' : 'UBC Papers List'}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'UBC ECE Publications (joo-han song 검색)' : 'UBC ECE Publications (search: joo-han song)'}</p>
             </a>
             <a 
               href={t.papers.searchLinks.samsung}
@@ -212,7 +221,7 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">Samsung 논문</h3>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'Samsung 논문' : 'Samsung Papers'}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohan.song@samsung.com</p>
             </a>
             <a 
@@ -221,7 +230,7 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">일반 논문</h3>
+              <h3 className="font-semibold mb-2">{lang === 'ko' ? '일반 논문' : 'General Papers'}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohans@gmail.com</p>
             </a>
             <a 
@@ -231,7 +240,7 @@ export default function PublicationsContent() {
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
               <h3 className="font-semibold mb-2">DBLP</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Joo-Han Song 검색</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'Joo-Han Song 검색' : 'Search: Joo-Han Song'}</p>
             </a>
           </div>
         </section>
