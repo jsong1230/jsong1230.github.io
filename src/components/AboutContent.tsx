@@ -108,7 +108,7 @@ const aboutContent = {
     technical: 'Technical',
     management: 'Management',
     interests: 'Personal Interests',
-    interestsDescription: '개인적으로는 등산과 걷기를 즐기고, 골프도 좋아합니다. 요즘은 AI를 활용한 다양한 코딩 프로젝트에 빠져있으며, GPU를 활용한 실험과 개발에도 관심이 많습니다.',
+    interestsDescription: '개인적으로는 등산과 걷기를 즐기고, 골프도 좋아합니다. 요즘은 AI를 활용한 다양한 코딩 프로젝트에 빠져있으며, GPU를 활용한 실험과 개발에도 관심이 많습니다. 최근에는 AI를 이용한 shorts와 long forms 제작에도 취미를 붙였습니다.',
   },
   en: {
     title: 'About',
@@ -122,7 +122,7 @@ const aboutContent = {
     technical: 'Technical',
     management: 'Management',
     interests: 'Personal Interests',
-    interestsDescription: 'Personally, I enjoy hiking and walking, and I also love golf. Recently, I\'ve been deeply engaged in various coding projects using AI, and I\'m very interested in experiments and development using GPUs.',
+    interestsDescription: 'Personally, I enjoy hiking and walking, and I also love golf. Recently, I\'ve been deeply engaged in various coding projects using AI, and I\'m very interested in experiments and development using GPUs. I\'ve also developed a hobby in creating shorts and long-form content using AI.',
   },
 };
 
