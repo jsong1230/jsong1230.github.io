@@ -1,0 +1,107 @@
+---
+interface Props {
+  lang?: 'ko' | 'en';
+}
+
+const { lang = 'ko' } = Astro.props;
+
+const content = {
+  ko: {
+    greeting: '안녕하세요.',
+    name: '저는 송주한(Jeffrey Joo-Han Song)입니다.',
+    intro: '저는 20년 넘게 **블록체인, Web3, DID, AI** 분야에서 연구와 개발, 그리고 R&D 리더십을 맡아온 엔지니어이자 CTO입니다.',
+    current: {
+      title: '현재는 **CPLABS CTO**로서',
+      description: 'Web3 플랫폼 아키텍처, DID·인증 기술, AI 기반 개인화 비서 서비스 \'대파/자비스\'를 총괄하고 있습니다. 또한 Coinplug와 Metadium의 CTO로 활동하며 국내 블록체인 산업의 기술적 기반을 만드는 데 기여해왔습니다.',
+    },
+    background: {
+      title: '캐나다 UBC에서',
+      description: '**컴퓨터공학 박사(무선네트워크/보안)** 학위를 취득했고, 삼성전자 통신연구소에서 Senior Engineer로 경력을 시작했습니다. 이후 캐나다에서 Reading Town Learning Centre의 IT Lead로 활동하며 네트워크 인프라 구축 경험을 넓혔습니다.',
+    },
+    interests: {
+      title: '저의 관심사는 다음과 같습니다:',
+      items: [
+        'Web3·블록체인 인프라 설계',
+        'DID/SSI 및 디지털 아이덴티티',
+        'AI 에이전트, 멀티모달 모델 활용',
+        '공공·교통 시스템(MLFF) 기술 설계',
+        '장기적인 기술·사회 변화에 대한 글쓰기',
+      ],
+    },
+    closing: '이 홈페이지는 저의 경험, 프로젝트, 아이디어를 한국과 북미 모두에게 소개하기 위해 만들어졌습니다.',
+  },
+  en: {
+    greeting: 'Hi,',
+    name: "I'm Jeffrey Joo-Han Song",
+    intro: '— a technologist, engineer, and CTO with over 20 years of experience across **Blockchain, Web3, DID, and AI**.',
+    current: {
+      title: 'I currently serve as the **CTO of CPLABS**,',
+      description: 'where I lead Web3 platform architecture, decentralized identity (DID/SSI) technologies, blockchain-based services, and AI-powered personal assistant platforms such as "Daepa/Jarvis." I previously worked as the CTO of **Coinplug** and **Metadium**, contributing to the early growth of Korea\'s blockchain ecosystem and the development of decentralized identity infrastructure.',
+    },
+    background: {
+      title: 'I received my',
+      description: '**Ph.D. in Electrical and Computer Engineering** from the University of British Columbia, specializing in wireless networking and network security. Before that, I worked as a Senior Engineer at Samsung Electronics, and later as the IT Lead for twelve branches of Reading Town Learning Centre in Metro Vancouver.',
+    },
+    interests: {
+      title: 'My areas of interest include:',
+      items: [
+        'Web3 and Blockchain Infrastructure',
+        'Decentralized Identity (DID/SSI)',
+        'AI Agents & multimodal model integration',
+        'Public and mobility systems (MLFF)',
+        'Long-form writing about technology and society',
+      ],
+    },
+    closing: 'This website serves as a long-term home for my work, projects, and writing — for audiences in both Korea and North America.',
+  },
+};
+
+const t = content[lang];
+---
+
+<section class="container-narrow py-20 md:py-32">
+  <div class="space-y-8">
+    <div class="space-y-4">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight text-balance">
+        <span class="block">{t.greeting}</span>
+        <span class="block">{t.name}</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" set:html={t.intro.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+    </div>
+
+    <div class="space-y-6 pt-8 border-t border-gray-200 dark:border-gray-800">
+      <div>
+        <p class="text-lg font-medium mb-2 text-gray-900 dark:text-gray-100" set:html={t.current.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+          {t.current.description}
+        </p>
+      </div>
+
+      <div>
+        <p class="text-lg font-medium mb-2 text-gray-900 dark:text-gray-100">
+          {t.background.title}
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" set:html={t.background.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+      </div>
+
+      <div>
+        <p class="text-lg font-medium mb-3 text-gray-900 dark:text-gray-100">
+          {t.interests.title}
+        </p>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300 max-w-3xl">
+          {t.interests.items.map((item) => (
+            <li class="flex items-start">
+              <span class="mr-2">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p class="text-gray-600 dark:text-gray-400 italic pt-4 max-w-3xl">
+        {t.closing}
+      </p>
+    </div>
+  </div>
+</section>
+

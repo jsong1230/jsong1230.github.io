@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline';
+
+const timelineData = [
+  {
+    year: '2020s',
+    title: 'CPLABS',
+    role: 'CTO / R&D Director',
+    description: 'Web3 플랫폼 아키텍처 설계, DID/SSI 기술 개발, 블록체인 특허 기반 서비스 기획, MLFF 기술 리뷰 및 PoC, AI 기반 개인화 비서 플랫폼 아키텍처 리딩',
+    current: true,
+  },
+  {
+    year: '2017',
+    title: 'Metadium',
+    role: 'CTO',
+    description: '블록체인 기반 자기주권 신원(Self-Sovereign Identity, SSI) 인프라 구축, DID 프로토콜 구조 확립, 아이덴티티 생태계 확장',
+  },
+  {
+    year: '2014',
+    title: 'Coinplug',
+    role: 'CTO',
+    description: '블록체인 인증·지불·문서 검증 서비스 개발, 블록체인 특허 320+ 기술 기반 플랫폼 구축, 국내 최초 DID/블록체인 상용화 사례 다수',
+  },
+  {
+    year: '2013-2015',
+    title: 'Reading Town Learning Centre',
+    role: 'Regional Manager / IT Lead',
+    description: '메트로 밴쿠버 12개 지점 네트워크 인프라 구축 및 운영, 중소형 조직의 컴퓨터·서버·네트워크 지원',
+  },
+  {
+    year: '2005-2007',
+    title: 'Samsung Electronics',
+    role: 'Senior Engineer, Telecommunication R&D Centre',
+    description: '통신/무선 네트워크 연구개발, 프로토콜, 보안, 네트워크 스택 연구',
+  },
+  {
+    year: '2001-2005',
+    title: 'University of British Columbia',
+    role: 'Graduate Researcher',
+    description: 'Wireless Networking, Network Security 연구, Academic research & teaching',
+  },
+];
+---
+
+<BaseLayout title="About - Jeffrey Song" lang="ko">
+  <div class="container-narrow py-12">
+    <div class="space-y-16">
+      <section>
+        <h1 class="text-4xl font-bold mb-6">About</h1>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+          Hi, I'm Jeffrey Joo-Han Song — a technologist, engineer, and CTO with over 20 years of experience across <strong>Blockchain, Web3, DID, and AI</strong>.
+        </p>
+      </section>
+      
+      <section>
+        <h2 class="text-2xl font-semibold mb-6">Education</h2>
+        <div class="space-y-2">
+          <p class="text-lg font-medium">Ph.D., Electrical & Computer Engineering</p>
+          <p class="text-gray-600 dark:text-gray-400">University of British Columbia (2001–2005)</p>
+          <p class="text-gray-700 dark:text-gray-300">Wireless Networking, Network Security 연구</p>
+        </div>
+      </section>
+      
+      <section>
+        <h2 class="text-2xl font-semibold mb-8">Experience</h2>
+        <Timeline client:load items={timelineData} lang="ko" />
+      </section>
+      
+      <section>
+        <h2 class="text-2xl font-semibold mb-6">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold mb-3">Technical</h3>
+            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+              <li>• Blockchain, DID, SSI, Web3 Infra</li>
+              <li>• AI Agents, GPT/Claude Integration</li>
+              <li>• Wireless Networking / Network Security</li>
+              <li>• Linux / Unix / Windows / MacOS</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3">Management</h3>
+            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+              <li>• R&D 조직 리딩</li>
+              <li>• PM/PMO/Stakeholder Coordination</li>
+              <li>• AI · Web3 · Infra 아키텍처 설계</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
