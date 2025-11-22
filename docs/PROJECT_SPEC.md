@@ -66,13 +66,20 @@ homepage-src/
 
 ## 3.3 Experience Timeline
 
-### 📍2020s – 현재
+### 📍2023s – 현재
 **CPLABS – CTO / R&D Director**
 - Web3 플랫폼 아키텍처 설계
 - DID/SSI 기술 개발
 - 블록체인 특허 기반 서비스 기획
 - MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC
-- AI 기반 개인화 비서 플랫폼 '대파/자비스' 아키텍처 리딩
+- AI 기반 개인화 비서 플랫폼 '대파' 아키텍처 리딩
+
+### 📍2014 – 2023
+**Coinplug – CTO**
+- 블록체인 인증·지불·문서 검증 서비스 개발
+- 블록체인 특허 320+ 기술 기반 플랫폼 구축
+- 국내 최초 DID/블록체인 상용화 사례 다수
+- 2023년 CPLABS로 전환
 
 ### 📍2017 – 현재
 **Metadium – CTO**
@@ -80,20 +87,15 @@ homepage-src/
 - DID 프로토콜 구조 확립
 - 아이덴티티 생태계 확장
 
-### 📍2014 – 현재
-**Coinplug – CTO**
-- 블록체인 인증·지불·문서 검증 서비스 개발
-- 블록체인 특허 320+ 기술 기반 플랫폼 구축
-- 국내 최초 DID/블록체인 상용화 사례 다수
-
-### 📍2009 – 2014
+### 📍2010 – 2014
 **Reading Town Learning Centre – Regional Manager / IT Lead**
 - 메트로 밴쿠버 12개 지점 네트워크 인프라 구축 및 운영
 - 중소형 조직의 컴퓨터·서버·네트워크 지원
 
-### 📍2007 – 2008
+### 📍2007 – 2009
 **University of British Columbia – Postdoc & Teaching**
 - Postdoctoral research and teaching
+- Electrical & Computer Engineering
 
 ### 📍2005 – 2007
 **Samsung Electronics – Senior Engineer, Telecommunication R&D Centre**
