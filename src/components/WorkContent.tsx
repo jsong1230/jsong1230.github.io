@@ -6,24 +6,36 @@ const workContent = {
   ko: {
     title: 'Work',
     cplabs: {
-      title: 'CPLABS (이전 Coinplug)',
-      period: '2014 – 현재',
+      title: 'CPLABS',
+      period: '2023s – 현재',
       role: 'CTO / R&D Director',
       website: 'https://cplabs.io',
       web2x: 'https://web2x.io',
       daepa: 'https://daepa.ai',
       patents: '320+ 블록체인 특허 보유',
-      description: '2014년 Coinplug로 시작하여 현재 CPLABS로 운영 중입니다. Web3 플랫폼 아키텍처 설계, DID/SSI 기술 개발, 블록체인 특허 기반 서비스 기획을 총괄하고 있습니다. 주요 프로젝트로는 <strong>Metadium</strong> (블록체인 기반 자기주권 신원 인프라), <strong>Wemix</strong> (게임 중심 Web3 플랫폼) 등의 기술 아키텍처를 리딩했습니다. 현재는 <strong>대파(Daepa)</strong> AI 기반 개인화 비서 서비스를 주력으로 개발하고 있으며, MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC도 진행하고 있습니다.',
+      description: 'Coinplug에서 CPLABS로 전환된 이후 Web3 플랫폼 아키텍처 설계, DID/SSI 기술 개발, 블록체인 특허 기반 서비스 기획을 총괄하고 있습니다. 주요 프로젝트로는 <strong>Metadium</strong> (블록체인 기반 자기주권 신원 인프라), <strong>Wemix</strong> (게임 중심 Web3 플랫폼) 등의 기술 아키텍처를 리딩했습니다. 현재는 <strong>대파(Daepa)</strong> AI 기반 개인화 비서 서비스를 주력으로 개발하고 있으며, MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC도 진행하고 있습니다.',
       highlights: [
-        '블록체인 인증·지불·문서 검증 서비스 개발 (2014~)',
-        '320+ 블록체인 특허 기술 기반 플랫폼 구축',
-        '국내 최초 DID/블록체인 상용화 사례 다수',
-        'MYKEEPiN (DID 솔루션), METAPASS (모바일 사원증) 개발',
         'Web3 플랫폼 아키텍처 설계 및 리딩',
         'DID/SSI 기술 개발',
         'Metadium, Wemix 등 주요 프로젝트 기술 아키텍처',
         '<strong>대파(Daepa)</strong> AI 기반 개인화 비서 서비스 개발 (주력)',
         'MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC',
+      ],
+    },
+    coinplug: {
+      title: 'Coinplug',
+      period: '2014 – 2023',
+      role: 'CTO',
+      website: 'https://cplabs.io',
+      patents: '320+ 블록체인 특허 보유',
+      description: '블록체인 인증·지불·문서 검증 서비스 개발을 리딩했습니다. 320+ 블록체인 특허 기술을 기반으로 플랫폼을 구축했으며, 국내 최초 DID/블록체인 상용화 사례를 다수 개발했습니다. 2023년 CPLABS로 전환되었습니다.',
+      highlights: [
+        '블록체인 인증·지불·문서 검증 서비스 개발',
+        '320+ 블록체인 특허 기술 기반 플랫폼 구축',
+        '국내 최초 DID/블록체인 상용화 사례 다수',
+        'MYKEEPiN (DID 솔루션), METAPASS (모바일 사원증) 개발',
+        'Web3 플랫폼 아키텍처 설계 및 리딩',
+        'DID/SSI 기술 개발',
       ],
     },
     metadium: {
@@ -55,7 +67,7 @@ const workContent = {
     },
     readingTown: {
       title: 'Reading Town Learning Centre',
-      period: '2009 – 2014',
+      period: '2010 – 2014',
       role: 'Regional Manager / IT Lead',
       website: 'https://www.readingtown.com',
       description: '메트로 밴쿠버 지역 12개 지점의 네트워크 인프라를 구축하고 운영했습니다. 중소형 조직의 컴퓨터, 서버, 네트워크 지원을 총괄하며 실무 IT 관리 경험을 쌓았습니다.',
@@ -70,24 +82,36 @@ const workContent = {
   en: {
     title: 'Work',
     cplabs: {
-      title: 'CPLABS (formerly Coinplug)',
-      period: '2014 – Present',
+      title: 'CPLABS',
+      period: '2023s – Present',
       role: 'CTO / R&D Director',
       website: 'https://cplabs.io',
       web2x: 'https://web2x.io',
       daepa: 'https://daepa.ai',
       patents: '320+ blockchain patents',
-      description: 'Started as Coinplug in 2014 and currently operating as CPLABS. I lead Web3 platform architecture design, DID/SSI technology development, and blockchain patent-based service planning. I have led the technical architecture for major projects including <strong>Metadium</strong> (blockchain-based self-sovereign identity infrastructure) and <strong>Wemix</strong> (game-centric Web3 platform). Currently, I am focusing on developing <strong>Daepa</strong>, an AI-powered personal assistant service, and also working on MLFF (Malaysia Free Flow) technology review and PoC.',
+      description: 'After transitioning from Coinplug to CPLABS, I lead Web3 platform architecture design, DID/SSI technology development, and blockchain patent-based service planning. I have led the technical architecture for major projects including <strong>Metadium</strong> (blockchain-based self-sovereign identity infrastructure) and <strong>Wemix</strong> (game-centric Web3 platform). Currently, I am focusing on developing <strong>Daepa</strong>, an AI-powered personal assistant service, and also working on MLFF (Malaysia Free Flow) technology review and PoC.',
       highlights: [
-        'Blockchain authentication, payment, and document verification services (2014~)',
-        'Platform built on 320+ blockchain patents',
-        'Multiple first-in-Korea DID/blockchain commercialization cases',
-        'MYKEEPiN (DID solution), METAPASS (mobile employee ID) development',
         'Web3 platform architecture design and leadership',
         'DID/SSI technology development',
         'Technical architecture for major projects (Metadium, Wemix)',
         '<strong>Daepa</strong> AI-powered personal assistant service development (Main focus)',
         'MLFF (Malaysia Free Flow) technology review and PoC',
+      ],
+    },
+    coinplug: {
+      title: 'Coinplug',
+      period: '2014 – 2023',
+      role: 'CTO',
+      website: 'https://cplabs.io',
+      patents: '320+ blockchain patents',
+      description: 'Led blockchain authentication, payment, and document verification services development. Built a platform based on 320+ blockchain patents and developed multiple first-in-Korea DID/blockchain commercialization cases. Transitioned to CPLABS in 2023.',
+      highlights: [
+        'Blockchain authentication, payment, and document verification services',
+        'Platform built on 320+ blockchain patents',
+        'Multiple first-in-Korea DID/blockchain commercialization cases',
+        'MYKEEPiN (DID solution), METAPASS (mobile employee ID) development',
+        'Web3 platform architecture design and leadership',
+        'DID/SSI technology development',
       ],
     },
     metadium: {
@@ -119,7 +143,7 @@ const workContent = {
     },
     readingTown: {
       title: 'Reading Town Learning Centre',
-      period: '2009 – 2014',
+      period: '2010 – 2014',
       role: 'Regional Manager / IT Lead',
       website: 'https://www.readingtown.com',
       description: 'Built and operated network infrastructure for 12 Metro Vancouver branches. Managed IT support for computers, servers, and networks for small-to-medium organizations, gaining hands-on IT management experience.',
@@ -227,7 +251,7 @@ export default function WorkContent() {
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               {work.patents}
             </p>
-            {key === 'cplabs' && (
+            {(key === 'cplabs' || key === 'coinplug') && (
               <a 
                 href="https://patents.google.com/?q=COINPLUG&assignee=Coinplug"
                 target="_blank"
@@ -265,6 +289,7 @@ export default function WorkContent() {
       
       <div className="space-y-8">
         {renderWorkSection(t.cplabs, 'cplabs')}
+        {renderWorkSection(t.coinplug, 'coinplug')}
         {renderWorkSection(t.metadium, 'metadium')}
         {renderWorkSection(t.samsung, 'samsung')}
         {renderWorkSection(t.readingTown, 'readingTown')}
