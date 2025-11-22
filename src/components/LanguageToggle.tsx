@@ -11,16 +11,38 @@ export default function LanguageToggle() {
     if (urlLang === 'en' || urlLang === 'ko') {
       setCurrentLang(urlLang);
       localStorage.setItem('lang', urlLang);
+      updatePageLanguage(urlLang);
     } else {
       // 저장된 언어 확인
       const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
       const lang = saved || 'ko';
       setCurrentLang(lang);
+      if (lang === 'en') {
+        updatePageLanguage('en');
+      }
     }
   }, []);
 
+  const updatePageLanguage = (lang: 'ko' | 'en') => {
+    // 모든 data-lang-ko, data-lang-en 요소 업데이트
+    document.querySelectorAll('[data-lang-ko]').forEach((el) => {
+      if (lang === 'ko') {
+        el.textContent = el.getAttribute('data-lang-ko') || '';
+      }
+    });
+    document.querySelectorAll('[data-lang-en]').forEach((el) => {
+      if (lang === 'en') {
+        el.textContent = el.getAttribute('data-lang-en') || '';
+      }
+    });
+    
+    // HTML lang 속성 업데이트
+    document.documentElement.lang = lang;
+  };
+
   const toggleLang = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     
     // 현재 URL에서 언어 파라미터 확인
     const urlParams = new URLSearchParams(window.location.search);
@@ -33,7 +55,7 @@ export default function LanguageToggle() {
     // localStorage 저장
     localStorage.setItem('lang', newLang);
     
-    // URL 업데이트하고 페이지 리로드
+    // URL 업데이트하고 페이지 완전히 리로드
     const newUrl = new URL(window.location.href);
     if (newLang === 'ko') {
       newUrl.searchParams.delete('lang');
@@ -41,7 +63,7 @@ export default function LanguageToggle() {
       newUrl.searchParams.set('lang', newLang);
     }
     
-    // 페이지 리로드
+    // 페이지 완전히 리로드
     window.location.href = newUrl.toString();
   };
 
@@ -55,4 +77,3 @@ export default function LanguageToggle() {
     </button>
   );
 }
-
