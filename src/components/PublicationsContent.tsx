@@ -11,7 +11,7 @@ const publicationsContent = {
       searchLinks: {
         cplabs: 'https://patents.google.com/?q=CPLABS&assignee=CPLABS',
         coinplug: 'https://patents.google.com/?q=COINPLUG&assignee=Coinplug',
-        personal: 'https://patents.google.com/?q="Joo-Han+Song"',
+        personal: 'https://patents.google.com/?q=joohans@gmail.com',
         samsung: 'https://patents.google.com/?q="Joo-Han+Song"+assignee:Samsung',
         kipris: 'https://www.kipris.or.kr/khome/main.jsp',
       },
@@ -81,7 +81,7 @@ const publicationsContent = {
       searchLinks: {
         cplabs: 'https://patents.google.com/?q=CPLABS&assignee=CPLABS',
         coinplug: 'https://patents.google.com/?q=COINPLUG&assignee=Coinplug',
-        personal: 'https://patents.google.com/?q="Joo-Han+Song"',
+        personal: 'https://patents.google.com/?q=joohans@gmail.com',
         samsung: 'https://patents.google.com/?q="Joo-Han+Song"+assignee:Samsung',
         kipris: 'https://www.kipris.or.kr/khome/main.jsp',
       },
@@ -209,7 +209,7 @@ export default function PublicationsContent() {
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
               <h3 className="font-semibold mb-2">{t.patents.labels.personal}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents: "Joo-Han Song"</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents: joohans@gmail.com</p>
             </a>
             <a 
               href={t.patents.searchLinks.samsung}
