@@ -85,8 +85,8 @@ export default function Hero() {
   const t = content[lang];
 
   return (
-    <section className="container-narrow py-24 md:py-32">
-      <div className="space-y-12">
+    <section className="container-narrow py-24 md:py-32 hero-background">
+      <div className="space-y-12 hero-content">
         <div className="space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight">
             <span className="block">{t.greeting}</span>
