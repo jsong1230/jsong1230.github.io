@@ -59,48 +59,49 @@ const content = {
 const t = content[lang];
 ---
 
-<section class="container-narrow py-20 md:py-32">
-  <div class="space-y-8">
-    <div class="space-y-4">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight text-balance">
+<section class="container-narrow py-24 md:py-32">
+  <div class="space-y-12">
+    <div class="space-y-6">
+      <h1 class="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight">
         <span class="block">{t.greeting}</span>
-        <span class="block">{t.name}</span>
+        <span class="block mt-2">{t.name}</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" set:html={t.intro.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-2xl" set:html={t.intro.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900 dark:text-gray-100">$1</strong>')} />
     </div>
 
-    <div class="space-y-6 pt-8 border-t border-gray-200 dark:border-gray-800">
-      <div>
-        <p class="text-lg font-medium mb-2 text-gray-900 dark:text-gray-100" set:html={t.current.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
+    <div class="grid md:grid-cols-2 gap-6 pt-12">
+      <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
+          {lang === 'ko' ? '현재' : 'Current'}
+        </h3>
+        <p class="text-gray-900 dark:text-gray-100 font-medium mb-2" set:html={t.current.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
           {t.current.description}
         </p>
       </div>
 
-      <div>
-        <p class="text-lg font-medium mb-2 text-gray-900 dark:text-gray-100">
+      <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
+          {lang === 'ko' ? '배경' : 'Background'}
+        </h3>
+        <p class="text-gray-900 dark:text-gray-100 font-medium mb-2">
           {t.background.title}
         </p>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" set:html={t.background.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed" set:html={t.background.description.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 dark:text-gray-100">$1</strong>')} />
       </div>
+    </div>
 
-      <div>
-        <p class="text-lg font-medium mb-3 text-gray-900 dark:text-gray-100">
-          {t.interests.title}
-        </p>
-        <ul class="space-y-2 text-gray-700 dark:text-gray-300 max-w-3xl">
-          {t.interests.items.map((item) => (
-            <li class="flex items-start">
-              <span class="mr-2">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+    <div class="pt-8">
+      <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-4">
+        {t.interests.title}
+      </h3>
+      <div class="flex flex-wrap gap-2">
+        {t.interests.items.map((item) => (
+          <span class="px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+            {item}
+          </span>
+        ))}
       </div>
-
-      <p class="text-gray-600 dark:text-gray-400 italic pt-4 max-w-3xl">
-        {t.closing}
-      </p>
     </div>
   </div>
 </section>
