@@ -34,16 +34,19 @@ const publicationsContent = {
           title: '비트코인, 디지털 화폐의 미래를 열다',
           role: '역자/공저',
           year: '',
+          searchLink: 'https://www.google.com/search?q=비트코인+디지털+화폐의+미래를+열다',
         },
         {
           title: '비트코인, 블록체인과 금융의 혁신',
           role: '역자/공저',
           year: '',
+          searchLink: 'https://www.google.com/search?q=비트코인+블록체인과+금융의+혁신',
         },
         {
           title: '비트코인, 공개 블록체인 프로그래밍',
           role: '역자/공저',
           year: '',
+          searchLink: 'https://www.google.com/search?q=비트코인+공개+블록체인+프로그래밍',
         },
       ],
     },
@@ -79,16 +82,19 @@ const publicationsContent = {
           title: 'Bitcoin: Opening the Future of Digital Currency',
           role: 'Translator/Co-author',
           year: '',
+          searchLink: 'https://www.google.com/search?q=Bitcoin+Opening+the+Future+of+Digital+Currency',
         },
         {
           title: 'Bitcoin: Blockchain and Financial Innovation',
           role: 'Translator/Co-author',
           year: '',
+          searchLink: 'https://www.google.com/search?q=Bitcoin+Blockchain+and+Financial+Innovation',
         },
         {
           title: 'Bitcoin: Open Blockchain Programming',
           role: 'Translator/Co-author',
           year: '',
+          searchLink: 'https://www.google.com/search?q=Bitcoin+Open+Blockchain+Programming',
         },
       ],
     },
@@ -236,13 +242,19 @@ export default function PublicationsContent() {
           </p>
           <div className="space-y-4">
             {t.books.items.map((book, idx) => (
-              <div 
+              <a
                 key={idx}
-                className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50"
+                href={book.searchLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
               >
                 <h3 className="font-semibold mb-1">{book.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{book.role}</p>
-              </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{book.role}</p>
+                <p className="text-xs text-blue-600 dark:text-blue-400 hover:underline">
+                  {lang === 'ko' ? '→ 검색하기' : '→ Search'}
+                </p>
+              </a>
             ))}
           </div>
         </section>
