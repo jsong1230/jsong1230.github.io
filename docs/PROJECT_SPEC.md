@@ -86,10 +86,14 @@ homepage-src/
 - 블록체인 특허 320+ 기술 기반 플랫폼 구축
 - 국내 최초 DID/블록체인 상용화 사례 다수
 
-### 📍2013 – 2015
+### 📍2009 – 2014
 **Reading Town Learning Centre – Regional Manager / IT Lead**
 - 메트로 밴쿠버 12개 지점 네트워크 인프라 구축 및 운영
 - 중소형 조직의 컴퓨터·서버·네트워크 지원
+
+### 📍2007 – 2008
+**University of British Columbia – Postdoc & Teaching**
+- Postdoctoral research and teaching
 
 ### 📍2005 – 2007
 **Samsung Electronics – Senior Engineer, Telecommunication R&D Centre**
@@ -98,6 +102,7 @@ homepage-src/
 
 ### 📍2001 – 2005
 **Graduate Researcher – University of British Columbia**
+- Ph.D 연구, RA(Research Assistant), TA(Teaching Assistant)
 - Wireless Networking
 - Network Security
 - Academic research & teaching
