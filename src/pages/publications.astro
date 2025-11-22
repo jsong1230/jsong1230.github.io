@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationsContent from '../components/PublicationsContent';
+
+const url = Astro.url;
+const langParam = url.searchParams.get('lang');
+const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
+---
+
+<BaseLayout title="Publications & Research - Jeffrey Song" lang={lang}>
+  <PublicationsContent client:load />
+</BaseLayout>
+

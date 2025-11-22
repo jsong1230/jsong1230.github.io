@@ -16,6 +16,7 @@ const workContent = {
     coinplug: {
       title: 'Coinplug',
       description: '블록체인 인증·지불·문서 검증 서비스 개발, 블록체인 특허 320+ 기술 기반 플랫폼 구축, 국내 최초 DID/블록체인 상용화 사례 다수',
+      patents: '320+ 블록체인 특허 보유',
     },
   },
   en: {
@@ -31,6 +32,7 @@ const workContent = {
     coinplug: {
       title: 'Coinplug',
       description: 'Developed blockchain authentication, payment, and document verification services, built platform based on 320+ blockchain patents, multiple first-in-Korea DID/blockchain commercialization cases',
+      patents: '320+ blockchain patents',
     },
   },
 };
@@ -91,6 +93,17 @@ export default function WorkContent() {
           <p className="text-gray-700 dark:text-gray-300 mb-4">
             {t.coinplug.description}
           </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+            {t.coinplug.patents}
+          </p>
+          <a 
+            href="https://patents.google.com/?q=COINPLUG&assignee=Coinplug"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            {lang === 'ko' ? '→ 특허 검색 (Google Patents)' : '→ Search Patents (Google Patents)'}
+          </a>
         </section>
       </div>
     </div>
