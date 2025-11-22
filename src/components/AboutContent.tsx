@@ -222,6 +222,58 @@ export default function AboutContent() {
             {t.interestsDescription}
           </p>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">
+            {lang === 'ko' ? '저서' : 'Books'}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            {lang === 'ko' 
+              ? '비트코인 및 블록체인 관련 번역서 및 공저'
+              : 'Translations and co-authored books on Bitcoin and blockchain'}
+          </p>
+          <div className="space-y-3">
+            {lang === 'ko' ? (
+              <>
+                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                  <h3 className="font-semibold mb-1">비트코인, 디지털 화폐의 미래를 열다</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">역자/공저</p>
+                </div>
+                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                  <h3 className="font-semibold mb-1">비트코인, 블록체인과 금융의 혁신</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">역자/공저</p>
+                </div>
+                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                  <h3 className="font-semibold mb-1">비트코인, 공개 블록체인 프로그래밍</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">역자/공저</p>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                  <h3 className="font-semibold mb-1">Bitcoin: Opening the Future of Digital Currency</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Translator/Co-author</p>
+                </div>
+                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                  <h3 className="font-semibold mb-1">Bitcoin: Blockchain and Financial Innovation</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Translator/Co-author</p>
+                </div>
+                <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                  <h3 className="font-semibold mb-1">Bitcoin: Open Blockchain Programming</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Translator/Co-author</p>
+                </div>
+              </>
+            )}
+          </div>
+          <div className="mt-4">
+            <a 
+              href={lang === 'ko' ? '/publications?lang=ko' : '/publications?lang=en'}
+              className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              {lang === 'ko' ? '→ 더 많은 정보 보기' : '→ View more details'}
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   );
