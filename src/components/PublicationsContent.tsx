@@ -15,6 +15,15 @@ const publicationsContent = {
         samsung: 'https://patents.google.com/?q="Joo-Han+Song"+assignee:Samsung',
         kipris: 'https://www.kipris.or.kr/khome/main.jsp',
       },
+      labels: {
+        cplabs: 'CPLABS 특허',
+        coinplug: 'Coinplug 특허',
+        personal: '개인명 특허',
+        samsung: 'Samsung 특허',
+        kipris: '한국 특허',
+        searchOn: 'Google Patents에서 검색',
+        searchKipris: 'KIPRIS에서 검색',
+      },
     },
     papers: {
       title: '논문',
@@ -25,6 +34,18 @@ const publicationsContent = {
         samsung: 'https://scholar.google.com/scholar?q=joohan.song@samsung.com',
         general: 'https://scholar.google.com/scholar?q=joohans@gmail.com',
         dblp: 'https://dblp.org/search?q=Joo-Han+Song',
+      },
+      labels: {
+        ubc: 'UBC 논문',
+        ubcPage: 'UBC 논문 목록',
+        samsung: 'Samsung 논문',
+        general: '일반 논문',
+        dblp: 'DBLP',
+        ubcDesc: 'Google Scholar: joohans@ece.ubc.ca',
+        ubcPageDesc: 'UBC ECE Publications (joo-han song 검색)',
+        samsungDesc: 'Google Scholar: joohan.song@samsung.com',
+        generalDesc: 'Google Scholar: joohans@gmail.com',
+        dblpDesc: 'Joo-Han Song 검색',
       },
     },
     books: {
@@ -64,6 +85,15 @@ const publicationsContent = {
         samsung: 'https://patents.google.com/?q="Joo-Han+Song"+assignee:Samsung',
         kipris: 'https://www.kipris.or.kr/khome/main.jsp',
       },
+      labels: {
+        cplabs: 'CPLABS Patents',
+        coinplug: 'Coinplug Patents',
+        personal: 'Personal Patents',
+        samsung: 'Samsung Patents',
+        kipris: 'Korean Patents',
+        searchOn: 'Search on Google Patents',
+        searchKipris: 'Search on KIPRIS',
+      },
     },
     papers: {
       title: 'Research Papers',
@@ -74,6 +104,18 @@ const publicationsContent = {
         samsung: 'https://scholar.google.com/scholar?q=joohan.song@samsung.com',
         general: 'https://scholar.google.com/scholar?q=joohans@gmail.com',
         dblp: 'https://dblp.org/search?q=Joo-Han+Song',
+      },
+      labels: {
+        ubc: 'UBC Papers',
+        ubcPage: 'UBC Papers List',
+        samsung: 'Samsung Papers',
+        general: 'General Papers',
+        dblp: 'DBLP',
+        ubcDesc: 'Google Scholar: joohans@ece.ubc.ca',
+        ubcPageDesc: 'UBC ECE Publications (search: joo-han song)',
+        samsungDesc: 'Google Scholar: joohan.song@samsung.com',
+        generalDesc: 'Google Scholar: joohans@gmail.com',
+        dblpDesc: 'Search: Joo-Han Song',
       },
     },
     books: {
@@ -148,8 +190,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'CPLABS 특허' : 'CPLABS Patents'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'Google Patents에서 검색' : 'Search on Google Patents'}</p>
+              <h3 className="font-semibold mb-2">{t.patents.labels.cplabs}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.patents.labels.searchOn}</p>
             </a>
             <a 
               href={t.patents.searchLinks.coinplug}
@@ -157,8 +199,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'Coinplug 특허' : 'Coinplug Patents'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'Google Patents에서 검색' : 'Search on Google Patents'}</p>
+              <h3 className="font-semibold mb-2">{t.patents.labels.coinplug}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.patents.labels.searchOn}</p>
             </a>
             <a 
               href={t.patents.searchLinks.personal}
@@ -166,7 +208,7 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? '개인명 특허' : 'Personal Patents'}</h3>
+              <h3 className="font-semibold mb-2">{t.patents.labels.personal}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents: "Joo-Han Song"</p>
             </a>
             <a 
@@ -175,7 +217,7 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'Samsung 특허' : 'Samsung Patents'}</h3>
+              <h3 className="font-semibold mb-2">{t.patents.labels.samsung}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Google Patents: "Joo-Han Song" at Samsung</p>
             </a>
             <a 
@@ -184,8 +226,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? '한국 특허' : 'Korean Patents'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'KIPRIS에서 검색' : 'Search on KIPRIS'}</p>
+              <h3 className="font-semibold mb-2">{t.patents.labels.kipris}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.patents.labels.searchKipris}</p>
             </a>
           </div>
         </section>
@@ -203,8 +245,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'UBC 논문 (Google Scholar)' : 'UBC Papers (Google Scholar)'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">joohans@ece.ubc.ca</p>
+              <h3 className="font-semibold mb-2">{t.papers.labels.ubc}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.ubcDesc}</p>
             </a>
             <a 
               href={t.papers.searchLinks.ubcPage}
@@ -212,8 +254,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'UBC 논문 목록' : 'UBC Papers List'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'UBC ECE Publications (joo-han song 검색)' : 'UBC ECE Publications (search: joo-han song)'}</p>
+              <h3 className="font-semibold mb-2">{t.papers.labels.ubcPage}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.ubcPageDesc}</p>
             </a>
             <a 
               href={t.papers.searchLinks.samsung}
@@ -221,8 +263,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? 'Samsung 논문' : 'Samsung Papers'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohan.song@samsung.com</p>
+              <h3 className="font-semibold mb-2">{t.papers.labels.samsung}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.samsungDesc}</p>
             </a>
             <a 
               href={t.papers.searchLinks.general}
@@ -230,8 +272,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">{lang === 'ko' ? '일반 논문' : 'General Papers'}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Google Scholar: joohans@gmail.com</p>
+              <h3 className="font-semibold mb-2">{t.papers.labels.general}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.generalDesc}</p>
             </a>
             <a 
               href={t.papers.searchLinks.dblp}
@@ -239,8 +281,8 @@ export default function PublicationsContent() {
               rel="noopener noreferrer"
               className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50"
             >
-              <h3 className="font-semibold mb-2">DBLP</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{lang === 'ko' ? 'Joo-Han Song 검색' : 'Search: Joo-Han Song'}</p>
+              <h3 className="font-semibold mb-2">{t.papers.labels.dblp}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.dblpDesc}</p>
             </a>
           </div>
         </section>
