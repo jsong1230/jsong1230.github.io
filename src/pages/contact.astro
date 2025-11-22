@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const url = Astro.url;
+const langParam = url.searchParams.get('lang');
+const lang = (langParam === 'en' || langParam === 'ko') ? langParam : 'ko';
+
+const content = {
+  ko: {
+    title: 'Contact',
+    description: '문의사항이나 협업 제안이 있으시면 아래 양식을 작성해주세요.',
+    name: '이름',
+    email: '이메일',
+    subject: '제목',
+    message: '메시지',
+    send: '전송',
+    sending: '전송 중...',
+    success: '메시지가 성공적으로 전송되었습니다!',
+    error: '전송 중 오류가 발생했습니다. 다시 시도해주세요.',
+    back: '← 홈으로 돌아가기',
+  },
+  en: {
+    title: 'Contact',
+    description: 'Please fill out the form below if you have any inquiries or collaboration proposals.',
+    name: 'Name',
+    email: 'Email',
+    subject: 'Subject',
+    message: 'Message',
+    send: 'Send',
+    sending: 'Sending...',
+    success: 'Message sent successfully!',
+    error: 'An error occurred. Please try again.',
+    back: '← Back to Home',
+  },
+};
+
+const t = content[lang];
+---
+
+<BaseLayout title="Contact - Jeffrey Song" lang={lang}>
+  <div class="container-narrow py-12">
+    <h1 class="text-4xl font-bold mb-6">{t.title}</h1>
+    
+    <p class="text-gray-600 dark:text-gray-400 mb-8">
+      {t.description}
+    </p>
+
+    <form 
+      action="https://formsubmit.co/joohans@gmail.com" 
+      method="POST"
+      class="space-y-6 max-w-2xl"
+      id="contact-form"
+    >
+      <input type="hidden" name="_subject" value="Contact from jsong1230.github.io" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://jsong1230.github.io/contact?success=true&lang={lang}" />
+      <input type="hidden" name="_template" value="box" />
+      
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {t.name}
+        </label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {t.email}
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {t.subject}
+        </label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {t.message}
+        </label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="6"
+          required
+          class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical"
+        ></textarea>
+      </div>
+
+      <button 
+        type="submit"
+        class="px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium"
+      >
+        {t.send}
+      </button>
+    </form>
+
+    <div class="mt-8">
+      <a 
+        href={lang === 'ko' ? '/?lang=ko' : '/?lang=en'}
+        class="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {t.back}
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Success message handling
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      const lang = urlParams.get('lang') || 'ko';
+      const message = lang === 'ko' ? '메시지가 성공적으로 전송되었습니다!' : 'Message sent successfully!';
+      alert(message);
+      // Clean URL
+      window.history.replaceState({}, '', window.location.pathname + (lang !== 'ko' ? '?lang=en' : ''));
+    }
+  </script>
+</BaseLayout>
+
