@@ -85,8 +85,78 @@ export default function Hero() {
   const t = content[lang];
 
   return (
-    <section className="container-narrow py-24 md:py-32 hero-background">
-      <div className="space-y-12 hero-content">
+    <section className="relative overflow-hidden -mx-6 px-6 py-24 md:py-32">
+      {/* DALL-E Background Image - More Visible */}
+      <div 
+        className="absolute inset-0 -z-20"
+        style={{
+          backgroundImage: `url('/hero-background.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(20px) brightness(0.85) saturate(1.0)',
+          transform: 'scale(1.05)',
+          opacity: 0.8,
+        }}
+      />
+      
+      {/* Gradient Background Overlay - Much More Transparent */}
+      <div 
+        className="absolute inset-0 -z-10"
+        style={{
+          background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.4) 0%, rgba(241, 245, 249, 0.4) 100%)',
+        }}
+      />
+      <div 
+        className="absolute inset-0 -z-10 dark:block hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.3) 100%)',
+        }}
+      />
+      
+      {/* Noise Texture Overlay */}
+      <div 
+        className="absolute inset-0 -z-10 opacity-[0.04] dark:opacity-[0.06]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+        }}
+      />
+      
+      {/* Network Pattern - More Visible */}
+      <svg 
+        className="absolute inset-0 -z-10 w-full h-full opacity-20 dark:opacity-25"
+      >
+        <defs>
+          <pattern id="network-hero" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="2" fill="#3b82f6" opacity="0.4" />
+            <circle cx="95" cy="35" r="2" fill="#8b5cf6" opacity="0.4" />
+            <circle cx="60" cy="85" r="2" fill="#14b8a6" opacity="0.4" />
+            <circle cx="15" cy="70" r="1.5" fill="#3b82f6" opacity="0.3" />
+            <circle cx="85" cy="90" r="1.5" fill="#8b5cf6" opacity="0.3" />
+            <line x1="25" y1="25" x2="95" y2="35" stroke="#3b82f6" strokeWidth="0.8" opacity="0.2" />
+            <line x1="25" y1="25" x2="60" y2="85" stroke="#8b5cf6" strokeWidth="0.8" opacity="0.2" />
+            <line x1="95" y1="35" x2="60" y2="85" stroke="#14b8a6" strokeWidth="0.8" opacity="0.2" />
+            <line x1="15" y1="70" x2="60" y2="85" stroke="#3b82f6" strokeWidth="0.6" opacity="0.15" />
+            <line x1="85" y1="90" x2="60" y2="85" stroke="#8b5cf6" strokeWidth="0.6" opacity="0.15" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#network-hero)" />
+      </svg>
+      
+      {/* Color Gradient Overlay */}
+      <div 
+        className="absolute inset-0 -z-10"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
+            radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
+            radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.08) 0%, transparent 60%)
+          `,
+        }}
+      />
+      
+      <div className="container-narrow space-y-12 relative z-10">
         <div className="space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight">
             <span className="block">{t.greeting}</span>
@@ -99,7 +169,7 @@ export default function Hero() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 pt-12">
-          <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50">
+          <div className="p-6 rounded-lg border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-xl bg-white/60 dark:bg-gray-900/40 hover:bg-white/80 dark:hover:bg-gray-900/60 transition-all shadow-sm">
             <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
               {lang === 'ko' ? '현재' : 'Current'}
             </h3>
@@ -113,7 +183,7 @@ export default function Hero() {
             />
           </div>
 
-          <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors bg-gray-50/50 dark:bg-gray-900/50">
+          <div className="p-6 rounded-lg border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-xl bg-white/60 dark:bg-gray-900/40 hover:bg-white/80 dark:hover:bg-gray-900/60 transition-all shadow-sm">
             <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
               {lang === 'ko' ? '배경' : 'Background'}
             </h3>
