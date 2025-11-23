@@ -109,6 +109,25 @@ const aboutContent = {
     management: 'Management',
     interests: 'Personal Interests',
     interestsDescription: '개인적으로는 등산과 걷기를 즐기고, 골프도 좋아합니다. 요즘은 AI를 활용한 다양한 코딩 프로젝트에 빠져있으며, GPU를 활용한 실험과 개발에도 관심이 많습니다. 최근에는 AI를 이용한 shorts와 long forms 제작에도 취미를 붙였습니다.',
+    awards: 'Awards & Achievements',
+    awardsList: [
+      {
+        year: '2023',
+        title: '과기정통부장관 표창장',
+        organization: '과학기술정보통신부',
+        description: '2023 대한민국 디지털 이노베이션 어워드 - 정보통신기술의 개발 및 융복합 활용을 통해 디지털 경제·사회 구현에 기여',
+        award: '',
+        newsLink: 'https://m.etnews.com/20231120000170',
+      },
+      {
+        year: '2015',
+        title: 'JB금융 핀테크 경연대회',
+        organization: 'JB금융그룹',
+        description: '새로운 공인인증서 기술로 기술사업화 부문 최우수상 수상 (코인플러그)',
+        award: '기술사업화 부문 최우수상',
+        newsLink: 'https://www.fnnews.com/news/201506161431392846',
+      },
+    ],
   },
   en: {
     title: 'About',
@@ -123,6 +142,25 @@ const aboutContent = {
     management: 'Management',
     interests: 'Personal Interests',
     interestsDescription: 'Personally, I enjoy hiking and walking, and I also love golf. Recently, I\'ve been deeply engaged in various coding projects using AI, and I\'m very interested in experiments and development using GPUs. I\'ve also developed a hobby in creating shorts and long-form content using AI.',
+    awards: 'Awards & Achievements',
+    awardsList: [
+      {
+        year: '2023',
+        title: 'Minister\'s Commendation',
+        organization: 'Ministry of Science and ICT',
+        description: '2023 Korea Digital Innovation Awards - Contribution to digital economy and society through ICT development and convergence',
+        award: '',
+        newsLink: 'https://m.etnews.com/20231120000170',
+      },
+      {
+        year: '2015',
+        title: 'JB Financial Fintech Competition',
+        organization: 'JB Financial Group',
+        description: 'Excellence Award in Technology Commercialization - New Public Certificate Technology (Coinplug)',
+        award: 'Excellence Award in Technology Commercialization',
+        newsLink: 'https://www.fnnews.com/news/201506161431392846',
+      },
+    ],
   },
 };
 
@@ -181,6 +219,50 @@ export default function AboutContent() {
         <section>
           <h2 className="text-2xl font-semibold mb-8">{t.experience}</h2>
           <Timeline items={timelineData} lang={lang} />
+        </section>
+        
+        <section>
+          <h2 className="text-2xl font-semibold mb-6">{t.awards}</h2>
+          <div className="space-y-4">
+            {t.awardsList.map((award, idx) => (
+              <div key={idx} className="p-5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gradient-to-r from-gray-50/50 to-white dark:from-gray-900/50 dark:to-gray-800/30 hover:shadow-md transition-shadow">
+                <div className="flex items-start justify-between mb-2">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        {award.title}
+                      </h3>
+                      {award.award && (
+                        <span className="px-2 py-0.5 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                          {award.award}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      {award.organization}
+                      {award.year && <span className="ml-2 text-gray-500">({award.year})</span>}
+                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+                      {award.description}
+                    </p>
+                    {award.newsLink && (
+                      <a 
+                        href={award.newsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+                      >
+                        {lang === 'ko' ? '→ 뉴스 보기' : '→ View News'}
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
         
         <section>
