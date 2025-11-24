@@ -56,3 +56,5 @@ export default function Timeline({ items, lang = 'ko' }: TimelineProps) {
   );
 }
 
+
+

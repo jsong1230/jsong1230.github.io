@@ -69,7 +69,7 @@ jsong1230.github.io/
 │   │   ├── 2000s.md
 │   │   ├── 2010s.md
 │   │   └── 2020s.md
-│   └── posts/           # 블로그 포스트 (향후)
+│   └── posts/           # 블로그 포스트 (자동 생성)
 ├── public/              # 정적 파일
 │   ├── favicon.svg
 │   └── hero-background.jpg
@@ -79,7 +79,8 @@ jsong1230.github.io/
 │   ├── TODO.md          # 할 일 목록
 │   └── README.md        # 상세 문서
 └── scripts/             # 유틸리티 스크립트
-    └── generate-hero-background.js
+    ├── generate-hero-background.js
+    └── generate-daily-post.js  # 자동 포스팅 생성
 ```
 
 ## 🛠 Tech Stack
@@ -98,6 +99,7 @@ jsong1230.github.io/
 - ✅ 반응형 디자인
 - ✅ SEO 최적화 준비
 - ✅ GitHub Actions 자동 배포
+- ✅ 매일 자동 포스팅 생성 (GitHub Actions + OpenAI)
 
 ## 📝 주요 페이지
 
@@ -105,7 +107,7 @@ jsong1230.github.io/
 - **About** (`/about`): 상세 경력 및 타임라인
 - **Work** (`/work`): 회사/프로젝트 상세 정보
 - **Publications** (`/publications`): 특허, 논문, 저서
-- **Writing** (`/writing`): 블로그 포스트 (향후)
+- **Writing** (`/writing`): 블로그 포스트 (자동 생성)
 - **Contact** (`/contact`): 연락처 폼
 
 ## 🔄 언어 전환
@@ -118,6 +120,7 @@ jsong1230.github.io/
 - **프로젝트 스펙**: `/docs/PROJECT_SPEC.md`
 - **변경 이력**: `/docs/HISTORY.md`
 - **할 일 목록**: `/docs/TODO.md`
+- **자동 포스팅 가이드**: `/docs/AUTO_POSTING.md`
 
 ## 🚢 배포
 
@@ -132,5 +135,5 @@ GitHub Actions가 자동으로 빌드하고 배포합니다.
 
 ---
 
-**Last Updated**: 2025-11-22
+**Last Updated**: 2025-01-XX
 
