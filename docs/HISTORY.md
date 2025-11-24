@@ -151,10 +151,65 @@ src/
 
 ---
 
+## 2025-01-XX (후반)
+
+### 자동 포스팅 시스템 구현
+
+- **GitHub Actions 기반 매일 자동 포스팅 생성**
+  - 매일 한국시간 오전 9시(UTC 00:00) 자동 실행
+  - About, Work, Publications 데이터에서 랜덤 주제 선택
+  - OpenAI GPT-4o-mini를 사용하여 한글/영문 포스팅 자동 생성
+  - 생성된 포스팅 자동 커밋 및 푸시
+
+- **포스팅 생성 스크립트** (`scripts/generate-daily-post.js`)
+  - 주제 추출 및 랜덤 선택 로직
+  - 같은 주제로 한글/영문 포스팅 생성 (주제 매칭 로직)
+  - OpenAI API를 통한 포스팅 생성
+  - 제목 자동 생성
+  - MDX 파일 형식으로 저장
+  - 중복 포스팅 방지 (같은 날짜 체크)
+  - Excerpt에서 마크다운 헤더(`###`) 제거
+
+- **Writing 페이지 개선**
+  - 포스팅 목록 표시 (`/writing`)
+  - 클라이언트 사이드 React 컴포넌트로 변환 (`WritingContent.tsx`)
+  - URL 파라미터 기반 언어별 필터링 (한글/영문)
+  - 날짜순 정렬 (최신순)
+  - 포스팅 상세 페이지 (`/writing/[slug]`)
+  - `getStaticPaths()` 함수로 동적 라우트 생성
+  - MDX 콘텐츠 렌더링
+
+- **Content Collections 설정**
+  - `src/content/config.ts`: 포스팅 스키마 정의
+  - `src/content/posts/`: 포스팅 저장 디렉토리
+  - Zod를 사용한 타입 안전성
+  - 파일명 기반 slug 자동 생성
+
+- **GitHub Actions 워크플로우** (`.github/workflows/daily-post.yml`)
+  - 스케줄 기반 자동 실행
+  - 수동 실행 지원 (workflow_dispatch)
+  - OpenAI API 키를 Secrets로 관리
+  - 자동 커밋 및 푸시
+
+- **주제 카테고리**:
+  - About: 경력, 학력, 수상, 취미
+  - Work: CPLABS, Coinplug, Metadium, Samsung, Reading Town
+  - Publications: 특허, 논문, 저서
+
+- **기술적 해결사항**:
+  - Astro 서버 사이드에서 URL 쿼리 파라미터 읽기 문제 → 클라이언트 사이드 React 컴포넌트로 해결
+  - 동적 라우트 `getStaticPaths()` 필수 함수 추가
+  - 포스팅 데이터 전달: `window.__WRITING_POSTS__` → props로 직접 전달
+  - 같은 주제 매칭: 한글/영문 주제 배열 인덱스 기반 매칭
+
+- **문서화**:
+  - `docs/AUTO_POSTING.md`: 자동 포스팅 시스템 사용 가이드
+
+---
+
 ## 다음 작업 예정
 
 - SEO 설정 (meta tags, Open Graph)
 - 반응형 레이아웃 최적화
-- Writing 페이지 콘텐츠 추가
 - 방문 통계 연동 (Plausible 등)
 

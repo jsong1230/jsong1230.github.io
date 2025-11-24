@@ -46,3 +46,5 @@ the personal homepage of blockchain & Web3 expert Jeffrey Song (송주한).
 - Explanations: concise, with bullet points.
 - Copy text: Korean first, optionally English if appropriate (hero, bio, section titles).
 
+
+
