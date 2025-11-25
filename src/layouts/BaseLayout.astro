@@ -7,9 +7,26 @@ interface Props {
   title: string;
   description?: string;
   lang?: 'ko' | 'en';
+  image?: string;
+  type?: string;
 }
 
-const { title, description = 'Web3, Blockchain, DID, AI 기술 리더', lang = 'ko' } = Astro.props;
+const { 
+  title, 
+  description: descriptionProp,
+  lang: langProp = 'ko',
+  image = 'https://jsong1230.github.io/hero-background.jpg',
+  type = 'website'
+} = Astro.props;
+
+const lang = langProp;
+const description = descriptionProp ?? (lang === 'en' 
+  ? 'CTO, Web3 & Blockchain Expert with 20+ years of experience in Blockchain, Web3, DID, and AI' 
+  : 'Web3, Blockchain, DID, AI 기술 리더');
+
+const siteUrl = 'https://jsong1230.github.io';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -17,13 +34,72 @@ const { title, description = 'Web3, Blockchain, DID, AI 기술 리더', lang = '
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+    
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Jeffrey Joo-Han Song" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
+    <meta property="og:site_name" content="Jeffrey Song" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@jeffreyjoohansong" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={currentUrl} />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jeffrey Joo-Han Song",
+      "alternateName": "송주한",
+      "jobTitle": "CTO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CPLABS"
+      },
+      "url": siteUrl,
+      "sameAs": [
+        "https://github.com/jsong1230",
+        "https://www.linkedin.com/in/jeffreyjoohansong/",
+        "https://www.youtube.com/@vanjeff1230"
+      ],
+      "description": description,
+      "knowsAbout": ["Blockchain", "Web3", "DID", "SSI", "AI", "Network Security"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University of British Columbia",
+        "department": "Electrical and Computer Engineering"
+      }
+    })} />
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) for dark mode -->
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+        if (shouldBeDark) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <Header />

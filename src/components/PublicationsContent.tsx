@@ -204,7 +204,7 @@ export default function PublicationsContent() {
 
   if (!mounted) {
     return (
-      <div className="container-narrow py-12">
+      <div className="container-narrow py-8 sm:py-12">
         <h1 className="text-4xl font-bold mb-12">Publications & Research</h1>
         <div className="text-gray-600 dark:text-gray-400">Loading...</div>
       </div>
@@ -214,13 +214,13 @@ export default function PublicationsContent() {
   const t = publicationsContent[lang];
 
   return (
-    <div className="container-narrow py-12">
-      <h1 className="text-4xl font-bold mb-12">{t.title}</h1>
+    <div className="container-narrow py-8 sm:py-12">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12">{t.title}</h1>
       
       <div className="space-y-16">
         {/* 특허 섹션 */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">{t.patents.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">{t.patents.title}</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             {t.patents.description}
           </p>
