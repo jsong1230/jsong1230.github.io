@@ -48,6 +48,17 @@ const publicationsContent = {
         dblpDesc: 'Joo-Han Song 검색',
       },
     },
+    bookChapters: {
+      title: '도서 챕터',
+      description: '학술 도서에 기고한 챕터',
+      items: [
+        {
+          title: 'Secure AODV Routing Protocol with Table Entry Protection',
+          publisher: 'CRC Press',
+          year: '2006',
+        },
+      ],
+    },
                 books: {
       title: '저서',
       description: '비트코인 및 블록체인 관련 번역서 및 공저',
@@ -118,6 +129,17 @@ const publicationsContent = {
         generalDesc: 'Google Scholar: joohans@gmail.com',
         dblpDesc: 'Search: Joo-Han Song',
       },
+    },
+    bookChapters: {
+      title: 'Book Chapters',
+      description: 'Academic book chapters',
+      items: [
+        {
+          title: 'Secure AODV Routing Protocol with Table Entry Protection',
+          publisher: 'CRC Press',
+          year: '2006',
+        },
+      ],
     },
                 books: {
       title: 'Books',
@@ -301,6 +323,27 @@ export default function PublicationsContent() {
               <h3 className="font-semibold mb-2">{t.papers.labels.dblp}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">{t.papers.labels.dblpDesc}</p>
             </a>
+          </div>
+        </section>
+
+        {/* 도서 챕터 섹션 */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">{t.bookChapters.title}</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            {t.bookChapters.description}
+          </p>
+          <div className="space-y-4">
+            {t.bookChapters.items.map((chapter, idx) => (
+              <div
+                key={idx}
+                className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50"
+              >
+                <h3 className="font-semibold mb-1">{chapter.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {chapter.publisher} {chapter.year && `(${chapter.year})`}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
