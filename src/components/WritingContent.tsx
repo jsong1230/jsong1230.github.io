@@ -70,7 +70,7 @@ export default function WritingContent({ postsData }: WritingContentProps) {
     return () => {
       window.removeEventListener('langchange', handleLangChange as EventListener);
     };
-  }, []);
+  }, [postsData]);
 
   return (
     <div className="container-narrow py-12">
