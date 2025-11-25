@@ -71,8 +71,8 @@ export default function ContactContent() {
   const t = content[lang];
 
   return (
-    <div className="container-narrow py-12">
-      <h1 className="text-4xl font-bold mb-6">{t.title}</h1>
+    <div className="container-narrow py-8 sm:py-12">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-6">{t.title}</h1>
       
       <p className="text-gray-600 dark:text-gray-400 mb-8">
         {t.description}

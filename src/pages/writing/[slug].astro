@@ -16,9 +16,9 @@ const { Content } = await post.render();
 ---
 
 <BaseLayout title={`${post.data.title} - Writing - Jeffrey Song`} lang={lang}>
-  <article class="container-narrow py-12">
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
+  <article class="container-narrow py-8 sm:py-12">
+    <header class="mb-6 sm:mb-8">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{post.data.title}</h1>
       <time class="text-sm text-gray-500 dark:text-gray-400">
         {new Date(post.data.date).toLocaleDateString(lang === 'ko' ? 'ko-KR' : 'en-US', {
           year: 'numeric',
@@ -37,16 +37,26 @@ const { Content } = await post.render();
         line-height: 1.75;
       }
       .prose-content h2 {
-        font-size: 1.875rem;
+        font-size: 1.5rem;
         font-weight: 700;
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
+      @media (min-width: 640px) {
+        .prose-content h2 {
+          font-size: 1.875rem;
+        }
+      }
       .prose-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 600;
         margin-top: 1.5rem;
         margin-bottom: 0.75rem;
+      }
+      @media (min-width: 640px) {
+        .prose-content h3 {
+          font-size: 1.5rem;
+        }
       }
       .prose-content p {
         margin-bottom: 1.25rem;

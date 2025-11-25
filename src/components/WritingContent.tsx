@@ -73,8 +73,8 @@ export default function WritingContent({ postsData }: WritingContentProps) {
   }, [postsData]);
 
   return (
-    <div className="container-narrow py-12">
-      <h1 className="text-4xl font-bold mb-12">
+    <div className="container-narrow py-8 sm:py-12">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12">
         {lang === 'ko' ? 'Writing' : 'Writing'}
       </h1>
       
@@ -89,7 +89,7 @@ export default function WritingContent({ postsData }: WritingContentProps) {
           {posts.map((post) => (
             <article key={post.id} className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between mb-3">
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-xl sm:text-2xl font-semibold">
                   <a 
                     href={`/writing/${post.id}?lang=${lang}`}
                     className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

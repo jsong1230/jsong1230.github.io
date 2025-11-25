@@ -193,7 +193,7 @@ export default function WorkContent() {
       <section key={key} className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h2 className="text-2xl font-semibold mb-2">{work.title}</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-2">{work.title}</h2>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{work.period}</p>
             <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{work.role}</p>
           </div>
@@ -284,8 +284,8 @@ export default function WorkContent() {
   };
 
   return (
-    <div className="container-narrow py-12">
-      <h1 className="text-4xl font-bold mb-12">{t.title}</h1>
+    <div className="container-narrow py-8 sm:py-12">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12">{t.title}</h1>
       
       <div className="space-y-8">
         {renderWorkSection(t.cplabs, 'cplabs')}

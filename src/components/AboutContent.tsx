@@ -197,18 +197,18 @@ export default function AboutContent() {
   const timelineData = lang === 'en' ? timelineDataEn : timelineDataKo;
 
   return (
-    <div className="container-narrow py-12">
-      <div className="space-y-16">
+    <div className="container-narrow py-8 sm:py-12">
+      <div className="space-y-12 sm:space-y-16">
         <section>
-          <h1 className="text-4xl font-bold mb-6">{t.title}</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">{t.title}</h1>
           <p 
-            className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" 
+            className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl" 
             dangerouslySetInnerHTML={{ __html: formatText(t.intro) }}
           />
         </section>
         
         <section>
-          <h2 className="text-2xl font-semibold mb-6">{t.education}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t.education}</h2>
           <div className="space-y-2">
             <p className="text-lg font-medium">{t.educationDegree}</p>
             <p className="text-gray-600 dark:text-gray-400">{t.educationSchool}</p>
@@ -217,12 +217,12 @@ export default function AboutContent() {
         </section>
         
         <section>
-          <h2 className="text-2xl font-semibold mb-8">{t.experience}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8">{t.experience}</h2>
           <Timeline items={timelineData} lang={lang} />
         </section>
         
         <section>
-          <h2 className="text-2xl font-semibold mb-6">{t.awards}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t.awards}</h2>
           <div className="space-y-4">
             {t.awardsList.map((award, idx) => (
               <div key={idx} className="p-5 rounded-lg border border-gray-200 dark:border-gray-800 bg-gradient-to-r from-gray-50/50 to-white dark:from-gray-900/50 dark:to-gray-800/30 hover:shadow-md transition-shadow">
@@ -266,7 +266,7 @@ export default function AboutContent() {
         </section>
         
         <section>
-          <h2 className="text-2xl font-semibold mb-6">{t.skills}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t.skills}</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-semibold mb-3">{t.technical}</h3>
@@ -299,14 +299,14 @@ export default function AboutContent() {
         </section>
         
         <section>
-          <h2 className="text-2xl font-semibold mb-6">{t.interests}</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">{t.interests}</h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
             {t.interestsDescription}
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
             {lang === 'ko' ? '저서' : 'Books'}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
