@@ -152,10 +152,17 @@ The post should be approximately 500-800 words.`;
       max_tokens: isKorean ? 2000 : 1500,
     });
 
-    return completion.choices[0].message.content;
+    const content = completion.choices[0]?.message?.content;
+    if (!content || content.trim().length === 0) {
+      console.warn('OpenAI returned empty content. Using placeholder.');
+      return `This is a placeholder post about ${topicTitle} (category: ${topic.category}).`;
+    }
+
+    return content;
   } catch (error) {
     // Fallback: any error returns placeholder post content
-    console.warn('Error generating post (model or other). Using placeholder content.');
+    console.error('Error generating post:', error);
+    console.warn('Using placeholder content.');
     return `This is a placeholder post about ${topicTitle} (category: ${topic.category}).`;
   }
 }
