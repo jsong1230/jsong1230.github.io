@@ -143,7 +143,7 @@ The post should be approximately 500-800 words.`;
 
   try {
     const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
@@ -174,7 +174,7 @@ async function generateTitle(content, lang) {
 
   try {
     const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo-0613',
+      model: 'gpt-4o-mini',
       messages: [
         { role: 'user', content: prompt },
       ],
