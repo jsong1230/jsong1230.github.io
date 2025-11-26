@@ -7,16 +7,28 @@ export async function getStaticPaths() {
   
   return allPosts.map((post) => ({
     params: { slug: post.id },
-    props: { post, lang: post.data.lang },
+    props: { post, lang: post.data.lang, allPosts },
   }));
 }
 
-const { post, lang } = Astro.props;
+const { post, lang, allPosts } = Astro.props;
 const { Content } = await post.render();
+
+// Find the corresponding post in the other language (same date)
+const postDate = post.data.date;
+const otherLang = lang === 'ko' ? 'en' : 'ko';
+const correspondingPost = allPosts.find(p => 
+  p.data.date === postDate && p.data.lang === otherLang
+);
 ---
 
 <BaseLayout title={`${post.data.title} - Writing - Jeffrey Song`} lang={lang}>
-  <article class="container-narrow py-8 sm:py-12">
+  <article 
+    class="container-narrow py-8 sm:py-12"
+    data-post-date={post.data.date}
+    data-post-lang={lang}
+    data-corresponding-post={correspondingPost?.id || ''}
+  >
     <header class="mb-6 sm:mb-8">
       <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{post.data.title}</h1>
       <time class="text-sm text-gray-500 dark:text-gray-400">
@@ -107,12 +119,22 @@ const { Content } = await post.render();
     </style>
     
     <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-      <a 
-        href={`/writing?lang=${lang}`}
-        class="text-blue-600 dark:text-blue-400 hover:underline"
-      >
-        ← {lang === 'ko' ? '목록으로 돌아가기' : 'Back to list'}
-      </a>
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <a 
+          href={`/writing?lang=${lang}`}
+          class="text-blue-600 dark:text-blue-400 hover:underline"
+        >
+          ← {lang === 'ko' ? '목록으로 돌아가기' : 'Back to list'}
+        </a>
+        {correspondingPost && (
+          <a 
+            href={`/writing/${correspondingPost.id}?lang=${otherLang}`}
+            class="text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            {lang === 'ko' ? 'English version →' : '한글 버전 →'}
+          </a>
+        )}
+      </div>
     </footer>
   </article>
 </BaseLayout>
