@@ -8,7 +8,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load environment variables
-dotenv.config({ path: path.join(__dirname, '../.env.local') });
+// Try .env.local first (for GitHub Actions), then fallback to .env (for local)
+const envLocalPath = path.join(__dirname, '../.env.local');
+const envPath = path.join(__dirname, '../.env');
+if (fs.existsSync(envLocalPath)) {
+  dotenv.config({ path: envLocalPath });
+} else if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath });
+}
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
