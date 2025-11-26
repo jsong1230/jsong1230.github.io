@@ -125,7 +125,9 @@ jsong1230.github.io/
 ## 🚢 배포
 
 GitHub Actions가 자동으로 빌드하고 배포합니다.
-`master` 브랜치에 푸시하면 자동으로 https://jsong1230.github.io 에 배포됩니다.
+`main` 브랜치에 푸시하면 자동으로 https://jsong1230.github.io 에 배포됩니다.
+
+> **Note:** 자동 배포가 활성화되었습니다. 이제 `[skip ci]` 없이 커밋하면 포스트가 바로 배포됩니다.
 
 ## 📧 Contact
 
