@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../utils/language';
 
 interface WritingContentProps {
   postsData: Array<{
@@ -13,7 +14,7 @@ interface WritingContentProps {
 }
 
 export default function WritingContent({ postsData }: WritingContentProps) {
-  const [lang, setLang] = useState<'ko' | 'en'>('ko');
+  const [lang] = useLanguage();
   const [posts, setPosts] = useState<Array<{
     id: string;
     title: string;
@@ -26,20 +27,7 @@ export default function WritingContent({ postsData }: WritingContentProps) {
     // Use postsData prop directly
     const allPosts = postsData || [];
     
-    // Get language from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    
-    let currentLang: 'ko' | 'en' = 'ko';
-    if (urlLang === 'en' || urlLang === 'ko') {
-      currentLang = urlLang;
-      localStorage.setItem('lang', currentLang);
-    } else {
-      const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-      currentLang = saved || 'ko';
-    }
-    
-    setLang(currentLang);
+    const currentLang = lang;
     
     // Filter posts by language
     const filteredPosts = allPosts

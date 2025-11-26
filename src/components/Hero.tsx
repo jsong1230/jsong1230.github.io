@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useLanguage } from '../utils/language';
+import { formatText } from '../utils/format';
 
 const content = {
   ko: {
@@ -51,36 +52,8 @@ const content = {
   },
 };
 
-function formatText(text: string) {
-  return text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900 dark:text-gray-100">$1</strong>');
-}
-
 export default function Hero() {
-  const [lang, setLang] = useState<'ko' | 'en'>('ko');
-
-  useEffect(() => {
-    // URL 쿼리 파라미터에서 언어 확인
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    
-    if (urlLang === 'en' || urlLang === 'ko') {
-      setLang(urlLang);
-      localStorage.setItem('lang', urlLang);
-    } else {
-      const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-      setLang(saved || 'ko');
-    }
-
-    // 언어 변경 이벤트 리스너
-    const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
-      setLang(e.detail);
-    };
-    window.addEventListener('langchange', handleLangChange as EventListener);
-
-    return () => {
-      window.removeEventListener('langchange', handleLangChange as EventListener);
-    };
-  }, []);
+  const [lang] = useLanguage();
 
   const t = content[lang];
 
