@@ -27,11 +27,9 @@ export default function WritingContent({ postsData }: WritingContentProps) {
     // Use postsData prop directly
     const allPosts = postsData || [];
     
-    const currentLang = lang;
-    
     // Filter posts by language
     const filteredPosts = allPosts
-      .filter(post => post.lang === currentLang)
+      .filter(post => post.lang === lang)
       .sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
@@ -39,26 +37,7 @@ export default function WritingContent({ postsData }: WritingContentProps) {
       });
     
     setPosts(filteredPosts);
-
-    // Listen for language changes
-    const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
-      setLang(e.detail);
-      const filtered = allPosts
-        .filter(post => post.lang === e.detail)
-        .sort((a, b) => {
-          const dateA = new Date(a.date);
-          const dateB = new Date(b.date);
-          return dateB.getTime() - dateA.getTime();
-        });
-      setPosts(filtered);
-    };
-    
-    window.addEventListener('langchange', handleLangChange as EventListener);
-
-    return () => {
-      window.removeEventListener('langchange', handleLangChange as EventListener);
-    };
-  }, [postsData]);
+  }, [postsData, lang]);
 
   return (
     <div className="container-narrow py-8 sm:py-12">
