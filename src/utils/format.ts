@@ -13,3 +13,4 @@ export function formatText(text: string): string {
     .replace(/<strong>(.*?)<\/strong>/g, '<strong class="font-semibold">$1</strong>');
 }
 
+
