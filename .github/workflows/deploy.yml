@@ -8,6 +8,8 @@ on:
     workflows: ["Generate Daily Post"]
     types:
       - completed
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -22,11 +24,19 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # workflow_run 이벤트인 경우에만 실행 (push 이벤트는 기존대로)
-    if: github.event_name == 'workflow_run' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    # workflow_run 이벤트인 경우, 원래 워크플로우가 성공했고 main 브랜치에 push가 있었을 때만 실행
+    if: |
+      github.event_name == 'push' || 
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && 
+       github.event.workflow_run.conclusion == 'success' && 
+       github.event.workflow_run.head_branch == 'main')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # workflow_run 이벤트인 경우, 트리거한 워크플로우의 커밋을 체크아웃
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
       
       - name: Setup Node
         uses: actions/setup-node@v4
