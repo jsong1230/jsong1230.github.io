@@ -46,8 +46,8 @@ function extractTopics(lang = 'ko') {
         'CPLABS - Web3 플랫폼 아키텍처, DID/SSI 기술 개발',
         'CPLABS - 대파(Daepa) AI 기반 개인화 비서 서비스',
         'CPLABS - MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC',
-        'Coinplug - 320+ 블록체인 특허 기반 플랫폼',
-        'Coinplug - 국내 최초 DID/블록체인 상용화 사례',
+        'CPLABS - 320+ 블록체인 특허 기반 플랫폼',
+        'CPLABS - 국내 최초 DID/블록체인 상용화 사례',
         'Metadium - 블록체인 기반 자기주권 신원(SSI) 인프라',
         'Samsung - 통신/무선 네트워크 연구개발',
         'Reading Town - 메트로 밴쿠버 12개 지점 네트워크 인프라',
@@ -83,8 +83,8 @@ function extractTopics(lang = 'ko') {
         'CPLABS - Web3 platform architecture, DID/SSI technology development',
         'CPLABS - Daepa AI-powered personal assistant service',
         'CPLABS - MLFF (Malaysia Free Flow) technology review and PoC',
-        'Coinplug - Platform based on 320+ blockchain patents',
-        'Coinplug - First-in-Korea DID/blockchain commercialization cases',
+        'CPLABS - Platform based on 320+ blockchain patents',
+        'CPLABS - First-in-Korea DID/blockchain commercialization cases',
         'Metadium - Blockchain-based Self-Sovereign Identity (SSI) infrastructure',
         'Samsung - Telecommunications/wireless network R&D',
         'Reading Town - Metro Vancouver 12-branch network infrastructure',
@@ -124,11 +124,22 @@ async function generatePost(topic, lang) {
     ? `당신은 블록체인, Web3, DID, AI 분야의 전문가인 송주한(Jeffrey Joo-Han Song)입니다. 
 20년 이상의 경력을 가진 CTO이자 엔지니어로서, 기술적 깊이와 실무 경험을 바탕으로 글을 작성합니다.
 주제에 대해 전문적이면서도 읽기 쉽고, 개인적인 경험과 인사이트를 포함한 블로그 포스트를 작성해주세요.
-포스트는 800-1200자 정도의 분량으로 작성해주세요.`
+포스트는 800-1200자 정도의 분량으로 작성해주세요.
+
+**중요: 회사명 사용 규칙**
+- 2023년에 회사명이 변경되었으므로, 모든 포스트에서 반드시 다음 규칙을 따르세요:
+  - 한글 포스트: "코인플러그" 또는 "Coinplug" → "씨피랩스"로 작성
+  - 영어 포스트: "Coinplug" → "CPLABS"로 작성
+- 과거 시점을 언급할 때도 현재 회사명(씨피랩스/CPLABS)을 사용하세요.`
     : `You are Jeffrey Joo-Han Song, an expert in blockchain, Web3, DID, and AI fields.
 As a CTO and engineer with over 20 years of experience, write blog posts based on technical depth and practical experience.
 Write professional yet readable blog posts that include personal experiences and insights on the topic.
-The post should be approximately 500-800 words.`;
+The post should be approximately 500-800 words.
+
+**IMPORTANT: Company Name Usage Rule**
+- The company name was changed in 2023, so you must follow this rule in all posts:
+  - English posts: Always use "CPLABS" instead of "Coinplug"
+- Even when referring to past events, use the current company name (CPLABS).`;
 
   const topicTitle = typeof topic.topic === 'string' ? topic.topic : topic.topic.title;
   const userPrompt = isKorean
