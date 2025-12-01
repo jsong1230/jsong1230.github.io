@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useLanguage } from '../utils/language';
+import { formatText } from '../utils/format';
 
 const workContent = {
   ko: {
@@ -157,34 +158,8 @@ const workContent = {
   },
 };
 
-function formatText(text: string) {
-  return text.replace(/<strong>(.*?)<\/strong>/g, '<strong class="font-semibold">$1</strong>');
-}
-
 export default function WorkContent() {
-  const [lang, setLang] = useState<'ko' | 'en'>('ko');
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    
-    if (urlLang === 'en' || urlLang === 'ko') {
-      setLang(urlLang);
-      localStorage.setItem('lang', urlLang);
-    } else {
-      const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-      setLang(saved || 'ko');
-    }
-
-    const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
-      setLang(e.detail);
-    };
-    window.addEventListener('langchange', handleLangChange as EventListener);
-
-    return () => {
-      window.removeEventListener('langchange', handleLangChange as EventListener);
-    };
-  }, []);
+  const [lang] = useLanguage();
 
   const t = workContent[lang];
 

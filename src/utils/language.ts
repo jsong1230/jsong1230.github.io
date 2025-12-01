@@ -2,6 +2,8 @@
  * 언어 관련 유틸리티 함수
  */
 
+import { useState, useEffect } from 'react';
+
 export type Language = 'ko' | 'en';
 
 /**
@@ -40,6 +42,40 @@ export function setLanguage(lang: Language): void {
   
   // 커스텀 이벤트 발생
   window.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
+}
+
+/**
+ * React 컴포넌트에서 사용할 언어 상태 훅
+ */
+export function useLanguage(): [Language, (lang: Language) => void] {
+  if (typeof window === 'undefined') {
+    return ['ko', () => {}];
+  }
+
+  const [lang, setLangState] = useState<Language>(() => getLanguage());
+
+  useEffect(() => {
+    const handleLangChange = (e: CustomEvent<Language>) => {
+      setLangState(e.detail);
+    };
+
+    window.addEventListener('langchange', handleLangChange as EventListener);
+    
+    // 초기 언어 설정
+    const currentLang = getLanguage();
+    setLangState(currentLang);
+
+    return () => {
+      window.removeEventListener('langchange', handleLangChange as EventListener);
+    };
+  }, []);
+
+  const setLang = (newLang: Language) => {
+    setLanguage(newLang);
+    setLangState(newLang);
+  };
+
+  return [lang, setLang];
 }
 
 

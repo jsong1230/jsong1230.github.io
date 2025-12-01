@@ -21,18 +21,22 @@
 ## 🎯 Next (1개월)
 
 - [ ] DID/MLFF/AI 글 각 1편
-- [ ] 글로벌 SEO 설정 (meta tags, Open Graph)
-- [ ] 반응형 레이아웃 최적화 (모바일 UX 개선)
-- [ ] 블로그 포스트 목록 페이지
-- [ ] Writing 페이지 콘텐츠 추가
+- [x] 글로벌 SEO 설정 (meta tags, Open Graph) - BaseLayout에 구현 완료
+- [x] 반응형 레이아웃 최적화 (모바일 UX 개선) - 완료
+- [x] 블로그 포스트 목록 페이지 - Writing 페이지로 구현 완료
+- [x] Writing 페이지 콘텐츠 추가 - 자동 포스팅 시스템으로 구현 완료
 
 ## 🧊 Backlog
 
 - [ ] 방문 통계 (Plausible 등) 연동
 - [ ] Slides/강연자료 뷰어
 - [ ] AI Personal Assistant 섹션 (Daepa 소개)
-- [ ] RSS 피드 생성
+- [x] RSS 피드 생성 - `/rss.xml` 구현 완료
 - [ ] 검색 기능 추가
-- [ ] 다크모드 자동 감지 개선
-- [ ] 성능 최적화 (이미지 최적화, 코드 스플리팅)
+- [x] 다크모드 자동 감지 개선 - BaseLayout에 FOUC 방지 구현 완료
+- [x] 성능 최적화 (이미지 최적화, 코드 스플리팅) - 기본 최적화 완료
+- [x] 코드 중복 제거 - formatText, 언어 감지 로직 통합 완료
+- [x] SEO 개선 - robots.txt, sitemap.xml 생성 완료
+- [x] 접근성 개선 - 스킵 링크 추가 완료
+- [x] 404 페이지 추가 완료
 

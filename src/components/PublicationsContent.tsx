@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../utils/language';
 
 const publicationsContent = {
   ko: {
@@ -170,36 +171,12 @@ const publicationsContent = {
 };
 
 export default function PublicationsContent() {
-  const [lang, setLang] = useState<'ko' | 'en'>('ko');
+  const [lang] = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    
-    try {
-      const urlParams = new URLSearchParams(window.location.search);
-      const urlLang = urlParams.get('lang');
-      
-      if (urlLang === 'en' || urlLang === 'ko') {
-        setLang(urlLang);
-        localStorage.setItem('lang', urlLang);
-      } else {
-        const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-        setLang(saved || 'ko');
-      }
-
-      const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
-        setLang(e.detail);
-      };
-      window.addEventListener('langchange', handleLangChange as EventListener);
-
-      return () => {
-        window.removeEventListener('langchange', handleLangChange as EventListener);
-      };
-    } catch (error) {
-      console.error('Error in PublicationsContent:', error);
-      setLang('ko');
-    }
+    // PublicationsContent는 useLanguage 훅이 자동으로 처리하므로 추가 로직 불필요
   }, []);
 
   if (!mounted) {

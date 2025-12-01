@@ -65,7 +65,23 @@ export default function LanguageToggle() {
     // 커스텀 이벤트 발생 (Hero 컴포넌트가 리스닝)
     window.dispatchEvent(new CustomEvent('langchange', { detail: newLang }));
     
-    // URL 업데이트 (페이지 리로드 없이)
+    // Writing 포스트 상세 페이지인 경우, 같은 날짜의 다른 언어 포스트로 리다이렉트
+    const pathname = window.location.pathname;
+    if (pathname.startsWith('/writing/') && pathname !== '/writing') {
+      // 포스트 상세 페이지의 article 요소에서 corresponding post ID 가져오기
+      const article = document.querySelector('article[data-corresponding-post]');
+      if (article) {
+        const correspondingPostId = article.getAttribute('data-corresponding-post');
+        if (correspondingPostId) {
+          // 같은 날짜의 다른 언어 포스트로 리다이렉트
+          const redirectUrl = `/writing/${correspondingPostId}?lang=${newLang}`;
+          window.location.href = redirectUrl;
+          return;
+        }
+      }
+    }
+    
+    // 일반 페이지인 경우 URL만 업데이트
     const newUrl = new URL(window.location.href);
     if (newLang === 'ko') {
       newUrl.searchParams.delete('lang');

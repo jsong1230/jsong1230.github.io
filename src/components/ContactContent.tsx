@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useLanguage } from '../utils/language';
 
 const content = {
   ko: {
@@ -32,28 +33,11 @@ const content = {
 };
 
 export default function ContactContent() {
-  const [lang, setLang] = useState<'ko' | 'en'>('ko');
+  const [lang] = useLanguage();
 
   useEffect(() => {
-    // URL 쿼리 파라미터에서 언어 확인
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    
-    if (urlLang === 'en' || urlLang === 'ko') {
-      setLang(urlLang);
-      localStorage.setItem('lang', urlLang);
-    } else {
-      const saved = localStorage.getItem('lang') as 'ko' | 'en' | null;
-      setLang(saved || 'ko');
-    }
-
-    // 언어 변경 이벤트 리스너
-    const handleLangChange = (e: CustomEvent<'ko' | 'en'>) => {
-      setLang(e.detail);
-    };
-    window.addEventListener('langchange', handleLangChange as EventListener);
-
     // Success message handling
+    const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success') === 'true') {
       const successLang = urlParams.get('lang') || lang;
       const message = successLang === 'ko' ? content.ko.success : content.en.success;
@@ -62,11 +46,7 @@ export default function ContactContent() {
       const newUrl = window.location.pathname + (successLang !== 'ko' ? '?lang=en' : '');
       window.history.replaceState({}, '', newUrl);
     }
-
-    return () => {
-      window.removeEventListener('langchange', handleLangChange as EventListener);
-    };
-  }, []);
+  }, [lang]);
 
   const t = content[lang];
 

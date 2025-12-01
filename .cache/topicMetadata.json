@@ -1,0 +1,32 @@
+{
+  "https://github.com/jsong1230/books": {
+    "title": "Page not found · GitHub · GitHub",
+    "snippet": "Page not found · GitHub · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform GitHub Copilot Write better code with AI GitHub Spark New Build and deploy intel…",
+    "fetched": 1764138559099
+  },
+  "https://example.com/about/award": {
+    "title": "Example Domain",
+    "snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+    "fetched": 1764138570096
+  },
+  "https://example.com/work/daepa": {
+    "title": "Example Domain",
+    "snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+    "fetched": 1764138617920
+  },
+  "https://patents.google.com/patent/US20250012345A1": {
+    "title": "US20250012345A1 - Sliding Structure, Mounting Method and Actuator \n      - Google Patents",
+    "snippet": "US20250012345A1 - Sliding Structure, Mounting Method and Actuator - Google Patents US20250012345A1 - Sliding Structure, Mounting Method and Actuator - Google Patents Sliding Structure, Mounting Method…",
+    "fetched": 1764138731106
+  },
+  "https://example.com/work/samsung": {
+    "title": "Example Domain",
+    "snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+    "fetched": 1764138879260
+  },
+  "https://example.com/en/work/samsung": {
+    "title": "Example Domain",
+    "snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+    "fetched": 1764139262988
+  }
+}

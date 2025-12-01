@@ -40,5 +40,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add src/content/posts/
-          git diff --staged --quiet || (git commit -m "Auto-generate daily posts [skip ci]" && git push)
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-generate daily posts"
+            git push
+            echo "Posts committed and pushed. Deploy workflow should trigger automatically."
+          else
+            echo "No changes to commit."
+          fi
 
