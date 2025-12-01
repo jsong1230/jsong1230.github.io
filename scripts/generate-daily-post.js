@@ -44,7 +44,7 @@ function extractTopics(lang = 'ko') {
       category: 'Work',
       topics: [
         'CPLABS - Web3 플랫폼 아키텍처, DID/SSI 기술 개발',
-        'CPLABS - 대파(Daepa) AI 기반 개인화 비서 서비스',
+        'CPLABS - 대파(Daepa) AI 연애 트레이닝 서비스',
         'CPLABS - MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC',
         'CPLABS - 320+ 블록체인 특허 기반 플랫폼',
         'CPLABS - 국내 최초 DID/블록체인 상용화 사례',
@@ -81,7 +81,7 @@ function extractTopics(lang = 'ko') {
       category: 'Work',
       topics: [
         'CPLABS - Web3 platform architecture, DID/SSI technology development',
-        'CPLABS - Daepa AI-powered personal assistant service',
+        'CPLABS - Daepa AI dating training service',
         'CPLABS - MLFF (Malaysia Free Flow) technology review and PoC',
         'CPLABS - Platform based on 320+ blockchain patents',
         'CPLABS - First-in-Korea DID/blockchain commercialization cases',

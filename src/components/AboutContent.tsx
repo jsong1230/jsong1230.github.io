@@ -9,7 +9,7 @@ const timelineDataKo = [
     year: '2020s',
     title: 'CPLABS',
     role: 'CTO / R&D Director',
-    description: 'Web3 플랫폼 아키텍처 설계, DID/SSI 기술 개발, 블록체인 특허 기반 서비스 기획, MLFF 기술 리뷰 및 PoC, AI 기반 개인화 비서 플랫폼 아키텍처 리딩',
+    description: 'Web3 플랫폼 아키텍처 설계, DID/SSI 기술 개발, 블록체인 특허 기반 서비스 기획, MLFF 기술 리뷰 및 PoC, AI 연애 트레이닝 플랫폼 아키텍처 리딩',
     current: true,
   },
   {
@@ -55,7 +55,7 @@ const timelineDataEn = [
     year: '2020s',
     title: 'CPLABS',
     role: 'CTO / R&D Director',
-    description: 'Web3 platform architecture design, DID/SSI technology development, blockchain patent-based service planning, MLFF technology review and PoC, AI-powered personal assistant platform architecture leadership',
+    description: 'Web3 platform architecture design, DID/SSI technology development, blockchain patent-based service planning, MLFF technology review and PoC, AI dating training platform architecture leadership',
     current: true,
   },
   {

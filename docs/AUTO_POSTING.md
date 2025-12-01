@@ -64,7 +64,7 @@ excerpt: 포스팅 요약...
 
 ### Work
 - CPLABS - Web3 플랫폼 아키텍처, DID/SSI 기술 개발
-- CPLABS - 대파(Daepa) AI 기반 개인화 비서 서비스
+- CPLABS - 대파(Daepa) AI 연애 트레이닝 서비스
 - CPLABS - MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC
 - CPLABS - 320+ 블록체인 특허 기반 플랫폼
 - CPLABS - 국내 최초 DID/블록체인 상용화 사례

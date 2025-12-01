@@ -17,7 +17,7 @@ Blockchain, Web3, DID, and AI Technology Leader
 - DID/SSI technology development
 - Blockchain patent-based service planning
 - MLFF (Malaysia Free Flow) technology review and PoC
-- AI-powered personal assistant platform 'Daepa/Jarvis' architecture leadership
+- AI dating training platform 'Daepa' architecture leadership
 
 ## Education
 
