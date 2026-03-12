@@ -7,6 +7,8 @@ const postsCollection = defineCollection({
     date: z.coerce.string(),
     lang: z.enum(['ko', 'en']),
     excerpt: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    category: z.string().optional(),
   }),
 });
 

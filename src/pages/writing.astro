@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WritingContent from '../components/WritingContent';
+import Newsletter from '../components/Newsletter';
 import { getCollection } from 'astro:content';
 
 // Get all posts
@@ -24,10 +25,13 @@ const postsData = allPosts.map(post => ({
   date: post.data.date,
   lang: post.data.lang,
   excerpt: post.data.excerpt || '',
+  tags: post.data.tags || [],
+  category: post.data.category || 'Technology',
 }));
 ---
 
 <BaseLayout title="Writing - Jeffrey Song" lang={lang}>
   <WritingContent client:load postsData={postsData} />
+  <Newsletter client:load />
 </BaseLayout>
 
