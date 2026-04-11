@@ -185,6 +185,74 @@ async function generateTitle(content, lang) {
   }
 }
 
+// ── Code review generation ────────────────────────────────────────────────────
+
+async function generateCodeReview(gitActivity) {
+  if (!gitActivity || gitActivity.length === 0) return null;
+
+  const activityText = formatActivityForPrompt(gitActivity);
+
+  const systemPrompt = `당신은 시니어 소프트웨어 엔지니어이자 코드 리뷰어입니다.
+오늘의 git 커밋과 diff를 분석하여 솔직하고 건설적인 코드 리뷰를 작성해주세요.
+칭찬과 개선점 모두 구체적인 코드/커밋을 근거로 작성해주세요.`;
+
+  const userPrompt = `다음 오늘의 커밋과 코드 변경을 리뷰해주세요.
+아래 형식으로 작성해주세요:
+
+## ✅ 잘한 점
+(구체적인 코드나 결정을 근거로 2~4가지)
+
+## 🔧 개선할 점
+(구체적인 코드나 패턴을 근거로 2~4가지)
+
+## 💡 오늘의 기술 포인트
+(오늘 작업에서 주목할 만한 기술적 선택이나 패턴 1~2가지)
+
+---
+
+**오늘의 커밋 및 diff:**
+
+${activityText}`;
+
+  try {
+    const completion = await openai.chat.completions.create({
+      model: 'gemma-4-31b-it',
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user',   content: userPrompt },
+      ],
+      temperature: 0.6,
+      max_tokens: 1500,
+    });
+    return completion.choices[0]?.message?.content?.trim() || null;
+  } catch (error) {
+    console.error('Error generating code review:', error);
+    return null;
+  }
+}
+
+function createCodeReviewMDX(content, date) {
+  const filename = `${date}-codereview.mdx`;
+  const filepath = path.join(__dirname, '../src/content/posts', filename);
+
+  if (fs.existsSync(filepath)) return null;
+
+  let excerpt = content.replace(/^#{1,6}\s+/gm, '').replace(/\n/g, ' ').trim().substring(0, 150);
+  if (excerpt.length >= 150) excerpt += '...';
+
+  fs.writeFileSync(filepath, `---
+title: "[코드리뷰] ${date} 오늘의 코드 점검"
+date: "${date}"
+lang: ko
+excerpt: ${JSON.stringify(excerpt)}
+tags: ["code-review"]
+---
+
+${content}
+`);
+  return filename;
+}
+
 // ── MDX file creation ─────────────────────────────────────────────────────────
 
 function createMDXFile(title, content, date, lang) {
@@ -275,6 +343,16 @@ async function main() {
     const enTitle = await generateTitle(enContent, 'en');
     const enFile = createMDXFile(enTitle, enContent, date, 'en');
     console.log(`English post created: ${enFile.filename}`);
+
+    // Generate Korean-only code review post
+    if (gitActivity.length > 0) {
+      console.log('Generating code review post...');
+      const reviewContent = await generateCodeReview(gitActivity);
+      if (reviewContent) {
+        const reviewFile = createCodeReviewMDX(reviewContent, date);
+        if (reviewFile) console.log(`Code review post created: ${reviewFile}`);
+      }
+    }
 
     console.log('✅ Daily posts generated successfully!');
   } catch (error) {
