@@ -12,30 +12,31 @@ const getLink = (path: string) => {
 };
 ---
 
-<header class="border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
+<header style="border-bottom: 1px solid #f0eee6; background: rgba(245,244,237,0.85);" class="sticky top-0 z-50 backdrop-blur-sm dark:border-dark-surface dark:bg-near-black/85">
   <nav class="container-narrow py-3 sm:py-4 flex items-center justify-between">
-    <a href={getLink('/')} class="text-base sm:text-lg font-semibold hover:opacity-70 transition-opacity tracking-tight">
+    <a href={getLink('/')} class="font-serif text-base sm:text-lg font-medium hover:opacity-70 transition-opacity" style="color: #141413; letter-spacing: -0.01em;">
       Jeffrey Song
     </a>
-    
+
     <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center gap-4 lg:gap-6">
-      <a href={getLink('/about')} class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">About</a>
-      <a href={getLink('/work')} class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Work</a>
-      <a href={getLink('/publications')} class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Publications</a>
-      <a href={getLink('/writing')} class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Writing</a>
-      <a href={getLink('/contact')} class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Contact</a>
+      <a href={getLink('/about')}        class="nav-link">About</a>
+      <a href={getLink('/work')}         class="nav-link">Work</a>
+      <a href={getLink('/publications')} class="nav-link">Publications</a>
+      <a href={getLink('/writing')}      class="nav-link">Writing</a>
+      <a href={getLink('/contact')}      class="nav-link">Contact</a>
       <LanguageToggle client:load />
       <DarkModeToggle client:load />
     </div>
-    
+
     <!-- Mobile Navigation -->
     <div class="md:hidden flex items-center gap-2">
       <LanguageToggle client:load />
       <DarkModeToggle client:load />
-      <button 
+      <button
         id="mobile-menu-button"
-        class="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+        class="p-2 transition-opacity hover:opacity-60"
+        style="color: #5e5d59;"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -48,18 +49,47 @@ const getLink = (path: string) => {
       </button>
     </div>
   </nav>
-  
+
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-black/95 backdrop-blur-sm">
-    <div class="container-narrow py-3 space-y-2">
-      <a href={getLink('/about')} class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2">About</a>
-      <a href={getLink('/work')} class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2">Work</a>
-      <a href={getLink('/publications')} class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2">Publications</a>
-      <a href={getLink('/writing')} class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2">Writing</a>
-      <a href={getLink('/contact')} class="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-2">Contact</a>
+  <div id="mobile-menu" class="hidden md:hidden" style="border-top: 1px solid #f0eee6; background: rgba(245,244,237,0.97);">
+    <div class="container-narrow py-3 space-y-1">
+      <a href={getLink('/about')}        class="block text-sm py-2 nav-link">About</a>
+      <a href={getLink('/work')}         class="block text-sm py-2 nav-link">Work</a>
+      <a href={getLink('/publications')} class="block text-sm py-2 nav-link">Publications</a>
+      <a href={getLink('/writing')}      class="block text-sm py-2 nav-link">Writing</a>
+      <a href={getLink('/contact')}      class="block text-sm py-2 nav-link">Contact</a>
     </div>
   </div>
 </header>
+
+<style>
+  .nav-link {
+    font-size: 0.875rem;
+    color: #5e5d59;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-link:hover {
+    color: #141413;
+  }
+  :global(.dark) .nav-link {
+    color: #b0aea5;
+  }
+  :global(.dark) .nav-link:hover {
+    color: #faf9f5;
+  }
+  :global(.dark) header {
+    border-bottom-color: #30302e;
+    background: rgba(20,20,19,0.90);
+  }
+  :global(.dark) #mobile-menu {
+    border-top-color: #30302e;
+    background: rgba(20,20,19,0.97);
+  }
+  :global(.dark) a[href] {
+    color: #faf9f5;
+  }
+</style>
 
 <script>
   const menuButton = document.getElementById('mobile-menu-button');

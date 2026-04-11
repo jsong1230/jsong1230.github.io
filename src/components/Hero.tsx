@@ -10,20 +10,20 @@ const content = {
     intro: '저는 20년 넘게 **블록체인, Web3, DID, AI** 분야에서 연구와 개발, 그리고 R&D 리더십을 맡아온 엔지니어이자 CTO입니다.',
     current: {
       title: '현재는 **CPLABS CTO**로서',
-      description: 'Web3 플랫폼 아키텍처, DID·인증 기술, 블록체인 특허 기반 서비스 기획을 총괄하고 있습니다. **Metadium**, **Wemix** 등 주요 프로젝트의 기술 아키텍처를 리딩하며, AI 연애 트레이닝 서비스 \'대파\' 개발을 진행하고 있습니다. 또한 Coinplug와 Metadium의 CTO로 활동하며 국내 블록체인 산업의 기술적 기반을 만드는 데 기여해왔습니다.',
+      description: 'Web3 플랫폼 아키텍처, DID·인증 기술, 블록체인 특허 기반 서비스 기획을 총괄하고 있습니다. **Metadium**, **Wemix** 등 주요 프로젝트의 기술 아키텍처를 리딩하며, AI 연애 트레이닝 서비스 \'대파\' 개발을 진행하고 있습니다.',
     },
     background: {
       title: '캐나다 UBC에서',
-      description: '**컴퓨터공학 박사(무선네트워크/보안)** 학위를 취득했고, 삼성전자 통신연구소에서 Senior Engineer로 경력을 시작했습니다. 이후 캐나다에서 Reading Town Learning Centre의 IT Lead로 활동하며 네트워크 인프라 구축 경험을 넓혔습니다.',
+      description: '**컴퓨터공학 박사(무선네트워크/보안)** 학위를 취득했고, 삼성전자 통신연구소에서 Senior Engineer로 경력을 시작했습니다.',
     },
     interests: {
-      title: '저의 관심사는 다음과 같습니다:',
+      title: '관심 분야',
       items: [
         'Web3·블록체인 인프라 설계',
         'DID/SSI 및 디지털 아이덴티티',
-        'AI 에이전트, 멀티모달 모델 활용',
-        '공공·교통 시스템(MLFF) 기술 설계',
-        '장기적인 기술·사회 변화에 대한 글쓰기',
+        'AI 에이전트, 멀티모달 모델',
+        '공공·교통 시스템(MLFF)',
+        '기술·사회 변화에 대한 글쓰기',
       ],
     },
   },
@@ -33,20 +33,20 @@ const content = {
     intro: '— a technologist, engineer, and CTO with over 20 years of experience across **Blockchain, Web3, DID, and AI**.',
     current: {
       title: 'I currently serve as the **CTO of CPLABS**,',
-      description: 'where I lead Web3 platform architecture, decentralized identity (DID/SSI) technologies, and blockchain patent-based service planning. I lead the technical architecture for major projects including **Metadium** and **Wemix**, and am developing the AI-powered dating training service "Daepa." I previously worked as the CTO of **Coinplug** and **Metadium**, contributing to the early growth of Korea\'s blockchain ecosystem and the development of decentralized identity infrastructure.',
+      description: 'leading Web3 platform architecture, decentralized identity (DID/SSI) technologies, and blockchain patent-based services. I lead the technical architecture for **Metadium** and **Wemix**, and am developing the AI dating training service "Daepa."',
     },
     background: {
       title: 'I received my',
-      description: '**Ph.D. in Electrical and Computer Engineering** from the University of British Columbia, specializing in wireless networking and network security. Before that, I worked as a Senior Engineer at Samsung Electronics, and later as the IT Lead for twelve branches of Reading Town Learning Centre in Metro Vancouver.',
+      description: '**Ph.D. in Electrical and Computer Engineering** from UBC, specializing in wireless networking and network security. Previously a Senior Engineer at Samsung Electronics.',
     },
     interests: {
-      title: 'My areas of interest include:',
+      title: 'Areas of interest',
       items: [
-        'Web3 and Blockchain Infrastructure',
+        'Web3 & Blockchain Infrastructure',
         'Decentralized Identity (DID/SSI)',
-        'AI Agents & multimodal model integration',
-        'Public and mobility systems (MLFF)',
-        'Long-form writing about technology and society',
+        'AI Agents & multimodal models',
+        'Public & mobility systems (MLFF)',
+        'Long-form writing on tech & society',
       ],
     },
   },
@@ -54,136 +54,125 @@ const content = {
 
 export default function Hero() {
   const [lang] = useLanguage();
-
   const t = content[lang];
 
   return (
-    <section className="relative overflow-hidden -mx-4 sm:-mx-6 px-4 sm:px-6 py-16 sm:py-24 md:py-32">
-      {/* DALL-E Background Image - More Visible */}
-      <div 
-        className="absolute inset-0 -z-20"
-        style={{
-          backgroundImage: `url('/hero-background.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(20px) brightness(0.85) saturate(1.0)',
-          transform: 'scale(1.05)',
-          opacity: 0.8,
-        }}
-      />
-      
-      {/* Gradient Background Overlay - Much More Transparent */}
-      <div 
-        className="absolute inset-0 -z-10"
-        style={{
-          background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.4) 0%, rgba(241, 245, 249, 0.4) 100%)',
-        }}
-      />
-      <div 
-        className="absolute inset-0 -z-10 dark:block hidden"
-        style={{
-          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.3) 0%, rgba(30, 41, 59, 0.3) 100%)',
-        }}
-      />
-      
-      {/* Noise Texture Overlay */}
-      <div 
-        className="absolute inset-0 -z-10 opacity-[0.04] dark:opacity-[0.06]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          backgroundSize: '200px 200px',
-        }}
-      />
-      
-      {/* Network Pattern - More Visible */}
-      <svg 
-        className="absolute inset-0 -z-10 w-full h-full opacity-20 dark:opacity-25"
-      >
-        <defs>
-          <pattern id="network-hero" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-            <circle cx="25" cy="25" r="2" fill="#3b82f6" opacity="0.4" />
-            <circle cx="95" cy="35" r="2" fill="#8b5cf6" opacity="0.4" />
-            <circle cx="60" cy="85" r="2" fill="#14b8a6" opacity="0.4" />
-            <circle cx="15" cy="70" r="1.5" fill="#3b82f6" opacity="0.3" />
-            <circle cx="85" cy="90" r="1.5" fill="#8b5cf6" opacity="0.3" />
-            <line x1="25" y1="25" x2="95" y2="35" stroke="#3b82f6" strokeWidth="0.8" opacity="0.2" />
-            <line x1="25" y1="25" x2="60" y2="85" stroke="#8b5cf6" strokeWidth="0.8" opacity="0.2" />
-            <line x1="95" y1="35" x2="60" y2="85" stroke="#14b8a6" strokeWidth="0.8" opacity="0.2" />
-            <line x1="15" y1="70" x2="60" y2="85" stroke="#3b82f6" strokeWidth="0.6" opacity="0.15" />
-            <line x1="85" y1="90" x2="60" y2="85" stroke="#8b5cf6" strokeWidth="0.6" opacity="0.15" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#network-hero)" />
-      </svg>
-      
-      {/* Color Gradient Overlay */}
-      <div 
-        className="absolute inset-0 -z-10"
-        style={{
-          background: `
-            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-            radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
-            radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.08) 0%, transparent 60%)
-          `,
-        }}
-      />
-      
-      <div className="container-narrow space-y-8 sm:space-y-12 relative z-10">
-        <div className="space-y-4 sm:space-y-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-            <span className="block">{t.greeting}</span>
-            <span className="block mt-1 sm:mt-2">{t.name}</span>
+    <section style={{ paddingTop: '80px', paddingBottom: '96px' }}>
+      <div className="container-narrow space-y-10">
+
+        {/* Headline */}
+        <div className="space-y-4">
+          <h1
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontWeight: 500,
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              lineHeight: 1.10,
+              letterSpacing: '-0.02em',
+              color: '#141413',
+            }}
+            className="dark:text-ivory"
+          >
+            <span style={{ color: '#87867f', fontSize: '0.7em', fontWeight: 400 }} className="block mb-2">
+              {t.greeting}
+            </span>
+            {t.name}
           </h1>
-          <p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-2xl" 
+          <p
+            style={{ fontSize: '1.125rem', color: '#5e5d59', lineHeight: 1.60, maxWidth: '600px' }}
+            className="dark:text-warm-silver"
             dangerouslySetInnerHTML={{ __html: formatText(t.intro) }}
           />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 pt-8 sm:pt-12">
-          <div className="p-4 sm:p-6 rounded-lg border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-xl bg-white/60 dark:bg-gray-900/40 hover:bg-white/80 dark:hover:bg-gray-900/60 transition-all shadow-sm">
-            <h3 className="text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2 sm:mb-3">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* Current */}
+          <div
+            style={{
+              padding: '24px',
+              borderRadius: '12px',
+              border: '1px solid #f0eee6',
+              background: '#faf9f5',
+              boxShadow: 'rgba(0,0,0,0.05) 0px 4px 24px',
+            }}
+            className="dark:bg-dark-surface dark:border-border-warm/20"
+          >
+            <p
+              style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.08em', color: '#87867f', textTransform: 'uppercase', marginBottom: '10px' }}
+            >
               {lang === 'ko' ? '현재' : 'Current'}
-            </h3>
-            <p 
-              className="text-sm sm:text-base text-gray-900 dark:text-gray-100 font-medium mb-2" 
+            </p>
+            <p
+              style={{ fontSize: '0.975rem', fontWeight: 500, color: '#141413', marginBottom: '8px', lineHeight: 1.4 }}
+              className="dark:text-ivory"
               dangerouslySetInnerHTML={{ __html: formatText(t.current.title) }}
             />
-            <p 
-              className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed" 
+            <p
+              style={{ fontSize: '0.875rem', color: '#5e5d59', lineHeight: 1.60 }}
+              className="dark:text-warm-silver"
               dangerouslySetInnerHTML={{ __html: formatText(t.current.description) }}
             />
           </div>
 
-          <div className="p-4 sm:p-6 rounded-lg border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-xl bg-white/60 dark:bg-gray-900/40 hover:bg-white/80 dark:hover:bg-gray-900/60 transition-all shadow-sm">
-            <h3 className="text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2 sm:mb-3">
+          {/* Background */}
+          <div
+            style={{
+              padding: '24px',
+              borderRadius: '12px',
+              border: '1px solid #f0eee6',
+              background: '#faf9f5',
+              boxShadow: 'rgba(0,0,0,0.05) 0px 4px 24px',
+            }}
+            className="dark:bg-dark-surface dark:border-border-warm/20"
+          >
+            <p
+              style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.08em', color: '#87867f', textTransform: 'uppercase', marginBottom: '10px' }}
+            >
               {lang === 'ko' ? '배경' : 'Background'}
-            </h3>
-            <p className="text-sm sm:text-base text-gray-900 dark:text-gray-100 font-medium mb-2">
+            </p>
+            <p
+              style={{ fontSize: '0.975rem', fontWeight: 500, color: '#141413', marginBottom: '8px', lineHeight: 1.4 }}
+              className="dark:text-ivory"
+            >
               {t.background.title}
             </p>
-            <p 
-              className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed" 
+            <p
+              style={{ fontSize: '0.875rem', color: '#5e5d59', lineHeight: 1.60 }}
+              className="dark:text-warm-silver"
               dangerouslySetInnerHTML={{ __html: formatText(t.background.description) }}
             />
           </div>
         </div>
 
-        <div className="pt-6 sm:pt-8">
-          <h3 className="text-xs sm:text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3 sm:mb-4">
+        {/* Interest tags */}
+        <div>
+          <p
+            style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.08em', color: '#87867f', textTransform: 'uppercase', marginBottom: '12px' }}
+          >
             {t.interests.title}
-          </h3>
-          <div className="flex flex-wrap gap-2">
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {t.interests.items.map((item, idx) => (
-              <span key={idx} className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+              <span
+                key={idx}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '24px',
+                  fontSize: '0.8125rem',
+                  color: '#4d4c48',
+                  background: '#e8e6dc',
+                  boxShadow: '0px 0px 0px 1px #d1cfc5',
+                }}
+                className="dark:bg-dark-surface dark:text-warm-silver"
+              >
                 {item}
               </span>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
 }
-

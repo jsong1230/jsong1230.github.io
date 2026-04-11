@@ -7,16 +7,33 @@
     @apply antialiased;
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply bg-white dark:bg-black text-gray-900 dark:text-gray-100;
+    background-color: #f5f4ed;
+    color: #141413;
     @apply transition-colors duration-200;
     font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.60;
   }
-  
+
+  .dark body {
+    background-color: #141413;
+    color: #faf9f5;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 500;
+    line-height: 1.20;
     letter-spacing: -0.02em;
+  }
+
+  a {
+    color: #c96442;
+  }
+
+  .dark a {
+    color: #d97757;
   }
 }
 
@@ -24,12 +41,12 @@
   .container-narrow {
     @apply max-w-content mx-auto px-4 sm:px-6;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Skip link for accessibility */
+  /* Skip link */
   .sr-only {
     position: absolute;
     width: 1px;
@@ -41,7 +58,6 @@
     white-space: nowrap;
     border-width: 0;
   }
-
   .sr-only:focus {
     position: static;
     width: auto;
@@ -53,24 +69,46 @@
     white-space: normal;
   }
 
+  /* Hero */
   .hero-background {
     position: relative;
     overflow: hidden;
+    background-color: #f5f4ed;
   }
-
+  .dark .hero-background {
+    background-color: #141413;
+  }
   .hero-content {
     position: relative;
     z-index: 10;
   }
 
-  /* Light mode: subtle gradient */
-  .hero-background {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  /* Claude-style button */
+  .btn-primary {
+    background-color: #c96442;
+    color: #faf9f5;
+    padding: 9px 20px;
+    border-radius: 12px;
+    font-size: 0.94rem;
+    font-weight: 500;
+    box-shadow: #c96442 0px 0px 0px 0px, #c96442 0px 0px 0px 1px;
+    transition: opacity 0.15s;
+  }
+  .btn-primary:hover {
+    opacity: 0.88;
   }
 
-  /* Dark mode: darker gradient */
-  .dark .hero-background {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  .btn-secondary {
+    background-color: #e8e6dc;
+    color: #4d4c48;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.94rem;
+    font-weight: 500;
+    box-shadow: #e8e6dc 0px 0px 0px 0px, #d1cfc5 0px 0px 0px 1px;
+    transition: opacity 0.15s;
+  }
+  .btn-secondary:hover {
+    opacity: 0.80;
   }
 }
-
