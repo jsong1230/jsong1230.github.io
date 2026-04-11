@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { spawnSync } from 'child_process';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 
@@ -8,7 +9,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load environment variables
-// Try .env.local first (for GitHub Actions), then fallback to .env (for local)
 const envLocalPath = path.join(__dirname, '../.env.local');
 const envPath = path.join(__dirname, '../.env');
 if (fs.existsSync(envLocalPath)) {
@@ -18,143 +18,124 @@ if (fs.existsSync(envLocalPath)) {
 }
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || 'local',
+  baseURL: 'http://192.168.0.151:8001/v1',
 });
 
-// Extract topics from About, Work, Publications data
-function extractTopics(lang = 'ko') {
-  const isKorean = lang === 'ko';
-  const topics = [];
-  
-  if (isKorean) {
-    // About topics (Korean)
-    topics.push({
-      category: 'About',
-      topics: [
-        '블록체인, Web3, DID, AI 분야의 20년 경력',
-        'UBC Ph.D. (무선 네트워킹, 네트워크 보안)',
-        '과기정통부장관 표창장 (2023)',
-        'JB금융 핀테크 경연대회 최우수상 (2015)',
-        'AI를 이용한 shorts와 long forms 제작',
-      ],
-    });
-    
-    // Work topics (Korean)
-    topics.push({
-      category: 'Work',
-      topics: [
-        'CPLABS - Web3 플랫폼 아키텍처, DID/SSI 기술 개발',
-        'CPLABS - 대파(Daepa) AI 연애 트레이닝 서비스',
-        'CPLABS - MLFF(말레이시아 자유통행) 기술 리뷰 및 PoC',
-        'CPLABS - 320+ 블록체인 특허 기반 플랫폼',
-        'CPLABS - 국내 최초 DID/블록체인 상용화 사례',
-        'Metadium - 블록체인 기반 자기주권 신원(SSI) 인프라',
-        'Samsung - 통신/무선 네트워크 연구개발',
-        'Reading Town - 메트로 밴쿠버 12개 지점 네트워크 인프라',
-      ],
-    });
-    
-    // Publications topics (Korean)
-    topics.push({
-      category: 'Publications',
-      topics: [
-        '320+ 블록체인 특허 보유',
-        'UBC 논문 다수 (무선 네트워킹, 네트워크 보안)',
-        '비트코인 및 블록체인 관련 번역서 및 공저 3권',
-      ],
-    });
-  } else {
-    // About topics (English)
-    topics.push({
-      category: 'About',
-      topics: [
-        '20 years of experience in Blockchain, Web3, DID, AI',
-        'UBC Ph.D. (Wireless Networking, Network Security)',
-        'Minister of Science and ICT Commendation (2023)',
-        'JB Financial Fintech Competition Excellence Award (2015)',
-        'Creating shorts and long forms using AI',
-      ],
-    });
-    
-    // Work topics (English)
-    topics.push({
-      category: 'Work',
-      topics: [
-        'CPLABS - Web3 platform architecture, DID/SSI technology development',
-        'CPLABS - Daepa AI dating training service',
-        'CPLABS - MLFF (Malaysia Free Flow) technology review and PoC',
-        'CPLABS - Platform based on 320+ blockchain patents',
-        'CPLABS - First-in-Korea DID/blockchain commercialization cases',
-        'Metadium - Blockchain-based Self-Sovereign Identity (SSI) infrastructure',
-        'Samsung - Telecommunications/wireless network R&D',
-        'Reading Town - Metro Vancouver 12-branch network infrastructure',
-      ],
-    });
-    
-    // Publications topics (English)
-    topics.push({
-      category: 'Publications',
-      topics: [
-        '320+ blockchain patents',
-        'Multiple UBC papers (Wireless Networking, Network Security)',
-        '3 translated and co-authored books on Bitcoin and blockchain',
-      ],
-    });
+// ── Git activity collection ───────────────────────────────────────────────────
+
+const GIT_SCAN_SCRIPT = (date) => `
+find ~/dev -maxdepth 4 -name ".git" -type d 2>/dev/null | while IFS= read -r gitdir; do
+  repo=$(dirname "$gitdir")
+  reponame=$(basename "$repo")
+  commits=$(git -C "$repo" log --since="${date} 00:00:00" --until="${date} 23:59:59" --format="%s" 2>/dev/null)
+  if [ -n "$commits" ]; then
+    echo "[$reponame]"
+    echo "$commits"
+    echo ""
+  fi
+done
+`;
+
+function runLocal(script) {
+  const result = spawnSync('bash', ['-c', script], {
+    encoding: 'utf-8',
+    timeout: 15000,
+  });
+  return result.stdout || '';
+}
+
+function runRemote(host, script) {
+  const result = spawnSync('ssh', [
+    '-o', 'ConnectTimeout=5',
+    '-o', 'StrictHostKeyChecking=no',
+    '-o', 'BatchMode=yes',
+    host,
+    'bash -s',
+  ], {
+    input: script,
+    encoding: 'utf-8',
+    timeout: 20000,
+  });
+  return result.stdout || '';
+}
+
+function collectGitActivity(date) {
+  const script = GIT_SCAN_SCRIPT(date);
+  const machines = [
+    { name: 'gram-jsong', runner: () => runLocal(script) },
+    { name: 'mini-jsong', runner: () => runRemote('mini-jsong', script) },
+  ];
+
+  const results = [];
+  for (const { name, runner } of machines) {
+    try {
+      const output = runner().trim();
+      if (output) {
+        results.push({ machine: name, activity: output });
+        console.log(`Collected activity from ${name}`);
+      } else {
+        console.log(`No activity on ${name} for ${date}`);
+      }
+    } catch (e) {
+      console.warn(`Could not collect activity from ${name}: ${e.message}`);
+    }
   }
-  
-  return topics;
+  return results;
 }
 
-// Select a random topic
-function selectRandomTopic(topics) {
-  const allTopics = topics.flatMap(cat => cat.topics.map(topic => ({
-    category: cat.category,
-    topic: topic,
-  })));
-  
-  const randomIndex = Math.floor(Math.random() * allTopics.length);
-  return allTopics[randomIndex];
+function formatActivityForPrompt(activityList) {
+  return activityList.map(({ machine, activity }) =>
+    `## ${machine}\n${activity}`
+  ).join('\n\n');
 }
 
-// Generate blog post using OpenAI
-async function generatePost(topic, lang) {
-  const isKorean = lang === 'ko';
-  
-  const systemPrompt = isKorean
-    ? `당신은 블록체인, Web3, DID, AI 분야의 전문가인 송주한(Jeffrey Joo-Han Song)입니다. 
+// ── Post generation ───────────────────────────────────────────────────────────
+
+const SYSTEM_PROMPT = {
+  ko: `당신은 블록체인, Web3, DID, AI 분야의 전문가인 송주한(Jeffrey Joo-Han Song)입니다.
 20년 이상의 경력을 가진 CTO이자 엔지니어로서, 기술적 깊이와 실무 경험을 바탕으로 글을 작성합니다.
-주제에 대해 전문적이면서도 읽기 쉽고, 개인적인 경험과 인사이트를 포함한 블로그 포스트를 작성해주세요.
+전문적이면서도 읽기 쉽고, 개인적인 경험과 인사이트를 포함한 블로그 포스트를 작성해주세요.
 포스트는 800-1200자 정도의 분량으로 작성해주세요.
 
 **중요: 회사명 사용 규칙**
-- 2023년에 회사명이 변경되었으므로, 모든 포스트에서 반드시 다음 규칙을 따르세요:
-  - 한글 포스트: "코인플러그" 또는 "Coinplug" → "씨피랩스"로 작성
-  - 영어 포스트: "Coinplug" → "CPLABS"로 작성
-- 과거 시점을 언급할 때도 현재 회사명(씨피랩스/CPLABS)을 사용하세요.`
-    : `You are Jeffrey Joo-Han Song, an expert in blockchain, Web3, DID, and AI fields.
+- "코인플러그" 또는 "Coinplug" → "씨피랩스"로 작성
+- 과거 시점을 언급할 때도 현재 회사명(씨피랩스)을 사용하세요.`,
+
+  en: `You are Jeffrey Joo-Han Song, an expert in blockchain, Web3, DID, and AI fields.
 As a CTO and engineer with over 20 years of experience, write blog posts based on technical depth and practical experience.
-Write professional yet readable blog posts that include personal experiences and insights on the topic.
+Write professional yet readable blog posts that include personal experiences and insights.
 The post should be approximately 500-800 words.
 
 **IMPORTANT: Company Name Usage Rule**
-- The company name was changed in 2023, so you must follow this rule in all posts:
-  - English posts: Always use "CPLABS" instead of "Coinplug"
-- Even when referring to past events, use the current company name (CPLABS).`;
+- Always use "CPLABS" instead of "Coinplug", even when referring to past events.`,
+};
 
-  const topicTitle = typeof topic.topic === 'string' ? topic.topic : topic.topic.title;
-  const userPrompt = isKorean
-    ? `다음 주제에 대해 블로그 포스트를 작성해주세요:\n\n${topicTitle}\n\n카테고리: ${topic.category}\n\n개인적인 경험, 기술적 인사이트, 그리고 실무에서의 적용 사례를 포함해서 작성해주세요.`
-    : `Please write a blog post on the following topic:\n\n${topicTitle}\n\nCategory: ${topic.category}\n\nPlease include personal experiences, technical insights, and practical application cases.`;
+async function generatePost(lang, gitActivity) {
+  const isKorean = lang === 'ko';
+  const systemPrompt = SYSTEM_PROMPT[lang];
 
-  // If using placeholder API key, skip real OpenAI call
-  if (process.env.OPENAI_API_KEY === undefined || process.env.OPENAI_API_KEY === '' || process.env.OPENAI_API_KEY === 'test-key') {
-    console.log('Using placeholder OpenAI key – returning dummy post content');
-    return `This is a placeholder post about ${topicTitle} (category: ${topic.category}).`;
+  let userPrompt;
+  if (gitActivity && gitActivity.length > 0) {
+    const activityText = formatActivityForPrompt(gitActivity);
+    userPrompt = isKorean
+      ? `오늘 진행한 개발 작업을 정리해서 블로그 포스트로 작성해주세요.\n어떤 문제를 풀었는지, 어떤 기술적 결정을 했는지, 배운 점이나 인사이트를 포함해주세요.\n\n**오늘의 git 커밋 내역:**\n\n${activityText}`
+      : `Please write a blog post summarizing today's development work.\nInclude what problems were solved, what technical decisions were made, and any learnings or insights.\n\n**Today's git commits:**\n\n${activityText}`;
+  } else {
+    // Fallback: random topic from background
+    const fallbackTopics = isKorean
+      ? ['블록체인과 DID 기술의 현재', 'AI 개발 도구의 진화', 'Web3 플랫폼 아키텍처 설계']
+      : ['The current state of blockchain and DID', 'Evolution of AI development tools', 'Web3 platform architecture design'];
+    const topic = fallbackTopics[Math.floor(Math.random() * fallbackTopics.length)];
+    userPrompt = isKorean
+      ? `다음 주제에 대해 개인적인 경험과 인사이트를 담은 블로그 포스트를 작성해주세요:\n\n${topic}`
+      : `Write a blog post with personal experience and insights on:\n\n${topic}`;
+    console.log(`No git activity found. Using fallback topic: ${topic}`);
   }
 
   try {
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'gemma-4-31b-it',
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
@@ -165,97 +146,75 @@ The post should be approximately 500-800 words.
 
     const content = completion.choices[0]?.message?.content;
     if (!content || content.trim().length === 0) {
-      console.warn('OpenAI returned empty content. Using placeholder.');
-      return `This is a placeholder post about ${topicTitle} (category: ${topic.category}).`;
+      throw new Error('Empty response from model');
     }
-
     return content;
   } catch (error) {
-    // Fallback: any error returns placeholder post content
     console.error('Error generating post:', error);
-    console.warn('Using placeholder content.');
-    return `This is a placeholder post about ${topicTitle} (category: ${topic.category}).`;
+    return null;
   }
 }
 
-// Generate title from content (placeholder when using test key)
 async function generateTitle(content, lang) {
   const isKorean = lang === 'ko';
-  if (process.env.OPENAI_API_KEY === undefined || process.env.OPENAI_API_KEY === '' || process.env.OPENAI_API_KEY === 'test-key') {
-    console.log('Using placeholder OpenAI key – returning dummy title');
-    return isKorean ? '플레이스홀더 제목' : 'Placeholder Title';
-  }
-
   const prompt = isKorean
     ? `다음 블로그 포스트 내용을 바탕으로 적절한 제목을 생성해주세요. 제목만 출력해주세요:\n\n${content.substring(0, 500)}`
     : `Generate an appropriate title based on the following blog post content. Output only the title:\n\n${content.substring(0, 500)}`;
 
   try {
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        { role: 'user', content: prompt },
-      ],
+      model: 'gemma-4-31b-it',
+      messages: [{ role: 'user', content: prompt }],
       temperature: 0.7,
       max_tokens: 50,
     });
-
     return completion.choices[0].message.content.trim().replace(/^["']|["']$/g, '');
-  } catch (error) {
-    console.warn('Error generating title. Using placeholder title.');
-    return isKorean ? '플레이스홀더 제목' : 'Placeholder Title';
+  } catch {
+    return isKorean ? '오늘의 개발 일지' : "Today's Dev Log";
   }
 }
 
-// Create MDX file
+// ── MDX file creation ─────────────────────────────────────────────────────────
+
 function createMDXFile(title, content, date, lang) {
-  // Generate slug from title
   const slugBase = title
     .toLowerCase()
     .replace(/[^a-z0-9가-힣\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
-  
+
   const slug = `${date}-${slugBase}`;
   const filename = `${slug}.mdx`;
   const filepath = path.join(__dirname, '../src/content/posts', filename);
 
-  // Extract excerpt (first 150 characters, remove markdown headers)
   let excerpt = content
-    .replace(/^#{1,6}\s+/gm, '') // Remove markdown headers (#, ##, ###, etc.)
-    .replace(/\n/g, ' ') // Replace newlines with spaces
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/\n/g, ' ')
     .trim()
     .substring(0, 150);
-  
-  if (excerpt.length >= 150) {
-    excerpt += '...';
-  }
 
-  const frontmatter = `---
+  if (excerpt.length >= 150) excerpt += '...';
+
+  const mdxContent = `---
 title: ${JSON.stringify(title)}
 date: "${date}"
 lang: ${lang}
 excerpt: ${JSON.stringify(excerpt)}
----`;
+---
 
-  const mdxContent = `${frontmatter}\n\n${content}`;
+${content}`;
 
   fs.writeFileSync(filepath, mdxContent, 'utf-8');
   return { filename, slug };
 }
 
-// Check if post already exists for today
 function postExistsForDate(date, lang) {
   const postsDir = path.join(__dirname, '../src/content/posts');
-  if (!fs.existsSync(postsDir)) {
-    return false;
-  }
-  
-  const files = fs.readdirSync(postsDir);
-  const datePrefix = date;
-  return files.some(file => {
-    if (!file.startsWith(datePrefix)) return false;
+  if (!fs.existsSync(postsDir)) return false;
+
+  return fs.readdirSync(postsDir).some(file => {
+    if (!file.startsWith(date)) return false;
     try {
       const content = fs.readFileSync(path.join(postsDir, file), 'utf-8');
       const langMatch = content.match(/lang:\s*(\w+)/);
@@ -266,71 +225,42 @@ function postExistsForDate(date, lang) {
   });
 }
 
-// Main function
+// ── Main ──────────────────────────────────────────────────────────────────────
+
 async function main() {
   try {
-    // Ensure posts directory exists
     const postsDir = path.join(__dirname, '../src/content/posts');
     if (!fs.existsSync(postsDir)) {
       fs.mkdirSync(postsDir, { recursive: true });
     }
 
-    // Generate posts for both languages
-    // Allow date override via command line argument (format: YYYY-MM-DD)
     const dateArg = process.argv[2];
-    const date = dateArg && /^\d{4}-\d{2}-\d{2}$/.test(dateArg) 
-      ? dateArg 
+    const date = dateArg && /^\d{4}-\d{2}-\d{2}$/.test(dateArg)
+      ? dateArg
       : new Date().toISOString().split('T')[0];
-    
-    // Check if posts already exist for today
+
     if (postExistsForDate(date, 'ko') && postExistsForDate(date, 'en')) {
       console.log('Posts for today already exist. Skipping generation.');
       return;
     }
 
-    // Select a single topic (use Korean topics for selection)
-    const koTopics = extractTopics('ko');
-    const selectedTopic = selectRandomTopic(koTopics);
-    const topicTitle = typeof selectedTopic.topic === 'string' ? selectedTopic.topic : selectedTopic.topic.title;
-    console.log(`Selected topic: ${topicTitle} (${selectedTopic.category})`);
-
-    // Find matching English topic
-    const enTopics = extractTopics('en');
-    const koCategory = koTopics.find(cat => cat.category === selectedTopic.category);
-    const enCategory = enTopics.find(cat => cat.category === selectedTopic.category);
-    
-    if (!koCategory || !enCategory) {
-      throw new Error('Category not found in both languages');
-    }
-    
-    // Find topic index by comparing title (since topic may be a string or object)
-    const selectedTopicTitle = typeof selectedTopic.topic === 'string' ? selectedTopic.topic : selectedTopic.topic.title;
-    const topicIndex = koCategory.topics.findIndex(t => {
-      const topicTitle = typeof t === 'string' ? t : t.title;
-      return topicTitle === selectedTopicTitle;
-    });
-    if (topicIndex === -1 || !enCategory.topics[topicIndex]) {
-      throw new Error('Topic not found in English topics');
-    }
-    
-    const enSelectedTopic = {
-      category: selectedTopic.category,
-      topic: enCategory.topics[topicIndex]
-    };
-    
-    const enTopicTitle = typeof enSelectedTopic.topic === 'string' ? enSelectedTopic.topic : enSelectedTopic.topic.title;
-    console.log(`English topic: ${enTopicTitle} (${enSelectedTopic.category})`);
+    // Collect today's git activity from gram-jsong + mini-jsong
+    console.log(`Collecting git activity for ${date}...`);
+    const gitActivity = collectGitActivity(date);
+    console.log(`Found activity from ${gitActivity.length} machine(s)`);
 
     // Generate Korean post
     console.log('Generating Korean post...');
-    const koContent = await generatePost(selectedTopic, 'ko');
+    const koContent = await generatePost('ko', gitActivity);
+    if (!koContent) throw new Error('Failed to generate Korean post');
     const koTitle = await generateTitle(koContent, 'ko');
     const koFile = createMDXFile(koTitle, koContent, date, 'ko');
     console.log(`Korean post created: ${koFile.filename}`);
 
-    // Generate English post (same topic, different language)
+    // Generate English post
     console.log('Generating English post...');
-    const enContent = await generatePost(enSelectedTopic, 'en');
+    const enContent = await generatePost('en', gitActivity);
+    if (!enContent) throw new Error('Failed to generate English post');
     const enTitle = await generateTitle(enContent, 'en');
     const enFile = createMDXFile(enTitle, enContent, date, 'en');
     console.log(`English post created: ${enFile.filename}`);
@@ -343,4 +273,3 @@ async function main() {
 }
 
 main();
-
