@@ -137,6 +137,17 @@ function parseVTT(vtt) {
   return text.join(' ');
 }
 
+// ── MDX sanitization ─────────────────────────────────────────────────────────
+
+// Replace <Korean/non-latin text> with 『text』 to prevent MDX parse errors
+function sanitizeMDX(content) {
+  return content.replace(/<([^>a-zA-Z\/!][^>]*)>/g, (match, inner) => {
+    // If it looks like a real HTML/JSX tag (starts with letter), keep it
+    if (/^[a-zA-Z]/.test(inner)) return match;
+    return `『${inner}』`;
+  });
+}
+
 // ── Generate post ─────────────────────────────────────────────────────────────
 
 async function generateBookPost(transcript, videoTitle, lang) {
@@ -207,15 +218,19 @@ function createBookMDX(title, content, date, lang, videoId, videoTitle) {
     ? `\n\n---\n\n> 이 포스트는 유튜브 채널 [BeyondPage](${videoUrl})의 "${videoTitle}" 영상을 참고하여 작성되었습니다.`
     : `\n\n---\n\n> This post is based on the video ["${videoTitle}"](${videoUrl}) from the BeyondPage YouTube channel.`;
 
+  const safeContent = sanitizeMDX(content);
+  const safeTitle   = title.replace(/<([^>a-zA-Z\/!][^>]*)>/g, '『$1』');
+  const safeExcerpt = excerpt.replace(/<([^>a-zA-Z\/!][^>]*)>/g, '『$1』');
+
   fs.writeFileSync(filepath, `---
-title: ${JSON.stringify(title)}
+title: ${JSON.stringify(safeTitle)}
 date: "${date}"
 lang: ${lang}
-excerpt: ${JSON.stringify(excerpt)}
+excerpt: ${JSON.stringify(safeExcerpt)}
 tags: ["book"]
 ---
 
-${content}${videoRef}
+${safeContent}${videoRef}
 `);
   return filename;
 }

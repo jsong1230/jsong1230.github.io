@@ -1,0 +1,372 @@
+{
+  "generated_at": "2026-04-11T11:44:36.754Z",
+  "machines": [
+    {
+      "name": "gram-jsong",
+      "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-04-11",
+          "last_msg": "feat: Add daily code review post (Korean only)",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          "commits_7d": 8,
+          "commits_30d": 8
+        },
+        {
+          "name": "nipa-proposal",
+          "last_date": "2026-04-10",
+          "last_msg": "docs: D2 학습 완료 기록 + 자동 조치 L1/L2/L3 보완 포인트 추가",
+          "branch": "master",
+          "activity": [
+            4,
+            0,
+            4,
+            0,
+            4,
+            1,
+            0
+          ],
+          "commits_7d": 13,
+          "commits_30d": 139
+        },
+        {
+          "name": "minidaepa",
+          "last_date": "2026-04-10",
+          "last_msg": "fix: AI 응답 후 입력창 자동 포커스 복원",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          "commits_7d": 7,
+          "commits_30d": 7
+        },
+        {
+          "name": "trump-code",
+          "last_date": "2026-04-10",
+          "last_msg": "chore: daily pipeline data update 2026-04-10",
+          "branch": "main",
+          "activity": [
+            108,
+            1,
+            0,
+            1,
+            1,
+            2,
+            0
+          ],
+          "commits_7d": 118,
+          "commits_30d": 470
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-10",
+          "last_msg": "4/10 일지: OpenClaw 전체 설정 변경, GPU 서버 점검, 사업화 리서�",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 15
+        },
+        {
+          "name": "MetaPool",
+          "last_date": "2026-04-10",
+          "last_msg": "test: 원격 i18n 전환에 따른 테스트 업데이트",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 10
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-04-09",
+          "last_msg": "fix: add nil guards for FeePayer deref and parentBlock in worker",
+          "branch": "test/server36-validation",
+          "activity": [
+            0,
+            5,
+            23,
+            22,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 51,
+          "commits_30d": 51
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-04-09",
+          "last_msg": "feat: notebooklm 안정성 개선 + 예약 업로드 + translations 추가",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 30
+        },
+        {
+          "name": "timemachine",
+          "last_date": "2026-04-06",
+          "last_msg": "feat: 방송/음악 카테고리 분리",
+          "branch": "main",
+          "activity": [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 6
+        },
+        {
+          "name": "Agent-Reach",
+          "last_date": "2026-04-02",
+          "last_msg": "docs: update all remaining files for v1.4.0 upstream migrations",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 57
+        },
+        {
+          "name": "cps2_frontend",
+          "last_date": "2026-04-01",
+          "last_msg": "reference 폴더 추가 - 수수료 페이지 재현 자료",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 1
+        },
+        {
+          "name": "BORA_hack",
+          "last_date": "2026-04-01",
+          "last_msg": "v13: 최종정리본 + 해킹정리 PDF 기반 전면 재작성 — 중앙화 �",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 19
+        },
+        {
+          "name": "family-balance-battle",
+          "last_date": "2026-03-31",
+          "last_msg": "fix: 5가지 버그 수정",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 37
+        }
+      ]
+    },
+    {
+      "name": "mini-jsong",
+      "repos": [
+        {
+          "name": "booksummary",
+          "last_date": "2026-04-10",
+          "last_msg": "fix: --login 시 Chrome 프로필도 함께 생성하도록 수정",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 31
+        },
+        {
+          "name": "Carebit",
+          "last_date": "2026-04-10",
+          "last_msg": "docs: update README for server-side MVP architecture",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 20
+        },
+        {
+          "name": "MetaPool",
+          "last_date": "2026-04-10",
+          "last_msg": "feat: 다크 테마 디자인 리뉴얼 + 어드민 i18n + LAN 접속 지원",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 8
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-10",
+          "last_msg": "4/10 일지 + AI 트렌드 리서치 + 플랫폼 스캔 + CLAUDE.md skill routin",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 12
+        },
+        {
+          "name": "MetaLotto",
+          "last_date": "2026-04-09",
+          "last_msg": "fix(frontend): locale별 브라우저 탭 제목 다국어 지원",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 10
+        },
+        {
+          "name": "nipa-proposal",
+          "last_date": "2026-04-09",
+          "last_msg": "fix: study-notes Remediation 페이지 참조 수정 (p.21~22 → p.24) + NTIS �",
+          "branch": "master",
+          "activity": [
+            2,
+            0,
+            4,
+            0,
+            4,
+            0,
+            0
+          ],
+          "commits_7d": 12,
+          "commits_30d": 138
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-04-08",
+          "last_msg": "Merge branch 'test/server36-validation' into feature/geth-v1.13.14",
+          "branch": "feature/geth-v1.13.14",
+          "activity": [
+            0,
+            7,
+            2,
+            17,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 26,
+          "commits_30d": 26
+        },
+        {
+          "name": "BORA_hack",
+          "last_date": "2026-04-01",
+          "last_msg": "v13: 최종정리본 + 해킹정리 PDF 기반 전면 재작성 — 중앙화 �",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 19
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import dashboardData from '../data/dashboard.json';
+
+const url = Astro.url;
+const lang = (url.searchParams.get('lang') === 'en') ? 'en' : 'ko';
+
+const { generated_at, machines } = dashboardData;
+const generatedDate = new Date(generated_at).toLocaleString(
+  lang === 'ko' ? 'ko-KR' : 'en-US',
+  { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }
+);
+
+const totalRepos   = machines.reduce((s, m) => s + m.repos.length, 0);
+const totalCommits = machines.reduce((s, m) => s + m.repos.reduce((r, repo) => r + repo.commits_7d, 0), 0);
+const activeRepos  = machines.reduce((s, m) => s + m.repos.filter(r => r.commits_7d > 0).length, 0);
+
+const t = {
+  title:       lang === 'ko' ? '프로젝트 대시보드' : 'Project Dashboard',
+  subtitle:    lang === 'ko' ? '진행 중인 레포지토리 현황' : 'Active repository overview',
+  updated:     lang === 'ko' ? `마지막 업데이트: ${generatedDate}` : `Last updated: ${generatedDate}`,
+  totalRepos:  lang === 'ko' ? '전체 레포' : 'Repos',
+  activeRepos: lang === 'ko' ? '활성 레포 (7일)' : 'Active (7d)',
+  commits7d:   lang === 'ko' ? '커밋 (7일)' : 'Commits (7d)',
+  lastCommit:  lang === 'ko' ? '마지막 커밋' : 'Last commit',
+  activity:    lang === 'ko' ? '최근 7일' : 'Last 7 days',
+};
+---
+
+<BaseLayout title={`${t.title} - Jeffrey Song`} lang={lang}>
+  <div class="container-narrow py-10 sm:py-16">
+
+    <!-- Header -->
+    <div class="mb-10">
+      <h1 class="font-serif text-3xl sm:text-4xl mb-2" style="font-weight:500;letter-spacing:-0.02em;color:#141413;" class="dark:text-ivory">
+        {t.title}
+      </h1>
+      <p style="color:#87867f;font-size:0.875rem;">{t.subtitle}</p>
+      <p style="color:#b0aea5;font-size:0.8125rem;margin-top:4px;">{t.updated}</p>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="grid grid-cols-3 gap-3 mb-10">
+      {[
+        { label: t.totalRepos,  value: totalRepos },
+        { label: t.activeRepos, value: activeRepos },
+        { label: t.commits7d,   value: totalCommits },
+      ].map(stat => (
+        <div style="background:#faf9f5;border:1px solid #f0eee6;border-radius:12px;padding:20px 24px;box-shadow:rgba(0,0,0,0.05) 0px 4px 24px;" class="dark:bg-dark-surface dark:border-border-warm/20">
+          <p style="font-size:1.75rem;font-weight:700;color:#141413;line-height:1;" class="dark:text-ivory">{stat.value}</p>
+          <p style="font-size:0.8125rem;color:#87867f;margin-top:4px;">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Per machine -->
+    {machines.map(machine => (
+      <div class="mb-10">
+        <!-- Machine header -->
+        <div class="flex items-center gap-3 mb-4">
+          <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#87867f;">
+            {machine.name}
+          </span>
+          <div style="flex:1;height:1px;background:#f0eee6;" class="dark:bg-dark-surface"></div>
+          <span style="font-size:0.75rem;color:#b0aea5;">{machine.repos.length} repos</span>
+        </div>
+
+        <!-- Repo list -->
+        <div class="space-y-2">
+          {machine.repos.map(repo => {
+            const maxActivity = Math.max(...repo.activity, 1);
+            const isActive = repo.commits_7d > 0;
+            return (
+              <div
+                style={`background:#faf9f5;border:1px solid #f0eee6;border-radius:10px;padding:16px 20px;box-shadow:rgba(0,0,0,0.03) 0px 2px 12px;opacity:${isActive ? 1 : 0.6};`}
+                class="dark:bg-dark-surface dark:border-border-warm/20"
+              >
+                <div class="flex items-start justify-between gap-4">
+                  <!-- Left: name + last commit -->
+                  <div style="min-width:0;flex:1;">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span style="font-weight:600;font-size:0.9375rem;color:#141413;" class="dark:text-ivory truncate">
+                        {repo.name}
+                      </span>
+                      <span style="font-size:0.7rem;padding:2px 8px;border-radius:20px;background:#e8e6dc;color:#5e5d59;white-space:nowrap;" class="dark:bg-near-black dark:text-warm-silver">
+                        {repo.branch}
+                      </span>
+                      {isActive && (
+                        <span style="width:7px;height:7px;border-radius:50%;background:#c96442;flex-shrink:0;"></span>
+                      )}
+                    </div>
+                    <p style="font-size:0.8125rem;color:#5e5d59;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" class="dark:text-warm-silver">
+                      {repo.last_msg}
+                    </p>
+                  </div>
+
+                  <!-- Right: stats + mini activity chart -->
+                  <div class="flex items-center gap-4 flex-shrink-0">
+                    <!-- 7d commit count -->
+                    <div style="text-align:right;">
+                      <p style="font-size:1.125rem;font-weight:700;color:#141413;line-height:1;" class="dark:text-ivory">
+                        {repo.commits_7d}
+                      </p>
+                      <p style="font-size:0.7rem;color:#87867f;">7d</p>
+                    </div>
+
+                    <!-- Mini bar chart (last 7 days) -->
+                    <div class="flex items-end gap-0.5" style="height:28px;">
+                      {repo.activity.map((count, i) => {
+                        const height = count === 0 ? 3 : Math.max(6, Math.round((count / maxActivity) * 28));
+                        const isToday = i === 6;
+                        return (
+                          <div
+                            style={`width:6px;height:${height}px;border-radius:2px;background:${isToday ? '#c96442' : (count > 0 ? '#d97757' : '#e8e6dc')};`}
+                            class={count === 0 ? 'dark:bg-dark-surface' : ''}
+                          ></div>
+                        );
+                      })}
+                    </div>
+
+                    <!-- Last commit date -->
+                    <span style="font-size:0.75rem;color:#87867f;min-width:70px;text-align:right;">
+                      {repo.last_date}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    ))}
+
+  </div>
+</BaseLayout>
