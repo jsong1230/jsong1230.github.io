@@ -1,0 +1,51 @@
+---
+title: "Engineering the Flow: Automating Insight and Refining Aesthetics"
+date: "2026-04-11"
+lang: en
+excerpt: "Engineering the Flow: Automating Insight and Refining Aesthetics  As a CTO and engineer with over two decades of experience, I’ve learned that the mos..."
+---
+
+# Engineering the Flow: Automating Insight and Refining Aesthetics
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most valuable asset a technical leader possesses is not just the ability to write code, but the ability to **document and reflect on the process**. However, the friction of manual documentation often leads to "documentation debt."
+
+Today’s work on my personal engineering blog was centered around one core philosophy: **reducing the friction between thought and publication.**
+
+### Automating the Retrospective: The Weekly Recap Engine
+
+The highlight of today's development was the implementation of an auto-generation system for weekly recaps. While daily logs are great for capturing granular details, the "big picture" often gets lost. I wanted a system that could synthesize a week's worth of technical struggles and wins into a cohesive narrative.
+
+I developed `generate-weekly-recap.js`, a script that orchestrates the following flow:
+1. **Collection**: It scans the `src/content/posts` directory, filtering MDX files by date and language.
+2. **Synthesis**: It feeds the aggregated daily bodies into a local **Gemma model** (via a local OpenAI-compatible API).
+3. **Publication**: It generates a structured MDX file, complete with links to the original daily posts, and pushes it to the repository via a shell wrapper.
+
+One interesting part of the implementation is how I handled the prompt engineering to maintain my professional voice:
+
+```javascript
+const systemPrompt = isKorean
+  ? `당신은 블록체인, Web3, DID, AI 분야의 전문가인 송주한(Jeffrey Joo-Han Song)입니다.
+한 주간의 개발 일지들을 모아 주간 회고 포스트를 작성합니다...`
+  : `You are Jeffrey Joo-Han Song, expert in blockchain, Web3, DID, and AI...`;
+```
+
+By leveraging a local LLM, I maintain full control over my data and the "temperature" of the output, ensuring the recaps feel like a reflection of my actual experience rather than generic AI filler.
+
+### Elevating the User Experience: Design and Distribution
+
+Technical depth is essential, but delivery matters. I spent a significant portion of the day refining the "visual language" of the site. I migrated the design system to a **warm parchment palette with serif typography**, moving away from the sterile "developer-dark-mode" look toward something that feels more like a digital journal or a technical manuscript.
+
+Beyond aesthetics, I focused on **discoverability**. I integrated `satori` to generate per-post Open Graph (OG) images dynamically. In the modern Web3 and AI ecosystem, how a link appears on X (Twitter) or LinkedIn is the first point of engagement. By automating OG generation in `src/pages/og/[slug].png.ts`, every technical deep-dive now has a professional visual identity without manual design work.
+
+### Technical Insights and Reflections
+
+Today's changes reflect a transition from **manual craftsmanship to systemic automation**. Whether it's migrating to a local Gemma model for daily post generation or configuring Giscus for community interaction, the goal is to build a "content pipeline" that mirrors a CI/CD pipeline.
+
+During my tenure at **CPLABS**, I always emphasized that the best systems are those that provide the most value with the least operational overhead. Applying that same enterprise-level thinking to a personal blog allows me to focus on the *what* (the technical insights) rather than the *how* (the publishing process).
+
+**Summary of today's stack changes:**
+- **AI**: Local Gemma model for synthesis $\rightarrow$ reduced API latency and cost.
+- **Frontend**: Astro + Tailwind $\rightarrow$ refined typography and parchment theme.
+- **DevOps**: Node.js scripts + Cron $\rightarrow$ automated weekly reflection cycle.
+
+The goal isn't just to automate writing, but to automate the *collection of evidence* of my growth as an engineer. Onward to next week.

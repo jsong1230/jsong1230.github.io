@@ -28,12 +28,23 @@ const GIT_SCAN_SCRIPT = (date) => `
 find ~/dev -maxdepth 4 -name ".git" -type d 2>/dev/null | while IFS= read -r gitdir; do
   repo=$(dirname "$gitdir")
   reponame=$(basename "$repo")
-  commits=$(git -C "$repo" log --since="${date} 00:00:00" --until="${date} 23:59:59" --format="%s" 2>/dev/null)
-  if [ -n "$commits" ]; then
-    echo "[$reponame]"
-    echo "$commits"
-    echo ""
+
+  # Commit messages + file stats
+  log=$(git -C "$repo" log --since="${date} 00:00:00" --until="${date} 23:59:59" --stat --format="commit: %s" 2>/dev/null)
+  if [ -z "$log" ]; then continue; fi
+
+  echo "[$reponame]"
+  echo "$log" | head -60
+
+  # Actual diff — skip binary, cap at 120 lines
+  diff=$(git -C "$repo" log --since="${date} 00:00:00" --until="${date} 23:59:59" -p --no-color 2>/dev/null \
+    | grep -v "^Binary" | head -120)
+  if [ -n "$diff" ]; then
+    echo "--- diff ---"
+    echo "$diff"
   fi
+
+  echo ""
 done
 `;
 
@@ -119,8 +130,8 @@ async function generatePost(lang, gitActivity) {
   if (gitActivity && gitActivity.length > 0) {
     const activityText = formatActivityForPrompt(gitActivity);
     userPrompt = isKorean
-      ? `오늘 진행한 개발 작업을 정리해서 블로그 포스트로 작성해주세요.\n어떤 문제를 풀었는지, 어떤 기술적 결정을 했는지, 배운 점이나 인사이트를 포함해주세요.\n\n**오늘의 git 커밋 내역:**\n\n${activityText}`
-      : `Please write a blog post summarizing today's development work.\nInclude what problems were solved, what technical decisions were made, and any learnings or insights.\n\n**Today's git commits:**\n\n${activityText}`;
+      ? `오늘 진행한 개발 작업을 정리해서 블로그 포스트로 작성해주세요.\n어떤 문제를 풀었는지, 어떤 기술적 결정을 했는지, 코드 변경에서 배운 점이나 인사이트를 포함해주세요.\ndiff에 나타난 실제 코드 변경 중 흥미로운 부분이 있으면 인용하거나 설명에 활용해주세요.\n\n**오늘의 git 커밋 및 코드 변경:**\n\n${activityText}`
+      : `Please write a blog post summarizing today's development work.\nCover what problems were solved, what technical decisions were made, and insights from the code changes.\nIf there are interesting parts in the diff, feel free to quote or reference them.\n\n**Today's git commits and code changes:**\n\n${activityText}`;
   } else {
     // Fallback: random topic from background
     const fallbackTopics = isKorean
