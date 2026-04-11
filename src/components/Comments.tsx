@@ -20,9 +20,9 @@ export default function Comments({ postId }: CommentsProps) {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.setAttribute('data-repo', 'jsong1230/jsong1230.github.io'); // Update this
-    script.setAttribute('data-repo-id', 'R_kgDOabcdefg'); // Get from giscus.app
-    script.setAttribute('data-category', 'Announcements'); // Or 'General'
-    script.setAttribute('data-category-id', 'DIC_kwDOabcdefg'); // Get from giscus.app
+    script.setAttribute('data-repo-id', 'R_kgDOQWF9gA');
+    script.setAttribute('data-category', 'General');
+    script.setAttribute('data-category-id', 'DIC_kwDOQWF9gM4C6ms1');
     script.setAttribute('data-mapping', 'pathname');
     script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
