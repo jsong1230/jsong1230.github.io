@@ -23,7 +23,13 @@ const correspondingPost = allPosts.find(p =>
 );
 ---
 
-<BaseLayout title={`${post.data.title} - Writing - Jeffrey Song`} lang={lang}>
+<BaseLayout
+  title={`${post.data.title} - Writing - Jeffrey Song`}
+  description={post.data.excerpt}
+  lang={lang}
+  image={`/og/${post.id}.png`}
+  type="article"
+>
   <article 
     class="container-narrow py-8 sm:py-12"
     data-post-date={post.data.date}
