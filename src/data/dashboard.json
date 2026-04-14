@@ -1,93 +1,93 @@
 {
-  "generated_at": "2026-04-13T23:00:01.687Z",
+  "generated_at": "2026-04-14T23:00:01.482Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
-          "last_date": "2026-04-13",
-          "last_msg": "chore: gram 로컬 배포 테스트 세팅",
-          "branch": "study",
-          "activity": [
-            1,
-            1,
-            0,
-            0,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 4
-        },
-        {
           "name": "openfield",
-          "last_date": "2026-04-13",
-          "last_msg": "Add Claude Code agent definitions and update .gitignore",
-          "branch": "study",
+          "last_date": "2026-04-15",
+          "last_msg": "chore: .gstack/ 디렉토리 gitignore 추가",
+          "branch": "dev",
           "activity": [
-            0,
             0,
             0,
             0,
             0,
             2,
-            0
+            9,
+            1
           ],
-          "commits_7d": 2,
-          "commits_30d": 2
+          "commits_7d": 12,
+          "commits_30d": 12
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-13",
+          "last_date": "2026-04-14",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             0,
             0,
-            0,
             9,
+            2,
             2,
             2,
             0
           ],
-          "commits_7d": 13,
-          "commits_30d": 13
+          "commits_7d": 15,
+          "commits_30d": 15
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-04-13",
-          "last_msg": "4/11 일지: KeyHunt 실행, vanjeff ETH 노드 복구, 서버 점검",
+          "last_date": "2026-04-14",
+          "last_msg": "4/13-14 일지: Proxmox 9대 구축, gmet 노드 이전, RocksDB 빌드 이슈 �",
           "branch": "gram-jsong",
           "activity": [
             0,
-            0,
             1,
             1,
             0,
+            1,
             1,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 17
+          "commits_30d": 18
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-04-13",
+          "last_msg": "chore: gram 로컬 배포 테스트 세팅",
+          "branch": "dev",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 4
         },
         {
           "name": "trump-code",
-          "last_date": "2026-04-12",
-          "last_msg": "chore: daily pipeline data update 2026-04-12",
+          "last_date": "2026-04-13",
+          "last_msg": "chore: daily pipeline data update 2026-04-13",
           "branch": "main",
           "activity": [
-            1,
             1,
             2,
             1,
             1,
             0,
+            1,
             0
           ],
           "commits_7d": 6,
-          "commits_30d": 472
+          "commits_30d": 384
         },
         {
           "name": "nipa-proposal",
@@ -95,15 +95,15 @@
           "last_msg": "docs: D2 학습 완료 기록 + 자동 조치 L1/L2/L3 보완 포인트 추가",
           "branch": "master",
           "activity": [
-            0,
             4,
             1,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 5,
           "commits_30d": 139
         },
         {
@@ -113,8 +113,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             7,
+            0,
             0,
             0,
             0,
@@ -130,15 +130,15 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             3,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 10
+          "commits_30d": 7
         },
         {
           "name": "go-metadium",
@@ -146,15 +146,15 @@
           "last_msg": "fix: add nil guards for FeePayer deref and parentBlock in worker",
           "branch": "test/server36-validation",
           "activity": [
-            22,
             1,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 44,
+          "commits_7d": 19,
           "commits_30d": 51
         },
         {
@@ -163,8 +163,8 @@
           "last_msg": "feat: notebooklm 안정성 개선 + 예약 업로드 + translations 추가",
           "branch": "main",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 30
+          "commits_30d": 25
         },
         {
           "name": "timemachine",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 49
+          "commits_30d": 47
         },
         {
           "name": "cps2_frontend",
@@ -265,21 +265,72 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-04-12",
-          "last_msg": "4/11-12 일지: AutoResearch 최종 결과(n_wr65 +147.8%), meta-arena 조사, �",
-          "branch": "mini-jsong",
+          "name": "union",
+          "last_date": "2026-04-14",
+          "last_msg": "feat(app): add Metadium chain to frontend configuration",
+          "branch": "feat/add-metadium-chain",
           "activity": [
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-04-14",
+          "last_msg": "security: comprehensive core infrastructure vulnerability remediation",
+          "branch": "security",
+          "activity": [
+            35,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "commits_7d": 39,
+          "commits_30d": 71
+        },
+        {
+          "name": "bitcoin",
+          "last_date": "2026-04-14",
+          "last_msg": "Merge bitcoin/bitcoin#34772: test: modernize interface_http and cover more libev",
+          "branch": "security",
+          "activity": [
+            16,
+            12,
+            2,
+            0,
+            0,
+            3,
+            1
+          ],
+          "commits_7d": 34,
+          "commits_30d": 283
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-14",
+          "last_msg": "4/13-14 일지: BTC/ETH 차액 원화 계산, 서버 인프라 전수조사, gme",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            0,
             1,
             0,
             1,
-            0
+            0,
+            1
           ],
-          "commits_7d": 2,
-          "commits_30d": 13
+          "commits_7d": 3,
+          "commits_30d": 14
         },
         {
           "name": "booksummary",
@@ -288,15 +339,15 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             2,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 31
+          "commits_30d": 26
         },
         {
           "name": "Carebit",
@@ -306,8 +357,8 @@
           "activity": [
             0,
             0,
-            0,
             4,
+            0,
             0,
             0,
             0
@@ -323,14 +374,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 8
+          "commits_30d": 5
         },
         {
           "name": "MetaLotto",
@@ -339,15 +390,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 7
+          "commits_30d": 2
         },
         {
           "name": "nipa-proposal",
@@ -355,33 +406,16 @@
           "last_msg": "fix: study-notes Remediation 페이지 참조 수정 (p.21~22 → p.24) + NTIS �",
           "branch": "master",
           "activity": [
-            4,
             0,
             4,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 4,
           "commits_30d": 138
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-04-08",
-          "last_msg": "Merge branch 'test/server36-validation' into feature/geth-v1.13.14",
-          "branch": "feature/geth-v1.13.14",
-          "activity": [
-            2,
-            17,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 26
         },
         {
           "name": "BORA_hack",
