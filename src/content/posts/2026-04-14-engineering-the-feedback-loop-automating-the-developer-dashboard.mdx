@@ -1,0 +1,53 @@
+---
+title: "Engineering the Feedback Loop: Automating the Developer Dashboard"
+date: "2026-04-14"
+lang: en
+excerpt: "Engineering the Feedback Loop: Automating the Developer Dashboard  As a CTO and engineer who has spent over two decades navigating the evolution of so..."
+---
+
+# Engineering the Feedback Loop: Automating the Developer Dashboard
+
+As a CTO and engineer who has spent over two decades navigating the evolution of software architecture—from the early days of monolithic systems to the current era of Web3 and AI-driven development—I’ve learned that the most valuable asset a developer has is **visibility**.
+
+Not just visibility into the production environment or the CI/CD pipeline, but visibility into one's own velocity and focus. Today’s work on my personal dashboard might seem like a simple data update at first glance, but it represents a larger philosophy I've carried throughout my career, including my time at **CPLABS**: the importance of the "Developer Feedback Loop."
+
+### The Problem: The Fog of Context Switching
+
+In a high-velocity environment—especially when juggling blockchain research, DID implementations, and AI agent orchestration—it is incredibly easy to lose track of where your cognitive energy is actually going. You feel busy, but are you making progress on the *right* repositories?
+
+I realized that my manual tracking was insufficient. I needed a quantitative snapshot of my activity across multiple disparate projects (my personal site, AI agent experiments, and various study repos) to identify patterns of stagnation or hyper-focus.
+
+### Technical Implementation: Data-Driven Reflection
+
+Today's commit (`chore: Update dashboard data`) involves updating `dashboard.json`. While the diff looks like a routine JSON update, the underlying logic is about aggregating metadata from Git activity to visualize "heatmaps" of productivity.
+
+Looking at the diff:
+```json
+"repos": [
+  {
+    "name": "heritageradio",
+    "last_msg": "chore: gram 로컬 배포 테스트 세팅",
+    "activity": [1, 1, 0, 0, 0, 1, 0],
+    "commits_7d": 4,
+    "commits_30d": 4
+  },
+  ...
+]
+```
+
+The `activity` array acts as a simplified time-series database. By mapping commits to specific days of the week, I can instantly see if my "study" branches are gaining momentum or if I'm spending too much time on "chore" tasks versus feature development.
+
+### Insights from the Code
+
+Two things stand out in today's update:
+
+1.  **The Shift to AI Tooling:** The addition of the `openfield` repo with the message *"Add Claude Code agent definitions"* highlights a transition in my workflow. I am moving away from manual boilerplate and toward agentic workflows. Integrating AI agents into the development lifecycle isn't just about writing code faster; it's about reducing the cognitive load of configuration.
+2.  **Infrastructure Maintenance:** The `claude-agent` logs—referencing *KeyHunt execution* and *ETH node recovery*—remind me that in the Web3 space, "development" is 50% coding and 50% infrastructure orchestration. Recovering a node is often more critical than pushing a new feature.
+
+### Final Thoughts: Measuring what Matters
+
+Many engineers mistake "number of commits" for "progress." Having led engineering teams at **CPLABS**, I’ve always cautioned against using Git metrics as a performance KPI. However, as a *personal* tool, these metrics are invaluable. They don't tell me if the code is "good," but they tell me where my curiosity is currently residing.
+
+By automating the synchronization of this dashboard, I remove the friction of self-reporting. I can now look at my `dashboard.json` and see a mirror of my technical interests over the last 30 days.
+
+For those of you managing multiple side projects or complex research pipelines: stop guessing where your time goes. Build a mirror. Even a simple JSON-based dashboard can provide the clarity needed to pivot your focus before you burn out on the wrong task.
