@@ -1,0 +1,63 @@
+---
+title: "Bridging Eras: AI-Driven Content Pipelines and the Future of Agent DID"
+date: "2026-04-15"
+lang: en
+excerpt: "[DevLog] Bridging Eras: AI-Driven Content Pipelines and the Future of Agent DID  Today was one of those days where the spectrum of work felt incredibl..."
+---
+
+# [DevLog] Bridging Eras: AI-Driven Content Pipelines and the Future of Agent DID
+
+Today was one of those days where the spectrum of work felt incredibly wide—ranging from the nostalgic curation of 20th-century radio to the cutting-edge theoretical framework of AI Agent identities. As a CTO, I find these shifts between "practical implementation" and "strategic research" to be the most rewarding part of the job.
+
+## 1. Project: Heritage Radio (그날 v0.2)
+The core objective today was evolving the "Heritage Radio" project from a simple player into a dynamic, automated content engine. I implemented a system that doesn't just play files, but *curates* an experience.
+
+### Technical Challenges & Decisions
+The main problem was how to handle a massive dataset of news and music from 1953 to 1994 without manual curation for every single day. 
+
+**The Solution: The Automated Pipeline**
+I built a Celery + Redis background pipeline that follows a strict flow: `Collect → TTS Generation → LLM Validation (Gemma4) → Composition`. 
+
+One of the most interesting parts of the code is the `infer_role` logic in `build_year_packages.py`. Instead of randomizing the flow, I implemented a keyword-based role inference system to ensure the emotional arc of the radio show feels natural:
+
+```python
+def infer_role(topic: str) -> str:
+    t = topic
+    if any(k in t for k in ["사망", "서거", "추모", ...]):
+        return "emotional_peak"
+    if any(k in t for k in ["수출", "공장", "산업", ...]):
+        return "economy"
+    # ... other roles
+```
+
+By mapping topics to roles like `emotional_peak` or `economy`, the system can select an appropriate intro template (e.g., *"The scent of that era we shared"* for emotional peaks), making the AI-generated radio feel like it was scripted by a human producer.
+
+**Infrastructure Note:** I integrated a TTS gateway using Qwen3-TTS to provide era-specific announcer voices and used Gemma4 (31B) as a quality validator to ensure the generated scripts maintain historical dignity.
+
+---
+
+## 2. Strategic Research: AI Agent DID
+While the radio project dealt with the past, my research today focused on the future: **AI Agent Decentralized Identifiers (DID).**
+
+As we move toward an economy where 40% of corporate workflows will involve autonomous agents, we face a critical trust gap. How do you know which agent you are talking to? Who authorized it to access your financial data?
+
+**The Thesis:**
+The solution lies in combining **W3C DID + Verifiable Credentials (VC)**. By anchoring an agent's identity on a blockchain (like Metadium), we can create a "Know Your Agent" (KYA) framework.
+
+*   **DID:** `did:meta:agent:123` (The unique identity)
+*   **VC:** "Issued by CPLABS" (Proof of origin)
+*   **VC:** "Authorized for Financial Data" (Proof of permission)
+
+With over 370 DID patents and an existing MCP (Model Context Protocol) server implementation, CPLABS is uniquely positioned to lead this "Agent Identity" layer. The transition from "Human DID" to "Agent DID" is not just a technical shift, but a business pivot toward the Agent Economy.
+
+---
+
+## 3. Engineering Hygiene & Tooling
+Beyond the big projects, I spent time on "Developer Experience" (DX). I consolidated 12 redundant server lists into a single "Source of Truth" file (`reference_server_list.md`) and synced it across my environment using OpenClaw. 
+
+Whether it's managing a complex Docker-Compose setup for Celery workers or cleaning up `.gitignore` files, these small "chore" commits are what prevent technical debt from snowballing into a crisis.
+
+### Final Thoughts
+Today was a reminder that the role of a CTO is to be a "Full-Stack Thinker." In the morning, I was optimizing LUFS audio normalization for 1960s folk songs; in the afternoon, I was analyzing arXiv papers on blockchain-based agent governance. 
+
+The common thread? **Identity.** Whether it's the identity of a historical era or the digital identity of an AI agent, the goal is the same: creating a verifiable, meaningful connection between the user and the information.
