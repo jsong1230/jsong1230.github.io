@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-04-15T23:00:01.744Z",
+  "generated_at": "2026-04-16T23:00:01.875Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-16",
-          "last_msg": "feat: v2.0 Phase 1 MVP 완성판 — TTS 정규화·청크 후처리·모바일�",
+          "last_date": "2026-04-17",
+          "last_msg": "fix: 음악 슬롯별 다른 Suno 곡 + 기존 에피소드 건너뛰기",
           "branch": "ceo",
           "activity": [
-            0,
             0,
             0,
             1,
             0,
             5,
-            1
+            33,
+            5
           ],
-          "commits_7d": 8,
-          "commits_30d": 10
+          "commits_7d": 44,
+          "commits_30d": 47
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-04-16",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            9,
+            2,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 19
         },
         {
           "name": "openfield",
@@ -29,31 +46,31 @@
           "activity": [
             0,
             0,
-            0,
             2,
             9,
             4,
+            0,
             0
           ],
           "commits_7d": 15,
           "commits_30d": 15
         },
         {
-          "name": "jsong1230.github.io",
+          "name": "trump-code",
           "last_date": "2026-04-15",
-          "last_msg": "Auto-generate daily posts",
+          "last_msg": "chore: daily pipeline data update 2026-04-15",
           "branch": "main",
           "activity": [
+            1,
+            1,
             0,
-            9,
-            2,
-            2,
-            2,
-            2,
+            1,
+            1,
+            1,
             0
           ],
-          "commits_7d": 17,
-          "commits_30d": 17
+          "commits_7d": 6,
+          "commits_30d": 331
         },
         {
           "name": "claude-agent",
@@ -62,32 +79,15 @@
           "branch": "gram-jsong",
           "activity": [
             1,
-            1,
             0,
             1,
             1,
             2,
+            0,
             0
           ],
           "commits_7d": 6,
           "commits_30d": 20
-        },
-        {
-          "name": "trump-code",
-          "last_date": "2026-04-14",
-          "last_msg": "chore: daily pipeline data update 2026-04-14",
-          "branch": "main",
-          "activity": [
-            2,
-            1,
-            1,
-            0,
-            1,
-            1,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 348
         },
         {
           "name": "nipa-proposal",
@@ -95,7 +95,7 @@
           "last_msg": "docs: D2 학습 완료 기록 + 자동 조치 L1/L2/L3 보완 포인트 추가",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -103,8 +103,8 @@
             0,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 139
+          "commits_7d": 1,
+          "commits_30d": 137
         },
         {
           "name": "minidaepa",
@@ -112,7 +112,7 @@
           "last_msg": "fix: AI 응답 후 입력창 자동 포커스 복원",
           "branch": "master",
           "activity": [
-            7,
+            0,
             0,
             0,
             0,
@@ -129,7 +129,7 @@
           "last_msg": "test: 원격 i18n 전환에 따른 테스트 업데이트",
           "branch": "main",
           "activity": [
-            3,
+            0,
             0,
             0,
             0,
@@ -154,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 51
         },
         {
@@ -171,8 +171,8 @@
             0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 22
+          "commits_7d": 0,
+          "commits_30d": 21
         },
         {
           "name": "timemachine",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 45
+          "commits_30d": 44
         },
         {
           "name": "cps2_frontend",
@@ -266,20 +266,122 @@
       "repos": [
         {
           "name": "Carebit",
-          "last_date": "2026-04-15",
-          "last_msg": "feat: root / redirects to web UI; API info moved to /api",
+          "last_date": "2026-04-16",
+          "last_msg": "feat: polished UX — history, alert ack, hands-free chat, auto-refresh",
           "branch": "master",
           "activity": [
-            0,
             4,
             0,
             0,
             0,
             0,
-            5
+            5,
+            1
           ],
-          "commits_7d": 9,
-          "commits_30d": 25
+          "commits_7d": 10,
+          "commits_30d": 26
+        },
+        {
+          "name": "MetaLotto",
+          "last_date": "2026-04-16",
+          "last_msg": "chore(frontend): favicon.ico를 MetaLotto ML 로고로 교체",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            2
+          ],
+          "commits_7d": 5,
+          "commits_30d": 7
+        },
+        {
+          "name": "MetaPool",
+          "last_date": "2026-04-16",
+          "last_msg": "docs: CLAUDE.md 업데이트 (백엔드/Referral/API 정보 추가)",
+          "branch": "main",
+          "activity": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            5,
+            2
+          ],
+          "commits_7d": 10,
+          "commits_30d": 11
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-04-16",
+          "last_msg": "fix: allow pre-governance blocks in verifyBlockSig for full sync compatibility",
+          "branch": "camellia",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            8
+          ],
+          "commits_7d": 11,
+          "commits_30d": 79
+        },
+        {
+          "name": "meta-zkbridge",
+          "last_date": "2026-04-16",
+          "last_msg": "chore: add gstack skill routing rules to CLAUDE.md",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          "commits_7d": 8,
+          "commits_30d": 8
+        },
+        {
+          "name": "MetaStake",
+          "last_date": "2026-04-16",
+          "last_msg": "Default manual language to English",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            13
+          ],
+          "commits_7d": 13,
+          "commits_30d": 13
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-16",
+          "last_msg": "4/16 일지 업데이트: 25번 재배포, upstream push, 브랜치 정리(28→",
+          "branch": "mini-jsong",
+          "activity": [
+            1,
+            0,
+            1,
+            0,
+            2,
+            4,
+            3
+          ],
+          "commits_7d": 11,
+          "commits_30d": 22
         },
         {
           "name": "meta-agents",
@@ -292,78 +394,10 @@
             0,
             0,
             0,
-            0,
-            19
+            19,
+            0
           ],
           "commits_7d": 19,
-          "commits_30d": 19
-        },
-        {
-          "name": "MetaLotto",
-          "last_date": "2026-04-15",
-          "last_msg": "feat(frontend): Manual 페이지를 메인 사이트 디자인으로 통합",
-          "branch": "master",
-          "activity": [
-            2,
-            0,
-            0,
-            0,
-            0,
-            0,
-            3
-          ],
-          "commits_7d": 5,
-          "commits_30d": 5
-        },
-        {
-          "name": "MetaPool",
-          "last_date": "2026-04-15",
-          "last_msg": "feat: 랜딩 페이지 추가 (/ → 랜딩, /markets → 마켓 목록)",
-          "branch": "main",
-          "activity": [
-            0,
-            3,
-            0,
-            0,
-            0,
-            0,
-            5
-          ],
-          "commits_7d": 8,
-          "commits_30d": 9
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-04-15",
-          "last_msg": "ci: remove pull_request trigger from self-hosted runner (security)",
-          "branch": "camellia",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            2,
-            3
-          ],
-          "commits_7d": 6,
-          "commits_30d": 73
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-04-15",
-          "last_msg": "4/15 일지: meta-agents 프로젝트 구상 (AI Agent 투자 플랫폼), Co-Aut",
-          "branch": "mini-jsong",
-          "activity": [
-            0,
-            1,
-            0,
-            1,
-            0,
-            2,
-            4
-          ],
-          "commits_7d": 8,
           "commits_30d": 19
         },
         {
@@ -375,10 +409,10 @@
             0,
             0,
             0,
-            0,
             2,
             10,
-            4
+            4,
+            0
           ],
           "commits_7d": 16,
           "commits_30d": 16
@@ -393,8 +427,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0
           ],
           "commits_7d": 2,
@@ -406,16 +440,16 @@
           "last_msg": "Merge bitcoin/bitcoin#34772: test: modernize interface_http and cover more libev",
           "branch": "security",
           "activity": [
-            12,
             2,
             0,
             0,
             3,
             1,
+            0,
             0
           ],
-          "commits_7d": 18,
-          "commits_30d": 270
+          "commits_7d": 6,
+          "commits_30d": 255
         },
         {
           "name": "booksummary",
@@ -423,16 +457,16 @@
           "last_msg": "fix: --login 시 Chrome 프로필도 함께 생성하도록 수정",
           "branch": "main",
           "activity": [
-            2,
             1,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 23
+          "commits_7d": 1,
+          "commits_30d": 22
         },
         {
           "name": "nipa-proposal",
@@ -440,7 +474,7 @@
           "last_msg": "fix: study-notes Remediation 페이지 참조 수정 (p.21~22 → p.24) + NTIS �",
           "branch": "master",
           "activity": [
-            4,
+            0,
             0,
             0,
             0,
@@ -448,8 +482,8 @@
             0,
             0
           ],
-          "commits_7d": 4,
-          "commits_30d": 138
+          "commits_7d": 0,
+          "commits_30d": 136
         },
         {
           "name": "BORA_hack",
