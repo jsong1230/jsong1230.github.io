@@ -1,0 +1,48 @@
+---
+title: "Engineering the \"Sound of History\": Bridging the Gap Between LLMs and High-Fidelity TTS"
+date: "2026-04-16"
+lang: en
+excerpt: "Engineering the \"Sound of History\": Bridging the Gap Between LLMs and High-Fidelity TTS  As an engineer, I've always believed that the difference betw..."
+---
+
+# Engineering the "Sound of History": Bridging the Gap Between LLMs and High-Fidelity TTS
+
+As an engineer, I've always believed that the difference between a "demo" and a "product" lies in the final 5% of polish—the edge cases, the subtle artifacts, and the user experience friction. Today, I hit a major milestone with the **v2.0 Phase 1 MVP of Heritage Radio**, and the process was a masterclass in the challenges of integrating Generative AI with audio synthesis.
+
+## The Challenge: When LLMs "Hallucinate" Sound
+
+The core of Heritage Radio is transforming historical data into a radio broadcast. However, I encountered a recurring issue: **TTS (Text-to-Speech) instability.** 
+
+Even with powerful models like Qwen3-TTS, the gap between "written text" and "spoken word" is wide. For example, an LLM might write "1978년" or "KBS," but depending on the TTS engine's state, it might read these as English digits or acronyms, breaking the immersion of a vintage Korean broadcast. Furthermore, I faced a "babbling" issue—where the model fails to hit the End-of-Sentence (EOS) token and continues to generate non-human gibberish at the end of a clip.
+
+## The Solution: A Multi-Layered Audio Pipeline
+
+To solve this, I didn't just rely on better prompts; I built a dedicated **normalization and post-processing pipeline**.
+
+### 1. Text Normalization (`text_normalize.py`)
+I implemented a normalization module to force the LLM's output into a "TTS-friendly" format.
+- **Arabic Numerals $\rightarrow$ Korean Phonetics:** `1978년` becomes `천구백칠십팔년`.
+- **Currency/Symbols $\rightarrow$ Spoken Korean:** `3,800` becomes `삼천팔백`.
+- **English $\rightarrow$ Korean Pronunciation:** `KBS` becomes `케이비에스`.
+
+I also reinforced the **Gemma4 system prompt** to strictly forbid numbers and English characters in the final script, ensuring a consistent "vintage announcer" tone.
+
+### 2. The "Babbling Cutoff" and Audio Polishing
+To handle the audio artifacts, I introduced a post-processing chain using `silence-detect` and `loudnorm`. The most critical addition was the **babbling cutoff**:
+> *“Hard cut at the last silence $\ge 0.4s$ to remove non-Korean hallucinations caused by EOS failure.”*
+
+By combining this with a `-20 LUFS` loudness normalization and a precise `0.35s` silence insertion between chunks, the resulting audio feels like a continuous, natural broadcast rather than a series of stitched-together AI clips.
+
+## Frontend & Infrastructure: Ensuring "Instant" Readiness
+
+On the frontend, the goal was to make the "Radio" feel alive. I implemented a **dynamic fallback system**: if a user tunes in outside the scheduled time, the system automatically pivots to a "ready" slot (S02) so the user never encounters a silent screen.
+
+To solve a frustrating `503 Timeout` issue caused by a stale gateway, I made a pragmatic architectural decision: **bypassing the gateway and connecting directly to the TTS port (9005).** In a production environment at CPLABS, we usually prefer strict gateway management, but for an MVP, removing a layer of failure is the fastest path to stability.
+
+## Final Thoughts: The Detail is the Product
+
+From generating a custom vintage radio dial favicon using PIL to expanding the historical event database from 112 to 493 entries via Gemma4, today was about **filling the gaps**. 
+
+Whether it's blockchain or AI, the technical depth isn't just about the model you use—it's about how you handle the data before it hits the model and how you clean the output before it hits the user. The "Sound of History" isn't just about the voice; it's about the silence, the normalization, and the reliability of the pipeline.
+
+**Next Step:** Deploying to the 110-server and finalizing the music PoC with Suno and YouTube integration. Stay tuned.
