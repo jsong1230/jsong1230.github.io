@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-04-16T23:00:01.875Z",
+  "generated_at": "2026-04-17T23:00:02.026Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-17",
-          "last_msg": "fix: 음악 슬롯별 다른 Suno 곡 + 기존 에피소드 건너뛰기",
-          "branch": "ceo",
+          "last_date": "2026-04-18",
+          "last_msg": "docs: test-pending.md + CHANGELOG·CLAUDE.md — 오늘 심야 작업 반영",
+          "branch": "dev",
           "activity": [
-            0,
             0,
             1,
             0,
             5,
             33,
-            5
+            30,
+            3
           ],
-          "commits_7d": 44,
-          "commits_30d": 47
+          "commits_7d": 72,
+          "commits_30d": 75
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-16",
+          "last_date": "2026-04-17",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
-            9,
+            2,
             2,
             2,
             2,
@@ -35,8 +35,42 @@
             2,
             0
           ],
-          "commits_7d": 19,
-          "commits_30d": 19
+          "commits_7d": 21,
+          "commits_30d": 21
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-17",
+          "last_msg": "4/17 evening: jsong-mykeepin Tailscale setup, 46 gmet recovery observation, myke",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            1,
+            1,
+            2,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 23
+        },
+        {
+          "name": "trump-code",
+          "last_date": "2026-04-16",
+          "last_msg": "chore: daily pipeline data update 2026-04-16",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 329
         },
         {
           "name": "openfield",
@@ -45,49 +79,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             2,
             9,
             4,
+            0,
             0,
             0
           ],
           "commits_7d": 15,
           "commits_30d": 15
-        },
-        {
-          "name": "trump-code",
-          "last_date": "2026-04-15",
-          "last_msg": "chore: daily pipeline data update 2026-04-15",
-          "branch": "main",
-          "activity": [
-            1,
-            1,
-            0,
-            1,
-            1,
-            1,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 331
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-04-15",
-          "last_msg": "4/15: iTerm2 profiles for macbook/imac, Samsung T5 SSD setup",
-          "branch": "gram-jsong",
-          "activity": [
-            1,
-            0,
-            1,
-            1,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 20
         },
         {
           "name": "nipa-proposal",
@@ -103,8 +103,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 137
+          "commits_7d": 0,
+          "commits_30d": 125
         },
         {
           "name": "minidaepa",
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 0,
           "commits_30d": 7
         },
         {
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 0,
           "commits_30d": 4
         },
         {
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 21
+          "commits_30d": 20
         },
         {
           "name": "timemachine",
@@ -258,6 +258,23 @@
           ],
           "commits_7d": 0,
           "commits_30d": 37
+        },
+        {
+          "name": "mykeepin_mvvm",
+          "last_date": "2025-12-30",
+          "last_msg": "서비스 요청 미인증시 기본화면으로 이동",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
         }
       ]
     },
@@ -265,20 +282,88 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "meta-zkbridge",
+          "last_date": "2026-04-17",
+          "last_msg": "feat: read-only dashboard UI — Phase 1 상태 가시화",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            2
+          ],
+          "commits_7d": 10,
+          "commits_30d": 10
+        },
+        {
+          "name": "daepa-stack-cto",
+          "last_date": "2026-04-17",
+          "last_msg": "chore: skeleton — 격리 원칙 + infra-only compose + preflight",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-17",
+          "last_msg": "4/17 일지 업데이트: sync template, producer/consumer 분화, front-ws fix,",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            1,
+            0,
+            2,
+            4,
+            3,
+            3
+          ],
+          "commits_7d": 13,
+          "commits_30d": 25
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-04-17",
+          "last_msg": "chore: bump front-ws submodule to fix/empty-blocks-safe-init",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            15
+          ],
+          "commits_7d": 15,
+          "commits_30d": 15
+        },
+        {
           "name": "Carebit",
           "last_date": "2026-04-16",
           "last_msg": "feat: polished UX — history, alert ack, hands-free chat, auto-refresh",
           "branch": "master",
           "activity": [
-            4,
             0,
             0,
             0,
             0,
             5,
-            1
+            1,
+            0
           ],
-          "commits_7d": 10,
+          "commits_7d": 6,
           "commits_30d": 26
         },
         {
@@ -291,9 +376,9 @@
             0,
             0,
             0,
-            0,
             3,
-            2
+            2,
+            0
           ],
           "commits_7d": 5,
           "commits_30d": 7
@@ -304,15 +389,15 @@
           "last_msg": "docs: CLAUDE.md 업데이트 (백엔드/Referral/API 정보 추가)",
           "branch": "main",
           "activity": [
-            3,
             0,
             0,
             0,
             0,
             5,
-            2
+            2,
+            0
           ],
-          "commits_7d": 10,
+          "commits_7d": 7,
           "commits_30d": 11
         },
         {
@@ -324,30 +409,13 @@
             0,
             0,
             0,
-            0,
             2,
             1,
-            8
+            8,
+            0
           ],
           "commits_7d": 11,
           "commits_30d": 79
-        },
-        {
-          "name": "meta-zkbridge",
-          "last_date": "2026-04-16",
-          "last_msg": "chore: add gstack skill routing rules to CLAUDE.md",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            8
-          ],
-          "commits_7d": 8,
-          "commits_30d": 8
         },
         {
           "name": "MetaStake",
@@ -360,28 +428,45 @@
             0,
             0,
             0,
-            0,
-            13
+            13,
+            0
           ],
           "commits_7d": 13,
           "commits_30d": 13
         },
         {
-          "name": "claude-agent",
+          "name": "daepa-api-backend",
           "last_date": "2026-04-16",
-          "last_msg": "4/16 일지 업데이트: 25번 재배포, upstream push, 브랜치 정리(28→",
-          "branch": "mini-jsong",
+          "last_msg": "탈퇴 시 소셜 계정 연결 해제를 서버에서 처리하도록 개선 (�",
+          "branch": "develop",
           "activity": [
-            1,
+            0,
+            0,
+            0,
+            0,
             0,
             1,
-            0,
-            2,
-            4,
-            3
+            0
           ],
-          "commits_7d": 11,
-          "commits_30d": 22
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "daepa-docs",
+          "last_date": "2026-04-16",
+          "last_msg": "사용자 캐릭터 제작 테이블 컬럼명 수정",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
         },
         {
           "name": "meta-agents",
@@ -393,8 +478,8 @@
             0,
             0,
             0,
-            0,
             19,
+            0,
             0
           ],
           "commits_7d": 19,
@@ -408,14 +493,31 @@
           "activity": [
             0,
             0,
-            0,
             2,
             10,
             4,
+            0,
             0
           ],
           "commits_7d": 16,
           "commits_30d": 16
+        },
+        {
+          "name": "daepa-admin-frontend",
+          "last_date": "2026-04-15",
+          "last_msg": "::bug: fix: jest 설정 및 컴포넌트 동적 임포트 수정",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
         },
         {
           "name": "union",
@@ -426,8 +528,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
@@ -440,16 +542,67 @@
           "last_msg": "Merge bitcoin/bitcoin#34772: test: modernize interface_http and cover more libev",
           "branch": "security",
           "activity": [
-            2,
             0,
             0,
             3,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 6,
-          "commits_30d": 255
+          "commits_7d": 4,
+          "commits_30d": 240
+        },
+        {
+          "name": "daepa-admin-backend",
+          "last_date": "2026-04-13",
+          "last_msg": ":pencil: fix: 구글 플레이 통계 입력 안되는 문제 수정",
+          "branch": "develop",
+          "activity": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "daepa-discussion-chat",
+          "last_date": "2026-04-13",
+          "last_msg": "Align debates around moderated live sessions and market-style discovery",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "daepa-chat-server",
+          "last_date": "2026-04-13",
+          "last_msg": "Merged in feature/storeshot-seedream (pull request #140)",
+          "branch": "develop",
+          "activity": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
         },
         {
           "name": "booksummary",
@@ -457,7 +610,7 @@
           "last_msg": "fix: --login 시 Chrome 프로필도 함께 생성하도록 수정",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -465,8 +618,25 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 22
+          "commits_7d": 0,
+          "commits_30d": 21
+        },
+        {
+          "name": "minidaepa",
+          "last_date": "2026-04-10",
+          "last_msg": "fix: AI 응답 후 입력창 자동 포커스 복원",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 1
         },
         {
           "name": "nipa-proposal",
@@ -483,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 136
+          "commits_30d": 124
         },
         {
           "name": "BORA_hack",
@@ -501,6 +671,91 @@
           ],
           "commits_7d": 0,
           "commits_30d": 19
+        },
+        {
+          "name": "daepa-persona-gen",
+          "last_date": "2026-03-19",
+          "last_msg": "모델 변경",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 1
+        },
+        {
+          "name": "daepa_push_service",
+          "last_date": "2026-02-05",
+          "last_msg": "FCM 메시지 전송 방식 수정: Notification 정보를 Data로 이동하여 ",
+          "branch": "develop",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "daepa-marketing-web",
+          "last_date": "2025-12-09",
+          "last_msg": ":bug: fix: 모바일 서치 버튼 pc에서 보이는 현상 수정",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "daepa-dynamic-link",
+          "last_date": "2025-11-20",
+          "last_msg": "Android 커스텀 스킴 추가 및 링크 서비스에서 환경 변수 사용",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "daepa-ai-agent",
+          "last_date": "2025-04-16",
+          "last_msg": "LLM_MAX_TOKENS 값을 50에서 100으로 변경하고, 메시지 응답을 50글",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
         }
       ]
     }
