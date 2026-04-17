@@ -1,0 +1,47 @@
+---
+title: "From MVP to Product: Completing Phase 2 of Heritage Radio"
+date: "2026-04-17"
+lang: en
+excerpt: "From MVP to a Full-Scale Radio Experience: Completing Phase 2 of Heritage Radio  As an engineer, there is a specific kind of satisfaction that comes f..."
+---
+
+# From MVP to a Full-Scale Radio Experience: Completing Phase 2 of Heritage Radio
+
+As an engineer, there is a specific kind of satisfaction that comes from moving a project from a "Proof of Concept" (MVP) to a "Product." Today was one of those days. I spent the majority of my time finalizing **Phase 2 of the Heritage Radio project**, transitioning it from a simple 13-slot demo into a sophisticated, variable-schedule radio system.
+
+At **CPLABS**, we always emphasize that technical depth must serve the user experience. In this project, the "user experience" is nostalgia—recreating the feeling of a vintage radio. To achieve this, the technical requirements shifted from simple playback to complex orchestration.
+
+### The Challenge: Moving Beyond Static Slots
+
+In Phase 1, we had a fixed 13-slot schedule. It worked for a demo, but real radio is dynamic. The goal for Phase 2 was to implement a variable 21-slot system that changes by the day of the week, incorporating specific "Radio Dramas"—the crown jewel of traditional broadcasting.
+
+**Key technical shifts included:**
+1.  **Architectural Expansion:** I expanded the database schema via Alembic to support `content_types` (12 categories including *yasa*, *trot*, and *wisdom*) and a `weekday_schedule_v2` that manages 142 different slot configurations across a week.
+2.  **Context-Aware Content Generation:** Using Gemma4, I refined the prompts to include `time_hint`. This prevents the AI from saying "Good morning" during a midnight broadcast—a small detail that makes a huge difference in immersion.
+3.  **Audio Orchestration:** I implemented a hybrid music system. The primary path uses **Google OAuth 2.0 and the YouTube Data API** to pull high-quality original tracks. As a fallback, I integrated **Suno AI**, ensuring that if a user isn't connected to YouTube, the radio doesn't go silent.
+
+### Insights from the Code: The "Fallback" Logic
+
+One of the more interesting parts of today's diff was the logic handling the music slots in `frontend/src/app/radio/b/page.tsx`. 
+
+When dealing with external APIs (YouTube), you cannot guarantee 100% availability or user authentication. I implemented a branching logic: if the YouTube session is missing, the system hashes the `slot_id` to pick a consistent but different track from a curated Suno AI pool. This ensures that the "Morning Slot" always feels like the "Morning Slot," even in fallback mode.
+
+Another critical fix was in `episode_generator_v2.py`, where I added logic to **skip existing 'ready' episodes**. When running massive batches (like the 142-episode run for April 16-22), idempotency is key. You don't want to burn API tokens regenerating content that is already perfected.
+
+### The "Vintage" Polish
+
+Beyond the backend, I focused on the "sensory" side of the UI. I integrated **Noto Serif KR** for a classic editorial feel and added a **SVG fractalNoise overlay** at 3% opacity. In my 20 years of engineering, I've learned that the difference between a "web app" and an "experience" often lies in these tiny, non-functional visual cues that trigger an emotional response.
+
+### Final Thoughts
+
+Phase 2 is now largely complete (18/23 checklist items satisfied). The system now supports a full weekly cycle, complex drama formats, and a seamless audio pipeline. 
+
+The journey from a few static files to a system managing 36 master programs and 142 daily slots reminds me why I love being a CTO: the challenge of scaling a creative vision through rigorous engineering. Next up: automating the full-year batch and integrating Spotify for a truly global music reach.
+
+***
+
+**Summary of Today's Progress:**
+- **Infrastructure:** Migrated to 21-slot variable scheduling; expanded DB to 10 tables.
+- **AI/Content:** Implemented 12 content-type specific prompts; completed 21-episode batch for 4/17.
+- **Frontend:** Built YouTube mini-player, sequential queue playback, and vintage noise textures.
+- **Integration:** Google OAuth 2.0 $\rightarrow$ YouTube API $\rightarrow$ Suno AI Fallback pipeline.
