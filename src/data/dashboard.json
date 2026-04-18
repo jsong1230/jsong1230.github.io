@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-17T23:00:02.026Z",
+  "generated_at": "2026-04-18T23:00:01.295Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-18",
-          "last_msg": "docs: test-pending.md + CHANGELOG·CLAUDE.md — 오늘 심야 작업 반영",
+          "last_date": "2026-04-19",
+          "last_msg": "docs: claude.ai/design 세션용 브리프 추가",
           "branch": "dev",
           "activity": [
-            0,
             1,
             0,
             5,
             33,
             30,
+            27,
             3
           ],
-          "commits_7d": 72,
-          "commits_30d": 75
+          "commits_7d": 99,
+          "commits_30d": 102
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-17",
+          "last_date": "2026-04-18",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
@@ -35,8 +35,25 @@
             2,
             0
           ],
-          "commits_7d": 21,
-          "commits_30d": 21
+          "commits_7d": 14,
+          "commits_30d": 23
+        },
+        {
+          "name": "trump-code",
+          "last_date": "2026-04-17",
+          "last_msg": "chore: daily pipeline data update 2026-04-17",
+          "branch": "main",
+          "activity": [
+            0,
+            1,
+            1,
+            1,
+            2,
+            0,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 329
         },
         {
           "name": "claude-agent",
@@ -44,33 +61,16 @@
           "last_msg": "4/17 evening: jsong-mykeepin Tailscale setup, 46 gmet recovery observation, myke",
           "branch": "gram-jsong",
           "activity": [
-            0,
             1,
             1,
             2,
             0,
             3,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 23
-        },
-        {
-          "name": "trump-code",
-          "last_date": "2026-04-16",
-          "last_msg": "chore: daily pipeline data update 2026-04-16",
-          "branch": "main",
-          "activity": [
-            1,
             0,
-            1,
-            1,
-            1,
-            1,
             0
           ],
-          "commits_7d": 6,
-          "commits_30d": 329
+          "commits_7d": 7,
+          "commits_30d": 23
         },
         {
           "name": "openfield",
@@ -78,10 +78,10 @@
           "last_msg": "fix: 분석 파이프라인 블로킹 버그 수정 — 동기 Redis 호출 제�",
           "branch": "dev",
           "activity": [
-            0,
             2,
             9,
             4,
+            0,
             0,
             0,
             0
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 125
+          "commits_30d": 116
         },
         {
           "name": "minidaepa",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 20
+          "commits_30d": 18
         },
         {
           "name": "timemachine",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 44
+          "commits_30d": 42
         },
         {
           "name": "cps2_frontend",
@@ -291,9 +291,9 @@
             0,
             0,
             0,
-            0,
             8,
-            2
+            2,
+            0
           ],
           "commits_7d": 10,
           "commits_30d": 10
@@ -309,8 +309,8 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 1
@@ -321,13 +321,13 @@
           "last_msg": "4/17 일지 업데이트: sync template, producer/consumer 분화, front-ws fix,",
           "branch": "mini-jsong",
           "activity": [
-            0,
             1,
             0,
             2,
             4,
             3,
-            3
+            3,
+            0
           ],
           "commits_7d": 13,
           "commits_30d": 25
@@ -343,8 +343,8 @@
             0,
             0,
             0,
-            0,
-            15
+            15,
+            0
           ],
           "commits_7d": 15,
           "commits_30d": 15
@@ -358,9 +358,9 @@
             0,
             0,
             0,
-            0,
             5,
             1,
+            0,
             0
           ],
           "commits_7d": 6,
@@ -375,9 +375,9 @@
             0,
             0,
             0,
-            0,
             3,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
@@ -392,9 +392,9 @@
             0,
             0,
             0,
-            0,
             5,
             2,
+            0,
             0
           ],
           "commits_7d": 7,
@@ -408,10 +408,10 @@
           "activity": [
             0,
             0,
-            0,
             2,
             1,
             8,
+            0,
             0
           ],
           "commits_7d": 11,
@@ -427,8 +427,8 @@
             0,
             0,
             0,
-            0,
             13,
+            0,
             0
           ],
           "commits_7d": 13,
@@ -444,8 +444,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -461,8 +461,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -477,8 +477,8 @@
             0,
             0,
             0,
-            0,
             19,
+            0,
             0,
             0
           ],
@@ -492,10 +492,10 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             2,
             10,
             4,
+            0,
             0,
             0
           ],
@@ -511,8 +511,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -527,8 +527,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -543,15 +543,15 @@
           "branch": "security",
           "activity": [
             0,
-            0,
             3,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 240
+          "commits_30d": 223
         },
         {
           "name": "daepa-admin-backend",
@@ -560,8 +560,8 @@
           "branch": "develop",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -577,8 +577,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -594,8 +594,8 @@
           "branch": "develop",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -619,7 +619,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 21
+          "commits_30d": 19
         },
         {
           "name": "minidaepa",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 124
+          "commits_30d": 115
         },
         {
           "name": "BORA_hack",
@@ -687,7 +687,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "daepa_push_service",
