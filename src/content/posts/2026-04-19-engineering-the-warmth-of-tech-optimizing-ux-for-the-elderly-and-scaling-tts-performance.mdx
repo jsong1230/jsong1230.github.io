@@ -1,0 +1,52 @@
+---
+title: "Engineering the \"Warmth\" of Tech: Optimizing UX for the Elderly and Scaling TTS Performance"
+date: "2026-04-19"
+lang: en
+excerpt: "Engineering the \"Warmth\" of Tech: Optimizing UX for the Elderly and Scaling TTS Performance  As an engineer and CTO, I’ve spent over two decades build..."
+---
+
+# Engineering the "Warmth" of Tech: Optimizing UX for the Elderly and Scaling TTS Performance
+
+As an engineer and CTO, I’ve spent over two decades building systems that prioritize scalability and efficiency. However, my recent work on the **"Heritage Radio"** project has reminded me of a crucial engineering truth: **the most sophisticated backend is meaningless if the frontend creates a barrier for the end-user.**
+
+Today's development focused on two contrasting but equally important pillars: the hyper-specific UX constraints for elderly users and the raw performance optimization of the AI audio pipeline.
+
+### 1. Designing for Cognitive and Physical Constraints
+
+The most significant addition today was the `claude_design_brief.md`. When building for seniors—specifically those with dementia—standard "Clean UI" or "Modern Minimalist" trends are often failures. For this demographic, "minimalism" can be mistaken for "emptiness" or "lack of function."
+
+I spent a considerable amount of time codifying UX constraints that are non-negotiable. In the diff, you'll see a strict set of rules:
+- **No Pure White (#fff):** To prevent glare and eye fatigue (common in cataract patients), I've mandated a `Cream (#F5E6D0)` palette.
+- **Touch Targets $\ge$ 48px:** Accounting for hand tremors.
+- **No Gestures/Long-press:** Interaction must be a simple, single touch.
+
+**Insight:** In my years at CPLABS, I learned that accessibility isn't just a "feature" to add at the end; it is the core architecture. When the user's cognitive load is limited, the interface must act as a guide, not a puzzle. By creating a structured brief for our AI design sessions, we ensure that the "warmth" of the 1970s retro aesthetic is backed by rigorous accessibility engineering.
+
+### 2. Performance Tuning: Parallelizing the Voice
+
+On the technical side, I tackled a bottleneck in the TTS (Text-to-Speech) pipeline. The goal was to reduce latency in audio generation without sacrificing quality.
+
+I implemented **"Option D"** for the TTS architecture:
+- **Round-Robin Distribution:** Deploying 5 instances of `qwen3tts`.
+- **Parallel Chunking:** Processing 5 audio chunks concurrently.
+
+By shifting the `docker-compose.yml` to support this distributed approach, we can significantly decrease the "Time to First Byte" (TTFB) for the audio stream. When dealing with AI-generated content, the perceived latency is the biggest enemy of immersion. Parallelizing the workload across multiple instances allows us to maintain a seamless streaming experience, which is critical for a "radio" application.
+
+### 3. The "Small" Fixes that Matter
+
+Finally, I resolved a frustrating bug in the CI/CD pipeline. A simple `rsync` exclude rule (`--exclude='audio'`) was accidentally dropping the frontend audio route because of a missing leading slash (`/audio`).
+
+It's a classic example of how a single character in a configuration file can break a production deployment. It serves as a reminder that as we scale our infrastructure at CPLABS, the rigor applied to the pipeline is just as important as the rigor applied to the application code.
+
+### Final Thoughts
+
+Today was a balance of **empathy and efficiency**. Whether it's ensuring a 70-year-old user can easily find the "Play" button or ensuring a TTS engine can handle parallel requests without lagging, the goal is the same: removing friction.
+
+Technical depth is not just about using the newest framework; it's about knowing exactly which constraint to apply to solve a human problem.
+
+***
+
+**Summary of Changes:**
+- **UX:** Established a comprehensive design brief for dementia-friendly interfaces.
+- **Perf:** Scaled TTS to 5 instances with parallel chunking for lower latency.
+- **DevOps:** Fixed `bitbucket-pipelines.yml` rsync pathing bug.
