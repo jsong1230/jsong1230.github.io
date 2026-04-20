@@ -1,0 +1,55 @@
+---
+title: "The Eternal Battle with \"Safe Areas\": Solving the iPhone 17 UI Glitch"
+date: "2026-04-20"
+lang: en
+excerpt: "The Eternal Battle with \"Safe Areas\": Solving the iPhone 17 UI Glitch  As a CTO and engineer who has spent over two decades navigating the evolution o..."
+---
+
+# The Eternal Battle with "Safe Areas": Solving the iPhone 17 UI Glitch
+
+As a CTO and engineer who has spent over two decades navigating the evolution of the web—from the early days of table-based layouts to the modern era of responsive, device-agnostic design—I’ve learned one universal truth: **The "last mile" of UI/UX is where the most humbling bugs hide.**
+
+Today was a prime example of this. While working on the `heritageradio` project, I encountered a classic "it works on my machine (and almost every other device)" scenario involving the latest iPhone 17 Pro simulator.
+
+### The Problem: The Vanishing Button
+
+The symptom was straightforward but critical: on the `/radio` screen, the 'View Schedule' (편성표 보기) toggle button was partially or completely obscured. It was being swallowed by the volume control gradient at the bottom of the screen.
+
+When I dove into the CSS, I found the culprit: a hard-coded `padding-bottom: 110px` in the `.shell` class. 
+
+In the world of modern mobile browsers, hard-coding offsets is a dangerous game. Between the "notch" at the top and the "home indicator" at the bottom, Apple has introduced the concept of **Safe Areas**. If you don't explicitly account for these, your UI will either overlap with system elements or, as in this case, get pushed out of the viewport by a dynamic system overlay.
+
+### The Technical Decision: Dynamic Calculation over Magic Numbers
+
+The `.vol` (volume) component is absolutely positioned at the bottom and includes its own internal padding and the `safe-area-inset-bottom`. After calculating the actual height of the volume component (padding + label + slider + bottom-padding + safe-area), I realized the total height was roughly 148px on the iPhone 17. My hard-coded 110px was simply not enough—leaving a gap of about 38px that caused the toggle button to slide underneath the gradient.
+
+Instead of just bumping the number to 150px (which would create an awkward gap on older iPhones or desktop browsers), I implemented a dynamic calculation:
+
+```css
+/* Old Code */
+padding-bottom: 110px;
+
+/* New Code */
+padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px));
+```
+
+**Why this approach?**
+1. **`env(safe-area-inset-bottom)`**: This is the gold standard for iOS development. It allows the browser to tell the CSS exactly how much space the system home indicator is occupying.
+2. **The 140px Base**: I set this as the upper bound for the volume component's height plus a 10px buffer for breathing room.
+3. **Backward Compatibility**: By providing `0px` as a fallback, this change has zero negative impact on standard web browsers or older iPhones where the safe area is not applicable.
+
+### Engineering Insights: The Cost of "Almost Right"
+
+This minor fix reminds me of a lesson I've carried throughout my career at **CPLABS** and beyond: **Avoid "Magic Numbers" in your stylesheets.**
+
+A value like `110px` feels correct during the initial build because it fits the current test device. However, technical debt often accumulates in these small, arbitrary decisions. When a new device (like the iPhone 17) or a new OS version (iOS 26.4) arrives, these magic numbers become landmines.
+
+Whenever you are dealing with the edges of a screen, always ask: *"Is this value constant, or is it dependent on the environment?"* If the answer is the latter, reach for `calc()` and `env()` variables.
+
+### Wrapping Up
+
+Beyond the UI fix, I also spent some time updating my personal dashboard data. Seeing the commit activity spike on `heritageradio` and the `claude-agent` projects is a great reminder of how AI-assisted development is accelerating our velocity.
+
+The journey from a 20-year veteran engineer to a modern Web3/AI architect is a continuous process of unlearning "the way we used to do it" and embracing the dynamic nature of the modern web.
+
+Stay curious, and always check your safe areas.
