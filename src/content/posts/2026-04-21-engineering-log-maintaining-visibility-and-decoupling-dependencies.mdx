@@ -1,0 +1,51 @@
+---
+title: "Engineering Log: Maintaining Visibility and Decoupling Dependencies"
+date: "2026-04-21"
+lang: en
+excerpt: "Engineering Log: Maintaining Visibility and Decoupling Dependencies  As a CTO and engineer, I’ve always believed that the most dangerous state for a p..."
+---
+
+# Engineering Log: Maintaining Visibility and Decoupling Dependencies
+
+As a CTO and engineer, I’ve always believed that the most dangerous state for a project is "silent stagnation." Whether it's a massive enterprise system at **CPLABS** or a personal side project, visibility into development velocity is the only way to ensure we are moving in the right direction.
+
+Today’s work was a mix of high-level dashboard maintenance and a critical architectural refinement in the `heritageradio` project.
+
+### The Art of the Dashboard: Tracking Velocity
+
+Looking at the diff for `jsong1230.github.io`, it might seem like a simple `chore: Update dashboard data`. However, these numbers tell a story.
+
+```json
+- "commits_7d": 169,
+- "commits_30d": 172
++ "commits_7d": 218,
++ "commits_30d": 222
+```
+
+The spike in commit activity (from 169 to 218 in 7 days) reflects a period of intense iteration. In my 20 years of experience, I've learned that commit counts aren't a proxy for productivity, but they *are* a proxy for momentum. When I see a surge like this, it usually indicates that we've hit a "flow state" in the feature development cycle or are aggressively tackling technical debt.
+
+### Technical Deep Dive: Decoupling Capacitor Dependencies
+
+The most significant technical change today happened in the `heritageradio` repository:
+`frontend: notifications·offline 모듈 Capacitor 의존 제거 (웹 no-op)`
+
+This is a classic architectural challenge: **How do you handle platform-specific functionality in a cross-platform codebase without polluting your business logic?**
+
+The `notifications` and `offline` modules originally had a hard dependency on Capacitor (the cross-platform runtime). While this works perfectly for mobile apps, it creates friction when running in a standard web browser—leading to unnecessary bundle size and potential runtime errors when the native bridge is missing.
+
+**The Decision: The No-Op Pattern**
+Instead of wrapping every single call in an `if (isNative)` block, I implemented a "no-op" (no operation) pattern for the web. 
+
+1. **Interface Definition:** Define a strict interface for what a `NotificationService` should do.
+2. **Platform Implementation:** Create a `CapacitorNotificationService` for mobile and a `WebNotificationService` for the browser.
+3. **The "No-Op" Logic:** For the web version, if a feature isn't supported or required, the method simply returns a resolved promise without doing anything.
+
+This ensures that the rest of the frontend code can call `NotificationService.push()` without worrying about whether it's running on an iPhone or a Chrome tab. It keeps the core logic clean and the dependencies decoupled.
+
+### Final Thoughts
+
+Whether it's updating a JSON file to track progress or refactoring a module to remove a heavy dependency, the goal is always the same: **Reduce friction.** 
+
+In the early days of my career, I might have just forced the dependency to work. But after leading engineering teams and scaling systems, I've realized that the most maintainable code is the code that doesn't care about its environment. By moving toward a more modular, interface-driven approach, we ensure that the project remains agile and scalable.
+
+Onward to the next sprint.
