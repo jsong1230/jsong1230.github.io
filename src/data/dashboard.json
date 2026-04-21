@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-04-20T23:00:01.931Z",
+  "generated_at": "2026-04-21T23:00:01.886Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-20",
-          "last_msg": "frontend: notifications·offline 모듈 Capacitor 의존 제거 (웹 no-op)",
+          "last_date": "2026-04-22",
+          "last_msg": "mobile: radio-bundle 재생성 (spacer + 연도 dot 복원)",
           "branch": "dev",
           "activity": [
-            5,
             33,
             30,
             27,
             73,
             50,
-            0
+            67,
+            8
           ],
-          "commits_7d": 218,
-          "commits_30d": 222
+          "commits_7d": 293,
+          "commits_30d": 297
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-20",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-04-21",
+          "last_msg": "fix: Sanitize LaTeX/angle-bracket expressions in codereview MDX",
           "branch": "main",
           "activity": [
-            2,
             2,
             2,
             2,
             3,
             2,
+            3,
             0
           ],
-          "commits_7d": 15,
-          "commits_30d": 28
+          "commits_7d": 16,
+          "commits_30d": 31
         },
         {
           "name": "trump-code",
-          "last_date": "2026-04-19",
-          "last_msg": "chore: daily pipeline data update 2026-04-19",
+          "last_date": "2026-04-20",
+          "last_msg": "chore: daily pipeline data update 2026-04-20",
           "branch": "main",
           "activity": [
-            1,
             1,
             2,
             1,
             1,
             0,
+            1,
             0
           ],
           "commits_7d": 6,
-          "commits_30d": 326
+          "commits_30d": 322
         },
         {
           "name": "claude-agent",
@@ -61,16 +61,16 @@
           "last_msg": "4/19 afternoon: MyKeepin solo end-to-end test plan",
           "branch": "gram-jsong",
           "activity": [
-            2,
             0,
             3,
             0,
             2,
             0,
+            0,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 23
+          "commits_7d": 7,
+          "commits_30d": 21
         },
         {
           "name": "openfield",
@@ -78,7 +78,7 @@
           "last_msg": "fix: 분석 파이프라인 블로킹 버그 수정 — 동기 Redis 호출 제�",
           "branch": "dev",
           "activity": [
-            4,
+            0,
             0,
             0,
             0,
@@ -86,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 13,
+          "commits_7d": 3,
           "commits_30d": 15
         },
         {
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 113
+          "commits_30d": 112
         },
         {
           "name": "minidaepa",
@@ -240,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 17
+          "commits_30d": 12
         },
         {
           "name": "family-balance-battle",
@@ -288,9 +288,9 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             8,
             2,
+            0,
             0,
             0,
             0
@@ -306,8 +306,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -321,16 +321,16 @@
           "last_msg": "4/17 일지 업데이트: sync template, producer/consumer 분화, front-ws fix,",
           "branch": "mini-jsong",
           "activity": [
-            2,
             4,
             3,
             3,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 12,
-          "commits_30d": 23
+          "commits_7d": 11,
+          "commits_30d": 21
         },
         {
           "name": "metadium-explorer-stack",
@@ -340,8 +340,8 @@
           "activity": [
             0,
             0,
-            0,
             15,
+            0,
             0,
             0,
             0
@@ -355,9 +355,9 @@
           "last_msg": "feat: polished UX — history, alert ack, hands-free chat, auto-refresh",
           "branch": "master",
           "activity": [
-            0,
             5,
             1,
+            0,
             0,
             0,
             0,
@@ -372,9 +372,9 @@
           "last_msg": "chore(frontend): favicon.ico를 MetaLotto ML 로고로 교체",
           "branch": "master",
           "activity": [
-            0,
             3,
             2,
+            0,
             0,
             0,
             0,
@@ -389,9 +389,9 @@
           "last_msg": "docs: CLAUDE.md 업데이트 (백엔드/Referral/API 정보 추가)",
           "branch": "main",
           "activity": [
-            0,
             5,
             2,
+            0,
             0,
             0,
             0,
@@ -406,15 +406,15 @@
           "last_msg": "fix: allow pre-governance blocks in verifyBlockSig for full sync compatibility",
           "branch": "camellia",
           "activity": [
-            2,
             1,
             8,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 11,
+          "commits_7d": 9,
           "commits_30d": 79
         },
         {
@@ -424,8 +424,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             13,
+            0,
             0,
             0,
             0,
@@ -441,8 +441,8 @@
           "branch": "develop",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -458,8 +458,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -474,8 +474,8 @@
           "last_msg": "docs: CLAUDE.md, TODOS.md, README 전체 업데이트",
           "branch": "main",
           "activity": [
-            0,
             19,
+            0,
             0,
             0,
             0,
@@ -491,15 +491,15 @@
           "last_msg": "docs: 4/15 배포 이슈 수정 반영 — 타임아웃·LangSmith 설정 문서",
           "branch": "dev",
           "activity": [
-            10,
             4,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 14,
+          "commits_7d": 4,
           "commits_30d": 16
         },
         {
@@ -508,8 +508,8 @@
           "last_msg": "::bug: fix: jest 설정 및 컴포넌트 동적 임포트 수정",
           "branch": "dev",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -525,7 +525,7 @@
           "last_msg": "feat(app): add Metadium chain to frontend configuration",
           "branch": "feat/add-metadium-chain",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -533,7 +533,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 2
         },
         {
@@ -542,7 +542,7 @@
           "last_msg": "Merge bitcoin/bitcoin#34772: test: modernize interface_http and cover more libev",
           "branch": "security",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -550,8 +550,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 196
+          "commits_7d": 0,
+          "commits_30d": 192
         },
         {
           "name": "daepa-admin-backend",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 112
+          "commits_30d": 111
         },
         {
           "name": "BORA_hack",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 17
+          "commits_30d": 12
         },
         {
           "name": "daepa-persona-gen",
