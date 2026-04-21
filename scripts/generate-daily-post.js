@@ -237,7 +237,12 @@ function createCodeReviewMDX(content, date) {
 
   if (fs.existsSync(filepath)) return null;
 
-  let excerpt = content.replace(/^#{1,6}\s+/gm, '').replace(/\n/g, ' ').trim().substring(0, 150);
+  // Sanitize: remove LaTeX math ($...$) and escape problematic MDX patterns
+  const safeContent = content
+    .replace(/\$[^$\n]+\$/g, (m) => m.replace(/\{([^}]+)\}/g, '($1)'))  // LaTeX {x} → (x)
+    .replace(/<([^>a-zA-Z\/!][^>]*)>/g, '($1)');                         // <non-tag> → (...)
+
+  let excerpt = safeContent.replace(/^#{1,6}\s+/gm, '').replace(/\n/g, ' ').trim().substring(0, 150);
   if (excerpt.length >= 150) excerpt += '...';
 
   fs.writeFileSync(filepath, `---
@@ -248,7 +253,7 @@ excerpt: ${JSON.stringify(excerpt)}
 tags: ["code-review"]
 ---
 
-${content}
+${safeContent}
 `);
   return filename;
 }
