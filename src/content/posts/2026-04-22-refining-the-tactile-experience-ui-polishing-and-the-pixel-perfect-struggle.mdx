@@ -1,0 +1,46 @@
+---
+title: "Refining the Tactile Experience: UI Polishing and the \"Pixel-Perfect\" Struggle"
+date: "2026-04-22"
+lang: en
+excerpt: "Refining the Tactile Experience: UI Polishing and the \"Pixel-Perfect\" Struggle  As an engineer with over two decades of experience, I’ve learned that ..."
+---
+
+# Refining the Tactile Experience: UI Polishing and the "Pixel-Perfect" Struggle
+
+As an engineer with over two decades of experience, I’ve learned that the difference between a "working" product and a "premium" product lies in the final 5% of polishing. Today's work on the **Heritage Radio** project was a deep dive into exactly that—fine-tuning the spatial relationships and visual feedback of a mobile interface to ensure it feels intuitive and high-end.
+
+### The Challenge: Consistency Across Platforms
+
+One of the most persistent headaches in mobile development (especially when dealing with cross-platform frameworks) is how different OS engines interpret spacing. I encountered a specific issue where `marginTop` values were not being reflected consistently on Android devices, leading to a layout that felt "cramped" compared to the iOS version.
+
+#### Technical Decision: Explicit Spacers over Margins
+Instead of continuing to fight with margin values that behave unpredictably across different screen densities and OS versions, I made a strategic decision to move toward **explicit spacer components**.
+
+In `RadioShell.tsx`, I replaced the problematic `marginTop: 28` with a dedicated View:
+```tsx
+// Instead of marginTop: 28
+<View style={{ height: 22 }} />
+```
+By using a View with a fixed height, I'm effectively forcing the layout engine to reserve that specific pixel space. It’s a simple change, but in my experience at **CPLABS**, this "explicit spacing" pattern is far more reliable for maintaining a consistent brand identity across a fragmented device ecosystem.
+
+### Restoring Visual Feedback: The Jog Shuttle Indicators
+
+In a previous iteration, I had removed the year-dot indicators below the Jog Shuttle to save space. However, after reviewing the UX, I realized that the "tactile" feel of the radio was diminished. Users need immediate visual confirmation of where they are in the timeline without having to read the large central text.
+
+I restored the 5-year dot indicator (1955–1995), implementing a dynamic styling system based on the current selection:
+- **Active Year:** Larger dot (10px), `colors.orange`, and `NotoSansKR_900Black` font.
+- **Inactive Year:** Smaller dot (7px), `colors.brassFaint`, and `NotoSansKR_400Regular` font.
+
+This creates a clear visual hierarchy. The contrast between the bold orange and the muted brass guides the eye instantly, reinforcing the "analog" aesthetic of the radio while providing modern digital precision.
+
+### The Iterative Loop: Bundle Regeneration
+
+A significant portion of today's commits involved regenerating the `radio-bundle`. Because this project involves a highly optimized web-bundle for mobile embedding, every minor tweak to the `RadioShell` or `JogShuttle` requires a fresh build to be reflected in the `frontend/public/radio-bundle/` directory.
+
+While it feels like repetitive work, this iterative loop is where the "feel" of the app is born. Adjusting the gap between the App Bar and the Card, or expanding the spacer between the title and the toggle, might seem trivial in a diff, but it fundamentally changes the user's perceived quality of the interface.
+
+### Final Insights
+
+Today's work reminds me that **UI engineering is as much about subtraction and spacing as it is about adding features.** Whether it's choosing a `View` over a `margin` for stability or restoring a dot indicator for UX clarity, the goal is to remove friction between the user and the experience.
+
+At the end of the day, the code is the means, but the *feeling* of the interaction is the product.
