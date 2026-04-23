@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-04-22T23:00:01.331Z",
+  "generated_at": "2026-04-23T23:00:01.862Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-22",
-          "last_msg": "랜딩 PREVIEW — Live 상태로 전환 (방송 중)",
+          "last_date": "2026-04-24",
+          "last_msg": "조선왕조실록 이야기 — 5/8~5/10 × 5연도 스크립트 15편",
           "branch": "dev",
           "activity": [
-            30,
             27,
             73,
             50,
             67,
             38,
-            0
+            32,
+            4
           ],
-          "commits_7d": 317,
-          "commits_30d": 327
+          "commits_7d": 316,
+          "commits_30d": 363
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-22",
+          "last_date": "2026-04-23",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
-            2,
             3,
             2,
             3,
+            2,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 33
+          "commits_30d": 35
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-04-22",
-          "last_msg": "4/22: heritageradio dev branch snapshot + AWS deployment staging notes",
+          "last_date": "2026-04-23",
+          "last_msg": "4/23 add mail drafts: megazone CUR request + CEO interim report (pre-clear hando",
           "branch": "gram-jsong",
           "activity": [
-            3,
             0,
             2,
             0,
             0,
             1,
+            3,
             0
           ],
-          "commits_7d": 6,
-          "commits_30d": 18
+          "commits_7d": 9,
+          "commits_30d": 21
         },
         {
           "name": "trump-code",
-          "last_date": "2026-04-21",
-          "last_msg": "chore: daily pipeline data update 2026-04-21",
+          "last_date": "2026-04-22",
+          "last_msg": "chore: daily pipeline data update 2026-04-22",
           "branch": "main",
           "activity": [
-            2,
             1,
             1,
             0,
             1,
             1,
+            1,
             0
           ],
           "commits_7d": 6,
-          "commits_30d": 316
+          "commits_30d": 288
         },
         {
           "name": "openfield",
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 107
+          "commits_30d": 81
         },
         {
           "name": "minidaepa",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 14
+          "commits_30d": 13
         },
         {
           "name": "timemachine",
@@ -282,6 +282,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "go-metadium",
+          "last_date": "2026-04-23",
+          "last_msg": "feat: persist EIP-4844 blob sidecars in chain DB",
+          "branch": "camellia",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 80
+        },
+        {
           "name": "meta-agents",
           "last_date": "2026-04-22",
           "last_msg": "docs: mark 도메인 + HTTPS as completed in TODOS",
@@ -292,8 +309,8 @@
             0,
             0,
             0,
-            0,
-            6
+            6,
+            0
           ],
           "commits_7d": 6,
           "commits_30d": 25
@@ -305,14 +322,14 @@
           "branch": "mini-jsong",
           "activity": [
             3,
-            3,
             0,
             0,
             0,
             0,
-            5
+            5,
+            0
           ],
-          "commits_7d": 11,
+          "commits_7d": 8,
           "commits_30d": 22
         },
         {
@@ -321,15 +338,15 @@
           "last_msg": "feat: read-only dashboard UI — Phase 1 상태 가시화",
           "branch": "main",
           "activity": [
-            8,
             2,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 2,
           "commits_30d": 10
         },
         {
@@ -338,8 +355,8 @@
           "last_msg": "chore: skeleton — 격리 원칙 + infra-only compose + preflight",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -355,8 +372,8 @@
           "last_msg": "chore: bump front-ws submodule to fix/empty-blocks-safe-init",
           "branch": "master",
           "activity": [
-            0,
             15,
+            0,
             0,
             0,
             0,
@@ -372,7 +389,7 @@
           "last_msg": "feat: polished UX — history, alert ack, hands-free chat, auto-refresh",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -380,7 +397,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 26
         },
         {
@@ -389,7 +406,7 @@
           "last_msg": "chore(frontend): favicon.ico를 MetaLotto ML 로고로 교체",
           "branch": "master",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -397,7 +414,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 7
         },
         {
@@ -406,7 +423,7 @@
           "last_msg": "docs: CLAUDE.md 업데이트 (백엔드/Referral/API 정보 추가)",
           "branch": "main",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -414,25 +431,8 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 10
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-04-16",
-          "last_msg": "fix: allow pre-governance blocks in verifyBlockSig for full sync compatibility",
-          "branch": "camellia",
-          "activity": [
-            8,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 79
         },
         {
           "name": "MetaStake",
@@ -440,7 +440,7 @@
           "last_msg": "Default manual language to English",
           "branch": "main",
           "activity": [
-            13,
+            0,
             0,
             0,
             0,
@@ -448,7 +448,7 @@
             0,
             0
           ],
-          "commits_7d": 13,
+          "commits_7d": 0,
           "commits_30d": 13
         },
         {
@@ -457,7 +457,7 @@
           "last_msg": "탈퇴 시 소셜 계정 연결 해제를 서버에서 처리하도록 개선 (�",
           "branch": "develop",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -465,7 +465,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -474,7 +474,7 @@
           "last_msg": "사용자 캐릭터 제작 테이블 컬럼명 수정",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -482,7 +482,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -551,7 +551,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 182
+          "commits_30d": 155
         },
         {
           "name": "daepa-admin-backend",
@@ -619,7 +619,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 15
+          "commits_30d": 14
         },
         {
           "name": "minidaepa",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 106
+          "commits_30d": 80
         },
         {
           "name": "BORA_hack",
