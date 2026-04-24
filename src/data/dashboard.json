@@ -1,42 +1,59 @@
 {
-  "generated_at": "2026-04-23T23:00:01.862Z",
+  "generated_at": "2026-04-24T23:00:01.733Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-24",
-          "last_msg": "조선왕조실록 이야기 — 5/8~5/10 × 5연도 스크립트 15편",
+          "last_date": "2026-04-25",
+          "last_msg": "[main] 4/24 tts-length-target briefing obsolete 표시 (재생 0.9 방향 폐기",
           "branch": "dev",
           "activity": [
-            27,
             73,
             50,
-            67,
-            38,
+            63,
             32,
-            4
+            32,
+            38,
+            5
           ],
-          "commits_7d": 316,
-          "commits_30d": 363
+          "commits_7d": 317,
+          "commits_30d": 392
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-23",
+          "last_date": "2026-04-24",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
-            2,
             3,
             2,
             3,
+            2,
             2,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 35
+          "commits_30d": 37
+        },
+        {
+          "name": "trump-code",
+          "last_date": "2026-04-23",
+          "last_msg": "chore: daily pipeline data update 2026-04-23",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 249
         },
         {
           "name": "claude-agent",
@@ -44,33 +61,16 @@
           "last_msg": "4/23 add mail drafts: megazone CUR request + CEO interim report (pre-clear hando",
           "branch": "gram-jsong",
           "activity": [
-            0,
             2,
             0,
             0,
             1,
             3,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 21
-        },
-        {
-          "name": "trump-code",
-          "last_date": "2026-04-22",
-          "last_msg": "chore: daily pipeline data update 2026-04-22",
-          "branch": "main",
-          "activity": [
-            1,
-            1,
             0,
-            1,
-            1,
-            1,
             0
           ],
           "commits_7d": 6,
-          "commits_30d": 288
+          "commits_30d": 20
         },
         {
           "name": "openfield",
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 81
+          "commits_30d": 72
         },
         {
           "name": "minidaepa",
@@ -240,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 11
         },
         {
           "name": "family-balance-battle",
@@ -257,7 +257,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 37
+          "commits_30d": 10
         },
         {
           "name": "mykeepin_mvvm",
@@ -282,6 +282,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "meta-agents",
+          "last_date": "2026-04-24",
+          "last_msg": "docs: migrate deploy target 110 → 48 (self-contained stack)",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            3
+          ],
+          "commits_7d": 9,
+          "commits_30d": 28
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-04-24",
+          "last_msg": "4/23~4/24 testnet 4노드 재점검 + Pebble fallback 버그 해결 + mainnet BA",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            1
+          ],
+          "commits_7d": 6,
+          "commits_30d": 22
+        },
+        {
           "name": "go-metadium",
           "last_date": "2026-04-23",
           "last_msg": "feat: persist EIP-4844 blob sidecars in chain DB",
@@ -292,45 +326,11 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 80
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-04-22",
-          "last_msg": "docs: mark 도메인 + HTTPS as completed in TODOS",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            6,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 25
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-04-22",
-          "last_msg": "handoff-prompt: HTTPS endpoint + SDK config + project boundary 반영",
-          "branch": "mini-jsong",
-          "activity": [
-            3,
-            0,
-            0,
-            0,
-            0,
-            5,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 22
         },
         {
           "name": "meta-zkbridge",
@@ -338,7 +338,7 @@
           "last_msg": "feat: read-only dashboard UI — Phase 1 상태 가시화",
           "branch": "main",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -346,7 +346,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 10
         },
         {
@@ -355,7 +355,7 @@
           "last_msg": "chore: skeleton — 격리 원칙 + infra-only compose + preflight",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -363,7 +363,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -372,7 +372,7 @@
           "last_msg": "chore: bump front-ws submodule to fix/empty-blocks-safe-init",
           "branch": "master",
           "activity": [
-            15,
+            0,
             0,
             0,
             0,
@@ -380,7 +380,7 @@
             0,
             0
           ],
-          "commits_7d": 15,
+          "commits_7d": 0,
           "commits_30d": 15
         },
         {
@@ -551,7 +551,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 155
+          "commits_30d": 140
         },
         {
           "name": "daepa-admin-backend",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 80
+          "commits_30d": 71
         },
         {
           "name": "BORA_hack",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 11
         },
         {
           "name": "daepa-persona-gen",
