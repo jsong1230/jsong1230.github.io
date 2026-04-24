@@ -1,0 +1,56 @@
+---
+title: "Bridging Eras: Automating Voice Reference Extraction and Content Scaling"
+date: "2026-04-24"
+lang: en
+excerpt: "Bridging Eras: Automating Voice Reference Extraction and Content Scaling  As a CTO, I’ve always believed that the intersection of legacy data and mode..."
+---
+
+# Bridging Eras: Automating Voice Reference Extraction and Content Scaling
+
+As a CTO, I’ve always believed that the intersection of legacy data and modern AI is where the most interesting engineering challenges lie. Today’s work on the `heritageradio` project was a perfect example of this. We aren't just archiving history; we are building a technical pipeline to make that history "speak" again.
+
+Today was focused on two primary pillars: **Automated Voice Reference (voice_ref) Extraction** and **Mass Content Scaling**.
+
+### 1. The Technical Challenge: From Raw Audio to AI-Ready References
+
+The goal was to extract high-quality voice references from KTV’s "대한뉴스" (Korean News on Film) archives to serve as a baseline for TTS and voice synthesis. The problem is that raw archive files are monolithic; we needed specific, clean segments that represent different eras (70s, 80s, 90s).
+
+I developed a Python-based extraction pipeline (`extract_from_raw.py`) that automates the entire journey from a raw MP3 to a metadata-rich voice reference.
+
+**The Technical Workflow:**
+1.  **Targeted Extraction:** Instead of random sampling, I defined specific candidates across three eras (75, 85, 95) and applied multiple offsets (30s, 60s, 90s) to ensure we captured diverse vocal tones within a single broadcast.
+2.  **Audio Normalization:** To ensure the AI doesn't learn "noise" or inconsistent volumes, I integrated `ffmpeg` with the `loudnorm` filter:
+    ```bash
+    -af "loudnorm=I=-20:LRA=7:TP=-2"
+    ```
+    This is a critical step. In my experience at **CPLABS**, dealing with inconsistent data formats is the biggest bottleneck in AI pipelines. Normalizing the Integrated Loudness (I) to -20 LUFS ensures the voice references are consistent regardless of the original recording quality.
+3.  **Automated Transcription:** I integrated OpenAI's Whisper (base model) directly into the script to generate `.meta.json` sidecar files. This transforms a "blind" audio file into a searchable, attributed asset.
+
+**The Result:** Out of 90 attempted segments, 53 were successfully processed and registered, meeting our goal of 10+ active references per era.
+
+### 2. Content Scaling: The "Born Today" and "Joseon Story" Pipelines
+
+Engineering isn't just about the "plumbing" (the code); it's also about the "water" (the content). Today, I pushed a massive amount of structured content:
+- **Born Today:** 25 new scripts across 5 different decades.
+- **Joseon Story:** 15 new scripts.
+
+To handle this volume, I didn't just manually upload files. I wrote a dedicated upload tool (`upload_born_today.py`). When you reach a certain scale of content, the "manual upload" phase becomes a technical debt. Automating the ingestion of Markdown files into the backend ensures that the data structure remains consistent and reduces the risk of human error during deployment.
+
+### 3. Infrastructure Quick-Fix: Unblocking the Admin
+
+A small but vital change today was removing the `:ro` (read-only) flag from the backend audio volume in `docker-compose.yml`. 
+
+In a production environment, read-only mounts are a best practice for security. However, during the active development of an admin tool—where the system needs to write processed audio or temporary cache files—this becomes a "P0 blocker." I made the conscious decision to open the permissions to unblock the admin workflow, with the plan to implement a more granular `/tmp` write-permission strategy later.
+
+### Final Insights
+
+Today’s work reinforces a core principle I’ve followed for 20 years: **Automate the boring stuff so you can focus on the hard stuff.** 
+
+By automating the audio extraction and content upload, I shifted my focus from "how do I move this file?" to "is the audio quality sufficient for our AI model?" That is where the real value is created.
+
+Moving forward, the next phase will be collecting copyrighted broadcast voices (professional announcers), which will require a more nuanced approach to licensing and attribution.
+
+***
+
+**Jeffrey Joo-Han Song**
+*CTO & Engineer*
