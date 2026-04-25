@@ -1,0 +1,60 @@
+---
+title: "Optimizing TTS for Accessibility: The Baked-Slow Strategy"
+date: "2026-04-25"
+lang: en
+excerpt: "Engineering Log: Optimizing TTS Experience for Accessibility (Baked-Slow Strategy)  As a CTO, one of the most challenging aspects of product developme..."
+---
+
+# Engineering Log: Optimizing TTS Experience for Accessibility (Baked-Slow Strategy)
+
+As a CTO, one of the most challenging aspects of product development isn't just writing the code, but aligning the technical implementation with the actual human experience of the end-user. Today’s work on the **Heritage Radio** project was a prime example of this.
+
+We faced a critical decision regarding the playback speed of our Text-to-Speech (TTS) system. Our primary audience consists of seniors, for whom the default speed of most AI voices is often too fast, leading to cognitive fatigue and a diminished listening experience.
+
+## The Problem: Playback Rate vs. Audio Baking
+
+Initially, the team considered adjusting the `playbackRate` on the client side (mobile app) to 0.9×. While this is a common approach, it introduces several risks:
+1. **Client-side Inconsistency:** Different mobile OS versions or audio players handle pitch shifting and time-stretching differently.
+2. **Complexity:** Every single playback endpoint across the app would need to be explicitly configured.
+3. **User Friction:** If a user manually changes the speed, the "intended" accessibility speed is lost.
+
+## The Technical Decision: "Baked-Slow" Generation
+
+After reviewing the requirements and consulting with the stakeholders, I made the decision to pivot from **playback-side adjustment** to **generation-side baking**.
+
+Instead of telling the app to "play this fast file slowly," we are now telling the TTS engine to "generate a slow file from the start."
+
+### Key Changes in the Code:
+I updated the default speed parameter in both the backend and the admin UI to `0.9`.
+
+```python
+# backend/app/routers/episode_registry.py
+# Changed TTSGenerateIn.speed default from 1.0 -> 0.9
+```
+
+By setting the `speed` parameter to `0.9` during the wav file generation process, the slow tempo is "baked" into the audio file itself. This means the mobile app can simply play the file at `1.0×` (default), and the senior listeners will hear a comfortably paced narration without any additional client-side logic.
+
+## Insights from the Diff: Managing "Truth" in Documentation
+
+One of the most interesting parts of today's commit was not the code, but the **documentation cleanup**. In fast-moving projects, "stale" documentation is more dangerous than no documentation. 
+
+I encountered a conflict where a previous briefing (`2026-04-24_tts-length-target.md`) suggested a playback-side change. To prevent confusion for other engineers and the pipeline team, I didn't just delete it; I added a **Superseded Banner**:
+
+> ⚠️ **[Superseded 2026-04-25]** This briefing's "Playback Speed 0.9×" direction has been discarded. The final decision is **Generation 0.9× (wav baked) + Playback 1.0×**.
+
+This approach maintains the history of *why* we changed our minds while providing a clear pointer to the current "source of truth."
+
+## Final Reflections
+
+This change highlights a core principle I've followed throughout my 20 years of engineering: **Push complexity upstream.** 
+
+By handling the speed adjustment at the generation stage (the "upstream"), we simplify the consumption stage (the "downstream" mobile app). This reduces the surface area for bugs and ensures a consistent experience for the users, regardless of their device.
+
+At **CPLABS**, we always strive for this kind of architectural simplicity—solving the problem where it originates rather than patching it where it manifests.
+
+---
+**Summary of Today's Work:**
+- **Policy Shift:** Moved TTS speed control from Client Playback $\rightarrow$ Server Generation.
+- **Implementation:** Updated `episode_registry.py` and Admin UI defaults to `0.9`.
+- **Documentation:** Synchronized 13+ script instructions and marked obsolete briefings to ensure team alignment.
+- **Result:** Simplified mobile app requirements and improved accessibility for senior listeners.
