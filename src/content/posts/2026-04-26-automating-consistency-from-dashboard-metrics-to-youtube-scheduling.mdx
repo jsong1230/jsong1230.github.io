@@ -1,0 +1,53 @@
+---
+title: "Automating Consistency: From Dashboard Metrics to YouTube Scheduling"
+date: "2026-04-26"
+lang: en
+excerpt: "Automating Consistency: From Dashboard Metrics to YouTube Scheduling  As an engineer and CTO, I’ve always believed that the most valuable systems are ..."
+---
+
+# Automating Consistency: From Dashboard Metrics to YouTube Scheduling
+
+As an engineer and CTO, I’ve always believed that the most valuable systems are those that reduce cognitive load through automation. Whether it's managing a high-scale blockchain infrastructure at **CPLABS** or maintaining a personal portfolio of side projects, the goal remains the same: eliminate manual repetition to make room for deep architectural thinking.
+
+Today's development work focused on two different but complementary aspects of this philosophy: maintaining a high-level visibility dashboard and refining an automated content pipeline for my `booksummary` project.
+
+## 1. The Pulse of Productivity: Dashboard Updates
+I spent some time updating the `dashboard.json` for my personal site. While a "chore" commit might seem trivial, I view these dashboards as a personal "heartbeat" monitor. By tracking commit activity across multiple repositories—from `heritageradio` to `claude-agent`—I can visualize where my focus is shifting.
+
+Looking at the diff, the activity patterns are telling. The `heritageradio` project continues to be a high-velocity area, while the `booksummary` project is beginning to see more consistent movement. In a professional setting, this is akin to monitoring KPI dashboards for a product launch; it allows me to pivot resources (or in this case, my own time) based on actual output rather than perceived progress.
+
+## 2. Solving the "Scheduling Gap" in YouTube Automation
+The core technical challenge today was in the `booksummary` repository. I wanted to move from manual uploads to a fully automated "scheduled" pipeline.
+
+### The Problem
+Uploading a video is easy, but timing is everything for audience engagement. I wanted videos to be automatically scheduled for **19:00 KST the following day**. However, the YouTube Data API has a strict requirement: if you provide a `publishAt` timestamp, the `privacyStatus` **must** be set to `private`. If you try to set it to `public` while providing a schedule date, the API returns an error.
+
+### The Technical Decision
+I implemented a logic gate in the `YouTubeUploader` class to handle this dependency automatically. Instead of relying on a manual flag, the code now infers the required privacy status based on the presence of the scheduling metadata.
+
+```python
+# src/09_upload_from_metadata.py
+'status': {
+    # publishAt 사용 시 YouTube API는 privacyStatus가 "private"이어야 함
+    'privacyStatus': 'private' if publish_at else privacy_status,
+    'selfDeclaredMadeForKids': False,
+    **({"publishAt": publish_at} if publish_at else {})
+}
+```
+
+To ensure timezone consistency—a common pitfall in global applications—I explicitly handled the conversion from KST (UTC+9) to UTC, as required by the ISO 8601 format for the YouTube API:
+
+```python
+kst = timezone(timedelta(hours=9))
+now_kst = datetime.now(kst)
+publish_kst = (now_kst + timedelta(days=1)).replace(hour=19, minute=0, second=0, microsecond=0)
+publish_utc = publish_kst.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+```
+
+### Engineering Insight
+This change highlights a key principle I've applied throughout my career: **The system should protect the user from the API's idiosyncrasies.** 
+
+By forcing the `privacyStatus` to `private` internally when a `publish_at` date exists, I've removed the possibility of a runtime error caused by conflicting parameters. This "defensive configuration" is exactly how we build robust middleware in Web3 or DID systems—by validating and normalizing data before it hits the external protocol.
+
+## Closing Thoughts
+Today was a reminder that "engineering" isn't just about solving complex algorithmic problems; it's about creating seamless flows. By automating the scheduling of content and the tracking of my own progress, I'm building a system that works for me, rather than me working for the system.
