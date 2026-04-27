@@ -1,42 +1,59 @@
 {
-  "generated_at": "2026-04-26T23:00:01.374Z",
+  "generated_at": "2026-04-27T23:00:01.770Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-27",
-          "last_msg": "[landing] KTV 한국정책방송원 공식 문의 메일 초안",
+          "last_date": "2026-04-28",
+          "last_msg": "[main] AWS STAGE 4 — prod CDN stack CREATE_COMPLETE · prod 인프라 4 STAGE ",
           "branch": "dev",
           "activity": [
-            63,
             32,
             32,
             38,
             17,
             15,
-            1
+            46,
+            5
           ],
           "commits_7d": 248,
-          "commits_30d": 420
+          "commits_30d": 470
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-04-26",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-04-27",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
-            3,
             2,
             2,
             2,
             2,
             3,
+            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 42
+          "commits_30d": 44
+        },
+        {
+          "name": "trump-code",
+          "last_date": "2026-04-26",
+          "last_msg": "chore: daily pipeline data update 2026-04-26",
+          "branch": "main",
+          "activity": [
+            1,
+            1,
+            1,
+            2,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 217
         },
         {
           "name": "claude-agent",
@@ -44,33 +61,16 @@
           "last_msg": "4/25-26 logs: openclaw-weekly cycle force-finalize + 2026.4.24 upgrade + 4/29 pr",
           "branch": "gram-jsong",
           "activity": [
-            0,
             1,
             3,
             0,
             0,
             1,
-            0
-          ],
-          "commits_7d": 5,
-          "commits_30d": 21
-        },
-        {
-          "name": "trump-code",
-          "last_date": "2026-04-25",
-          "last_msg": "chore: daily pipeline data update 2026-04-25",
-          "branch": "main",
-          "activity": [
-            1,
-            1,
-            1,
-            1,
-            2,
             0,
             0
           ],
-          "commits_7d": 6,
-          "commits_30d": 226
+          "commits_7d": 5,
+          "commits_30d": 20
         },
         {
           "name": "booksummary",
@@ -82,8 +82,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 63
+          "commits_30d": 61
         },
         {
           "name": "minidaepa",
@@ -240,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 8
+          "commits_30d": 7
         },
         {
           "name": "family-balance-battle",
@@ -291,8 +291,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -305,15 +305,15 @@
           "branch": "mini-jsong",
           "activity": [
             0,
-            0,
             5,
             0,
             1,
             1,
+            0,
             0
           ],
           "commits_7d": 7,
-          "commits_30d": 23
+          "commits_30d": 22
         },
         {
           "name": "meta-agents",
@@ -322,10 +322,10 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             6,
             0,
             3,
+            0,
             0,
             0
           ],
@@ -340,8 +340,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -356,9 +356,9 @@
           "branch": "develop",
           "activity": [
             0,
-            0,
             1,
             2,
+            0,
             0,
             0,
             0
@@ -372,10 +372,10 @@
           "last_msg": "최근 메세지 없는 경우 오류 수정",
           "branch": "develop",
           "activity": [
-            0,
             1,
             0,
             1,
+            0,
             0,
             0,
             0
@@ -389,10 +389,10 @@
           "last_msg": ":bug: fix: 포인트 통계 - 툴팁이 overflow hidden 되는 현상 수정",
           "branch": "dev",
           "activity": [
-            0,
             1,
             1,
             7,
+            0,
             0,
             0,
             0
@@ -406,10 +406,10 @@
           "last_msg": "Merge branch 'feature/custom-char' into develop",
           "branch": "develop",
           "activity": [
-            0,
             10,
             8,
             9,
+            0,
             0,
             0,
             0
@@ -423,15 +423,15 @@
           "last_msg": "작업항목 업데이트",
           "branch": "main",
           "activity": [
-            7,
             3,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 4,
           "commits_30d": 11
         },
         {
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 129
+          "commits_30d": 126
         },
         {
           "name": "daepa-discussion-chat",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 63
+          "commits_30d": 61
         },
         {
           "name": "BORA_hack",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 8
+          "commits_30d": 7
         },
         {
           "name": "daepa-persona-gen",
