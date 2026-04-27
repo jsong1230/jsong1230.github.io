@@ -1,0 +1,43 @@
+---
+title: "Engineering the Legal Guardrails for AI Voice Synthesis"
+date: "2026-04-27"
+lang: en
+excerpt: "Engineering the Legal Guardrails for AI Voice Synthesis  As a CTO, my role often oscillates between deep-diving into kernel-level optimizations and na..."
+---
+
+# Engineering the Legal Guardrails for AI Voice Synthesis
+
+As a CTO, my role often oscillates between deep-diving into kernel-level optimizations and navigating the complex intersection of law and technology. Today’s work was a prime example of the latter. While the git diffs might look like simple documentation updates, the technical and strategic decisions behind them are critical for the long-term viability of our AI services.
+
+## The Problem: The "Grey Area" of Public Domain AI Training
+
+We are currently developing **'Radio Time Machine'**, an AI-driven digital reminiscence therapy service for seniors. A core technical requirement is recreating the specific vocal atmosphere of announcers and DJs from the 1950s to the 1990s to evoke nostalgia and cognitive stimulation.
+
+We identified a high-quality dataset from KTV (Korea TV), released under the "KOGL Type 1" (Public Domain) license. On the surface, this seems like a green light. However, as an engineer with two decades of experience—including my time at **CPLABS**—I’ve learned that "Open Data" does not always mean "Open for AI Training."
+
+The core problem is the distinction between **Copyright** (the recording/broadcast) and **Neighboring Rights (Performers' Rights)**. Even if the broadcast itself is public domain, the specific vocal characteristics and the "performance" of the announcer may still be protected under Article 2, Paragraph 4 of the Copyright Act.
+
+## Technical and Strategic Decisions
+
+Today, I drafted a formal inquiry to KTV to secure a "legal safe harbor." The decision to be radically transparent in this communication was intentional.
+
+In the diff, you'll notice a specific note:
+> *"AI 음성합성 참조 데이터" 표현을 명시 — 단순 영상 인용이 아닌 voice clone 용도임을 숨기지 않음.*
+> *(Explicitly stating "AI voice synthesis reference data" — not hiding that this is for voice cloning, not simple citation.)*
+
+Many teams make the mistake of using vague language like "research purposes" or "data analysis" to avoid friction. However, from a risk management perspective, a vague approval is useless. If we are to build a commercial service with an ad-revenue model, we need an explicit confirmation that covers:
+1. **Voice Cloning:** Using the audio as a reference for TTS (Text-to-Speech) models.
+2. **Commercialization:** Ensuring that the "Public Domain" status extends to commercial app distribution.
+3. **Neighboring Rights:** Confirming that the performers' rights have been waived or are managed by the agency.
+
+## Insights from the Process
+
+This task highlights a shift in the modern CTO's responsibility. In the Web2 era, "solving" a problem usually meant optimizing a query or scaling a cluster. In the Web3 and AI era, solving a problem often means **defining the legal boundary of the data pipeline.**
+
+If we proceed without this explicit confirmation, we risk a "poisoned dataset" scenario where a legal challenge forces us to delete our trained weights—a catastrophic technical debt that no amount of refactoring can fix.
+
+## Summary of Daily Activity
+
+Beyond the legal drafting, I performed routine maintenance on my personal dashboard (`jsong1230.github.io`), updating the activity metrics across my various repositories including `claude-agent` and `trump-code`. It's a small ritual, but keeping a quantitative pulse on my development velocity helps me balance my time between high-level architectural planning and hands-on coding.
+
+**Today's Takeaway:** The most important "code" you write today might not be in Python or Rust, but in the formal agreements that protect your intellectual property and your users.
