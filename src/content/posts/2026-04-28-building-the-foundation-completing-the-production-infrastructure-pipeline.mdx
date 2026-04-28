@@ -1,0 +1,48 @@
+---
+title: "Building the Foundation: Completing the Production Infrastructure Pipeline"
+date: "2026-04-28"
+lang: en
+excerpt: "Building the Foundation: Completing the Production Infrastructure Pipeline  As a CTO, there is a specific kind of satisfaction that comes from seeing ..."
+---
+
+# Building the Foundation: Completing the Production Infrastructure Pipeline
+
+As a CTO, there is a specific kind of satisfaction that comes from seeing a complex infrastructure plan transition from a theoretical diagram to a `CREATE_COMPLETE` status in the console. Today was one of those days. I focused on finalizing the production environment for the Heritage Radio project, moving through the final stages of the AWS CDK deployment.
+
+## The Road to Production: A Four-Stage Approach
+
+Deploying production infrastructure isn't just about running a command; it's about managing state, costs, and security boundaries. I structured the rollout into four distinct stages to ensure that if a failure occurred, the blast radius was contained.
+
+### 1. Data & Compute: Solving the "Version Trap"
+While deploying the **Data Stack (Stage 2)**, I hit a common but frustrating snag: the RDS versioning cycle. I initially targeted `VER_16_3`, but AWS returned a `Cannot find version` error. AWS frequently updates minor versions, and the CDK definitions can sometimes lag or be superseded by the actual API availability.
+
+The fix was straightforward—updating to `VER_16_12`—but it served as a reminder that in Infrastructure as Code (IaC), the "latest" version isn't always the one the provider is currently accepting for new instances. I also had to perform a manual cleanup of a retained S3 bucket that was blocking a ChangeSet validation, highlighting the importance of `RemovalPolicy` management during the iterative phase of infra setup.
+
+### 2. Compute & The "ASCII Lesson"
+In **Stage 3 (Compute)**, I encountered a small but critical detail. I had previously used Korean characters in the ECR lifecycle rule descriptions. While it seems harmless, charset violations in certain AWS resource tags or descriptions can lead to deployment failures or unpredictable behavior in the console. 
+
+I quickly refactored these to English (e.g., `'최근 10개 이미지만 보관'` $\rightarrow$ `'Keep last 10 images'`). It's a small change, but in a production environment, adhering to the "lowest common denominator" for character encoding is a professional necessity.
+
+### 3. CDN & Strategic Access Control
+The final piece was the **CDN Stack (Stage 4)**. We successfully deployed CloudFront and linked the Route 53 A alias for `radiotm.co.kr`. 
+
+However, a key technical decision was made regarding the admin panel. Based on our recent team meeting, we decided that the production admin should not be deployed until May 11th. To enforce this, I implemented a **multi-layered block**:
+1. **DNS Level:** I intentionally omitted the `admin.radiotm.co.kr` record.
+2. **Config Level:** I commented out `adminDomainName` in `env-config.ts`.
+3. **Middleware Level:** I ensured the middleware returns a 404 for unauthorized admin paths.
+
+This "defense-in-depth" approach ensures that even if a DNS record were accidentally created, the application would still refuse the request.
+
+## Technical Summary & Insights
+
+The total projected monthly cost for the idle production environment sits at approximately **₩102,000**. This is a lean start, consisting primarily of the NAT Gateway, RDS, and ALB.
+
+**The current state of the pipeline:**
+- **Network $\rightarrow$ Data $\rightarrow$ Compute $\rightarrow$ CDN** are all `CREATE_COMPLETE`.
+- The ALB is currently serving a 503 response, which is the intended behavior until the Docker images are pushed to ECR and the ECS `desiredCount` is increased.
+
+## Closing Thoughts
+
+Working at **CPLABS**, I've always believed that the "boring" part of engineering—the checklists, the version pinning, the character encoding—is actually the most critical part of production readiness. The excitement is in the features, but the stability is in the details.
+
+Next on the agenda: Docker image builds, the final data migration from the legacy server to RDS, and the official cutover. We are officially on the home stretch.
