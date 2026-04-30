@@ -1,0 +1,42 @@
+---
+title: "Precision in Production: Balancing AI Automation with Strict Quality Policies"
+date: "2026-04-30"
+lang: en
+excerpt: "Precision in Production: Balancing AI Automation with Strict Quality Policies  As a CTO, I’ve spent two decades learning that the most dangerous phase..."
+---
+
+# Precision in Production: Balancing AI Automation with Strict Quality Policies
+
+As a CTO, I’ve spent two decades learning that the most dangerous phase of a project is the "final stretch." This is where the pressure to ship often clashes with the necessity of quality. Today's work on the **Heritage Radio** project was a textbook example of this tension—specifically, the challenge of managing AI-generated content at scale while adhering to strict business constraints.
+
+## The Challenge: When "Good Enough" Isn't Enough
+
+The core problem today was a discrepancy in content length. We are utilizing an AI pipeline to generate narration masters for various programs. The policy is clear: **4,000 to 4,400 characters per master** to ensure the resulting audio hits the 7-8 minute mark.
+
+However, during a review, it was discovered that the AI had "self-compressed" the scripts to roughly 2,400 characters—likely an attempt to optimize for token limits or a latent bias in the model's response length. In a production environment, this isn't just a minor error; it's a failure to meet the product specification.
+
+The feedback was blunt: *"Why aren't the rules being followed?"* This is the reality of high-stakes delivery. When you are building a professional service, "approximately" doesn't cut it.
+
+## Technical Decisions and Course Correction
+
+To resolve this, I implemented a rigorous "Reset and Reinforce" strategy:
+
+1.  **Total Audio Reset:** Rather than patching, I decided to reset the affected audio files. If the source script is wrong, the output is fundamentally flawed.
+2.  **Strict Character Validation:** I’ve integrated a manual validation step using `wc -m`. The rule is now absolute: if the count is under 4,000, the script is rejected and expanded immediately.
+3.  **Turn-Based Generation:** To prevent the AI from compressing text due to token limits, I shifted to a **1-turn-1-master** approach. By isolating the generation, we remove the model's incentive to summarize.
+4.  **Fallback Policy:** If the AI struggles to reach the length naturally, the directive is now to replicate the structure of the Week 1 samples rather than risk compression.
+
+## Refinement and Versioning
+
+Beyond the content pipeline, I spent time refining the mobile client and the project's lifecycle:
+
+*   **UI Integration:** Integrated the `tuner-strip` into the `HorizontalBarDial` component. In UX, the "feel" of a dial is everything; ensuring the visual feedback matches the audio tuning is critical for the "vintage" experience we are aiming for.
+*   **Version Transition:** I officially shifted the versioning policy from `0.9.x` (pre-release) to `1.0.0`. This is more than a number change; it's a psychological signal to the team and stakeholders that we are moving from "experimental" to "production-ready" for the May 11th D-Day.
+
+## Insights from the Trenches
+
+Looking at the diffs today, specifically the `handoff-narration-master.md`, I was reminded of the importance of **explicit memory**. When working with AI agents or rotating engineers, "tribal knowledge" is a liability. 
+
+By documenting the "Sagas" (the mistakes made and the corrections applied), I ensure that the next session doesn't repeat the same compression error. Whether it's at CPLABS or on a personal project, the goal is always the same: **reduce the cognitive load of the next person (or AI) taking over the task.**
+
+**Today's Lesson:** Automation is a force multiplier, but it requires a human "governor" to ensure the output doesn't drift from the specification. Precision is the difference between a toy and a product.
