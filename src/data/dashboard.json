@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-04-29T23:00:01.820Z",
+  "generated_at": "2026-04-30T23:00:01.041Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-04-30",
-          "last_msg": "[main] version 정책 — 0.9.x (출시 전) → 1.0.0 (5/11 D-Day)",
+          "last_date": "2026-05-01",
+          "last_msg": "[admin] 5-01 인계 브리핑 — 4-30 세션 마감",
           "branch": "dev",
           "activity": [
-            38,
             17,
             15,
             46,
             42,
             107,
-            4
+            87,
+            2
           ],
-          "commits_7d": 301,
-          "commits_30d": 618
+          "commits_7d": 351,
+          "commits_30d": 703
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-04-30",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 50
         },
         {
           "name": "trump-code",
@@ -27,33 +44,16 @@
           "last_msg": "chore: daily pipeline data update 2026-04-29",
           "branch": "main",
           "activity": [
-            1,
             2,
             1,
             0,
             1,
             4,
+            1,
             0
           ],
           "commits_7d": 9,
-          "commits_30d": 195
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-04-29",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 15,
-          "commits_30d": 48
+          "commits_30d": 177
         },
         {
           "name": "go-metadium",
@@ -64,12 +64,12 @@
             0,
             0,
             0,
-            0,
             4,
             2,
+            0,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 6,
           "commits_30d": 86
         },
         {
@@ -79,15 +79,15 @@
           "branch": "gram-jsong",
           "activity": [
             0,
-            0,
             1,
             0,
             2,
             1,
+            0,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 23
+          "commits_7d": 4,
+          "commits_30d": 22
         },
         {
           "name": "booksummary",
@@ -96,8 +96,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 29
+          "commits_30d": 2
         },
         {
           "name": "cps2_frontend",
@@ -288,8 +288,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -304,16 +304,16 @@
           "last_msg": "4/25 testnet stuck 원인 규명 + cache 상향으로 spam 구간 폭발 돌파",
           "branch": "mini-jsong",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 22
+          "commits_30d": 21
         },
         {
           "name": "meta-agents",
@@ -321,8 +321,8 @@
           "last_msg": "docs: migrate deploy target 110 → 48 (self-contained stack)",
           "branch": "main",
           "activity": [
-            0,
             3,
+            0,
             0,
             0,
             0,
@@ -338,7 +338,7 @@
           "last_msg": "feat: persist EIP-4844 blob sidecars in chain DB",
           "branch": "camellia",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -346,7 +346,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 80
         },
         {
@@ -355,7 +355,7 @@
           "last_msg": "Merged in feat/point-stats-api (pull request #157)",
           "branch": "develop",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -363,7 +363,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 4
         },
         {
@@ -372,7 +372,7 @@
           "last_msg": "최근 메세지 없는 경우 오류 수정",
           "branch": "develop",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -380,7 +380,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
@@ -389,7 +389,7 @@
           "last_msg": ":bug: fix: 포인트 통계 - 툴팁이 overflow hidden 되는 현상 수정",
           "branch": "dev",
           "activity": [
-            7,
+            0,
             0,
             0,
             0,
@@ -397,8 +397,8 @@
             0,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 32
+          "commits_7d": 0,
+          "commits_30d": 30
         },
         {
           "name": "daepa-api-backend",
@@ -406,7 +406,7 @@
           "last_msg": "Merge branch 'feature/custom-char' into develop",
           "branch": "develop",
           "activity": [
-            9,
+            0,
             0,
             0,
             0,
@@ -414,8 +414,8 @@
             0,
             0
           ],
-          "commits_7d": 9,
-          "commits_30d": 57
+          "commits_7d": 0,
+          "commits_30d": 46
         },
         {
           "name": "daepa-docs",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 108
+          "commits_30d": 100
         },
         {
           "name": "daepa-discussion-chat",
