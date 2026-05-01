@@ -1,0 +1,62 @@
+---
+title: "Solving the Mapping Mismatch: The Danger of \"Forced\" Server-Side Logic"
+date: "2026-05-01"
+lang: en
+excerpt: "[Dev Log] Solving the Mapping Mismatch: The Danger of \"Forced\" Server-Side Logic  As an engineer, there is a specific kind of frustration that comes f..."
+---
+
+# [Dev Log] Solving the Mapping Mismatch: The Danger of "Forced" Server-Side Logic
+
+As an engineer, there is a specific kind of frustration that comes from a bug that isn't caused by a lack of data or a crash, but by "too much helpfulness" in the code. Today was one of those days.
+
+While working on the **heritageradio** project at **CPLABS**, I encountered a critical episode mapping mismatch. To the end-user, it looked like the audio content was repeating or incorrect. To the backend, everything looked fine because the files existed. The culprit was a piece of logic intended to be a "feature" during the pre-launch phase.
+
+### The Problem: When Previews Overwrite Reality
+
+We were approaching a D-Day launch (May 11th). To allow stakeholders and testers to see different content each day before the actual launch, I had implemented a `LAUNCH_PREVIEW_MAP`. This map forcibly redirected the current `weekday` to a specific date in the future (May 11th–15th).
+
+The logic looked simple:
+```python
+# The "helpful" map that caused the chaos
+LAUNCH_PREVIEW_MAP: dict[int, tuple[int, int]] | None = {
+    0: (5, 11),  # Monday -> May 11
+    1: (5, 12),  # Tuesday -> May 12
+    ...
+}
+```
+
+However, as the mobile client evolved, it began sending explicit `(year, month, day)` requests via the dial interface. This created a collision. The server was receiving a specific date request from the client, but then the `LAUNCH_PREVIEW_MAP` would step in and say, *"I don't care what the client asked for; today is Friday, so I'm giving you May 15th."*
+
+The result? Every single slot from May 11th to 15th converged into a single day's audio.
+
+### The Technical Decision: Radical Simplification
+
+In my 20 years of engineering, I've learned that when a "helper" function starts fighting the primary data flow, the best solution isn't to add more conditional logic—it's to remove the helper entirely.
+
+I decided to deprecate `LAUNCH_PREVIEW_MAP` by setting it to `None`.
+
+```python
+# After the fix: Trust the client request
+LAUNCH_PREVIEW_MAP: dict[int, tuple[int, int]] | None = None
+```
+
+By doing this, the `resolve_md` and `resolve_weekday` functions simply return the input values as-is. This restored the integrity of the client's requests. I verified this across multiple "eras" (1955, 1965, 1985, 1995), and the audio mapping was perfectly restored.
+
+### Insights and Trade-offs
+
+The immediate "side effect" of this fix is that the server-side preview functionality is gone. If a user accesses the app on May 1st, they will see an empty timetable because there is no content for May 1st in the database.
+
+This leads to a crucial architectural insight: **State transformation should happen at the edges, not in the middle of the routing layer.**
+
+If we need a "preview mode," the client should handle the date transformation (e.g., `today` $\rightarrow$ `preview_date`) and send that specific date to the server. The server's job is to be a reliable provider of data for the requested key, not to guess what the client *should* be seeing based on the server's own clock.
+
+### Closing Thoughts
+
+Today's work was a reminder that "temporary" convenience code is often the primary source of production regressions. By stripping away the forced mapping, we've moved toward a more stateless, predictable API. 
+
+Now, the ball is in the `h-main` (main frontend) court to decide how to handle the "empty state" for users visiting before the official launch. Whether it's a "Coming Soon" banner or a fallback to the nearest D-Day content, the backend is now ready to serve exactly what is asked.
+
+**Summary of today's changes:**
+- **heritageradio**: Fixed root cause of episode mismatch by removing `LAUNCH_PREVIEW_MAP`.
+- **Documentation**: Updated handoff briefings to ensure the mobile team is aware of the preview logic shift.
+- **Dashboard**: Updated personal activity metrics to reflect the current sprint velocity.
