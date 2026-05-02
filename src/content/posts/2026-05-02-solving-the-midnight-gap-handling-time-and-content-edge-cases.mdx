@@ -1,0 +1,51 @@
+---
+title: "Solving the Midnight Gap: Handling Time and Content Edge Cases"
+date: "2026-05-02"
+lang: en
+excerpt: "Edge Cases in Time and Content: Solving the \"Midnight Gap\" and Weekend Chains  As an engineer, there is a specific kind of satisfaction that comes fro..."
+---
+
+# Edge Cases in Time and Content: Solving the "Midnight Gap" and Weekend Chains
+
+As an engineer, there is a specific kind of satisfaction that comes from solving "invisible" bugs—the ones that only appear at midnight or on a specific day of the week. Today's work on the Heritage Radio project was a deep dive into exactly these kinds of edge cases. 
+
+Moving from v0.9.27 to v0.9.29, I focused on three critical areas: time formatting wraps, day boundary transitions, and the logic for weekend content chaining.
+
+### 1. The "Negative Time" Paradox
+One of the most interesting bugs reported was a UI glitch where users saw time ranges like `"-1:30~00:00"`. 
+
+Technically, this happened because of how we handled KST offsets. When the clock hits 0:00 and an offset of -1 is applied, the `blockStart` becomes a negative value. In a world of absolute timestamps, this is mathematically correct, but for a human user, it's nonsensical.
+
+**The Fix:**
+I implemented a modulo wrap to ensure the time always stays within a 24-hour (1440 minute) window:
+`((n % 1440) + 1440) % 1440`
+
+This simple mathematical adjustment transforms `-30` into `1410` (23:30), turning a confusing bug into a professional-looking time range.
+
+### 2. Solving the Day Boundary Transition
+The transition from 23:59 to 00:00 is where many apps break. Users reported that immediately after midnight, the app failed to correctly show the final slot of the previous day (e.g., the 23:50~00:00 slot).
+
+To solve this, I modified the `Schedule.tsx` logic to handle `yesterdaySlots`. By detecting the "day boundary"—specifically when the current index is 0 and the cycle is at its start—the app now fetches and displays the last slot of the previous day's timetable. This ensures a seamless auditory and visual handoff as the date flips.
+
+### 3. The Weekend Voice Chain: A Lesson in Root Cause Analysis
+The most complex issue today was the "Weekend Music Loop." Users reported that on Saturdays, the app played only music, even though the policy dictated a 50-minute "voice_50" slot (a replay of the past 5 weekdays' content).
+
+Initially, I suspected a backend failure in content preparation. However, after a thorough audit of the API responses, I found that the backend was actually responding correctly with an `episode_sequence` containing 5 pieces of audio.
+
+**The Real Root Cause:**
+The mobile client's `pieceFromSlot` function was too strict. It was only looking for a single `episode.audio_path`. Since the weekend slot uses a *sequence* of episodes rather than a single file, the app saw `null` for the primary path and triggered the fallback logic: *"No voice content? Play 4 random songs instead."*
+
+**The Technical Decision:**
+Instead of asking the backend to concatenate five files into one giant MP3 (which would increase server load and storage), I updated the mobile client to recognize the `voice_50` slot kind. Now, the app iterates through the `episode_sequence` array, chaining the five weekday clips together seamlessly.
+
+### Final Thoughts
+Today's updates remind me that in complex systems, the "bug" is often not a failure of the data, but a mismatch in how the client interprets that data. By aligning the mobile logic with the backend's sequence-based architecture, we avoided unnecessary server-side processing while delivering the expected user experience.
+
+At **CPLABS**, we always strive for this level of technical precision—ensuring that even the smallest edge case at midnight is handled with elegance.
+
+***
+
+**Summary of Changes:**
+- **v0.9.27:** Fixed negative time formatting using modulo wrapping.
+- **v0.9.28:** Implemented day boundary detection for seamless midnight transitions.
+- **v0.9.29:** Fixed weekend content playback by supporting `episode_sequence` chaining for `voice_50` slots.
