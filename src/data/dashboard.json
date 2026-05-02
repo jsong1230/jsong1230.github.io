@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-05-01T23:00:01.602Z",
+  "generated_at": "2026-05-02T23:00:01.270Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-02",
-          "last_msg": "[main] mobile v0.9.27~v0.9.29 — fmt 음수 wrap + day boundary + voice_50 chai",
+          "last_date": "2026-05-03",
+          "last_msg": "[main] 5/06 prod 배포 체크리스트 — briefing §10 추가",
           "branch": "dev",
           "activity": [
-            15,
             46,
             42,
             107,
             87,
             7,
+            11,
             4
           ],
-          "commits_7d": 320,
-          "commits_30d": 712
+          "commits_7d": 319,
+          "commits_30d": 723
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-01",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-05-02",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
-          "commits_7d": 15,
-          "commits_30d": 52
+          "commits_7d": 16,
+          "commits_30d": 55
         },
         {
           "name": "trump-code",
-          "last_date": "2026-04-30",
-          "last_msg": "chore: daily pipeline data update 2026-04-30",
+          "last_date": "2026-05-01",
+          "last_msg": "chore: daily pipeline data update 2026-05-01",
           "branch": "main",
           "activity": [
-            1,
             0,
             1,
             4,
             1,
-            1,
+            2,
+            0,
             0
           ],
           "commits_7d": 9,
-          "commits_30d": 170
+          "commits_30d": 155
         },
         {
           "name": "go-metadium",
@@ -62,9 +62,9 @@
           "branch": "camellia",
           "activity": [
             0,
-            0,
             4,
             2,
+            0,
             0,
             0,
             0
@@ -78,10 +78,10 @@
           "last_msg": "logs: 2026-04-29 — SSD swap + openclaw fix + radiotm.co.kr Workspace",
           "branch": "gram-jsong",
           "activity": [
-            1,
             0,
             2,
             1,
+            0,
             0,
             0,
             0
@@ -95,7 +95,7 @@
           "last_msg": "feat: YouTube 예약 업로드 메타데이터 + privacyStatus 처리",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -103,8 +103,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 7
+          "commits_7d": 0,
+          "commits_30d": 6
         },
         {
           "name": "openfield",
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 20
+          "commits_30d": 18
         },
         {
           "name": "minidaepa",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "cps2_frontend",
@@ -287,7 +287,7 @@
           "last_msg": "feat: YouTube 예약 업로드 메타데이터 + privacyStatus 처리",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -295,8 +295,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 7
+          "commits_7d": 0,
+          "commits_30d": 6
         },
         {
           "name": "claude-agent",
@@ -304,7 +304,7 @@
           "last_msg": "4/25 testnet stuck 원인 규명 + cache 상향으로 spam 구간 폭발 돌파",
           "branch": "mini-jsong",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -312,7 +312,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 21
         },
         {
@@ -398,7 +398,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 30
+          "commits_30d": 28
         },
         {
           "name": "daepa-api-backend",
@@ -415,7 +415,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 38
+          "commits_30d": 32
         },
         {
           "name": "daepa-docs",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 87
+          "commits_30d": 83
         },
         {
           "name": "daepa-discussion-chat",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 20
+          "commits_30d": 18
         },
         {
           "name": "BORA_hack",
