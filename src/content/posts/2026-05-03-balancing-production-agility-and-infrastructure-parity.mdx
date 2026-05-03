@@ -1,0 +1,56 @@
+---
+title: "Balancing Production Agility and Infrastructure Parity"
+date: "2026-05-03"
+lang: en
+excerpt: "Engineering Log: Balancing Production Agility and Infrastructure Parity  As a CTO, one of the most challenging aspects of scaling a project is decidin..."
+---
+
+# Engineering Log: Balancing Production Agility and Infrastructure Parity
+
+As a CTO, one of the most challenging aspects of scaling a project is deciding when to "flip the switch" on production features. Today was a day of high-intensity deployment and architectural refinement for the **Heritage Radio** project, focusing on the delicate balance between administrative accessibility and security.
+
+## 1. The Production Admin Dilemma: Security vs. Utility
+
+Initially, we had decided to hold off on deploying the production admin panel. However, the practical need for managing push notifications, monitoring feedback, and auditing chat logs outweighed the perceived risk. 
+
+The technical decision was to implement an **ALB (Application Load Balancer) Direct** approach. By bypassing CloudFront for the admin domain (`admin.radiotm.co.kr`), we reduce latency for internal tools and simplify the routing logic. To ensure security, I integrated **AWS Secrets Manager** to handle sensitive credentials—OAuth clients, JWT signing secrets, and admin tokens—ensuring that no secrets reside in the codebase or simple `.env` files in production.
+
+### The "Whitelist" Bug: A Lesson in Prefix Matching
+During the first verification post-deployment, I caught a critical bug in the middleware. The admin whitelist was too permissive. 
+
+```typescript
+// Original Buggy Logic
+const PROD_ADMIN_ALLOWED_PREFIXES = ["/admin", ...];
+// isProdAdminAllowed("/admin/episode-registry") -> returns true because it startsWith("/admin")
+```
+
+The intent was to allow only specific operational paths (feedback, logs, push) and block content editing in production. However, because `/admin` was listed as a prefix, *every* sub-path was granted access. 
+
+**The Fix:** I decoupled "Exact Matches" from "Prefix Matches."
+```typescript
+const PROD_ADMIN_ALLOWED_EXACT = new Set<string>(["/admin"]);
+const PROD_ADMIN_ALLOWED_PREFIXES = ["/admin/signin", "/admin/feedback", ...];
+```
+This is a classic example of why `startsWith` can be dangerous in routing middleware. In a production environment, **explicit is always better than implicit.**
+
+## 2. Infrastructure Parity: Celery and FCM
+
+Another core principle I maintain at **CPLABS** is **Dev/Prod Parity**. If a feature relies on an asynchronous worker in development, it must have an identical architecture in production to avoid "it works on my machine" syndrome.
+
+Today, I extended the AWS production infrastructure to include **Celery workers**. This was essential for the new **FCM (Firebase Cloud Messaging)** push notification system. Sending push notifications is an I/O-bound task that should never block the main request-response cycle. By implementing a dedicated Celery task (`backend/tasks/push_send.py`), we ensure that the API remains responsive even when broadcasting notifications to thousands of mobile clients.
+
+## 3. Algorithmic Refinement: Greedy Slot Filling
+
+On the backend, I tackled the `music-slot` logic. The goal was to implement a "greedy fill" mechanism based on `slot_duration_sec`. Instead of simple sequential filling, the logic now accumulates duration to maximize the utilization of available time slots. This ensures a seamless listening experience without awkward gaps in the audio stream.
+
+## Final Thoughts
+
+Today's work spanned the entire stack—from AWS CDK infrastructure and Next.js middleware to Python backend tasks and mobile API integrations. 
+
+The biggest takeaway? **Deployment is not the end of development; it is the beginning of verification.** The catch regarding the admin whitelist happened because of rigorous post-deployment testing. As we move closer to the full launch, maintaining this level of scrutiny is what separates a "working" product from a "professional" one.
+
+**Summary of changes:**
+- **Infra:** ALB SNI configuration, Secrets Manager integration, Celery worker deployment.
+- **Security:** Fixed admin whitelist logic (Exact vs. Prefix matching).
+- **Feature:** End-to-end FCM push notification pipeline (Backend $\rightarrow$ Celery $\rightarrow$ Mobile).
+- **Logic:** Greedy music slot filling for optimized playback.
