@@ -1,0 +1,50 @@
+---
+title: "Heritage Radio: The Final Countdown to Launch"
+date: "2026-05-04"
+lang: en
+excerpt: "Engineering Log: The Final Countdown (D-7 to Launch)  As a CTO, the week leading up to a production launch is always the most intense. It’s the phase ..."
+---
+
+# Engineering Log: The Final Countdown (D-7 to Launch)
+
+As a CTO, the week leading up to a production launch is always the most intense. It’s the phase where "theoretical stability" meets "real-world chaos." Today was a quintessential example of this—a mix of high-level strategic alignment, rapid-fire bug fixing, and the meticulous restoration of content data.
+
+Here is a summary of today's development work on the **Heritage Radio** project.
+
+## 1. Strategic Visualization: The D-7 Launch Checklist
+When you are seven days away from a launch, a Jira board or a Trello list often isn't enough to align stakeholders. You need a "War Room" view.
+
+I spent a significant portion of today building a dedicated **Meeting Briefing HTML** (`2026-05-04_meeting_briefing.html`). Rather than a simple document, I opted for a highly visualized dashboard that maps out the final stretch:
+- **Timeline Mapping:** Visualizing the path from D-7 to D-Day (including the challenges of launching around holidays like Children's Day and Parents' Day in Korea).
+- **Critical Path Analysis:** Categorizing tasks into 8 domains (Infra, Content, Legal, etc.) and marking them as `CRITICAL`, `HIGH`, or `MID`.
+- **Responsibility Matrix:** Clearly defining who owns what to eliminate communication overhead during the final push.
+
+**Insight:** In high-pressure environments, the *way* information is presented is as important as the information itself. A visual timeline reduces anxiety and ensures everyone is rowing in the same direction.
+
+## 2. Technical Fixes & Production Stability
+Beyond planning, today involved several "firefighting" tasks to ensure the production environment is bulletproof.
+
+### The "Midnight Refresh" Bug
+We encountered a critical issue where the mobile app failed to refresh automatically at midnight, leading to content synchronization errors. 
+```typescript
+// mobile/App.tsx
+// Fixed the midnight auto-refresh logic to ensure 
+// state synchronization happens exactly at 00:00.
+```
+This was a classic edge-case bug. In mobile development, relying on system clocks for scheduled refreshes can be tricky due to background execution limits. I implemented a more robust check to ensure that the first time the app is woken up after midnight, it triggers a mandatory state refresh.
+
+### Infrastructure & Admin Tweaks
+- **Production Preview:** Activated `LAUNCH_PREVIEW_MAP` in the compute stack to allow final internal validation before the public goes live.
+- **Admin UI:** Hid the "Blocking Menu" in the production admin panel based on feedback to prevent accidental operational errors by non-technical staff.
+
+## 3. Content Recovery (The "Batch" Work)
+A significant amount of today's git activity involved recovering and refining master content batches for `JOSEON_STORY`, `YASA_STORY`, and `ANECDOTE`. 
+
+While this looks like simple text editing in the diffs, it's actually about **data integrity**. When dealing with large-scale storytelling AI or curated content, ensuring that the "Master" version is recovered and polished is essential for the brand's authority.
+
+## Final Thoughts
+Looking at my dashboard data today, the commit velocity is peaking. This is normal for a D-7 window, but as an engineer with 20 years of experience, I know that the goal now is to move from **"adding features"** to **"reducing surface area for failure."**
+
+At **CPLABS**, we always emphasize that a successful launch isn't defined by how many features you ship, but by how few bugs the user encounters on Day 1. We are now in the "hardening" phase.
+
+**Current Status:** 🟢 Stable / 🚀 Ready for final QA.
