@@ -1,0 +1,61 @@
+---
+title: "Solving the \"Silent Gap\": Fixing Slot Overlap in Mobile Streaming Background Playback"
+date: "2026-05-05"
+lang: en
+excerpt: "Engineering Log: Solving the \"Silent Gap\" and Slot Overlap in Mobile Streaming  As a CTO and engineer, I’ve learned that the most challenging bugs are..."
+---
+
+# Engineering Log: Solving the "Silent Gap" and Slot Overlap in Mobile Streaming
+
+As a CTO and engineer, I’ve learned that the most challenging bugs aren't the ones that crash the app immediately, but the "edge-case ghosts"—the ones that only appear after 10 minutes of background playback on a specific device.
+
+Today's work was centered around a critical issue in the **Heritage Radio** mobile app: a failure to transition to the next program slot when the app was in the background, combined with "slot encroachment" where background music bled into the next scheduled segment.
+
+## The Problem: The Background Deadlock
+
+The report was specific: on certain devices (e.g., Samsung S10), if the app stayed in the background for about 10 minutes, the next program wouldn't start. The music would simply stop, or the previous slot's "tail music" would play too long, effectively stealing time from the next slot.
+
+After diving into the race conditions, I identified a **triple-threat root cause** involving asynchronous state management, queue depth, and backend music selection logic.
+
+## Technical Decisions & Solutions
+
+### 1. Synchronizing the "Ready Gate" (Frontend)
+The app fetches the next slot's audio pieces asynchronously. I discovered that the `musicLoader` was sometimes calling `setSrcList` before the `nextSlotPieces` fetch had actually completed. This resulted in a queue that only contained the current slot's items. When the player reached the end, there was nothing left to play, leading to a silent stop.
+
+**The Fix:** I introduced a `nextSlotReady` state.
+```typescript
+const [nextSlotReady, setNextSlotReady] = useState(false);
+// ... fetch logic ...
+setNextSlotReady(true); // Explicitly mark as ready after fetch completion
+```
+Now, the loader waits for this "gate" to open before updating the source list, guaranteeing the queue always maintains the structure: `[Current Slot Pieces, Next Slot Pieces]`.
+
+### 2. Eliminating the "Permanent Stuck" State (Service Layer)
+In the `service.ts` logic, there was a "LOCKOUT" mechanism to prevent rapid-fire skipping. However, if the queue was empty, the code was still triggering this lockout. This meant if a synchronization error occurred, the app would lock itself out of skipping for 24 hours—effectively a permanent freeze until a hard restart.
+
+**The Fix:** I reordered the logic to check queue depth *before* the lockout. If the queue is insufficient, it now bypasses the lockout and retries after 0.5 seconds, allowing the `wake-resync` logic to recover the stream.
+
+### 3. Strict Boundary Enforcement (Backend)
+The backend `get_tail_music` endpoint was too lenient. It aimed for a target duration but could return a song that, when added to the narration (voice), exceeded the total slot time.
+
+**The Fix:** I implemented a `max_sec` absolute ceiling in `music_slot.py`.
+```python
+if max_sec is not None:
+    candidates = [c for c in candidates if c["duration_sec"] and c["duration_sec"] <= max_sec]
+    if not candidates:
+        raise HTTPException(409, "No songs available under max_sec limit")
+```
+The mobile app now dynamically calculates `max_sec` as `(Total Slot Time - Voice Duration - Signal Time - 5s Margin)`. This ensures that no matter how long the narration is, the music will never push the program into the next slot's territory.
+
+## Insights from the Field
+
+This experience reinforces a core principle I've carried throughout my career at **CPLABS** and beyond: **Never trust the "happy path" of asynchronous events.**
+
+When dealing with media streaming and background services, the OS can throttle your timers and delay your network requests. If your state machine assumes that "Request A" always finishes before "Action B," you are building a time bomb. By implementing explicit "Ready Gates" and strict server-side constraints, we move from a system that *usually* works to one that is *deterministically* stable.
+
+Beyond the technical fixes, I also spent time on UX refinements—increasing font sizes in the schedule modal for elderly users. Technical excellence is meaningless if the end-user can't read the screen.
+
+**Summary of changes:**
+- **Mobile v0.9.53:** Fixed slot encroachment and background transition deadlocks.
+- **Landing Page:** Synchronized dark mode using `data-theme` attributes and updated privacy policies.
+- **Admin:** Updated AI Chat KB for weekend/weekday cycle policies.
