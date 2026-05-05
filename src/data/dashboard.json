@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-05-04T23:00:01.460Z",
+  "generated_at": "2026-05-05T23:00:01.374Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-05",
-          "last_msg": "[landing] contents 다크모드 sync fix — data-theme attribute 만 사용",
+          "last_date": "2026-05-06",
+          "last_msg": "mobile v0.9.64 — v0.9.63 wait-200ms revert (자동 transition lock fix)",
           "branch": "dev",
           "activity": [
-            107,
             87,
             7,
             11,
             73,
             61,
-            8
+            26,
+            3
           ],
-          "commits_7d": 391,
-          "commits_30d": 861
+          "commits_7d": 374,
+          "commits_30d": 882
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-04",
+          "last_date": "2026-05-05",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 60
+          "commits_30d": 62
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-03",
-          "last_msg": "chore: daily pipeline data update 2026-05-03",
+          "last_date": "2026-05-04",
+          "last_msg": "chore: daily pipeline data update 2026-05-04",
           "branch": "main",
           "activity": [
-            4,
             1,
             2,
             1,
             1,
             0,
+            1,
             0
           ],
           "commits_7d": 9,
-          "commits_30d": 101
+          "commits_30d": 32
         },
         {
           "name": "go-metadium",
@@ -61,7 +61,7 @@
           "last_msg": "style: gofmt consensus.go after hashimeta patch",
           "branch": "camellia",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -69,7 +69,7 @@
             0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 2,
           "commits_30d": 86
         },
         {
@@ -78,7 +78,7 @@
           "last_msg": "logs: 2026-04-29 — SSD swap + openclaw fix + radiotm.co.kr Workspace",
           "branch": "gram-jsong",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -86,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 1,
           "commits_30d": 21
         },
         {
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 9
         },
         {
           "name": "minidaepa",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 9
         },
         {
           "name": "BORA_hack",
