@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-05-05T23:00:01.374Z",
+  "generated_at": "2026-05-06T23:00:01.642Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-06",
-          "last_msg": "mobile v0.9.64 — v0.9.63 wait-200ms revert (자동 transition lock fix)",
+          "last_date": "2026-05-07",
+          "last_msg": "[main+admin] hls_builder /tmp/audio_cache LRU cleanup (3GB cap)",
           "branch": "dev",
           "activity": [
-            87,
             7,
             11,
             73,
             61,
             26,
-            3
+            45,
+            11
           ],
-          "commits_7d": 374,
-          "commits_30d": 882
+          "commits_7d": 317,
+          "commits_30d": 935
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-05",
+          "last_date": "2026-05-06",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 62
+          "commits_30d": 64
         },
         {
           "name": "trump-code",
@@ -44,16 +44,16 @@
           "last_msg": "chore: daily pipeline data update 2026-05-04",
           "branch": "main",
           "activity": [
-            1,
             2,
             1,
             1,
             0,
             1,
+            0,
             0
           ],
-          "commits_7d": 9,
-          "commits_30d": 32
+          "commits_7d": 5,
+          "commits_30d": 31
         },
         {
           "name": "go-metadium",
@@ -69,8 +69,8 @@
             0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 86
+          "commits_7d": 0,
+          "commits_30d": 79
         },
         {
           "name": "claude-agent",
@@ -86,8 +86,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 21
+          "commits_7d": 0,
+          "commits_30d": 20
         },
         {
           "name": "booksummary",
@@ -189,7 +189,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 0
         },
         {
           "name": "Agent-Reach",
@@ -347,7 +347,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 80
+          "commits_30d": 73
         },
         {
           "name": "daepa-admin-backend",
@@ -398,7 +398,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 28
+          "commits_30d": 22
         },
         {
           "name": "daepa-api-backend",
@@ -415,7 +415,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 32
+          "commits_30d": 28
         },
         {
           "name": "daepa-docs",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 64
+          "commits_30d": 59
         },
         {
           "name": "daepa-discussion-chat",
