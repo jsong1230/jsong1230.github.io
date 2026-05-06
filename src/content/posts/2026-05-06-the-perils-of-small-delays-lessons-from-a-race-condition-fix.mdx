@@ -1,0 +1,49 @@
+---
+title: "The Perils of \"Small\" Delays: Lessons from a Race Condition Fix"
+date: "2026-05-06"
+lang: en
+excerpt: "The Perils of \"Small\" Delays: Lessons from a Race Condition Fix  In high-stakes production environments, there is a recurring temptation to solve race..."
+---
+
+# The Perils of "Small" Delays: Lessons from a Race Condition Fix
+
+In high-stakes production environments, there is a recurring temptation to solve race conditions with a simple `wait` or `sleep` call. It feels like a pragmatic quick-fix: "Just give the system 200ms to settle, and the state will be consistent." 
+
+Today, I had a stark reminder of why this approach is often a trap, especially when dealing with asynchronous event loops and background execution in mobile environments.
+
+### The Problem: The "Double Signal" Glitch
+Recently, we encountered a bug where certain audio signals were playing twice. The root cause was a race condition during a slot transition. As ExoPlayer naturally advanced to the end of a track, our `nonMusicLoader.start` triggered a `setSrcList` call. 
+
+Because the `active` track was still the last piece of the previous slot, the system performed a "cold reset," starting the new list from the head. If the player had already naturally transitioned to the first track of the new list, it would essentially restart that track—resulting in the user hearing the signal twice.
+
+To fix this in `v0.9.63`, I introduced a `wait-200ms` check. The logic was: *Wait a moment to see if ExoPlayer naturally reaches the new head; if it does, skip the reset.*
+
+### The Fallout: The Transition Lock
+While it solved the double-signal issue, it introduced a far more critical failure: **a total lock of the automatic transition.**
+
+As seen in today's diff, the `wait-200ms` was placed inside the `enqueueOp` Promise chain. In the Android environment, specifically on devices like the Z Fold 3, background JS throttling kicked in. That "small" 200ms delay didn't just pause the execution; it caused the Promise chain to hang under throttle, preventing `setSrcList.enter` from ever firing.
+
+The result? A complete failure of the "Radio Theater" segment to start automatically at 07:30. The system remained stuck until a user manually triggered an action at 07:36.
+
+### The Technical Decision: Revert and Refactor
+The immediate priority was stability. I reverted the `wait-200ms` logic in `v0.9.64` to restore the automatic transition lock.
+
+```typescript
+// v0.9.64 — v0.9.63 wait-200ms revert.
+// wait-200ms 가 enqueueOp Promise chain 안에서 background JS throttle 로 hang →
+// 자동 transition 시 setSrcList 호출 lock.
+```
+
+By returning to the `v0.9.62` logic, we rely on `pieces stamp ref` to partially cover the double-signal issue. However, the underlying race condition still exists. The long-term fix (Phase 2) will involve a more robust state synchronization that doesn't rely on arbitrary timers but on explicit state transitions and "cold reset" triggers only when the `active` track is strictly outside the new list's bounds.
+
+### Engineering Insight: Timers are Not Synchronization Primitives
+This experience reinforces a core engineering principle I've held throughout my 20 years in the field: **`setTimeout` or `await sleep()` is not a synchronization strategy; it is a hope.**
+
+In a distributed or asynchronous system—especially one interacting with native OS layers like ExoPlayer via a JS bridge—execution timing is non-deterministic. When you introduce a delay in a critical path (like a Promise chain), you aren't just adding time; you are creating a window for the OS to deprioritize your process, leading to hangs that are incredibly difficult to debug without detailed PID-level logs.
+
+At **CPLABS**, we strive for technical precision. Moving forward, the focus is on eliminating these "magic numbers" and replacing them with deterministic state machines.
+
+**Today's Summary:**
+- **Fixed:** Automatic transition lock caused by JS throttling during a `wait` period.
+- **Reverted:** `v0.9.63`'s 200ms delay logic.
+- **Lesson:** Never use timers to solve race conditions in background-sensitive mobile environments.
