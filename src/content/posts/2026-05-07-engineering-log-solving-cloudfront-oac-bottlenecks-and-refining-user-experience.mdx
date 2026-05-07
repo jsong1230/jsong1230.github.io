@@ -1,0 +1,59 @@
+---
+title: "Engineering Log: Solving CloudFront OAC Bottlenecks and Refining User Experience"
+date: "2026-05-07"
+lang: en
+excerpt: "Engineering Log: Solving CloudFront OAC Bottlenecks and Refining User Experience  As a CTO, I’ve learned that the most challenging bugs aren't usually..."
+---
+
+# Engineering Log: Solving CloudFront OAC Bottlenecks and Refining User Experience
+
+As a CTO, I’ve learned that the most challenging bugs aren't usually in the business logic, but in the "invisible" layers: networking, infrastructure permissions, and the subtle psychology of UI/UX. Today was a prime example of this, as I spent a significant portion of my time navigating AWS CloudFront's quirks and polishing the frontend of the Heritage Radio project.
+
+## 1. Infrastructure: The CloudFront OAC "Accident" and the Proxy Workaround
+
+The most critical technical challenge today involved a failure in the CloudFront Origin Access Control (OAC) for the `/live/*` paths. When OAC doesn't behave as expected, it can lead to intermittent 403 Forbidden errors that are notoriously difficult to debug because they happen at the edge.
+
+**The Technical Decision:**
+Rather than spending hours fighting the OAC configuration in a production environment where uptime is paramount, I decided to implement a **backend HLS proxy**. 
+
+By routing requests through `backend/app/routers/hls_proxy.py`, we can use `boto3` to stream audio directly from S3. This effectively bypasses the CloudFront OAC issue entirely. To ensure this doesn't degrade performance, I implemented an **LRU (Least Recently Used) cache** in the `hls_builder` with a 3GB cap.
+
+```python
+# backend/services/hls_builder.py
+# Implementing LRU cleanup to prevent /tmp disk exhaustion
+# 3GB cap ensures we keep hot segments while staying within ECS storage limits
+```
+
+Additionally, I updated the network architecture documentation. I believe that a living, breathing network diagram is essential for any team. I created a detailed HTML-based architecture map using Mermaid, focusing on the flow between PROD, DEV, and the HLS sync pipeline.
+
+## 2. Mobile Stability: Exponential Backoff for Network Recovery
+
+In the mobile app (v0.9.84), I encountered a scenario where brief network flickers caused the HLS player to crash or stop playback entirely.
+
+**The Insight:**
+Simple retries often lead to "retry storms" that can overwhelm a recovering connection. I implemented **exponential backoff** in `useHlsPlayer.native.ts`. Instead of retrying every second, the app now waits progressively longer between attempts. This creates a much smoother "automatic recovery" experience for the user, making the app feel resilient rather than fragile.
+
+## 3. UX Polish: The "Next Action" Icon Pattern
+
+On the frontend, I noticed a discrepancy in how the theme toggles were behaving. In some parts of the site, the icon represented the *current state* (e.g., showing a sun when it's light mode), while in others, it represented the *action* (e.g., showing a moon to indicate "switch to dark mode").
+
+**The Fix:**
+I unified all toggles to the **"Next Action"** pattern. 
+- **Light Mode $\rightarrow$ Moon Icon** (Click to go Dark)
+- **Dark Mode $\rightarrow$ Sun Icon** (Click to go Light)
+
+It seems like a small detail, but consistency in these micro-interactions is what separates a professional product from a prototype. As seen in the diff for `Gnb.tsx`:
+
+```tsx
+- {theme === "light" ? <SunIcon /> : <MoonIcon />}
++ {theme === "light" ? <MoonIcon /> : <SunIcon />}
+```
+
+## Summary of Changes
+
+- **Infra:** Upgraded RDS instance (`db.t4g.small` $\rightarrow$ `medium`) to handle increased load and updated CDK stacks for better WAF/CloudFront secret integration.
+- **Backend:** Added HLS proxy to bypass OAC issues and implemented a 3GB LRU cache for audio segments.
+- **Mobile:** v0.9.84 release with exponential backoff for `PlaybackError` and a cache-buster fix for cycle transitions.
+- **Frontend:** Unified theme toggle logic across GNB and footer.
+
+Today was a reminder that engineering is often a balance between the "perfect" architectural solution and the "practical" one that keeps the service running. At CPLABS, we prioritize stability and user experience, and today's changes reflect that philosophy.
