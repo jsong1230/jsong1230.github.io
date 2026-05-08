@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-05-07T23:00:01.187Z",
+  "generated_at": "2026-05-08T23:00:01.670Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-08",
-          "last_msg": "[admin] audio_loudness logger float cast — qwen3tts batch 노이즈 정리",
-          "branch": "dev",
+          "last_date": "2026-05-09",
+          "last_msg": "[main+admin] hls_builder tail-music — dev=admin Pixabay / prod=legacy Suno fal",
+          "branch": "main",
           "activity": [
-            11,
             73,
             61,
             26,
             45,
             56,
-            1
+            25,
+            8
           ],
-          "commits_7d": 278,
-          "commits_30d": 980
+          "commits_7d": 301,
+          "commits_30d": 1011
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-07",
+          "last_date": "2026-05-08",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -36,17 +36,17 @@
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 66
+          "commits_30d": 68
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-06",
-          "last_msg": "chore: daily pipeline data update 2026-05-06",
+          "last_date": "2026-05-07",
+          "last_msg": "chore: daily pipeline data update 2026-05-07",
           "branch": "main",
           "activity": [
             1,
-            1,
             0,
+            1,
             1,
             1,
             1,
@@ -70,7 +70,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 54
+          "commits_30d": 19
         },
         {
           "name": "claude-agent",
@@ -347,7 +347,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 48
+          "commits_30d": 13
         },
         {
           "name": "daepa-admin-backend",
@@ -398,7 +398,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 18
+          "commits_30d": 14
         },
         {
           "name": "daepa-api-backend",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 34
+          "commits_30d": 18
         },
         {
           "name": "daepa-discussion-chat",
