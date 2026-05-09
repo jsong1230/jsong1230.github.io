@@ -1,0 +1,55 @@
+---
+title: "Solving the \"Silence Gap\": Emergency Fixes and System Robustness in HLS Streaming"
+date: "2026-05-09"
+lang: en
+excerpt: "Solving the \"Silence Gap\": Emergency Fixes and System Robustness in HLS Streaming  In the world of automated content generation, the most dangerous bu..."
+---
+
+# Solving the "Silence Gap": Emergency Fixes and System Robustness in HLS Streaming
+
+In the world of automated content generation, the most dangerous bugs aren't the ones that crash the server—they are the ones that fail silently. Today was a prime example of this. I spent the day tackling a critical "silence gap" issue in our HLS (HTTP Live Streaming) pipeline for the Heritage Radio project, where users were experiencing unexpected silence at the end of certain program slots.
+
+As a CTO, I’ve learned that "edge cases" in production are actually the only cases that matter. Here is a deep dive into the problems solved and the technical decisions made today.
+
+## The Problem: The 12-Minute Silence
+The issue manifested in the `voice_50` chain (50-minute slots) during the weekend broadcast. Specifically, programs like `DRAMA_THEATER`, which have a shorter voice duration (around 38 minutes), were leaving a massive gap of silence before the slot ended.
+
+After digging into the logs and analyzing the segments, I found a classic validation error. The `target_sec` (the duration of filler music needed to fill the remainder of the slot) was exceeding 600 seconds. Because our API had a hard limit of `le=600` (less than or equal to 600s), the request returned a `422 Unprocessable Entity`.
+
+**The result?** The `tail-music` logic failed entirely, zero music pieces were added, and the user was left with ~12 minutes of dead air.
+
+## Technical Decisions & Fixes
+
+### 1. Expanding the Validation Boundary
+The immediate fix was straightforward but necessary: I increased the `target_sec` limit from 600 to 3000 seconds across three key endpoints.
+
+```python
+# backend/app/routers/music_slot.py
+- target_sec: int = Query(..., ge=5, le=600, description="정확 fit 목표 길이 (초).")
++ target_sec: int = Query(..., ge=5, le=3000, description="... weekend voice_50 chain 50분 슬롯 tail 까지 수용 위해 600→3000")
+```
+
+While 3000 seconds seems arbitrary, it safely covers the entire 50-minute slot duration, ensuring that even if a voice track is unexpectedly short, the system can still fill the gap.
+
+### 2. Implementing a Graceful Fallback Mechanism
+Another layer of the failure was related to environment configuration. We recently migrated to a new `admin` tail-music API using Pixabay assets. However, the production environment lacked the `ADMIN_TOKEN`, causing a `401 Unauthorized` error, which further ensured that no music was played.
+
+To solve this, I implemented a fallback strategy in the `hls_builder.py`. The logic now follows this priority:
+1. **Admin Path:** Attempt to use the new Pixabay/Meditation pool if the `ADMIN_TOKEN` is present and the request succeeds.
+2. **Legacy Path:** If the token is missing or the admin API fails, automatically fall back to the legacy Suno music pool.
+
+This ensures that "some music" is always better than "no music."
+
+## Engineering Insights: The "Silent Failure" Trap
+
+This incident reinforces a critical lesson in distributed systems: **Never let a validation error in a non-critical component (like filler music) break the user experience of the primary content.**
+
+If the `tail-music` API fails, the system should not simply give up. By implementing the legacy fallback and widening the validation constraints, we've moved from a fragile system to a resilient one. I also added `audio_stale` detection and admin alerts to ensure that if this happens again, we are notified by the system rather than by a user report.
+
+At CPLABS, we strive for technical depth, but practical reliability is the ultimate metric. Today's work wasn't just about changing a number from 600 to 3000; it was about building a safety net that allows the system to degrade gracefully rather than failing catastrophically.
+
+**Summary of changes:**
+- Fixed `DRAMA_THEATER` silence by increasing `target_sec` limits.
+- Added `admin` $\rightarrow$ `legacy` fallback in `hls_builder`.
+- Refined Era classification (flat labels) and updated Admin UI for better data integrity.
+- Implemented stale audio detection to prevent future playback accidents.
