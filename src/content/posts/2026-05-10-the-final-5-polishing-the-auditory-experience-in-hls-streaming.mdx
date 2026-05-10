@@ -1,0 +1,59 @@
+---
+title: "The Final 5%: Polishing the Auditory Experience in HLS Streaming"
+date: "2026-05-10"
+lang: en
+excerpt: "Refining the Auditory Experience: From Crossfade Tuning to TTS Strategy  As an engineer, I’ve always believed that the difference between a \"working\" ..."
+---
+
+# Refining the Auditory Experience: From Crossfade Tuning to TTS Strategy
+
+As an engineer, I’ve always believed that the difference between a "working" product and a "polished" product lies in the final 5% of the details. In the world of audio streaming and HLS (HTTP Live Streaming), those details aren't just about the code—they are about the human perception of sound.
+
+Today's work on the `heritageradio` project was a deep dive into exactly that: the intersection of technical implementation and auditory UX.
+
+### 1. Solving the "Rough Transition" Problem
+
+We received feedback that certain transitions—specifically from voice narration to background "tail" music—felt jarring. In audio engineering, a transition that is too abrupt can break the listener's immersion, especially in a "heritage" or "storytelling" context where a seamless flow is critical.
+
+The technical fix was a precise adjustment of the crossfade durations. I increased the `_XFADE_DUR_BY_PAIR` for `("voice", "tail")` and `("voice", "music")` from **1.5 seconds to 3.0 seconds**.
+
+```python
+# Before: 1.5s (felt rough)
+# After: 3.0s (smoother, more natural transition)
+_XFADE_DUR_BY_PAIR = {
+    ...
+    ("voice", "tail"): 3.0,
+    ("voice", "music"): 3.0,
+    ...
+}
+```
+
+While a 1.5-second difference seems negligible in a codebase, it is a massive shift in perceived audio quality. By doubling the fade time, we allow the voice to bleed more naturally into the music, creating a professional "radio-style" blend.
+
+### 2. Eliminating Trailing Silence in Music Slots
+
+Another critical issue was the presence of unexpected silence at the end of music slots (e.g., `OLDIES_POP` and `GAYO_OLD_2`). This usually happens when the accumulated duration of the music tracks is shorter than the allocated slot duration.
+
+To solve this, I implemented a "tail-music chain" logic for music slots, mirroring the policy we already had for voice slots. If the `target_tail` (the gap between current content and slot duration) exceeds a minimum threshold, the system now fetches and appends additional "tail" tracks to fill the void.
+
+```python
+content_sec = sum(_ffprobe_dur(p["path"]) for p in pieces)
+target_tail = slot_dur - content_sec
+if target_tail >= MIN_TAIL_TARGET and ADMIN_TOKEN:
+    # Fetch tail-music chain to fill the trailing silence
+    chain = await _fetch_admin_tail(...)
+```
+
+This ensures that the stream remains "alive" until the very last millisecond of the slot, preventing those awkward gaps that make a professional stream feel like an amateur playlist.
+
+### 3. Strategic Shift in TTS Engines
+
+On the frontend/admin side, we made a strategic decision regarding the `BEAUTIFUL_KOREA` program. We shifted its TTS engine from `qwen3tts` (automated) to `typecast` (external synthesis + manual upload).
+
+In my experience at **CPLABS**, I've learned that automation is great for scale, but high-quality content often requires a "human-in-the-loop" approach. For specific programs that demand a certain emotional resonance or precise inflection, the flexibility of an external tool like Typecast—followed by a manual admin upload—outperforms a fully automated pipeline.
+
+### Final Thoughts
+
+Today's changes highlight a recurring theme in my 20-year career: **The importance of the feedback loop.** Whether it's a director's feedback on a "rough transition" or a user's preference for a specific voice tone, the best technical decisions are those informed by the actual experience of the end-user.
+
+Engineering isn't just about making the system run; it's about making the system *feel* right.
