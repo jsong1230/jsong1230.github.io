@@ -1,55 +1,55 @@
 {
-  "generated_at": "2026-05-09T23:00:01.091Z",
+  "generated_at": "2026-05-10T23:00:01.370Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-10",
-          "last_msg": "[admin] hls_builder — voice→tail acrossfade 1.5→3.0s + 음악 슬롯 tail-",
+          "last_date": "2026-05-11",
+          "last_msg": "[admin] hls_builder — S3 .build_date marker sync 추가 (5/11 audit hotfix)",
           "branch": "dev",
           "activity": [
-            61,
             26,
             45,
             56,
             25,
             16,
+            6,
             2
           ],
-          "commits_7d": 300,
-          "commits_30d": 1020
+          "commits_7d": 231,
+          "commits_30d": 1026
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-09",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-05-10",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
-            2,
             2,
             2,
             2,
             2,
             3,
+            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 71
+          "commits_30d": 74
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-08",
-          "last_msg": "chore: daily pipeline data update 2026-05-08",
+          "last_date": "2026-05-09",
+          "last_msg": "chore: daily pipeline data update 2026-05-09",
           "branch": "main",
           "activity": [
+            1,
+            1,
+            1,
+            1,
+            2,
             0,
-            1,
-            1,
-            1,
-            1,
-            1,
             0
           ],
           "commits_7d": 6,
@@ -87,7 +87,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 19
+          "commits_30d": 18
         },
         {
           "name": "booksummary",
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 2
         },
         {
           "name": "openfield",
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "minidaepa",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 0
         },
         {
           "name": "MetaPool",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 0
         },
         {
           "name": "timemachine",
@@ -296,7 +296,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 2
         },
         {
           "name": "claude-agent",
@@ -313,7 +313,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 21
+          "commits_30d": 20
         },
         {
           "name": "meta-agents",
@@ -500,7 +500,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 6
         },
         {
           "name": "MetaLotto",
@@ -534,7 +534,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 7
         },
         {
           "name": "MetaStake",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 4
         },
         {
           "name": "daepa-discussion-chat",
@@ -636,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "nipa-proposal",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "BORA_hack",
