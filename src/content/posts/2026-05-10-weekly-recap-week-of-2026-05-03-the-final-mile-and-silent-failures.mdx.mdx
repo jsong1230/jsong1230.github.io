@@ -1,0 +1,56 @@
+---
+title: "Week of 2026-05-03: The Final Mile and Silent Failures"
+date: "2026-05-10"
+lang: en
+excerpt: "Weekly Retrospective: The Final Mile and the War Against \"Silent Failures\" **Date Range:** May 3, 2026 – May 10, 2026 **Author:** Jeffrey Joo-Han Song..."
+tags: ["weekly-recap"]
+---
+
+# Weekly Retrospective: The Final Mile and the War Against "Silent Failures"
+**Date Range:** May 3, 2026 – May 10, 2026
+**Author:** Jeffrey Joo-Han Song
+
+As we move closer to the May 11th launch of the **Heritage Radio** project, this past week has been a grueling exercise in what I call "The Final 5%." In the early phases of a project, we focus on the macro—Web3 integration, DID frameworks, and AI model selection. But as the launch date looms, the focus shifts to the micro: race conditions, HLS buffer gaps, and the subtle psychology of auditory transitions.
+
+This week was not about building new features; it was about the relentless pursuit of stability and the elimination of "edge-case ghosts."
+
+### Technical Workstreams & Execution
+
+The primary focus of the week was stabilizing the mobile streaming experience and refining the automated audio pipeline.
+
+**1. Infrastructure & Deployment Agility**
+Early in the week, I navigated the tension between security and operational utility. We made the strategic decision to deploy the production admin panel via an ALB Direct approach, bypassing CloudFront. This allowed us to maintain the agility needed for real-time push notification management and chat auditing without compromising the broader security posture of the public-facing site. I also spent significant time resolving CloudFront OAC bottlenecks that were causing intermittent 403 errors on `/live/*` paths, ensuring our content delivery remains seamless.
+
+**2. The Battle Against "Silent Gaps" and Race Conditions**
+The most challenging technical hurdles this week occurred in the background execution of the mobile app. I encountered a "background deadlock" where certain devices (specifically older Samsung models) failed to transition to the next program slot after 10 minutes of background playback. 
+
+Further complicating this was a race condition during slot transitions. I had to dismantle a "quick-fix" `sleep` call—which had led to "double signal" glitches—and replace it with a robust event-driven synchronization logic. This was paired with an emergency fix for the HLS pipeline to eliminate 12-minute silence gaps in the `voice_50` chain, ensuring that the automated broadcast remains continuous.
+
+**3. Auditory UX and AI Synthesis**
+On the content side, I focused on the "human" element of the AI experience. This involved refining the `audio_loudness.py` service to fix silent logger failures during Qwen3-TTS batch synthesis and tuning the crossfade transitions between voice narration and background music. The goal was to move from a "working" product to a "polished" one, ensuring that the auditory experience feels organic rather than synthetic.
+
+### Key Technical Insights
+
+*   **The Fallacy of the `sleep()` Fix:** This week reinforced why using `wait` or `sleep` to solve race conditions is a trap. In asynchronous mobile environments, these "small delays" often shift the timing of the race rather than solving it, leading to unpredictable glitches like the "double signal" effect.
+*   **The Danger of Silent Failures:** Whether it was a `TypeError` in the normalization logs or a silence gap in an HLS stream, the most dangerous bugs are those that don't crash the system but degrade the user experience silently. Robust logging must be as prioritized as the primary business logic.
+*   **Infrastructure Parity:** The transition from "theoretical stability" to "real-world chaos" happens the moment you hit production. Maintaining a "War Room" view (via dedicated briefing HTMLs) is essential for stakeholder alignment during the D-7 countdown.
+
+### Looking Ahead
+
+As we hit the launch date, the focus shifts from engineering to monitoring. The priority is now "observability." I will be closely monitoring the HLS stream stability and user feedback regarding the AI-generated transitions. 
+
+The transition from a CTO-led development phase to a live production environment is always the most volatile period. However, by scrubbing the "silent gaps" and refining the infrastructure, we have built a foundation that can withstand the initial surge of users. We are no longer just building an engine; we have tuned the instrument. Now, it's time to play.
+
+---
+
+### This week's posts
+
+- [Balancing Production Agility and Infrastructure Parity](/writing/2026-05-03-balancing-production-agility-and-infrastructure-parity)
+- [Week of 2026-04-26: Bridging AI Ambition and Production Reality](/writing/2026-05-03-weekly-recap-week-of-2026-04-26-bridging-ai-ambition-and-production-reality.mdx)
+- [Heritage Radio: The Final Countdown to Launch](/writing/2026-05-04-heritage-radio-the-final-countdown-to-launch)
+- [Solving the \](/writing/2026-05-05-solving-the-silent-gap-fixing-slot-overlap-in-mobile-streaming-background-playback)
+- [The Perils of \](/writing/2026-05-06-the-perils-of-small-delays-lessons-from-a-race-condition-fix)
+- [Engineering Log: Solving CloudFront OAC Bottlenecks and Refining User Experience](/writing/2026-05-07-engineering-log-solving-cloudfront-oac-bottlenecks-and-refining-user-experience)
+- [The Danger of \](/writing/2026-05-08-the-danger-of-silent-failures-lessons-from-audio-normalization-logs)
+- [Solving the \](/writing/2026-05-09-solving-the-silence-gap-emergency-fixes-and-system-robustness-in-hls-streaming)
+- [The Final 5%: Polishing the Auditory Experience in HLS Streaming](/writing/2026-05-10-the-final-5-polishing-the-auditory-experience-in-hls-streaming)
