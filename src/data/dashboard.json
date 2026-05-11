@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T23:00:01.370Z",
+  "generated_at": "2026-05-11T23:00:01.256Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,48 +7,82 @@
         {
           "name": "heritageradio",
           "last_date": "2026-05-11",
-          "last_msg": "[admin] hls_builder — S3 .build_date marker sync 추가 (5/11 audit hotfix)",
+          "last_msg": "[admin] dev 5/13~5/17 build 완료 brief + leftover task 인계",
           "branch": "dev",
           "activity": [
-            26,
             45,
             56,
             25,
             16,
             6,
-            2
+            25,
+            0
           ],
-          "commits_7d": 231,
-          "commits_30d": 1026
+          "commits_7d": 191,
+          "commits_30d": 1049
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-10",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-05-11",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 74
+          "commits_30d": 67
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-05-11",
+          "last_msg": "logs: 2026-05-11 — Apple ID password reset + WD My Passport unlock & archive",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 18
+        },
+        {
+          "name": "srt_reverve",
+          "last_date": "2026-05-11",
+          "last_msg": "feat: SRT IP 차단 페이지 감지 및 자동 정지",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-09",
-          "last_msg": "chore: daily pipeline data update 2026-05-09",
+          "last_date": "2026-05-10",
+          "last_msg": "chore: daily pipeline data update 2026-05-10",
           "branch": "main",
           "activity": [
             1,
             1,
             1,
-            1,
             2,
+            1,
             0,
             0
           ],
@@ -60,23 +94,6 @@
           "last_date": "2026-04-29",
           "last_msg": "style: gofmt consensus.go after hashimeta patch",
           "branch": "camellia",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 18
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-04-29",
-          "last_msg": "logs: 2026-04-29 — SSD swap + openclaw fix + radiotm.co.kr Workspace",
-          "branch": "gram-jsong",
           "activity": [
             0,
             0,
@@ -179,6 +196,23 @@
           "last_date": "2026-04-06",
           "last_msg": "feat: 방송/음악 카테고리 분리",
           "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "wdpassport-utils",
+          "last_date": "2026-04-04",
+          "last_msg": "Merge pull request #27 from drafnel/api-corrections",
+          "branch": "master",
           "activity": [
             0,
             0,
