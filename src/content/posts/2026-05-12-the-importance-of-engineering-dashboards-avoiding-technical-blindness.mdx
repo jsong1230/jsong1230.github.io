@@ -1,0 +1,43 @@
+---
+title: "The Importance of Engineering Dashboards: Avoiding Technical Blindness"
+date: "2026-05-12"
+lang: en
+excerpt: "Maintaining Visibility: The Importance of Engineering Dashboards  As a CTO and engineer with over two decades of experience, I’ve learned that the mos..."
+---
+
+# Maintaining Visibility: The Importance of Engineering Dashboards
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical lead is "blindness." Whether it's a production outage in a Web3 infrastructure or the slow drift of a multi-repo development cycle, not knowing exactly where the momentum lies is a risk.
+
+Today’s work was a "chore" in the git sense—updating the `dashboard.json` for my personal tracking site—but it represents a critical habit: **Quantifying Engineering Velocity.**
+
+### The Work: Updating the Pulse
+
+Today's commit was straightforward: updating the dashboard data to reflect current repository activities. While it looks like a simple JSON update, the diff reveals a lot about the current focus of my development ecosystem.
+
+```json
+- "last_msg": "[admin] hls_builder — S3 .build_date marker sync 추가 (5/11 audit hotfix)",
++ "last_msg": "[admin] dev 5/13~5/17 build 완료 brief + leftover task 인계",
+```
+
+Looking at the `heritageradio` updates, we see a transition from a critical "audit hotfix" to a "build completion and task handover." This is the natural lifecycle of a feature: from the urgency of a fix to the discipline of documentation and handover.
+
+### Technical Decisions: Data-Driven Self-Management
+
+I’ve integrated a system that auto-generates these recaps. Why? Because manual reporting is a waste of engineering resources. By treating my own productivity as a data stream, I can identify patterns that aren't obvious day-to-day.
+
+For instance, looking at the `activity` arrays in the JSON, I can see exactly which days were high-intensity and which were for deep thinking. When I see a string of `0`s in a repository like `claude-agent`, it doesn't necessarily mean inactivity; it often means the project is in a "stable" phase or the focus has shifted to a higher-priority architectural challenge.
+
+### Insights from the Field
+
+Throughout my career, including my time at **CPLABS**, I've seen teams struggle with "status update fatigue." We spend hours in meetings asking, "What is the status of X?" and "Who is working on Y?"
+
+The solution isn't more meetings; it's **better observability**. 
+
+Whether it's a blockchain explorer for DID transactions or a simple JSON dashboard for a personal portfolio, the goal is the same: **Reduce the cost of information retrieval.** When the data is visible and updated (even via automation), the "status update" happens asynchronously. This frees up the engineering brain to focus on solving actual problems—like the "SRT IP block detection" feature I noted in the `srt_reverve` updates today.
+
+### Closing Thoughts
+
+Updating a JSON file might seem trivial, but it's an exercise in discipline. In the fast-paced worlds of AI and Web3, it is easy to lose track of the "leftover tasks" and the "briefs." By maintaining a rigorous record of commits and activities, I ensure that nothing falls through the cracks.
+
+Stay disciplined, keep your dashboards green, and always automate the boring parts.
