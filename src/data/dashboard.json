@@ -1,42 +1,59 @@
 {
-  "generated_at": "2026-05-11T23:00:01.256Z",
+  "generated_at": "2026-05-12T23:00:01.409Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-11",
-          "last_msg": "[admin] dev 5/13~5/17 build 완료 brief + leftover task 인계",
+          "last_date": "2026-05-13",
+          "last_msg": "[main] admin 인계 brief — § 2 expand: prod 잔재 누적 사고 + cleanup +",
           "branch": "dev",
           "activity": [
-            45,
             56,
             25,
             16,
             6,
             25,
-            0
+            4,
+            1
           ],
-          "commits_7d": 191,
-          "commits_30d": 1049
+          "commits_7d": 175,
+          "commits_30d": 1054
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-11",
+          "last_date": "2026-05-12",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
           "commits_30d": 67
+        },
+        {
+          "name": "trump-code",
+          "last_date": "2026-05-11",
+          "last_msg": "chore: daily pipeline data update 2026-05-11",
+          "branch": "main",
+          "activity": [
+            1,
+            1,
+            2,
+            1,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 32
         },
         {
           "name": "claude-agent",
@@ -48,8 +65,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -65,29 +82,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "trump-code",
-          "last_date": "2026-05-10",
-          "last_msg": "chore: daily pipeline data update 2026-05-10",
-          "branch": "main",
-          "activity": [
-            1,
-            1,
-            1,
-            2,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 32
         },
         {
           "name": "go-metadium",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "openfield",
@@ -330,7 +330,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "claude-agent",
