@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T23:00:01.409Z",
+  "generated_at": "2026-05-13T23:00:01.180Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,30 +7,30 @@
         {
           "name": "heritageradio",
           "last_date": "2026-05-13",
-          "last_msg": "[main] admin 인계 brief — § 2 expand: prod 잔재 누적 사고 + cleanup +",
+          "last_msg": "[landing+admin] flat 3 program 스크립트 클린업 — 인물 존칭 제거 +",
           "branch": "dev",
           "activity": [
-            56,
             25,
             16,
             6,
             25,
             4,
-            1
+            6,
+            0
           ],
-          "commits_7d": 175,
-          "commits_30d": 1054
+          "commits_7d": 127,
+          "commits_30d": 1058
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-12",
+          "last_date": "2026-05-13",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -40,15 +40,15 @@
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-11",
-          "last_msg": "chore: daily pipeline data update 2026-05-11",
+          "last_date": "2026-05-12",
+          "last_msg": "chore: daily pipeline data update 2026-05-12",
           "branch": "main",
           "activity": [
-            1,
             1,
             2,
             1,
             0,
+            1,
             1,
             0
           ],
@@ -64,13 +64,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 18
+          "commits_30d": 17
         },
         {
           "name": "srt_reverve",
@@ -81,13 +81,30 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-04-29",
+          "last_msg": "style: gofmt consensus.go after hashimeta patch",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 18
         },
         {
           "name": "go-metadium",
@@ -138,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 15
+          "commits_30d": 13
         },
         {
           "name": "nipa-proposal",
@@ -316,6 +333,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "go-metadium",
+          "last_date": "2026-05-13",
+          "last_msg": "feat: activate Camellia hard fork on testnet at block 86449000",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 19
+        },
+        {
           "name": "booksummary",
           "last_date": "2026-04-25",
           "last_msg": "feat: YouTube 예약 업로드 메타데이터 + privacyStatus 처리",
@@ -347,7 +381,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 20
+          "commits_30d": 19
         },
         {
           "name": "meta-agents",
@@ -398,7 +432,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 3
         },
         {
           "name": "daepa-chat-server",
@@ -415,7 +449,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 2
         },
         {
           "name": "daepa-admin-frontend",
@@ -432,7 +466,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 9
         },
         {
           "name": "daepa-api-backend",
@@ -602,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 16
+          "commits_30d": 14
         },
         {
           "name": "union",
@@ -636,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 1
         },
         {
           "name": "daepa-discussion-chat",
@@ -653,7 +687,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "minidaepa",
