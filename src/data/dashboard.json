@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-05-13T23:00:01.180Z",
+  "generated_at": "2026-05-14T23:00:01.118Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-13",
-          "last_msg": "[landing+admin] flat 3 program 스크립트 클린업 — 인물 존칭 제거 +",
+          "last_date": "2026-05-15",
+          "last_msg": "[main] CDK celery env HLS_BUILD_PENDING_DISABLED=1 — beat schedule 잔재 정�",
           "branch": "dev",
           "activity": [
-            25,
             16,
             6,
             25,
             4,
             6,
-            0
+            9,
+            3
           ],
-          "commits_7d": 127,
-          "commits_30d": 1058
+          "commits_7d": 93,
+          "commits_30d": 1070
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-13",
+          "last_date": "2026-05-14",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -40,14 +40,14 @@
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-12",
-          "last_msg": "chore: daily pipeline data update 2026-05-12",
+          "last_date": "2026-05-13",
+          "last_msg": "chore: daily pipeline data update 2026-05-13",
           "branch": "main",
           "activity": [
-            1,
             2,
             1,
             0,
+            1,
             1,
             1,
             0
@@ -63,14 +63,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 17
+          "commits_30d": 16
         },
         {
           "name": "srt_reverve",
@@ -80,8 +80,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 18
+          "commits_30d": 16
         },
         {
           "name": "go-metadium",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 18
+          "commits_30d": 16
         },
         {
           "name": "booksummary",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 3
         },
         {
           "name": "nipa-proposal",
@@ -343,11 +343,11 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
-          "commits_30d": 19
+          "commits_30d": 17
         },
         {
           "name": "booksummary",
@@ -381,7 +381,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 19
+          "commits_30d": 18
         },
         {
           "name": "meta-agents",
@@ -415,7 +415,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 10
         },
         {
           "name": "daepa-admin-backend",
@@ -636,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 14
+          "commits_30d": 4
         },
         {
           "name": "union",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "bitcoin",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "daepa-discussion-chat",
