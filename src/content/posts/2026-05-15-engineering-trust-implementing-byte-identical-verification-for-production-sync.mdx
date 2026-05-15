@@ -1,0 +1,56 @@
+---
+title: "Engineering Trust: Implementing Byte-Identical Verification for Production Sync"
+date: "2026-05-15"
+lang: en
+excerpt: "Engineering Trust: Implementing Byte-Identical Verification for Production Sync  In a production environment, \"it seems to be working\" is never an acc..."
+---
+
+# Engineering Trust: Implementing Byte-Identical Verification for Production Sync
+
+In a production environment, "it seems to be working" is never an acceptable metric. As an engineer, I've learned over the last 20 years that the most dangerous bugs are the silent ones—the files that uploaded "successfully" but are corrupted, truncated, or outdated.
+
+Today's focus was on eliminating this uncertainty in the `heritageradio` pipeline by implementing a strict, byte-identical verification process between our development archives and production S3 storage.
+
+### The Problem: The "Silent Sync" Gap
+We have several sync scripts that move HLS (HTTP Live Streaming) segments and playlists from a dev environment to production S3, followed by a CloudFront invalidation. While the AWS CLI might return a success code, there is a theoretical gap: *Are the bytes on S3 exactly what we intended to deploy?*
+
+If a sync fails partially or a file is corrupted, triggering a CloudFront invalidation only serves to cache the "wrong" version more aggressively.
+
+### The Technical Solution: Leveraging S3 ETags
+To solve this, I developed `verify_prod_sync.py`. The core logic relies on a specific behavior of Amazon S3: **For single-part uploads, the ETag is the MD5 hash of the object.**
+
+Since our `.ts` (segments) and `.m3u8` (playlists) files are small (~110KB to ~280KB), they always fall under the single-part upload threshold. This allows us to perform a high-speed integrity check without downloading the files back from S3.
+
+**The workflow is now:**
+`Sync Files` $\rightarrow$ `Verify MD5 (Dev) vs ETag (S3)` $\rightarrow$ `CloudFront Invalidation`
+
+If the verification fails, the pipeline now takes drastic action:
+1. **Skip Invalidation:** We prevent the stale or corrupted cache from being propagated.
+2. **Alerting:** A detailed Telegram notification is sent, including the first 10 mismatches for immediate debugging.
+3. **Hard Fail:** The script exits with `exit 1` and triggers a health check failure (`hc_ping /fail`).
+
+### Code Insight: The Safety Guard
+Looking at the diff in the sync scripts, the addition of the verification block acts as a critical circuit breaker:
+
+```bash
+if python3 /home/jsong/heritageradio/scripts/verify_prod_sync.py \
+    --date "$TARGET_FULL" --cycles "01" --quiet > "$VERIFY_OUT" 2>&1; then
+  VERIFY_RESULT=$(tail -1 "$VERIFY_OUT")
+  echo "verify OK: $VERIFY_RESULT"
+else
+  # ... Telegram alert and hc_ping /fail ...
+  exit 1
+fi
+```
+
+By placing this *before* the `aws cloudfront create-invalidation` call, we ensure that we only clear the cache when we are 100% certain the origin is correct.
+
+### Other Improvements
+Beyond the sync verification, I handled some technical debt:
+- **Infrastructure:** Cleaned up residual Celery beat schedules in the CDK `compute-stack.ts` by setting `HLS_BUILD_PENDING_DISABLED=1`.
+- **Backend Logic:** Fixed a bug in `live.py` where `day_dir` priority was not correctly handled, ensuring that "flat" directory structures don't override specific daily directory logic during sales/broadcasts.
+
+### Final Thoughts
+At CPLABS, we emphasize the importance of "verifiable truth." Whether it's a blockchain transaction or a simple file upload to S3, the goal is the same: remove the need for "trust" and replace it with "verification." 
+
+Adding this byte-level check might seem like overkill for small files, but in a production system, the cost of a 30-second verification script is negligible compared to the cost of debugging a silent production failure.
