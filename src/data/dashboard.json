@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-05-14T23:00:01.118Z",
+  "generated_at": "2026-05-15T23:00:02.024Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-15",
-          "last_msg": "[main] CDK celery env HLS_BUILD_PENDING_DISABLED=1 — beat schedule 잔재 정�",
-          "branch": "dev",
+          "last_date": "2026-05-16",
+          "last_msg": "[landing] static page cleanup — PAGE_BODY 잔재 제거 + sitemap 보강",
+          "branch": "main",
           "activity": [
-            16,
             6,
             25,
             4,
             6,
             9,
+            33,
             3
           ],
-          "commits_7d": 93,
-          "commits_30d": 1070
+          "commits_7d": 94,
+          "commits_30d": 1097
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-14",
+          "last_date": "2026-05-15",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -40,13 +40,13 @@
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-13",
-          "last_msg": "chore: daily pipeline data update 2026-05-13",
+          "last_date": "2026-05-14",
+          "last_msg": "chore: daily pipeline data update 2026-05-14",
           "branch": "main",
           "activity": [
-            2,
             1,
             0,
+            1,
             1,
             1,
             1,
@@ -62,15 +62,15 @@
           "branch": "gram-jsong",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 16
+          "commits_30d": 14
         },
         {
           "name": "srt_reverve",
@@ -79,8 +79,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 16
+          "commits_30d": 15
         },
         {
           "name": "go-metadium",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 16
+          "commits_30d": 15
         },
         {
           "name": "booksummary",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 0
         },
         {
           "name": "nipa-proposal",
@@ -342,12 +342,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 17
+          "commits_30d": 16
         },
         {
           "name": "booksummary",
@@ -381,7 +381,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 18
+          "commits_30d": 13
         },
         {
           "name": "meta-agents",
@@ -398,7 +398,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 28
+          "commits_30d": 9
         },
         {
           "name": "go-metadium",
@@ -415,7 +415,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 9
         },
         {
           "name": "daepa-admin-backend",
@@ -568,7 +568,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 1
         },
         {
           "name": "MetaLotto",
@@ -585,7 +585,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 2
         },
         {
           "name": "MetaPool",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 2
         },
         {
           "name": "MetaStake",
@@ -636,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 0
         },
         {
           "name": "union",
