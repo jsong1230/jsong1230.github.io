@@ -1,0 +1,53 @@
+---
+title: "Engineering Log: Refining the User Experience and Cleaning Technical Debt"
+date: "2026-05-16"
+lang: en
+excerpt: "Engineering Log: Refining the User Experience and Cleaning Technical Debt  As an engineer, there is a specific kind of satisfaction that comes not fro..."
+---
+
+# Engineering Log: Refining the User Experience and Cleaning Technical Debt
+
+As an engineer, there is a specific kind of satisfaction that comes not from adding new features, but from removing unnecessary code and fixing edge-case bugs that haunt the user experience. Today was one of those days. My work focused on the **Heritage Radio** project, balancing high-level architectural cleanup with granular mobile stability fixes.
+
+## 1. The Art of Deletion: Static Page Cleanup
+
+One of the most overlooked parts of maintaining a professional codebase is the removal of "ghost code"—components and scripts that were useful during the prototyping phase but have since become dead weight.
+
+In the landing page implementation, I discovered several static pages (`about`, `ethics`, `privacy`, `terms`) that contained remnants of `PAGE_BODY` tags and inline scripts within `dangerouslySetInnerHTML`. 
+
+**The Technical Insight:**
+The project already utilizes a `layout.tsx` with a `themeInitScript` to handle theme settings (dark/light mode). The inline `classList.add('dark')` calls were not only redundant but technically unreachable due to CSS selector mismatches and the way Next.js handles hydration. 
+
+I also deleted `DailyLife.tsx`, a 7.6KB component that was no longer in use. While 7KB seems negligible, the cognitive load of seeing unused components in the file tree is a form of technical debt. Cleaning this up, along with reinforcing the `sitemap.ts` for better SEO (updating `lastModified` and priority), ensures the project remains lean and discoverable.
+
+## 2. Solving the "Midnight Silence" in Mobile HLS
+
+The most critical technical challenge today was a bug in the mobile app (v0.9.91) regarding the HLS (HTTP Live Streaming) player. 
+
+**The Problem:**
+Users experienced a "lock" or silence around midnight. The issue stemmed from how the app handled the `hls.ended` event. In a 24/7 streaming environment, the transition between the end of one day's schedule and the start of the next can cause the player to stall if the buffer clears or the stream resets at the midnight boundary.
+
+**The Decision:**
+Instead of relying solely on the `ended` event—which can be unreliable depending on the HLS segment delivery—I implemented a more robust cycle:
+- **Cycle + Timetable Refresh:** I shifted the logic to trigger a refresh of the timetable and a re-cycle of the player.
+- **Native Hook Optimization:** I updated `useHlsPlayer.native.ts` to better handle the state transition, ensuring that when the stream hits a boundary, the app proactively fetches the new schedule and restarts the stream without user intervention.
+
+This is a classic example of moving from a **reactive** approach (waiting for the stream to end) to a **proactive** approach (refreshing based on the schedule).
+
+## 3. Developer Velocity and Monitoring
+
+Finally, I updated my personal dashboard data. Seeing the commit activity—especially the spike in `heritageradio` (94 commits in 7 days)—serves as a reminder of the iterative nature of software. Whether it's a major feature or a minor `sitemap` tweak, the goal is always incremental improvement.
+
+## Final Thoughts
+
+Throughout my career, from my time at **CPLABS** to my current projects, I've learned that the difference between a "working" product and a "polished" product lies in the details: the removal of a few hundred lines of dead code, the correct SEO priority in a sitemap, and the seamless handling of a midnight stream transition.
+
+Technical depth isn't just about complex algorithms; it's about the discipline to maintain the environment and the empathy to fix the small frictions that users feel.
+
+***
+
+**Summary of changes:**
+- **Frontend:** Removed dead components/scripts, optimized sitemap.
+- **Admin:** Added a dev-only listening tab for rapid testing.
+- **Mobile:** Fixed midnight HLS playback stall via proactive timetable refresh.
+- **Dashboard:** Updated activity metrics.
