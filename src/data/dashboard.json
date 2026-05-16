@@ -1,51 +1,51 @@
 {
-  "generated_at": "2026-05-15T23:00:02.024Z",
+  "generated_at": "2026-05-16T23:00:01.877Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-16",
-          "last_msg": "[landing] static page cleanup — PAGE_BODY 잔재 제거 + sitemap 보강",
-          "branch": "main",
+          "last_date": "2026-05-17",
+          "last_msg": "[admin] LivePlayerPanel iframe cache-busting (?_=Date.now)",
+          "branch": "dev",
           "activity": [
-            6,
             25,
             4,
             6,
             9,
             33,
-            3
+            3,
+            1
           ],
-          "commits_7d": 94,
-          "commits_30d": 1097
+          "commits_7d": 85,
+          "commits_30d": 1061
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-15",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-05-16",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 67
+          "commits_30d": 68
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-14",
-          "last_msg": "chore: daily pipeline data update 2026-05-14",
+          "last_date": "2026-05-15",
+          "last_msg": "chore: daily pipeline data update 2026-05-15",
           "branch": "main",
           "activity": [
-            1,
             0,
+            1,
             1,
             1,
             1,
@@ -61,8 +61,8 @@
           "last_msg": "logs: 2026-05-11 — Apple ID password reset + WD My Passport unlock & archive",
           "branch": "gram-jsong",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -78,8 +78,8 @@
           "last_msg": "feat: SRT IP 차단 페이지 감지 및 자동 정지",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 15
+          "commits_30d": 7
         },
         {
           "name": "go-metadium",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 15
+          "commits_30d": 7
         },
         {
           "name": "booksummary",
@@ -341,13 +341,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 16
+          "commits_30d": 8
         },
         {
           "name": "booksummary",
@@ -381,7 +381,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 10
         },
         {
           "name": "meta-agents",
@@ -415,7 +415,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 1
         },
         {
           "name": "daepa-admin-backend",
@@ -483,7 +483,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 28
+          "commits_30d": 27
         },
         {
           "name": "daepa-docs",
@@ -500,7 +500,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 10
         },
         {
           "name": "meta-zkbridge",
@@ -517,7 +517,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 2
         },
         {
           "name": "daepa-stack-cto",
@@ -568,7 +568,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "MetaLotto",
@@ -585,7 +585,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "MetaPool",
@@ -602,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "MetaStake",
@@ -619,7 +619,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 0
         },
         {
           "name": "openfield",
