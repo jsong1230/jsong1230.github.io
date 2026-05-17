@@ -1,0 +1,60 @@
+---
+title: "UX Refinement and the Eternal Battle Against Browser Caching"
+date: "2026-05-17"
+lang: en
+excerpt: "Engineering Log: UX Refinement and the Eternal Battle Against Browser Caching  As a CTO and engineer, I’ve spent over two decades building systems whe..."
+---
+
+# Engineering Log: UX Refinement and the Eternal Battle Against Browser Caching
+
+As a CTO and engineer, I’ve spent over two decades building systems where "technical correctness" is the baseline, but "user experience" is the actual goal. Often, the most impactful changes aren't massive architectural shifts, but the surgical removal of small frictions that annoy users or cause silent failures.
+
+Today's work on the `heritageradio` project focused on exactly that: eliminating repetitive manual steps for admins and solving a critical caching issue that led to outdated content being served.
+
+### 1. Intelligent Defaults: Reducing Cognitive Load
+In the `episode-registry` admin page, we have a navigation structure based on months and weeks. Previously, the state defaulted to the first available month and week. For an admin logging in on May 17th, having to manually click through to the current week every single time is a "micro-friction" that adds up.
+
+I implemented a lazy initialization pattern using `useMemo` to calculate the current KST (Korea Standard Time) week upon mounting.
+
+```typescript
+function findCurrentWeekIndices(): { monthIdx: number; weekInMonthIdx: number } {
+  const nowUtc = new Date();
+  const kstOffsetMs = 9 * 60 * 60 * 1000;
+  const nowKst = new Date(nowUtc.getTime() + kstOffsetMs);
+  // ... logic to match nowKst with the MONTHS and weeks configuration
+}
+
+// In the component:
+const initialWeek = useMemo(() => findCurrentWeekIndices(), []);
+const [monthIdx, setMonthIdx] = useState(initialWeek.monthIdx);
+const [weekInMonthIdx, setWeekInMonthIdx] = useState(initialWeek.weekInMonthIdx);
+```
+
+**Insight:** When dealing with global applications or specific regional services (like KST), never rely on the client's local system clock without normalization. By explicitly calculating the KST offset, we ensure the admin sees the correct "current week" regardless of where they are accessing the dashboard from.
+
+### 2. The Cache-Busting Strategy for iframes
+One of the more frustrating bugs we encountered was the `LivePlayerPanel` failing to show new weekly updates. The player is hosted as an HTML file (`player.html`) and embedded via an `iframe`. Because browsers aggressively cache static HTML files, admins were seeing a cached version of the player, missing critical UI updates like new week additions or lock icons.
+
+While a proper `Cache-Control` header on the server is the "correct" long-term fix, in a fast-paced development environment, a **cache-buster** is a highly effective tactical move.
+
+```typescript
+function LivePlayerPanel() {
+  // Generate a unique timestamp on mount to force a fresh fetch
+  const [bust] = useState<string>(() => `?_=${Date.now()}`);
+  const src = `${LIVE_PLAYER_URL}${bust}`;
+  
+  return <iframe src={src} ... />;
+}
+```
+
+By appending a timestamp as a query parameter (`?_=1715...`), we trick the browser into treating every mount of the panel as a request for a new resource. This ensures that the latest version of the player is always served without requiring the user to manually hard-refresh the page.
+
+### Final Thoughts
+Whether it's during my time at **CPLABS** or in my current projects, I've found that the difference between a "working" product and a "polished" product lies in these details. 
+
+Technical debt isn't just about messy code; it's also about "UX debt"—the small inconveniences users tolerate until they eventually stop using the tool. Today was about paying down that debt.
+
+**Summary of changes:**
+- **UX:** Automated current week selection in Admin Registry (KST based).
+- **Stability:** Implemented iframe cache-busting for the Live Player to prevent stale content.
+- **Maintenance:** Updated personal dashboard metrics.
