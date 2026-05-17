@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T23:00:01.877Z",
+  "generated_at": "2026-05-17T23:00:01.507Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,49 +7,49 @@
         {
           "name": "heritageradio",
           "last_date": "2026-05-17",
-          "last_msg": "[admin] LivePlayerPanel iframe cache-busting (?_=Date.now)",
+          "last_msg": "[main] mobile v0.9.99 — tuner viewport-aware + density change auto-restart",
           "branch": "dev",
           "activity": [
-            25,
             4,
             6,
             9,
             33,
             3,
-            1
+            4,
+            0
           ],
-          "commits_7d": 85,
-          "commits_30d": 1061
+          "commits_7d": 82,
+          "commits_30d": 1036
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-16",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-05-17",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
-            2,
             2,
             2,
             2,
             2,
             3,
+            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-15",
-          "last_msg": "chore: daily pipeline data update 2026-05-15",
+          "last_date": "2026-05-16",
+          "last_msg": "chore: daily pipeline data update 2026-05-16",
           "branch": "main",
           "activity": [
+            1,
+            1,
+            1,
+            1,
+            2,
             0,
-            1,
-            1,
-            1,
-            1,
-            1,
             0
           ],
           "commits_7d": 6,
@@ -61,7 +61,7 @@
           "last_msg": "logs: 2026-05-11 — Apple ID password reset + WD My Passport unlock & archive",
           "branch": "gram-jsong",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -70,7 +70,7 @@
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 14
+          "commits_30d": 11
         },
         {
           "name": "srt_reverve",
@@ -78,7 +78,7 @@
           "last_msg": "feat: SRT IP 차단 페이지 감지 및 자동 정지",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -340,8 +340,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -381,7 +381,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 7
         },
         {
           "name": "meta-agents",
@@ -517,7 +517,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "daepa-stack-cto",
@@ -534,7 +534,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "metadium-explorer-stack",
@@ -551,7 +551,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 18
+          "commits_30d": 0
         },
         {
           "name": "Carebit",
