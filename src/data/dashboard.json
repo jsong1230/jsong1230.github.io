@@ -1,38 +1,55 @@
 {
-  "generated_at": "2026-05-17T23:00:01.507Z",
+  "generated_at": "2026-05-18T23:00:01.849Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-17",
-          "last_msg": "[main] mobile v0.9.99 — tuner viewport-aware + density change auto-restart",
+          "last_date": "2026-05-18",
+          "last_msg": "[main] update_player_html_date_tabs — episode-registry 누적 주차",
           "branch": "dev",
           "activity": [
-            4,
             6,
             9,
             33,
             3,
             4,
+            3,
             0
           ],
-          "commits_7d": 82,
-          "commits_30d": 1036
+          "commits_7d": 62,
+          "commits_30d": 1012
+        },
+        {
+          "name": "thepol-dev",
+          "last_date": "2026-05-18",
+          "last_msg": "Initial thepol dev infra (docker-compose + nginx + patches + README)",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-17",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-05-18",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
@@ -40,15 +57,15 @@
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-16",
-          "last_msg": "chore: daily pipeline data update 2026-05-16",
+          "last_date": "2026-05-17",
+          "last_msg": "chore: daily pipeline data update 2026-05-17",
           "branch": "main",
           "activity": [
             1,
             1,
             1,
-            1,
             2,
+            1,
             0,
             0
           ],
@@ -69,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 11
         },
         {
@@ -86,7 +103,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -326,6 +343,74 @@
           ],
           "commits_7d": 0,
           "commits_30d": 0
+        },
+        {
+          "name": "thepollandingpage-2",
+          "last_date": "2025-11-27",
+          "last_msg": "반응형 추가",
+          "branch": "stage",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "thepolbackend2",
+          "last_date": "2025-10-21",
+          "last_msg": "Merge branch 'stage' into qa",
+          "branch": "HEAD",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "thepoldeploy",
+          "last_date": "2024-08-01",
+          "last_msg": "admin 로그인 방법 추가",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "thepoldeploy",
+          "last_date": "2024-08-01",
+          "last_msg": "admin 로그인 방법 추가",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
         }
       ]
     },
@@ -339,8 +424,8 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -796,6 +881,23 @@
           "last_date": "2025-11-20",
           "last_msg": "Android 커스텀 스킴 추가 및 링크 서비스에서 환경 변수 사용",
           "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
+          "name": "20241106",
+          "last_date": "2025-11-18",
+          "last_msg": "트랜잭션 감지 로직 개선 및 일일 리포트 전송 보완",
+          "branch": "main",
           "activity": [
             0,
             0,
