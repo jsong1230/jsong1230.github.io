@@ -1,0 +1,58 @@
+---
+title: "AWS ECS 배포 시 `:latest` 태그의 함정과 Image Digest Pinning 해결 방법"
+date: "2026-05-18"
+lang: ko
+excerpt: "[DevLog] AWS ECS 배포의 함정: Image Digest Pinning 문제 해결하기  안녕하세요, 씨피랩스의 CTO 송주한(Jeffrey)입니다.  엔지니어로서 가장 당혹스러운 순간 중 하나는 \"코드를 수정하고 이미지를 푸시했는데, 서버에는 여전히 옛날 코..."
+---
+
+# [DevLog] AWS ECS 배포의 함정: Image Digest Pinning 문제 해결하기
+
+안녕하세요, 씨피랩스의 CTO 송주한(Jeffrey)입니다.
+
+엔지니어로서 가장 당혹스러운 순간 중 하나는 "코드를 수정하고 이미지를 푸시했는데, 서버에는 여전히 옛날 코드가 돌고 있을 때"일 것입니다. 로그를 봐도, 배포 스크립트가 성공했다고 떠도 실제 서비스는 요지부동인 상황이죠. 오늘 제가 바로 그 함정에 빠졌고, 이를 해결하며 얻은 인사이트를 공유하고자 합니다.
+
+### 1. 문제의 발견: 왜 `:latest`는 최신이 아니었나?
+
+오늘 프로덕션 백엔드 배포 중, 분명히 `timetable V3` 분기 코드를 포함해 이미지를 다시 푸시했음에도 불구하고 서버에서는 계속 이전 버전의 로직이 실행되는 것을 발견했습니다. 
+
+보통 AWS ECS에서는 `force-new-deployment` 옵션을 주면 서비스가 새 이미지를 당겨올 것이라고 생각합니다. 하지만 여기에는 무서운 함정이 있습니다. 바로 **CDK의 `fromEcrRepository(repo, 'latest')` 동작 방식**입니다.
+
+CDK는 배포 시점에 `:latest` 태그가 가리키는 **정확한 Image Digest(고유 해시값)**를 찾아내어 Task Definition에 'Baked-in'(고정) 시켜버립니다. 결과적으로 ECR의 `:latest` 태그가 새 이미지를 가리키게 되어도, ECS Task Definition은 여전히 옛날 Digest를 꽉 잡고 있게 됩니다. 즉, 단순한 재배포로는 새 이미지가 반영되지 않는 구조였습니다.
+
+### 2. 기술적 결정: Task Definition Revision 자동화
+
+이 문제를 근본적으로 해결하려면, 이미지 푸시 직후에 **새로운 Digest를 반영한 Task Definition Revision을 생성하고, 서비스를 해당 Revision으로 업데이트**하는 과정이 필요했습니다.
+
+저는 `deploy_prod.sh` 스크립트에 `register_new_taskdef`라는 단계를 추가하여 이 흐름을 자동화했습니다.
+
+**구현한 해결 흐름:**
+1. **Digest 조회**: `:latest` 대신 정확한 `$TAG_DATE`를 사용하여 ECR에서 최신 `imageDigest`를 가져옵니다.
+2. **Task Def 수정**: 현재 서비스의 Task Definition을 `describe` 하여 가져온 뒤, 이미지 URI만 새 Digest로 교체합니다.
+3. **Revision 등록**: 수정된 설정을 바탕으로 `register-task-definition`을 호출해 새로운 Revision ARN을 생성합니다.
+4. **서비스 업데이트**: `update-service`를 통해 새 ARN을 적용하고 강제 재배포를 수행합니다.
+
+### 3. 코드 포인트: Sidecar 컨테이너를 보호하는 정교함
+
+특히 신경 쓴 부분은 Task Definition 내의 여러 컨테이너 중 **우리가 업데이트하려는 특정 이미지 리포지토리만 교체**하는 로직입니다. 무작정 모든 이미지를 바꾸면 함께 돌아가는 사이드카(Sidecar) 컨테이너까지 영향을 받을 수 있기 때문입니다.
+
+이를 위해 간단한 Python 인라인 스크립트를 활용해 필터링 로직을 넣었습니다.
+
+```python
+# repo 이름이 image URI 에 포함된 container 만 교체 (sidecar 안전)
+needle = f"heritageradio-prod-{repo_kind}"
+matched = 0
+for c in d.get('containerDefinitions', []):
+    if needle in c.get('image',''):
+        c['image'] = image_uri
+        matched += 1
+```
+
+이렇게 함으로써 `celery-worker`와 `celery-beat`가 동일한 `celery` 이미지를 사용하더라도 각각의 서비스에 맞게 정확한 리비전 업데이트가 가능하도록 설계했습니다.
+
+### 4. 마치며: 인프라의 '암묵적 동작'을 경계하라
+
+이번 작업은 단순한 스크립트 수정이었지만, 클라우드 인프라 도구가 제공하는 '편의 기능'(여기서는 CDK의 Digest Pinning)이 때로는 운영 단계에서 예측하지 못한 장애 포인트가 될 수 있음을 다시 한번 깨달았습니다.
+
+추상화된 도구를 사용할 때는 그 내부에서 어떤 일이 일어나는지(Under the hood) 명확히 이해하는 것이 중요합니다. "당연히 되겠지"라는 가정을 버리고, 실제 AWS API가 어떻게 상호작용하는지 파고드는 습관이 결국 안정적인 시스템을 만든다고 믿습니다.
+
+오늘의 삽질이 누군가에게는 시간을 아껴주는 팁이 되길 바랍니다.

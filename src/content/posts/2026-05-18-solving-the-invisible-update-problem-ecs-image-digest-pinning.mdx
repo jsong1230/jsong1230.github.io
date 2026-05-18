@@ -1,0 +1,51 @@
+---
+title: "Solving the \"Invisible Update\" Problem: ECS Image Digest Pinning"
+date: "2026-05-18"
+lang: en
+excerpt: "Solving the \"Invisible Update\" Problem: ECS Image Digest Pinning  In the world of DevOps, there is nothing more frustrating than a deployment pipeline..."
+---
+
+# Solving the "Invisible Update" Problem: ECS Image Digest Pinning
+
+In the world of DevOps, there is nothing more frustrating than a deployment pipeline that reports "Success," yet the application is still running the old version of the code. I encountered exactly this scenario today while working on the `heritageradio` project, and it served as a great reminder of how "under-the-hood" abstractions in Infrastructure as Code (IaC) can sometimes lead to unexpected behavior.
+
+## The Problem: The `:latest` Tag Illusion
+
+We have been using AWS CDK to manage our ECS (Elastic Container Service) infrastructure. In our configuration, we used `fromEcrRepository(repo, 'latest')`. On the surface, this seems logical: always pull the latest image.
+
+However, I discovered a critical nuance: **CDK bakes the image digest into the Task Definition at the time of deployment.**
+
+When you deploy via CDK, it doesn't just tell ECS to "use the latest tag"; it resolves `:latest` to a specific SHA-256 digest (e.g., `sha256:abcdef...`) and pins the Task Definition to that exact version. Consequently, even if I push a new image to ECR with the `:latest` tag and trigger a `--force-new-deployment`, ECS looks at the Task Definition, sees the pinned digest, and dutifully pulls the *old* image again.
+
+This became evident today when a critical update—the timetable V3 branching logic—didn't make it to production despite a successful build and push.
+
+## The Technical Solution: Manual Revision Injection
+
+To solve this, I had to bypass the CDK-baked digest and force the Task Definition to recognize the newly pushed image. I implemented a new step in `deploy_prod.sh` called `register_new_taskdef`.
+
+The logic follows this flow:
+1. **Fetch the Exact Digest**: Instead of relying on `:latest`, I use the specific `$TAG_DATE` to get the precise image digest from ECR.
+2. **Describe & Modify**: I fetch the current Task Definition JSON, strip out read-only fields (like `taskDefinitionArn` and `revision`) that AWS rejects during registration, and update the image URI to the new digest.
+3. **Selective Update**: To ensure sidecar containers (like logging or monitoring agents) aren't accidentally overwritten, I added a Python snippet to only update containers that match the specific repository name.
+
+```python
+# Snippet from the new deployment logic
+needle = f"heritageradio-prod-{repo_kind}"
+matched = 0
+for c in d.get('containerDefinitions', []):
+    if needle in c.get('image',''):
+        c['image'] = image_uri
+        matched += 1
+```
+
+4. **Register & Update**: Finally, I register this as a new Task Definition revision and update the ECS service to use this new ARN.
+
+## Insights and Reflections
+
+This experience highlights a recurring theme in my 20 years of engineering: **the danger of implicit behavior.** 
+
+The convenience of CDK's `fromEcrRepository` is great for stability (it prevents accidental updates), but it creates a disconnect when you need a rapid, script-based deployment cycle. By explicitly managing the Task Definition revision, we regain full control over the deployment lifecycle.
+
+At **CPLABS**, we always strive for deterministic deployments. Whether it's blockchain smart contracts or cloud infrastructure, "it should work" is never a sufficient technical justification. You must know exactly which version of the code is running on which piece of hardware.
+
+**Today's takeaway:** When using `:latest` in a production environment, always verify if your orchestrator is pinning the digest or truly following the tag. If it's the former, your deployment script needs to be smarter than your infrastructure's defaults.

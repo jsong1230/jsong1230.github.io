@@ -1,0 +1,54 @@
+---
+title: "[코드리뷰] 2026-05-18 오늘의 코드 점검"
+date: "2026-05-18"
+lang: ko
+excerpt: "안녕하세요. 시니어 소프트웨어 엔지니어이자 코드 리뷰어입니다.  오늘 제출하신 커밋 중 특히 `deploy_prod.sh`의 변경 사항은 인프라 배포 과정에서 발생할 수 있는 매우 까다로운 **'Image Digest Pinning'** 문제를 정확히 짚어내고 해결한 ..."
+tags: ["code-review"]
+---
+
+안녕하세요. 시니어 소프트웨어 엔지니어이자 코드 리뷰어입니다.
+
+오늘 제출하신 커밋 중 특히 `deploy_prod.sh`의 변경 사항은 인프라 배포 과정에서 발생할 수 있는 매우 까다로운 **'Image Digest Pinning'** 문제를 정확히 짚어내고 해결한 수준 높은 작업입니다.
+
+상세 리뷰 전달드립니다.
+
+---
+
+## ✅ 잘한 점
+
+1. **근본 원인 분석 및 해결 (Root Cause Analysis)**
+   - 단순히 `force-new-deployment`만으로 해결되지 않는 이유가 CDK의 `fromEcrRepository`가 배포 시점에 이미지 digest를 고정(baked)하기 때문이라는 점을 정확히 파악했습니다.
+   - 이를 해결하기 위해 `describe-images` $\rightarrow$ `describe-task-definition` $\rightarrow$ `register-task-definition` $\rightarrow$ `update-service`로 이어지는 정교한 워크플로우를 설계하여 배포 신뢰성을 확보했습니다.
+
+2. **사이드카 컨테이너 보호 로직 (Sidecar Safety)**
+   - `python3` 스크립트 내에서 `needle = f"heritageradio-prod-{repo_kind}"`를 사용하여, 전체 컨테이너가 아닌 **특정 이미지 레포지토리가 포함된 컨테이너만 선택적으로 업데이트**하도록 구현한 점이 매우 훌륭합니다. 이는 로깅 에이전트나 서비스 메시 사이드카가 함께 실행되는 환경에서 발생할 수 있는 예기치 못한 설정 변경을 완벽하게 방지합니다.
+
+3. **멱등성과 안정성을 고려한 상세 구현**
+   - `:latest` 태그 대신 `$TAG_DATE`를 사용하여 race condition을 방지한 점.
+   - `register-task-definition` 시 API가 거부하는 read-only 필드(`taskDefinitionArn`, `revision` 등)를 Python 스크립트로 정교하게 제거하여 API 에러를 사전에 차단한 점이 인상적입니다.
+
+---
+
+## 🔧 개선할 점
+
+1. **임시 파일 관리의 안정성 (Atomic Cleanup)**
+   - 현재 `mktemp`로 생성한 파일들을 스크립트 끝에서 `rm -f`로 삭제하고 있습니다. 하지만 중간에 `python3` 스크립트나 `aws ecs register-task-definition` 명령에서 에러가 발생하여 `return 1` 또는 `exit`가 호출될 경우, 임시 파일이 `/tmp`에 남게 됩니다.
+   - **개선 제안:** `trap 'rm -f "$tmp_td" "$new_td_json"' EXIT` 구문을 함수 시작 부분에 추가하여, 성공/실패 여부와 관계없이 프로세스 종료 시 파일이 삭제되도록 보장하는 것이 좋습니다.
+
+2. **Python 인라인 스크립트의 가독성 및 유지보수**
+   - 쉘 스크립트 내에 Here-doc(`(<'PY'`) 형태로 Python 코드가 들어가 있어 로직이 복잡해질수록 가독성이 떨어질 수 있습니다.
+   - **개선 제안:** 현재는 규모가 작아 적절하지만, 향후 로직이 추가된다면 `scripts/utils/update_task_def.py`와 같이 별도 파일로 분리하고 쉘에서 인자를 넘겨 호출하는 방식이 유지보수와 유닛 테스트 측면에서 유리합니다.
+
+3. **에러 핸들링의 세밀함**
+   - `image_digest`를 가져오는 부분에서 `|| echo ""` 처리를 하고 이후 `-z` 체크를 하지만, AWS CLI 명령 자체가 실패했을 때의 표준 에러(stderr)가 로그에 섞여 나올 수 있습니다.
+   - **개선 제안:** `2)/dev/null` 보다는 에러 로그를 별도 파일에 기록하거나, `err` 함수를 통해 구체적인 AWS CLI 에러 메시지를 출력하도록 하여 트러블슈팅 시간을 단축시킬 수 있습니다.
+
+---
+
+## 💡 오늘의 기술 포인트
+
+### 📌 ECS Task Definition의 'Immutable' 특성과 Digest Pinning
+오늘 작업의 핵심은 **"태그는 가변적이지만, Digest는 불변한다"**는 점을 이용한 것입니다.
+CDK나 Terraform 같은 IaC 도구는 배포 시점의 상태를 캡처하여 인프라를 정의합니다. 이때 `:latest` 태그를 사용하더라도 실제 AWS API에는 해당 태그가 가리키던 특정 `sha256:...` digest 값이 기록됩니다.
+
+이로 인해 이미지를 새로 Push 해도 Task Definition의 Digest 값은 옛날 것을 가리키고 있어, 서비스 업데이트만으로는 새 이미지가 반영되지 않는 현상이 발생합니다. 이번에 구현하신 **'Runtime Task Definition Revision Update'** 패턴은 CI/CD 파이프라인에서 IaC의 정적 정의와 실제 런타임의 동적 이미지 업데이트 사이의 간극을 메우는 매우 실무적인 해결책입니다.
