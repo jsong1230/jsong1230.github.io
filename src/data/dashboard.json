@@ -1,36 +1,53 @@
 {
-  "generated_at": "2026-05-19T23:00:01.965Z",
+  "generated_at": "2026-05-20T23:00:01.998Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-05-20",
+          "last_msg": "[landing+main] PostHog 도입 검토 brief — 자체 인프라 vs PostHog, 4 �",
+          "branch": "dev",
+          "activity": [
+            33,
+            3,
+            4,
+            3,
+            0,
+            5,
+            0
+          ],
+          "commits_7d": 57,
+          "commits_30d": 897
+        },
+        {
           "name": "thepol-dev",
-          "last_date": "2026-05-19",
-          "last_msg": "Move compose build contexts to external/ vendored sources",
+          "last_date": "2026-05-20",
+          "last_msg": "Add debugging cheatsheet to README",
           "branch": "main",
           "activity": [
-            0,
             0,
             0,
             0,
             1,
             6,
+            5,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 7
+          "commits_7d": 12,
+          "commits_30d": 12
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-19",
+          "last_date": "2026-05-20",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -39,33 +56,16 @@
           "commits_30d": 68
         },
         {
-          "name": "heritageradio",
-          "last_date": "2026-05-18",
-          "last_msg": "[main] update_player_html_date_tabs — episode-registry 누적 주차",
-          "branch": "dev",
-          "activity": [
-            9,
-            33,
-            3,
-            4,
-            3,
-            0,
-            0
-          ],
-          "commits_7d": 57,
-          "commits_30d": 942
-        },
-        {
           "name": "trump-code",
-          "last_date": "2026-05-18",
-          "last_msg": "chore: daily pipeline data update 2026-05-18",
+          "last_date": "2026-05-19",
+          "last_msg": "chore: daily pipeline data update 2026-05-19",
           "branch": "main",
           "activity": [
-            1,
             1,
             2,
             1,
             0,
+            1,
             1,
             0
           ],
@@ -379,23 +379,6 @@
           "commits_30d": 0
         },
         {
-          "name": "thepolandorid",
-          "last_date": "2024-08-22",
-          "last_msg": "Update version name",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
           "name": "thepoldeploy",
           "last_date": "2024-08-01",
           "last_msg": "admin 로그인 방법 추가",
@@ -436,20 +419,20 @@
       "repos": [
         {
           "name": "go-metadium",
-          "last_date": "2026-05-13",
-          "last_msg": "feat: activate Camellia hard fork on testnet at block 86449000",
+          "last_date": "2026-05-20",
+          "last_msg": "style: goimports align BlobRetentionBlocks column",
           "branch": "dev",
           "activity": [
-            1,
             0,
             0,
             0,
             0,
             0,
-            0
+            0,
+            3
           ],
-          "commits_7d": 1,
-          "commits_30d": 8
+          "commits_7d": 3,
+          "commits_30d": 11
         },
         {
           "name": "booksummary",
@@ -602,7 +585,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 4
         },
         {
           "name": "meta-zkbridge",
