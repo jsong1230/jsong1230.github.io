@@ -1,0 +1,44 @@
+---
+title: "The Rhythm of Development: Data-Driven Reflection and Infrastructure Decisions"
+date: "2026-05-21"
+lang: en
+excerpt: "The Rhythm of Development: Data-Driven Reflection and Infrastructure Decisions  As an engineer and CTO with over two decades in the trenches, I’ve lea..."
+---
+
+# The Rhythm of Development: Data-Driven Reflection and Infrastructure Decisions
+
+As an engineer and CTO with over two decades in the trenches, I’ve learned that the most valuable asset a developer has isn't just the ability to write clean code, but the ability to observe patterns in their own productivity and the evolution of their systems.
+
+Today’s work was a blend of routine maintenance and high-level architectural deliberation. While the git diff might look like a simple data update, it represents a larger habit of "quantified self" engineering—tracking velocity to ensure that the technical debt we accrue is balanced by a sustainable pace of delivery.
+
+### Tracking Velocity: The Dashboard Update
+
+The primary commit today was a `chore: Update dashboard data` for my personal portfolio site. To the untrained eye, updating a `dashboard.json` file seems trivial. However, for me, this is a critical feedback loop. 
+
+Looking at the diff, we see a significant spike in activity for the `heritageradio` repository:
+```json
+"name": "heritageradio",
+"last_msg": "[landing+main] PostHog 도입 검토 brief — 자체 인프라 vs PostHog",
+"commits_7d": 57,
+"commits_30d": 897
+```
+Nearly 900 commits in 30 days is a high-velocity phase. When I see numbers like this, it triggers a mental "health check." High velocity is great during a feature push, but as a CTO, I always ask: *Is this sustainable, or are we rushing toward a deadline at the cost of architectural integrity?*
+
+### Technical Decision: PostHog vs. Self-Hosted Infrastructure
+
+The most interesting part of today's work wasn't the code itself, but the decision-making process captured in the commit message: **"PostHog 도입 검토 brief — 자체 인프라 vs PostHog"** (Review of PostHog adoption — Self-hosted infra vs. PostHog).
+
+In my experience—including my tenure at **CPLABS**—the "Build vs. Buy" dilemma is the most recurring challenge in scaling any product. When it comes to product analytics, the temptation to build a custom internal tool is strong, especially for engineers who want absolute control over their data. However, the hidden cost of "self-hosting" isn't just the server cost; it's the *opportunity cost* of the engineering hours spent maintaining the pipeline instead of building core product features.
+
+**My current framework for this decision:**
+1. **Core Competency:** Is the analytics engine a unique value proposition of our product? (No).
+2. **Maintenance Overhead:** Does the team have the bandwidth to manage the database scaling and query optimization of a custom tool? (Rarely).
+3. **Time to Insight:** How quickly can we get actionable data into the hands of the product team?
+
+In this case, leaning toward a solution like PostHog allows us to focus on the "What" (the data insights) rather than the "How" (the infrastructure).
+
+### Final Insights
+
+Today serves as a reminder that development is not just about the lines of code added, but about the strategic decisions made between those lines. Whether it's updating a dashboard to monitor project health or debating the merits of a SaaS tool over a custom build, the goal remains the same: **maximizing efficiency while minimizing fragility.**
+
+As we move forward, I'll continue to prioritize tools that empower the team to move faster without breaking the foundation. After all, the best architecture is the one that stays out of the way of the business goals.
