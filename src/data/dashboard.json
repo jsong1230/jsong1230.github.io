@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-05-20T23:00:01.998Z",
+  "generated_at": "2026-05-21T23:00:01.757Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-20",
-          "last_msg": "[landing+main] PostHog 도입 검토 brief — 자체 인프라 vs PostHog, 4 �",
+          "last_date": "2026-05-21",
+          "last_msg": "[admin] script 확정 기능 — 협업 안전 (작성자 OAuth user 단위)",
           "branch": "dev",
           "activity": [
-            33,
             3,
             4,
             3,
             0,
             5,
+            1,
             0
           ],
-          "commits_7d": 57,
-          "commits_30d": 897
+          "commits_7d": 46,
+          "commits_30d": 830
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-05-21",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 67
         },
         {
           "name": "thepol-dev",
@@ -29,42 +46,25 @@
           "activity": [
             0,
             0,
-            0,
             1,
             6,
             5,
+            0,
             0
           ],
           "commits_7d": 12,
           "commits_30d": 12
         },
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-05-20",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
           "name": "trump-code",
-          "last_date": "2026-05-19",
-          "last_msg": "chore: daily pipeline data update 2026-05-19",
+          "last_date": "2026-05-20",
+          "last_msg": "chore: daily pipeline data update 2026-05-20",
           "branch": "main",
           "activity": [
-            1,
             2,
             1,
             0,
+            1,
             1,
             1,
             0
@@ -418,6 +418,91 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "meta-agents",
+          "last_date": "2026-05-21",
+          "last_msg": "chore: gitignore ecosystem.config.cjs",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 10
+        },
+        {
+          "name": "MetaLotto",
+          "last_date": "2026-05-21",
+          "last_msg": "chore: gitignore ecosystem.config.cjs",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "MetaPool",
+          "last_date": "2026-05-21",
+          "last_msg": "chore: gitignore ecosystem.config.cjs and backend/data/",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "MetaStake",
+          "last_date": "2026-05-21",
+          "last_msg": "chore: gitignore ecosystem.config.cjs",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-05-21",
+          "last_msg": "5/21 메타 5+1 통합 호스팅 + 110 정리 + Camellia HF 검증 + 보안 점�",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 8
+        },
+        {
           "name": "go-metadium",
           "last_date": "2026-05-20",
           "last_msg": "style: goimports align BlobRetentionBlocks column",
@@ -428,8 +513,8 @@
             0,
             0,
             0,
-            0,
-            3
+            3,
+            0
           ],
           "commits_7d": 3,
           "commits_30d": 11
@@ -450,40 +535,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 1
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-04-25",
-          "last_msg": "4/25 testnet stuck 원인 규명 + cache 상향으로 spam 구간 폭발 돌파",
-          "branch": "mini-jsong",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 7
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-04-24",
-          "last_msg": "docs: migrate deploy target 110 → 48 (self-contained stack)",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 9
         },
         {
           "name": "go-metadium",
@@ -534,7 +585,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "daepa-admin-frontend",
@@ -551,7 +602,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 8
         },
         {
           "name": "daepa-api-backend",
@@ -568,7 +619,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 27
+          "commits_30d": 17
         },
         {
           "name": "daepa-docs",
@@ -585,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 0
         },
         {
           "name": "meta-zkbridge",
@@ -643,57 +694,6 @@
           "last_date": "2026-04-16",
           "last_msg": "feat: polished UX — history, alert ack, hands-free chat, auto-refresh",
           "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "MetaLotto",
-          "last_date": "2026-04-16",
-          "last_msg": "chore(frontend): favicon.ico를 MetaLotto ML 로고로 교체",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "MetaPool",
-          "last_date": "2026-04-16",
-          "last_msg": "docs: CLAUDE.md 업데이트 (백엔드/Referral/API 정보 추가)",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "MetaStake",
-          "last_date": "2026-04-16",
-          "last_msg": "Default manual language to English",
-          "branch": "main",
           "activity": [
             0,
             0,
