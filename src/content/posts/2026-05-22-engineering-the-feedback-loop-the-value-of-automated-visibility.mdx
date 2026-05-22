@@ -1,0 +1,45 @@
+---
+title: "Engineering the Feedback Loop: The Value of Automated Visibility"
+date: "2026-05-22"
+lang: en
+excerpt: "Engineering the Feedback Loop: The Value of Automated Visibility  As a CTO and engineer with over two decades of experience, I’ve learned that the mos..."
+---
+
+# Engineering the Feedback Loop: The Value of Automated Visibility
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a development team—or a solo engineer—is "invisible progress." When you are deep in the trenches of Web3, DID, or AI integration, it is easy to lose sight of the macro-level velocity. You feel busy, but are you moving the needle?
+
+Today's work was less about writing new business logic and more about maintaining the "observability" of my own productivity. I spent time updating the dashboard data for my personal engineering hub (`jsong1230.github.io`), which serves as a living telemetry system for my various repositories.
+
+### The Technical Shift: From Static to Dynamic Tracking
+
+Looking at the diff in `src/data/dashboard.json`, you'll notice a significant reorganization of how repository activity is tracked. 
+
+```json
+- "last_msg": "[landing+main] PostHog 도입 검토 brief — 자체 인프라 vs PostHog, 4 �",
++ "last_msg": "[admin] script 확정 기능 — 협업 안전 (작성자 OAuth user 단위)",
+```
+
+The change in the `heritageradio` repo highlights a pivot from infrastructure evaluation (PostHog) to the implementation of secure collaboration scripts. Specifically, the move toward **OAuth user-level granularity** for script authorship is a critical security decision. In any enterprise environment—similar to the rigorous standards we maintain at **CPLABS**—attributing actions to a verified identity (DID principles) is non-negotiable. It transforms a "shared script" from a potential security hole into an auditable trail of accountability.
+
+### Insights from the Data
+
+The update also reflects a shift in focus across my current projects. By analyzing the `commits_7d` and `commits_30d` metrics, I can objectively see where my cognitive load is being spent. 
+
+For instance, the `heritageradio` project is showing high velocity (`commits_30d: 830`), while `meta-agents` has emerged as a new point of focus. This data-driven approach to personal management prevents the "sunk cost fallacy" in development; if a project's activity drops to zero for too long, it’s a signal to either pivot or archive.
+
+### The CTO's Perspective: Why This Matters
+
+Some might see a JSON update as a "chore," but from an architectural standpoint, this is about the **Feedback Loop**. 
+
+In my years of leading engineering teams, I've seen countless projects fail not because of poor coding, but because of a lack of visibility. When developers don't see their progress quantified, motivation dips. When leadership doesn't see the velocity, they make poor strategic decisions.
+
+By automating the generation of this dashboard, I am applying the same principles of "Infrastructure as Code" to my professional growth. I am treating my career and my output as a system that requires monitoring, alerting, and optimization.
+
+### Closing Thoughts
+
+Whether you are building a decentralized identity system or a simple personal blog, the principle remains the same: **Measure what matters.** 
+
+Today's update was a reminder that the "meta-work"—the work we do to organize and visualize our primary work—is often what separates a senior engineer from a lead architect. It is the difference between simply writing code and managing a technical ecosystem.
+
+Stay curious, and keep your pipelines clean.
