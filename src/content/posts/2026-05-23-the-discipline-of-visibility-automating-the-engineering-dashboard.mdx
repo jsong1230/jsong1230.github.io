@@ -1,0 +1,52 @@
+---
+title: "The Discipline of Visibility: Automating the Engineering Dashboard"
+date: "2026-05-23"
+lang: en
+excerpt: "The Discipline of Visibility: Automating the Engineering Dashboard  As a CTO and engineer with over two decades of experience, I’ve learned that the m..."
+---
+
+# The Discipline of Visibility: Automating the Engineering Dashboard
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a project—or a developer—is "invisible progress." In large-scale environments like CPLABS, we rely on rigorous KPIs and sprint reviews to maintain velocity. However, for personal growth and open-source contributions, the challenge is different: how do you maintain a high-level view of your own technical trajectory without spending hours on manual reporting?
+
+Today's work was a continuation of my effort to solve this through automation. I updated the data layer for my personal engineering dashboard, ensuring that my daily activity across various repositories is reflected accurately.
+
+### The Problem: The "Manual Update" Friction
+
+The core problem I'm solving here is **friction**. Whenever a developer has to manually update a status report or a portfolio, they stop doing it the moment the workload increases. To combat this, I’ve implemented a pipeline that auto-generates `dashboard.json`. 
+
+Looking at today's diff, the change seems simple—a `chore` commit updating a JSON file. But the underlying technical decision is about **data-driven visibility**.
+
+```json
+-  "generated_at": "2026-05-21T23:00:01.757Z",
++  "generated_at": "2026-05-22T23:00:01.436Z",
+```
+
+By automating the `generated_at` timestamp and the commit counts, I shift the focus from *reporting* work to *doing* work. The dashboard becomes a mirror of my actual git activity rather than a curated narrative.
+
+### Technical Insights from the Diff
+
+In the updated `dashboard.json`, we see a reshuffling of repository priority and updated activity arrays. For instance, the `heritageradio` repo shows a significant volume of work:
+
+```json
+"commits_7d": 13,
+"commits_30d": 803
+```
+
+When I see a number like 803 commits in 30 days, it tells me two things as an engineer:
+1. **High Iteration Velocity:** The project is in a heavy development phase, likely involving rapid prototyping or extensive refactoring.
+2. **Granular Commits:** I am adhering to the practice of small, atomic commits. In my experience at CPLABS, atomic commits are the only way to ensure safe rollbacks and clear peer reviews in a complex Web3 or AI codebase.
+
+### The CTO's Perspective: Why This Matters
+
+You might ask, *"Why spend time automating a JSON file for a personal site?"*
+
+Throughout my career, I've seen countless talented engineers struggle not because they lacked technical skill, but because they lacked a system to track their own growth. Whether you are building a DID (Decentralized Identifier) system or an AI agent, the ability to look back at your "activity heatmaps" allows you to identify burnout patterns or periods of peak productivity.
+
+By treating my personal dashboard as a product—complete with a data pipeline—I am applying the same engineering rigor to my career that I apply to professional software architecture.
+
+### Final Thoughts
+
+Today's update is a reminder that **automation is not just for the product; it's for the process.** By removing the manual overhead of tracking my progress, I free up cognitive load to focus on the deeper technical challenges of blockchain and AI.
+
+Stay disciplined, keep your commits atomic, and always automate the boring parts.
