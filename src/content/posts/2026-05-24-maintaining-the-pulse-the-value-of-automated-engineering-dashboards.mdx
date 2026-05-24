@@ -1,0 +1,57 @@
+---
+title: "Maintaining the Pulse: The Value of Automated Engineering Dashboards"
+date: "2026-05-24"
+lang: en
+excerpt: "Maintaining the Pulse: The Value of Automated Engineering Dashboards  As a CTO and engineer who has spent over two decades navigating the evolution of..."
+---
+
+# Maintaining the Pulse: The Value of Automated Engineering Dashboards
+
+As a CTO and engineer who has spent over two decades navigating the evolution of software architecture—from the early days of monolithic systems to the current era of Web3 and decentralized identity—I’ve learned that visibility is the bedrock of productivity. Whether you are managing a lean team at **CPLABS** or maintaining your own personal ecosystem of projects, knowing *where* your energy is going is just as important as the code you write.
+
+Today’s work was a reflection of this philosophy. While the git commit might look like a simple "chore," it represents the heartbeat of a personal engineering dashboard.
+
+### The Task: Synchronizing the Engineering Pulse
+
+Today's update focused on refreshing the `dashboard.json` file for my personal site. At first glance, updating a JSON file seems trivial. However, this file serves as the data layer for a dashboard that tracks my activity across multiple repositories, including `jsong1230.github.io`, `trump-code`, and `heritageradio`.
+
+```json
+-  "generated_at": "2026-05-22T23:00:01.436Z",
++  "generated_at": "2026-05-23T23:00:01.106Z",
+```
+
+The update reflects a shift in focus. For instance, the `jsong1230.github.io` repo moved from "Auto-generate daily posts" to "Auto-generate weekly book post." This isn't just a change in a string; it's a change in the automation pipeline—shifting from a daily cadence to a weekly synthesis of knowledge.
+
+### Technical Decisions: Data-Driven Self-Management
+
+Why maintain a JSON-based dashboard instead of relying solely on GitHub's native contribution graph? 
+
+1.  **Granular Visibility:** GitHub's "green squares" tell you *that* you worked, but they don't tell you *what* the distribution of effort was across different domains (e.g., AI research vs. Web3 infrastructure).
+2.  **Custom Metrics:** By tracking `commits_7d` and `commits_30d` explicitly in a data file, I can create custom visualizations that highlight velocity trends and project decay.
+3.  **Decoupling Data from UI:** By treating the dashboard data as a version-controlled asset, I ensure that the history of my productivity is archived alongside my code.
+
+### Insights from the Diff
+
+Looking at the changes in the `activity` arrays, we see the ebb and flow of development:
+
+```json
+"activity": [
+  2,
+  2,
+  2,
+  2,
+  2,
++ 3,
+  0
+]
+```
+
+This pattern is a reminder that engineering is rarely a linear progression. Some days are spent in deep architectural thought (low commit count, high cognitive load), while others are spent in a "flow state" of rapid iterations (high commit count). 
+
+In my experience leading technical teams at **CPLABS**, I've always cautioned against using commit counts as a primary KPI for performance. The "zero" in an activity array doesn't necessarily mean inactivity; it often means the time was spent on the most critical part of the job: *thinking*.
+
+### Closing Thoughts
+
+Whether it's a complex DID implementation or a simple JSON update, the discipline of tracking and documenting progress is what separates a coder from an engineer. Automation should handle the mundane—like updating this dashboard—so that we can reserve our mental bandwidth for solving the hard problems in blockchain and AI.
+
+Stay curious, and keep your pipelines clean.
