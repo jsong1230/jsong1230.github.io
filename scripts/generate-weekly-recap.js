@@ -129,6 +129,17 @@ async function generateTitle(content, lang, monday, sunday) {
   return completion.choices[0]?.message?.content?.trim().replace(/^["']|["']$/g, '') || '';
 }
 
+// ── MDX sanitization ─────────────────────────────────────────────────────────
+
+function isValidTag(inner) {
+  if (inner.startsWith('!--')) return true;
+  return /^\/?[A-Za-z][\w.-]*(?:\s+[A-Za-z_][\w-]*(?:=(?:"[^"]*"|'[^']*'|\{[^}]*\}|\S+))?)*\s*\/?$/.test(inner);
+}
+
+function sanitizeMDX(content) {
+  return content.replace(/<([^>]+)>/g, (match, inner) => isValidTag(inner) ? match : `《${inner}》`);
+}
+
 // ── Write MDX ─────────────────────────────────────────────────────────────────
 
 function createRecapMDX(title, content, date, lang, linkedPosts) {
@@ -142,24 +153,27 @@ function createRecapMDX(title, content, date, lang, linkedPosts) {
   const filename = `${date}-weekly-recap-${slugBase}.mdx`.substring(0, 120) + '.mdx';
   const filepath = path.join(__dirname, '../src/content/posts', filename);
 
-  let excerpt = content.replace(/^#{1,6}\s+/gm, '').replace(/\n/g, ' ').trim().substring(0, 150);
+  const safeContent = sanitizeMDX(content);
+  const safeTitle   = sanitizeMDX(title);
+
+  let excerpt = safeContent.replace(/^#{1,6}\s+/gm, '').replace(/\n/g, ' ').trim().substring(0, 150);
   if (excerpt.length >= 150) excerpt += '...';
 
-  // Append links to daily posts
+  // Append links to daily posts (sanitize post titles in links too)
   const linkSection = linkedPosts.length > 0
     ? `\n\n---\n\n### ${lang === 'ko' ? '이번 주 포스트' : 'This week\'s posts'}\n\n` +
-      linkedPosts.map(p => `- [${p.title}](/writing/${p.slug})`).join('\n')
+      linkedPosts.map(p => `- [${sanitizeMDX(p.title)}](/writing/${p.slug})`).join('\n')
     : '';
 
   const mdxContent = `---
-title: ${JSON.stringify(title)}
+title: ${JSON.stringify(safeTitle)}
 date: "${date}"
 lang: ${lang}
 excerpt: ${JSON.stringify(excerpt)}
 tags: ["weekly-recap"]
 ---
 
-${content}${linkSection}
+${safeContent}${linkSection}
 `;
 
   fs.writeFileSync(filepath, mdxContent, 'utf-8');
