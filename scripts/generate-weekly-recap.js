@@ -150,7 +150,7 @@ function createRecapMDX(title, content, date, lang, linkedPosts) {
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 
-  const filename = `${date}-weekly-recap-${slugBase}.mdx`.substring(0, 120) + '.mdx';
+  const filename = `${date}-weekly-recap-${slugBase}`.substring(0, 116) + '.mdx';
   const filepath = path.join(__dirname, '../src/content/posts', filename);
 
   const safeContent = sanitizeMDX(content);

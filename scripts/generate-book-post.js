@@ -139,13 +139,13 @@ function parseVTT(vtt) {
 
 // ── MDX sanitization ─────────────────────────────────────────────────────────
 
-// Replace <Korean/non-latin text> with 『text』 to prevent MDX parse errors
+function isValidTag(inner) {
+  if (inner.startsWith('!--')) return true;
+  return /^\/?[A-Za-z][\w.-]*(?:\s+[A-Za-z_][\w-]*(?:=(?:"[^"]*"|'[^']*'|\{[^}]*\}|\S+))?)*\s*\/?$/.test(inner);
+}
+
 function sanitizeMDX(content) {
-  return content.replace(/<([^>a-zA-Z\/!][^>]*)>/g, (match, inner) => {
-    // If it looks like a real HTML/JSX tag (starts with letter), keep it
-    if (/^[a-zA-Z]/.test(inner)) return match;
-    return `『${inner}』`;
-  });
+  return content.replace(/<([^>]+)>/g, (match, inner) => isValidTag(inner) ? match : `《${inner}》`);
 }
 
 // ── Generate post ─────────────────────────────────────────────────────────────
@@ -219,8 +219,8 @@ function createBookMDX(title, content, date, lang, videoId, videoTitle) {
     : `\n\n---\n\n> This post is based on the video ["${videoTitle}"](${videoUrl}) from the BeyondPage YouTube channel.`;
 
   const safeContent = sanitizeMDX(content);
-  const safeTitle   = title.replace(/<([^>a-zA-Z\/!][^>]*)>/g, '『$1』');
-  const safeExcerpt = excerpt.replace(/<([^>a-zA-Z\/!][^>]*)>/g, '『$1』');
+  const safeTitle   = sanitizeMDX(title);
+  const safeExcerpt = sanitizeMDX(excerpt);
 
   fs.writeFileSync(filepath, `---
 title: ${JSON.stringify(safeTitle)}
