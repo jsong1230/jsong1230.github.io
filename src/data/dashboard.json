@@ -1,47 +1,47 @@
 {
-  "generated_at": "2026-05-24T23:00:01.610Z",
+  "generated_at": "2026-05-25T23:00:01.370Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-24",
-          "last_msg": "[admin] w8 (6/29~7/03) 콘텐츠 INSERT·sync·title fix + w6/w7 단축 cycle �",
+          "last_date": "2026-05-25",
+          "last_msg": "[admin] NEWS_ERA w7 short patch — duration < 420s 3편 보강 도구",
           "branch": "dev",
           "activity": [
-            0,
             5,
             1,
             0,
             0,
             1,
+            1,
             0
           ],
-          "commits_7d": 10,
-          "commits_30d": 729
+          "commits_7d": 8,
+          "commits_30d": 718
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-24",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-05-25",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
-            2,
             3,
             3,
+            5,
             0
           ],
-          "commits_7d": 16,
-          "commits_30d": 69
+          "commits_7d": 19,
+          "commits_30d": 72
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-23",
-          "last_msg": "chore: daily pipeline data update 2026-05-23",
+          "last_date": "2026-05-24",
+          "last_msg": "chore: daily pipeline data update 2026-05-24",
           "branch": "main",
           "activity": [
             1,
@@ -61,15 +61,15 @@
           "last_msg": "Add debugging cheatsheet to README",
           "branch": "main",
           "activity": [
-            6,
             5,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 12,
+          "commits_7d": 11,
           "commits_30d": 12
         },
         {
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "openfield",
@@ -425,8 +425,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -442,8 +442,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -459,8 +459,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -476,8 +476,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -493,14 +493,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "go-metadium",
@@ -509,8 +509,8 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             3,
+            0,
             0,
             0,
             0,
@@ -534,7 +534,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "go-metadium",
