@@ -1,0 +1,48 @@
+---
+title: "Maintenance: The Invisible Engine of Velocity"
+date: "2026-05-25"
+lang: en
+excerpt: "Maintenance is the Invisible Engine of Velocity: Today's Dev Log  As a CTO and engineer, I’ve spent two decades learning that the \"exciting\" part of s..."
+---
+
+# Maintenance is the Invisible Engine of Velocity: Today's Dev Log
+
+As a CTO and engineer, I’ve spent two decades learning that the "exciting" part of software development—building new features—is only half the battle. The other half is the relentless, often invisible work of maintenance. If you ignore the foundation, the velocity you gain today becomes the technical debt that paralyzes you tomorrow.
+
+Today was one of those "foundation" days. I spent my time cleaning up my personal knowledge base and automating the boring stuff. While these changes might look like simple chores in a git diff, they represent a critical philosophy in engineering: **reducing friction.**
+
+### 1. Staying Ahead of the Deprecation Curve
+The first priority was upgrading my GitHub Actions workflows to Node 24. 
+
+```yaml
+- name: Setup Node
+  uses: actions/setup-node@v5
+  with:
+    node-version: '24'
+    cache: 'npm'
+```
+
+GitHub has a habit of deprecating older Node runtimes. Waiting until the deadline usually results in a broken CI/CD pipeline at the worst possible moment (usually on a Friday afternoon). By bumping `actions/checkout`, `setup-node`, and `deploy-pages` to their latest major versions now, I'm ensuring that my deployment pipeline remains stable. In a professional environment like **CPLABS**, we apply this same rigor to our production infrastructure—proactive upgrades are always cheaper than reactive firefighting.
+
+### 2. The "Silent Failures" of Automation
+I encountered a classic automation bug: the duplicate extension. My `generate-weekly-recap.js` script was producing files with a `.mdx.mdx` extension. 
+
+It’s a small error, but it's symptomatic of a larger issue in automation—the "silent failure." The script was technically "working" (files were being created), but the output was incorrect. I had to rename 16 existing files and fix the filename construction logic in the script.
+
+Interestingly, while fixing this, I hit a build failure caused by angle brackets (`< >`) within the MDX content. MDX treats angle brackets as JSX tags; if they aren't escaped or wrapped correctly, the entire build crashes. I updated the recap generator to handle these characters properly, ensuring that technical discussions involving generics or HTML-like syntax don't break the site.
+
+### 3. Insights from the Logs: `ENOBUFS`
+While reviewing the logs, I spotted a curious error in `book-post.log`:
+`Error: yt-dlp error: spawnSync /home/jsong/.local/bin/yt-dlp ENOBUFS`
+
+`ENOBUFS` (Error No Buffers) typically occurs when the system's network buffer is exhausted or there are too many simultaneous socket connections. This is a reminder that even when we use high-level wrappers for CLI tools like `yt-dlp`, we are still bound by the underlying OS constraints. It's a prompt for me to look into how I'm spawning child processes—perhaps moving from `spawnSync` to an asynchronous stream to avoid blocking and buffer overflows.
+
+### Final Thoughts
+Today wasn't about shipping a new blockchain protocol or designing a DID architecture. It was about hygiene. 
+
+Whether you are managing a massive project at **CPLABS** or a personal blog, the discipline of "cleaning as you go" is what separates professional engineering from amateur coding. When your environment is clean and your dependencies are current, you can move with absolute confidence.
+
+**Today's Summary:**
+- **Infrastructure:** Upgraded CI/CD to Node 24 to avoid deprecation.
+- **Bug Fixes:** Resolved `.mdx.mdx` duplication and MDX syntax crashes.
+- **Observation:** Identified OS-level buffer issues in automation scripts for future optimization.
