@@ -1,47 +1,81 @@
 {
-  "generated_at": "2026-05-25T23:00:01.370Z",
+  "generated_at": "2026-05-26T23:00:01.740Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-05-25",
-          "last_msg": "[admin] NEWS_ERA w7 short patch — duration < 420s 3편 보강 도구",
+          "last_date": "2026-05-27",
+          "last_msg": "[admin] series 5/25~29 master 누락 복구 + era fallback + BODY_EXERCISE 제�",
           "branch": "dev",
           "activity": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            13,
+            1
+          ],
+          "commits_7d": 22,
+          "commits_30d": 716
+        },
+        {
+          "name": "meta-faucet",
+          "last_date": "2026-05-26",
+          "last_msg": "update reCAPTCHA v2 site key for faucet-testnet.metadium.club",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
             5,
-            1,
-            0,
-            0,
-            1,
-            1,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 718
+          "commits_7d": 5,
+          "commits_30d": 5
+        },
+        {
+          "name": "meta-info-api",
+          "last_date": "2026-05-26",
+          "last_msg": "chore: remove dead routes/health directory",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 9
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-25",
+          "last_date": "2026-05-26",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
-            2,
             3,
             3,
             5,
+            2,
             0
           ],
           "commits_7d": 19,
-          "commits_30d": 72
+          "commits_30d": 71
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-24",
-          "last_msg": "chore: daily pipeline data update 2026-05-24",
+          "last_date": "2026-05-25",
+          "last_msg": "chore: daily pipeline data update 2026-05-25",
           "branch": "main",
           "activity": [
             1,
@@ -61,7 +95,7 @@
           "last_msg": "Add debugging cheatsheet to README",
           "branch": "main",
           "activity": [
-            5,
+            0,
             0,
             0,
             0,
@@ -69,7 +103,7 @@
             0,
             0
           ],
-          "commits_7d": 11,
+          "commits_7d": 5,
           "commits_30d": 12
         },
         {
@@ -87,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 4
         },
         {
           "name": "srt_reverve",
@@ -424,8 +458,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -441,8 +475,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -458,8 +492,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -475,8 +509,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -492,8 +526,8 @@
           "branch": "mini-jsong",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -508,8 +542,8 @@
           "last_msg": "style: goimports align BlobRetentionBlocks column",
           "branch": "dev",
           "activity": [
-            0,
             3,
+            0,
             0,
             0,
             0,
