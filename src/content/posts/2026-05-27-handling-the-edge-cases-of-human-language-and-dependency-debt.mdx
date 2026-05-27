@@ -1,0 +1,47 @@
+---
+title: "Handling the \"Edge Cases\" of Human Language and Dependency Debt"
+date: "2026-05-27"
+lang: en
+excerpt: "Handling the \"Edge Cases\" of Human Language and Dependency Debt  As an engineer, I’ve always believed that the most challenging part of software devel..."
+---
+
+# Handling the "Edge Cases" of Human Language and Dependency Debt
+
+As an engineer, I’ve always believed that the most challenging part of software development isn't the logic itself, but the "messiness" of real-world data. Today was a perfect example of this. Most of my work revolved around refining how we extract meaning from human-entered titles and managing the silent erosion of security in our dependency trees.
+
+## 1. The Battle with Regex: When "ep01" isn't enough
+
+In the `heritageradio` project, I encountered a classic data extraction problem. We have a system that tracks series episodes based on titles. Initially, I relied on a simple regex anchor (`^ep\d+`) to identify episode numbers. It worked for 90% of the cases, but the remaining 10%—the "anomaly zone"—was causing silent data loss.
+
+I discovered three specific failure points:
+1. **Positioning:** Some titles ended with `— ep06` instead of starting with it. The `^` anchor was blocking these.
+2. **Localization:** In the `YASA_STORY` program, episodes were written in Korean numerals (e.g., "제일화", "제십오화"). A standard `\d+` regex is blind to these.
+3. **Data Corruption:** Some master titles were incorrectly parsed from script frontmatter (e.g., "Opening — approx 25s"), requiring manual restoration to the correct era titles.
+
+To solve this, I implemented a more robust helper function, `_extract_ep_number`, and a custom Korean numeral parser.
+
+```python
+def _ko_numeral_to_int(s: str) -> int | None:
+    """Converts Korean numerals to integers (e.g., 제일화=1, 제십오화=15)."""
+    # Implementation handles '백' (100) and '십' (10) for ranges 1-99
+    # ... logic to partition and sum based on _KO_DIGIT map
+```
+
+**The Insight:** Never trust that users (or content creators) will follow a strict naming convention. By removing the strict anchor and adding a localization layer, I was able to recover missing episodes for `YASA_STORY` (increasing the count from 25 to 40) and fix several other program gaps.
+
+## 2. Managing Dependency Debt in `meta-info-api`
+
+While the regex work was about logic, the work on `meta-info-api` was about hygiene. Running `npm audit fix` revealed several high and low vulnerabilities across transitive dependencies like `express`, `node-fetch`, and `qs`.
+
+The technical decision here was a balance between security and stability. I updated the `package-lock.json` to resolve these vulnerabilities within the semver range. However, I intentionally held off on downgrading `request-id` to fix a moderate vulnerability because it would have introduced a breaking change. After analyzing the attack vector (specifically the `uuid` buffer argument), I determined that our current implementation doesn't trigger the vulnerability.
+
+**The Insight:** Security updates aren't always "click and forget." As a CTO, I prioritize a "risk-based approach." If a fix breaks the build but the vulnerability is unreachable in our specific execution path, a documented deferral is often safer than a blind update.
+
+## Closing Thoughts
+
+Today’s work reminds me that whether it's a 20-year-old legacy system or a modern Web3 stack at **CPLABS**, the core of engineering remains the same: **paying attention to the edges.** Whether it's a Korean character in a title or a transitive dependency in a lockfile, the quality of the system is defined by how we handle the anomalies.
+
+**Summary of today's impact:**
+- **Data Integrity:** Restored missing series episodes and fixed corrupted master titles.
+- **Security:** Patched 11 vulnerabilities in the API layer.
+- **Observability:** Updated my personal dashboard to reflect the current velocity.
