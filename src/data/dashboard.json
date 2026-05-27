@@ -1,25 +1,110 @@
 {
-  "generated_at": "2026-05-26T23:00:01.740Z",
+  "generated_at": "2026-05-27T23:00:01.465Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
+          "name": "cp-check-attendance",
           "last_date": "2026-05-27",
-          "last_msg": "[admin] series 5/25~29 master 누락 복구 + era fallback + BODY_EXERCISE 제�",
+          "last_msg": "init Repo",
           "branch": "dev",
           "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-05-27",
+          "last_msg": "[admin] test-pending: w5 QA — YASA·JOSEON verbal tic 과반복 기록 (현행",
+          "branch": "dev",
+          "activity": [
             0,
             0,
             1,
             1,
             13,
-            1
+            3,
+            0
           ],
-          "commits_7d": 22,
-          "commits_30d": 716
+          "commits_7d": 19,
+          "commits_30d": 668
+        },
+        {
+          "name": "meta-info-api",
+          "last_date": "2026-05-27",
+          "last_msg": "chore: sync circulatingSupplyPlan with prod (2026-2027 schedule)",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            9,
+            3,
+            0
+          ],
+          "commits_7d": 12,
+          "commits_30d": 12
+        },
+        {
+          "name": "persona-labs",
+          "last_date": "2026-05-27",
+          "last_msg": "fix(step-scenes): handleGenerateScenes EventSource 누수 정리",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            8,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 356
+        },
+        {
+          "name": "daepa-open-chat",
+          "last_date": "2026-05-27",
+          "last_msg": "Add dark mode, message reactions, sound, and room titles",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            15,
+            0
+          ],
+          "commits_7d": 17,
+          "commits_30d": 17
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-05-27",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            5,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 71
         },
         {
           "name": "meta-faucet",
@@ -31,51 +116,17 @@
             0,
             0,
             0,
-            0,
             5,
+            0,
             0
           ],
           "commits_7d": 5,
           "commits_30d": 5
         },
         {
-          "name": "meta-info-api",
-          "last_date": "2026-05-26",
-          "last_msg": "chore: remove dead routes/health directory",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            9,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 9
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-05-26",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            5,
-            2,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 71
-        },
-        {
           "name": "trump-code",
-          "last_date": "2026-05-25",
-          "last_msg": "chore: daily pipeline data update 2026-05-25",
+          "last_date": "2026-05-26",
+          "last_msg": "chore: daily pipeline data update 2026-05-26",
           "branch": "main",
           "activity": [
             1,
@@ -103,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 5,
+          "commits_7d": 0,
           "commits_30d": 12
         },
         {
@@ -457,8 +508,8 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -474,8 +525,8 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -491,8 +542,8 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs and backend/data/",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -508,8 +559,8 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -525,8 +576,8 @@
           "last_msg": "5/21 메타 5+1 통합 호스팅 + 110 정리 + Camellia HF 검증 + 보안 점�",
           "branch": "mini-jsong",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -542,7 +593,7 @@
           "last_msg": "style: goimports align BlobRetentionBlocks column",
           "branch": "dev",
           "activity": [
-            3,
+            0,
             0,
             0,
             0,
@@ -550,7 +601,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 0,
           "commits_30d": 10
         },
         {
