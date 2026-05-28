@@ -1,13 +1,30 @@
 {
-  "generated_at": "2026-05-27T23:00:01.465Z",
+  "generated_at": "2026-05-28T23:00:01.669Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "cp-check-attendance",
-          "last_date": "2026-05-27",
-          "last_msg": "init Repo",
+          "last_date": "2026-05-28",
+          "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "cpdax_admin",
+          "last_date": "2026-05-28",
+          "last_msg": "chore: wire cpdax-admin.metadium.club through infra nginx reverse proxy",
           "branch": "dev",
           "activity": [
             0,
@@ -15,11 +32,28 @@
             0,
             0,
             0,
-            1,
+            3,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 1
+          "commits_7d": 3,
+          "commits_30d": 3
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-05-28",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            5,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 71
         },
         {
           "name": "heritageradio",
@@ -28,15 +62,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
             1,
             13,
             3,
+            0,
             0
           ],
-          "commits_7d": 19,
-          "commits_30d": 668
+          "commits_7d": 18,
+          "commits_30d": 630
         },
         {
           "name": "meta-info-api",
@@ -47,9 +81,9 @@
             0,
             0,
             0,
-            0,
             9,
             3,
+            0,
             0
           ],
           "commits_7d": 12,
@@ -64,13 +98,13 @@
             0,
             0,
             0,
-            0,
             1,
             8,
+            0,
             0
           ],
           "commits_7d": 9,
-          "commits_30d": 356
+          "commits_30d": 325
         },
         {
           "name": "daepa-open-chat",
@@ -81,52 +115,18 @@
             0,
             0,
             0,
-            0,
             2,
             15,
+            0,
             0
           ],
           "commits_7d": 17,
           "commits_30d": 17
         },
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-05-27",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            5,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 71
-        },
-        {
-          "name": "meta-faucet",
-          "last_date": "2026-05-26",
-          "last_msg": "update reCAPTCHA v2 site key for faucet-testnet.metadium.club",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            5,
-            0,
-            0
-          ],
-          "commits_7d": 5,
-          "commits_30d": 5
-        },
-        {
           "name": "trump-code",
-          "last_date": "2026-05-26",
-          "last_msg": "chore: daily pipeline data update 2026-05-26",
+          "last_date": "2026-05-27",
+          "last_msg": "chore: daily pipeline data update 2026-05-27",
           "branch": "main",
           "activity": [
             1,
@@ -139,6 +139,23 @@
           ],
           "commits_7d": 6,
           "commits_30d": 32
+        },
+        {
+          "name": "meta-faucet",
+          "last_date": "2026-05-26",
+          "last_msg": "update reCAPTCHA v2 site key for faucet-testnet.metadium.club",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            5,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 5
         },
         {
           "name": "thepol-dev",
@@ -172,7 +189,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 2
         },
         {
           "name": "srt_reverve",
@@ -206,7 +223,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 2
         },
         {
           "name": "go-metadium",
@@ -223,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 2
         },
         {
           "name": "booksummary",
@@ -464,6 +481,23 @@
           "commits_30d": 0
         },
         {
+          "name": "unse",
+          "last_date": "2025-06-23",
+          "last_msg": "README 업데이트 - 테스트 환경 설정 부분 추가",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
+          "commits_30d": 0
+        },
+        {
           "name": "thepoldeploy",
           "last_date": "2024-08-01",
           "last_msg": "admin 로그인 방법 추가",
@@ -508,7 +542,7 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -516,7 +550,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -525,7 +559,7 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -533,7 +567,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -542,7 +576,7 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs and backend/data/",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -550,7 +584,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -559,7 +593,7 @@
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -567,7 +601,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -576,7 +610,7 @@
           "last_msg": "5/21 메타 5+1 통합 호스팅 + 110 정리 + Camellia HF 검증 + 보안 점�",
           "branch": "mini-jsong",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -584,7 +618,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -602,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 6
         },
         {
           "name": "booksummary",
