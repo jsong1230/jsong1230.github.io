@@ -1,0 +1,50 @@
+---
+title: "The Silent Killers: Docker Paths and Syntax Errors"
+date: "2026-05-28"
+lang: en
+excerpt: "The Silent Killers: Docker Paths and Syntax Errors  As an engineer with over two decades of experience, I’ve learned that the most frustrating bugs ar..."
+---
+
+# The Silent Killers: Docker Paths and Syntax Errors
+
+As an engineer with over two decades of experience, I’ve learned that the most frustrating bugs aren't usually the complex architectural flaws, but the "silent killers"—small, overlooked details that bring an entire system to its knees. Today was a prime example of this.
+
+While working on the `cp-check-attendance` project at **CPLABS**, I encountered a classic case of a container crash loop. When a service keeps restarting without a clear error in the high-level logs, it's usually a sign that the application is failing during the initial boot sequence.
+
+### 1. The Docker Build Trap
+The first hurdle was a build failure in the `docker-compose` environment. In many simple setups, Docker looks for a file named `Dockerfile` in the root directory. However, as projects grow and we maintain multiple versions or environments, we often move these files into specific folders to keep the root clean.
+
+In this case, the build was failing because the context was set to the root, but the actual Dockerfile was located at `files/Dockerfile_v4.1`. 
+
+**The Fix:**
+```yaml
+build:
+  context: .
+  dockerfile: files/Dockerfile_v4.1
+```
+It's a simple one-line addition, but it highlights a critical point in DevOps: **be explicit**. Relying on default behaviors is fine for prototypes, but for production-grade infrastructure at **CPLABS**, explicit paths prevent ambiguity and deployment failures.
+
+### 2. The "Dead Code" Syntax Error
+The more interesting issue was the container crash loop. After fixing the build, the container started, but immediately died. Diving into the code, I found a remnant of old logic in `deptApi.js`.
+
+There was a function named `getAttendance-old`. In JavaScript, the hyphen (`-`) is a subtraction operator, not a valid character for function identifiers. While this might have been overlooked during a quick manual edit or an old migration, it triggered a `SyntaxError` the moment the Node.js engine tried to parse the file.
+
+**The Insight:**
+```javascript
+/*
+async function getAttendance-old(session,body){ 
+  ...
+}
+*/
+```
+Even though the code was intended to be "old" or "deprecated," leaving syntactically incorrect code—even if it seems unreachable—can be dangerous. In this instance, it was causing the entire process to crash. I've since commented it out properly (and in a real-world scenario, the best practice is to simply delete it; that's what Git history is for).
+
+### Reflecting on the Workflow
+Beyond the bug fixes, I also spent some time updating my personal dashboard data. Looking at the commit history across various repositories—from `meta-info-api` to `persona-labs`—it's a reminder of the mental context-switching a CTO must perform. One moment I'm debugging a syntax error in a legacy API, and the next, I'm reviewing memory leaks in an `EventSource` implementation.
+
+**Key Takeaways from Today:**
+1. **Explicit over Implicit:** Always define your Dockerfile paths explicitly in compose files to avoid environment-specific build failures.
+2. **Clean as You Go:** "Dead code" isn't just a maintenance burden; if it contains syntax errors, it's a landmine.
+3. **Observability Matters:** When a container loops, don't guess. Check the stdout/stderr of the crash immediately to find the parsing error.
+
+Back to the grind. Onward.
