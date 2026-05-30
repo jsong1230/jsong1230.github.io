@@ -1,0 +1,49 @@
+---
+title: "The Value of Visibility in Development Velocity"
+date: "2026-05-30"
+lang: en
+excerpt: "Engineering Log: The Value of Visibility in Development Velocity  As a CTO and engineer with over two decades in the trenches—spanning the evolution o..."
+---
+
+# Engineering Log: The Value of Visibility in Development Velocity
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of early web architectures to the current frontiers of Web3, DID, and AI—I’ve learned that the most dangerous state for a project is "invisible progress." When development happens in a vacuum, it's easy to lose sight of the actual velocity and the distribution of effort across various workstreams.
+
+Today’s work was a reflection of this philosophy. While the commit itself looks like a simple data update, it represents the maintenance of a personal development dashboard—a tool I use to quantify my output and ensure that my technical focus aligns with my strategic goals.
+
+### The Task: Synchronizing the Development Pulse
+
+The primary objective today was updating the `dashboard.json` for my personal site. At first glance, updating a JSON file seems trivial. However, from an engineering management perspective, this is about **observability**.
+
+Looking at the diff, we see a shift in activity across several repositories:
+
+```json
+- "name": "cp-check-attendance",
+- "last_date": "2026-05-28",
+- "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
++ "name": "cpdax_admin",
++ "last_date": "2026-05-29",
++ "last_msg": "feat(urls): redirect root path to /admin/",
+```
+
+The transition from fixing Dockerfile paths in the attendance system to implementing root path redirects in `cpdax_admin` highlights a shift from infrastructure stabilization to user experience (UX) refinement.
+
+### Technical Decisions & Insights
+
+In managing multiple projects—ranging from internal tools at **CPLABS** to open-source experiments—I’ve found that manual tracking is a recipe for failure. The decision to use a structured `dashboard.json` that tracks `commits_7d` and `commits_30d` allows me to visualize "momentum."
+
+One interesting insight from today's data update is the activity spike in `jsong1230.github.io` (71 commits in 30 days). This indicates a heavy investment in the "Knowledge Base" layer of my workflow. In the high-complexity fields of blockchain and AI, the ability to document and retrieve technical decisions is just as important as the code itself. If you can't recall *why* a specific DID method was chosen six months ago, you're essentially paying a "technical debt tax" every time you touch that module.
+
+### Reflections on the "Chore"
+
+Many developers dismiss `chore` commits as noise. But in a professional production environment, especially within the rigorous standards we maintain at **CPLABS**, these "chores" are the glue that holds the system together. Whether it's updating a dashboard, refining a CI/CD pipeline, or cleaning up a JSON schema, these tasks reduce cognitive load.
+
+When I see `feat(urls): redirect root path to /admin/` in the logs, I don't just see a line of code; I see a decision to reduce friction for the end-user. That is the essence of senior engineering: moving from "making it work" to "making it seamless."
+
+### Summary
+
+Today wasn't about a massive architectural pivot, but about **maintenance and measurement**. By keeping my development dashboard current, I maintain a feedback loop that tells me where my time is going. 
+
+For those of you leading teams: I highly recommend implementing some form of visual velocity tracking. Not for micromanagement, but for visibility. When the team can see their collective momentum, it fosters a culture of accountability and pride in the craft.
+
+**Stay technical, stay curious.**
