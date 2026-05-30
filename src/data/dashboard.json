@@ -1,9 +1,43 @@
 {
-  "generated_at": "2026-05-29T23:00:01.597Z",
+  "generated_at": "2026-05-30T23:00:01.413Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "heritageradio",
+          "last_date": "2026-05-30",
+          "last_msg": "[admin] aired_guard 공용 모듈로 추출 + master_admin/admin 9 endpoint 가�",
+          "branch": "dev",
+          "activity": [
+            1,
+            13,
+            3,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 436
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-05-30",
+          "last_msg": "Auto-generate weekly book post",
+          "branch": "main",
+          "activity": [
+            5,
+            2,
+            2,
+            2,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 72
+        },
         {
           "name": "cpdax_admin",
           "last_date": "2026-05-29",
@@ -13,52 +47,18 @@
             0,
             0,
             0,
-            0,
             3,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
           "commits_30d": 5
         },
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-05-29",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            5,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 71
-        },
-        {
-          "name": "cp-check-attendance",
-          "last_date": "2026-05-28",
-          "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            1,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 2
-        },
-        {
           "name": "trump-code",
-          "last_date": "2026-05-28",
-          "last_msg": "chore: daily pipeline data update 2026-05-28",
+          "last_date": "2026-05-29",
+          "last_msg": "chore: daily pipeline data update 2026-05-29",
           "branch": "main",
           "activity": [
             1,
@@ -73,21 +73,21 @@
           "commits_30d": 29
         },
         {
-          "name": "heritageradio",
-          "last_date": "2026-05-27",
-          "last_msg": "[admin] test-pending: w5 QA — YASA·JOSEON verbal tic 과반복 기록 (현행",
+          "name": "cp-check-attendance",
+          "last_date": "2026-05-28",
+          "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
           "branch": "dev",
           "activity": [
+            0,
+            0,
             1,
             1,
-            13,
-            3,
             0,
             0,
             0
           ],
-          "commits_7d": 18,
-          "commits_30d": 520
+          "commits_7d": 2,
+          "commits_30d": 2
         },
         {
           "name": "meta-info-api",
@@ -96,9 +96,9 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             9,
             3,
+            0,
             0,
             0,
             0
@@ -113,9 +113,9 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
             8,
+            0,
             0,
             0,
             0
@@ -130,9 +130,9 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             2,
             15,
+            0,
             0,
             0,
             0
@@ -147,8 +147,8 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             5,
+            0,
             0,
             0,
             0,
@@ -547,8 +547,8 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 5
