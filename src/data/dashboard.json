@@ -1,64 +1,47 @@
 {
-  "generated_at": "2026-05-30T23:00:01.413Z",
+  "generated_at": "2026-05-31T23:00:01.819Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-05-31",
+          "last_msg": "Auto-generate weekly recap",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 73
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-05-30",
           "last_msg": "[admin] aired_guard 공용 모듈로 추출 + master_admin/admin 9 endpoint 가�",
           "branch": "dev",
           "activity": [
-            1,
             13,
             3,
             0,
             0,
             1,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 436
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-05-30",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            5,
-            2,
-            2,
-            2,
-            2,
-            3,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 72
-        },
-        {
-          "name": "cpdax_admin",
-          "last_date": "2026-05-29",
-          "last_msg": "feat(urls): redirect root path to /admin/",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            3,
-            2,
             0,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 5
+          "commits_7d": 18,
+          "commits_30d": 427
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-29",
-          "last_msg": "chore: daily pipeline data update 2026-05-29",
+          "last_date": "2026-05-30",
+          "last_msg": "chore: daily pipeline data update 2026-05-30",
           "branch": "main",
           "activity": [
             1,
@@ -73,15 +56,32 @@
           "commits_30d": 29
         },
         {
+          "name": "cpdax_admin",
+          "last_date": "2026-05-29",
+          "last_msg": "feat(urls): redirect root path to /admin/",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            3,
+            2,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 5
+        },
+        {
           "name": "cp-check-attendance",
           "last_date": "2026-05-28",
           "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
           "branch": "dev",
           "activity": [
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0
@@ -95,9 +95,9 @@
           "last_msg": "chore: sync circulatingSupplyPlan with prod (2026-2027 schedule)",
           "branch": "dev",
           "activity": [
-            0,
             9,
             3,
+            0,
             0,
             0,
             0,
@@ -112,9 +112,9 @@
           "last_msg": "fix(step-scenes): handleGenerateScenes EventSource 누수 정리",
           "branch": "dev",
           "activity": [
-            0,
             1,
             8,
+            0,
             0,
             0,
             0,
@@ -129,9 +129,9 @@
           "last_msg": "Add dark mode, message reactions, sound, and room titles",
           "branch": "dev",
           "activity": [
-            0,
             2,
             15,
+            0,
             0,
             0,
             0,
@@ -146,8 +146,8 @@
           "last_msg": "update reCAPTCHA v2 site key for faucet-testnet.metadium.club",
           "branch": "dev",
           "activity": [
-            0,
             5,
+            0,
             0,
             0,
             0,
@@ -537,6 +537,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "mirae",
+          "last_date": "2026-05-31",
+          "last_msg": "example 템플릿에 버퍼·로테이션·크립토 floor 스키마 반영",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "commits_7d": 3,
+          "commits_30d": 3
+        },
+        {
           "name": "go-metadium",
           "last_date": "2026-05-29",
           "last_msg": "fix(consensus): serialize block-state commit against concurrent EVM reads",
@@ -546,8 +563,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
