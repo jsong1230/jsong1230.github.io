@@ -1,0 +1,49 @@
+---
+title: "Engineering the Feedback Loop: The Value of Automated Development Dashboards"
+date: "2026-05-31"
+lang: en
+excerpt: "Engineering the Feedback Loop: The Value of Automated Development Dashboards  As a CTO and engineer with over two decades of experience, I’ve learned ..."
+---
+
+# Engineering the Feedback Loop: The Value of Automated Development Dashboards
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical leader is "blindness"—not knowing exactly where the velocity is shifting across various projects until a deadline is missed or a bug surfaces. 
+
+Throughout my career, including my time at **CPLABS**, I have always advocated for data-driven management. Whether it's blockchain infrastructure or AI integration, the ability to visualize "work-in-progress" (WIP) and commit velocity is essential for maintaining a healthy development cadence.
+
+Today's update to my personal dashboard data (`dashboard.json`) might look like a simple chore commit, but it represents a larger philosophy on technical observability.
+
+### The Logic Behind the Dashboard
+
+The recent changes in `src/data/dashboard.json` reflect a snapshot of my current ecosystem. If you look at the diff, you'll see a significant shift in activity across different repositories:
+
+```json
+- "name": "heritageradio",
+- "last_date": "2026-05-27",
+- "commits_7d": 5,
+- "commits_30d": 5
++ "name": "heritageradio",
++ "last_date": "2026-05-30",
++ "commits_7d": 19,
++ "commits_30d": 436
+```
+
+The surge in activity for the `heritageradio` project—specifically the extraction of the `aired_guard` into a common module—highlights a critical architectural decision: **Modularization**. 
+
+When a project grows, the temptation is to keep adding logic to the existing admin panel. However, as seen in the commit message *"[admin] aired_guard 공용 모듈로 추출"*, I decided to decouple the guard logic. By extracting this into a shared module, we reduce redundancy and ensure that the `master_admin` and `admin` endpoints maintain a single source of truth for validation logic.
+
+### Technical Insights: Why Track This?
+
+Some might ask, *"Why automate a JSON file to track your own commits?"* 
+
+1. **Velocity Tracking**: By tracking `commits_7d` and `commits_30d`, I can objectively see where my focus is drifting. If a critical project shows zero activity for a week, it's a red flag.
+2. **Context Switching Cost**: Seeing the distribution of activity across `cpdax_admin`, `heritageradio`, and my personal blog allows me to quantify the "context switching tax."
+3. **Automated Accountability**: The `generated_at` timestamp ensures the data is fresh. In a professional setting at **CPLABS**, we implement similar telemetry for CI/CD pipelines to ensure that deployment frequency remains stable.
+
+### Closing Thoughts
+
+Engineering is not just about writing the code; it's about building the systems that monitor the code. Whether it's a complex DID (Decentralized Identity) framework or a simple personal dashboard, the principle remains the same: **If you cannot measure it, you cannot improve it.**
+
+The transition from a monolithic structure to a modular one (as seen in the `aired_guard` change) is a pattern I've applied countless times over the last 20 years. It is the only way to ensure that a system remains maintainable as it scales.
+
+Stay curious, stay modular.
