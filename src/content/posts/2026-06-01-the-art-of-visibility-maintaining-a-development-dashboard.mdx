@@ -1,0 +1,48 @@
+---
+title: "The Art of Visibility: Maintaining a Development Dashboard"
+date: "2026-06-01"
+lang: en
+excerpt: "The Art of Visibility: Maintaining a Development Dashboard  As a CTO and engineer with over two decades in the trenches—navigating the evolution from ..."
+---
+
+# The Art of Visibility: Maintaining a Development Dashboard
+
+As a CTO and engineer with over two decades in the trenches—navigating the evolution from monolithic architectures to the current era of Web3, DID, and AI—I’ve learned that **visibility is the bedrock of productivity**. Whether you are managing a large-scale engineering team at CPLABS or maintaining your own personal portfolio, knowing *where* your energy is flowing is critical.
+
+Today’s work was a subtle but important exercise in this philosophy: updating the data pipeline for my personal development dashboard.
+
+### The Task: Synchronizing the Pulse of Development
+
+At first glance, a commit like `chore: Update dashboard data` looks like a trivial administrative task. However, for those of us who treat our development environment as a product, this is about **telemetry**. 
+
+The change involved updating `src/data/dashboard.json`, which serves as the data source for my public-facing activity tracker. By refreshing the `generated_at` timestamp and updating the activity arrays for various repositories, I am essentially performing a "health check" on my current technical focus.
+
+### Technical Decisions: Data-Driven Reflection
+
+In the diff, you can see the shifting weights of my current projects:
+
+```json
+"name": "heritageradio",
+"last_date": "2026-05-30",
+"last_msg": "[admin] aired_guard 공용 모듈로 추출...",
+"commits_7d": 18,
+"commits_30d": 427
+```
+
+Looking at the `commits_30d` count for the `heritageradio` project (427 commits), it's clear where the heavy lifting has been occurring. The technical decision here wasn't about the JSON format itself, but about the **granularity of tracking**. By maintaining a 7-day activity array and a 30-day aggregate, I can distinguish between a "burst" of productivity (like a sprint to finish a feature) and sustained architectural momentum.
+
+I also noticed the update to `jsong1230.github.io` with the message `"Auto-generate weekly recap"`. This highlights a personal engineering principle I hold dear: **Automate the mundane to liberate the creative.** If I have to manually update my status, I won't do it. By building a pipeline that auto-generates these recaps, I ensure that my professional footprint remains current without sacrificing deep-work time.
+
+### Insights from the Code: The "Noise" vs. "Signal"
+
+One interesting part of today's update is the reorganization of the repository list. When we look at the diff, we see `cpdax_admin` and `heritageradio` shifting positions. 
+
+In a professional setting—such as the complex ecosystems we manage at CPLABS—this is analogous to prioritizing a backlog. When a project's `activity` array spikes, it signals a shift in priority. Seeing the `aired_guard` module being extracted into a common module in the commit messages indicates a transition from "feature building" to "architectural refinement." 
+
+As an engineer, this is the most satisfying phase: taking a working piece of code and abstracting it to reduce redundancy. It's the transition from *making it work* to *making it right*.
+
+### Final Thoughts
+
+Many developers overlook the importance of tracking their own velocity. But whether you are implementing a decentralized identity (DID) solution or a simple admin dashboard, the ability to visualize your progress prevents burnout and provides a sense of achievement.
+
+Today wasn't about writing a thousand lines of new logic; it was about ensuring that the mirror reflecting my work is clear. In the long run, the discipline of maintaining your tools is just as important as the code you ship.
