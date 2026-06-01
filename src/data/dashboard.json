@@ -1,47 +1,81 @@
 {
-  "generated_at": "2026-05-31T23:00:01.819Z",
+  "generated_at": "2026-06-01T23:00:01.933Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "meta-faucet",
+          "last_date": "2026-06-01",
+          "last_msg": "ui(faucet-meta): natural wrapping in the network/RPC strip",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 7,
+          "commits_30d": 7
+        },
+        {
+          "name": "cpdax_admin",
+          "last_date": "2026-06-01",
+          "last_msg": "Merged in dev (pull request #1)",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 9
+        },
+        {
+          "name": "meta-info-api",
+          "last_date": "2026-06-01",
+          "last_msg": "fix(node10-compat): replace AbortController with node-fetch v2 timeout option",
+          "branch": "node10-compat",
+          "activity": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 14,
+          "commits_30d": 14
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-05-31",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-06-01",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
-          "commits_7d": 19,
-          "commits_30d": 73
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-05-30",
-          "last_msg": "[admin] aired_guard 공용 모듈로 추출 + master_admin/admin 9 endpoint 가�",
-          "branch": "dev",
-          "activity": [
-            13,
-            3,
-            0,
-            0,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 18,
-          "commits_30d": 427
+          "commits_7d": 16,
+          "commits_30d": 72
         },
         {
           "name": "trump-code",
-          "last_date": "2026-05-30",
-          "last_msg": "chore: daily pipeline data update 2026-05-30",
+          "last_date": "2026-05-31",
+          "last_msg": "chore: daily pipeline data update 2026-05-31",
           "branch": "main",
           "activity": [
             1,
@@ -56,21 +90,21 @@
           "commits_30d": 29
         },
         {
-          "name": "cpdax_admin",
-          "last_date": "2026-05-29",
-          "last_msg": "feat(urls): redirect root path to /admin/",
+          "name": "heritageradio",
+          "last_date": "2026-05-30",
+          "last_msg": "[admin] aired_guard 공용 모듈로 추출 + master_admin/admin 9 endpoint 가�",
           "branch": "dev",
           "activity": [
-            0,
-            0,
             3,
-            2,
+            0,
+            0,
+            1,
             0,
             0,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 5
+          "commits_7d": 17,
+          "commits_30d": 416
         },
         {
           "name": "cp-check-attendance",
@@ -78,9 +112,9 @@
           "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
           "branch": "dev",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
@@ -90,30 +124,13 @@
           "commits_30d": 2
         },
         {
-          "name": "meta-info-api",
-          "last_date": "2026-05-27",
-          "last_msg": "chore: sync circulatingSupplyPlan with prod (2026-2027 schedule)",
-          "branch": "dev",
-          "activity": [
-            9,
-            3,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 12
-        },
-        {
           "name": "persona-labs",
           "last_date": "2026-05-27",
           "last_msg": "fix(step-scenes): handleGenerateScenes EventSource 누수 정리",
           "branch": "dev",
           "activity": [
-            1,
             8,
+            0,
             0,
             0,
             0,
@@ -129,8 +146,8 @@
           "last_msg": "Add dark mode, message reactions, sound, and room titles",
           "branch": "dev",
           "activity": [
-            2,
             15,
+            0,
             0,
             0,
             0,
@@ -139,23 +156,6 @@
           ],
           "commits_7d": 17,
           "commits_30d": 17
-        },
-        {
-          "name": "meta-faucet",
-          "last_date": "2026-05-26",
-          "last_msg": "update reCAPTCHA v2 site key for faucet-testnet.metadium.club",
-          "branch": "dev",
-          "activity": [
-            5,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 5,
-          "commits_30d": 5
         },
         {
           "name": "thepol-dev",
@@ -537,6 +537,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-06-01",
+          "last_msg": "chore(scripts): add mid-chain bootstrap/backfill + reconcile cron scripts",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
           "name": "mirae",
           "last_date": "2026-05-31",
           "last_msg": "example 템플릿에 버퍼·로테이션·크립토 floor 스키마 반영",
@@ -547,8 +564,8 @@
             0,
             0,
             0,
-            0,
-            3
+            3,
+            0
           ],
           "commits_7d": 3,
           "commits_30d": 3
@@ -562,8 +579,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -796,23 +813,6 @@
           "last_date": "2026-04-17",
           "last_msg": "chore: skeleton — 격리 원칙 + infra-only compose + preflight",
           "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-04-17",
-          "last_msg": "fix(cleaner): inline envsubst entrypoint (src/backend build context)",
-          "branch": "master",
           "activity": [
             0,
             0,
