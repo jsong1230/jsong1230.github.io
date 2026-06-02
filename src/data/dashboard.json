@@ -1,9 +1,43 @@
 {
-  "generated_at": "2026-06-01T23:00:01.933Z",
+  "generated_at": "2026-06-02T23:00:01.580Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "meta-info-api",
+          "last_date": "2026-06-02",
+          "last_msg": "Merge branch 'main' into node10-compat",
+          "branch": "node10-compat",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            4,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 18
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-02",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 71
+        },
         {
           "name": "meta-faucet",
           "last_date": "2026-06-01",
@@ -14,11 +48,11 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 2,
           "commits_30d": 7
         },
         {
@@ -31,46 +65,12 @@
             0,
             0,
             0,
-            0,
             9,
+            0,
             0
           ],
           "commits_7d": 9,
           "commits_30d": 9
-        },
-        {
-          "name": "meta-info-api",
-          "last_date": "2026-06-01",
-          "last_msg": "fix(node10-compat): replace AbortController with node-fetch v2 timeout option",
-          "branch": "node10-compat",
-          "activity": [
-            3,
-            0,
-            0,
-            0,
-            0,
-            2,
-            0
-          ],
-          "commits_7d": 14,
-          "commits_30d": 14
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-01",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 72
         },
         {
           "name": "trump-code",
@@ -83,11 +83,11 @@
             1,
             1,
             1,
-            1,
+            0,
             0
           ],
-          "commits_7d": 6,
-          "commits_30d": 29
+          "commits_7d": 5,
+          "commits_30d": 28
         },
         {
           "name": "heritageradio",
@@ -95,16 +95,16 @@
           "last_msg": "[admin] aired_guard 공용 모듈로 추출 + master_admin/admin 9 endpoint 가�",
           "branch": "dev",
           "activity": [
-            3,
             0,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 17,
-          "commits_30d": 416
+          "commits_7d": 3,
+          "commits_30d": 341
         },
         {
           "name": "cp-check-attendance",
@@ -113,7 +113,7 @@
           "branch": "dev",
           "activity": [
             1,
-            1,
+            0,
             0,
             0,
             0,
@@ -129,7 +129,7 @@
           "last_msg": "fix(step-scenes): handleGenerateScenes EventSource 누수 정리",
           "branch": "dev",
           "activity": [
-            8,
+            0,
             0,
             0,
             0,
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 8,
           "commits_30d": 296
         },
         {
@@ -146,7 +146,7 @@
           "last_msg": "Add dark mode, message reactions, sound, and room titles",
           "branch": "dev",
           "activity": [
-            15,
+            0,
             0,
             0,
             0,
@@ -154,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 17,
+          "commits_7d": 15,
           "commits_30d": 17
         },
         {
@@ -547,8 +547,8 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 1
@@ -563,8 +563,8 @@
             0,
             0,
             0,
-            0,
             3,
+            0,
             0
           ],
           "commits_7d": 3,
@@ -578,8 +578,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
