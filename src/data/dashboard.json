@@ -1,9 +1,26 @@
 {
-  "generated_at": "2026-06-02T23:00:01.580Z",
+  "generated_at": "2026-06-03T23:00:01.480Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-03",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 71
+        },
         {
           "name": "meta-info-api",
           "last_date": "2026-06-02",
@@ -13,30 +30,13 @@
             0,
             0,
             0,
-            0,
             2,
             4,
+            0,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 6,
           "commits_30d": 18
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-02",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 71
         },
         {
           "name": "meta-faucet",
@@ -47,8 +47,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
@@ -64,8 +64,8 @@
             0,
             0,
             0,
-            0,
             9,
+            0,
             0,
             0
           ],
@@ -82,12 +82,12 @@
             1,
             1,
             1,
-            1,
+            0,
             0,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 28
+          "commits_7d": 4,
+          "commits_30d": 27
         },
         {
           "name": "heritageradio",
@@ -96,15 +96,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 341
+          "commits_7d": 1,
+          "commits_30d": 278
         },
         {
           "name": "cp-check-attendance",
@@ -112,7 +112,7 @@
           "last_msg": "fix: compose 빌드 Dockerfile 경로 명시 및 deptApi 문법 에러 수정",
           "branch": "dev",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 2
         },
         {
@@ -137,8 +137,8 @@
             0,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 296
+          "commits_7d": 0,
+          "commits_30d": 232
         },
         {
           "name": "daepa-open-chat",
@@ -154,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 15,
+          "commits_7d": 0,
           "commits_30d": 17
         },
         {
@@ -537,6 +537,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "mirae",
+          "last_date": "2026-06-03",
+          "last_msg": "모니터에 매크로/반도체 사이클 지표 추가 (실질금리·SOXX·VI",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 4,
+          "commits_30d": 4
+        },
+        {
           "name": "metadium-explorer-stack",
           "last_date": "2026-06-01",
           "last_msg": "chore(scripts): add mid-chain bootstrap/backfill + reconcile cron scripts",
@@ -546,29 +563,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-05-31",
-          "last_msg": "example 템플릿에 버퍼·로테이션·크립토 floor 스키마 반영",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            3,
-            0,
-            0
-          ],
-          "commits_7d": 3,
-          "commits_30d": 3
         },
         {
           "name": "go-metadium",
@@ -577,8 +577,8 @@
           "branch": "fix/archive-trie-commit-race",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
