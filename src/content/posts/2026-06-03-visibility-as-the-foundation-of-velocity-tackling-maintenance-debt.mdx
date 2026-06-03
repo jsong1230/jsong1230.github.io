@@ -1,0 +1,48 @@
+---
+title: "Visibility as the Foundation of Velocity: Tackling Maintenance Debt"
+date: "2026-06-03"
+lang: en
+excerpt: "Engineering Log: The Value of Visibility and the \"Maintenance Debt\"  As a CTO and engineer, I’ve spent over two decades navigating the evolution of so..."
+---
+
+# Engineering Log: The Value of Visibility and the "Maintenance Debt"
+
+As a CTO and engineer, I’ve spent over two decades navigating the evolution of software architecture—from monolithic systems to the decentralized world of Web3 and AI. One lesson that remains constant regardless of the tech stack is this: **visibility is the foundation of velocity.**
+
+Today’s updates to my personal dashboard (`jsong1230.github.io`) might look like a simple data chore on the surface—updating a JSON file. But if you look closer at the diff, it reflects a broader narrative about current development priorities and the reality of maintaining legacy compatibility.
+
+### The Technical Shift: Legacy Compatibility vs. New Feature Growth
+
+Looking at the updated `dashboard.json`, there is a telling shift in activity. The `meta-info-api` repository has seen a surge in activity, specifically within the `node10-compat` branch.
+
+```json
+"name": "meta-info-api",
+"last_date": "2026-06-02",
+"last_msg": "Merge branch 'main' into node10-compat",
+"branch": "node10-compat",
+"commits_7d": 9,
+"commits_30d": 18
+```
+
+This highlights a common challenge we face in enterprise environments, including my work at **CPLABS**. We often encounter a tension between moving forward with the latest runtime features and ensuring stability for legacy environments. 
+
+In this specific case, the move to maintain a `node10-compat` branch isn't just about "fixing bugs"; it's a strategic decision to ensure that critical infrastructure remains accessible to older environments without stalling the innovation happening on the `main` branch. The technical decision here was to implement a rigorous merging strategy—bringing `main` into the compatibility branch—to prevent the legacy code from drifting too far from the source of truth.
+
+### Insights from the Diff: Tracking "Developer Heartbeat"
+
+The update to the `activity` arrays in the dashboard serves as a "developer heartbeat." When I look at the increase in commits for `jsong1230.github.io` (71 commits over 30 days), it signals a shift toward automating my own knowledge management.
+
+The commit message `"Auto-generate daily posts"` is particularly interesting. As an engineer, I believe in automating the mundane to make room for the complex. By building a system that tracks my git activity and translates it into a structured dashboard, I am essentially applying the "Observability" principle to my own productivity. 
+
+### Personal Reflection: The CTO's Perspective on "Chores"
+
+In many organizations, `chore` commits are overlooked or undervalued. However, from my experience, the discipline of maintaining an accurate dashboard—even a personal one—is what separates a chaotic project from a managed one. 
+
+Whether I am overseeing high-level architecture at **CPLABS** or tweaking a JSON file on my personal site, the goal is the same: **reducing cognitive load.** When the data is current, you don't have to remember what you did last week; you can see it. You don't have to guess which branch is lagging; the dashboard tells you.
+
+### Summary of Today's Work
+- **Problem Solved:** Synchronized the developer activity dashboard to reflect real-time progress across multiple repositories.
+- **Technical Decision:** Prioritized the stability of the `node10-compat` branch for `meta-info-api` to ensure backward compatibility.
+- **Key Insight:** Automation of reporting (via `Auto-generate daily posts`) reduces administrative overhead and provides a clear audit trail of technical growth.
+
+Staying disciplined with the small things is how we ensure the big things don't break. Back to the code.
