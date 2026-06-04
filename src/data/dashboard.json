@@ -1,18 +1,52 @@
 {
-  "generated_at": "2026-06-03T23:00:01.480Z",
+  "generated_at": "2026-06-04T23:00:01.916Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-06-04",
+          "last_msg": "[admin] build_tomorrow_cycle.sh BUILD_ERR 분기에도 stop file touch",
+          "branch": "dev",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 259
+        },
+        {
+          "name": "company-page",
+          "last_date": "2026-06-04",
+          "last_msg": "운영(cplabs.io) 패리티 보완: 푸터 법적표기·K-BTF 메뉴·web2x 비",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 8
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-03",
+          "last_date": "2026-06-04",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -29,9 +63,9 @@
           "activity": [
             0,
             0,
-            0,
             2,
             4,
+            0,
             0,
             0
           ],
@@ -46,8 +80,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -63,8 +97,8 @@
           "activity": [
             0,
             0,
-            0,
             9,
+            0,
             0,
             0,
             0
@@ -81,30 +115,13 @@
             1,
             1,
             1,
-            1,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 27
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-05-30",
-          "last_msg": "[admin] aired_guard 공용 모듈로 추출 + master_admin/admin 9 endpoint 가�",
-          "branch": "dev",
-          "activity": [
-            0,
-            1,
-            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 278
+          "commits_7d": 3,
+          "commits_30d": 26
         },
         {
           "name": "cp-check-attendance",
@@ -120,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 2
         },
         {
@@ -138,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 232
+          "commits_30d": 223
         },
         {
           "name": "daepa-open-chat",
@@ -537,21 +554,55 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "mirae",
-          "last_date": "2026-06-03",
-          "last_msg": "모니터에 매크로/반도체 사이클 지표 추가 (실질금리·SOXX·VI",
+          "name": "20241106",
+          "last_date": "2026-06-04",
+          "last_msg": "텔레그램 전송 HTML 파싱 실패 시 plain text 폴백 추가",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
-            3,
+            0,
             0,
             0,
             1
           ],
-          "commits_7d": 4,
-          "commits_30d": 4
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-06-04",
+          "last_msg": "ETF 전체 구성종목: KRX → KODEX 발행사 API 전환 (로컬 동작)",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            3,
+            0,
+            0,
+            1,
+            7
+          ],
+          "commits_7d": 11,
+          "commits_30d": 11
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-06-04",
+          "last_msg": "Merge pull request #53 from jsong1230/chore/remove-camellia-ci",
+          "branch": "dev",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            10
+          ],
+          "commits_7d": 12,
+          "commits_30d": 16
         },
         {
           "name": "metadium-explorer-stack",
@@ -562,30 +613,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-05-29",
-          "last_msg": "fix(consensus): serialize block-state commit against concurrent EVM reads",
-          "branch": "fix/archive-trie-commit-race",
-          "activity": [
-            0,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 5
         },
         {
           "name": "meta-agents",
@@ -1017,23 +1051,6 @@
           "last_date": "2025-11-20",
           "last_msg": "Android 커스텀 스킴 추가 및 링크 서비스에서 환경 변수 사용",
           "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "20241106",
-          "last_date": "2025-11-18",
-          "last_msg": "트랜잭션 감지 로직 개선 및 일일 리포트 전송 보완",
-          "branch": "main",
           "activity": [
             0,
             0,
