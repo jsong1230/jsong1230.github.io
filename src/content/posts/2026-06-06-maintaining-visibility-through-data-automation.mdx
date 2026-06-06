@@ -1,0 +1,52 @@
+---
+title: "Maintaining Visibility through Data Automation"
+date: "2026-06-06"
+lang: en
+excerpt: "Engineering Log: Maintaining Visibility through Data Automation  As a CTO and engineer, I've always believed that **visibility is the foundation of ef..."
+---
+
+# Engineering Log: Maintaining Visibility through Data Automation
+
+As a CTO and engineer, I've always believed that **visibility is the foundation of efficiency**. Whether it's a complex blockchain node cluster or a personal development pipeline, if you cannot measure it, you cannot optimize it. 
+
+Today's work was focused on the maintenance and data synchronization of my personal engineering dashboard (`jsong1230.github.io`). While the git diff might look like a simple JSON update, it represents a larger philosophy regarding how I track productivity and project health across multiple repositories.
+
+### The Problem: The Decay of Manual Tracking
+In a fast-paced environment—especially when juggling Web3 infrastructure and AI integrations—manual status reporting is a waste of cognitive load. I've integrated a system that auto-generates dashboard data to reflect my actual commit activity and repository status.
+
+The primary goal today was ensuring that the `dashboard.json` accurately reflects the current state of my active projects, including the company page for **CPLABS**.
+
+### Technical Breakdown & Insights
+
+Looking at the diff, the most notable changes occur in the `company-page` and `heritageradio` entries:
+
+```json
+"name": "company-page",
+"last_date": "2026-06-05",
+"last_msg": "태블릿(768~1023px) 헤더 깨짐 — nav 브레이크포인트 md→lg 전환",
+"activity": [0, 0, 0, 0, 10, 20, 0],
+"commits_7d": 30,
+"commits_30d": 30
+```
+
+#### 1. Responsive Design Refinement
+The commit message regarding the `company-page` highlights a common but critical UI/UX challenge: the "tablet gap." Moving the navigation breakpoint from `md` to `lg` is a strategic decision to prevent header breakage in the 768px–1023px range. In my experience building professional interfaces for **CPLABS**, I've found that relying solely on standard framework breakpoints often misses the nuances of specific device resolutions. Precision in CSS breakpoints is where "good" UI becomes "professional" UI.
+
+#### 2. Activity Distribution
+The `activity` array in the JSON serves as a heat-map of my focus. A jump from `8` to `30` commits in 7 days for the company page indicates a sprint phase. By visualizing this data, I can identify whether I am spending too much time on "maintenance" (chore) versus "feature development" (feat).
+
+#### 3. Data Integrity
+I also reorganized the repository order and updated the `generated_at` timestamp. In any data-driven dashboard, the "freshness" of the data is paramount. If the `generated_at` timestamp is stale, the entire dashboard loses its trust factor.
+
+### Personal Reflection: The "Engineer's Dashboard"
+
+Over my 20 years in the industry, I have seen many teams fail because they lacked a "single source of truth" for their progress. They relied on memory or fragmented Jira tickets. 
+
+By automating my own dashboard, I apply the same principle I advocate for at the organizational level: **Automate the mundane to liberate the creative.** When the data updates itself, I don't spend time *reporting* work; I spend time *doing* work.
+
+Today's update is a small gear in a larger machine, but it ensures that my technical trajectory remains transparent and measurable.
+
+**Summary of changes:**
+- Updated `dashboard.json` with latest commit telemetry.
+- Fixed tablet responsiveness for the **CPLABS** company page.
+- Synchronized activity metrics across 5+ active repositories.
