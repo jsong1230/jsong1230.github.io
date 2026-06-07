@@ -1,0 +1,53 @@
+---
+title: "Hardening the CPLABS Company Page: Moving from Development to Production"
+date: "2026-06-07"
+lang: en
+excerpt: "From Development to Production: Hardening the CPLABS Company Page  As an engineer, there is a distinct shift in mindset that happens when a project mo..."
+---
+
+# From Development to Production: Hardening the CPLABS Company Page
+
+As an engineer, there is a distinct shift in mindset that happens when a project moves from "it works on my machine" to "it must work for everyone." Today was one of those days. I spent the bulk of my time preparing the **CPLABS** company page for its official production transition.
+
+While the core features are implemented, the "last mile" of production readiness is where the most critical stability and security decisions are made.
+
+## The "Hydration Gap" and Cache Control
+
+One of the most frustrating bugs in modern Next.js applications is the hydration mismatch. This often happens during redeployments: a user has a cached version of the HTML from the previous build, but the client-side JavaScript is from the new build. The result? A broken UI or a complete crash.
+
+To solve this, I modified `next.config.js` to explicitly set `Cache-Control: no-cache` for HTML and data responses. 
+
+```javascript
+// next.config.js logic
+// Ensuring we don't serve stale HTML that could break hydration after a new deploy
+```
+
+By forcing the browser to revalidate with the server, we ensure that the client always receives the HTML and JS that are perfectly in sync, eliminating a huge category of production "ghost bugs."
+
+## Security: Cleaning the Secret Leakage
+
+During the development phase, it's common to move quickly, sometimes leaving secrets in `docker-compose.yml` or `.env.local` files that accidentally get tracked. I noticed some secrets were lingering in the git history—a classic "technical debt" item that can become a security vulnerability.
+
+I took three decisive steps today:
+1. **Secret Isolation**: Moved all environment variables out of the compose file and into an untracked `.env` file.
+2. **Templating**: Created `.env.example` to provide a clear roadmap for other engineers on what keys are required without exposing the actual values.
+3. **Rotation Plan**: Since secrets were previously committed, I documented a mandatory rotation process in `docs/PRODUCTION.md`. 
+
+**Pro Tip:** Never trust a `.gitignore` added *after* a secret was already committed. Always rotate your keys (API keys, OAuth secrets) before hitting the production URL.
+
+## SEO and Infrastructure Hardening
+
+A company page is useless if it's not discoverable. I transitioned the `robots.txt` and `sitemap.xml` from static files to dynamic routes (`app/robots.ts` and `app/sitemap.ts`). 
+
+This allows us to:
+- Dynamically inject the `NEXT_PUBLIC_BASE_URL` based on the environment.
+- Programmatically generate paths for `/history` and English variations.
+- Explicitly block `/admin` and `/api` routes from being indexed by search engines to reduce noise and improve security.
+
+Finally, I authored a `seed-data.sh` script. In production, you can't just "wipe and restart" the database. The script is designed to selectively copy data volumes, ensuring that admin-modified content is protected while allowing the system to be seeded during initial setup.
+
+## Final Thoughts
+
+Moving to production isn't about adding new features; it's about removing fragility. Whether it's handling cache headers to prevent hydration errors or scrubbing git history for secrets, these "invisible" changes are what define a professional-grade system.
+
+The **CPLABS** company page is now structurally ready for the wild. Now, it's time to monitor the logs and iterate.
