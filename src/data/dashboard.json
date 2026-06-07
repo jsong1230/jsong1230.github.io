@@ -1,9 +1,43 @@
 {
-  "generated_at": "2026-06-06T23:00:01.243Z",
+  "generated_at": "2026-06-07T23:00:01.419Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "company-page",
+          "last_date": "2026-06-07",
+          "last_msg": "체크리스트: AUTH_SECRET·ADMIN_PASSWORD 재발급 완료 표기 + 콘솔 �",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            10,
+            20,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 32,
+          "commits_30d": 32
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-07",
+          "last_msg": "Auto-generate weekly recap",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 73
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-06-06",
@@ -12,48 +46,14 @@
           "activity": [
             0,
             0,
-            0,
             2,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 162
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-06",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 72
-        },
-        {
-          "name": "company-page",
-          "last_date": "2026-06-05",
-          "last_msg": "태블릿(768~1023px) 헤더 깨짐 — nav 브레이크포인트 md→lg 전환",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            10,
-            20,
-            0,
-            0
-          ],
-          "commits_7d": 30,
-          "commits_30d": 30
+          "commits_30d": 130
         },
         {
           "name": "meta-info-api",
@@ -61,8 +61,8 @@
           "last_msg": "Merge branch 'main' into node10-compat",
           "branch": "node10-compat",
           "activity": [
-            2,
             4,
+            0,
             0,
             0,
             0,
@@ -78,7 +78,7 @@
           "last_msg": "ui(faucet-meta): natural wrapping in the network/RPC strip",
           "branch": "dev",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -95,7 +95,7 @@
           "last_msg": "Merged in dev (pull request #1)",
           "branch": "dev",
           "activity": [
-            9,
+            0,
             0,
             0,
             0,
@@ -112,7 +112,7 @@
           "last_msg": "chore: daily pipeline data update 2026-05-31",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -120,8 +120,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 24
+          "commits_7d": 0,
+          "commits_30d": 23
         },
         {
           "name": "cp-check-attendance",
@@ -555,20 +555,20 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-06-05",
-          "last_msg": "fix: 시세 결측(NaN/None) 시 리포트 출력 크래시 방어",
+          "last_date": "2026-06-07",
+          "last_msg": "feat: 사이클 점검에 삼전/하이닉스 증권사 목표주가·상승여�",
           "branch": "main",
           "activity": [
-            3,
             0,
             0,
             1,
             7,
             1,
-            0
+            0,
+            1
           ],
-          "commits_7d": 12,
-          "commits_30d": 12
+          "commits_7d": 10,
+          "commits_30d": 13
         },
         {
           "name": "20241106",
@@ -579,8 +579,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -594,10 +594,10 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
             0,
             10,
+            0,
             0,
             0
           ],
@@ -610,8 +610,8 @@
           "last_msg": "chore(scripts): add mid-chain bootstrap/backfill + reconcile cron scripts",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
