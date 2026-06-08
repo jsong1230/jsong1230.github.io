@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-06-07T23:00:01.419Z",
+  "generated_at": "2026-06-08T23:00:01.304Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "company-page",
-          "last_date": "2026-06-07",
-          "last_msg": "체크리스트: AUTH_SECRET·ADMIN_PASSWORD 재발급 완료 표기 + 콘솔 �",
+          "name": "heritageradio",
+          "last_date": "2026-06-08",
+          "last_msg": "[admin] CHANGELOG: 콘텐츠 등록 API key 기능 (X-API-Key, commit 8635bde)",
           "branch": "dev",
           "activity": [
             0,
+            2,
+            0,
+            2,
+            0,
+            4,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 124
+        },
+        {
+          "name": "company-page",
+          "last_date": "2026-06-08",
+          "last_msg": "K-BTF 하단에 소개자료 다운로드 버튼 추가 (Drive 링크)",
+          "branch": "dev",
+          "activity": [
             0,
             10,
             20,
             0,
             2,
+            12,
             0
           ],
-          "commits_7d": 32,
-          "commits_30d": 32
+          "commits_7d": 44,
+          "commits_30d": 44
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-07",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-06-08",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 73
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-06-06",
-          "last_msg": "[admin] stats recommend snapshot date binding fix — isoformat str → date 객",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            2,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 130
+          "commits_30d": 72
         },
         {
           "name": "meta-info-api",
@@ -61,7 +61,7 @@
           "last_msg": "Merge branch 'main' into node10-compat",
           "branch": "node10-compat",
           "activity": [
-            4,
+            0,
             0,
             0,
             0,
@@ -69,7 +69,7 @@
             0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 4,
           "commits_30d": 18
         },
         {
@@ -86,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 7
         },
         {
@@ -103,7 +103,7 @@
             0,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 0,
           "commits_30d": 9
         },
         {
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 23
+          "commits_30d": 22
         },
         {
           "name": "cp-check-attendance",
@@ -555,20 +555,37 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-06-07",
-          "last_msg": "feat: 사이클 점검에 삼전/하이닉스 증권사 목표주가·상승여�",
+          "last_date": "2026-06-08",
+          "last_msg": "feat: DRAM 사이클 모니터링 강화 — 현물가·정점전망·점검출�",
           "branch": "main",
           "activity": [
-            0,
             0,
             1,
             7,
             1,
             0,
-            1
+            1,
+            5
           ],
-          "commits_7d": 10,
-          "commits_30d": 13
+          "commits_7d": 15,
+          "commits_30d": 18
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-06-08",
+          "last_msg": "feat: parallel genesis backfill overlay",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "commits_7d": 3,
+          "commits_30d": 4
         },
         {
           "name": "20241106",
@@ -578,8 +595,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -593,33 +610,16 @@
           "last_msg": "Merge pull request #53 from jsong1230/chore/remove-camellia-ci",
           "branch": "dev",
           "activity": [
-            0,
             1,
             0,
             10,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 11,
           "commits_30d": 16
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-06-01",
-          "last_msg": "chore(scripts): add mid-chain bootstrap/backfill + reconcile cron scripts",
-          "branch": "master",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 1
         },
         {
           "name": "meta-agents",
