@@ -1,0 +1,53 @@
+---
+title: "Handling Production Drift: The Case of the Silent Celery Beat"
+date: "2026-06-08"
+lang: en
+excerpt: "[Engineering Log] Handling Production Drift: The Case of the Silent Celery Beat  As a CTO, one of the most critical parts of the job isn't just buildi..."
+---
+
+# [Engineering Log] Handling Production Drift: The Case of the Silent Celery Beat
+
+As a CTO, one of the most critical parts of the job isn't just building new features, but maintaining the "health" of the production environment. Today was a prime example of why continuous monitoring and a strict deployment sequence are non-negotiable.
+
+During a routine operational check, I discovered a critical "drift" in our production environment: the **Celery Beat** service had been sitting at `desired=0` since May 15th. For 22 days, our scheduled tasks—ranging from daily analytics rollups to AI-driven report snapshots—had simply stopped executing.
+
+## The Problem: The Silent Failure
+The danger of a scheduler failure is that it doesn't usually trigger a "crash" alert. The API and the main application continue to run perfectly, but the background "heartbeat" of the system vanishes. In our case, this meant:
+- Daily statistics were not being aggregated.
+- Chat logs weren't being cleaned up.
+- AI reports were not being generated.
+
+The challenge was to reactivate this service without triggering a "cascade failure." Specifically, we had a critical requirement: **the production Celery Beat must not trigger HLS build tasks**, as those are handled by a separate, dedicated cron process.
+
+## Technical Decisions & Resolution
+
+### 1. Ensuring "Cycle-Safe" Reactivation
+Before flipping the switch, I had to verify that the `hls-build-pending` task would not be dispatched upon restart. I audited the infrastructure code:
+
+```typescript
+// infra/lib/compute-stack.ts:436
+HLS_BUILD_PENDING_DISABLED: '1'
+```
+
+By baking this environment variable directly into the CDK code for both workers and the beat service, and ensuring the backend logic skips registration when this flag is `'1'`, I confirmed a "cycle-safe" environment. The scheduler would wake up, see the flag, and simply ignore the build task.
+
+### 2. The "Date-Fix" Pre-requisite
+Reactivating the beat service without fixing existing bugs is a recipe for a log-flood of errors. I identified a `DataError` in the `stats_recommend_history` task where a string was being passed instead of a date object to `asyncpg`. 
+
+I implemented a fix to ensure `kst_date` is handled as a proper date object before deploying. If I had reactivated the beat first, the system would have immediately failed at 09:00 KST, leaving the reports empty.
+
+### 3. The Deployment Sequence (The "Correct" Way)
+When dealing with AWS ECS and CDK, the order of operations is everything. I opted for the "Standard Path" (CDK deploy) over a manual CLI update to ensure the infrastructure code remains the single source of truth.
+
+**The sequence I executed:**
+1. **Build & Push:** Update the Celery image to ECR (including the date-fix).
+2. **CDK Deploy:** Update the `ComputeStack` to change `desiredCount` from `0` $\rightarrow$ `1`.
+
+*Insight:* I had to be mindful of "ECR digest baking." Since CDK resolves the `latest` digest at the moment of deployment, the image push **must** happen first to ensure the new pod pulls the fixed code, not the stale image from May 15th.
+
+## Final Reflections
+Today's work reminded me that **infrastructure as code (IaC) is only as good as the verification process.** A service sitting at `desired=0` for three weeks is a gap in monitoring that needs addressing. 
+
+Furthermore, the "Safe-Handoff" documentation I created today serves as a blueprint for the team: verify the safety flags $\rightarrow$ fix the data bugs $\rightarrow$ deploy the image $\rightarrow$ scale the service.
+
+Moving forward, I'll be looking into implementing better alerting for `desiredCount` mismatches in our CPLABS infrastructure to ensure that "silent" failures are caught in minutes, not weeks.
