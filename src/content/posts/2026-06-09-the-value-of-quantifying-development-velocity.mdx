@@ -1,0 +1,42 @@
+---
+title: "The Value of Quantifying Development Velocity"
+date: "2026-06-09"
+lang: en
+excerpt: "Engineering Log: The Value of Quantifying Development Velocity  As a CTO and engineer with over two decades in the trenches—spanning the evolution of ..."
+---
+
+# Engineering Log: The Value of Quantifying Development Velocity
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of the web to the complexities of Web3, DID, and AI—I've learned that the most dangerous phase of a project is the one where "progress" is felt but not measured. 
+
+Today's work was a seemingly simple chore: updating the dashboard data for my personal engineering hub (`jsong1230.github.io`). While a JSON update might look trivial in a git diff, it represents a critical habit in high-performance engineering: **the quantification of velocity.**
+
+### The Technical Context: Data-Driven Self-Reflection
+
+The change involves updating `src/data/dashboard.json`, which serves as the backend for my activity visualization. By tracking commit frequency, branch activity, and the nature of the last messages across various repositories, I can identify where my cognitive load is being spent.
+
+Looking at the diff, we see a shift in focus:
+- **`heritageradio`**: Updated with a new feature regarding API key functionality (`X-API-Key`).
+- **`company-page`**: Significant activity increase, with `commits_7d` jumping from 32 to 44.
+- **`jsong1230.github.io`**: Transitioning from weekly recaps to a more granular "Auto-generate daily posts" system.
+
+```json
+- "last_msg": "Auto-generate weekly recap",
++ "last_msg": "Auto-generate daily posts",
+```
+
+### Technical Decisions & Insights
+
+The decision to automate this dashboard—rather than manually logging hours—is a reflection of my philosophy on "Developer Experience" (DX). In my years leading teams at **CPLABS**, I've always advocated for removing friction. If a developer has to spend 30 minutes a day manually reporting what they did, that is 30 minutes of deep work lost.
+
+By treating my own development activity as a data stream, I can apply the same observability principles we use in production environments to my own productivity. 
+
+**Key insights from today's data shift:**
+1. **Context Switching Costs:** The activity spikes in `company-page` and `heritageradio` simultaneously indicate a period of high context switching. As an engineer, I know this is where bugs often creep in.
+2. **Automation Iteration:** The change from "weekly" to "daily" post generation shows a move toward tighter feedback loops. In AI and Web3 development, the pace of change is so rapid that a weekly cadence is often too slow to capture the nuance of a technical pivot.
+
+### Closing Thoughts
+
+Many engineers view "chore" commits or data updates as noise. However, from a leadership perspective, these are the signals. Whether I am architecting a decentralized identity system or refining a corporate landing page for **CPLABS**, the ability to step back and look at the "diff" of my time is what allows for strategic adjustment.
+
+The goal isn't just to write more code—it's to ensure that the code being written aligns with the highest priority objectives. Today's update is a reminder that the best way to manage a project is to first manage the data surrounding it.
