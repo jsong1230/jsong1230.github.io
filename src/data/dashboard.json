@@ -1,25 +1,59 @@
 {
-  "generated_at": "2026-06-08T23:00:01.304Z",
+  "generated_at": "2026-06-09T23:00:01.748Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-09",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 71
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-06-09",
+          "last_msg": "logs: 2026-06-09 — GPU srv check, stolen-BTC signature verify, vanjeff node, k",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 2
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-06-08",
           "last_msg": "[admin] CHANGELOG: 콘텐츠 등록 API key 기능 (X-API-Key, commit 8635bde)",
           "branch": "dev",
           "activity": [
-            0,
             2,
             0,
             2,
             0,
             4,
+            0,
             0
           ],
           "commits_7d": 8,
-          "commits_30d": 124
+          "commits_30d": 118
         },
         {
           "name": "company-page",
@@ -27,33 +61,16 @@
           "last_msg": "K-BTF 하단에 소개자료 다운로드 버튼 추가 (Drive 링크)",
           "branch": "dev",
           "activity": [
-            0,
             10,
             20,
             0,
             2,
             12,
+            0,
             0
           ],
           "commits_7d": 44,
           "commits_30d": 44
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-08",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 72
         },
         {
           "name": "meta-info-api",
@@ -69,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 0,
           "commits_30d": 18
         },
         {
@@ -121,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 22
+          "commits_30d": 21
         },
         {
           "name": "cp-check-attendance",
@@ -190,23 +207,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 12
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-05-11",
-          "last_msg": "logs: 2026-05-11 — Apple ID password reset + WD My Passport unlock & archive",
-          "branch": "gram-jsong",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 1
         },
         {
           "name": "srt_reverve",
@@ -555,25 +555,25 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-06-08",
-          "last_msg": "feat: DRAM 사이클 모니터링 강화 — 현물가·정점전망·점검출�",
+          "last_date": "2026-06-09",
+          "last_msg": "feat: 신용융자·반대매매 디레버리징 추적 추가",
           "branch": "main",
           "activity": [
-            0,
             1,
             7,
             1,
             0,
             1,
-            5
+            5,
+            3
           ],
-          "commits_7d": 15,
-          "commits_30d": 18
+          "commits_7d": 18,
+          "commits_30d": 21
         },
         {
           "name": "metadium-explorer-stack",
-          "last_date": "2026-06-08",
-          "last_msg": "feat: parallel genesis backfill overlay",
+          "last_date": "2026-06-09",
+          "last_msg": "chore(backfill): add docker log rotation (50m x3)",
           "branch": "master",
           "activity": [
             0,
@@ -581,11 +581,28 @@
             0,
             0,
             0,
-            0,
-            3
+            3,
+            1
           ],
-          "commits_7d": 3,
-          "commits_30d": 4
+          "commits_7d": 4,
+          "commits_30d": 5
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-06-09",
+          "last_msg": "Merge pull request #54 from jsong1230/test/camellia-contract-transient-e2e",
+          "branch": "dev",
+          "activity": [
+            0,
+            10,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 12,
+          "commits_30d": 18
         },
         {
           "name": "20241106",
@@ -594,8 +611,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -603,23 +620,6 @@
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-06-04",
-          "last_msg": "Merge pull request #53 from jsong1230/chore/remove-camellia-ci",
-          "branch": "dev",
-          "activity": [
-            1,
-            0,
-            10,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 16
         },
         {
           "name": "meta-agents",
