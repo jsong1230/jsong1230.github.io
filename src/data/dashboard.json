@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-09T23:00:01.748Z",
+  "generated_at": "2026-06-10T23:00:02.033Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-09",
+          "last_date": "2026-06-10",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -31,12 +31,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "heritageradio",
@@ -44,16 +44,16 @@
           "last_msg": "[admin] CHANGELOG: 콘텐츠 등록 API key 기능 (X-API-Key, commit 8635bde)",
           "branch": "dev",
           "activity": [
-            2,
             0,
             2,
             0,
             4,
             0,
+            0,
             0
           ],
           "commits_7d": 8,
-          "commits_30d": 118
+          "commits_30d": 95
         },
         {
           "name": "company-page",
@@ -61,11 +61,11 @@
           "last_msg": "K-BTF 하단에 소개자료 다운로드 버튼 추가 (Drive 링크)",
           "branch": "dev",
           "activity": [
-            10,
             20,
             0,
             2,
             12,
+            0,
             0,
             0
           ],
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 21
+          "commits_30d": 20
         },
         {
           "name": "cp-check-attendance",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 188
+          "commits_30d": 151
         },
         {
           "name": "daepa-open-chat",
@@ -223,7 +223,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "go-metadium",
@@ -559,16 +559,33 @@
           "last_msg": "feat: 신용융자·반대매매 디레버리징 추적 추가",
           "branch": "main",
           "activity": [
-            1,
             7,
             1,
             0,
             1,
             5,
-            3
+            3,
+            0
           ],
-          "commits_7d": 18,
+          "commits_7d": 17,
           "commits_30d": 21
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-06-09",
+          "last_msg": "Merge pull request #54 from jsong1230/test/camellia-contract-transient-e2e",
+          "branch": "dev",
+          "activity": [
+            10,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 12,
+          "commits_30d": 18
         },
         {
           "name": "metadium-explorer-stack",
@@ -580,9 +597,9 @@
             0,
             0,
             0,
-            0,
             3,
-            1
+            1,
+            0
           ],
           "commits_7d": 4,
           "commits_30d": 5
@@ -593,13 +610,13 @@
           "last_msg": "Merge pull request #54 from jsong1230/test/camellia-contract-transient-e2e",
           "branch": "dev",
           "activity": [
-            0,
             10,
             0,
             0,
             0,
             0,
-            2
+            2,
+            0
           ],
           "commits_7d": 12,
           "commits_30d": 18
@@ -610,8 +627,8 @@
           "last_msg": "텔레그램 전송 HTML 파싱 실패 시 plain text 폴백 추가",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -711,23 +728,6 @@
           "last_date": "2026-04-25",
           "last_msg": "feat: YouTube 예약 업로드 메타데이터 + privacyStatus 처리",
           "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-04-23",
-          "last_msg": "feat: persist EIP-4844 blob sidecars in chain DB",
-          "branch": "camellia",
           "activity": [
             0,
             0,
