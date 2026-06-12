@@ -1,0 +1,56 @@
+---
+title: "The Art of Visibility: Maintaining a Technical Dashboard"
+date: "2026-06-12"
+lang: en
+excerpt: "The Art of Visibility: Maintaining a Technical Dashboard  As a CTO and engineer with over two decades in the trenches, I’ve learned that the most dang..."
+---
+
+# The Art of Visibility: Maintaining a Technical Dashboard
+
+As a CTO and engineer with over two decades in the trenches, I’ve learned that the most dangerous state for a project—or a developer—is "invisible progress." We often dive deep into the codebase, solving complex architectural hurdles in Web3 or optimizing AI pipelines, but we forget to track the metadata of our productivity.
+
+Today's work was relatively light in terms of logic changes, but it serves as a great reminder of why **observability** matters, even for our own personal development workflows.
+
+## The Task: Synchronizing the Pulse
+
+Today's primary commit was a `chore` to update the `dashboard.json` file for my personal site. While it looks like a simple data update on the surface, this file acts as the "heartbeat" of my current engineering ecosystem.
+
+```json
+-  "generated_at": "2026-06-10T23:00:02.033Z",
++  "generated_at": "2026-06-11T23:00:01.507Z",
+```
+
+At a glance, the diff shows a series of shifts in activity arrays and commit counts across various repositories. Specifically, I updated the metrics for several key projects, including work related to **CPLABS** and various explorer stacks.
+
+## Technical Decisions: Automation vs. Manual Tracking
+
+One interesting part of the diff is the addition of the `metadium-explorer-stack` to the `mini-jsong` machine profile:
+
+```json
++        {
++          "name": "metadium-explorer-stack",
++          "last_date": "2026-06-10",
++          "last_msg": "refactor: frontend-ws 로컬 수정을 patch 방식으로 전환...",
++          "branch": "master",
+```
+
+The decision to maintain this dashboard via a JSON-based data store (rather than a complex database) is a deliberate choice for **simplicity and portability**. By treating my development activity as "data-as-code," I can version control my productivity and render it on a static site without the overhead of a backend. 
+
+The reference to "switching to a patch method for local modifications" in the commit message of the explorer stack is a classic engineering trade-off. When dealing with official repositories where you cannot always merge upstream changes immediately, using a patch-based workflow allows for agility without polluting the main branch history.
+
+## Engineering Insights: The Value of the "Chore"
+
+Many junior developers view `chore` commits—updating dependencies, cleaning up docs, or refreshing dashboards—as "non-productive" work. However, from my experience leading teams at **CPLABS** and beyond, these are the tasks that prevent **technical debt from becoming institutional blindness.**
+
+When I look at the updated `commits_7d` and `commits_30d` values, I'm not just looking at numbers. I'm analyzing:
+1. **Context Switching Costs:** How many different repositories am I touching?
+2. **Project Momentum:** Which projects are stagnating and which are accelerating?
+3. **Resource Allocation:** Am I spending too much time on maintenance and not enough on core innovation in DID or AI?
+
+## Closing Thoughts
+
+Whether you are building a decentralized identity system or a simple personal dashboard, the principle remains the same: **If you cannot measure it, you cannot manage it.** 
+
+Updating this dashboard isn't just about the data; it's about the ritual of reflection. It forces me to look back at the last 24 hours and ask, *"Did the code I wrote today move the needle?"*
+
+Stay curious, and keep your dashboards green.
