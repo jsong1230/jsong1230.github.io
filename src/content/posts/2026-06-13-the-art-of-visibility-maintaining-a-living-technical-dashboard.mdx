@@ -1,0 +1,41 @@
+---
+title: "The Art of Visibility: Maintaining a Living Technical Dashboard"
+date: "2026-06-13"
+lang: en
+excerpt: "The Art of Visibility: Maintaining a Living Technical Dashboard  As an engineer and CTO, I’ve always believed that **visibility is the foundation of v..."
+---
+
+# The Art of Visibility: Maintaining a Living Technical Dashboard
+
+As an engineer and CTO, I’ve always believed that **visibility is the foundation of velocity**. Whether it's a real-time monitoring system for a blockchain node or a high-level project management board, knowing exactly where things stand allows us to make decisions based on data rather than intuition.
+
+Today’s work was a focused exercise in maintaining that visibility. While the commit might look like a simple "chore," the act of updating the `dashboard.json` for my personal engineering hub (`jsong1230.github.io`) reflects a broader philosophy on how I track technical productivity and project health.
+
+### The Problem: The "Silent" Project Decay
+In a fast-paced environment—especially when juggling Web3, DID, and AI initiatives—it is easy for secondary repositories to fall into a "silent decay." You know a project exists, but you lose track of its actual momentum. 
+
+The challenge I solved today wasn't a bug in the code, but a gap in the data. By updating the dashboard metrics, I’m essentially performing a "heartbeat check" on my various workstreams, including legacy projects and current contributions at **CPLABS**.
+
+### Technical Decisions: Data-Driven Tracking
+The dashboard relies on a structured JSON format to track repository activity, commit counts over 7-day and 30-day windows, and the latest commit messages. 
+
+Looking at the diff, you can see the shift in activity across different repositories:
+
+```json
+- "commits_7d": 34,
++ "commits_7d": 14,
+```
+
+This decrease in the `company-page` repository isn't necessarily a sign of slowing down, but rather a sign of a project transitioning from an active development phase to a maintenance phase. Similarly, seeing the `commits_30d` for `cp-check-attendance` drop from 110 to 75 provides a clear visual indicator of the project's lifecycle.
+
+I chose a JSON-based static data approach for this dashboard because it ensures lightning-fast load times and a zero-dependency frontend. In the world of Web3, where we often over-engineer with complex smart contracts and decentralized storage, there is immense value in returning to the simplicity of a static file for personal tooling.
+
+### Insights from the Code
+The most interesting part of today's update is the "Activity Array." By tracking daily commit counts, I can visualize the *rhythm* of development. 
+
+When I see a pattern like `[0, 0, 1, 0, 0, 0, 0]`, it tells me that the project is in a "dormant" or "monitoring" state. Conversely, a spike in numbers indicates a "sprint" phase. As a CTO, I use this same logic when reviewing team velocity: I don't look for a constant linear line of commits, but rather the *bursts* of activity that correlate with feature releases or critical bug fixes.
+
+### Final Thoughts
+Updating a dashboard might seem like a trivial task, but for a veteran engineer, it is a ritual of reflection. It forces me to look at every repository I touch—from the internal tools at **CPLABS** to my personal experiments in AI—and ask: *Is this still moving forward? Does this still provide value?*
+
+Technical depth is not just about writing complex algorithms; it's about building the systems that allow you to manage that complexity without getting overwhelmed. Keep your dashboards updated, and you'll never be surprised by the state of your code.
