@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-06-13T23:00:01.203Z",
+  "generated_at": "2026-06-14T23:00:01.328Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-13",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-06-14",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 72
+          "commits_30d": 73
         },
         {
           "name": "claude-agent",
@@ -27,8 +27,8 @@
           "last_msg": "logs: 2026-06-09 — GPU srv check, stolen-BTC signature verify, vanjeff node, k",
           "branch": "gram-jsong",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -44,7 +44,7 @@
           "last_msg": "[admin] CHANGELOG: 콘텐츠 등록 API key 기능 (X-API-Key, commit 8635bde)",
           "branch": "dev",
           "activity": [
-            4,
+            0,
             0,
             0,
             0,
@@ -53,7 +53,7 @@
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 73
+          "commits_30d": 40
         },
         {
           "name": "company-page",
@@ -61,7 +61,7 @@
           "last_msg": "K-BTF 하단에 소개자료 다운로드 버튼 추가 (Drive 링크)",
           "branch": "dev",
           "activity": [
-            12,
+            0,
             0,
             0,
             0,
@@ -69,7 +69,7 @@
             0,
             0
           ],
-          "commits_7d": 14,
+          "commits_7d": 12,
           "commits_30d": 44
         },
         {
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 17
+          "commits_30d": 16
         },
         {
           "name": "cp-check-attendance",
@@ -555,20 +555,20 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-06-13",
-          "last_msg": "feat: PBR 밴드 복귀 알림 추가 (게이트③ ❌→✅ rising edge 텔레",
+          "last_date": "2026-06-14",
+          "last_msg": "feat: 디커플링 관심종목 카탈리스트·실적일 메모 표시",
           "branch": "main",
           "activity": [
-            1,
             5,
             3,
             0,
             0,
             2,
+            1,
             1
           ],
           "commits_7d": 12,
-          "commits_30d": 24
+          "commits_30d": 25
         },
         {
           "name": "go-metadium",
@@ -577,11 +577,11 @@
           "branch": "fix/pre-mainnet-security",
           "activity": [
             0,
-            0,
             2,
             0,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 4,
@@ -593,10 +593,10 @@
           "last_msg": "refactor: frontend-ws 로컬 수정을 patch 방식으로 전환 (공식 repo �",
           "branch": "master",
           "activity": [
-            0,
             3,
             1,
             3,
+            0,
             0,
             0,
             0
@@ -611,8 +611,8 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
