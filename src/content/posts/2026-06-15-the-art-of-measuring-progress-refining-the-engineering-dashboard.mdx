@@ -1,0 +1,48 @@
+---
+title: "The Art of Measuring Progress: Refining the Engineering Dashboard"
+date: "2026-06-15"
+lang: en
+excerpt: "The Art of Measuring Progress: Refining the Engineering Dashboard  As an engineer and CTO with over two decades of experience, I’ve learned that the m..."
+---
+
+# The Art of Measuring Progress: Refining the Engineering Dashboard
+
+As an engineer and CTO with over two decades of experience, I’ve learned that the most dangerous state for a project isn't a bug—it's a lack of visibility. Whether you are scaling a Web3 infrastructure or managing a complex AI agent, knowing *where* the momentum is shifting is critical for resource allocation and technical leadership.
+
+Today’s work was centered around updating the data layer of my personal engineering dashboard (`jsong1230.github.io`). While a `chore` commit updating a JSON file might seem mundane at first glance, it represents a larger philosophy I hold regarding "Engineering Observability."
+
+### The Problem: Static vs. Dynamic Visibility
+
+In a fast-paced environment—especially when juggling multiple repositories like `claude-agent`, `company-page`, and various internal CPLABS projects—it is easy to lose track of the "velocity" of specific modules. 
+
+The goal of this dashboard is to provide a high-level snapshot of activity across different machines and repositories. By updating `dashboard.json`, I am essentially refreshing the telemetry of my development lifecycle. It allows me to see which projects are in a "hyper-growth" phase and which have entered a "maintenance" phase.
+
+### Technical Insights from the Diff
+
+Looking at the diff, there are a few interesting shifts in activity:
+
+```json
+- "last_msg": "Auto-generate weekly book post",
++ "last_msg": "Auto-generate weekly recap",
+...
+- "commits_30d": 72
++ "commits_30d": 73
+```
+
+The transition from "weekly book post" to "weekly recap" reflects a shift in how I'm automating my knowledge management. I've been leaning more into AI-driven summarization to distill technical learnings into actionable recaps.
+
+More importantly, the shift in `activity` arrays across different repos reveals the natural ebb and flow of development. For instance, seeing the `company-page` activity drop while `mirae` picks up indicates a pivot in focus toward catalyst and earnings data visualization.
+
+### The CTO’s Perspective: Why This Matters
+
+Many developers view "updating data" or "maintenance chores" as low-value work. However, from a management perspective, this is about **Data-Driven Reflection**.
+
+When I was leading teams at CPLABS, I always emphasized the importance of "Closing the Loop." You cannot improve what you do not measure. By maintaining a dashboard that tracks commits, activity spikes, and last-message context, I can perform a "post-mortem" on my own productivity. 
+
+If I see a repository that hasn't had a commit in 14 days despite being a priority, it's a red flag. Is the feature complete? Is there a technical blocker? Or has the priority shifted without a formal decision?
+
+### Closing Thoughts
+
+Today's update was a simple `chore`, but it serves as a reminder that the infrastructure we build to monitor our work is just as important as the code we write for our users. Whether it's a DID implementation or a simple JSON dashboard, clarity is the ultimate catalyst for speed.
+
+Stay curious, keep building, and always keep your telemetry updated.
