@@ -1,47 +1,13 @@
 {
-  "generated_at": "2026-06-14T23:00:01.328Z",
+  "generated_at": "2026-06-15T23:00:01.809Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-14",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 73
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-06-09",
-          "last_msg": "logs: 2026-06-09 — GPU srv check, stolen-BTC signature verify, vanjeff node, k",
-          "branch": "gram-jsong",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 1
-        },
-        {
           "name": "heritageradio",
-          "last_date": "2026-06-08",
-          "last_msg": "[admin] CHANGELOG: 콘텐츠 등록 API key 기능 (X-API-Key, commit 8635bde)",
+          "last_date": "2026-06-15",
+          "last_msg": "[admin] register_content_zip.py DRAMA_SERIAL(일일연속극) 핸들러 통합",
           "branch": "dev",
           "activity": [
             0,
@@ -49,11 +15,45 @@
             0,
             0,
             0,
-            0,
+            3,
             0
           ],
-          "commits_7d": 4,
-          "commits_30d": 40
+          "commits_7d": 3,
+          "commits_30d": 42
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-15",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 72
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-06-15",
+          "last_msg": "docs: wife guide — home LAN (172.30.1.58) as default, Tailscale optional",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 8
         },
         {
           "name": "company-page",
@@ -69,7 +69,7 @@
             0,
             0
           ],
-          "commits_7d": 12,
+          "commits_7d": 0,
           "commits_30d": 44
         },
         {
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 16
+          "commits_30d": 15
         },
         {
           "name": "cp-check-attendance",
@@ -554,21 +554,38 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "mirae",
-          "last_date": "2026-06-14",
-          "last_msg": "feat: 디커플링 관심종목 카탈리스트·실적일 메모 표시",
+          "name": "meta-agents",
+          "last_date": "2026-06-15",
+          "last_msg": "docs(standard): finalize team email with PDF attachments and GitHub links",
           "branch": "main",
           "activity": [
-            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "commits_7d": 3,
+          "commits_30d": 4
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-06-15",
+          "last_msg": "feat: 로봇액티브 정리 룰 자동판정 추가 (check_robot_downgrade)",
+          "branch": "main",
+          "activity": [
             3,
             0,
             0,
             2,
             1,
+            1,
             1
           ],
-          "commits_7d": 12,
-          "commits_30d": 25
+          "commits_7d": 8,
+          "commits_30d": 26
         },
         {
           "name": "go-metadium",
@@ -576,11 +593,11 @@
           "last_msg": "security: restrict unverified block acceptance in verifyBlockSig",
           "branch": "fix/pre-mainnet-security",
           "activity": [
-            0,
             2,
             0,
             0,
             2,
+            0,
             0,
             0
           ],
@@ -593,15 +610,15 @@
           "last_msg": "refactor: frontend-ws 로컬 수정을 patch 방식으로 전환 (공식 repo �",
           "branch": "master",
           "activity": [
-            3,
             1,
             3,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 4,
           "commits_30d": 8
         },
         {
@@ -610,8 +627,8 @@
           "last_msg": "Merge pull request #54 from jsong1230/test/camellia-contract-transient-e2e",
           "branch": "dev",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -625,23 +642,6 @@
           "name": "20241106",
           "last_date": "2026-06-04",
           "last_msg": "텔레그램 전송 HTML 파싱 실패 시 plain text 폴백 추가",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 1
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-05-21",
-          "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "main",
           "activity": [
             0,
