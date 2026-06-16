@@ -1,0 +1,39 @@
+---
+title: "Combatting Invisible Progress: Maintaining Visibility through Data Automation"
+date: "2026-06-16"
+lang: en
+excerpt: "Engineering Log: Maintaining Visibility through Data Automation  As a CTO and engineer with over two decades in the trenches, I’ve learned that the mo..."
+---
+
+# Engineering Log: Maintaining Visibility through Data Automation
+
+As a CTO and engineer with over two decades in the trenches, I’ve learned that the most dangerous state for a project—or a developer—is "invisible progress." We often dive deep into the code, solving complex architectural problems in Web3 or AI, only to realize that the stakeholders (or even our future selves) have no clear visibility into the velocity and direction of the work.
+
+Today’s updates to my personal dashboard might seem like a simple `chore` commit, but they represent a broader philosophy I’ve applied throughout my career, including my time at **CPLABS**: the importance of automated telemetry for productivity.
+
+### The Work: Updating the Dashboard
+
+Today's commit focused on refreshing the `dashboard.json` file. While the diff shows a series of additions and deletions in a JSON structure, it actually captures a snapshot of a highly active development cycle across multiple domains.
+
+```json
+- "last_msg": "[admin] CHANGELOG: 콘텐츠 등록 API key 기능 (X-API-Key, commit 8635bde)",
++ "last_msg": "[admin] register_content_zip.py DRAMA_SERIAL(일일연속극) 핸들러 통합",
+```
+
+Looking at the `heritageradio` repository changes, we see a transition from implementing security layers (API keys) to integrating specific business logic (the `DRAMA_SERIAL` handler). This is a classic development trajectory: secure the perimeter first, then build the functional core.
+
+### Technical Decisions & Insights
+
+The decision to maintain a JSON-based dashboard that tracks `commits_7d` and `commits_30d` is a deliberate choice to treat my personal productivity as a data stream. In high-pressure environments like **CPLABS**, I've always advocated for "Evidence-Based Management." Instead of relying on "I feel like we're making progress," we look at the commit velocity and the nature of the messages.
+
+A few interesting observations from today's data:
+
+1.  **Context Switching:** The dashboard shows activity across `heritageradio`, `claude-agent`, and my personal site. For a CTO, the ability to switch contexts—from Python-based automation scripts to documentation for home network infrastructure (as seen in the `claude-agent` commit regarding Tailscale and LAN settings)—is essential.
+2.  **The "Long Tail" of Maintenance:** Notice the `company-page` repo showing `commits_7d: 0`. This is a healthy sign. It indicates that the project has reached a stable state where active intervention isn't required, allowing resources to be shifted to high-growth areas.
+3.  **Automation of Recaps:** The change from "Auto-generate weekly recap" to "Auto-generate daily posts" reflects a shift toward a tighter feedback loop. In the fast-moving worlds of Blockchain and AI, a weekly cycle is often too slow. Daily iterations allow for quicker pivots.
+
+### Final Thoughts
+
+Many engineers overlook the "chore" of updating documentation or dashboards, viewing it as non-productive work. However, I view this as the "metadata" of engineering. Without it, the code is just a pile of logic; with it, the code becomes a narrative of growth and problem-solving.
+
+Whether I am architecting a DID system or managing a small automation script, the principle remains the same: **If you cannot measure it, you cannot improve it.** By automating the tracking of my activity, I remove the cognitive load of reporting and replace it with a transparent, data-driven mirror of my professional output.
