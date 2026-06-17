@@ -1,0 +1,49 @@
+---
+title: "The Discipline of Visibility: Automating the Engineering Dashboard"
+date: "2026-06-17"
+lang: en
+excerpt: "The Discipline of Visibility: Automating the Engineering Dashboard  As a CTO and engineer with over two decades of experience, I’ve learned that the m..."
+---
+
+# The Discipline of Visibility: Automating the Engineering Dashboard
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a project—or a developer—is "invisible progress." We often dive deep into the code, solving complex architectural hurdles or fixing elusive bugs, only to realize that the stakeholders (or even our future selves) have no clear map of where the effort was spent.
+
+Today’s work was a reflection of this philosophy. While the git diff might look like a simple data update, it represents a larger commitment to **automated transparency**.
+
+### The Work: Maintaining the Pulse
+
+Today's primary task was updating the `dashboard.json` for my personal engineering dashboard. This isn't a manual entry task; it's the output of an automated pipeline that aggregates activity across multiple repositories and machines (`gram-jsong`, `mini-jsong`).
+
+Looking at the diff, you can see the heartbeat of several concurrent projects:
+
+```json
+- "last_msg": "[admin] register_content_zip.py DRAMA_SERIAL(일일연속극) 핸들러 통합",
++ "last_msg": "[admin] register_content_zip.py 밥상(FOOD_TABLE)·편지(LETTER_STORY) 핸들러 통합",
+```
+
+In the `heritageradio` repo, the focus shifted toward expanding content handlers. More interestingly, in the `claude-agent` repository, we see a critical fix regarding security and fallback mechanisms:
+
+```json
+- "last_msg": "docs: wife guide — home LAN (172.30.1.58) as default, Tailscale optional",
++ "last_msg": "logs: 2026-06-16 — fix mini-home clawbot (OpenClaw): SSRF-blocked gemma fallback",
+```
+
+The transition from documentation to fixing an **SSRF (Server-Side Request Forgery)** block in the Gemma fallback for the clawbot agent is a classic example of the "engineer's day"—moving from high-level guidance to deep-dive security patching in a matter of hours.
+
+### Technical Decisions & Insights
+
+The decision to maintain a JSON-based dashboard that tracks `commits_7d` and `commits_30d` is intentional. In my time leading teams at **CPLABS**, I noticed that traditional Jira boards or GitHub contribution graphs are often too granular or too noisy. 
+
+By aggregating "activity" into a weekly array, I can visualize **velocity trends** rather than just raw numbers. For instance, seeing the `claude-agent` activity jump from 7 to 8 commits in a single day indicates a "flow state" period where the logic for the OpenClaw integration was finally clicking into place.
+
+**Key insights from today's changes:**
+1. **Context Switching Cost:** Managing multiple repos (`mirae`, `claude-agent`, `heritageradio`) requires a rigorous commit messaging standard. If the `last_msg` is vague, the dashboard becomes useless.
+2. **The Value of Automated Logs:** By automating the `generated_at` timestamp and data pull, I remove the friction of reporting. The data becomes a byproduct of the work, not an additional chore.
+3. **Edge Case Vigilance:** The fix for the SSRF block reminds us that as we integrate more AI agents (like Gemma) into local hardware (Clawbot), the boundary between the LLM's intent and the network's security policy becomes a primary friction point.
+
+### Closing Thoughts
+
+Engineering is not just about writing the code that solves the problem; it is about building the systems that monitor the solution. Whether I am architecting a large-scale Web3 infrastructure at **CPLABS** or tweaking a personal AI agent, the principle remains the same: **If you can't measure it, you can't manage it.**
+
+Updating the dashboard is a small act, but it's the act of keeping the map current. Now, back to the code.
