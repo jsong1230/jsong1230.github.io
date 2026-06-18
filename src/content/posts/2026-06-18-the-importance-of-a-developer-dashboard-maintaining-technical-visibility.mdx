@@ -1,0 +1,51 @@
+---
+title: "The Importance of a Developer Dashboard: Maintaining Technical Visibility"
+date: "2026-06-18"
+lang: en
+excerpt: "Maintaining Visibility: The Importance of a Developer Dashboard  As a CTO and engineer with over two decades of experience, I’ve learned that the most..."
+---
+
+# Maintaining Visibility: The Importance of a Developer Dashboard
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical leader is "blindness"—not knowing exactly where the momentum of the development team (or your own personal projects) stands at any given moment. 
+
+Today’s work was a relatively simple "chore" in terms of git commits, but it represents a critical habit I maintain: **updating my personal development dashboard.**
+
+### The Work: Synchronizing the Pulse
+
+The primary task today was updating `dashboard.json` in my personal portfolio site. While it looks like a simple data update in the diff, this JSON file serves as the backend for a visualization tool that tracks my activity across various repositories.
+
+Looking at the diff, you can see the integration of a new project:
+```json
++        {
++          "name": "cplabs_homepage",
++          "last_date": "2026-06-17",
++          "last_msg": "fix(header): 언어 전환 시 현재 경로 유지 (KO→EN이 메인으로 점",
++          "branch": "master",
++          "activity": [0, 0, 0, 11, 36, 59, 0],
++          "commits_7d": 106,
++          "commits_30d": 106
++        },
+```
+
+I’ve added the `cplabs_homepage` repository to the tracking list. With 106 commits in the last 7 days, it’s clear where the current intensity of my focus has been. This isn't just about "counting commits"—it's about mapping the allocation of cognitive resources.
+
+### Technical Decisions: Why a Static JSON Dashboard?
+
+Some might ask why I don't just use the GitHub API to fetch this data in real-time on the frontend. In my experience, there are three reasons why I prefer this "pre-generated" approach:
+
+1.  **Performance (Lighthouse Scores):** Fetching data from multiple external APIs on the client side introduces latency and potential "layout shift." By using a generated JSON file, the dashboard loads instantly.
+2.  **Rate Limiting:** When tracking dozens of repositories across different organizations, hitting the GitHub API on every page load is inefficient and risks hitting rate limits.
+3.  **Data Snapshotting:** API calls give you the *now*, but a version-controlled JSON file gives you a *history*. I can look back at my git history for `dashboard.json` and see how my focus shifted from Web3 and DID projects to AI agents over the last six months.
+
+### Insights: The "Velocity" Mindset
+
+The most interesting part of today's update is the `activity` array. For the `cplabs_homepage` project, the activity spike `[0, 0, 0, 11, 36, 59, 0]` tells a story of a "sprint." 
+
+In the world of blockchain and AI, where the pace of change is exponential, the ability to enter a "deep work" state and push a high volume of quality code in a short window is a superpower. However, as a CTO, I also monitor these spikes to ensure they are sustainable. A spike of 59 commits in a single day is a sign of high productivity, but it must be followed by a period of stabilization and review to avoid technical debt.
+
+### Final Thoughts
+
+Whether you are managing a large team at **CPLABS** or working on a solo project, visibility is key. Tracking your "commits per 7 days" or "30 days" isn't about vanity metrics; it's about understanding your own velocity. 
+
+When you can visualize your work, you can optimize your life. Today was a simple data update, but it ensures that my map of the technical landscape remains accurate.
