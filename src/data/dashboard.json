@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-06-18T23:00:01.094Z",
+  "generated_at": "2026-06-19T23:00:01.680Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "cplabs_homepage",
+          "name": "metadium_homepage",
           "last_date": "2026-06-19",
-          "last_msg": "WEB2X 제목의 # 액센트 제거 (국/영문, 전 페이지 통일)",
+          "last_msg": "metadium 변환 5단계: cplabs 잔재 정리",
           "branch": "master",
           "activity": [
             0,
             0,
-            11,
-            36,
-            52,
-            41,
-            1
+            0,
+            0,
+            0,
+            8,
+            0
           ],
-          "commits_7d": 141,
-          "commits_30d": 141
+          "commits_7d": 8,
+          "commits_30d": 8
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-18",
+          "last_date": "2026-06-19",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -39,38 +39,55 @@
           "commits_30d": 71
         },
         {
+          "name": "claude-agent",
+          "last_date": "2026-06-19",
+          "last_msg": "logs: 2026-06-17 — Jira project cleanup analysis (44 active / 136 stale), back",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            7,
+            8,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 17
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-06-19",
+          "last_msg": "SEO: og:url·canonical 페이지별 세분화 (buildMetadata 헬퍼 도입)",
+          "branch": "master",
+          "activity": [
+            0,
+            11,
+            36,
+            52,
+            41,
+            2,
+            0
+          ],
+          "commits_7d": 142,
+          "commits_30d": 142
+        },
+        {
           "name": "heritageradio",
           "last_date": "2026-06-17",
           "last_msg": "[admin] NEWS_ERA --eras+cross-day 보강 / zip 등록 HEALTH_365·극장 03-05",
           "branch": "dev",
           "activity": [
             0,
-            0,
             3,
             1,
             3,
             0,
+            0,
             0
           ],
           "commits_7d": 7,
-          "commits_30d": 40
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-06-16",
-          "last_msg": "logs: 2026-06-16 — fix mini-home clawbot (OpenClaw): SSRF-blocked gemma fallba",
-          "branch": "gram-jsong",
-          "activity": [
-            0,
-            0,
-            7,
-            8,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 15,
-          "commits_30d": 16
+          "commits_30d": 35
         },
         {
           "name": "company-page",
@@ -155,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 11
         },
         {
           "name": "cp-check-attendance",
@@ -189,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 23
+          "commits_30d": 9
         },
         {
           "name": "daepa-open-chat",
@@ -223,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 0
         },
         {
           "name": "srt_reverve",
@@ -576,15 +593,15 @@
           "last_msg": "chore: asset_report.py gitignore (개인 자산 금액 하드코딩 PII)",
           "branch": "main",
           "activity": [
-            2,
             1,
             1,
             1,
             11,
             2,
-            1
+            1,
+            0
           ],
-          "commits_7d": 19,
+          "commits_7d": 17,
           "commits_30d": 40
         },
         {
@@ -593,16 +610,16 @@
           "last_msg": "docs: record #30125 fetcher-ordering backport as landed",
           "branch": "secfix/mainnet-phase2",
           "activity": [
-            2,
             0,
             0,
             0,
             5,
             15,
+            0,
             0
           ],
-          "commits_7d": 22,
-          "commits_30d": 39
+          "commits_7d": 20,
+          "commits_30d": 36
         },
         {
           "name": "meta-agents",
@@ -612,8 +629,8 @@
           "activity": [
             0,
             0,
-            0,
             3,
+            0,
             0,
             0,
             0
@@ -653,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 17
+          "commits_30d": 14
         },
         {
           "name": "20241106",
