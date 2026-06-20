@@ -1,0 +1,41 @@
+---
+title: "Refactoring the Digital Footprint: From Legacy to New Identity"
+date: "2026-06-20"
+lang: en
+excerpt: "Refactoring the Digital Footprint: From Legacy to New Identity  As a CTO and engineer, I’ve spent over two decades navigating the evolution of systems..."
+---
+
+# Refactoring the Digital Footprint: From Legacy to New Identity
+
+As a CTO and engineer, I’ve spent over two decades navigating the evolution of systems. One of the most overlooked but critical aspects of maintaining a healthy codebase is the "cleanup phase"—the process of removing the remnants of a previous identity or architecture to make room for the new.
+
+Today’s updates to my personal dashboard reflect more than just a data refresh; they capture a pivotal transition in my current project landscape.
+
+### The Core Task: Cleaning the "Residuals"
+
+Looking at today's commits in `jsong1230.github.io`, the most telling change is found in the `dashboard.json` update. While it looks like a simple JSON modification, the commit messages it tracks reveal a deeper architectural shift.
+
+Specifically, the update to the `metadium_homepage` repository carries a significant message:
+`"last_msg": "metadium 변환 5단계: cplabs 잔재 정리"` (Metadium Conversion Step 5: Cleaning up CPLABS residuals).
+
+In any large-scale migration—whether it's moving from a monolithic architecture to microservices or rebranding a core product—there is always a "long tail" of legacy references. These are the hardcoded strings, old variable names, and outdated documentation that linger in the corners of the repository. If left unchecked, these "residuals" create cognitive load for developers and can lead to confusion during debugging.
+
+### Technical Decisions & Insights
+
+The decision to execute this as a phased conversion (currently at Step 5) is a deliberate one. In my experience at **CPLABS**, I've learned that attempting a "big bang" migration—replacing everything in one massive PR—is a recipe for regression. 
+
+By breaking the transition into stages, we ensure that:
+1. **Stability is maintained:** We can verify that the application still functions correctly after each batch of replacements.
+2. **Auditability is improved:** It is much easier to track exactly when a specific legacy reference was removed.
+3. **Focus is sharpened:** We move from high-level structural changes to the granular "cleanup" of strings and metadata.
+
+Additionally, I spent time today refining the SEO strategy for the **CPLABS** homepage. The commit `SEO: og:url·canonical 페이지별 세분화 (buildMetadata 헬퍼 도입)` highlights a shift toward a more programmatic approach to metadata. Instead of manually managing Open Graph tags, introducing a `buildMetadata` helper allows for dynamic, page-specific canonical URLs, which is essential for maintaining search engine rankings during a transition.
+
+### Reflections on the "Developer Dashboard"
+
+I maintain a personal dashboard that tracks my activity across various repositories (`claude-agent`, `heritageradio`, etc.). Seeing the commit spikes—such as the 142 commits in the last 7 days for the **CPLABS** project—serves as a quantitative reminder of the intensity of the current sprint.
+
+However, the real insight isn't in the *number* of commits, but in the *nature* of them. Moving from feature development to "residual cleanup" is often the least glamorous part of the job, but for a CTO, it is the most satisfying. It represents the transition from "building" to "polishing," ensuring that the technical debt is paid off before the next chapter begins.
+
+**Key Takeaway for Today:**
+Technical debt isn't just about bad code; it's also about outdated identities. Whether it's a variable name or a company reference, cleaning up the "residuals" is what separates a professional production system from a prototype.
