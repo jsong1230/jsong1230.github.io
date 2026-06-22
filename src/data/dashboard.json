@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-06-21T23:00:01.446Z",
+  "generated_at": "2026-06-22T23:00:01.928Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-21",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 73
-        },
-        {
           "name": "heritageradio",
-          "last_date": "2026-06-20",
-          "last_msg": "[landing→main] 7월 계획 doc 정정 — 110 DB 실측 대조 (6/20)",
+          "last_date": "2026-06-22",
+          "last_msg": "[main] briefing: deploy 루트 .md sync gap — (a) 적용 완료 기록 (76568b",
           "branch": "dev",
           "activity": [
-            1,
             3,
             0,
             0,
             7,
             0,
+            7,
             0
           ],
-          "commits_7d": 14,
-          "commits_30d": 41
+          "commits_7d": 18,
+          "commits_30d": 48
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-22",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 72
         },
         {
           "name": "metadium_homepage",
@@ -46,8 +46,8 @@
           "activity": [
             0,
             0,
-            0,
             8,
+            0,
             0,
             0,
             0
@@ -61,15 +61,15 @@
           "last_msg": "logs: 2026-06-17 — Jira project cleanup analysis (44 active / 136 stale), back",
           "branch": "gram-jsong",
           "activity": [
-            8,
             0,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 16,
+          "commits_7d": 9,
           "commits_30d": 17
         },
         {
@@ -78,15 +78,15 @@
           "last_msg": "SEO: og:url·canonical 페이지별 세분화 (buildMetadata 헬퍼 도입)",
           "branch": "master",
           "activity": [
-            36,
             52,
             41,
             2,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 142,
+          "commits_7d": 131,
           "commits_30d": 142
         },
         {
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 8
         },
         {
           "name": "cp-check-attendance",
@@ -589,20 +589,20 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-06-18",
-          "last_msg": "chore: asset_report.py gitignore (개인 자산 금액 하드코딩 PII)",
+          "last_date": "2026-06-22",
+          "last_msg": "feat: MU 마이크론 실적 발표 리마인더 (mu_alert.sh)",
           "branch": "main",
           "activity": [
-            1,
             11,
             2,
             1,
             0,
             0,
-            0
+            0,
+            3
           ],
-          "commits_7d": 15,
-          "commits_30d": 40
+          "commits_7d": 17,
+          "commits_30d": 43
         },
         {
           "name": "go-metadium",
@@ -610,9 +610,9 @@
           "last_msg": "docs: record #30125 fetcher-ordering backport as landed",
           "branch": "secfix/mainnet-phase2",
           "activity": [
-            0,
             5,
             15,
+            0,
             0,
             0,
             0,
@@ -627,7 +627,7 @@
           "last_msg": "docs(standard): finalize team email with PDF attachments and GitHub links",
           "branch": "main",
           "activity": [
-            3,
+            0,
             0,
             0,
             0,
@@ -635,7 +635,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
