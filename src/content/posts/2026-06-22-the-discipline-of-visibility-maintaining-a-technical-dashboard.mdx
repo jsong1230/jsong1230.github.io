@@ -1,0 +1,45 @@
+---
+title: "The Discipline of Visibility: Maintaining a Technical Dashboard"
+date: "2026-06-22"
+lang: en
+excerpt: "The Discipline of Visibility: Maintaining a Technical Dashboard  As a CTO and engineer with over two decades in the trenches—spanning the evolution of..."
+---
+
+# The Discipline of Visibility: Maintaining a Technical Dashboard
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of blockchain, Web3, and AI—I’ve learned that the most critical part of any system isn't just the logic it executes, but the visibility into its health and progress. 
+
+Today’s work was a modest but meaningful exercise in this philosophy. I spent time updating the data for my personal development dashboard (`jsong1230.github.io`). While a `chore: Update dashboard data` commit might seem trivial to an outsider, for an engineer, it represents the ritual of tracking velocity and maintaining a "single source of truth" for productivity.
+
+### The Technical Context: Data-Driven Reflection
+
+The core of today's change was updating `src/data/dashboard.json`. This file acts as a lightweight database for my personal activity tracker, capturing commit frequencies, branch statuses, and recent messages across various repositories.
+
+Looking at the diff, we see the transition of the `generated_at` timestamp:
+```json
+-  "generated_at": "2026-06-20T23:00:02.045Z",
++  "generated_at": "2026-06-21T23:00:01.446Z",
+```
+
+While the change is a simple JSON update, the insights derived from the `activity` arrays are where the value lies. By tracking the last 7 days of commit activity (e.g., `[2, 2, 2, 2, 3, 3, 0]`), I can visualize my "coding rhythm." In a high-pressure environment like CPLABS, where we balance cutting-edge DID (Decentralized Identity) implementations with AI integration, maintaining a steady cadence is far more sustainable than the "hero culture" of sporadic 20-hour sprints.
+
+### Engineering Decisions: Why Static JSON?
+
+One might ask: *"Why manually update a JSON file instead of building a full-blown API integration with the GitHub GraphQL API?"*
+
+The answer lies in the trade-off between **complexity and utility**. As an experienced engineer, I avoid "over-engineering" for the sake of the tech stack. A static JSON file hosted on GitHub Pages provides:
+1. **Zero Latency:** No API calls at runtime.
+2. **Version Control:** I can see exactly how my productivity evolved over months by browsing the git history.
+3. **Simplicity:** It removes the need for secrets management (API keys) on the frontend.
+
+### Insights from the Diff
+
+A notable part of today's update was the shift in repository priorities. The `jsong1230.github.io` repo saw an increase in 30-day commits (from 72 to 73), with the latest message being `"Auto-generate weekly recap"`. 
+
+This highlights a recurring theme in my career: **Automation of the mundane.** By automating the recap process, I free up cognitive load to focus on higher-level architectural decisions—the kind of work that requires deep focus and an understanding of how Web3 primitives can be leveraged to solve real-world identity problems.
+
+### Closing Thoughts
+
+Whether I am leading a team at CPLABS or refining my personal tools, I believe that *what gets measured gets managed*. Updating a dashboard isn't just about the numbers; it's about the discipline of reflection. It forces me to look at my output, identify where I've been stagnant, and recognize where I've gained momentum.
+
+In the world of AI and blockchain, where things move at breakneck speed, taking a moment to synchronize your data and reflect on your trajectory is not a chore—it's a strategic necessity.
