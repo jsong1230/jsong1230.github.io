@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-06-22T23:00:01.928Z",
+  "generated_at": "2026-06-23T23:00:01.813Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-06-22",
-          "last_msg": "[main] briefing: deploy 루트 .md sync gap — (a) 적용 완료 기록 (76568b",
+          "last_date": "2026-06-23",
+          "last_msg": "[admin+main] CHANGELOG: episode-registry flat 전파 history + confirmed_at tz f",
           "branch": "dev",
           "activity": [
-            3,
             0,
             0,
             7,
             0,
             7,
+            4,
             0
           ],
-          "commits_7d": 18,
-          "commits_30d": 48
+          "commits_7d": 21,
+          "commits_30d": 51
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-22",
+          "last_date": "2026-06-23",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 72
+          "commits_30d": 71
         },
         {
           "name": "metadium_homepage",
@@ -45,8 +45,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             8,
+            0,
             0,
             0,
             0,
@@ -62,14 +62,14 @@
           "branch": "gram-jsong",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 1,
           "commits_30d": 17
         },
         {
@@ -78,15 +78,15 @@
           "last_msg": "SEO: og:url·canonical 페이지별 세분화 (buildMetadata 헬퍼 도입)",
           "branch": "master",
           "activity": [
-            52,
             41,
             2,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 131,
+          "commits_7d": 95,
           "commits_30d": 142
         },
         {
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 8
+          "commits_30d": 7
         },
         {
           "name": "cp-check-attendance",
@@ -588,21 +588,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-06-23",
+          "last_msg": "chore: gitignore .claude/ (런타임 lock 등 로컬 도구 산출물)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 2,
+          "commits_30d": 10
+        },
+        {
           "name": "mirae",
           "last_date": "2026-06-22",
-          "last_msg": "feat: MU 마이크론 실적 발표 리마인더 (mu_alert.sh)",
+          "last_msg": "feat: SK하이닉스 ADR 승인 감시 알림 (adr_alert.sh)",
           "branch": "main",
           "activity": [
-            11,
             2,
             1,
             0,
             0,
             0,
-            3
+            4,
+            0
           ],
-          "commits_7d": 17,
-          "commits_30d": 43
+          "commits_7d": 7,
+          "commits_30d": 44
         },
         {
           "name": "go-metadium",
@@ -610,15 +627,15 @@
           "last_msg": "docs: record #30125 fetcher-ordering backport as landed",
           "branch": "secfix/mainnet-phase2",
           "activity": [
-            5,
             15,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 20,
+          "commits_7d": 16,
           "commits_30d": 36
         },
         {
@@ -637,23 +654,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 3
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-06-10",
-          "last_msg": "refactor: frontend-ws 로컬 수정을 patch 방식으로 전환 (공식 repo �",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 8
         },
         {
           "name": "go-metadium",
