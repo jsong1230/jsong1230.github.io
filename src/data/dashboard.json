@@ -1,9 +1,26 @@
 {
-  "generated_at": "2026-06-23T23:00:01.813Z",
+  "generated_at": "2026-06-24T23:00:01.630Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-24",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-06-23",
@@ -11,32 +28,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             7,
             0,
             7,
             4,
+            0,
             0
           ],
-          "commits_7d": 21,
-          "commits_30d": 51
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-23",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 71
+          "commits_7d": 18,
+          "commits_30d": 50
         },
         {
           "name": "metadium_homepage",
@@ -44,8 +44,8 @@
           "last_msg": "metadium 변환 5단계: cplabs 잔재 정리",
           "branch": "master",
           "activity": [
-            0,
             8,
+            0,
             0,
             0,
             0,
@@ -61,8 +61,8 @@
           "last_msg": "logs: 2026-06-17 — Jira project cleanup analysis (44 active / 136 stale), back",
           "branch": "gram-jsong",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -78,15 +78,15 @@
           "last_msg": "SEO: og:url·canonical 페이지별 세분화 (buildMetadata 헬퍼 도입)",
           "branch": "master",
           "activity": [
-            41,
             2,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 95,
+          "commits_7d": 43,
           "commits_30d": 142
         },
         {
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 6
         },
         {
           "name": "cp-check-attendance",
@@ -588,6 +588,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "meta-agents",
+          "last_date": "2026-06-24",
+          "last_msg": "docs(standard): normalize time representation to RFC 3339 (section 5.3.1)",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          "commits_7d": 8,
+          "commits_30d": 11
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-06-24",
+          "last_msg": "fix: adr_alert 필터 보정 — 구체 사건(상장일·유상증자·공모�",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            4,
+            0,
+            1
+          ],
+          "commits_7d": 6,
+          "commits_30d": 45
+        },
+        {
           "name": "metadium-explorer-stack",
           "last_date": "2026-06-23",
           "last_msg": "chore: gitignore .claude/ (런타임 lock 등 로컬 도구 산출물)",
@@ -598,51 +632,17 @@
             0,
             0,
             0,
-            0,
-            2
+            2,
+            0
           ],
           "commits_7d": 2,
           "commits_30d": 10
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-06-22",
-          "last_msg": "feat: SK하이닉스 ADR 승인 감시 알림 (adr_alert.sh)",
-          "branch": "main",
-          "activity": [
-            2,
-            1,
-            0,
-            0,
-            0,
-            4,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 44
         },
         {
           "name": "go-metadium",
           "last_date": "2026-06-17",
           "last_msg": "docs: record #30125 fetcher-ordering backport as landed",
           "branch": "secfix/mainnet-phase2",
-          "activity": [
-            15,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 36
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-06-15",
-          "last_msg": "docs(standard): finalize team email with PDF attachments and GitHub links",
-          "branch": "main",
           "activity": [
             0,
             0,
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 36
         },
         {
           "name": "go-metadium",
