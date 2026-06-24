@@ -1,0 +1,51 @@
+---
+title: "The Discipline of Visibility: Why I Track My Own Development Velocity"
+date: "2026-06-24"
+lang: en
+excerpt: "The Discipline of Visibility: Why I Track My Own Development Velocity  As a CTO and engineer with over two decades in the trenches, I’ve learned that ..."
+---
+
+# The Discipline of Visibility: Why I Track My Own Development Velocity
+
+As a CTO and engineer with over two decades in the trenches, I’ve learned that the most dangerous state for a technical leader is "invisible progress." Whether you are managing a large team at **CPLABS** or working on personal open-source projects, the ability to quantify activity—not just for management, but for self-reflection—is critical.
+
+Today’s update to my personal dashboard may look like a simple data chore on the surface, but it represents a larger philosophy regarding engineering discipline and the "feedback loop" of development.
+
+### The Technical Grain: Automating the Pulse
+
+Today's commit was a straightforward update to `dashboard.json`. While the diff shows a series of additions and deletions in a JSON file, the underlying mechanism is an automated pipeline that aggregates git activity across multiple repositories.
+
+```json
+-  "generated_at": "2026-06-22T23:00:01.928Z",
++  "generated_at": "2026-06-23T23:00:01.813Z",
+```
+
+At first glance, updating a timestamp and a few commit counts (`commits_7d`, `commits_30d`) seems trivial. However, from an architectural perspective, this is about **observability**. By transforming raw git logs into a structured JSON format, I can visualize my velocity across disparate domains—from the `heritageradio` project to the `metadium_homepage`.
+
+### Insights from the Diff: Context Switching and Focus
+
+Looking at the updated activity arrays, I noticed a significant shift in where my energy is flowing. For instance, in the `heritageradio` repo, we see a jump in recent activity:
+
+```json
+"last_msg": "[admin+main] CHANGELOG: episode-registry flat 전파 history + confirmed_at tz f",
+"commits_7d": 21,
+"commits_30d": 51
+```
+
+This reflects a transition from "briefing" and "syncing" (seen in the previous commit) to actual structural implementation—specifically flattening the episode registry and handling timezone offsets (`tz f`). 
+
+As an engineer, I find it fascinating to see my "cognitive load" mirrored in the data. When the `commits_7d` count spikes in one repo while dropping in another, it’s a quantitative signal of a "Deep Work" phase. It tells me that I have successfully minimized context switching to solve a specific architectural problem.
+
+### The CTO's Perspective: Metrics vs. Meaning
+
+There is often a debate in the industry about whether "lines of code" or "commit counts" are valid metrics. My answer is always: **they are meaningless in isolation, but invaluable as a trend.**
+
+In my years leading engineering teams, I've seen developers burn out because they felt they weren't making progress despite working 12-hour days. By maintaining a dashboard like this, I create a "proof of work" for myself. It converts the abstract feeling of "being busy" into a concrete map of "what was actually moved forward."
+
+Whether it's cleaning up legacy remnants from the **CPLABS** era in the `metadium_homepage` or refining SEO metadata in other projects, seeing the `last_msg` history allows me to perform a retrospective on my own productivity.
+
+### Final Thoughts
+
+Engineering is as much about psychology as it is about syntax. The act of updating this dashboard is my daily ritual of accountability. It reminds me that consistency is the only way to master complex systems—be it a blockchain protocol, a DID framework, or a simple personal website.
+
+Stay disciplined, keep your progress visible, and always keep coding.
