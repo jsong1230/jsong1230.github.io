@@ -1,0 +1,51 @@
+---
+title: "The Art of Visibility: Maintaining a Technical Dashboard"
+date: "2026-06-26"
+lang: en
+excerpt: "The Art of Visibility: Maintaining a Technical Dashboard  As a CTO and engineer with over two decades in the trenches—spanning the evolution of blockc..."
+---
+
+# The Art of Visibility: Maintaining a Technical Dashboard
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of blockchain, Web3, and AI—I’ve learned that the most critical part of any system isn't just the code that runs, but the **observability** of the work being done. 
+
+Today's update to my personal dashboard might seem like a simple "chore" commit at first glance, but it represents a fundamental practice I've championed throughout my career at **CPLABS** and beyond: the automation of transparency.
+
+### The Problem: The "Black Box" of Development
+In high-velocity environments, it is incredibly easy for a developer or a lead to fall into a "black box" state. You are pushing code, solving complex bugs, and architecting systems, but the high-level trajectory of your productivity becomes invisible. When you manage multiple repositories—ranging from infrastructure tools to frontend portfolios—tracking where your cognitive energy is actually going becomes a manual burden.
+
+I don't believe in manual status reports. I believe in data-driven visibility.
+
+### The Technical Decision: Data-Driven Activity Tracking
+The change today involves updating `src/data/dashboard.json`. This file serves as the state layer for my personal development dashboard. Instead of manually logging hours, I use a pipeline that aggregates git metadata to visualize activity.
+
+Looking at the diff, we can see the shift in focus:
+
+```json
++ {
++   "name": "heritageradio",
++   "last_date": "2026-06-25",
++   "last_msg": "[admin] register_content_zip: DRAMA_THEATER 시리즈번호 일반화 + 11~13주",
++   "branch": "dev",
++   "activity": [7, 0, 7, 4, 0, 1, 0],
++   "commits_7d": 19,
++   "commits_30d": 37
++ },
+```
+
+The decision to track `activity` as an array of integers over a 7-day window allows for a quick sparkline visualization. It transforms a static commit count into a **trend**. For instance, the `heritageradio` project shows a spike in activity, reflecting a concentrated push on generalizing series numbers for content registration—a classic example of moving from a hard-coded solution to a scalable architectural pattern.
+
+### Insights from the Code
+One interesting detail in the update is the cleanup of the `metadium_homepage` and other legacy repos. You'll notice the `commits_7d` dropping to `0` or `1` across several projects. 
+
+In a professional setting, especially during my time at **CPLABS**, we often faced the "maintenance trap"—the tendency to keep polishing a project that has already reached its objective. By visualizing the decay of activity in these repos, I can consciously decide when to archive a project or pivot my focus. It prevents "context switching fatigue" by providing a clear signal of where the current momentum lies.
+
+### Final Thoughts
+Whether you are building a DID (Decentralized Identifier) system or a simple personal blog, the principle remains the same: **If you cannot measure it, you cannot manage it.**
+
+Updating a JSON file might feel like a minor task, but maintaining a real-time reflection of your technical output is what allows an engineer to move from being a "coder" to being a "strategist." It allows me to look at my week and ask, *"Is my time allocation aligned with my current goals?"*
+
+Stay hungry, stay technical.
+
+**Jeffrey Joo-Han Song**
+CTO & Engineer
