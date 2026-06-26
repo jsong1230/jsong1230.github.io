@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-06-25T23:00:01.487Z",
+  "generated_at": "2026-06-26T23:00:01.561Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-06-25",
-          "last_msg": "[admin] register_content_zip: DRAMA_THEATER 시리즈번호 일반화 + 11~13주",
+          "last_date": "2026-06-27",
+          "last_msg": "[admin+main] hourly verify date-race fix — 22~24시 advanced cycle 은 TOMORRO",
           "branch": "dev",
           "activity": [
-            7,
             0,
             7,
             4,
             0,
             1,
-            0
+            0,
+            2
           ],
-          "commits_7d": 19,
+          "commits_7d": 21,
           "commits_30d": 37
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-25",
+          "last_date": "2026-06-26",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -52,7 +52,7 @@
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 0,
           "commits_30d": 8
         },
         {
@@ -69,7 +69,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 17
         },
         {
@@ -86,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 142
         },
         {
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 6
         },
         {
           "name": "meta-faucet",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 4
         },
         {
           "name": "cp-check-attendance",
@@ -189,7 +189,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "persona-labs",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 8
+          "commits_30d": 0
         },
         {
           "name": "daepa-open-chat",
@@ -223,7 +223,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 15
+          "commits_30d": 0
         },
         {
           "name": "thepol-dev",
@@ -597,8 +597,8 @@
             0,
             0,
             0,
-            0,
             8,
+            0,
             0
           ],
           "commits_7d": 8,
@@ -612,10 +612,10 @@
           "activity": [
             0,
             0,
-            0,
             4,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 6,
@@ -630,8 +630,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
