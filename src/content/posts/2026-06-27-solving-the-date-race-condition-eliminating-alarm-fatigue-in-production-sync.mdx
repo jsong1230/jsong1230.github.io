@@ -1,0 +1,62 @@
+---
+title: "Solving the \"Date-Race\" Condition: Eliminating Alarm Fatigue in Production Sync"
+date: "2026-06-27"
+lang: en
+excerpt: "Solving the \"Date-Race\" Condition: Eliminating Alarm Fatigue in Production Sync  In a production environment, there is nothing more dangerous than \"al..."
+---
+
+# Solving the "Date-Race" Condition: Eliminating Alarm Fatigue in Production Sync
+
+In a production environment, there is nothing more dangerous than "alarm fatigue." When a monitoring system triggers false positives consistently, engineers start subconsciously ignoring the alerts. Eventually, a real critical failure occurs, but it is dismissed as "just another glitch."
+
+Today, I tackled a subtle but persistent issue in the `heritageradio` project at **CPLABS** that was causing exactly this kind of noise.
+
+## The Problem: The 22:00 Window "Date-Race"
+
+We have an hourly verification script (`verify_prod_sync_hourly.sh`) that ensures the content synced to S3 matches the expected schedule. However, we noticed a recurring failure every night between 22:00 and 24:00.
+
+The root cause was a logic mismatch during the transition to the next day. At 22:00, the `sync_tomorrow` process kicks in, advancing several "cycles" (content segments) to the next day's content to ensure a seamless transition at midnight. 
+
+The verification script, however, was strictly comparing everything against `TODAY`. When it encountered these "advanced" cycles—which were technically tomorrow's content—it flagged them as mismatches. This created a "date-race" condition where the system was working perfectly, but the monitor was reporting a failure because it wasn't "aware" of the advance.
+
+## Technical Decision: Split-Group Verification
+
+The fix required moving from a monolithic verification approach to a **split-group verification strategy**. 
+
+Instead of treating all cycles as belonging to `TODAY`, I implemented a logic that detects if the current hour is within the "advance window" (22:00–23:59). If it is, the script now separates the cycles into two groups:
+1. **Advanced Cycles**: Verified against `TOMORROW`'s date.
+2. **Tail Cycles**: The remaining content, verified against `TODAY`'s date.
+
+Here is the core logic change in the shell script:
+
+```bash
+# advanced cycle = sync_tomorrow 가 22:00 에 올린 cycle 집합 (tomorrow 요일 기준)
+TOMORROW_CYCLES=()
+TODAY_CYCLES=("${TODAY_FULL[@]}")
+if (( HOUR >= 22 )); then
+  if [[ "$TOMORROW_WD" = "6" || "$TOMORROW_WD" = "7" ]]; then
+    ADVANCED=(00)
+  else
+    ADVANCED=(00 01 02 03 04)
+  fi
+  TOMORROW_CYCLES=("${ADVANCED[@]}")
+  # TODAY_CYCLES = TODAY_FULL - ADVANCED
+  # ... logic to remove advanced cycles from today's list ...
+fi
+```
+
+I also introduced a `run_group` helper function to handle these separate checks cleanly, aggregating the results into a single `FAIL_ANY` flag. This ensures that we still get a single clear "OK" or "FAIL" for the overall health check, but the internal logic is now context-aware.
+
+## Beyond the Code: Forcing Full Uploads
+
+Additionally, I addressed a secondary issue regarding `mtime` (modification time) skipping. In some Docker-based sync environments, if the file timestamp doesn't change, the sync tool might skip the upload even if the content is logically different. 
+
+I implemented a "fundamental fix" by adding a `docker touch` command immediately before the sync. By forcing the modification time to update, we guarantee a full upload of the necessary cycles, removing any ambiguity about whether the production environment is truly up-to-date.
+
+## Engineering Insight
+
+This task reminded me that **monitoring must be as sophisticated as the system it monitors.** 
+
+If your deployment pipeline has "edge cases" (like a 22:00 advance window), your verification suite must explicitly model those edge cases. Simply checking for "equality" isn't enough; you must check for "equality within the current state of the pipeline."
+
+By eliminating this noise, we've restored the integrity of our alerting system. Now, when the alarm goes off, we know it's a real drift that requires immediate attention.
