@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T23:00:01.561Z",
+  "generated_at": "2026-06-27T23:00:01.817Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -10,33 +10,33 @@
           "last_msg": "[admin+main] hourly verify date-race fix — 22~24시 advanced cycle 은 TOMORRO",
           "branch": "dev",
           "activity": [
-            0,
             7,
             4,
             0,
             1,
             0,
-            2
+            2,
+            0
           ],
-          "commits_7d": 21,
+          "commits_7d": 14,
           "commits_30d": 37
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-26",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-06-27",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "metadium_homepage",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 3
         },
         {
           "name": "cp-check-attendance",
@@ -189,7 +189,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "persona-labs",
@@ -596,8 +596,8 @@
             0,
             0,
             0,
-            0,
             8,
+            0,
             0,
             0
           ],
@@ -611,10 +611,10 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             4,
             0,
             2,
+            0,
             0,
             0
           ],
@@ -629,8 +629,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
