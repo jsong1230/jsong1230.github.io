@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-06-27T23:00:01.817Z",
+  "generated_at": "2026-06-28T23:00:01.825Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
-          "last_date": "2026-06-27",
-          "last_msg": "[admin+main] hourly verify date-race fix — 22~24시 advanced cycle 은 TOMORRO",
-          "branch": "dev",
-          "activity": [
-            7,
-            4,
-            0,
-            1,
-            0,
-            2,
-            0
-          ],
-          "commits_7d": 14,
-          "commits_30d": 37
-        },
-        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-06-27",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-06-28",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 70
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-06-27",
+          "last_msg": "[admin+main] hourly verify date-race fix — 22~24시 advanced cycle 은 TOMORRO",
+          "branch": "dev",
+          "activity": [
+            4,
+            0,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "commits_7d": 14,
+          "commits_30d": 37
         },
         {
           "name": "metadium_homepage",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 2
         },
         {
           "name": "cp-check-attendance",
@@ -595,8 +595,8 @@
           "activity": [
             0,
             0,
-            0,
             8,
+            0,
             0,
             0,
             0
@@ -610,10 +610,10 @@
           "last_msg": "chore: trim_alert 예약가 재설정 (6/25 앱 예약매도 일치)",
           "branch": "main",
           "activity": [
-            0,
             4,
             0,
             2,
+            0,
             0,
             0,
             0
@@ -628,8 +628,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 36
+          "commits_30d": 35
         },
         {
           "name": "go-metadium",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 14
+          "commits_30d": 13
         },
         {
           "name": "20241106",
