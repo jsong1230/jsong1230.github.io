@@ -1,0 +1,50 @@
+---
+title: "The Discipline of Visibility: Automating the Engineering Dashboard"
+date: "2026-06-29"
+lang: en
+excerpt: "The Discipline of Visibility: Automating the Engineering Dashboard  As a CTO and engineer with over two decades in the trenches—spanning the evolution..."
+---
+
+# The Discipline of Visibility: Automating the Engineering Dashboard
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of early distributed systems to the current frontiers of Web3, DID, and AI—I’ve learned that the most dangerous state for a technical organization is "invisible progress."
+
+When you are managing multiple high-stakes projects, from blockchain infrastructure to AI-driven automation, it is easy to fall into the trap of "busy-ness" without clear traceability. This is why I maintain a personal engineering dashboard. Today’s update to my `dashboard.json` might look like a simple data chore, but it represents a deeper philosophy regarding technical accountability and the "Quantified Engineer" approach.
+
+### The Problem: The Fragmentation of Focus
+
+In a typical day, my context switches are frequent. I might move from reviewing a date-race fix in a legacy system to optimizing a DID identity schema, and then to refining an AI prompt for automated documentation. When your work is spread across dozens of repositories—some internal to CPLABS, some open-source—the mental overhead of tracking "where I left off" becomes a tax on productivity.
+
+The goal of this dashboard is to externalize that memory. By automating the aggregation of commit frequencies, last-modified dates, and commit messages, I transform raw git logs into a high-level heat map of my technical focus.
+
+### Technical Decisions: Data-Driven Recaps
+
+Looking at today's diff, the primary change is the update of the `dashboard.json` file:
+
+```json
+"name": "jsong1230.github.io",
+"last_date": "2026-06-28",
+"last_msg": "Auto-generate weekly recap",
+"branch": "main",
+"activity": [2, 2, 2, 2, 3, 3, 0],
+"commits_7d": 16,
+"commits_30d": 70
+```
+
+I’ve opted for a JSON-based static data structure rather than a live API call to GitHub for every page load. Why? **Latency and Rate Limiting.** 
+
+When building for the web, especially for a personal portfolio or a technical dashboard, reducing the number of external dependencies at runtime is key. By pre-generating this data (as seen in the `generated_at` timestamp), I ensure the dashboard is lightning-fast and resilient to API outages. This "build-time aggregation" pattern is something I frequently advocate for at CPLABS when designing high-performance read-heavy systems.
+
+### Insights from the Code
+
+One interesting detail in the diff is the shifting `activity` array. These integers represent a daily commit cadence. When I see a sequence like `[2, 2, 2, 2, 3, 3, 0]`, it tells a story: a consistent, rhythmic output during the work week, followed by a deliberate disconnect on the weekend.
+
+Engineering is a marathon, not a sprint. If that array showed `[15, 20, 18, 25, 30, 10, 5]`, it wouldn't be a sign of productivity; it would be a red flag for burnout. The data allows me to audit not just *what* I am building, but *how* I am working.
+
+### Final Thoughts
+
+Many developers view "chore" commits or dashboard updates as trivial. However, from a leadership perspective, the ability to visualize the distribution of effort across different domains—whether it's `heritageradio` or `cp-check-attendance`—is invaluable. It allows me to ask: *"Am I spending too much time on maintenance and not enough on innovation?"*
+
+Automation isn't just about writing code that works; it's about writing code that gives you the insights needed to make better technical decisions tomorrow.
+
+**Stay curious, stay disciplined.**
