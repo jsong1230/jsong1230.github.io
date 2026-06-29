@@ -1,47 +1,13 @@
 {
-  "generated_at": "2026-06-28T23:00:01.825Z",
+  "generated_at": "2026-06-29T23:00:01.949Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-28",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-06-27",
-          "last_msg": "[admin+main] hourly verify date-race fix — 22~24시 advanced cycle 은 TOMORRO",
-          "branch": "dev",
-          "activity": [
-            4,
-            0,
-            1,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 14,
-          "commits_30d": 37
-        },
-        {
           "name": "metadium_homepage",
-          "last_date": "2026-06-19",
-          "last_msg": "metadium 변환 5단계: cplabs 잔재 정리",
+          "last_date": "2026-06-29",
+          "last_msg": "배포 인프라(Docker/Caddy용) + SEO 추가 (챗봇 제외)",
           "branch": "master",
           "activity": [
             0,
@@ -49,11 +15,45 @@
             0,
             0,
             0,
+            23,
+            0
+          ],
+          "commits_7d": 39,
+          "commits_30d": 39
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-06-29",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-06-27",
+          "last_msg": "[admin+main] hourly verify date-race fix — 22~24시 advanced cycle 은 TOMORRO",
+          "branch": "dev",
+          "activity": [
+            0,
+            1,
+            0,
+            2,
+            0,
             0,
             0
           ],
-          "commits_7d": 0,
-          "commits_30d": 8
+          "commits_7d": 7,
+          "commits_30d": 36
         },
         {
           "name": "claude-agent",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "cp-check-attendance",
@@ -594,8 +594,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             8,
+            0,
             0,
             0,
             0,
@@ -610,15 +610,15 @@
           "last_msg": "chore: trim_alert 예약가 재설정 (6/25 앱 예약매도 일치)",
           "branch": "main",
           "activity": [
-            4,
             0,
             2,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 3,
           "commits_30d": 46
         },
         {
@@ -627,8 +627,8 @@
           "last_msg": "chore: gitignore .claude/ (런타임 lock 등 로컬 도구 산출물)",
           "branch": "master",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
