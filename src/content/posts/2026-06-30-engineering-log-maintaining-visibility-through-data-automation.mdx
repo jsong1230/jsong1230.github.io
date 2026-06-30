@@ -1,0 +1,52 @@
+---
+title: "Engineering Log: Maintaining Visibility through Data Automation"
+date: "2026-06-30"
+lang: en
+excerpt: "Engineering Log: Maintaining Visibility through Data Automation  As a CTO and engineer with over two decades of experience, I’ve learned that the most..."
+---
+
+# Engineering Log: Maintaining Visibility through Data Automation
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most overlooked part of a high-performing development pipeline isn't the code itself, but the **visibility** of the progress. In a fast-paced environment—whether leading teams at CPLABS or managing personal open-source projects—knowing exactly where the momentum is shifting across multiple repositories is crucial for strategic decision-making.
+
+Today's work was a focused exercise in updating my personal development dashboard. While it may look like a simple JSON update on the surface, it represents a larger philosophy of "Quantified Engineering."
+
+### The Technical Core: Data-Driven Progress
+
+The primary task today was updating `src/data/dashboard.json`. This file serves as the backend for my activity tracking, aggregating commit frequencies and last-activity timestamps across various projects.
+
+Looking at the diff, there is a significant update regarding the `metadium_homepage` repository:
+
+```json
++ {
++   "name": "metadium_homepage",
++   "last_date": "2026-06-29",
++   "last_msg": "배포 인프라(Docker/Caddy용) + SEO 추가 (챗봇 제외)",
++   "branch": "master",
++   "activity": [0, 0, 0, 0, 0, 23, 0],
++   "commits_7d": 39,
++   "commits_30d": 39
++ }
+```
+
+The spike in activity (23 commits in a single window) highlights a critical phase of the project: transitioning from raw development to production-ready infrastructure. The focus here was on Dockerization and Caddy configuration—essential steps for ensuring a stable, scalable deployment.
+
+### Technical Decisions & Insights
+
+When managing multiple repositories—ranging from blockchain-related projects to AI agents like `claude-agent`—I've made a conscious decision to automate the "Recap" process. 
+
+**1. The Shift from Weekly to Daily Granularity**
+In the diff, you'll notice a change in the `jsong1230.github.io` commit message:
+- *Old:* `"Auto-generate weekly recap"`
+- *New:* `"Auto-generate daily posts"`
+
+This shift reflects a move toward a tighter feedback loop. In the world of Web3 and AI, a week is an eternity. By moving to daily automated summaries, I can maintain a more precise audit trail of technical pivots and incremental wins.
+
+**2. Infrastructure over Features**
+The `metadium_homepage` update emphasizes SEO and deployment infrastructure. Many developers make the mistake of focusing solely on features. However, my experience at CPLABS taught me that a feature is only as good as its accessibility. Without a robust Caddy/Docker setup and a solid SEO foundation, the most sophisticated code remains invisible to the world.
+
+### Final Thoughts
+
+Updating a JSON file might seem like a "chore" (as labeled in the commit), but for a CTO, these metrics are a pulse check. Seeing the activity shift from `heritageradio` toward `metadium_homepage` tells me that my current priority is correctly aligned with the project's lifecycle: moving from the "build" phase to the "optimize and deploy" phase.
+
+Engineering is not just about writing lines of code; it is about managing the flow of value. By keeping a rigorous, data-backed dashboard of my work, I ensure that no project stagnates and that every technical decision is tracked and justified.
