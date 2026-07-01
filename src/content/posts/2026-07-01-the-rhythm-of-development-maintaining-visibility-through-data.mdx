@@ -1,0 +1,48 @@
+---
+title: "The Rhythm of Development: Maintaining Visibility Through Data"
+date: "2026-07-01"
+lang: en
+excerpt: "The Rhythm of Development: Maintaining Visibility Through Data  As a CTO and engineer with over two decades of experience, I’ve learned that the most ..."
+---
+
+# The Rhythm of Development: Maintaining Visibility Through Data
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical leader or a senior developer is "blindness"—not a lack of vision, but a lack of visibility into the actual velocity and distribution of work across multiple streams.
+
+When you are juggling various projects—ranging from Web3 infrastructure and DID implementations to AI agents and legacy system maintenance—it is easy to lose track of where the actual momentum is shifting. This is why I maintain a personal development dashboard. Today’s update to `dashboard.json` might look like a simple "chore" commit, but it represents a critical practice: **quantifying engineering activity.**
+
+### The Technical Context: Automated Visibility
+
+The changes today involve updating the `dashboard.json` file, which serves as the data source for my personal activity tracker. By analyzing the diff, you can see the shift in focus across several repositories:
+
+```json
+{
+  "name": "heritageradio",
+  "last_date": "2026-06-30",
+  "last_msg": "[admin] build_tomorrow: known-good skip 경로에도 player.html date-tabs 갱신",
+  "branch": "dev",
+  "commits_7d": 4,
+  "commits_30d": 37
+},
+```
+
+In the diff, we see the `heritageradio` project moving back into active development, while `metadium_homepage` continues to see steady iterations on responsive UI components. More interestingly, there is a shift in the `mini-jsong` machine data, where the focus has moved toward a project called `mirae`, specifically implementing volatility grid alerts for SOL TOP2 assets.
+
+### Engineering Insights: Why This Matters
+
+Many developers view "updating a JSON file" as trivial work. However, from a management and architectural perspective, this is about **Telemetry**.
+
+In my time at **CPLABS**, I always emphasized that you cannot optimize what you cannot measure. Whether it is the latency of a blockchain node or the commit frequency of a feature branch, data removes the emotion from the evaluation. 
+
+By tracking `commits_7d` and `commits_30d` alongside the `last_msg`, I can perform a quick "health check" on my projects:
+1. **Context Switching Cost:** If I see high activity across five different repos in seven days, I know my cognitive load is peaking, and it's time to consolidate tasks.
+2. **Project Decay:** When `commits_30d` drops to 0 (as seen in the `claude-agent` update in the diff), it’s a signal that the project has either reached a stable state or has been deprioritized.
+3. **Velocity Alignment:** Seeing the `mirae` project jump into activity with a specific feature (`grid_alert.sh`) allows me to align my mental model with the current technical priority.
+
+### Final Thoughts
+
+The transition from a coder to a CTO is the transition from focusing on the *line of code* to focusing on the *flow of work*. 
+
+Today's update is a reminder that maintaining a "map" of your development landscape is just as important as the development itself. Whether you are building the next generation of DID protocols or refining a simple dashboard, the discipline of tracking your progress is what separates a chaotic workflow from a professional engineering pipeline.
+
+Keep coding, keep measuring, and keep iterating.
