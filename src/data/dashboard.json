@@ -1,21 +1,55 @@
 {
-  "generated_at": "2026-06-30T23:00:01.057Z",
+  "generated_at": "2026-07-01T23:00:01.309Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-07-01",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-07-01",
+          "last_msg": "logs: 2026-06-23~07-01 — server inventory/cleanup (dobby bot, supabase, family",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 18
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-06-30",
           "last_msg": "[admin] build_tomorrow: known-good skip 경로에도 player.html date-tabs 갱�",
           "branch": "dev",
           "activity": [
-            1,
             0,
             2,
             0,
             0,
             1,
+            0,
             0
           ],
           "commits_7d": 4,
@@ -30,47 +64,13 @@
             0,
             0,
             0,
-            0,
             23,
             7,
+            0,
             0
           ],
           "commits_7d": 30,
           "commits_30d": 46
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-06-30",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-06-19",
-          "last_msg": "logs: 2026-06-17 — Jira project cleanup analysis (44 active / 136 stale), back",
-          "branch": "gram-jsong",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 17
         },
         {
           "name": "cplabs_homepage",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 4
         },
         {
           "name": "meta-faucet",
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "cpdax_admin",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 0
         },
         {
           "name": "trump-code",
@@ -588,38 +588,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "meta-agents",
+          "last_date": "2026-07-01",
+          "last_msg": "docs(standard): add STRIDE threat model rationale for section 7",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          "commits_7d": 5,
+          "commits_30d": 16
+        },
+        {
           "name": "mirae",
           "last_date": "2026-06-30",
           "last_msg": "feat: SOL TOP2 변동성 그리드 알림 (grid_alert.sh) + 백테스트",
           "branch": "main",
           "activity": [
-            2,
             0,
             0,
             0,
             0,
             0,
-            1
-          ],
-          "commits_7d": 3,
-          "commits_30d": 44
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-06-24",
-          "last_msg": "docs(standard): normalize time representation to RFC 3339 (section 5.3.1)",
-          "branch": "main",
-          "activity": [
-            8,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 11
+          "commits_7d": 2,
+          "commits_30d": 44
         },
         {
           "name": "metadium-explorer-stack",
@@ -636,7 +636,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 9
         },
         {
           "name": "go-metadium",
