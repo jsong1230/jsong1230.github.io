@@ -1,18 +1,35 @@
 {
-  "generated_at": "2026-07-01T23:00:01.309Z",
+  "generated_at": "2026-07-02T23:00:01.914Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "metadium_homepage",
+          "last_date": "2026-07-02",
+          "last_msg": "운영 EC2 헬스 모니터링 monitor.sh를 ops/로 버전관리",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            23,
+            7,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 31,
+          "commits_30d": 47
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-01",
+          "last_date": "2026-07-02",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -31,8 +48,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -44,33 +61,16 @@
           "last_msg": "[admin] build_tomorrow: known-good skip 경로에도 player.html date-tabs 갱�",
           "branch": "dev",
           "activity": [
-            0,
             2,
             0,
             0,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 3,
           "commits_30d": 37
-        },
-        {
-          "name": "metadium_homepage",
-          "last_date": "2026-06-30",
-          "last_msg": "모바일 hero 슬라이더 반응형 수정",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            23,
-            7,
-            0,
-            0
-          ],
-          "commits_7d": 30,
-          "commits_30d": 46
         },
         {
           "name": "cplabs_homepage",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 0
         },
         {
           "name": "meta-faucet",
@@ -589,8 +589,8 @@
       "repos": [
         {
           "name": "meta-agents",
-          "last_date": "2026-07-01",
-          "last_msg": "docs(standard): add STRIDE threat model rationale for section 7",
+          "last_date": "2026-07-02",
+          "last_msg": "docs: update patent references to registered number 10-2957866",
           "branch": "main",
           "activity": [
             0,
@@ -598,11 +598,11 @@
             0,
             0,
             0,
-            0,
-            5
+            5,
+            3
           ],
-          "commits_7d": 5,
-          "commits_30d": 16
+          "commits_7d": 8,
+          "commits_30d": 17
         },
         {
           "name": "mirae",
@@ -614,11 +614,11 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 44
         },
         {
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 35
+          "commits_30d": 34
         },
         {
           "name": "go-metadium",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 12
         },
         {
           "name": "20241106",
