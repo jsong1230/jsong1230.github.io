@@ -1,0 +1,46 @@
+---
+title: "The CTO's Balancing Act: Automation vs. Infrastructure Stability"
+date: "2026-07-04"
+lang: en
+excerpt: "Engineering Log: Balancing Automation and Infrastructure Stability  As a CTO, my day is rarely spent writing a single monolithic feature. Instead, it ..."
+---
+
+# Engineering Log: Balancing Automation and Infrastructure Stability
+
+As a CTO, my day is rarely spent writing a single monolithic feature. Instead, it is often a series of surgical interventions across multiple projects—balancing the high-level architectural vision with the gritty reality of infrastructure maintenance. Today was a prime example of this "context-switching" rhythm.
+
+Looking at today's updates to my personal dashboard data, you can see the footprints of three distinct workstreams: **AI infrastructure monitoring, operational reliability, and CI/CD synchronization.**
+
+### 1. AI Infrastructure: The "Canary" Approach
+One of the most critical updates today was in the `mirae` repository:
+`feat: AI 캐펙스 조기경보 canary_alert.sh (코어위브·오라클 감시)`
+
+When dealing with high-cost AI compute resources (like CoreWeave or Oracle Cloud), "silent failures" are the most expensive kind of bugs. If a GPU cluster hangs or a quota is hit without an immediate alert, you aren't just losing time—you're losing capital. 
+
+I implemented a **Canary Alert system**. Rather than relying solely on the cloud provider's generic health checks, I've introduced a custom script that monitors specific performance metrics and triggers immediate alerts. In the world of AI Ops, proactive "early warning" systems are the only way to maintain a lean Capex budget while ensuring high availability.
+
+### 2. Operational Reliability: Closing the Feedback Loop
+In the `metadium_homepage` project, I focused on the "last mile" of monitoring:
+`monitor.sh에 Telegram 알림 추가 (이상 감지 시 push)`
+
+A monitoring script that only logs to a file is a script that is ignored. Throughout my 20 years of engineering, I've learned that **visibility is as important as functionality**. By integrating Telegram push notifications into the EC2 health monitor, I've shifted the operational model from *pull* (checking logs) to *push* (being notified). This reduces the Mean Time to Recovery (MTTR) significantly.
+
+### 3. CI/CD and State Sync: The "Dev-Ahead" Dilemma
+Finally, in the `heritageradio` project, I tackled a common synchronization headache:
+`briefing: dev-ahead 판단 — backend 미배포 + api_keys sync exclude`
+
+One of the trickiest parts of managing a pipeline is the "dev-ahead" state—where the development branch has evolved beyond what is currently deployed in production. The technical decision here was to explicitly exclude `api_keys` from the synchronization process. 
+
+Mixing environment-specific secrets with version-controlled code is a cardinal sin of DevOps. By refining the sync logic to exclude these keys, we ensure that moving code between environments doesn't accidentally overwrite production secrets with development values.
+
+### Final Insights: The Art of the Dashboard
+Updating my `dashboard.json` isn't just about bookkeeping; it's about visualizing velocity. When I see the `commits_7d` and `commits_30d` metrics climb across different repos—from AI agents to CPLABS infrastructure—it confirms that the automation layer is working.
+
+The goal of a senior engineer or CTO isn't to write the most code, but to build the systems that make the code reliable, visible, and scalable. Today was about tightening those screws.
+
+***
+
+**Technical Stack Summary of the Day:**
+- **Infrastructure:** AWS EC2, CoreWeave, Oracle Cloud
+- **Ops:** Shell Scripting (Bash), Telegram Bot API
+- **Workflow:** Git, CI/CD Pipeline Optimization
