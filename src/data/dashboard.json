@@ -1,9 +1,26 @@
 {
-  "generated_at": "2026-07-03T23:00:01.667Z",
+  "generated_at": "2026-07-04T23:00:01.119Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-07-04",
+          "last_msg": "Auto-generate weekly book post",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-07-03",
@@ -11,15 +28,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
             0,
             0,
             3,
+            0,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 40
+          "commits_30d": 38
         },
         {
           "name": "metadium_homepage",
@@ -27,33 +44,16 @@
           "last_msg": "monitor.sh에 Telegram 알림 추가 (이상 감지 시 push)",
           "branch": "master",
           "activity": [
-            0,
             23,
             7,
             0,
             1,
             2,
+            0,
             0
           ],
           "commits_7d": 33,
           "commits_30d": 49
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-07-03",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            2,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
         },
         {
           "name": "claude-agent",
@@ -63,8 +63,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 44
+          "commits_30d": 34
         },
         {
           "name": "meta-info-api",
@@ -589,20 +589,20 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-07-03",
-          "last_msg": "feat: AI 캐펙스 조기경보 canary_alert.sh (코어위브·오라클 감시)",
+          "last_date": "2026-07-04",
+          "last_msg": "chore: canary_alert 05:15 KST로 앞당김 (美 마감 직후, 겨울철 되돌�",
           "branch": "main",
           "activity": [
-            0,
             0,
             0,
             1,
             0,
             0,
+            1,
             1
           ],
-          "commits_7d": 2,
-          "commits_30d": 44
+          "commits_7d": 3,
+          "commits_30d": 38
         },
         {
           "name": "meta-agents",
@@ -613,9 +613,9 @@
             0,
             0,
             0,
-            0,
             5,
             3,
+            0,
             0
           ],
           "commits_7d": 8,
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 34
+          "commits_30d": 24
         },
         {
           "name": "go-metadium",
@@ -670,7 +670,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 2
         },
         {
           "name": "20241106",
@@ -687,7 +687,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "MetaLotto",
