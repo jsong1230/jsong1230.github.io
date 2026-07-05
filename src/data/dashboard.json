@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-04T23:00:01.119Z",
+  "generated_at": "2026-07-05T23:00:01.868Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-04",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-07-05",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 70
         },
         {
           "name": "heritageradio",
@@ -27,11 +27,11 @@
           "last_msg": "[main] briefing: dev-ahead 판단 — backend 미배포 + api_keys sync exclude ",
           "branch": "dev",
           "activity": [
-            0,
             1,
             0,
             0,
             3,
+            0,
             0,
             0
           ],
@@ -44,11 +44,11 @@
           "last_msg": "monitor.sh에 Telegram 알림 추가 (이상 감지 시 push)",
           "branch": "master",
           "activity": [
-            23,
             7,
             0,
             1,
             2,
+            0,
             0,
             0
           ],
@@ -62,8 +62,8 @@
           "branch": "gram-jsong",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 34
+          "commits_30d": 14
         },
         {
           "name": "meta-info-api",
@@ -589,20 +589,20 @@
       "repos": [
         {
           "name": "mirae",
-          "last_date": "2026-07-04",
-          "last_msg": "chore: canary_alert 05:15 KST로 앞당김 (美 마감 직후, 겨울철 되돌�",
+          "last_date": "2026-07-05",
+          "last_msg": "feat: grid_alert 가드 재매수 건너뛰기(skip) — 버퍼 현금 유지 �",
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
             0,
             0,
             1,
+            3,
             1
           ],
-          "commits_7d": 3,
-          "commits_30d": 38
+          "commits_7d": 6,
+          "commits_30d": 40
         },
         {
           "name": "meta-agents",
@@ -612,9 +612,9 @@
           "activity": [
             0,
             0,
-            0,
             5,
             3,
+            0,
             0,
             0
           ],
