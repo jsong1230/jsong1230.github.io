@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-07-06T23:00:01.672Z",
+  "generated_at": "2026-07-07T23:00:01.707Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-06",
+          "last_date": "2026-07-07",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-07-07",
+          "last_msg": "logs: 2026-07-03~07-07 — daepa/weekly/legal/mgmt/biz meeting notes to Notion, ",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 19
         },
         {
           "name": "heritageradio",
@@ -28,14 +45,14 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             3,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 3,
           "commits_30d": 36
         },
         {
@@ -44,33 +61,16 @@
           "last_msg": "monitor.sh에 Telegram 알림 추가 (이상 감지 시 push)",
           "branch": "master",
           "activity": [
-            0,
             1,
             2,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 3,
           "commits_30d": 49
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-07-01",
-          "last_msg": "logs: 2026-06-23~07-01 — server inventory/cleanup (dobby bot, supabase, family",
-          "branch": "gram-jsong",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 18
         },
         {
           "name": "cplabs_homepage",
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 14
+          "commits_30d": 12
         },
         {
           "name": "meta-info-api",
@@ -588,38 +588,38 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "mirae",
-          "last_date": "2026-07-05",
-          "last_msg": "feat: grid_alert 가드 재매수 건너뛰기(skip) — 버퍼 현금 유지 �",
-          "branch": "main",
-          "activity": [
-            1,
-            0,
-            0,
-            1,
-            3,
-            1,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 40
-        },
-        {
           "name": "meta-agents",
-          "last_date": "2026-07-02",
-          "last_msg": "docs: update patent references to registered number 10-2957866",
+          "last_date": "2026-07-07",
+          "last_msg": "docs(standard): record submitted proposal 2026-P1420 and v0.9 attachment",
           "branch": "main",
           "activity": [
-            0,
             5,
             3,
             0,
             0,
             0,
+            0,
+            1
+          ],
+          "commits_7d": 9,
+          "commits_30d": 18
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-07-05",
+          "last_msg": "feat: grid_alert 가드 재매수 건너뛰기(skip) — 버퍼 현금 유지 �",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            1,
+            3,
+            1,
+            0,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 17
+          "commits_7d": 5,
+          "commits_30d": 39
         },
         {
           "name": "metadium-explorer-stack",
