@@ -1,0 +1,50 @@
+---
+title: "The Art of Visibility: Why I Automate My Development Dashboard"
+date: "2026-07-09"
+lang: en
+excerpt: "The Art of Visibility: Why I Automate My Development Dashboard  As an engineer and CTO with over two decades in the trenches—spanning the evolution of..."
+---
+
+# The Art of Visibility: Why I Automate My Development Dashboard
+
+As an engineer and CTO with over two decades in the trenches—spanning the evolution of Web3, DID, and AI—I’ve learned that the most dangerous state for a technical leader is "blindness." Not blindness to the code, but blindness to the *velocity* and *distribution* of effort across multiple projects.
+
+Today’s update to my personal dashboard might look like a simple JSON chore at first glance, but it represents a broader philosophy I've applied throughout my career, including during my time at **CPLABS**: the necessity of data-driven self-monitoring.
+
+### The Problem: The "Context Switching" Tax
+
+When you are juggling multiple high-stakes repositories—ranging from AI agents (`claude-agent`) to infrastructure and legacy systems—it is easy to lose track of where the actual momentum is shifting. We often *feel* like we are making progress, but feelings are not metrics.
+
+The goal of this dashboard is to transform raw git activity into a visual heat map. By automating the update of `dashboard.json`, I can see at a glance which projects are stagnating and which are in a "sprint" phase.
+
+### Technical Breakdown: The Diff
+
+Looking at today's changes in `src/data/dashboard.json`, we see a shift in activity patterns:
+
+```json
+{
+  "name": "claude-agent",
+  "last_date": "2026-07-08",
+  "last_msg": "logs: 2026-07-08 (2) — career history reconstruction from Gmail (WEMIX3.0/NCP ",
+  "branch": "gram-jsong",
+  "activity": [0, 0, 0, 0, 1, 2, 0],
+  "commits_7d": 3,
+  "commits_30d": 21
+}
+```
+
+The most interesting part of today's update is the activity in the `claude-agent` repository. I've been focusing on "career history reconstruction," utilizing AI to parse fragmented data from Gmail to synthesize a structured professional timeline. This is a practical application of LLMs—turning unstructured historical data into a structured asset.
+
+Additionally, the `heritageradio` repo saw a bump in activity regarding audio resynthesis requests. This highlights the duality of my current workflow: balancing the high-level architectural oversight of AI agents with the granular, technical requirements of digital signal processing and audio synthesis.
+
+### Insights: Measuring What Matters
+
+Many developers view "chore" commits or dashboard updates as overhead. However, from a CTO's perspective, this is **observability for the self**.
+
+In the early days of building complex systems at **CPLABS**, we focused heavily on system monitoring (Prometheus, Grafana) to ensure uptime. I’ve realized that the same principle applies to personal productivity. If I cannot visualize my commit distribution across `metadium_homepage`, `meta-info-api`, and my AI experiments, I cannot optimize my time.
+
+**Key takeaways from today's sync:**
+1. **AI as a Librarian:** The work on `claude-agent` proves that AI's greatest immediate value is often in "knowledge retrieval and reconstruction" rather than just code generation.
+2. **Consistency over Intensity:** The `activity` arrays (the 7-day rolling windows) remind me that sustainable development is about steady increments, not erratic bursts.
+
+By maintaining this automated transparency, I ensure that my technical trajectory remains aligned with my strategic goals. Tomorrow, the focus shifts back to the core logic, but today, the victory was in the visibility.
