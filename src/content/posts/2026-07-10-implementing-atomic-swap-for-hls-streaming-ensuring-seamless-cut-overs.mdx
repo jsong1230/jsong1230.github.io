@@ -1,0 +1,59 @@
+---
+title: "Implementing Atomic Swap for HLS Streaming: Ensuring Seamless Cut-overs"
+date: "2026-07-10"
+lang: en
+excerpt: "Engineering Log: Implementing \"Atomic Swap\" for HLS Streaming (Tier3 S2)  As a CTO, one of the most stressful moments in a production environment is t..."
+---
+
+# Engineering Log: Implementing "Atomic Swap" for HLS Streaming (Tier3 S2)
+
+As a CTO, one of the most stressful moments in a production environment is the "cut-over"—the exact second you switch from an old system to a new one. When dealing with live streaming (HLS), a mistake in manifest updates can lead to playback freezes or 404 errors for thousands of users.
+
+Today, I focused on the **Tier3 Atomic Swap design** for our streaming infrastructure. The goal is to move from a "flat" file structure to a "dated" structure (`dYYYYMMDD`) to improve maintainability and archival, but without risking a single second of downtime.
+
+## The Problem: The Danger of In-Place Updates
+Updating HLS manifests (`.m3u8`) in place is risky. If a manifest is updated to point to segments that haven't finished uploading to S3, the player will fail. To solve this, I've designed a multi-stage rollout (S1 through S5) that treats the transition like a database migration: **Prepare $\rightarrow$ Shadow $\rightarrow$ Flip $\rightarrow$ Clean.**
+
+## Today's Technical Implementation
+
+### 1. S1: The Manifest Rewrite Engine
+Before we can flip the switch, we need a way to transform local manifest paths into our new dated format. I implemented `hls_manifest_rewrite.py`, a pure function that handles the URI transformation.
+
+**Key engineering decisions here:**
+*   **Idempotency:** The script must produce the same output regardless of how many times it's run.
+*   **Strict Guardrails:** I added a `bad-date guard` and strict `.ts` extension checks to prevent the script from accidentally rewriting non-segment lines or corrupted date strings.
+*   **Unit Testing:** I wrote 12 comprehensive test cases in `test_hls_manifest_rewrite.py` to ensure that absolute URIs are protected and EOL (End of Line) characters are preserved exactly.
+
+### 2. S2: Shadow Uploads (The "Safe" Phase)
+The core of today's work was `sync_shadow_dated.sh`. The philosophy here is **Additive Only**. 
+
+Instead of replacing the current production files, this script uploads segments to a new "shadow" path:
+`local hls/<MDD>/<era>/...` $\rightarrow$ `S3 hls/<era>/d<YYYYMMDD>/...`
+
+```bash
+# From sync_shadow_dated.sh
+# include filter: 지정 cycle 의 세그먼트(.ts)만. m3u8 은 제외.
+INCLUDE_ARGS=()
+for c in "${CYCLE_ARR[@]}"; do
+  INCLUDE_ARGS+=(--include "cycle_${c}_seg_*.ts")
+done
+```
+
+By explicitly excluding `.m3u8` files from this sync, I ensured that the production server continues to serve the "flat" files. The new dated segments exist on S3, but no one is looking for them yet. This allows us to verify the integrity of the upload using `verify_prod_sync.py` with a new `--dated` mode without affecting a single user.
+
+## Insights and Reflection
+
+The most interesting part of today's diff is the transition from **S1 (Logic)** to **S2 (Data)**. In high-availability systems, you should never deploy logic and data changes simultaneously. By separating the *rewrite logic* (S1) from the *shadow data upload* (S2), we've created a safety buffer.
+
+If the shadow upload fails, the production site is unaffected. If the rewrite logic is buggy, it's caught in unit tests before it ever touches a manifest.
+
+**What's next?**
+The next step is **S3: The Canary Flip**. I will pick a single "era" (1955) and flip its manifest to point to the dated directory. If the hourly verification and real-device tests pass, we will roll it out to the remaining eras. If it fails, the rollback is a simple S3 versioning revert of the manifest file.
+
+This disciplined approach—borrowed from my years of experience at **CPLABS** and other large-scale engineering projects—is the only way to sleep soundly while managing production infrastructure.
+
+---
+**Summary of Changes:**
+- ✅ **S1 Completed**: Manifest rewrite helper + 12 unit tests.
+- ✅ **S2 Completed**: Shadow dated upload script + verification mode.
+- 🔜 **S3 Pending**: Canary flip for the 1955 era.
