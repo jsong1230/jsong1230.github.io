@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-11T23:00:01.871Z",
+  "generated_at": "2026-07-12T23:00:01.628Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-11",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-07-12",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 70
         },
         {
           "name": "heritageradio",
@@ -28,10 +28,10 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
             14,
             17,
+            0,
             0,
             0
           ],
@@ -44,10 +44,10 @@
           "last_msg": "logs: 2026-07-09 (2) — briefick MCP global config fix + lab meeting time logge",
           "branch": "gram-jsong",
           "activity": [
-            0,
             1,
             2,
             2,
+            0,
             0,
             0,
             0
@@ -593,16 +593,16 @@
           "last_msg": "feat: SK하이닉스 ADR 첫거래 추적 adr_track.sh — 나스닥(SKHYV/SKHY)",
           "branch": "main",
           "activity": [
-            1,
             0,
             0,
             1,
             0,
             1,
+            0,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 33
+          "commits_7d": 2,
+          "commits_30d": 31
         },
         {
           "name": "meta-agents",
@@ -611,10 +611,10 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
             1,
             2,
+            0,
             0,
             0
           ],
@@ -630,8 +630,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -647,8 +647,8 @@
             0,
             0,
             0,
-            0,
             6,
+            0,
             0,
             0
           ],
@@ -664,8 +664,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -704,7 +704,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 22
+          "commits_30d": 20
         },
         {
           "name": "go-metadium",
