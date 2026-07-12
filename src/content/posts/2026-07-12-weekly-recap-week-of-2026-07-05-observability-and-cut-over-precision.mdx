@@ -1,0 +1,53 @@
+---
+title: "Week of 2026-07-05: Observability and Cut-over Precision"
+date: "2026-07-12"
+lang: en
+excerpt: "Weekly Retrospective: The Architecture of Visibility and the Precision of Cut-overs **Date Range:** July 5, 2026 – July 12, 2026 **Author:** Jeffrey J..."
+tags: ["weekly-recap"]
+---
+
+# Weekly Retrospective: The Architecture of Visibility and the Precision of Cut-overs
+**Date Range:** July 5, 2026 – July 12, 2026
+**Author:** Jeffrey Joo-Han Song
+
+Reflecting on the past week, my focus has been split between two distinct but complementary engineering challenges: the philosophical pursuit of **Observability** at a personal and organizational level, and the technical execution of **Atomic Swaps** within a high-stakes streaming environment.
+
+As a CTO with over two decades of experience across distributed systems, Web3, DID, and AI, I have come to realize that the most significant risks to a project are rarely the bugs we can see, but the "invisible progress" and "silent stagnation" that occur when visibility is lost.
+
+### What Was Worked On
+
+**1. The Discipline of Visibility (Personal Engineering Dashboard)**
+The majority of my daily logs this week centered on the maintenance and synchronization of my personal development dashboard (`jsong1230.github.io`). While the git logs show recurring `chore: Update dashboard data` commits to `dashboard.json`, these actions are far from trivial. I spent the week refining the feedback loop that allows me to quantify my velocity and distribution of effort across various high-stakes repositories—from AI agents to DID frameworks.
+
+**2. Tier3 Atomic Swap for HLS Streaming**
+On the infrastructure side, I pivoted to a critical production challenge: implementing an "Atomic Swap" design for HLS streaming. The objective was to migrate our streaming infrastructure from a flat file structure to a dated structure (`dYYYYMMDD`) to enhance archival and maintainability. The primary goal was to ensure a seamless cut-over, eliminating the risk of playback freezes or 404 errors during the manifest update.
+
+### Key Technical Insights
+
+**The Quantified Engineer**
+This week reinforced my belief that "if you cannot measure it, you cannot manage it." In the context of Web3 and AI—where context-switching is frequent and the "deep work" of architecture can often mask a lack of forward momentum—data-driven self-monitoring is essential. By automating the tracking of my technical pulse, I can mitigate the "context-switching tax" and ensure that my energy is aligned with strategic priorities rather than being absorbed by the noise of multiple repositories.
+
+**Zero-Downtime Manifest Migration**
+The work on HLS streaming highlighted the inherent danger of in-place updates. When dealing with `.m3u8` manifests, updating a file before the corresponding segments have fully propagated can lead to catastrophic user experience failures. The "Atomic Swap" approach—preparing the new dated structure in parallel and switching the pointer instantaneously—is the only viable way to ensure a zero-downtime transition in a live production environment.
+
+### Looking Ahead
+
+As I move into the next sprint, I intend to bridge these two themes. The rigor I applied to the HLS cut-over—planning for the worst-case scenario to ensure a seamless transition—is the same rigor I am applying to my visibility dashboard. 
+
+My goal for the coming weeks is to further automate the data pipeline for my engineering hub, moving from manual JSON updates to a more programmatic synchronization with my active repositories. Additionally, I will be monitoring the performance of the new dated HLS structure to ensure that the archival improvements do not introduce latency in manifest resolution.
+
+In the fast-paced intersection of Blockchain and AI, the ability to maintain a clear, data-backed view of one's trajectory is what separates sustainable growth from erratic bursts of activity. I remain committed to the discipline of visibility.
+
+---
+
+### This week's posts
+
+- [The Discipline of Visibility: Maintaining the Engineering Dashboard](/writing/2026-07-05-the-discipline-of-visibility-maintaining-the-engineering-dashboard)
+- [Week of 2026-06-28: The Architecture of Visibility](/writing/2026-07-05-weekly-recap-week-of-2026-06-28-the-architecture-of-visibility)
+- [The Art of the Feedback Loop: Maintaining Visibility in a Complex Ecosystem](/writing/2026-07-06-the-art-of-the-feedback-loop-maintaining-visibility-in-a-complex-ecosystem)
+- [The Art of Visibility: Maintaining the Developer Dashboard](/writing/2026-07-07-the-art-of-visibility-maintaining-the-developer-dashboard)
+- [The Art of Visibility: Maintaining a Technical Pulse through Data](/writing/2026-07-08-the-art-of-visibility-maintaining-a-technical-pulse-through-data)
+- [The Art of Visibility: Why I Automate My Development Dashboard](/writing/2026-07-09-the-art-of-visibility-why-i-automate-my-development-dashboard)
+- [Implementing Atomic Swap for HLS Streaming: Ensuring Seamless Cut-overs](/writing/2026-07-10-implementing-atomic-swap-for-hls-streaming-ensuring-seamless-cut-overs)
+- [The Discipline of Visibility: Tracking Momentum through Data](/writing/2026-07-11-the-discipline-of-visibility-tracking-momentum-through-data)
+- [The Art of Visibility: Maintaining a Technical Pulse through Data](/writing/2026-07-12-the-art-of-visibility-maintaining-a-technical-pulse-through-data)
