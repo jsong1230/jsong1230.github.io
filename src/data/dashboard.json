@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-07-12T23:00:01.628Z",
+  "generated_at": "2026-07-13T23:00:01.785Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-07-12",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
           "name": "heritageradio",
-          "last_date": "2026-07-10",
-          "last_msg": "[main] docs: roadmap·test-pending stale 정리 — 현재 soft-launch 실상 �",
+          "last_date": "2026-07-13",
+          "last_msg": "[admin] briefing 재응답: exit1 진짜원인=FK(sequence아님) + 근본 A방�",
           "branch": "dev",
           "activity": [
-            0,
             1,
             14,
             17,
             0,
             0,
+            3,
             0
           ],
-          "commits_7d": 32,
-          "commits_30d": 64
+          "commits_7d": 35,
+          "commits_30d": 67
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-07-13",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-07-09",
-          "last_msg": "logs: 2026-07-09 (2) — briefick MCP global config fix + lab meeting time logge",
+          "last_date": "2026-07-13",
+          "last_msg": "logs: 2026-07-13 — AWS EDP negotiation playbook legal review (임제혁 변호",
           "branch": "gram-jsong",
           "activity": [
-            1,
             2,
             2,
             0,
             0,
             0,
+            2,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 22
+          "commits_7d": 7,
+          "commits_30d": 24
         },
         {
           "name": "metadium_homepage",
@@ -588,21 +588,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-07-13",
+          "last_msg": "ops(db): 배포 DB 운영 수정 기록 — token id varchar(255) + postgres 쓰",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 3
+        },
+        {
           "name": "mirae",
           "last_date": "2026-07-10",
           "last_msg": "feat: SK하이닉스 ADR 첫거래 추적 adr_track.sh — 나스닥(SKHYV/SKHY)",
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
             0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 31
+          "commits_30d": 30
         },
         {
           "name": "meta-agents",
@@ -610,10 +627,10 @@
           "last_msg": "chore: gitignore c3-operators.json (C3 operator 개인키 보호)",
           "branch": "main",
           "activity": [
-            0,
             1,
             1,
             2,
+            0,
             0,
             0,
             0
@@ -629,8 +646,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -646,8 +663,8 @@
           "activity": [
             0,
             0,
-            0,
             6,
+            0,
             0,
             0,
             0
@@ -663,31 +680,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-06-23",
-          "last_msg": "chore: gitignore .claude/ (런타임 lock 등 로컬 도구 산출물)",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 2
         },
         {
           "name": "go-metadium",
