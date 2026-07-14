@@ -1,0 +1,51 @@
+---
+title: "Eliminating the \"Divergence Footgun\": Lessons from a DB Sync Incident"
+date: "2026-07-14"
+lang: en
+excerpt: "Eliminating the \"Divergence Footgun\": Lessons from a DB Sync Incident  As a CTO and engineer, I’ve always believed that the most dangerous bugs aren't..."
+---
+
+# Eliminating the "Divergence Footgun": Lessons from a DB Sync Incident
+
+As a CTO and engineer, I’ve always believed that the most dangerous bugs aren't the ones in the complex business logic, but the ones hiding in the "utility scripts" we take for granted. Today was a stark reminder of this.
+
+I spent a significant portion of my day resolving a production incident related to database synchronization for the `heritageradio` project. It was a classic case of **logic divergence**—where two different paths to achieve the same goal lead to different, and in this case, disastrous, results.
+
+### The Problem: The Divergence Footgun
+
+We had two ways to sync data to production: a canonical script (`sync_to_aws_prod.sh`) and a convenience function inside a larger deployment script (`deploy_prod.sh`). 
+
+Over time, the canonical script had evolved to be "safe." It implemented an allowlist for tables to prevent leaking sensitive `api_keys` and used "Method A" (FK-safe restore) to handle Foreign Key constraints during the restore process. However, the `sync_data` function in `deploy_prod.sh` remained an outdated relic.
+
+When this outdated path was triggered, it caused a "footgun" effect:
+1. **Data Leakage/Corruption:** It performed a full `pg_dump` without an allowlist, wiping production-specific data (like analytics and music logs) and risking the re-exposure of API keys.
+2. **The Freeze:** It ran the ECS restore task without the necessary overrides. This triggered a `--clean` command that hit Foreign Key (FK) constraints, resulting in an `exit 1` and leaving the content in a "frozen" state from July 11th to 14th.
+
+### The Technical Solution: Single Source of Truth
+
+The fix was simple in principle but critical in execution: **Delete the redundant logic.**
+
+I stripped out 57 lines of redundant bash code from `deploy_prod.sh` and delegated the entire process to the canonical script.
+
+```bash
+# Before: Inline logic that diverged from the canonical version
+# After: Delegation to a single source of truth
+log "delegate DB/audio prod sync → sync_to_aws_prod.sh on $BUILD_HOST (allowlist + A방식 FK-safe)"
+ssh "$BUILD_HOST" "cd ~/heritageradio && AWS_PROFILE=heritageradio bash scripts/sync_to_aws_prod.sh $args"
+```
+
+By ensuring that the cron job and the manual deployment script call the exact same file, I've eliminated the possibility of "drift" between how we sync data in different scenarios.
+
+### Deep Dive: The "Method A" Restore Incident
+
+While fixing the delegation, I also had to resolve two subtle bugs in the "Method A" restore process that surfaced during the first automated run:
+- **The `PGPASSWORD` Override:** A bug where the password environment variable was being overwritten, causing an `exit 2`.
+- **Permission Denied on Triggers:** Attempting to use `--disable-triggers` requires superuser permissions, which our RDS user lacks. I solved this by utilizing `PGOPTIONS replica` to separate the session and ensure a FK-safe restore without needing superuser privileges.
+
+### Insights for the Engineering Team
+
+This incident reinforces a core principle I've applied throughout my 20 years of experience, including my time at **CPLABS**: **Redundancy in tooling is a liability.**
+
+When you have two scripts that do the same thing, you don't have a backup; you have a synchronization debt. Every time you improve the "main" script, you create a gap with the "secondary" script. Eventually, someone—or some automated process—will trigger the secondary path, and the system will fail in a way you thought you had already fixed months ago.
+
+**Key Takeaway:** If you find yourself copying and pasting logic from one script to another "for convenience," stop. Wrap that logic in a standalone script and delegate to it. Your future self (and your production database) will thank you.
