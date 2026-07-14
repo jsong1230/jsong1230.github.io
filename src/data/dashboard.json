@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-07-13T23:00:01.785Z",
+  "generated_at": "2026-07-14T23:00:01.247Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-07-13",
-          "last_msg": "[admin] briefing 재응답: exit1 진짜원인=FK(sequence아님) + 근본 A방�",
+          "last_date": "2026-07-14",
+          "last_msg": "[main] docs: A-3 briefing — usePlayTracker fix staged (차기 릴리스 대기",
           "branch": "dev",
           "activity": [
-            1,
             14,
             17,
             0,
             0,
             3,
+            12,
             0
           ],
-          "commits_7d": 35,
-          "commits_30d": 67
+          "commits_7d": 47,
+          "commits_30d": 79
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-13",
+          "last_date": "2026-07-14",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 68
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-07-13",
-          "last_msg": "logs: 2026-07-13 — AWS EDP negotiation playbook legal review (임제혁 변호",
+          "last_date": "2026-07-14",
+          "last_msg": "logs: 2026-07-14 (3) — 스티브 이사 미팅 to Notion + Briefick(관리회�",
           "branch": "gram-jsong",
           "activity": [
             2,
-            2,
             0,
             0,
             0,
             2,
+            3,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 24
+          "commits_7d": 9,
+          "commits_30d": 27
         },
         {
           "name": "metadium_homepage",
@@ -588,10 +588,44 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-07-13",
-          "last_msg": "ops(db): 배포 DB 운영 수정 기록 — token id varchar(255) + postgres 쓰",
-          "branch": "master",
+          "name": "health",
+          "last_date": "2026-07-14",
+          "last_msg": "README: 최근 재발 기록 요약 한 줄 추가",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "commits_7d": 4,
+          "commits_30d": 4
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-07-14",
+          "last_msg": "fix: adr_track SKHYV stale 종가 물림 → 정식 SKHY 우선 조회로 수정",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 3,
+          "commits_30d": 30
+        },
+        {
+          "name": "life",
+          "last_date": "2026-07-14",
+          "last_msg": "Init life project: health plan & meetup notes",
+          "branch": "main",
           "activity": [
             0,
             0,
@@ -602,24 +636,24 @@
             1
           ],
           "commits_7d": 1,
-          "commits_30d": 3
+          "commits_30d": 1
         },
         {
-          "name": "mirae",
-          "last_date": "2026-07-10",
-          "last_msg": "feat: SK하이닉스 ADR 첫거래 추적 adr_track.sh — 나스닥(SKHYV/SKHY)",
-          "branch": "main",
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-07-13",
+          "last_msg": "ops(db): 배포 DB 운영 수정 기록 — token id varchar(255) + postgres 쓰",
+          "branch": "master",
           "activity": [
             0,
-            1,
+            0,
+            0,
+            0,
             0,
             1,
-            0,
-            0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 30
+          "commits_7d": 1,
+          "commits_30d": 3
         },
         {
           "name": "meta-agents",
@@ -628,14 +662,14 @@
           "branch": "main",
           "activity": [
             1,
-            1,
             2,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 3,
           "commits_30d": 21
         },
         {
@@ -645,8 +679,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -662,8 +696,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             6,
+            0,
             0,
             0,
             0,
@@ -679,8 +713,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
