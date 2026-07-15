@@ -1,0 +1,55 @@
+---
+title: "The Rhythm of Development: Tracking Velocity and the Art of the \"Small Fix"
+date: "2026-07-15"
+lang: en
+excerpt: "The Rhythm of Development: Tracking Velocity and the Art of the \"Small Fix\"  As a CTO and engineer who has spent over two decades navigating the evolu..."
+---
+
+# The Rhythm of Development: Tracking Velocity and the Art of the "Small Fix"
+
+As a CTO and engineer who has spent over two decades navigating the evolution of software—from the early days of monolithic architectures to the current era of Web3, DID, and AI—I’ve learned that the most critical metric isn't just the "big release," but the consistent, daily rhythm of development.
+
+Today's work was largely focused on updating my personal development dashboard. While a `chore: Update dashboard data` commit might seem mundane to an outsider, for an engineer, this is the act of mirroring reality. It is the process of auditing one's own velocity and ensuring that the technical debt and feature progress are being tracked accurately across multiple streams of work.
+
+### Analyzing the Velocity
+
+Looking at the diff in `dashboard.json`, there are a few interesting shifts in activity. For instance, in the `heritageradio` repository, we see a jump in activity:
+
+```diff
+- "commits_7d": 35,
+- "commits_30d": 67
++ "commits_7d": 47,
++ "commits_30d": 79
+```
+
+A jump of 12 commits in a short window usually indicates a "stabilization phase." In this case, the commit message `[main] docs: A-3 briefing — usePlayTracker fix staged` suggests a pivot from raw feature development to refining the implementation and documenting the logic for the next release. 
+
+In my experience, especially during my tenure at **CPLABS**, I've found that the "last 10%" of a feature—the polishing, the edge-case fixing, and the documentation—often takes as much cognitive effort as the first 90%. The `usePlayTracker` fix is a classic example of addressing a state-management nuance that only becomes apparent during rigorous integration testing.
+
+### The "Health" of the System
+
+Another notable change in today's data is the shift in the `mini-jsong` machine, where `metadium-explorer-stack` was replaced or augmented by a `health` repository:
+
+```diff
+- "name": "metadium-explorer-stack",
+- "last_msg": "ops(db): 배포 DB 운영 수정 기록 — token id varchar(255)...",
++ "name": "health",
++ "last_msg": "README: 최근 재발 기록 요약 한 줄 추가",
+```
+
+This transition is philosophically interesting. Moving from "Ops/DB" logs to a "Health" log reflects a shift from *system maintenance* to *systemic observation*. Whether it is the health of a blockchain node or the health of a developer's own productivity and well-being, the act of recording "recurrence records" (재발 기록) is the only way to prevent the same bug from appearing twice.
+
+### Engineering Insights: The Value of the Log
+
+Many junior engineers overlook the importance of a well-maintained log or a personal dashboard. They see it as overhead. However, when you are managing complex intersections of AI agents (like the `claude-agent` work seen in the commits) and blockchain infrastructure, your brain becomes a bottleneck.
+
+The technical decision to maintain a structured `dashboard.json` allows me to:
+1. **Visualize Context Switching:** I can see exactly how much mental energy is splitting between the `mirae` ADR tracking and the `heritageradio` fixes.
+2. **Audit Consistency:** By tracking `commits_7d` and `commits_30d`, I can identify if I'm burning out or if a project has stagnated.
+3. **Traceability:** The commit `fix: adr_track SKHYV stale 종가 물림` is a perfect example of a "micro-fix." These small, precise corrections to data ingestion logic are what separate a professional-grade tool from a prototype.
+
+### Closing Thoughts
+
+Development is not just about writing new lines of code; it is about the continuous refinement of existing systems. Whether I am architecting a DID solution at **CPLABS** or updating a JSON file for my personal site, the principle remains the same: **Measure, Refine, Repeat.**
+
+The data doesn't lie. The steady climb in commit counts and the shift toward "fixes" and "docs" tell the story of a project moving toward maturity. Onward to the next sprint.
