@@ -1,36 +1,19 @@
 {
-  "generated_at": "2026-07-14T23:00:01.247Z",
+  "generated_at": "2026-07-15T23:00:01.645Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
-          "last_date": "2026-07-14",
-          "last_msg": "[main] docs: A-3 briefing — usePlayTracker fix staged (차기 릴리스 대기",
-          "branch": "dev",
-          "activity": [
-            14,
-            17,
-            0,
-            0,
-            3,
-            12,
-            0
-          ],
-          "commits_7d": 47,
-          "commits_30d": 79
-        },
-        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-14",
+          "last_date": "2026-07-15",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -40,20 +23,54 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-07-14",
-          "last_msg": "logs: 2026-07-14 (3) — 스티브 이사 미팅 to Notion + Briefick(관리회�",
+          "last_date": "2026-07-15",
+          "last_msg": "logs: 2026-07-15 (3) — EDP 대표 사전미팅 + AWS·메가존 본미팅 to N",
           "branch": "gram-jsong",
           "activity": [
-            2,
             0,
             0,
             0,
             2,
             3,
+            4,
             0
           ],
-          "commits_7d": 9,
-          "commits_30d": 27
+          "commits_7d": 11,
+          "commits_30d": 24
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-07-15",
+          "last_msg": "Merge upstream: K-BTF/MetaPass 메뉴 위치 스왑 + 관련 콘텐츠 업데이",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 143
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-07-14",
+          "last_msg": "[main] docs: A-3 briefing — usePlayTracker fix staged (차기 릴리스 대기",
+          "branch": "dev",
+          "activity": [
+            17,
+            0,
+            0,
+            3,
+            12,
+            0,
+            0
+          ],
+          "commits_7d": 46,
+          "commits_30d": 76
         },
         {
           "name": "metadium_homepage",
@@ -71,23 +88,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 49
-        },
-        {
-          "name": "cplabs_homepage",
-          "last_date": "2026-06-19",
-          "last_msg": "SEO: og:url·canonical 페이지별 세분화 (buildMetadata 헬퍼 도입)",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 142
         },
         {
           "name": "company-page",
@@ -588,6 +588,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "mirae",
+          "last_date": "2026-07-15",
+          "last_msg": "feat: TSMC 2Q26 실적 브리핑 tsmc_brief.sh — 1회성(7/16 20:00 KST), 주�",
+          "branch": "main",
+          "activity": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "commits_7d": 3,
+          "commits_30d": 30
+        },
+        {
           "name": "health",
           "last_date": "2026-07-14",
           "last_msg": "README: 최근 재발 기록 요약 한 줄 추가",
@@ -598,28 +615,11 @@
             0,
             0,
             0,
-            0,
-            4
+            4,
+            0
           ],
           "commits_7d": 4,
           "commits_30d": 4
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-07-14",
-          "last_msg": "fix: adr_track SKHYV stale 종가 물림 → 정식 SKHY 우선 조회로 수정",
-          "branch": "main",
-          "activity": [
-            1,
-            0,
-            1,
-            0,
-            0,
-            0,
-            1
-          ],
-          "commits_7d": 3,
-          "commits_30d": 30
         },
         {
           "name": "life",
@@ -632,8 +632,8 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 1
@@ -648,8 +648,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -661,16 +661,16 @@
           "last_msg": "chore: gitignore c3-operators.json (C3 operator 개인키 보호)",
           "branch": "main",
           "activity": [
-            1,
             2,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 21
+          "commits_7d": 2,
+          "commits_30d": 19
         },
         {
           "name": "MetaLotto",
@@ -678,8 +678,8 @@
           "last_msg": "feat(contracts): C4 어댑터 — MetaLottoFeeRouter (수수료 → FeeDistribut",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -695,8 +695,8 @@
           "last_msg": "feat(contracts): C5 어댑터 — MetaPool 수수료 → FeeDistributor (v3)",
           "branch": "main",
           "activity": [
-            0,
             6,
+            0,
             0,
             0,
             0,
@@ -712,8 +712,8 @@
           "last_msg": "feat(contracts): C2 어댑터 — ZkBridgeRelayerAdapter (operator-gated relay)",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
