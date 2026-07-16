@@ -1,0 +1,50 @@
+---
+title: "Balancing Technical Maintenance and Strategic Pivoting: A Day in the Life of a CTO"
+date: "2026-07-16"
+lang: en
+excerpt: "Balancing Technical Maintenance and Strategic Pivoting: A Day in the Life of a CTO  As a CTO, my day is rarely spent in a single headspace. One moment..."
+---
+
+# Balancing Technical Maintenance and Strategic Pivoting: A Day in the Life of a CTO
+
+As a CTO, my day is rarely spent in a single headspace. One moment I am reviewing the operational health of our digital assets, and the next, I am deep-diving into market research to define the MVP of a new business venture. Today was a perfect example of this duality—balancing the "maintenance" of existing systems with the "creation" of new strategic directions.
+
+### 1. Operational Health: Data-Driven Visibility
+I started the day with some routine but essential maintenance on my personal dashboard (`jsong1230.github.io`). While it seems like a simple `chore: Update dashboard data` commit, these dashboards are critical for maintaining a high-level view of project velocity across multiple repositories.
+
+Looking at the diff, you'll notice a significant update to the `cplabs_homepage` and `heritageradio` data:
+
+```json
+- "name": "metadium_homepage",
+- "last_date": "2026-07-03",
++ "name": "cplabs_homepage",
++ "last_date": "2026-07-15",
++ "last_msg": "Merge upstream: K-BTF/MetaPass 메뉴 위치 스왑 + 관련 콘텐츠 업데이",
+```
+
+Beyond the data update, this reflects a branding and structural alignment within **CPLABS**. Ensuring that our internal and external dashboards reflect the current state of our repositories prevents "technical blindness"—where a leader loses track of which projects are stagnant and which are accelerating.
+
+### 2. Strategic Engineering: From "Idea" to "Executable MVP"
+The bulk of my mental energy today went into **"New Business A" (Benefit-Gathering Platform)**. The goal was to take a high-level business concept—a lifestyle service platform that provides user benefits in exchange for referral fees—and turn it into a technical specification.
+
+In my 20 years of engineering, I've learned that the biggest risk in a new project isn't the code; it's the **assumption**. To mitigate this, I utilized a "Deep Research" workflow (leveraging agents to scan dozens of sources and claims) to validate four critical technical and legal pillars:
+
+*   **Affiliate CPA:** Identified LinkPrice as a viable integration path, but flagged the lack of transparent pricing for telecom/rental sectors as a risk.
+*   **KakaoTalk Constraints:** Validated the legal barriers of the Information and Communications Network Act (§50), specifically the 50k-friend barrier for promotional messages.
+*   **Public APIs:** Confirmed that while "Subsidy 24" is open for commercial use, "Hidden Refund" automated lookups are structurally impossible via open APIs.
+*   **Competitive Analysis:** Analyzed the dominance of players like Ajungdang, leading to a critical pivot.
+
+### 3. The Pivot: Engineering for the "Niche"
+The most interesting part of today's work was the transition from **MVP Spec v0.1 to v0.2**. Based on the research, I made a strategic technical decision to avoid a head-on collision with market leaders in the telecom/rental CPA space.
+
+**The Pivot:**
+*   **Avoid:** Direct telecom/rental CPA (High competition/Low transparency).
+*   **Adopt:** Support funds (via free APIs), App-tech, and Coupang Partners.
+*   **Shift:** From "Automatic Refund Lookup" (Technical impossibility) $\rightarrow$ "Guidance on how to find refunds" (UX-led solution).
+
+### Final Insight: The Power of Documenting the "Why"
+I also implemented a new rule for my AI agents: **all deliverables must be saved as HTML files** in a structured directory. 
+
+Why HTML? Because specs and research are living documents. By storing them as structured HTML rather than flat text, they remain portable, searchable, and easy to render across any environment without losing formatting.
+
+**Today's takeaway:** Engineering leadership is as much about deciding what *not* to build as it is about deciding what to build. By validating the "impossible" early, we save months of wasted development cycles.
