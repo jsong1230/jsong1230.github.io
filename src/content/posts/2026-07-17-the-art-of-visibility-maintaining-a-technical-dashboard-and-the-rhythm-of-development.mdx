@@ -1,0 +1,55 @@
+---
+title: "The Art of Visibility: Maintaining a Technical Dashboard and the Rhythm of Development"
+date: "2026-07-17"
+lang: en
+excerpt: "The Art of Visibility: Maintaining a Technical Dashboard and the Rhythm of Development  As a CTO and engineer with over two decades in the trenches—sp..."
+---
+
+# The Art of Visibility: Maintaining a Technical Dashboard and the Rhythm of Development
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of blockchain, Web3, and now the integration of AI—I've learned that one of the most underrated tools in a leader's arsenal isn't a specific framework or a cloud provider, but **visibility**.
+
+Today's work was centered around updating my personal development dashboard (`jsong1230.github.io`). While a `chore: Update dashboard data` commit might seem mundane at first glance, it serves as a critical pulse check on where my cognitive load is being allocated across various projects.
+
+### The Importance of the "Developer Pulse"
+
+In a high-velocity environment, especially when balancing multiple architectural roles at **CPLABS** and personal R&D, it is easy to lose track of the "velocity drift." By maintaining a structured `dashboard.json`, I can visualize the distribution of my efforts.
+
+Looking at today's diff, we see a significant shift in activity:
+
+```json
+{
+  "name": "heritageradio",
+  "last_date": "2026-07-16",
+  "last_msg": "fix(admin): 품질감사 Beat prod 게이트 (ENV != prod 일 때만 등록)",
+  "branch": "dev",
+  "activity": [0, 0, 3, 12, 0, 26, 0],
+  "commits_7d": 58,
+  "commits_30d": 101
+}
+```
+
+The `heritageradio` project has seen a surge, with 58 commits in the last seven days. Specifically, the fix regarding the "Beat prod gate" highlights a common production safeguard: ensuring that certain administrative or testing triggers are strictly gated by environment variables (`ENV != prod`). In my experience, this is where most catastrophic production bugs are born—when "test" logic accidentally leaks into the live environment.
+
+### Technical Decisions: Data-Driven Reflection
+
+The decision to automate and track these metrics (commits per 7 days, 30 days, and daily activity arrays) is a deliberate move toward "Quantified Self" for engineering. 
+
+When I look at the `claude-agent` logs—referencing CPA due diligence and executive reporting—and contrast them with the technical commits in the `cplabs_homepage` or `metadium_homepage` repos, I can see the tension between *managerial oversight* and *hands-on engineering*. 
+
+As a CTO, the challenge is to ensure that the "Manager's Schedule" (meetings, reports, strategy) doesn't completely erase the "Maker's Schedule" (coding, debugging, architecting). If my dashboard shows zero activity in my core technical repos for too long, it's a signal that I am drifting too far from the metal.
+
+### Insights from the Diff
+
+One interesting observation in today's update is the cleanup of the `cplabs_homepage` data. By refining the activity arrays and updating the commit counts, the dashboard becomes a mirror of current priorities. 
+
+The act of updating this data forces a moment of reflection:
+1. **Where is the momentum?** (Currently: `heritageradio`)
+2. **What is in maintenance mode?** (Currently: `metadium_homepage`)
+3. **What is the administrative overhead?** (Reflected in the `claude-agent` logs)
+
+### Closing Thoughts
+
+Whether you are building a decentralized identity (DID) system or a corporate homepage for **CPLABS**, the discipline of tracking your output is invaluable. It prevents burnout by making "invisible work" visible and ensures that technical debt is being addressed alongside new feature development.
+
+Engineering is not just about writing code; it's about managing the flow of energy and attention. Keep your dashboards updated, keep your production gates tight, and always stay close to the code.
