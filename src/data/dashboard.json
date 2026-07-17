@@ -1,34 +1,17 @@
 {
-  "generated_at": "2026-07-16T23:00:01.537Z",
+  "generated_at": "2026-07-17T23:00:01.997Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
-          "last_date": "2026-07-16",
-          "last_msg": "fix(admin): 품질감사 Beat prod 게이트 (ENV != prod 일 때만 등록)",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            3,
-            12,
-            0,
-            26,
-            0
-          ],
-          "commits_7d": 58,
-          "commits_30d": 101
-        },
-        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-16",
+          "last_date": "2026-07-17",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -39,17 +22,34 @@
           "commits_30d": 68
         },
         {
+          "name": "heritageradio",
+          "last_date": "2026-07-16",
+          "last_msg": "fix(admin): 품질감사 Beat prod 게이트 (ENV != prod 일 때만 등록)",
+          "branch": "dev",
+          "activity": [
+            0,
+            3,
+            12,
+            0,
+            26,
+            0,
+            0
+          ],
+          "commits_7d": 41,
+          "commits_30d": 98
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-07-16",
           "last_msg": "logs: 2026-07-16 (2) — 통신렌탈 CPA 실사(문의 패키지)·대표보고",
           "branch": "gram-jsong",
           "activity": [
             0,
-            0,
             2,
             3,
             4,
             2,
+            0,
             0
           ],
           "commits_7d": 11,
@@ -64,13 +64,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 107
+          "commits_30d": 55
         },
         {
           "name": "metadium_homepage",
@@ -593,16 +593,16 @@
           "last_msg": "feat: TSMC 2Q26 실적 브리핑 tsmc_brief.sh — 1회성(7/16 20:00 KST), 주�",
           "branch": "main",
           "activity": [
-            1,
             0,
             0,
             0,
             1,
             1,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 19
+          "commits_30d": 17
         },
         {
           "name": "health",
@@ -613,8 +613,8 @@
             0,
             0,
             0,
-            0,
             4,
+            0,
             0,
             0
           ],
@@ -630,8 +630,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -646,8 +646,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -738,7 +738,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 16
+          "commits_30d": 0
         },
         {
           "name": "go-metadium",
