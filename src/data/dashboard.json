@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-17T23:00:01.997Z",
+  "generated_at": "2026-07-18T23:00:01.812Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-17",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-07-18",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "heritageradio",
@@ -27,11 +27,11 @@
           "last_msg": "fix(admin): 품질감사 Beat prod 게이트 (ENV != prod 일 때만 등록)",
           "branch": "dev",
           "activity": [
-            0,
             3,
             12,
             0,
             26,
+            0,
             0,
             0
           ],
@@ -44,11 +44,11 @@
           "last_msg": "logs: 2026-07-16 (2) — 통신렌탈 CPA 실사(문의 패키지)·대표보고",
           "branch": "gram-jsong",
           "activity": [
-            0,
             2,
             3,
             4,
             2,
+            0,
             0,
             0
           ],
@@ -63,14 +63,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 55
+          "commits_30d": 13
         },
         {
           "name": "metadium_homepage",
@@ -595,14 +595,14 @@
           "activity": [
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 17
+          "commits_7d": 2,
+          "commits_30d": 16
         },
         {
           "name": "health",
@@ -612,8 +612,8 @@
           "activity": [
             0,
             0,
-            0,
             4,
+            0,
             0,
             0,
             0
@@ -629,8 +629,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -645,8 +645,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
