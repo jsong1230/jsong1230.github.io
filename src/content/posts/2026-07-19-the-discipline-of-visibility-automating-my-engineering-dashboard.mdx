@@ -1,0 +1,48 @@
+---
+title: "The Discipline of Visibility: Automating My Engineering Dashboard"
+date: "2026-07-19"
+lang: en
+excerpt: "The Discipline of Visibility: Automating My Engineering Dashboard  As a CTO and engineer with over two decades of experience, I’ve learned that the mo..."
+---
+
+# The Discipline of Visibility: Automating My Engineering Dashboard
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical leader is "invisible progress." Whether you are managing a large-scale blockchain infrastructure at **CPLABS** or maintaining a personal portfolio of open-source projects, the ability to quantify activity and track velocity is crucial.
+
+Today’s work was a modest update to my personal dashboard data, but it represents a larger philosophy I hold regarding engineering discipline: **The Automation of Self-Audit.**
+
+### The Problem: The "Manual Update" Trap
+
+Many developers maintain a "portfolio" or a "status page," but these often become stale because updating them is a manual chore. When you are juggling multiple repositories—ranging from Web3 DID implementations to AI-driven automation scripts—manually tracking your commit frequency and last-activity dates is a waste of cognitive load.
+
+The goal was to ensure that my `jsong1230.github.io` dashboard reflects my actual output across various machines and repositories in real-time (or near real-time) without me having to manually edit a JSON file every day.
+
+### Technical Decision: Data-Driven State Management
+
+The change today was a `chore: Update dashboard data` commit, specifically updating `src/data/dashboard.json`. 
+
+```json
+-  "generated_at": "2026-07-17T23:00:01.997Z",
++  "generated_at": "2026-07-18T23:00:01.812Z",
+...
+-          "last_msg": "Auto-generate daily posts",
++          "last_msg": "Auto-generate weekly book post",
+```
+
+While this looks like a simple data swap, the technical decision behind it is the implementation of an **automated pipeline**. Instead of manually editing this file, I use a script that polls my active repositories, calculates the `commits_7d` and `commits_30d` metrics, and pushes the update.
+
+By treating my personal activity as a data stream, I transform my GitHub profile from a static resume into a live telemetry dashboard.
+
+### Insights from the Diff
+
+Looking at the diff, there are a few interesting points regarding my current focus:
+
+1.  **Consistency over Intensity:** You can see the `activity` arrays shifting. For `jsong1230.github.io`, the activity shifted from a `3` to a `2` in some slots but added a `3` in others. This reflects a steady cadence of contributions rather than erratic bursts.
+2.  **Context Switching:** The dashboard tracks diverse projects—from `heritageradio` to `metadium_homepage`. Managing these disparate contexts requires a strict mental framework. The fact that the `last_msg` for my main site changed to *"Auto-generate weekly book post"* highlights my commitment to continuous learning and sharing that knowledge via automation.
+3.  **The "Long Tail" of Maintenance:** Some repositories show a drop in `commits_30d`. In a professional setting at **CPLABS**, we call this the "maintenance phase." Not every project needs daily commits; some just need to remain stable and secure.
+
+### Final Thoughts
+
+In the world of Web3 and AI, things move at breakneck speed. It is easy to feel like you are working hard without knowing exactly where your time is going. By automating the tracking of my own development velocity, I create a feedback loop that keeps me accountable.
+
+Engineering is not just about writing the code that solves the business problem; it is also about building the tools that optimize the engineer. Today was a small step in maintaining that optimization.
