@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-07-18T23:00:01.812Z",
+  "generated_at": "2026-07-19T23:00:01.454Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-07-20",
+          "last_msg": "feat(admin): w13 NEWS_ERA(대한뉴스) 25편 생성 + KTV CSV 소실 근본대�",
+          "branch": "dev",
+          "activity": [
+            12,
+            0,
+            26,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 42,
+          "commits_30d": 99
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-18",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-07-19",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-07-16",
-          "last_msg": "fix(admin): 품질감사 Beat prod 게이트 (ENV != prod 일 때만 등록)",
-          "branch": "dev",
-          "activity": [
-            3,
-            12,
-            0,
-            26,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 41,
-          "commits_30d": 98
+          "commits_30d": 70
         },
         {
           "name": "claude-agent",
@@ -44,16 +44,16 @@
           "last_msg": "logs: 2026-07-16 (2) — 통신렌탈 CPA 실사(문의 패키지)·대표보고",
           "branch": "gram-jsong",
           "activity": [
-            2,
             3,
             4,
             2,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 11,
-          "commits_30d": 18
+          "commits_30d": 17
         },
         {
           "name": "cplabs_homepage",
@@ -62,15 +62,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 13
+          "commits_30d": 12
         },
         {
           "name": "metadium_homepage",
@@ -594,9 +594,9 @@
           "branch": "main",
           "activity": [
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0
@@ -611,8 +611,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             4,
+            0,
             0,
             0,
             0,
@@ -628,8 +628,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -644,8 +644,8 @@
           "last_msg": "ops(db): 배포 DB 운영 수정 기록 — token id varchar(255) + postgres 쓰",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
