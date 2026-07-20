@@ -1,0 +1,45 @@
+---
+title: "Beyond Fire and Forget: Ensuring Data Integrity in Large-Scale Audio Processing"
+date: "2026-07-20"
+lang: en
+excerpt: "Engineering Log: Ensuring Data Integrity in Large-Scale Audio Processing  As an engineer, there is a specific kind of anxiety that comes with running ..."
+---
+
+# Engineering Log: Ensuring Data Integrity in Large-Scale Audio Processing
+
+As an engineer, there is a specific kind of anxiety that comes with running long-running batch jobs on a remote server. You trigger the script, see the first few lines of logs, and then—either a flicker in your Wi-Fi or a timeout in your SSH session—the terminal freezes. 
+
+Today’s work on the `heritageradio` project was a vivid reminder of why "fire and forget" is a dangerous mantra in production and why rigorous verification tools are non-negotiable.
+
+## The Task: Generating the "NEWS_ERA" Archives
+The goal was to generate 100 episodes of "NEWS_ERA" (대한뉴스), spanning weeks 13 through 16. This involved matching and concatenating KTV archival audio clips to create cohesive episodes of approximately 600 seconds each.
+
+The technical challenge here isn't just the concatenation, but the **consistency**. When dealing with archival audio, you face varying loudness levels, silent gaps, and the risk of data loss during the CSV scanning process. To mitigate this, I implemented a fundamental fix to ensure KTV CSVs are loaded from a persistent store (`data/ktv_scan/`), preventing the "disappearing data" issue we encountered previously.
+
+## The "SIGHUP" Lesson: Remote Job Management
+While processing the w14~16 batch (75 episodes), I encountered a classic operational pitfall. I ran the `docker compose exec` command via SSH. Everything seemed fine until the SSH connection dropped. 
+
+In Linux, when an SSH session terminates, it sends a `SIGHUP` (Signal Hang Up) to the controlling process and its children. Because the Python process was tied to that session, it died silently at episode 24. The result? 0-byte logs and uncommitted DB transactions.
+
+**The Insight:** For any job that takes more than a few minutes, **detachment is mandatory**. I pivoted to:
+`nohup sh -c "... > log; echo DONE" &`
+
+By decoupling the process from the SSH lifetime, the job completed regardless of my local connectivity. It's a basic lesson, but one that saves hours of debugging "half-finished" data states.
+
+## Building the Safety Net: `verify_news_era.py`
+Generating the files is only half the battle; proving they are correct is where the real engineering happens. I developed a new verification tool, `verify_news_era.py`, to perform a triple-check:
+1. **DB $\leftrightarrow$ Disk Consistency:** Does the database record match an actual file on the volume?
+2. **Duration Validation:** Using `ffprobe` to ensure files are within the target range (approx. 600s) and not critically short (under 420s).
+3. **Audio Quality Spot-checks:** Using `volumedetect` to check for silence and loudness (targeting -16 LUFS).
+
+During the first pass, the tool flagged one file (1985-08-17) as a duration mismatch (557s instead of 600s). Upon investigation, I found a **race condition**: the verification script ran while the `loudnorm` filter was still writing the file in-place. Once the process settled, the duration was correct. This highlighted the importance of "settling time" or file-locking when running verification immediately after generation.
+
+## Final Thoughts
+Today's commits—ranging from the core logic in `heritageradio` to updating my personal dashboard—reflect a broader philosophy I've held throughout my career at **CPLABS**: **Trust, but verify.**
+
+Whether it's blockchain state transitions or audio file durations, the system is only as reliable as its verification suite. If you can't programmatically prove your data is correct, you don't actually have data—you have a hypothesis.
+
+**Summary of results:**
+- **Episodes generated:** 100 (w13: 25, w14-16: 75)
+- **Verify Pass Rate:** 100% (after resolving transient race conditions)
+- **Key Takeaway:** Always use `nohup` or `tmux` for remote Docker execs.
