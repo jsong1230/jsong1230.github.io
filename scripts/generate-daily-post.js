@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
+import { sanitizeMDX } from './lib/mdx-sanitize.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -237,10 +238,8 @@ function createCodeReviewMDX(content, date) {
 
   if (fs.existsSync(filepath)) return null;
 
-  // Sanitize: remove LaTeX math ($...$) and escape problematic MDX patterns
-  const safeContent = content
-    .replace(/\$[^$\n]+\$/g, (m) => m.replace(/\{([^}]+)\}/g, '($1)'))  // LaTeX {x} → (x)
-    .replace(/<([^>a-zA-Z\/!][^>]*)>/g, '($1)');                         // <non-tag> → (...)
+  // Sanitize AI content so invalid `<...>` spans don't break the MDX build.
+  const safeContent = sanitizeMDX(content);
 
   let excerpt = safeContent.replace(/^#{1,6}\s+/gm, '').replace(/\n/g, ' ').trim().substring(0, 150);
   if (excerpt.length >= 150) excerpt += '...';
@@ -272,7 +271,10 @@ function createMDXFile(title, content, date, lang) {
   const filename = `${slug}.mdx`;
   const filepath = path.join(__dirname, '../src/content/posts', filename);
 
-  let excerpt = content
+  // Sanitize AI content so invalid `<...>` spans don't break the MDX build.
+  const safeContent = sanitizeMDX(content);
+
+  let excerpt = safeContent
     .replace(/^#{1,6}\s+/gm, '')
     .replace(/\n/g, ' ')
     .trim()
@@ -287,7 +289,7 @@ lang: ${lang}
 excerpt: ${JSON.stringify(excerpt)}
 ---
 
-${content}`;
+${safeContent}`;
 
   fs.writeFileSync(filepath, mdxContent, 'utf-8');
   return { filename, slug };

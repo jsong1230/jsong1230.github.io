@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
+import { sanitizeMDX } from './lib/mdx-sanitize.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -129,16 +130,7 @@ async function generateTitle(content, lang, monday, sunday) {
   return completion.choices[0]?.message?.content?.trim().replace(/^["']|["']$/g, '') || '';
 }
 
-// ── MDX sanitization ─────────────────────────────────────────────────────────
-
-function isValidTag(inner) {
-  if (inner.startsWith('!--')) return true;
-  return /^\/?[A-Za-z][\w.-]*(?:\s+[A-Za-z_][\w-]*(?:=(?:"[^"]*"|'[^']*'|\{[^}]*\}|\S+))?)*\s*\/?$/.test(inner);
-}
-
-function sanitizeMDX(content) {
-  return content.replace(/<([^>]+)>/g, (match, inner) => isValidTag(inner) ? match : `《${inner}》`);
-}
+// MDX sanitization now lives in ./lib/mdx-sanitize.js (shared, code-block-aware).
 
 // ── Write MDX ─────────────────────────────────────────────────────────────────
 
