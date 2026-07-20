@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T23:00:01.454Z",
+  "generated_at": "2026-07-20T23:00:01.363Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,53 +7,53 @@
         {
           "name": "heritageradio",
           "last_date": "2026-07-20",
-          "last_msg": "feat(admin): w13 NEWS_ERA(대한뉴스) 25편 생성 + KTV CSV 소실 근본대�",
+          "last_msg": "[admin+main] CHANGELOG: w15~16 DRAMA_NOVEL/JOSEON/YASA 30편 집필·등록 + �",
           "branch": "dev",
           "activity": [
-            12,
             0,
             26,
             0,
             0,
             0,
-            1
+            10,
+            0
           ],
-          "commits_7d": 42,
-          "commits_30d": 99
+          "commits_7d": 48,
+          "commits_30d": 101
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-19",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-07-20",
+          "last_msg": "fix(mdx): sanitize AI-generated <...> spans to prevent build failures",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
-            2,
+            3,
             3,
             3,
             0
           ],
-          "commits_7d": 16,
+          "commits_7d": 17,
           "commits_30d": 70
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-07-16",
-          "last_msg": "logs: 2026-07-16 (2) — 통신렌탈 CPA 실사(문의 패키지)·대표보고",
+          "last_date": "2026-07-20",
+          "last_msg": "logs: 2026-07-20 add — AWS SP conversion analysis (why only $6K/mo is RI/SP: E",
           "branch": "gram-jsong",
           "activity": [
-            3,
             4,
             2,
             0,
             0,
             0,
+            5,
             0
           ],
-          "commits_7d": 11,
-          "commits_30d": 17
+          "commits_7d": 14,
+          "commits_30d": 22
         },
         {
           "name": "cplabs_homepage",
@@ -61,8 +61,8 @@
           "last_msg": "Merge upstream: K-BTF/MetaPass 메뉴 위치 스왑 + 관련 콘텐츠 업데이",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -588,14 +588,31 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-07-20",
+          "last_msg": "ops(backfill): internal-tx 컨슈머 2개로 확정 (archive trace 상한)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 2,
+          "commits_30d": 5
+        },
+        {
           "name": "mirae",
           "last_date": "2026-07-15",
           "last_msg": "feat: TSMC 2Q26 실적 브리핑 tsmc_brief.sh — 1회성(7/16 20:00 KST), 주�",
           "branch": "main",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
@@ -610,8 +627,8 @@
           "last_msg": "README: 최근 재발 기록 요약 한 줄 추가",
           "branch": "main",
           "activity": [
-            0,
             4,
+            0,
             0,
             0,
             0,
@@ -627,8 +644,8 @@
           "last_msg": "Init life project: health plan & meetup notes",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -637,23 +654,6 @@
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-07-13",
-          "last_msg": "ops(db): 배포 DB 운영 수정 기록 — token id varchar(255) + postgres 쓰",
-          "branch": "master",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 3
         },
         {
           "name": "meta-agents",
