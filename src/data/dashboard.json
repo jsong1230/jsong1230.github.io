@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-07-20T23:00:01.363Z",
+  "generated_at": "2026-07-21T23:00:01.934Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-07-20",
-          "last_msg": "[admin+main] CHANGELOG: w15~16 DRAMA_NOVEL/JOSEON/YASA 30편 집필·등록 + �",
+          "last_date": "2026-07-21",
+          "last_msg": "docs(admin): test-pending 2건 검증완료 — quality_audit beat 자동발화 ",
           "branch": "dev",
           "activity": [
-            0,
             26,
             0,
             0,
             0,
             10,
+            1,
             0
           ],
-          "commits_7d": 48,
-          "commits_30d": 101
+          "commits_7d": 37,
+          "commits_30d": 102
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-20",
-          "last_msg": "fix(mdx): sanitize AI-generated <...> spans to prevent build failures",
+          "last_date": "2026-07-21",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
+            3,
             2,
-            3,
-            3,
-            3,
             0
           ],
           "commits_7d": 17,
-          "commits_30d": 70
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-07-20",
-          "last_msg": "logs: 2026-07-20 add — AWS SP conversion analysis (why only $6K/mo is RI/SP: E",
+          "last_date": "2026-07-21",
+          "last_msg": "logs: 2026-07-21 add — Compute SP discount rate breakdown (term length dominat",
           "branch": "gram-jsong",
           "activity": [
-            4,
             2,
             0,
             0,
             0,
             5,
+            4,
             0
           ],
-          "commits_7d": 14,
-          "commits_30d": 22
+          "commits_7d": 15,
+          "commits_30d": 26
         },
         {
           "name": "cplabs_homepage",
@@ -61,7 +61,7 @@
           "last_msg": "Merge upstream: K-BTF/MetaPass 메뉴 위치 스왑 + 관련 콘텐츠 업데이",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -588,10 +588,10 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-07-20",
-          "last_msg": "ops(backfill): internal-tx 컨슈머 2개로 확정 (archive trace 상한)",
-          "branch": "master",
+          "name": "health",
+          "last_date": "2026-07-21",
+          "last_msg": "포진(HSV) 재발 기록 추가: 2026-07 회차 (확산·리트풀로 중단·�",
+          "branch": "main",
           "activity": [
             0,
             0,
@@ -602,41 +602,41 @@
             2
           ],
           "commits_7d": 2,
-          "commits_30d": 5
+          "commits_30d": 6
         },
         {
           "name": "mirae",
-          "last_date": "2026-07-15",
-          "last_msg": "feat: TSMC 2Q26 실적 브리핑 tsmc_brief.sh — 1회성(7/16 20:00 KST), 주�",
+          "last_date": "2026-07-20",
+          "last_msg": "feat: 알파벳(구글) 2Q26 실적·AI capex 브리핑 googl_brief.sh — 1회�",
           "branch": "main",
           "activity": [
             1,
-            1,
             0,
             0,
             0,
             0,
+            2,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 18
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-07-20",
+          "last_msg": "ops(backfill): internal-tx 컨슈머 2개로 확정 (archive trace 상한)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 16
-        },
-        {
-          "name": "health",
-          "last_date": "2026-07-14",
-          "last_msg": "README: 최근 재발 기록 요약 한 줄 추가",
-          "branch": "main",
-          "activity": [
-            4,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 4
+          "commits_30d": 5
         },
         {
           "name": "life",
@@ -644,7 +644,7 @@
           "last_msg": "Init life project: health plan & meetup notes",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -652,7 +652,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
