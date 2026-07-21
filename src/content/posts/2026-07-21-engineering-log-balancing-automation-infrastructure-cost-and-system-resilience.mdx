@@ -1,0 +1,40 @@
+---
+title: "Engineering Log: Balancing Automation, Infrastructure Cost, and System Resilience"
+date: "2026-07-21"
+lang: en
+excerpt: "Engineering Log: Balancing Automation, Infrastructure Cost, and System Resilience  As a CTO and engineer, I’ve always believed that the true measure o..."
+---
+
+# Engineering Log: Balancing Automation, Infrastructure Cost, and System Resilience
+
+As a CTO and engineer, I’ve always believed that the true measure of a system's maturity isn't just in its feature set, but in how it handles the "unplanned"—be it a build failure caused by an AI's hallucination or a critical machine going offline during a report delivery.
+
+Today’s work was a mix of high-level infrastructure analysis and the granular "janitorial" work that keeps a professional development pipeline healthy.
+
+### 1. The Fragility of AI-Generated Content
+One of the most interesting fixes today happened in my personal portfolio (`jsong1230.github.io`). I encountered a build failure caused by AI-generated MDX content. Specifically, the AI was generating `<...>` spans that the MDX compiler interpreted as invalid JSX tags, crashing the build process.
+
+**The Fix:**
+`fix(mdx): sanitize AI-generated <...> spans to prevent build failures`
+
+This is a practical reminder for anyone integrating LLMs into their CI/CD pipelines: **Never trust AI output as raw code or markup.** Even a simple "summary" can contain characters that break a strict parser. I implemented a sanitization layer to ensure that these spans are treated as literal text, protecting the build stability.
+
+### 2. Infrastructure Optimization: The "Cleanup" over "Conversion"
+A significant portion of my day was spent on AWS Savings Plans (SP) analysis. In many organizations, there is a tendency to think that moving to SP or Reserved Instances (RI) is the silver bullet for cost reduction. However, today's analysis proved otherwise.
+
+Looking at the logs:
+> *"Judgment: 'Almost SP-ified via restructuring' has limits... Reduction is not about SP, but about 'Cleanup'."*
+
+I identified unused EIPs and idle EBS volumes (nearly 600GiB) that were bleeding budget. The insight here is critical: **Optimization cannot fix waste.** If you apply a Savings Plan to an idle resource, you are simply paying less for something you don't need. The real "leverage" comes from the teardown of unused assets, not the pricing model of existing ones. This is a lesson I frequently emphasize at **CPLABS**—efficiency starts with visibility and pruning.
+
+### 3. Resilience in the Face of Hardware Failure
+The day ended with a classic engineering challenge: a critical node (my MacBook) went offline via Tailscale just as a report needed to be delivered.
+
+Instead of waiting for the machine to come back online, I pivoted to a redundant node (iMac) to ensure the delivery of the `AWS_SP전환분석_20260720.html` report. While it seems like a simple manual workaround, it highlights the importance of **cross-device accessibility**. Having my environment mirrored and accessible across multiple machines allowed me to maintain a zero-downtime delivery for the stakeholders.
+
+### Summary of Changes
+- **Dashboard Updates:** Updated the tracking data for various repositories, including the `metadium-explorer-stack` and `heritageradio`, reflecting a steady increase in commit activity.
+- **Ops/Backfill:** Confirmed the internal-tx consumer count to two for the explorer stack to manage archive trace limits—a necessary decision to prevent bottlenecking during data backfills.
+- **Infrastructure:** Completed a deep dive into AWS spend, shifting the strategy from "conversion" to "aggressive cleanup."
+
+**Final Thought:** Whether it's sanitizing a string in a JSON file or auditing terabytes of EBS volumes, the goal is the same: reducing noise and eliminating waste to make room for actual innovation.
