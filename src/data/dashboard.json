@@ -1,37 +1,54 @@
 {
-  "generated_at": "2026-07-21T23:00:01.934Z",
+  "generated_at": "2026-07-22T23:00:01.473Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-07-21",
-          "last_msg": "docs(admin): test-pending 2건 검증완료 — quality_audit beat 자동발화 ",
+          "last_date": "2026-07-22",
+          "last_msg": "[admin+main] fix(cron): dated-log 파일명 TZ=Asia/Seoul 통일 — heartbeat �",
           "branch": "dev",
           "activity": [
-            26,
             0,
             0,
             0,
             10,
             1,
+            1,
             0
           ],
-          "commits_7d": 37,
-          "commits_30d": 102
+          "commits_7d": 38,
+          "commits_30d": 96
+        },
+        {
+          "name": "metadium_homepage",
+          "last_date": "2026-07-22",
+          "last_msg": "jsong-demo-01 데모용 챗봇/vLLM 헬스체크 monitor-demo.sh 추가",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 52
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-21",
+          "last_date": "2026-07-22",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
+            3,
             2,
-            3,
-            3,
-            3,
             2,
             0
           ],
@@ -44,15 +61,15 @@
           "last_msg": "logs: 2026-07-21 add — Compute SP discount rate breakdown (term length dominat",
           "branch": "gram-jsong",
           "activity": [
-            2,
             0,
             0,
             0,
             5,
             4,
+            0,
             0
           ],
-          "commits_7d": 15,
+          "commits_7d": 11,
           "commits_30d": 26
         },
         {
@@ -69,25 +86,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 12
-        },
-        {
-          "name": "metadium_homepage",
-          "last_date": "2026-07-03",
-          "last_msg": "monitor.sh에 Telegram 알림 추가 (이상 감지 시 push)",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
           "commits_7d": 0,
-          "commits_30d": 49
+          "commits_30d": 12
         },
         {
           "name": "company-page",
@@ -589,8 +589,8 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-07-21",
-          "last_msg": "포진(HSV) 재발 기록 추가: 2026-07 회차 (확산·리트풀로 중단·�",
+          "last_date": "2026-07-22",
+          "last_msg": "보험 가입 완료 문서 + 포진 추가고지 메시지 (교보 마이플랜",
           "branch": "main",
           "activity": [
             0,
@@ -598,11 +598,11 @@
             0,
             0,
             0,
-            0,
+            2,
             2
           ],
-          "commits_7d": 2,
-          "commits_30d": 6
+          "commits_7d": 4,
+          "commits_30d": 8
         },
         {
           "name": "mirae",
@@ -610,16 +610,16 @@
           "last_msg": "feat: 알파벳(구글) 2Q26 실적·AI capex 브리핑 googl_brief.sh — 1회�",
           "branch": "main",
           "activity": [
-            1,
             0,
             0,
             0,
             0,
             2,
+            0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 18
+          "commits_7d": 2,
+          "commits_30d": 15
         },
         {
           "name": "metadium-explorer-stack",
@@ -631,8 +631,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0
           ],
           "commits_7d": 2,
