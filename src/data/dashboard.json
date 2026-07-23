@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-07-22T23:00:01.473Z",
+  "generated_at": "2026-07-23T23:00:01.587Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-07-22",
-          "last_msg": "[admin+main] fix(cron): dated-log 파일명 TZ=Asia/Seoul 통일 — heartbeat �",
+          "last_date": "2026-07-23",
+          "last_msg": "docs(admin): w13 cycle build+freeze 완료 기록 briefing (prod sync=cron 자�",
           "branch": "dev",
           "activity": [
-            0,
             0,
             0,
             10,
             1,
             1,
+            1,
             0
           ],
-          "commits_7d": 38,
-          "commits_30d": 96
+          "commits_7d": 13,
+          "commits_30d": 93
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-07-23",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 17,
+          "commits_30d": 69
         },
         {
           "name": "metadium_homepage",
@@ -31,29 +48,12 @@
             0,
             0,
             0,
-            0,
             3,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 52
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-07-22",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 17,
-          "commits_30d": 69
+          "commits_30d": 36
         },
         {
           "name": "claude-agent",
@@ -63,13 +63,13 @@
           "activity": [
             0,
             0,
-            0,
             5,
             4,
             0,
+            0,
             0
           ],
-          "commits_7d": 11,
+          "commits_7d": 9,
           "commits_30d": 26
         },
         {
@@ -597,9 +597,9 @@
             0,
             0,
             0,
-            0,
             2,
-            2
+            2,
+            0
           ],
           "commits_7d": 4,
           "commits_30d": 8
@@ -613,13 +613,13 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 15
+          "commits_30d": 14
         },
         {
           "name": "metadium-explorer-stack",
@@ -630,13 +630,13 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 5
+          "commits_30d": 3
         },
         {
           "name": "life",
