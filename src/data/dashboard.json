@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-25T23:00:01.665Z",
+  "generated_at": "2026-07-26T23:00:01.485Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-25",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-07-26",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
             3,
             0
           ],
           "commits_7d": 17,
-          "commits_30d": 70
+          "commits_30d": 71
         },
         {
           "name": "heritageradio",
@@ -27,16 +27,16 @@
           "last_msg": "docs(admin): w13 cycle build+freeze 완료 기록 briefing (prod sync=cron 자�",
           "branch": "dev",
           "activity": [
-            10,
             1,
             1,
             1,
+            0,
             0,
             0,
             0
           ],
-          "commits_7d": 13,
-          "commits_30d": 92
+          "commits_7d": 12,
+          "commits_30d": 90
         },
         {
           "name": "metadium_homepage",
@@ -45,8 +45,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             3,
+            0,
             0,
             0,
             0,
@@ -61,8 +61,8 @@
           "last_msg": "logs: 2026-07-21 add — Compute SP discount rate breakdown (term length dominat",
           "branch": "gram-jsong",
           "activity": [
-            5,
             4,
+            0,
             0,
             0,
             0,
@@ -594,11 +594,11 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             2,
             2,
             0,
             1,
+            0,
             0
           ],
           "commits_7d": 5,
@@ -610,8 +610,8 @@
           "last_msg": "feat: 알파벳(구글) 2Q26 실적·AI capex 브리핑 googl_brief.sh — 1회�",
           "branch": "main",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -627,8 +627,8 @@
           "last_msg": "ops(backfill): internal-tx 컨슈머 2개로 확정 (archive trace 상한)",
           "branch": "master",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
