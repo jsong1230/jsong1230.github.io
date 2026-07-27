@@ -1,42 +1,59 @@
 {
-  "generated_at": "2026-07-26T23:00:01.485Z",
+  "generated_at": "2026-07-27T23:00:01.878Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-07-27",
+          "last_msg": "[admin+main] docs(CHANGELOG): 청음 player 월요일 00:05 조기 갱신 cron �",
+          "branch": "dev",
+          "activity": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 91
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-26",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-07-27",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
-          "commits_7d": 17,
-          "commits_30d": 71
+          "commits_7d": 16,
+          "commits_30d": 70
         },
         {
-          "name": "heritageradio",
-          "last_date": "2026-07-23",
-          "last_msg": "docs(admin): w13 cycle build+freeze 완료 기록 briefing (prod sync=cron 자�",
-          "branch": "dev",
+          "name": "claude-agent",
+          "last_date": "2026-07-27",
+          "last_msg": "logs: 2026-07-27 add — CP-Guard 100 result + MAC-08 fix proposal delivered, bu",
+          "branch": "gram-jsong",
           "activity": [
-            1,
-            1,
-            1,
             0,
             0,
             0,
+            0,
+            0,
+            3,
             0
           ],
-          "commits_7d": 12,
-          "commits_30d": 90
+          "commits_7d": 7,
+          "commits_30d": 29
         },
         {
           "name": "metadium_homepage",
@@ -44,8 +61,8 @@
           "last_msg": "jsong-demo-01 데모용 챗봇/vLLM 헬스체크 monitor-demo.sh 추가",
           "branch": "master",
           "activity": [
-            0,
             3,
+            0,
             0,
             0,
             0,
@@ -54,23 +71,6 @@
           ],
           "commits_7d": 3,
           "commits_30d": 36
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-07-21",
-          "last_msg": "logs: 2026-07-21 add — Compute SP discount rate breakdown (term length dominat",
-          "branch": "gram-jsong",
-          "activity": [
-            4,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 26
         },
         {
           "name": "cplabs_homepage",
@@ -593,11 +593,11 @@
           "last_msg": "포진 진료 경과 요약 추가 (2026-07-24 재진용)",
           "branch": "main",
           "activity": [
-            0,
             2,
             2,
             0,
             1,
+            0,
             0,
             0
           ],
@@ -610,7 +610,7 @@
           "last_msg": "feat: 알파벳(구글) 2Q26 실적·AI capex 브리핑 googl_brief.sh — 1회�",
           "branch": "main",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -627,7 +627,7 @@
           "last_msg": "ops(backfill): internal-tx 컨슈머 2개로 확정 (archive trace 상한)",
           "branch": "master",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -635,7 +635,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
