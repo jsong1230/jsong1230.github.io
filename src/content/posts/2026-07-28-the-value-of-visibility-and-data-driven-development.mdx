@@ -1,0 +1,47 @@
+---
+title: "The Value of Visibility and Data-Driven Development"
+date: "2026-07-28"
+lang: en
+excerpt: "Engineering Log: The Value of Visibility and Data-Driven Development  As an engineer and CTO, I’ve always believed that you cannot optimize what you c..."
+---
+
+# Engineering Log: The Value of Visibility and Data-Driven Development
+
+As an engineer and CTO, I’ve always believed that you cannot optimize what you cannot measure. Over my 20 years in the industry—spanning the evolution of early web architectures to the current frontiers of Web3, DID, and AI—one constant has remained: the importance of a feedback loop.
+
+Today's work was relatively quiet in terms of architectural shifts, but it focused on a critical component of my personal engineering workflow: **the dashboard**. I updated the `dashboard.json` for my personal site, which serves as a living record of my development velocity across various projects.
+
+### The Technical Context: Automated Observability
+
+The change in `src/data/dashboard.json` might look like a simple data update to an outsider, but it represents a system of automated observability. By tracking `commits_7d` and `commits_30d` across multiple repositories, I can visualize where my cognitive load is being spent.
+
+Looking at the diff, we see a significant shift in activity:
+
+```json
+{
+  "name": "heritageradio",
+  "last_date": "2026-07-27",
+  "last_msg": "[admin+main] docs(CHANGELOG): 청음 player 월요일 00:05 조기 갱신 cron...",
+  "branch": "dev",
+  "commits_7d": 4,
+  "commits_30d": 91
+}
+```
+
+The inclusion of `heritageradio` and the updates to `claude-agent` highlight a transition in focus. Specifically, the `claude-agent` logs reference "CP-Guard 100 results" and "MAC-08 fix proposals." This is where the "real" engineering happens—integrating AI agents into the development lifecycle to handle repetitive debugging and proposal drafting.
+
+### Insights from the Code Changes
+
+When I review these updates, I don't just see numbers; I see patterns. 
+
+1.  **Context Switching Cost**: By tracking activity across `cplabs_homepage`, `claude-agent`, and `heritageradio`, I can see how fragmented my attention is. In high-stakes environments like CPLABS, minimizing context switching is key to maintaining deep work.
+2.  **The Role of Automation**: The fact that this dashboard is updated via a `chore` commit suggests a CI/CD pipeline that aggregates git metadata. This is a micro-application of the "Infrastructure as Code" philosophy—treating my professional presence as a deployable asset.
+3.  **AI Integration**: The activity in `claude-agent` demonstrates my ongoing exploration of how LLMs can assist in technical auditing and fix proposals. Moving from manual coding to "agent-assisted orchestration" is the single biggest productivity leap I've experienced in the last two decades.
+
+### Final Thoughts
+
+Many developers overlook the importance of documenting their own trajectory. Whether it's a JSON file on a GitHub page or a comprehensive Jira board at CPLABS, having a data-driven view of your output prevents "productivity illusions." It forces you to confront where your time actually goes versus where you *think* it goes.
+
+As we push further into the era of AI-driven development, the role of the CTO and the senior engineer shifts from "the person who writes the most code" to "the person who best orchestrates the flow of information and logic." Today's update is a small but necessary step in maintaining that orchestration.
+
+**Stay curious, stay technical.**
