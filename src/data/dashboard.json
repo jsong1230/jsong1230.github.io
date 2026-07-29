@@ -1,19 +1,36 @@
 {
-  "generated_at": "2026-07-28T23:00:01.844Z",
+  "generated_at": "2026-07-29T23:00:01.144Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-07-30",
+          "last_msg": "config: switch permissions.defaultMode from bypassPermissions to default",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            3,
+            9,
+            8,
+            4
+          ],
+          "commits_7d": 24,
+          "commits_30d": 50
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-07-28",
+          "last_date": "2026-07-29",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -22,37 +39,20 @@
           "commits_30d": 69
         },
         {
-          "name": "claude-agent",
-          "last_date": "2026-07-28",
-          "last_msg": "logs: 2026-07-28 add — testnet explorer pilot resize EXECUTED (3 nodes: SYNC x",
-          "branch": "gram-jsong",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            3,
-            9,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 38
-        },
-        {
           "name": "heritageradio",
           "last_date": "2026-07-27",
           "last_msg": "[admin+main] docs(CHANGELOG): 청음 player 월요일 00:05 조기 갱신 cron �",
           "branch": "dev",
           "activity": [
-            1,
             0,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 2,
           "commits_30d": 91
         },
         {
@@ -69,8 +69,8 @@
             0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 36
+          "commits_7d": 0,
+          "commits_30d": 13
         },
         {
           "name": "cplabs_homepage",
@@ -588,6 +588,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "go-metadium",
+          "last_date": "2026-07-28",
+          "last_msg": "params: bump version to 1.1.0",
+          "branch": "bump-version-1.1.0",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
           "name": "metadium-explorer-stack",
           "last_date": "2026-07-28",
           "last_msg": "ops(compose): 전 서비스 로그 로테이션 앵커 + rabbitmq hostname 고�",
@@ -598,8 +615,8 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 4
@@ -610,15 +627,15 @@
           "last_msg": "포진 진료 경과 요약 추가 (2026-07-24 재진용)",
           "branch": "main",
           "activity": [
-            2,
             0,
             1,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 1,
           "commits_30d": 9
         },
         {
@@ -722,23 +739,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 1
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-06-17",
-          "last_msg": "docs: record #30125 fetcher-ordering backport as landed",
-          "branch": "secfix/mainnet-phase2",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
         },
         {
           "name": "go-metadium",
