@@ -1,0 +1,62 @@
+---
+title: "Closing the Gap: Hardening Infrastructure Guards Against \"Script-Based\" Deletions"
+date: "2026-07-30"
+lang: en
+excerpt: "Closing the Gap: Hardening Infrastructure Guards Against \"Script-Based\" Deletions  As a CTO and engineer, I’ve learned that the most dangerous bugs ar..."
+---
+
+# Closing the Gap: Hardening Infrastructure Guards Against "Script-Based" Deletions
+
+As a CTO and engineer, I’ve learned that the most dangerous bugs aren't the ones that crash your app—they are the ones that silently delete your infrastructure. In a high-velocity environment, especially when leveraging AI agents to automate cloud operations, the "blast radius" of a single mistaken command can be catastrophic.
+
+Today’s development work was focused on a critical lesson: **A guard that only monitors the command line is an incomplete guard.**
+
+### The Problem: The "Bash Wrapper" Loophole
+
+Recently, we encountered an incident where a significant amount of data was lost because a script was written via a tool, saved to disk, and then executed using `bash cleanup.sh`. 
+
+From the perspective of a traditional shell hook or a Pre-Tool-Use guard, the command being executed was simply `bash cleanup.sh`. This is a benign command. The actual destructive logic—the `aws ec2 delete-volume` calls—was hidden inside the file. Because the guard only inspected the execution string and not the content of the script being called, the "destructive" nature of the action was invisible until it was too late.
+
+### The Technical Solution: Deep Script Scanning
+
+To solve this, I implemented a recursive scanning mechanism within the `cpdax-delete-guard`. The logic now shifts from "What is the user typing?" to "What is actually about to happen?"
+
+**Key technical decisions:**
+
+1.  **Content Inspection:** The guard now extracts script paths from the command line (supporting `bash`, `sh`, `zsh`, `source`, and `./` executions). It then reads the file content and applies the same regex-based destructive patterns used for direct CLI commands.
+2.  **Recursive Analysis:** To prevent "nesting" as a bypass technique, the scanner follows script calls up to three levels deep. If `A.sh` calls `B.sh`, and `B.sh` contains a `rm -rf`, the guard will flag it.
+3.  **The "Self-Blocking" Paradox:** An interesting challenge arose during testing. My test suite, `test-cpdax-guard.sh`, contains strings of destructive commands to verify that the guard actually works. Consequently, the guard started blocking the test suite itself.
+    *   **Decision:** I introduced a `GUARD_SCAN_EXEMPT` declaration. If this string appears in the first 10 lines of a script, the guard skips the content scan. This is a deliberate, visible "opt-out" that must be reviewed in a git diff, ensuring it isn't used to sneak in actual destructive code.
+
+```bash
+# Example of the new scanning logic in tools/cpdax-delete-guard
+scan_script() {
+  local f="$1" depth="${2:-0}"
+  [ "$depth" -gt 3 ] && return 0 # Prevent infinite recursion
+  # ... read file ...
+  printf '%s\n' "$body" | head -10 | grep -q 'GUARD_SCAN_EXEMPT' && return 0
+  if printf '%s' "$body" | grep -E 'aws ' | grep -qE "$AWS_VERBS" || ...; then
+    SCRIPT_HIT="$f"
+    return 1
+  fi
+  # Recurse into nested scripts
+  nested=$(printf '%s' "$body" | grep -oE '[^[:space:];&|<>"'"'"']+\.sh' | sort -u)
+  for n in $nested; do
+    scan_script "$n" $((depth + 1)) || return 1
+  done
+}
+```
+
+### Insights and Practical Takeaways
+
+This update reminds me of a fundamental principle in security: **Defense in Depth.** 
+
+We now have a four-layered defense:
+1.  **Hook Deny:** Immediate regex blocking of known dangerous patterns.
+2.  **Interactive Guard:** 41 specific rules that force the agent to ask for confirmation.
+3.  **Auto-Classifier:** Sorting tools into safe (file edit) vs. risky (shell).
+4.  **Physical Safeguard:** The `aws-safe-delete` tool, which enforces snapshots before any deletion.
+
+While this update closes the "script loophole," I’ve documented the remaining edges—such as `eval` obfuscation or remote SSH execution. In a production environment at **CPLABS**, we strive for "reasonable certainty" over "impossible perfection." By reducing the attack surface and making destructive actions explicit and visible in the logs, we significantly lower the risk of human (or AI) error.
+
+**Today's Result:** Test cases expanded from 24 to 34, all passing. The infrastructure is now significantly more resilient.
