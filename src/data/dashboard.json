@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-07-31T23:00:01.477Z",
+  "generated_at": "2026-08-01T23:00:01.445Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-01",
+          "last_msg": "Auto-generate weekly book post",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-08-01",
-          "last_msg": "docs: revise bp3 instance-store runbook for systemd, recost for 4 nodes",
+          "last_msg": "docs: resume note for the next session after 2026-08-01",
           "branch": "gram-jsong",
           "activity": [
-            0,
             3,
             9,
             8,
             14,
             3,
-            2
-          ],
-          "commits_7d": 39,
-          "commits_30d": 64
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-07-31",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            2,
-            2,
-            2,
-            2,
-            2,
+            9,
             0
           ],
-          "commits_7d": 16,
-          "commits_30d": 69
+          "commits_7d": 46,
+          "commits_30d": 71
         },
         {
           "name": "heritageradio",
@@ -44,8 +44,8 @@
           "last_msg": "[admin+main] docs(CHANGELOG): 청음 player 월요일 00:05 조기 갱신 cron �",
           "branch": "dev",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -70,7 +70,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 5
         },
         {
           "name": "cplabs_homepage",
@@ -595,8 +595,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -612,8 +612,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -687,7 +687,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 4
         },
         {
           "name": "MetaLotto",
