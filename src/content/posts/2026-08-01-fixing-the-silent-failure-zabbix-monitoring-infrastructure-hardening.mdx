@@ -1,0 +1,51 @@
+---
+title: "Fixing the Silent Failure: Zabbix Monitoring & Infrastructure Hardening"
+date: "2026-08-01"
+lang: en
+excerpt: "Engineering Log: Fixing the \"Silent Failure\" – Zabbix Monitoring & Infrastructure Hardening  As a CTO, one of the most frustrating experiences isn't a..."
+---
+
+# Engineering Log: Fixing the "Silent Failure" – Zabbix Monitoring & Infrastructure Hardening
+
+As a CTO, one of the most frustrating experiences isn't a system crash—it's a system crash that your monitoring tools *claimed* was already happening, thereby masking a real outage. 
+
+Today's work was centered around solving exactly this problem. We encountered a situation where a critical process (`gmet`) on our BP3 node was down for nearly six hours, yet no alerts were triggered. The culprit? A "pinned" trigger that had been in a failed state for so long that it became invisible noise.
+
+### The Problem: The Trap of "Always-Down" Monitoring
+
+The existing Zabbix trigger for `gmet` used a simple TCP check: `net.tcp.service[tcp,,8588]`. This is a server-side check where the Zabbix server attempts to connect to the node's public IP on port 8588.
+
+However, for security and architectural reasons, our BP nodes bind `gmet` to `127.0.0.1`. Consequently, the Zabbix server could *never* reach the port. The trigger was permanently set to "Down." When the actual process died on July 31st, the status didn't change—it was already "Down." This is a classic monitoring failure: when a warning is always on, it is effectively off.
+
+### The Technical Solution: Multi-Layered Detection
+
+I developed a Python-based Zabbix API tool (`tools/zbx-fix-gmet-trigger.py`) to transition from a fragile external check to robust internal telemetry. 
+
+**The key technical decisions were:**
+
+1.  **Distinguishing Failure Modes:** A process can be "down" in two different ways. I implemented two distinct triggers:
+    *   **Process Death:** Using `systemd.unit.info[gmet.service,ActiveState]`. If the unit isn't `active`, the process is dead.
+    *   **Logic Stall:** Using `metadium[chain_head_block]`. If the block height doesn't change for 10 minutes, the process is running but "stuck" (not importing).
+2.  **Granular Disabling (Avoid Template Overkill):** While the old TCP check was useless for BP nodes, it actually worked for our EN2 node (which binds to `0.0.0.0`). Instead of disabling the trigger at the template level—which would blind us to EN2's status—I wrote the script to disable the old trigger only on specific hosts (BP1, BP2, BP3).
+3.  **Security-First Tooling:** To avoid leaking sensitive API tokens in shell history (`ps aux`), the script accepts credentials via environment variables (`ZBX_TOKEN`) or `stdin`.
+
+### Insights from the Code
+
+In the diff, you'll see a strong emphasis on "dry-run" by default. In production infrastructure, applying API changes to monitoring templates can be risky. 
+
+```python
+# From zbx-fix-gmet-trigger.py
+# Defaults to dry-run, supports --revert, and takes credentials via ZBX_TOKEN or stdin
+```
+
+Another critical insight came from debugging the Zabbix frontend. I discovered that accessing the Zabbix server via IP resulted in 403/503 errors because the vhost was strictly name-based (`testnetdashboard.metadium.com`). This reminded me that in a modern Web3 infrastructure stack, DNS and vhost configurations are just as critical as the backend logic itself.
+
+### Final Thoughts
+
+Infrastructure is a living organism. Today's fix wasn't just about a script; it was about correcting a "blind spot." At **CPLABS**, we strive for high availability, but that availability is only as good as our ability to detect failure. Moving from "Simple Checks" to "Agent-side Telemetry" is a necessary evolution as our node architecture becomes more hardened and restricted.
+
+**Summary of changes:**
+- 🛠️ Created `zbx-fix-gmet-trigger.py` to automate Zabbix trigger reconfiguration.
+- 📈 Added systemd state and block-height monitoring for `gmet`.
+- 📝 Revised BP3 instance-store runbooks to prevent RocksDB corruption during rsync.
+- 🔒 Hardened RPC exposure and restored testnet BP monitoring.
