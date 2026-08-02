@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-08-01T23:00:01.445Z",
+  "generated_at": "2026-08-02T23:00:01.861Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-01",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-08-02",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 70
+          "commits_30d": 71
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-01",
-          "last_msg": "docs: resume note for the next session after 2026-08-01",
+          "last_date": "2026-08-02",
+          "last_msg": "ops: apply testnet Zabbix playbook to mainnet, replace departed admins with json",
           "branch": "gram-jsong",
           "activity": [
-            3,
             9,
             8,
             14,
             3,
             9,
+            2,
             0
           ],
-          "commits_7d": 46,
-          "commits_30d": 71
+          "commits_7d": 48,
+          "commits_30d": 73
         },
         {
           "name": "heritageradio",
@@ -44,7 +44,7 @@
           "last_msg": "[admin+main] docs(CHANGELOG): 청음 player 월요일 00:05 조기 갱신 cron �",
           "branch": "dev",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -53,7 +53,7 @@
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 90
+          "commits_30d": 87
         },
         {
           "name": "metadium_homepage",
@@ -70,7 +70,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 3
         },
         {
           "name": "cplabs_homepage",
@@ -594,8 +594,8 @@
           "branch": "bump-version-1.1.0",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -611,8 +611,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 10
         },
         {
           "name": "life",
