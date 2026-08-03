@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-08-02T23:00:01.861Z",
+  "generated_at": "2026-08-03T23:00:01.881Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-02",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-08-03",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 71
+          "commits_30d": 70
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-02",
-          "last_msg": "ops: apply testnet Zabbix playbook to mainnet, replace departed admins with json",
+          "last_date": "2026-08-03",
+          "last_msg": "docs: handover note for the evening clear",
           "branch": "gram-jsong",
           "activity": [
-            9,
             8,
             14,
             3,
             9,
             2,
+            29,
             0
           ],
-          "commits_7d": 48,
-          "commits_30d": 73
+          "commits_7d": 74,
+          "commits_30d": 102
         },
         {
           "name": "heritageradio",
@@ -52,7 +52,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 87
         },
         {
@@ -588,43 +588,9 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "go-metadium",
-          "last_date": "2026-07-28",
-          "last_msg": "params: bump version to 1.1.0",
-          "branch": "bump-version-1.1.0",
-          "activity": [
-            0,
-            2,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 2
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-07-28",
-          "last_msg": "ops(compose): 전 서비스 로그 로테이션 앵커 + rabbitmq hostname 고�",
-          "branch": "master",
-          "activity": [
-            0,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 4
-        },
-        {
           "name": "health",
-          "last_date": "2026-07-24",
-          "last_msg": "포진 진료 경과 요약 추가 (2026-07-24 재진용)",
+          "last_date": "2026-08-03",
+          "last_msg": "체성분 기록(InBody) 추가: 2024-05-29 분당서울대 측정치 정리",
           "branch": "main",
           "activity": [
             0,
@@ -633,10 +599,44 @@
             0,
             0,
             0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 10
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-08-03",
+          "last_msg": "docs: add Camellia mainnet hard fork activation plan",
+          "branch": "docs/camellia-mainnet-hf-plan",
+          "activity": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 3,
+          "commits_30d": 3
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-07-28",
+          "last_msg": "ops(compose): 전 서비스 로그 로테이션 앵커 + rabbitmq hostname 고�",
+          "branch": "master",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
           ],
-          "commits_7d": 0,
-          "commits_30d": 9
+          "commits_7d": 1,
+          "commits_30d": 4
         },
         {
           "name": "mirae",
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 9
         },
         {
           "name": "life",
