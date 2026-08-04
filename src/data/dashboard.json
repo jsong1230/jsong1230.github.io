@@ -1,47 +1,30 @@
 {
-  "generated_at": "2026-08-03T23:00:01.881Z",
+  "generated_at": "2026-08-04T23:00:01.446Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-03",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
           "name": "claude-agent",
-          "last_date": "2026-08-03",
-          "last_msg": "docs: handover note for the evening clear",
+          "last_date": "2026-08-05",
+          "last_msg": "docs: stage 2 progress — SYNC realigned, api2 on i4i, and a phaseA false succe",
           "branch": "gram-jsong",
           "activity": [
-            8,
             14,
             3,
             9,
             2,
             29,
-            0
+            18,
+            4
           ],
-          "commits_7d": 74,
-          "commits_30d": 102
+          "commits_7d": 87,
+          "commits_30d": 124
         },
         {
           "name": "heritageradio",
-          "last_date": "2026-07-27",
-          "last_msg": "[admin+main] docs(CHANGELOG): 청음 player 월요일 00:05 조기 갱신 cron �",
+          "last_date": "2026-08-04",
+          "last_msg": "docs(admin): w17~21 등록 300 key 로 갱신 — 위인 9/24·9/25 보강 완�",
           "branch": "dev",
           "activity": [
             0,
@@ -49,11 +32,28 @@
             0,
             0,
             0,
-            0,
+            2,
             0
           ],
-          "commits_7d": 0,
-          "commits_30d": 87
+          "commits_7d": 2,
+          "commits_30d": 89
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-04",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
         },
         {
           "name": "metadium_homepage",
@@ -588,6 +588,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "go-metadium",
+          "last_date": "2026-08-04",
+          "last_msg": "metadium/scripts: refuse to report a stop that never happened",
+          "branch": "fix/shutdown-deadlock",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "commits_7d": 5,
+          "commits_30d": 5
+        },
+        {
           "name": "health",
           "last_date": "2026-08-03",
           "last_msg": "체성분 기록(InBody) 추가: 2024-05-29 분당서울대 측정치 정리",
@@ -598,28 +615,11 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 10
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-08-03",
-          "last_msg": "docs: add Camellia mainnet hard fork activation plan",
-          "branch": "docs/camellia-mainnet-hf-plan",
-          "activity": [
-            2,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
-          ],
-          "commits_7d": 3,
-          "commits_30d": 3
         },
         {
           "name": "metadium-explorer-stack",
@@ -627,7 +627,7 @@
           "last_msg": "ops(compose): 전 서비스 로그 로테이션 앵커 + rabbitmq hostname 고�",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -635,7 +635,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 4
         },
         {
@@ -653,7 +653,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 6
         },
         {
           "name": "life",
