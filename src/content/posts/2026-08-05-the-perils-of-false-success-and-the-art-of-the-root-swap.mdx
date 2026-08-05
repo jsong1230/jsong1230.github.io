@@ -1,0 +1,46 @@
+---
+title: "The Perils of \"False Success\" and the Art of the Root Swap"
+date: "2026-08-05"
+lang: en
+excerpt: "Engineering Log: The Perils of \"False Success\" and the Art of the Root Swap  As a CTO and engineer, I’ve spent over two decades learning that the most..."
+---
+
+# Engineering Log: The Perils of "False Success" and the Art of the Root Swap
+
+As a CTO and engineer, I’ve spent over two decades learning that the most dangerous state in a system isn't "Failure"—it's "False Success." A failure is loud; it triggers alerts and forces a fix. A false success, however, is a silent killer that lets you proceed with confidence right up until the moment of total collapse.
+
+Today’s work on the `claude-agent` and infrastructure migration was a masterclass in this phenomenon.
+
+## The "Copy-Before-Stop" Trap
+
+While executing a critical volume swap for `api2`, I encountered a classic architectural oversight in the written procedure. The sequence was: `Bulk Copy` $\rightarrow$ `Instance Stop` $\rightarrow$ `Root Swap` $\rightarrow$ `Start`.
+
+The technical flaw? **AWS Instance Store data is ephemeral.** It is wiped the moment an instance is stopped. By copying 394GB of data to the instance store *before* stopping the instance, I was essentially writing data to a whiteboard that gets erased the second I leave the room.
+
+I caught this just in time. As noted in the commit:
+> *"Cost of catching it late was 33G of discarded work rather than a wasted half hour and a lost copy."*
+
+**The Decision:** I pivoted to the pattern used for `api1`: `Stop` $\rightarrow$ `Swap` (reattaching the old volume as a data source) $\rightarrow$ `Boot` $\rightarrow$ `Bind-mount` $\rightarrow$ `Copy`. This ensured the data source remained persistent throughout the transition.
+
+## Fighting the "False Success" Pattern
+
+The most humbling part of today's work was the `phaseA` disk preparation. My script reported `PHASEA_DONE`, but the resulting disk was unbootable. 
+
+The culprit was a sector alignment issue. `sgdisk` refused the BIOS boot partition at sector 40 due to the default 2048-sector alignment. `grub-install` exited with an error, but my script didn't gate on the return code. Worse, it "verified" the success by finding a `core.img` file—which happened to be a leftover from the old root that had been rsynced over.
+
+**Insight:** Never trust a file's existence as a proxy for a process's success. The only true verification for a bootable disk is a **boot test**. I resolved this by using `sgdisk -a 1` to force alignment and verifying the result on a throwaway `t3.small` instance.
+
+## Network Resilience: Breaking Single-Point Dependencies
+
+Finally, I addressed a latent risk in the peer network. `api2` had no `static-nodes.json` and relied solely on `api1` as its bootnode. If I had taken `api1` down for its second maintenance window, `api2` would have become a lonely island, unable to sync or serve traffic.
+
+I preemptively deployed a three-way peer set (`api1` + `pn1` + `pn3`) to `api2` via `admin.addPeer`. This transformed a fragile 1:1 dependency into a resilient mesh, ensuring that the network remains stable even when the primary API node is offline.
+
+## Final Reflections
+
+Today was a reminder that in high-stakes infrastructure work, **verification must be empirical, not symptomatic.** 
+
+- **Symptomatic:** "The file exists, so the install worked." $\rightarrow$ **Dangerous.**
+- **Empirical:** "The instance booted and the kernel command line is correct." $\rightarrow$ **Safe.**
+
+At CPLABS, we strive for technical depth, but that depth is useless without the rigor to verify it. Onward to the next stage.
