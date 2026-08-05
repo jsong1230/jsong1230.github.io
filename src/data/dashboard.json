@@ -1,53 +1,53 @@
 {
-  "generated_at": "2026-08-04T23:00:01.446Z",
+  "generated_at": "2026-08-05T23:00:01.491Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-08-05",
-          "last_msg": "docs: stage 2 progress — SYNC realigned, api2 on i4i, and a phaseA false succe",
+          "last_date": "2026-08-06",
+          "last_msg": "docs: fix incident log time (07:3x KST, crash window 06:09 UTC+9)",
           "branch": "gram-jsong",
           "activity": [
-            14,
             3,
             9,
             2,
             29,
             18,
-            4
+            27,
+            2
           ],
-          "commits_7d": 87,
-          "commits_30d": 124
+          "commits_7d": 100,
+          "commits_30d": 149
         },
         {
           "name": "heritageradio",
-          "last_date": "2026-08-04",
-          "last_msg": "docs(admin): w17~21 등록 300 key 로 갱신 — 위인 9/24·9/25 보강 완�",
+          "last_date": "2026-08-05",
+          "last_msg": "[main] infra: ALB access log CDK codify (prod compute-stack)",
           "branch": "dev",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
+            2,
             2,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 89
+          "commits_7d": 4,
+          "commits_30d": 91
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-04",
+          "last_date": "2026-08-05",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -598,10 +598,10 @@
             0,
             0,
             0,
-            0,
-            3
+            3,
+            0
           ],
-          "commits_7d": 5,
+          "commits_7d": 3,
           "commits_30d": 5
         },
         {
@@ -614,8 +614,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
