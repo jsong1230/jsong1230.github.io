@@ -1,52 +1,35 @@
 {
-  "generated_at": "2026-08-05T23:00:01.491Z",
+  "generated_at": "2026-08-06T23:00:01.989Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-08-06",
-          "last_msg": "docs: fix incident log time (07:3x KST, crash window 06:09 UTC+9)",
-          "branch": "gram-jsong",
-          "activity": [
-            3,
-            9,
-            2,
-            29,
-            18,
-            27,
-            2
-          ],
-          "commits_7d": 100,
-          "commits_30d": 149
-        },
-        {
           "name": "heritageradio",
-          "last_date": "2026-08-05",
-          "last_msg": "[main] infra: ALB access log CDK codify (prod compute-stack)",
+          "last_date": "2026-08-07",
+          "last_msg": "docs(admin): w17~21 WORLD_STORY 25편 완료 — 자체집필 125편 전량 완�",
           "branch": "dev",
           "activity": [
             0,
             0,
             0,
-            0,
             2,
             2,
-            0
+            4,
+            1
           ],
-          "commits_7d": 4,
-          "commits_30d": 91
+          "commits_7d": 9,
+          "commits_30d": 96
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-05",
+          "last_date": "2026-08-06",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -54,6 +37,23 @@
           ],
           "commits_7d": 16,
           "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-06",
+          "last_msg": "docs: add consolidated cost/storage figures to resume note",
+          "branch": "gram-jsong",
+          "activity": [
+            9,
+            2,
+            29,
+            18,
+            27,
+            44,
+            0
+          ],
+          "commits_7d": 132,
+          "commits_30d": 190
         },
         {
           "name": "metadium_homepage",
@@ -589,19 +589,53 @@
       "repos": [
         {
           "name": "go-metadium",
-          "last_date": "2026-08-04",
-          "last_msg": "metadium/scripts: refuse to report a stop that never happened",
-          "branch": "fix/shutdown-deadlock",
+          "last_date": "2026-08-06",
+          "last_msg": "metadium/scripts: ship systemd units with a sealer-safe stop policy",
+          "branch": "camellia/mainnet-hf",
           "activity": [
             0,
             0,
             0,
             0,
             0,
-            3,
-            0
+            0,
+            12
           ],
-          "commits_7d": 3,
+          "commits_7d": 12,
+          "commits_30d": 14
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-06",
+          "last_msg": "8/6 Camellia 메인넷 HF 확정·3노드 배포·PR + TTA 발표 + 위믹스 �",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-08-06",
+          "last_msg": "fix(backfill): 실패한 컨트랙트 생성(CREATE) trace NPE → internal_tx p",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
           "commits_30d": 5
         },
         {
@@ -613,30 +647,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 10
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-07-28",
-          "last_msg": "ops(compose): 전 서비스 로그 로테이션 앵커 + rabbitmq hostname 고�",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 4
         },
         {
           "name": "mirae",
@@ -687,7 +704,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 3
         },
         {
           "name": "MetaLotto",
@@ -779,23 +796,6 @@
           "last_date": "2026-05-21",
           "last_msg": "chore: gitignore ecosystem.config.cjs",
           "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-05-21",
-          "last_msg": "5/21 메타 5+1 통합 호스팅 + 110 정리 + Camellia HF 검증 + 보안 점�",
-          "branch": "mini-jsong",
           "activity": [
             0,
             0,
