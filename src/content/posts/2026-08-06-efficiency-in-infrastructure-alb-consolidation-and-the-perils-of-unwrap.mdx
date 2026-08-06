@@ -1,0 +1,41 @@
+---
+title: "Efficiency in Infrastructure: ALB Consolidation and the Perils of `unwrap()`"
+date: "2026-08-06"
+lang: en
+excerpt: "Efficiency in Infrastructure: ALB Consolidation and the Perils of `unwrap()`  As a CTO, I often find that the most impactful work doesn't always come ..."
+---
+
+# Efficiency in Infrastructure: ALB Consolidation and the Perils of `unwrap()`
+
+As a CTO, I often find that the most impactful work doesn't always come from writing new features, but from refining the "plumbing" of the system. Today was a prime example of this. My focus was split between high-level infrastructure optimization and the gritty reality of debugging production crashes in a cross-chain environment.
+
+## Infrastructure Optimization: The ALB Consolidation
+
+One of the primary goals at **CPLABS** has been reducing operational overhead and cloud expenditure without sacrificing stability. Today, I completed the third phase of our Application Load Balancer (ALB) consolidation, migrating the mainnet explorer (Web and WebSocket) onto the API hub.
+
+The technical challenge here wasn't just moving traffic, but managing complex routing rules. In a large-scale environment, rule priority is everything. I encountered a potential "trap" where a pre-existing priority 100 rule was designed to route all `/api/v1/*` traffic to a specific service (mchat), which would have hijacked the explorer's traffic.
+
+**The Decision:** Instead of modifying the existing complex rule set—which risks regression—I implemented a "priority override." By placing the front-end and WebSocket host rules at **p10 and p20**, I ensured they were evaluated first.
+
+> *“front/ws rules placed at p10/p20 ahead of the any-host /api/v1/*”*
+
+Interestingly, this process revealed a pre-existing misrouting bug for `bunjaws.metadium.club`. The DNS was already pointing to the API-LB, but the WebSocket rules only existed on the Web-LB. By consolidating, I didn't just save costs; I actually fixed a silent routing error.
+
+**The Result:** Seven old ALBs are now pending deletion, saving approximately **$154/month**. While the dollar amount is modest, the reduction in architectural complexity is where the real value lies.
+
+## The "Null Glitch" and the Danger of `unwrap()`
+
+On the operational side, I spent time analyzing a crash loop in the Bifrost relayer. The watchdog triggered an alert after 83 panics within a 90-minute window.
+
+The root cause was a classic combination of an external glitch and fragile code. The Bitcoin provider (dRPC) intermittently returned a `null` value for `getblockcount`. In the relayer's Rust code, the developer used `.unwrap()` on this result. In Rust, `unwrap()` is a "nuclear option"—if the value is `None` or an `Err`, the thread panics immediately.
+
+**Insight from the Crash:**
+This is the second distinct location in the vendor's code where an unchecked `unwrap()` has caused a production crash. It serves as a stark reminder: **Never trust external API responses.** Whether it's a blockchain RPC or a REST API, every single call must be handled with graceful error recovery (e.g., using `match` or `if let`) rather than assuming the provider will always adhere to the spec.
+
+I've documented this as a "second panic point" to be reported to the vendor. For now, the system self-recovered, and I've pre-verified a swap candidate (`publicnode`) to ensure we can pivot quickly if the glitch returns.
+
+## Final Thoughts
+
+Today’s work highlights the duality of the CTO role: one moment you are calculating cost-efficiencies and optimizing network topology, and the next, you are diving into the depths of a Rust panic log to identify a vendor bug. 
+
+Maintaining a lean infrastructure while ensuring the system is resilient against "null glitches" is a constant balancing act. But that is exactly where the engineering discipline of **CPLABS** shines—turning incidents into documentation and waste into efficiency.
