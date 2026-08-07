@@ -1,0 +1,46 @@
+---
+title: "Engineering the Narrative: 125 Episodes and the Pitfalls of LLM Content Generation"
+date: "2026-08-07"
+lang: en
+excerpt: "Engineering the Narrative: Completing the 125-Episode Milestone and the Pitfalls of LLM Content Generation  As a CTO, my day-to-day usually revolves a..."
+---
+
+# Engineering the Narrative: Completing the 125-Episode Milestone and the Pitfalls of LLM Content Generation
+
+As a CTO, my day-to-day usually revolves around architecture diagrams, smart contract audits, or optimizing AI pipelines. However, today was a different kind of "engineering" challenge. I reached a significant milestone in the `heritageradio` project: the completion of 125 self-authored scripts across five distinct programs.
+
+While writing content might seem like a creative endeavor, managing it at scale—especially when collaborating with LLMs like Claude Opus—requires a rigorous engineering mindset to ensure data integrity and quality consistency.
+
+### Solving the "Descriptive Title" Trap
+
+One of the most interesting technical hurdles I encountered today was a data duplication problem. When managing a database of 125 episodes, the standard way to prevent duplicates is to check for unique titles. However, I discovered a "trap" in the August batch: many titles were descriptive rather than nominal.
+
+For example, instead of a title like "Ajanta Caves," the script was titled *"The Murals Inside the Cave Carved into the Rocky Mountain."* A simple string match on titles would fail to detect that this content already existed in the system.
+
+To solve this, I implemented a **two-stage verification process**. Instead of relying on the title, I performed a `LIKE` search on the body text for specific geographical landmarks. This allowed me to filter out candidates like Ajanta, Skara Brae, and Chan Chan that had already been used, ensuring that the final 25 entries were truly unique.
+
+### Insights from the "Length Decay" Phenomenon
+
+Working with LLMs over long-term sessions often reveals subtle behavioral drifts. I noticed a concerning trend in the character counts of the generated scripts. 
+
+While the target for the `qwen3tts` engine was between 4,050 and 4,250 characters, I observed a "downward slope" in the output length as the session progressed. The first batch started at 2,682 characters, but by the fifth batch, it dropped to 2,443.
+
+**The Insight:** In long-context windows, LLMs can develop a "brevity bias" or a cumulative tendency to undershoot length requirements if not strictly monitored per iteration. Even after two reinforcement cycles to bring the floor above 2,906 characters, the distribution remained lower than previous months.
+
+**The Technical Takeaway:** For any production pipeline involving bulk LLM generation, **per-file validation must happen immediately after generation**, rather than at the end of the batch. Checking the "character curve" in real-time allows for immediate prompt adjustment before the decay becomes systemic.
+
+### Closing the Loop
+
+With the completion of the `WORLD_STORY` series, the total count now stands at:
+`JOSEON(25) + YASA(25) + DRAMA_NOVEL(25) + ANECDOTE(25) + WORLD_STORY(25) = 125/125`.
+
+From a technical perspective, the project is now moving into the audio synthesis phase. I've separated the tracks based on the persona: Typecast for historical narratives and my own `qwen3tts` bulk pipeline for anecdotes and world stories.
+
+Whether I am building a decentralized identity system at **CPLABS** or architecting a storytelling database, the principle remains the same: **Trust the output, but verify the data.**
+
+***
+
+**Today's Summary:**
+- **Milestone:** 125/125 scripts completed.
+- **Technical Fix:** Shifted from title-based deduplication to body-text `LIKE` search for descriptive entries.
+- **Observation:** Identified cumulative length decay in long-session LLM generation; implemented a requirement for immediate per-file length verification.
