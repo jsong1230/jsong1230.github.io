@@ -1,0 +1,55 @@
+---
+title: "The Ghost in the Machine: Balancing Infrastructure Hygiene and Cost Optimization"
+date: "2026-08-09"
+lang: en
+excerpt: "Balancing Infrastructure Hygiene and Cost Optimization: A CTO's Perspective  As a CTO and engineer with over two decades of experience, I’ve learned t..."
+---
+
+# Balancing Infrastructure Hygiene and Cost Optimization: A CTO's Perspective
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous parts of an infrastructure aren't usually the complex, high-traffic systems—they are the "ghosts." These are the forgotten S3 buckets, orphaned IAM roles, and zombie snapshots left over from projects long since completed.
+
+Today’s development work was a deep dive into this very issue: infrastructure hygiene and the meticulous process of cost optimization.
+
+## The Challenge: Cleaning the "Ghost" Infrastructure
+
+The primary focus today was cleaning up the remnants of the MLFF (EKS dev) environment. In a fast-paced development cycle, it's common for engineers to spin up resources quickly to test a hypothesis. However, if the "tear-down" phase isn't as rigorous as the "spin-up" phase, you end up with a cluttered AWS account that is not only a security risk but a cognitive burden.
+
+I spent a significant portion of the day auditing these remnants. The goal wasn't just to save a few dollars—though that's always a plus—but to ensure that our environment is lean and manageable.
+
+## Technical Decisions & Implementation
+
+### 1. The "Hygiene" Script
+I decided to consolidate the cleanup process into a single execution script: `tasks/2026-08-08-mlff-cleanup.sh`. 
+
+While I had already released three EIPs and deleted 2,015 snapshots (which provided the most immediate cost relief), there were still "skeletal" remains: VPC frameworks, subnet groups, and route tables. These don't cost money, but they clutter the console and can lead to naming collisions or configuration errors in future projects.
+
+### 2. The Risk of the "Unknown Key"
+One interesting discovery occurred while reviewing IAM users. I found a user, `PreMLFFECR`, with an access key that showed activity as recently as July 16th via an ELB. 
+
+Here is where experience kicks in: **Never delete a production-adjacent key based on a hunch.** 
+
+The logic is simple: if a key is being used, something—some legacy cron job, some forgotten third-party integration, or a shadow service—is relying on it. Deleting it immediately could cause a silent failure in a system you didn't even know existed. My decision was to pivot from "deletion" to "traceability," utilizing CloudTrail to identify the caller before taking action.
+
+## Insights from the Code
+
+In the `claude-agent` repository, I formalized these findings into a "CTO Decision Brief." I chose to implement this as a structured HTML document rather than a simple markdown file to ensure that stakeholders can quickly parse the urgency of each item via visual cues (chips and color-coded cards).
+
+```html
+<span class="chip crit">즉시 · 월요일</span>
+<span class="chip warn">확인필요</span>
+<span class="chip">정보</span>
+```
+
+By categorizing tasks into **Immediate**, **Verification Required**, and **Informational**, I reduce the "decision fatigue" for the team. As a leader, your job is to present the problem and the recommended solution, leaving the final "Go/No-Go" as a binary choice.
+
+## Final Thoughts
+
+Whether it's managing a blockchain node or a standard EKS cluster at **CPLABS**, the principle remains the same: **Infrastructure is a liability until it provides value.** 
+
+The habit of regular "hygiene days" prevents the accumulation of technical debt and ensures that when we scale, we are building on a clean foundation rather than a pile of legacy ruins.
+
+**Today's Summary:**
+- **Solved:** Removed high-cost snapshots and EIPs; archived critical S3 documentation.
+- **Decision:** Opted for CloudTrail tracing over immediate deletion for ambiguous IAM keys.
+- **Insight:** Visualizing decision briefs reduces friction in executive approvals.
