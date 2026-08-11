@@ -1,0 +1,51 @@
+---
+title: "Stability Monitoring and the Importance of \"Hard-Blocking\" in AI Automation"
+date: "2026-08-11"
+lang: en
+excerpt: "Engineering Log: Stability Monitoring and the Importance of \"Hard-Blocking\" in AI Automation  As a CTO, my day is often a balance between high-level a..."
+---
+
+# Engineering Log: Stability Monitoring and the Importance of "Hard-Blocking" in AI Automation
+
+As a CTO, my day is often a balance between high-level architectural oversight and the granular reality of system stability. Today was a prime example of this duality: one half of my focus was on the silent success of a testnet migration, and the other was on a "human-AI interaction error" that served as a critical lesson in safety guardrails.
+
+## 1. Testnet Migration: The Art of Observation
+We are currently on Day 5 of observing our testnet migration. In the world of blockchain and distributed systems, "it seems to work" is never enough. True stability is proven through the absence of anomalies over time.
+
+Today’s check showed a perfect baseline:
+- **Consistency:** 5 domains maintaining expected status codes (400/404/200).
+- **Health:** 5 services active with zero restarts, and health checks returning 200.
+- **Resource Stability:** Memory usage holding steady at 4.0Gi/15Gi.
+
+One interesting technical detail emerged in the logs regarding `aa-age`. I noticed about 12 "error" logs, but upon deep diving, I confirmed these were not actual system failures. They were simply `404 Not Found` responses triggered by external scanners, which the `BasicErrorController` logged as errors. 
+
+**Insight:** When monitoring high-availability systems, it is crucial to distinguish between *systemic errors* (which require immediate action) and *environmental noise* (scanners, bots). Misinterpreting the latter leads to "alert fatigue," which is the silent killer of operational efficiency.
+
+## 2. The "Mistransfer Incident": Moving from Memory to Hard-Blocks
+The most significant part of today’s work wasn't a feature update, but a safety patch for my AI-driven workflow. 
+
+Due to a naming ambiguity and a misplaced assumption by my AI agent, several internal report files were accidentally transferred to a family member's device via Taildrop. While the data wasn't critical, the *mechanism* of the error was. I had relied on the AI's "memory" to know which devices were mine, but memory is probabilistic—it can fail.
+
+To solve this, I moved from a "instruction-based" prevention to a "technical-block" prevention. I implemented a `PreToolUse` hook in `~/.claude/settings.json`.
+
+```json
+// Logic implemented in the hook:
+// Hard-block any Bash command containing forbidden device names or IPs.
+```
+
+By implementing this hook, the system now intercepts the command *before* it executes. If the command contains the forbidden IP or device name, it is blocked regardless of what the AI "thinks" it should do.
+
+**Technical Decision:** In any automation pipeline—especially those involving AI agents with shell access—**probabilistic instructions (prompts) must be backed by deterministic constraints (hooks/policies).** If a mistake is unacceptable, don't ask the AI to "be careful"; build a fence that makes the mistake physically impossible.
+
+## 3. Dashboard Maintenance
+Finally, I updated my personal development dashboard. Looking at the diffs in `dashboard.json`, it's rewarding to see the activity spikes in the `claude-agent` and `go-metadium` repositories. It reflects the current phase of my work: refining the synergy between AI orchestration and core blockchain engineering.
+
+### Summary of Today's Lessons:
+1. **Observability:** Define your "noise" baseline so you can spot real signals.
+2. **AI Safety:** Deterministic guardrails (Hard-blocks) > Probabilistic instructions (Prompts).
+3. **Consistency:** Stability is not a state, but a trend observed over time.
+
+Stay tuned as we wrap up the testnet observation period over the next few days.
+
+**Jeffrey Joo-Han Song**
+CTO, CPLABS
