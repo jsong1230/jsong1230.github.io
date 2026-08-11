@@ -1,42 +1,59 @@
 {
-  "generated_at": "2026-08-10T23:00:01.263Z",
+  "generated_at": "2026-08-11T23:00:01.778Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-08-11",
-          "last_msg": "docs: record family-device mistransfer incident and prevention",
-          "branch": "gram-jsong",
-          "activity": [
-            27,
-            44,
-            40,
-            8,
-            11,
-            15,
-            1
-          ],
-          "commits_7d": 164,
-          "commits_30d": 261
-        },
-        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-10",
+          "last_date": "2026-08-11",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 70
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-11",
+          "last_msg": "docs: bifrost relayer crash loop (16x) self-recovered, provider regression noted",
+          "branch": "gram-jsong",
+          "activity": [
+            44,
+            40,
+            8,
+            11,
+            15,
+            4,
+            0
+          ],
+          "commits_7d": 145,
+          "commits_30d": 264
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-11",
+          "last_msg": "feat: 시즌2 25화 소년이 온다 업로드 + Gemini Notebook 다운로드 �",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
         },
         {
           "name": "heritageradio",
@@ -44,15 +61,15 @@
           "last_msg": "docs(admin): w17~21 qwen3tts 250편 합성 완결 — 미달 3편 본문 보강 ",
           "branch": "dev",
           "activity": [
-            2,
             4,
             2,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 8,
           "commits_30d": 65
         },
         {
@@ -281,23 +298,6 @@
           "last_date": "2026-04-29",
           "last_msg": "style: gofmt consensus.go after hashimeta patch",
           "branch": "camellia",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-04-25",
-          "last_msg": "feat: YouTube 예약 업로드 메타데이터 + privacyStatus 처리",
-          "branch": "main",
           "activity": [
             0,
             0,
@@ -588,21 +588,55 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "go-metadium",
-          "last_date": "2026-08-10",
-          "last_msg": "core/txpool: align the txMaxSize comment with the documented guarantee",
-          "branch": "fix/premerge-blockers",
+          "name": "meta-agents",
+          "last_date": "2026-08-11",
+          "last_msg": "docs(standard): sync patent-mapping with new standard name and registered patent",
+          "branch": "main",
           "activity": [
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-08-11",
+          "last_msg": "blobpool: drain limbo under PoA where beacon finality never exists",
+          "branch": "fix/blobpool-poa-finality",
+          "activity": [
             0,
             12,
             0,
             0,
             0,
-            21
+            22,
+            19
           ],
-          "commits_7d": 33,
-          "commits_30d": 35
+          "commits_7d": 53,
+          "commits_30d": 55
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-11",
+          "last_msg": "위믹스 트래커: 인지 불가능성 축 신설 (감사 리포트 미지적)",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            1,
+            3,
+            0,
+            0,
+            0,
+            4
+          ],
+          "commits_7d": 8,
+          "commits_30d": 8
         },
         {
           "name": "health",
@@ -612,8 +646,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -622,31 +656,14 @@
           "commits_30d": 11
         },
         {
-          "name": "claude-agent",
-          "last_date": "2026-08-07",
-          "last_msg": "HANDOFF: TTA 발표.txt 중복분 삭제 완료 반영",
-          "branch": "mini-jsong",
-          "activity": [
-            0,
-            0,
-            1,
-            3,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 4
-        },
-        {
           "name": "metadium-explorer-stack",
           "last_date": "2026-08-06",
           "last_msg": "fix(backfill): 실패한 컨트랙트 생성(CREATE) trace NPE → internal_tx p",
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -688,23 +705,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 1
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-07-09",
-          "last_msg": "chore: gitignore c3-operators.json (C3 operator 개인키 보호)",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
         },
         {
           "name": "MetaLotto",
