@@ -1,68 +1,51 @@
 {
-  "generated_at": "2026-08-13T23:00:01.105Z",
+  "generated_at": "2026-08-14T23:00:01.689Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-08-14",
-          "last_msg": "ops: adopt dynamic leader rule for BP rolling order",
-          "branch": "gram-jsong",
-          "activity": [
-            8,
-            11,
-            15,
-            4,
-            5,
-            7,
-            4
-          ],
-          "commits_7d": 94,
-          "commits_30d": 275
-        },
-        {
           "name": "heritageradio",
-          "last_date": "2026-08-13",
-          "last_msg": "docs(admin): THEATER audio 중복 — 업로드 이력 추가, 요청 대상 정",
+          "last_date": "2026-08-14",
+          "last_msg": "docs(admin): THEATER audio 교체 가이드 — 대상 22편 정정 + era 미전",
           "branch": "dev",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
             3,
+            2,
             0
           ],
-          "commits_7d": 4,
-          "commits_30d": 53
+          "commits_7d": 5,
+          "commits_30d": 55
         },
         {
           "name": "business",
-          "last_date": "2026-08-13",
-          "last_msg": "Add HTML rendering of the open source traction research",
+          "last_date": "2026-08-14",
+          "last_msg": "Demote the DocRaptor $1.1M figure to unverified",
           "branch": "master",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
             5,
+            3,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 5
+          "commits_7d": 8,
+          "commits_30d": 8
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-13",
+          "last_date": "2026-08-14",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -73,21 +56,38 @@
           "commits_30d": 69
         },
         {
+          "name": "claude-agent",
+          "last_date": "2026-08-14",
+          "last_msg": "docs: wrap up 2026-08-14 with EOD summary and phase-3 SSH key plan",
+          "branch": "gram-jsong",
+          "activity": [
+            11,
+            15,
+            4,
+            5,
+            7,
+            13,
+            0
+          ],
+          "commits_7d": 63,
+          "commits_30d": 280
+        },
+        {
           "name": "booksummary",
-          "last_date": "2026-08-12",
-          "last_msg": "feat: 시즌2 28화 중국 이야기 (4파트) 업로드 + 29화 털없는 원�",
+          "last_date": "2026-08-14",
+          "last_msg": "docs: 영상 언어·태그 일괄 정정 완료 기록 (330개 전량)",
           "branch": "main",
           "activity": [
-            0,
             0,
             0,
             2,
             3,
             0,
+            6,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 5
+          "commits_7d": 11,
+          "commits_30d": 11
         },
         {
           "name": "metadium_homepage",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -605,6 +605,74 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "meta-agents",
+          "last_date": "2026-08-14",
+          "last_msg": "docs(standard): sync tta-standard docs with draft v1.1 revision",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 3,
+          "commits_30d": 3
+        },
+        {
+          "name": "wemix-dios",
+          "last_date": "2026-08-14",
+          "last_msg": "경찰 출석 대비 회의록 노션 업로드 완료 — 링크 반영",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            10
+          ],
+          "commits_7d": 13,
+          "commits_30d": 13
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-14",
+          "last_msg": "HANDOFF 재작성 — 회의록 전용 역할에 맞게 축소",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            0,
+            0,
+            4,
+            2,
+            5,
+            7
+          ],
+          "commits_7d": 18,
+          "commits_30d": 22
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-08-14",
+          "last_msg": "ops(backfill): 오버레이 이미지 태그를 배포본(syncend-npefix2)으로",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 5
+        },
+        {
           "name": "go-metadium",
           "last_date": "2026-08-13",
           "last_msg": "cmd, metadium: stop letting log rotation take the node down",
@@ -612,88 +680,20 @@
           "activity": [
             0,
             0,
-            0,
             22,
             23,
             7,
-            5
+            5,
+            0
           ],
           "commits_7d": 57,
           "commits_30d": 71
-        },
-        {
-          "name": "wemix-dios",
-          "last_date": "2026-08-13",
-          "last_msg": "8/13 회의록: 경찰 출석 대비 · 금융위 2차 변론 복기",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            3
-          ],
-          "commits_7d": 3,
-          "commits_30d": 3
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-13",
-          "last_msg": "8/13 회의록: 메타디움 이관 협상 · 경영 현안 (노션 업로드 �",
-          "branch": "mini-jsong",
-          "activity": [
-            3,
-            0,
-            0,
-            0,
-            4,
-            2,
-            4
-          ],
-          "commits_7d": 13,
-          "commits_30d": 14
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-08-11",
-          "last_msg": "docs(standard): sync patent-mapping with new standard name and registered patent",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 2
         },
         {
           "name": "health",
           "last_date": "2026-08-07",
           "last_msg": "원형탈모 치료 타임라인 추가 (올루미언트 2026-01 중순 시작 ~",
           "branch": "main",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 7
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-08-06",
-          "last_msg": "fix(backfill): 실패한 컨트랙트 생성(CREATE) trace NPE → internal_tx p",
-          "branch": "master",
           "activity": [
             0,
             0,
@@ -704,7 +704,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 7
         },
         {
           "name": "mirae",
@@ -721,7 +721,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 2
         },
         {
           "name": "life",
