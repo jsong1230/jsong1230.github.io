@@ -1,9 +1,60 @@
 {
-  "generated_at": "2026-08-14T23:00:01.689Z",
+  "generated_at": "2026-08-15T23:00:02.037Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "business",
+          "last_date": "2026-08-15",
+          "last_msg": "Add a paste-ready plain-text body for the Megazone email",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            5,
+            3,
+            4,
+            0
+          ],
+          "commits_7d": 12,
+          "commits_30d": 12
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-15",
+          "last_msg": "Auto-generate weekly book post",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-15",
+          "last_msg": "docs: correct fn2 peer reading and log PN3 triple-pathing",
+          "branch": "gram-jsong",
+          "activity": [
+            15,
+            4,
+            5,
+            7,
+            13,
+            6,
+            0
+          ],
+          "commits_7d": 59,
+          "commits_30d": 284
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-08-14",
@@ -13,64 +64,13 @@
             0,
             0,
             0,
-            0,
             3,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
-          "commits_30d": 55
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-14",
-          "last_msg": "Demote the DocRaptor $1.1M figure to unverified",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            5,
-            3,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 8
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-14",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            2,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-14",
-          "last_msg": "docs: wrap up 2026-08-14 with EOD summary and phase-3 SSH key plan",
-          "branch": "gram-jsong",
-          "activity": [
-            11,
-            15,
-            4,
-            5,
-            7,
-            13,
-            0
-          ],
-          "commits_7d": 63,
-          "commits_30d": 280
+          "commits_30d": 29
         },
         {
           "name": "booksummary",
@@ -79,11 +79,11 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             2,
             3,
             0,
             6,
+            0,
             0
           ],
           "commits_7d": 11,
@@ -612,11 +612,11 @@
           "activity": [
             0,
             0,
-            0,
             2,
             0,
             0,
-            1
+            1,
+            0
           ],
           "commits_7d": 3,
           "commits_30d": 3
@@ -631,9 +631,9 @@
             0,
             0,
             0,
-            0,
             3,
-            10
+            10,
+            0
           ],
           "commits_7d": 13,
           "commits_30d": 13
@@ -646,11 +646,11 @@
           "activity": [
             0,
             0,
-            0,
             4,
             2,
             5,
-            7
+            7,
+            0
           ],
           "commits_7d": 18,
           "commits_30d": 22
@@ -666,8 +666,8 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 5
@@ -679,11 +679,11 @@
           "branch": "fix/logrot-availability-90",
           "activity": [
             0,
-            0,
             22,
             23,
             7,
             5,
+            0,
             0
           ],
           "commits_7d": 57,
