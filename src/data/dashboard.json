@@ -1,59 +1,93 @@
 {
-  "generated_at": "2026-08-16T23:00:01.628Z",
+  "generated_at": "2026-08-17T23:00:01.716Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-08-17",
+          "last_msg": "[admin] feat: aired_guard 기간한정 해제 — AIRED_GUARD_UNLOCK env",
+          "branch": "dev",
+          "activity": [
+            0,
+            3,
+            2,
+            0,
+            2,
+            16,
+            0
+          ],
+          "commits_7d": 23,
+          "commits_30d": 47
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-17",
+          "last_msg": "Record the artifact viewer link in the indexing validation design",
+          "branch": "master",
+          "activity": [
+            0,
+            5,
+            3,
+            4,
+            16,
+            6,
+            0
+          ],
+          "commits_7d": 34,
+          "commits_30d": 34
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-17",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-08-17",
-          "last_msg": "docs: 2026-08-17 log — fn2 backup verified, md5/rotation bugs root-fixed",
+          "last_msg": "docs: 2026-08-17 evening check — all networks healthy, 151 on track for 8/18 c",
           "branch": "gram-jsong",
           "activity": [
-            4,
             5,
             7,
             13,
             6,
             3,
-            1
+            3,
+            0
           ],
-          "commits_7d": 54,
-          "commits_30d": 288
+          "commits_7d": 40,
+          "commits_30d": 290
         },
         {
           "name": "booksummary",
           "last_date": "2026-08-17",
-          "last_msg": "feat: 시즌2 30화 탤런트 코드 업로드",
+          "last_msg": "fix: 태그 '미반영' 오탐 수정 — update 응답으로 검증 + 자체 �",
           "branch": "main",
           "activity": [
-            2,
             3,
             0,
             6,
             0,
             5,
-            1
-          ],
-          "commits_7d": 17,
-          "commits_30d": 17
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-08-16",
-          "last_msg": "docs(admin): w13·w14 전수 감사 결과 + 작품명 대조 게이트 브리�",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            3,
-            2,
-            0,
-            2,
+            5,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 31
+          "commits_7d": 21,
+          "commits_30d": 21
         },
         {
           "name": "metadium-explorer-stack",
@@ -63,48 +97,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
             0,
             7,
+            0,
             0
           ],
           "commits_7d": 8,
           "commits_30d": 12
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-16",
-          "last_msg": "Record artifact viewer links in the canonical briefing and comparison docs",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            5,
-            3,
-            4,
-            16,
-            0
-          ],
-          "commits_7d": 28,
-          "commits_30d": 28
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-16",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 71
         },
         {
           "name": "metadium_homepage",
@@ -623,8 +623,8 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-08-16",
-          "last_msg": "차병원 피부과 진료기록(2026-08-07) 추가 + 탈모 타임라인 정정",
+          "last_date": "2026-08-17",
+          "last_msg": "포진 기록 정합성 수정: 8/7 차병원 결정(JAK 재개 보류·미녹�",
           "branch": "main",
           "activity": [
             0,
@@ -632,16 +632,16 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            2
           ],
-          "commits_7d": 1,
-          "commits_30d": 8
+          "commits_7d": 3,
+          "commits_30d": 10
         },
         {
           "name": "life",
-          "last_date": "2026-08-16",
-          "last_msg": "Add 동네의 명장들 미식투어 (8/15-17) itinerary and lessons",
+          "last_date": "2026-08-17",
+          "last_msg": "Complete 8/17 record: 바다예찬 · 박봉담 · 스타필드",
           "branch": "main",
           "activity": [
             0,
@@ -649,11 +649,45 @@
             0,
             0,
             0,
-            0,
+            1,
             1
           ],
-          "commits_7d": 1,
-          "commits_30d": 1
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-17",
+          "last_msg": "HANDOFF: gh credential 고정(활성계정 무관 push) 반영",
+          "branch": "mini-jsong",
+          "activity": [
+            4,
+            2,
+            5,
+            7,
+            0,
+            2,
+            4
+          ],
+          "commits_7d": 24,
+          "commits_30d": 28
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-17",
+          "last_msg": "Record the artifact viewer link in the indexing validation design",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            5,
+            3,
+            4,
+            16,
+            6
+          ],
+          "commits_7d": 34,
+          "commits_30d": 34
         },
         {
           "name": "go-metadium",
@@ -661,15 +695,15 @@
           "last_msg": "cmd: correct --log's usage string, and parse its count as a count",
           "branch": "fix/logrot-90-followups",
           "activity": [
-            22,
             23,
             7,
             5,
             0,
             0,
-            1
+            1,
+            0
           ],
-          "commits_7d": 58,
+          "commits_7d": 36,
           "commits_30d": 72
         },
         {
@@ -680,48 +714,14 @@
           "activity": [
             0,
             0,
-            0,
             3,
             10,
             0,
-            6
+            6,
+            0
           ],
           "commits_7d": 19,
           "commits_30d": 19
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-16",
-          "last_msg": "HANDOFF 재작성 — 통합 비서 허브 역할 반영 + 8/16 작업분(캘린",
-          "branch": "mini-jsong",
-          "activity": [
-            0,
-            4,
-            2,
-            5,
-            7,
-            0,
-            2
-          ],
-          "commits_7d": 20,
-          "commits_30d": 24
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-16",
-          "last_msg": "Record artifact viewer links in the canonical briefing and comparison docs",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            5,
-            3,
-            4,
-            16
-          ],
-          "commits_7d": 28,
-          "commits_30d": 28
         },
         {
           "name": "meta-agents",
@@ -729,11 +729,11 @@
           "last_msg": "docs(standard): sync tta-standard docs with draft v1.1 revision",
           "branch": "main",
           "activity": [
-            0,
             2,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
