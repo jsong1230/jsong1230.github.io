@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-08-17T23:00:01.716Z",
+  "generated_at": "2026-08-18T23:00:01.689Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "business",
+          "last_date": "2026-08-18",
+          "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
+          "branch": "master",
+          "activity": [
+            5,
+            3,
+            4,
+            16,
+            6,
+            6,
+            1
+          ],
+          "commits_7d": 41,
+          "commits_30d": 41
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-18",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-18",
+          "last_msg": "docs: 2026-08-17 log — fn2 backup verified, md5/rotation bugs root-fixed",
+          "branch": "gram-jsong",
+          "activity": [
+            7,
+            13,
+            6,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 39,
+          "commits_30d": 292
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-08-17",
           "last_msg": "[admin] feat: aired_guard 기간한정 해제 — AIRED_GUARD_UNLOCK env",
           "branch": "dev",
           "activity": [
-            0,
             3,
             2,
             0,
             2,
             16,
+            0,
             0
           ],
           "commits_7d": 23,
-          "commits_30d": 47
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-17",
-          "last_msg": "Record the artifact viewer link in the indexing validation design",
-          "branch": "master",
-          "activity": [
-            0,
-            5,
-            3,
-            4,
-            16,
-            6,
-            0
-          ],
-          "commits_7d": 34,
-          "commits_30d": 34
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-17",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-17",
-          "last_msg": "docs: 2026-08-17 evening check — all networks healthy, 151 on track for 8/18 c",
-          "branch": "gram-jsong",
-          "activity": [
-            5,
-            7,
-            13,
-            6,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 40,
-          "commits_30d": 290
+          "commits_30d": 46
         },
         {
           "name": "booksummary",
@@ -78,15 +78,15 @@
           "last_msg": "fix: 태그 '미반영' 오탐 수정 — update 응답으로 검증 + 자체 �",
           "branch": "main",
           "activity": [
-            3,
             0,
             6,
             0,
             5,
             5,
+            0,
             0
           ],
-          "commits_7d": 21,
+          "commits_7d": 19,
           "commits_30d": 21
         },
         {
@@ -96,10 +96,10 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
             0,
             7,
+            0,
             0,
             0
           ],
@@ -623,105 +623,88 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-08-17",
-          "last_msg": "포진 기록 정합성 수정: 8/7 차병원 결정(JAK 재개 보류·미녹�",
+          "last_date": "2026-08-18",
+          "last_msg": "탈모 재발 감시 로그 신설: 2026-08-18 탈락량 증가 관찰, 감별�",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
             1,
-            2
+            2,
+            1
           ],
-          "commits_7d": 3,
-          "commits_30d": 10
+          "commits_7d": 4,
+          "commits_30d": 11
         },
         {
           "name": "life",
-          "last_date": "2026-08-17",
-          "last_msg": "Complete 8/17 record: 바다예찬 · 박봉담 · 스타필드",
+          "last_date": "2026-08-18",
+          "last_msg": "Add 전기차 장기렌트 리서치 (2027년 4월 교체)",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
+            1,
             1,
             1
           ],
-          "commits_7d": 2,
-          "commits_30d": 2
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-17",
-          "last_msg": "HANDOFF: gh credential 고정(활성계정 무관 push) 반영",
-          "branch": "mini-jsong",
-          "activity": [
-            4,
-            2,
-            5,
-            7,
-            0,
-            2,
-            4
-          ],
-          "commits_7d": 24,
-          "commits_30d": 28
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-17",
-          "last_msg": "Record the artifact viewer link in the indexing validation design",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            5,
-            3,
-            4,
-            16,
-            6
-          ],
-          "commits_7d": 34,
-          "commits_30d": 34
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-08-16",
-          "last_msg": "cmd: correct --log's usage string, and parse its count as a count",
-          "branch": "fix/logrot-90-followups",
-          "activity": [
-            23,
-            7,
-            5,
-            0,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 36,
-          "commits_30d": 72
+          "commits_7d": 3,
+          "commits_30d": 3
         },
         {
           "name": "wemix-dios",
-          "last_date": "2026-08-16",
-          "last_msg": "8/16 세션 정리 — HANDOFF 갱신, 출석자별 근거자료 배포본",
+          "last_date": "2026-08-18",
+          "last_msg": "8/17~8/18 — 위메이드 공지문 원문 확보, 경찰 출석 지참본 2종",
           "branch": "main",
           "activity": [
-            0,
             0,
             3,
             10,
             0,
             6,
-            0
+            0,
+            1
           ],
-          "commits_7d": 19,
-          "commits_30d": 19
+          "commits_7d": 20,
+          "commits_30d": 20
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-18",
+          "last_msg": "HANDOFF: DITS 포럼 조사 건 반영",
+          "branch": "mini-jsong",
+          "activity": [
+            2,
+            5,
+            7,
+            0,
+            2,
+            4,
+            10
+          ],
+          "commits_7d": 30,
+          "commits_30d": 38
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-18",
+          "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
+          "branch": "master",
+          "activity": [
+            0,
+            5,
+            3,
+            4,
+            16,
+            6,
+            7
+          ],
+          "commits_7d": 41,
+          "commits_30d": 41
         },
         {
           "name": "meta-agents",
@@ -729,16 +712,33 @@
           "last_msg": "docs(standard): sync tta-standard docs with draft v1.1 revision",
           "branch": "main",
           "activity": [
-            2,
             0,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 1,
           "commits_30d": 3
+        },
+        {
+          "name": "go-metadium",
+          "last_date": "2026-08-13",
+          "last_msg": "core/txpool/legacypool: fix the two races in the TRS pool tests",
+          "branch": "fix/trs-sweep-test-flake",
+          "activity": [
+            7,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 71
         },
         {
           "name": "mirae",
