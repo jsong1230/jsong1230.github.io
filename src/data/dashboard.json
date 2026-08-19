@@ -1,59 +1,76 @@
 {
-  "generated_at": "2026-08-18T23:00:01.689Z",
+  "generated_at": "2026-08-19T23:00:02.032Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-19",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-19",
+          "last_msg": "docs: 8/19 morning sweep, 151 rewind status, packages cleanup, validator docs ar",
+          "branch": "gram-jsong",
+          "activity": [
+            13,
+            6,
+            3,
+            3,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 35,
+          "commits_30d": 288
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-19",
+          "last_msg": "feat: 호메로스 「오디세이아」 핵심요약 업로드 + 예약 재배�",
+          "branch": "main",
+          "activity": [
+            6,
+            0,
+            5,
+            5,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 18,
+          "commits_30d": 23
+        },
         {
           "name": "business",
           "last_date": "2026-08-18",
           "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
           "branch": "master",
           "activity": [
-            5,
             3,
             4,
             16,
             6,
             6,
-            1
+            1,
+            0
           ],
           "commits_7d": 41,
           "commits_30d": 41
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-18",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-18",
-          "last_msg": "docs: 2026-08-17 log — fn2 backup verified, md5/rotation bugs root-fixed",
-          "branch": "gram-jsong",
-          "activity": [
-            7,
-            13,
-            6,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 39,
-          "commits_30d": 292
         },
         {
           "name": "heritageradio",
@@ -61,33 +78,16 @@
           "last_msg": "[admin] feat: aired_guard 기간한정 해제 — AIRED_GUARD_UNLOCK env",
           "branch": "dev",
           "activity": [
-            3,
             2,
             0,
             2,
             16,
             0,
+            0,
             0
           ],
           "commits_7d": 23,
-          "commits_30d": 46
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-17",
-          "last_msg": "fix: 태그 '미반영' 오탐 수정 — update 응답으로 검증 + 자체 �",
-          "branch": "main",
-          "activity": [
-            0,
-            6,
-            0,
-            5,
-            5,
-            0,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 21
+          "commits_30d": 37
         },
         {
           "name": "metadium-explorer-stack",
@@ -95,16 +95,16 @@
           "last_msg": "docs(acme): 집(mini-home) 사본 추가로 회사 사이트 전손 대비 완�",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             7,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 8,
-          "commits_30d": 12
+          "commits_30d": 10
         },
         {
           "name": "metadium_homepage",
@@ -623,20 +623,54 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-08-18",
-          "last_msg": "탈모 재발 감시 로그 신설: 2026-08-18 탈락량 증가 관찰, 감별�",
+          "last_date": "2026-08-19",
+          "last_msg": "교보 민원 접수 완료(2026-08-19) 반영, 회신 대기",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
-            0,
             1,
             2,
+            1,
+            16
+          ],
+          "commits_7d": 20,
+          "commits_30d": 27
+        },
+        {
+          "name": "wemix-dios",
+          "last_date": "2026-08-19",
+          "last_msg": "8/19 경찰 출석일 — 변호사 확인항목 온체인 규명 (A-1·B-4)",
+          "branch": "main",
+          "activity": [
+            3,
+            10,
+            0,
+            6,
+            0,
+            1,
             1
           ],
-          "commits_7d": 4,
-          "commits_30d": 11
+          "commits_7d": 21,
+          "commits_30d": 21
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-19",
+          "last_msg": "Add the on-chain indexing validation landing with measured figures and a live en",
+          "branch": "master",
+          "activity": [
+            5,
+            3,
+            4,
+            16,
+            6,
+            7,
+            5
+          ],
+          "commits_7d": 46,
+          "commits_30d": 46
         },
         {
           "name": "life",
@@ -647,30 +681,13 @@
             0,
             0,
             0,
-            0,
             1,
             1,
-            1
+            1,
+            0
           ],
           "commits_7d": 3,
           "commits_30d": 3
-        },
-        {
-          "name": "wemix-dios",
-          "last_date": "2026-08-18",
-          "last_msg": "8/17~8/18 — 위메이드 공지문 원문 확보, 경찰 출석 지참본 2종",
-          "branch": "main",
-          "activity": [
-            0,
-            3,
-            10,
-            0,
-            6,
-            0,
-            1
-          ],
-          "commits_7d": 20,
-          "commits_30d": 20
         },
         {
           "name": "claude-agent",
@@ -678,33 +695,16 @@
           "last_msg": "HANDOFF: DITS 포럼 조사 건 반영",
           "branch": "mini-jsong",
           "activity": [
-            2,
             5,
             7,
             0,
             2,
             4,
-            10
+            10,
+            0
           ],
-          "commits_7d": 30,
+          "commits_7d": 28,
           "commits_30d": 38
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-18",
-          "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
-          "branch": "master",
-          "activity": [
-            0,
-            5,
-            3,
-            4,
-            16,
-            6,
-            7
-          ],
-          "commits_7d": 41,
-          "commits_30d": 41
         },
         {
           "name": "meta-agents",
@@ -713,8 +713,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -726,19 +726,19 @@
         {
           "name": "go-metadium",
           "last_date": "2026-08-13",
-          "last_msg": "core/txpool/legacypool: fix the two races in the TRS pool tests",
-          "branch": "fix/trs-sweep-test-flake",
+          "last_msg": "crypto: port the upstream point-validation guards, and correct a CVE reference",
+          "branch": "secfix/p2p-and-crypto-guards",
           "activity": [
-            7,
-            5,
+            6,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 15,
-          "commits_30d": 71
+          "commits_7d": 6,
+          "commits_30d": 72
         },
         {
           "name": "mirae",
