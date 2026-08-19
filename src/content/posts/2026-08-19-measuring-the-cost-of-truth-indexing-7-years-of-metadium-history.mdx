@@ -1,0 +1,54 @@
+---
+title: "Measuring the Cost of Truth: Indexing 7 Years of Metadium History"
+date: "2026-08-19"
+lang: en
+excerpt: "Measuring the Cost of Truth: Indexing 7 Years of Metadium History  As a CTO, one of the most critical transitions I've navigated over the last 20 year..."
+---
+
+# Measuring the Cost of Truth: Indexing 7 Years of Metadium History
+
+As a CTO, one of the most critical transitions I've navigated over the last 20 years is moving from "theoretical capacity" to "measured reality." In the Web3 space, specifically when dealing with Decentralized Identifiers (DID) and blockchain indexing, we often talk about scalability in abstract terms. However, when building a commercial product, "it should work" isn't a metric. You need to know exactly how many gigabytes of storage and how many CPU cycles a single contract's history consumes.
+
+Today, I focused on establishing this "cost table" (W1 measurements) by indexing the full history of the Metadium `IdentityRegistry` (EIP-1484).
+
+### The Challenge: Quantifying the Indexing Burden
+
+The goal was simple but rigorous: index every single event from genesis to block 117.4M (approximately 7.4 years of data) and measure the resource footprint. This wasn't just a technical exercise; it was a business necessity to determine the pricing and infrastructure requirements for our customers.
+
+**The Setup:**
+- **Environment:** ESXi VM (16vCPU/64G RAM) running `graph-node v0.35.1` and PostgreSQL 16.
+- **Constraint:** To comply with security restrictions, I used an SSH tunnel to connect to the internal Metadium mainnet RPC, which intentionally introduces a bottleneck to simulate a conservative baseline.
+
+### The Results: 7 Hours, 10 Gigabytes
+
+The results were illuminating. The entire history was indexed in **7 hours and 43 minutes**, processing roughly **4,220 blocks per second**. 
+
+The final PostgreSQL footprint landed at **10.2 GB**. Breaking this down:
+- `registry_event`: 3.0 GB
+- `PoI (Proof of Indexing)`: 1.15 GB
+- `identity`: 0.76 GB
+
+From a product perspective, this is a breakthrough. We now have a concrete formula: **"One contract's 7-year history $\approx$ half a day of indexing and 10GB of storage."** This allows us to confidently map our resource consumption to AWS instance types. For instance, an `r7g.large` can comfortably absorb dozens of such indexes, turning our "RI-burn" (Reserved Instance consumption) from a guess into a calculated metric.
+
+### Engineering Insights & Lessons Learned
+
+While the process was successful, the diff and the logs revealed a few critical points for future subgraph designs:
+
+**1. The Danger of Aggregate Entity Bloat**
+I noticed that `GlobalStat` and `DailyStat` entities were consuming more space than expected (~698MB combined). Because these aggregate entities were being updated and versioned with every event, they bloated the database. 
+*Insight:* For frequently updated aggregates, we should move toward an immutable time-series design or handle the aggregation in an off-chain view to reduce PG storage by roughly 7%.
+
+**2. The "Fixed Cost" of PoI**
+Even in a single-node operation, the Proof of Indexing (PoI) overhead was a steady 1.15 GB. This is a non-negotiable "tax" on the system that must be factored into the baseline cost for every customer deployment.
+
+**3. Pruned Nodes and Genesis Scanning**
+Since we were using a pruned node, backtracking state was impossible. However, because "empty" block ranges are processed so rapidly, scanning from `startBlock=1` proved to be the safest and most efficient path.
+
+### Moving Forward (W2)
+
+With the baseline costs established, the next phase (W2) will move toward real-world customer scenarios:
+- Implementing address-based transfer history and ERC-20 balance time-series.
+- Building deposit detection webhooks.
+- Demonstrating PG-to-PG logical replication for customers who want their data residing in their own databases.
+
+In the world of Web3 infrastructure, the bridge between a "cool project" and a "viable product" is built on these kinds of measurements. Knowing the exact cost of a byte of on-chain history is where the real engineering begins.
