@@ -1,0 +1,50 @@
+---
+title: "The Art of the Dashboard: Maintaining a Living Engineering Log"
+date: "2026-08-20"
+lang: en
+excerpt: "The Art of the Dashboard: Maintaining a Living Engineering Log  As a CTO and engineer with over two decades in the trenches—spanning the evolution of ..."
+---
+
+# The Art of the Dashboard: Maintaining a Living Engineering Log
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of Web3, DID, and AI—I’ve learned that the most dangerous thing for a technical leader is a "blind spot." Whether it's a silent failure in a production node or a gradual decline in development velocity, visibility is the only cure.
+
+Today’s work was a subtle but essential part of my personal engineering hygiene: updating the dashboard data for my personal project ecosystem. While a `chore: Update dashboard data` commit might look trivial to an outsider, it represents a broader philosophy of **quantified engineering**.
+
+### The Problem: The Decay of Visibility
+
+In a complex environment—especially when juggling multiple repositories like `claude-agent`, `booksummary`, and business-critical indexing tools—it is easy to lose track of where the actual momentum is. We often rely on "gut feeling" to know which project is thriving and which is stagnating.
+
+The problem I solve with this dashboard is the elimination of that subjectivity. By automating the aggregation of commit frequencies, last-activity timestamps, and branch statuses into a single `dashboard.json` file, I transform raw git logs into a high-level operational map.
+
+### Technical Decisions: Data-Driven Reflection
+
+Looking at today's diff, you'll see a shift in the repository landscape:
+
+```json
+- "name": "heritageradio",
+- "last_date": "2026-08-17",
+...
++ "name": "booksummary",
++ "last_date": "2026-08-19",
++ "last_msg": "feat: 호메로스 「오디세이아」 핵심요약 업로드 + 예약 재배�",
+```
+
+The decision to rotate the tracked repositories (replacing `heritageradio` with `booksummary`) reflects a shift in current priority. In a professional setting—such as my tenure at **CPLABS**—this is equivalent to shifting KPIs. When a project moves from an "active development" phase to a "maintenance" phase, it should no longer occupy the primary mental real estate of the lead engineer.
+
+Furthermore, the update to the `claude-agent` activity metrics shows a spike in recent commits (13 in the latest window). This tells me that the agent's "morning sweep" and "validator docs" work is hitting a stride.
+
+### Insights from the Code
+
+The most interesting part of this process isn't the JSON itself, but what the numbers reveal about the *nature* of work:
+
+1.  **The "Burst" Pattern:** Notice the `activity` arrays. They aren't linear. Engineering happens in bursts of high intensity followed by periods of reflection or stabilization.
+2.  **The Indexing Milestone:** The `business` repo reflects a significant technical win: *"Record W1 indexing measurements: full Metadium history in 7h43m, 10GB."* This is the kind of concrete data point that validates architectural decisions. When dealing with blockchain history, knowing the exact time-to-index is the difference between a scalable system and a bottleneck.
+
+### Final Thoughts
+
+Many engineers view "updating a dashboard" or "writing a log" as non-productive work. I disagree. 
+
+Throughout my career, including my leadership roles at **CPLABS**, I have found that the act of measuring your progress is a form of debugging your own productivity. By forcing myself to look at the `commits_7d` and `commits_30d` metrics, I can objectively see if I am spending too much time on "polishing" and not enough time on "building."
+
+Consistency is the bedrock of excellence in Web3 and AI. Whether it's a smart contract or a personal dashboard, if you don't measure it, you can't improve it.
