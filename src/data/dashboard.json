@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-08-19T23:00:02.032Z",
+  "generated_at": "2026-08-20T23:00:01.517Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-19",
+          "last_date": "2026-08-20",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -23,20 +23,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-19",
-          "last_msg": "docs: 8/19 morning sweep, 151 rewind status, packages cleanup, validator docs ar",
+          "last_date": "2026-08-20",
+          "last_msg": "tools: to-mini 추가 — gram → mini-jsong 파일 전달 헬퍼",
           "branch": "gram-jsong",
           "activity": [
-            13,
             6,
             3,
             3,
             2,
             1,
+            1,
             0
           ],
-          "commits_7d": 35,
-          "commits_30d": 288
+          "commits_7d": 25,
+          "commits_30d": 285
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-08-20",
+          "last_msg": "sitemap 에서 /notice/phishing 항목 제거 (직전 커밋 누락분)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 8
         },
         {
           "name": "booksummary",
@@ -44,12 +61,12 @@
           "last_msg": "feat: 호메로스 「오디세이아」 핵심요약 업로드 + 예약 재배�",
           "branch": "main",
           "activity": [
-            6,
             0,
             5,
             5,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 18,
@@ -61,15 +78,15 @@
           "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
           "branch": "master",
           "activity": [
-            3,
             4,
             16,
             6,
             6,
             1,
+            0,
             0
           ],
-          "commits_7d": 41,
+          "commits_7d": 36,
           "commits_30d": 41
         },
         {
@@ -78,16 +95,16 @@
           "last_msg": "[admin] feat: aired_guard 기간한정 해제 — AIRED_GUARD_UNLOCK env",
           "branch": "dev",
           "activity": [
-            2,
             0,
             2,
             16,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 23,
-          "commits_30d": 37
+          "commits_7d": 20,
+          "commits_30d": 36
         },
         {
           "name": "metadium-explorer-stack",
@@ -95,9 +112,9 @@
           "last_msg": "docs(acme): 집(mini-home) 사본 추가로 회사 사이트 전손 대비 완�",
           "branch": "master",
           "activity": [
-            1,
             0,
             7,
+            0,
             0,
             0,
             0,
@@ -122,23 +139,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 3
-        },
-        {
-          "name": "cplabs_homepage",
-          "last_date": "2026-07-15",
-          "last_msg": "Merge upstream: K-BTF/MetaPass 메뉴 위치 스왑 + 관련 콘텐츠 업데이",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -622,6 +622,57 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "go-metadium",
+          "last_date": "2026-08-20",
+          "last_msg": "eth/protocols/snap: check a response was solicited before decoding it",
+          "branch": "secfix/snap-response-gate-95",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "commits_7d": 4,
+          "commits_30d": 74
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-20",
+          "last_msg": "8/20: 권 대표 배치안 메일 발송, STT 원본 전량 삭제 — HANDOFF �",
+          "branch": "mini-jsong",
+          "activity": [
+            7,
+            0,
+            2,
+            4,
+            10,
+            0,
+            4
+          ],
+          "commits_7d": 28,
+          "commits_30d": 42
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-20",
+          "last_msg": "Retract the r7g RI headroom premise: the only r7g reservation is aurora-mysql",
+          "branch": "master",
+          "activity": [
+            3,
+            4,
+            16,
+            6,
+            7,
+            6,
+            2
+          ],
+          "commits_7d": 44,
+          "commits_30d": 49
+        },
+        {
           "name": "health",
           "last_date": "2026-08-19",
           "last_msg": "교보 민원 접수 완료(2026-08-19) 반영, 회신 대기",
@@ -629,14 +680,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
             2,
             1,
-            16
+            16,
+            0
           ],
           "commits_7d": 20,
-          "commits_30d": 27
+          "commits_30d": 25
         },
         {
           "name": "wemix-dios",
@@ -644,33 +695,16 @@
           "last_msg": "8/19 경찰 출석일 — 변호사 확인항목 온체인 규명 (A-1·B-4)",
           "branch": "main",
           "activity": [
-            3,
             10,
             0,
             6,
             0,
             1,
-            1
+            1,
+            0
           ],
-          "commits_7d": 21,
+          "commits_7d": 18,
           "commits_30d": 21
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-19",
-          "last_msg": "Add the on-chain indexing validation landing with measured figures and a live en",
-          "branch": "master",
-          "activity": [
-            5,
-            3,
-            4,
-            16,
-            6,
-            7,
-            5
-          ],
-          "commits_7d": 46,
-          "commits_30d": 46
         },
         {
           "name": "life",
@@ -680,31 +714,14 @@
           "activity": [
             0,
             0,
+            1,
+            1,
+            1,
             0,
-            1,
-            1,
-            1,
             0
           ],
           "commits_7d": 3,
           "commits_30d": 3
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-18",
-          "last_msg": "HANDOFF: DITS 포럼 조사 건 반영",
-          "branch": "mini-jsong",
-          "activity": [
-            5,
-            7,
-            0,
-            2,
-            4,
-            10,
-            0
-          ],
-          "commits_7d": 28,
-          "commits_30d": 38
         },
         {
           "name": "meta-agents",
@@ -712,8 +729,8 @@
           "last_msg": "docs(standard): sync tta-standard docs with draft v1.1 revision",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -722,23 +739,6 @@
           ],
           "commits_7d": 1,
           "commits_30d": 3
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-08-13",
-          "last_msg": "crypto: port the upstream point-validation guards, and correct a CVE reference",
-          "branch": "secfix/p2p-and-crypto-guards",
-          "activity": [
-            6,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 6,
-          "commits_30d": 72
         },
         {
           "name": "mirae",
@@ -755,7 +755,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 0
         },
         {
           "name": "MetaLotto",
