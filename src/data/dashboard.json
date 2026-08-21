@@ -1,17 +1,34 @@
 {
-  "generated_at": "2026-08-20T23:00:01.517Z",
+  "generated_at": "2026-08-21T23:00:01.254Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-08-22",
+          "last_msg": "[admin] feat(content): w21 15편 보강 — w18~w21 60편 완결, 검수 60/60 �",
+          "branch": "dev",
+          "activity": [
+            2,
+            16,
+            0,
+            0,
+            0,
+            6,
+            6
+          ],
+          "commits_7d": 30,
+          "commits_30d": 47
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-20",
+          "last_date": "2026-08-21",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -23,20 +40,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-20",
-          "last_msg": "tools: to-mini 추가 — gram → mini-jsong 파일 전달 헬퍼",
+          "last_date": "2026-08-21",
+          "last_msg": "docs: pre-clear handoff note for session resume",
           "branch": "gram-jsong",
           "activity": [
-            6,
             3,
             3,
             2,
             1,
             1,
+            10,
             0
           ],
-          "commits_7d": 25,
-          "commits_30d": 285
+          "commits_7d": 26,
+          "commits_30d": 295
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-21",
+          "last_msg": "chore: processed_videos.json last_updated 갱신 (8/20 파이프라인 실행분",
+          "branch": "main",
+          "activity": [
+            5,
+            5,
+            0,
+            2,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 26
         },
         {
           "name": "cplabs_homepage",
@@ -48,29 +82,12 @@
             0,
             0,
             0,
-            0,
             8,
+            0,
             0
           ],
           "commits_7d": 8,
           "commits_30d": 8
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-19",
-          "last_msg": "feat: 호메로스 「오디세이아」 핵심요약 업로드 + 예약 재배�",
-          "branch": "main",
-          "activity": [
-            0,
-            5,
-            5,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 18,
-          "commits_30d": 23
         },
         {
           "name": "business",
@@ -78,33 +95,16 @@
           "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
           "branch": "master",
           "activity": [
-            4,
             16,
             6,
             6,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 36,
+          "commits_7d": 33,
           "commits_30d": 41
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-08-17",
-          "last_msg": "[admin] feat: aired_guard 기간한정 해제 — AIRED_GUARD_UNLOCK env",
-          "branch": "dev",
-          "activity": [
-            0,
-            2,
-            16,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 20,
-          "commits_30d": 36
         },
         {
           "name": "metadium-explorer-stack",
@@ -112,15 +112,15 @@
           "last_msg": "docs(acme): 집(mini-home) 사본 추가로 회사 사이트 전손 대비 완�",
           "branch": "master",
           "activity": [
-            0,
             7,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 7,
           "commits_30d": 10
         },
         {
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -622,6 +622,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-08-21",
+          "last_msg": "8/21 밤: 권태윤 대표 회신 처리 — Core 해석 종결, Stage 유보 �",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            2,
+            4,
+            10,
+            0,
+            4,
+            4
+          ],
+          "commits_7d": 24,
+          "commits_30d": 46
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-21",
+          "last_msg": "Record the AI Summit field scouting and fold it into the affected docs",
+          "branch": "master",
+          "activity": [
+            4,
+            16,
+            6,
+            7,
+            6,
+            2,
+            3
+          ],
+          "commits_7d": 44,
+          "commits_30d": 52
+        },
+        {
           "name": "go-metadium",
           "last_date": "2026-08-20",
           "last_msg": "eth/protocols/snap: check a response was solicited before decoding it",
@@ -632,45 +666,11 @@
             0,
             0,
             0,
-            0,
-            4
+            4,
+            0
           ],
           "commits_7d": 4,
           "commits_30d": 74
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-20",
-          "last_msg": "8/20: 권 대표 배치안 메일 발송, STT 원본 전량 삭제 — HANDOFF �",
-          "branch": "mini-jsong",
-          "activity": [
-            7,
-            0,
-            2,
-            4,
-            10,
-            0,
-            4
-          ],
-          "commits_7d": 28,
-          "commits_30d": 42
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-20",
-          "last_msg": "Retract the r7g RI headroom premise: the only r7g reservation is aurora-mysql",
-          "branch": "master",
-          "activity": [
-            3,
-            4,
-            16,
-            6,
-            7,
-            6,
-            2
-          ],
-          "commits_7d": 44,
-          "commits_30d": 49
         },
         {
           "name": "health",
@@ -679,15 +679,15 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
             2,
             1,
             16,
+            0,
             0
           ],
           "commits_7d": 20,
-          "commits_30d": 25
+          "commits_30d": 23
         },
         {
           "name": "wemix-dios",
@@ -695,15 +695,15 @@
           "last_msg": "8/19 경찰 출석일 — 변호사 확인항목 온체인 규명 (A-1·B-4)",
           "branch": "main",
           "activity": [
-            10,
             0,
             6,
             0,
             1,
             1,
+            0,
             0
           ],
-          "commits_7d": 18,
+          "commits_7d": 8,
           "commits_30d": 21
         },
         {
@@ -713,10 +713,10 @@
           "branch": "main",
           "activity": [
             0,
+            1,
+            1,
+            1,
             0,
-            1,
-            1,
-            1,
             0,
             0
           ],
@@ -729,7 +729,7 @@
           "last_msg": "docs(standard): sync tta-standard docs with draft v1.1 revision",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -737,7 +737,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
