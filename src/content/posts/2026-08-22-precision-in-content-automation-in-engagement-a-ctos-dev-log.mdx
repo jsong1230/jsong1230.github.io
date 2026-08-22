@@ -1,0 +1,62 @@
+---
+title: "Precision in Content, Automation in Engagement: A CTO's Dev Log"
+date: "2026-08-22"
+lang: en
+excerpt: "Precision in Content, Automation in Engagement: Today's Dev Log  As a CTO, I often find that the most challenging part of a project isn't the initial ..."
+---
+
+# Precision in Content, Automation in Engagement: Today's Dev Log
+
+As a CTO, I often find that the most challenging part of a project isn't the initial architecture, but the "last mile"—the fine-tuning where technical constraints meet human perception. Today's work across three different projects highlighted this theme: the struggle for precision in narration timing and the balance between automation and human judgment in community management.
+
+## 1. Heritage Radio: The Battle of the "Last Few Seconds"
+
+The bulk of today's work was dedicated to finalizing the narration blocks for weeks 18 through 21. We've reached a milestone: 60 episodes completed and passed inspection. However, the process revealed a critical technical discrepancy in our validation pipeline.
+
+**The Problem: Raw Character Count vs. Estimated Audio Duration**
+We have two scripts: one for expanding content (`expand_narration_scripts.py`) and one for reviewing it (`review_narration_scripts.py`). I noticed that some episodes passed the raw character count check but failed the audio duration check (exceeding the 582s limit). 
+
+The root cause was the "markup ratio." Depending on the episode, the ratio of raw text to actual spoken text fluctuates between 23% and 25%. A few dozen characters might seem negligible in a text editor, but in a professional narration, they translate to several seconds that can cause a broadcast clip to be cut off.
+
+**The Decision:**
+I decided to lower the raw character upper bound by 60 characters to create a "safety buffer." More importantly, I codified the hierarchy of truth in the code:
+
+```python
+# The upper limit is set more conservatively than in review_narration_scripts.py.
+# Final judgment is ALWAYS based on the review script (estimated seconds).
+# This value is for primary filtering only.
+BAND = {"YASA_STORY": (3550, 3760), "JOSEON_STORY": (3380, 3580), "DRAMA_NOVEL": (3420, 3620)}
+```
+
+**Insight:** In AI-driven content pipelines, "approximate" is the enemy of "professional." When the output is time-bound (like radio or video), the final validation must always be based on the actual output metric (seconds), not the input metric (characters).
+
+## 2. BookSummary: Automating Empathy
+
+On the `booksummary` project, I implemented a system to manage subscriber comments. While I could have fully automated the replies using an LLM, I intentionally stopped short of that.
+
+**Technical Approach:**
+- **`check_new_comments.py`**: A reporting tool that identifies unanswered comments.
+- **`reply_to_comments.py`**: A tool for bulk posting and hiding hate speech.
+- **Local Cron Integration**: Since YouTube API secrets are kept in `.gitignore` for security, I opted for a local cron job on my `gram` machine rather than a cloud-based routine.
+
+**The Philosophy of "Human-in-the-Loop":**
+I've integrated a workflow where the system *reports* the pending comments to a text file, but the *actual wording* of the reply is decided during a session. 
+
+```bash
+# run-comment-check.sh
+# Reply drafting requires judgment, so posting is not automated.
+# Based on this report, replies will be written/posted during the session.
+```
+
+In my 20 years of engineering, I've learned that automating "engagement" often leads to a loss of authenticity. By automating the *discovery* of comments but keeping the *response* manual (or human-guided), we maintain the emotional connection with the audience while removing the operational burden of searching for missed messages.
+
+## Final Thoughts
+
+Whether it's adjusting a character limit by 60 units to save 3 seconds of audio, or choosing a local cron job over a cloud function to protect API keys, the goal is the same: **reliability and intentionality.**
+
+At CPLABS, we always strive for this level of detail. It's not just about making the code work; it's about making the code work in harmony with the final user experience.
+
+**Today's Stats:**
+- **Heritage Radio:** 60/60 episodes validated.
+- **BookSummary:** 21 replies posted, 1 hate comment hidden, 1 "pure critique" left untouched (as a reminder of growth).
+- **Dashboard:** Updated.
