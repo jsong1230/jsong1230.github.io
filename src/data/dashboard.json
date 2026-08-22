@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T23:00:01.254Z",
+  "generated_at": "2026-08-22T23:00:02.005Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -10,33 +10,50 @@
           "last_msg": "[admin] feat(content): w21 15편 보강 — w18~w21 60편 완결, 검수 60/60 �",
           "branch": "dev",
           "activity": [
-            2,
             16,
             0,
             0,
             0,
             6,
-            6
+            6,
+            0
           ],
           "commits_7d": 30,
-          "commits_30d": 47
+          "commits_30d": 46
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-21",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-08-22",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-22",
+          "last_msg": "feat: 조지 오웰 「1984」 핵심요약 업로드 (10/1 예약)",
+          "branch": "main",
+          "activity": [
+            5,
+            0,
+            2,
+            0,
+            3,
+            7,
+            0
+          ],
+          "commits_7d": 22,
+          "commits_30d": 33
         },
         {
           "name": "claude-agent",
@@ -45,32 +62,15 @@
           "branch": "gram-jsong",
           "activity": [
             3,
-            3,
             2,
             1,
             1,
             10,
+            0,
             0
           ],
-          "commits_7d": 26,
+          "commits_7d": 20,
           "commits_30d": 295
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-21",
-          "last_msg": "chore: processed_videos.json last_updated 갱신 (8/20 파이프라인 실행분",
-          "branch": "main",
-          "activity": [
-            5,
-            5,
-            0,
-            2,
-            0,
-            3,
-            0
-          ],
-          "commits_7d": 15,
-          "commits_30d": 26
         },
         {
           "name": "cplabs_homepage",
@@ -81,8 +81,8 @@
             0,
             0,
             0,
-            0,
             8,
+            0,
             0,
             0
           ],
@@ -95,15 +95,15 @@
           "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
           "branch": "master",
           "activity": [
-            16,
             6,
             6,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 33,
+          "commits_7d": 29,
           "commits_30d": 41
         },
         {
@@ -112,7 +112,7 @@
           "last_msg": "docs(acme): 집(mini-home) 사본 추가로 회사 사이트 전손 대비 완�",
           "branch": "master",
           "activity": [
-            7,
+            0,
             0,
             0,
             0,
@@ -622,38 +622,72 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "health",
+          "last_date": "2026-08-22",
+          "last_msg": "실손24 등록 완료 반영: 휴대폰 본인인증으로 영문명 우회 성",
+          "branch": "main",
+          "activity": [
+            1,
+            2,
+            1,
+            16,
+            0,
+            0,
+            9
+          ],
+          "commits_7d": 29,
+          "commits_30d": 32
+        },
+        {
+          "name": "life",
+          "last_date": "2026-08-22",
+          "last_msg": "Add 민원 기록 — 351번 시내버스 기사 응대 태도",
+          "branch": "main",
+          "activity": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 4,
+          "commits_30d": 4
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-08-21",
-          "last_msg": "8/21 밤: 권태윤 대표 회신 처리 — Core 해석 종결, Stage 유보 �",
+          "last_date": "2026-08-22",
+          "last_msg": "bizbox API 연동 — 서명 클라이언트·퇴직예정자 연차/결재 조�",
           "branch": "mini-jsong",
           "activity": [
-            0,
             2,
             4,
             10,
             0,
             4,
-            4
+            4,
+            6
           ],
-          "commits_7d": 24,
-          "commits_30d": 46
+          "commits_7d": 30,
+          "commits_30d": 52
         },
         {
           "name": "business",
-          "last_date": "2026-08-21",
-          "last_msg": "Record the AI Summit field scouting and fold it into the affected docs",
+          "last_date": "2026-08-22",
+          "last_msg": "Finish the F0 round-two research and correct the F3 gate",
           "branch": "master",
           "activity": [
-            4,
             16,
             6,
             7,
             6,
             2,
-            3
+            3,
+            2
           ],
-          "commits_7d": 44,
-          "commits_30d": 52
+          "commits_7d": 42,
+          "commits_30d": 54
         },
         {
           "name": "go-metadium",
@@ -665,29 +699,12 @@
             0,
             0,
             0,
-            0,
             4,
+            0,
             0
           ],
           "commits_7d": 4,
           "commits_30d": 74
-        },
-        {
-          "name": "health",
-          "last_date": "2026-08-19",
-          "last_msg": "교보 민원 접수 완료(2026-08-19) 반영, 회신 대기",
-          "branch": "main",
-          "activity": [
-            0,
-            1,
-            2,
-            1,
-            16,
-            0,
-            0
-          ],
-          "commits_7d": 20,
-          "commits_30d": 23
         },
         {
           "name": "wemix-dios",
@@ -695,33 +712,16 @@
           "last_msg": "8/19 경찰 출석일 — 변호사 확인항목 온체인 규명 (A-1·B-4)",
           "branch": "main",
           "activity": [
-            0,
             6,
             0,
             1,
             1,
             0,
+            0,
             0
           ],
           "commits_7d": 8,
           "commits_30d": 21
-        },
-        {
-          "name": "life",
-          "last_date": "2026-08-18",
-          "last_msg": "Add 전기차 장기렌트 리서치 (2027년 4월 교체)",
-          "branch": "main",
-          "activity": [
-            0,
-            1,
-            1,
-            1,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 3,
-          "commits_30d": 3
         },
         {
           "name": "meta-agents",
