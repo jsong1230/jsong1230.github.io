@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-08-22T23:00:02.005Z",
+  "generated_at": "2026-08-23T23:00:01.108Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-23",
+          "last_msg": "Auto-generate weekly recap",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-23",
+          "last_msg": "docs: night sweep all healthy, fn2 in backup window, gate check pending",
+          "branch": "gram-jsong",
+          "activity": [
+            2,
+            1,
+            1,
+            10,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 18,
+          "commits_30d": 297
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-23",
+          "last_msg": "chore: 「동물농장」 NotebookLM 소스 URL 추가",
+          "branch": "main",
+          "activity": [
+            0,
+            2,
+            0,
+            3,
+            7,
+            2,
+            0
+          ],
+          "commits_7d": 18,
+          "commits_30d": 35
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-08-22",
           "last_msg": "[admin] feat(content): w21 15편 보강 — w18~w21 60편 완결, 검수 60/60 �",
           "branch": "dev",
           "activity": [
-            16,
             0,
             0,
             0,
             6,
             6,
+            0,
             0
           ],
-          "commits_7d": 30,
+          "commits_7d": 28,
           "commits_30d": 46
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-22",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-22",
-          "last_msg": "feat: 조지 오웰 「1984」 핵심요약 업로드 (10/1 예약)",
-          "branch": "main",
-          "activity": [
-            5,
-            0,
-            2,
-            0,
-            3,
-            7,
-            0
-          ],
-          "commits_7d": 22,
-          "commits_30d": 33
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-21",
-          "last_msg": "docs: pre-clear handoff note for session resume",
-          "branch": "gram-jsong",
-          "activity": [
-            3,
-            2,
-            1,
-            1,
-            10,
-            0,
-            0
-          ],
-          "commits_7d": 20,
-          "commits_30d": 295
         },
         {
           "name": "cplabs_homepage",
@@ -80,8 +80,8 @@
           "activity": [
             0,
             0,
-            0,
             8,
+            0,
             0,
             0,
             0
@@ -96,14 +96,14 @@
           "branch": "master",
           "activity": [
             6,
-            6,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 29,
+          "commits_7d": 13,
           "commits_30d": 41
         },
         {
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 0,
           "commits_30d": 10
         },
         {
@@ -623,71 +623,71 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-08-22",
-          "last_msg": "실손24 등록 완료 반영: 휴대폰 본인인증으로 영문명 우회 성",
+          "last_date": "2026-08-23",
+          "last_msg": "건강회복 실천 계획 수립 — 탈모·발 진균·포진·전신 컨디�",
           "branch": "main",
           "activity": [
-            1,
             2,
             1,
             16,
             0,
             0,
-            9
+            9,
+            3
           ],
-          "commits_7d": 29,
-          "commits_30d": 32
+          "commits_7d": 31,
+          "commits_30d": 34
         },
         {
           "name": "life",
-          "last_date": "2026-08-22",
-          "last_msg": "Add 민원 기록 — 351번 시내버스 기사 응대 태도",
+          "last_date": "2026-08-23",
+          "last_msg": "구글 계정 점검 완료 — 이상 징후 없음",
           "branch": "main",
           "activity": [
             1,
             1,
+            0,
+            0,
+            0,
             1,
-            0,
-            0,
-            0,
-            1
+            6
           ],
-          "commits_7d": 4,
-          "commits_30d": 4
+          "commits_7d": 9,
+          "commits_30d": 10
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-22",
-          "last_msg": "bizbox API 연동 — 서명 클라이언트·퇴직예정자 연차/결재 조�",
+          "last_date": "2026-08-23",
+          "last_msg": "gram 소급 7건 confirmed 전환 — briefick 대기 항목 전량 소멸",
           "branch": "mini-jsong",
           "activity": [
-            2,
             4,
             10,
             0,
             4,
             4,
-            6
+            6,
+            10
           ],
-          "commits_7d": 30,
-          "commits_30d": 52
+          "commits_7d": 38,
+          "commits_30d": 62
         },
         {
           "name": "business",
-          "last_date": "2026-08-22",
-          "last_msg": "Finish the F0 round-two research and correct the F3 gate",
+          "last_date": "2026-08-23",
+          "last_msg": "Fix the run-together heading line in the F1 kit",
           "branch": "master",
           "activity": [
-            16,
             6,
             7,
             6,
             2,
             3,
-            2
+            2,
+            3
           ],
-          "commits_7d": 42,
-          "commits_30d": 54
+          "commits_7d": 29,
+          "commits_30d": 57
         },
         {
           "name": "go-metadium",
@@ -698,8 +698,8 @@
             0,
             0,
             0,
-            0,
             4,
+            0,
             0,
             0
           ],
@@ -712,15 +712,15 @@
           "last_msg": "8/19 경찰 출석일 — 변호사 확인항목 온체인 규명 (A-1·B-4)",
           "branch": "main",
           "activity": [
-            6,
             0,
             1,
             1,
+            0,
             0,
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 2,
           "commits_30d": 21
         },
         {
