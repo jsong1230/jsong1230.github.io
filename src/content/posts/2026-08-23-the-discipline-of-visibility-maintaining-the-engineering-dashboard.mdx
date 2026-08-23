@@ -1,0 +1,56 @@
+---
+title: "The Discipline of Visibility: Maintaining the Engineering Dashboard"
+date: "2026-08-23"
+lang: en
+excerpt: "The Discipline of Visibility: Maintaining the Engineering Dashboard  In the fast-paced world of Web3 and AI development, it is easy to get lost in the..."
+---
+
+# The Discipline of Visibility: Maintaining the Engineering Dashboard
+
+In the fast-paced world of Web3 and AI development, it is easy to get lost in the "deep work" of architectural design and coding. However, as a CTO with over two decades of experience—ranging from early infrastructure builds to leading technical strategy at **CPLABS**—I’ve learned that visibility is just as important as velocity.
+
+Today’s update to my personal engineering dashboard (`jsong1230.github.io`) might seem like a simple `chore` commit at first glance. But if you look closer at the data shifts in `dashboard.json`, it reveals a lot about how I manage my current technical focus and cognitive load.
+
+### The Technical Logic: Data-Driven Self-Management
+
+The primary change today was the synchronization of my activity metrics across several repositories. For those who aren't familiar, I maintain a JSON-based dashboard that tracks my commit frequency, branch activity, and the "last message" across my various projects.
+
+Looking at the diff, we see a shift in the `activity` arrays and the addition/reordering of project tracking:
+
+```json
+- "last_msg": "Auto-generate daily posts",
++ "last_msg": "Auto-generate weekly book post",
+```
+
+And the inclusion of the `booksummary` project as a distinct entity:
+
+```json
++ {
++   "name": "booksummary",
++   "last_date": "2026-08-22",
++   "last_msg": "feat: 조지 오웰 「1984」 핵심요약 업로드 (10/1 예약)",
++   "branch": "main",
++   "activity": [5, 0, 2, 0, 3, 7, 0],
++   "commits_7d": 22,
++   "commits_30d": 33
++ }
+```
+
+### Insights from the Code: Balancing Innovation and Knowledge
+
+From an engineering management perspective, this data reflects a deliberate balance between three pillars: **Production, Experimentation, and Continuous Learning.**
+
+1.  **Production (`cplabs_homepage`):** Maintaining the stability and presence of the **CPLABS** infrastructure. This is the bedrock—the professional standard that must remain impeccable.
+2.  **Experimentation (`claude-agent`):** With 295 commits over 30 days, this is where my current AI research is concentrated. The high volume of commits here indicates an iterative, "fail-fast" approach to agentic workflows.
+3.  **Knowledge Synthesis (`booksummary`):** The addition of the Orwell's *1984* summary isn't just a hobby; it's a mental exercise. In the blockchain and DID space, we often deal with themes of identity, surveillance, and decentralization. Reading and summarizing these classics helps me refine the philosophical framework I apply to technical architecture.
+
+### The CTO's Perspective: Why This Matters
+
+Many engineers view "updating a dashboard" or "cleaning up a JSON file" as low-value work. I disagree. 
+
+Throughout my career, especially during my tenure at **CPLABS**, I have found that the ability to quantify one's output prevents burnout and identifies "stagnant" projects. When I see a `0` in the `activity` array for a project I thought was a priority, it serves as a technical trigger to either pivot my focus or deprecate the project entirely.
+
+By treating my personal development as a data-driven pipeline, I can ensure that my time is allocated efficiently across AI research, Web3 infrastructure, and intellectual growth.
+
+**Key Takeaway for the Day:**
+Technical depth is achieved through coding, but professional growth is achieved through the *reflection* of that coding. Keep your dashboards updated, not for the sake of the numbers, but for the insights they provide about your own trajectory.
