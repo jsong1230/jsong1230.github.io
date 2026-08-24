@@ -1,59 +1,93 @@
 {
-  "generated_at": "2026-08-23T23:00:01.108Z",
+  "generated_at": "2026-08-24T23:00:01.956Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-08-24",
+          "last_msg": "ops(monitor): blockstat 따라잡기 모니터 cron 제거 (목적 달성)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 11
+        },
+        {
+          "name": "metadium_homepage",
+          "last_date": "2026-08-24",
+          "last_msg": "MetaArena 오픈베타 종료(8/31)에 따라 홈 hero 슬라이드 제거",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-23",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-08-24",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 70
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-23",
-          "last_msg": "docs: night sweep all healthy, fn2 in backup window, gate check pending",
+          "last_date": "2026-08-24",
+          "last_msg": "docs: night sweep all healthy, 151 past 51%, HF ~113K blocks out",
           "branch": "gram-jsong",
           "activity": [
-            2,
             1,
             1,
             10,
             0,
             2,
+            7,
             0
           ],
-          "commits_7d": 18,
-          "commits_30d": 297
+          "commits_7d": 23,
+          "commits_30d": 304
         },
         {
           "name": "booksummary",
-          "last_date": "2026-08-23",
-          "last_msg": "chore: 「동물농장」 NotebookLM 소스 URL 추가",
+          "last_date": "2026-08-24",
+          "last_msg": "feat: 하이젠베르크 「부분과 전체」 핵심요약 업로드 (9/03 예",
           "branch": "main",
           "activity": [
-            0,
             2,
             0,
             3,
             7,
             2,
+            5,
             0
           ],
-          "commits_7d": 18,
-          "commits_30d": 35
+          "commits_7d": 19,
+          "commits_30d": 40
         },
         {
           "name": "heritageradio",
@@ -63,13 +97,13 @@
           "activity": [
             0,
             0,
+            6,
+            6,
             0,
-            6,
-            6,
             0,
             0
           ],
-          "commits_7d": 28,
+          "commits_7d": 12,
           "commits_30d": 46
         },
         {
@@ -79,8 +113,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             8,
+            0,
             0,
             0,
             0,
@@ -95,50 +129,16 @@
           "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
           "branch": "master",
           "activity": [
-            6,
             1,
             0,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 13,
+          "commits_7d": 7,
           "commits_30d": 41
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-08-16",
-          "last_msg": "docs(acme): 집(mini-home) 사본 추가로 회사 사이트 전손 대비 완�",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 10
-        },
-        {
-          "name": "metadium_homepage",
-          "last_date": "2026-07-22",
-          "last_msg": "jsong-demo-01 데모용 챗봇/vLLM 헬스체크 monitor-demo.sh 추가",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -622,26 +622,26 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "health",
-          "last_date": "2026-08-23",
-          "last_msg": "건강회복 실천 계획 수립 — 탈모·발 진균·포진·전신 컨디�",
+          "name": "life",
+          "last_date": "2026-08-24",
+          "last_msg": "「월해 말」은 올해 말 오타로 판단 — 정정 요구 병행으로 �",
           "branch": "main",
           "activity": [
-            2,
             1,
-            16,
             0,
             0,
-            9,
-            3
+            0,
+            1,
+            6,
+            8
           ],
-          "commits_7d": 31,
-          "commits_30d": 34
+          "commits_7d": 16,
+          "commits_30d": 18
         },
         {
-          "name": "life",
-          "last_date": "2026-08-23",
-          "last_msg": "구글 계정 점검 완료 — 이상 징후 없음",
+          "name": "wemix-dios",
+          "last_date": "2026-08-24",
+          "last_msg": "HANDOFF 갱신일·먼저 읽을 것 최신화",
           "branch": "main",
           "activity": [
             1,
@@ -649,45 +649,62 @@
             0,
             0,
             0,
-            1,
-            6
+            0,
+            4
           ],
-          "commits_7d": 9,
-          "commits_30d": 10
+          "commits_7d": 6,
+          "commits_30d": 25
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-23",
-          "last_msg": "gram 소급 7건 confirmed 전환 — briefick 대기 항목 전량 소멸",
+          "last_date": "2026-08-24",
+          "last_msg": "미소진 잔액 재문의 발송 완료 — 회신 대기",
           "branch": "mini-jsong",
           "activity": [
-            4,
             10,
             0,
             4,
             4,
             6,
-            10
+            10,
+            19
           ],
-          "commits_7d": 38,
-          "commits_30d": 62
+          "commits_7d": 53,
+          "commits_30d": 81
         },
         {
           "name": "business",
-          "last_date": "2026-08-23",
-          "last_msg": "Fix the run-together heading line in the F1 kit",
+          "last_date": "2026-08-24",
+          "last_msg": "Reset the instalment premise to 24 months, and the monthly load upward",
           "branch": "master",
           "activity": [
-            6,
             7,
             6,
             2,
             3,
             2,
-            3
+            3,
+            10
+          ],
+          "commits_7d": 33,
+          "commits_30d": 67
+        },
+        {
+          "name": "health",
+          "last_date": "2026-08-23",
+          "last_msg": "건강회복 실천 계획 수립 — 탈모·발 진균·포진·전신 컨디�",
+          "branch": "main",
+          "activity": [
+            1,
+            16,
+            0,
+            0,
+            9,
+            3,
+            0
           ],
           "commits_7d": 29,
-          "commits_30d": 57
+          "commits_30d": 34
         },
         {
           "name": "go-metadium",
@@ -697,31 +714,14 @@
           "activity": [
             0,
             0,
-            0,
             4,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 4,
           "commits_30d": 74
-        },
-        {
-          "name": "wemix-dios",
-          "last_date": "2026-08-19",
-          "last_msg": "8/19 경찰 출석일 — 변호사 확인항목 온체인 규명 (A-1·B-4)",
-          "branch": "main",
-          "activity": [
-            0,
-            1,
-            1,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 21
         },
         {
           "name": "meta-agents",
