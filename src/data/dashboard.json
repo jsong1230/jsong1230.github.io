@@ -1,9 +1,60 @@
 {
-  "generated_at": "2026-08-24T23:00:01.956Z",
+  "generated_at": "2026-08-25T23:00:01.431Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-26",
+          "last_msg": "docs: D-2 closing sweep all healthy, 151 at 65%, HF ~68K blocks out",
+          "branch": "gram-jsong",
+          "activity": [
+            1,
+            10,
+            0,
+            2,
+            7,
+            3,
+            1
+          ],
+          "commits_7d": 25,
+          "commits_30d": 308
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-25",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-25",
+          "last_msg": "fix: 고정 댓글 누락 143편 게시 + 상태 파일·제목 추출 결함 �",
+          "branch": "main",
+          "activity": [
+            0,
+            3,
+            7,
+            2,
+            5,
+            4,
+            0
+          ],
+          "commits_7d": 23,
+          "commits_30d": 44
+        },
         {
           "name": "metadium-explorer-stack",
           "last_date": "2026-08-24",
@@ -14,8 +65,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -31,63 +82,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-24",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-24",
-          "last_msg": "docs: night sweep all healthy, 151 past 51%, HF ~113K blocks out",
-          "branch": "gram-jsong",
-          "activity": [
-            1,
-            1,
-            10,
-            0,
-            2,
-            7,
-            0
-          ],
-          "commits_7d": 23,
-          "commits_30d": 304
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-24",
-          "last_msg": "feat: 하이젠베르크 「부분과 전체」 핵심요약 업로드 (9/03 예",
-          "branch": "main",
-          "activity": [
-            2,
-            0,
-            3,
-            7,
-            2,
-            5,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 40
         },
         {
           "name": "heritageradio",
@@ -96,9 +96,9 @@
           "branch": "dev",
           "activity": [
             0,
+            6,
+            6,
             0,
-            6,
-            6,
             0,
             0,
             0
@@ -112,8 +112,8 @@
           "last_msg": "sitemap 에서 /notice/phishing 항목 제거 (직전 커밋 누락분)",
           "branch": "master",
           "activity": [
-            0,
             8,
+            0,
             0,
             0,
             0,
@@ -129,7 +129,7 @@
           "last_msg": "Record W1 indexing measurements: full Metadium history in 7h43m, 10GB",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 0,
           "commits_30d": 41
         },
         {
@@ -623,20 +623,54 @@
       "repos": [
         {
           "name": "life",
-          "last_date": "2026-08-24",
-          "last_msg": "「월해 말」은 올해 말 오타로 판단 — 정정 요구 병행으로 �",
+          "last_date": "2026-08-25",
+          "last_msg": "우혁 한국 도착 기록",
           "branch": "main",
           "activity": [
-            1,
             0,
             0,
             0,
             1,
             6,
-            8
+            8,
+            11
           ],
-          "commits_7d": 16,
-          "commits_30d": 18
+          "commits_7d": 26,
+          "commits_30d": 29
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-08-25",
+          "last_msg": "회의록 확정 반영 — 아웃스피스=대파 종료, 영인모빌리티·�",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            4,
+            4,
+            6,
+            10,
+            19,
+            9
+          ],
+          "commits_7d": 52,
+          "commits_30d": 90
+        },
+        {
+          "name": "business",
+          "last_date": "2026-08-25",
+          "last_msg": "Commit to ordering on the 28th, ahead of the payment terms",
+          "branch": "master",
+          "activity": [
+            6,
+            2,
+            3,
+            2,
+            3,
+            10,
+            2
+          ],
+          "commits_7d": 28,
+          "commits_30d": 69
         },
         {
           "name": "wemix-dios",
@@ -645,49 +679,15 @@
           "branch": "main",
           "activity": [
             1,
-            1,
             0,
             0,
             0,
             0,
-            4
+            4,
+            0
           ],
-          "commits_7d": 6,
+          "commits_7d": 5,
           "commits_30d": 25
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-24",
-          "last_msg": "미소진 잔액 재문의 발송 완료 — 회신 대기",
-          "branch": "mini-jsong",
-          "activity": [
-            10,
-            0,
-            4,
-            4,
-            6,
-            10,
-            19
-          ],
-          "commits_7d": 53,
-          "commits_30d": 81
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-24",
-          "last_msg": "Reset the instalment premise to 24 months, and the monthly load upward",
-          "branch": "master",
-          "activity": [
-            7,
-            6,
-            2,
-            3,
-            2,
-            3,
-            10
-          ],
-          "commits_7d": 33,
-          "commits_30d": 67
         },
         {
           "name": "health",
@@ -695,15 +695,15 @@
           "last_msg": "건강회복 실천 계획 수립 — 탈모·발 진균·포진·전신 컨디�",
           "branch": "main",
           "activity": [
-            1,
             16,
             0,
             0,
             9,
             3,
+            0,
             0
           ],
-          "commits_7d": 29,
+          "commits_7d": 28,
           "commits_30d": 34
         },
         {
@@ -713,8 +713,8 @@
           "branch": "secfix/snap-response-gate-95",
           "activity": [
             0,
-            0,
             4,
+            0,
             0,
             0,
             0,
