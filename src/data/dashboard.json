@@ -1,25 +1,93 @@
 {
-  "generated_at": "2026-08-26T23:00:01.645Z",
+  "generated_at": "2026-08-27T23:00:02.001Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-08-28",
+          "last_msg": "docs(ops): fleet re-sweep clean, this time with a working tool",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            2,
+            7,
+            3,
+            7,
+            39,
+            5
+          ],
+          "commits_7d": 73,
+          "commits_30d": 346
+        },
+        {
           "name": "heritageradio",
           "last_date": "2026-08-27",
-          "last_msg": "[main] fix(hls): 주말 cycle_01 sync 에 재시도 헬퍼 누락 보완 (S5-C �",
+          "last_msg": "docs: 라디오소설 w25 5편 완료 — 자체집필 대본 100/100 완결",
           "branch": "dev",
           "activity": [
-            6,
             6,
             0,
             0,
             0,
             10,
-            8
+            15,
+            0
           ],
-          "commits_7d": 30,
-          "commits_30d": 63
+          "commits_7d": 37,
+          "commits_30d": 70
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-08-27",
+          "last_msg": "ops(ssh): 폐기된 무암호 키 참조를 aws-jsong.pem 으로 교체",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 11
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-08-27",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-08-27",
+          "last_msg": "feat: 후보 발굴 4차 — 교과서 축 심화, 「그 많던 싱아」 3위 ",
+          "branch": "main",
+          "activity": [
+            7,
+            2,
+            5,
+            4,
+            5,
+            3,
+            0
+          ],
+          "commits_7d": 29,
+          "commits_30d": 52
         },
         {
           "name": "company-page",
@@ -31,80 +99,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-26",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-26",
-          "last_msg": "docs: HF day watch auto-start scheduled for 11:28 KST",
-          "branch": "gram-jsong",
-          "activity": [
-            10,
-            0,
-            2,
-            7,
-            3,
-            7,
-            0
-          ],
-          "commits_7d": 30,
-          "commits_30d": 311
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-26",
-          "last_msg": "prep: 「만세전」 제작 준비 (착수 대기) — 외부 자원 미사용",
-          "branch": "main",
-          "activity": [
-            3,
-            7,
-            2,
-            5,
-            4,
-            5,
-            0
-          ],
-          "commits_7d": 26,
-          "commits_30d": 49
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-08-24",
-          "last_msg": "ops(monitor): blockstat 따라잡기 모니터 cron 제거 (목적 달성)",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            1,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 11
         },
         {
           "name": "metadium_homepage",
@@ -114,8 +114,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 0,
           "commits_30d": 8
         },
         {
@@ -620,586 +620,7 @@
     },
     {
       "name": "mini-jsong",
-      "repos": [
-        {
-          "name": "meta-agents",
-          "last_date": "2026-08-26",
-          "last_msg": "docs(standard): sync draft to v1.4 submitted for PG1006 2nd review",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
-          ],
-          "commits_7d": 1,
-          "commits_30d": 4
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-08-26",
-          "last_msg": "feat: 엔비디아 FY27 2Q 실적 브리핑 nvda_brief.sh — 1회성(8/27 08:00",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
-          ],
-          "commits_7d": 1,
-          "commits_30d": 1
-        },
-        {
-          "name": "life",
-          "last_date": "2026-08-26",
-          "last_msg": "Queen's Elite Academy 조사 결과 정리 — 그룹 구조·시급 비교·확",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            1,
-            6,
-            8,
-            12,
-            1
-          ],
-          "commits_7d": 28,
-          "commits_30d": 31
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-08-26",
-          "last_msg": ".github: add a pull request template, and correct the contributing guide",
-          "branch": "docs/pr-template-and-contributing",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
-          ],
-          "commits_7d": 1,
-          "commits_30d": 71
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-08-26",
-          "last_msg": "HANDOFF 8/26 갱신 — clear 대비(EDP 확정·HF D-1·자문 분담·briefick",
-          "branch": "mini-jsong",
-          "activity": [
-            4,
-            4,
-            6,
-            10,
-            19,
-            9,
-            16
-          ],
-          "commits_7d": 68,
-          "commits_30d": 106
-        },
-        {
-          "name": "business",
-          "last_date": "2026-08-26",
-          "last_msg": "Research Nemotron and resolve Loop Discovery to its likely referent",
-          "branch": "master",
-          "activity": [
-            2,
-            3,
-            2,
-            3,
-            10,
-            2,
-            4
-          ],
-          "commits_7d": 27,
-          "commits_30d": 73
-        },
-        {
-          "name": "wemix-dios",
-          "last_date": "2026-08-24",
-          "last_msg": "HANDOFF 갱신일·먼저 읽을 것 최신화",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            4,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 25
-        },
-        {
-          "name": "health",
-          "last_date": "2026-08-23",
-          "last_msg": "건강회복 실천 계획 수립 — 탈모·발 진균·포진·전신 컨디�",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            9,
-            3,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 34
-        },
-        {
-          "name": "MetaLotto",
-          "last_date": "2026-07-09",
-          "last_msg": "feat(contracts): C4 어댑터 — MetaLottoFeeRouter (수수료 → FeeDistribut",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "MetaPool",
-          "last_date": "2026-07-09",
-          "last_msg": "feat(contracts): C5 어댑터 — MetaPool 수수료 → FeeDistributor (v3)",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "meta-zkbridge",
-          "last_date": "2026-07-09",
-          "last_msg": "feat(contracts): C2 어댑터 — ZkBridgeRelayerAdapter (operator-gated relay)",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "go-metadium",
-          "last_date": "2026-06-09",
-          "last_msg": "Merge pull request #54 from jsong1230/test/camellia-contract-transient-e2e",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "20241106",
-          "last_date": "2026-06-04",
-          "last_msg": "텔레그램 전송 HTML 파싱 실패 시 plain text 폴백 추가",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "MetaStake",
-          "last_date": "2026-05-21",
-          "last_msg": "chore: gitignore ecosystem.config.cjs",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-04-25",
-          "last_msg": "feat: YouTube 예약 업로드 메타데이터 + privacyStatus 처리",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-admin-backend",
-          "last_date": "2026-04-23",
-          "last_msg": "Merged in feat/point-stats-api (pull request #157)",
-          "branch": "develop",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-chat-server",
-          "last_date": "2026-04-23",
-          "last_msg": "최근 메세지 없는 경우 오류 수정",
-          "branch": "develop",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-admin-frontend",
-          "last_date": "2026-04-23",
-          "last_msg": ":bug: fix: 포인트 통계 - 툴팁이 overflow hidden 되는 현상 수정",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-api-backend",
-          "last_date": "2026-04-23",
-          "last_msg": "Merge branch 'feature/custom-char' into develop",
-          "branch": "develop",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-docs",
-          "last_date": "2026-04-21",
-          "last_msg": "작업항목 업데이트",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-stack-cto",
-          "last_date": "2026-04-17",
-          "last_msg": "chore: skeleton — 격리 원칙 + infra-only compose + preflight",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "Carebit",
-          "last_date": "2026-04-16",
-          "last_msg": "feat: polished UX — history, alert ack, hands-free chat, auto-refresh",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "openfield",
-          "last_date": "2026-04-15",
-          "last_msg": "docs: 4/15 배포 이슈 수정 반영 — 타임아웃·LangSmith 설정 문서",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "union",
-          "last_date": "2026-04-14",
-          "last_msg": "feat(app): add Metadium chain to frontend configuration",
-          "branch": "feat/add-metadium-chain",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "bitcoin",
-          "last_date": "2026-04-14",
-          "last_msg": "Merge bitcoin/bitcoin#34772: test: modernize interface_http and cover more libev",
-          "branch": "security",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-discussion-chat",
-          "last_date": "2026-04-13",
-          "last_msg": "Align debates around moderated live sessions and market-style discovery",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "minidaepa",
-          "last_date": "2026-04-10",
-          "last_msg": "fix: AI 응답 후 입력창 자동 포커스 복원",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "nipa-proposal",
-          "last_date": "2026-04-10",
-          "last_msg": "docs: D2 학습 완료 기록 + 자동 조치 L1/L2/L3 보완 포인트 추가",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "BORA_hack",
-          "last_date": "2026-04-01",
-          "last_msg": "v13: 최종정리본 + 해킹정리 PDF 기반 전면 재작성 — 중앙화 �",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-persona-gen",
-          "last_date": "2026-03-19",
-          "last_msg": "모델 변경",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa_push_service",
-          "last_date": "2026-02-05",
-          "last_msg": "FCM 메시지 전송 방식 수정: Notification 정보를 Data로 이동하여 ",
-          "branch": "develop",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-marketing-web",
-          "last_date": "2025-12-09",
-          "last_msg": ":bug: fix: 모바일 서치 버튼 pc에서 보이는 현상 수정",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-dynamic-link",
-          "last_date": "2025-11-20",
-          "last_msg": "Android 커스텀 스킴 추가 및 링크 서비스에서 환경 변수 사용",
-          "branch": "dev",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "daepa-ai-agent",
-          "last_date": "2025-04-16",
-          "last_msg": "LLM_MAX_TOKENS 값을 50에서 100으로 변경하고, 메시지 응답을 50글",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        }
-      ]
+      "repos": []
     }
   ]
 }
