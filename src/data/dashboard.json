@@ -1,68 +1,34 @@
 {
-  "generated_at": "2026-08-27T23:00:02.001Z",
+  "generated_at": "2026-08-28T23:00:01.102Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-08-28",
-          "last_msg": "docs(ops): fleet re-sweep clean, this time with a working tool",
-          "branch": "gram-jsong",
-          "activity": [
-            0,
-            2,
-            7,
-            3,
-            7,
-            39,
-            5
-          ],
-          "commits_7d": 73,
-          "commits_30d": 346
-        },
-        {
           "name": "heritageradio",
-          "last_date": "2026-08-27",
-          "last_msg": "docs: 라디오소설 w25 5편 완료 — 자체집필 대본 100/100 완결",
+          "last_date": "2026-08-28",
+          "last_msg": "docs: w17+w18 freeze 완료 반영 — 빌드~freeze 전 과정 실패 0",
           "branch": "dev",
           "activity": [
-            6,
             0,
             0,
             0,
             10,
             15,
+            4,
             0
           ],
-          "commits_7d": 37,
-          "commits_30d": 70
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-08-27",
-          "last_msg": "ops(ssh): 폐기된 무암호 키 참조를 aws-jsong.pem 으로 교체",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            1,
-            0,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 11
+          "commits_7d": 29,
+          "commits_30d": 74
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-27",
+          "last_date": "2026-08-28",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -73,21 +39,55 @@
           "commits_30d": 68
         },
         {
+          "name": "claude-agent",
+          "last_date": "2026-08-28",
+          "last_msg": "feat(ops): gram P2 complete — P3 gates cleared, removal list finalized at 27 h",
+          "branch": "gram-jsong",
+          "activity": [
+            2,
+            7,
+            3,
+            7,
+            39,
+            20,
+            0
+          ],
+          "commits_7d": 78,
+          "commits_30d": 349
+        },
+        {
           "name": "booksummary",
-          "last_date": "2026-08-27",
-          "last_msg": "feat: 후보 발굴 4차 — 교과서 축 심화, 「그 많던 싱아」 3위 ",
+          "last_date": "2026-08-28",
+          "last_msg": "feat: 채널 정비 — 재생목록 미수록 한글 4편 수리 + 「순교자",
           "branch": "main",
           "activity": [
-            7,
             2,
             5,
             4,
             5,
             3,
+            1,
             0
           ],
-          "commits_7d": 29,
-          "commits_30d": 52
+          "commits_7d": 27,
+          "commits_30d": 53
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-08-27",
+          "last_msg": "ops(ssh): 폐기된 무암호 키 참조를 aws-jsong.pem 으로 교체",
+          "branch": "master",
+          "activity": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 11
         },
         {
           "name": "company-page",
@@ -98,8 +98,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -113,8 +113,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
