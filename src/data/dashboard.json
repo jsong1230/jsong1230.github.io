@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-08-28T23:00:01.102Z",
+  "generated_at": "2026-08-29T23:00:01.192Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-08-28",
-          "last_msg": "docs: w17+w18 freeze 완료 반영 — 빌드~freeze 전 과정 실패 0",
+          "last_date": "2026-08-29",
+          "last_msg": "docs: NEWS_ROOM 슬롯초과 — 소급 정리 대신 향후 기준 전달로 �",
           "branch": "dev",
           "activity": [
-            0,
             0,
             0,
             10,
             15,
             4,
+            1,
             0
           ],
-          "commits_7d": 29,
-          "commits_30d": 74
+          "commits_7d": 30,
+          "commits_30d": 75
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-08-28",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-08-29",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-28",
-          "last_msg": "feat(ops): gram P2 complete — P3 gates cleared, removal list finalized at 27 h",
+          "last_date": "2026-08-29",
+          "last_msg": "docs(ops): update resume note with NAT migration, SP finding, and next task",
           "branch": "gram-jsong",
           "activity": [
-            2,
             7,
             3,
             7,
             39,
             20,
+            21,
             0
           ],
-          "commits_7d": 78,
-          "commits_30d": 349
+          "commits_7d": 99,
+          "commits_30d": 360
         },
         {
           "name": "booksummary",
-          "last_date": "2026-08-28",
-          "last_msg": "feat: 채널 정비 — 재생목록 미수록 한글 4편 수리 + 「순교자",
+          "last_date": "2026-08-29",
+          "last_msg": "verify: 서울 1964년 겨울 3회차 3,673 — '변동은 항상 상승' 가설",
           "branch": "main",
           "activity": [
-            2,
             5,
             4,
             5,
             3,
             1,
+            5,
             0
           ],
-          "commits_7d": 27,
-          "commits_30d": 53
+          "commits_7d": 25,
+          "commits_30d": 58
         },
         {
           "name": "metadium-explorer-stack",
@@ -78,11 +78,11 @@
           "last_msg": "ops(ssh): 폐기된 무암호 키 참조를 aws-jsong.pem 으로 교체",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
@@ -97,8 +97,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -112,8 +112,8 @@
           "last_msg": "MetaArena 오픈베타 종료(8/31)에 따라 홈 hero 슬라이드 제거",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
