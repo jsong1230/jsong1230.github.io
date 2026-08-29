@@ -1,0 +1,60 @@
+---
+title: "The Pragmatism of \"Good Enough\": Balancing Technical Precision and Practical Cost"
+date: "2026-08-29"
+lang: en
+excerpt: "Engineering Log: Balancing Technical Precision with Practical Cost  As a CTO, one of the most challenging parts of the job isn't choosing the \"perfect..."
+---
+
+# Engineering Log: Balancing Technical Precision with Practical Cost
+
+As a CTO, one of the most challenging parts of the job isn't choosing the "perfect" technology, but deciding when "good enough" is actually the most professional choice. Today's work across several projects—from infrastructure optimization at **CPLABS** to content data analysis—centered around this theme: the trade-off between theoretical perfection and practical cost.
+
+## 1. The Pragmatism of "No Retroactive Fixes" (Heritage Radio)
+
+In the `heritageradio` project, we encountered a classic dilemma. We discovered that several audio slots in the `NEWS_ROOM` segment were overflowing (some by up to 109 seconds), meaning the closing remarks and weather reports were being cut off.
+
+The technical instinct is to re-build and re-verify everything to ensure a perfect product. However, after analyzing the impact, I made a strategic decision: **No retroactive fixes.**
+
+**The Reasoning:**
+- **Impact Analysis:** The truncation happens at the very end (closing/weather), not the core content.
+- **Cost of Change:** We had just completed the verification and "freeze" of 10 days' worth of content. Re-opening that pipeline to fix 22 clips would introduce unnecessary risk and labor costs.
+- **The Solution:** Instead of fixing the past, I established a strict "Forward-Looking Standard."
+
+I calculated the recommended character limits per era based on actual reading speeds:
+> `1955: 2,400 / 1965: 2,550 / 1985: 2,650 / 1975: 2,750 / 1995: 2,900`
+> *(Formula: Actual speed × 570s)*
+
+By providing these concrete guidelines to the content creators, we prevent future overflows without wasting resources on low-impact historical corrections.
+
+## 2. Infrastructure Hygiene and Cost Efficiency (**CPLABS**)
+
+On the Ops side at **CPLABS**, the focus was on "Cloud Hygiene." It's easy for AWS costs to creep up through forgotten snapshots and orphaned volumes.
+
+**Key Actions:**
+- **Snapshot Purge:** Deleted expired snapshots (e.g., `cloudplex` 30G, `b2es-dev-was` 128G) after verification. While $7.9/month seems small, these habits prevent thousand-dollar surprises.
+- **Tier Optimization:** Confirmed the transition of SEED snapshots to the Archive tier, securing a monthly saving of $\le\$219$.
+- **Fleet Visibility:** I developed a new tool, `gmet-fleet-status.sh`. 
+
+One interesting technical hurdle I noted in the logs:
+> *"Trap record: gmet fleet is not in PATH (/opt/meta/bin/gmet) — reliance on `command -v` results in false IPC_UNAVAILABLE across all nodes."*
+
+This is a reminder that in large-scale fleet management, you cannot rely on environment variables. Explicit paths are the only way to ensure reliability across different host configurations.
+
+## 3. Data-Driven Content Selection (Book Summary)
+
+Finally, in the `booksummary` project, I applied a quantitative approach to content selection. We are looking for "Blue Ocean" keywords—high demand but low competition.
+
+I implemented a verification process to ensure our "Competition Median" values are stable. For instance, while some titles showed volatile numbers, others like *The Tears of an Idol* (우상의 눈물) remained perfectly consistent across multiple measurements (1,408 views).
+
+By filtering for "Textbook-axis" authors (those frequently appearing in school curricula), we've identified high-conversion targets like *Manse-jeon* (만세전) and *Sunan-idae* (수난이대), where the intent is clearly educational and the competition is minimal.
+
+## Final Thoughts
+
+Whether it's deciding not to re-build audio clips, purging AWS snapshots, or measuring YouTube search supply, the goal is the same: **Maximize value while minimizing waste.** 
+
+Engineering is not just about writing code; it's about managing the economy of time, money, and effort.
+
+***
+
+**Jeffrey Joo-Han Song**
+CTO & Engineer | Blockchain, Web3, AI Expert
