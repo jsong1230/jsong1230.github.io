@@ -1,0 +1,41 @@
+---
+title: "The Art of the Dashboard: Tracking Velocity and Maintaining Momentum"
+date: "2026-08-31"
+lang: en
+excerpt: "The Art of the Dashboard: Tracking Velocity and Maintaining Momentum  In the fast-paced world of Web3 and AI development, it is easy to lose sight of ..."
+---
+
+# The Art of the Dashboard: Tracking Velocity and Maintaining Momentum
+
+In the fast-paced world of Web3 and AI development, it is easy to lose sight of the "big picture" while diving deep into the minutiae of smart contracts or LLM agent orchestration. Over my 20 years as an engineer and CTO, I’ve learned that visibility is the antidote to burnout and the key to consistent velocity.
+
+Today’s update to my personal dashboard might look like a simple JSON chore at first glance, but it represents a critical habit: **The Quantified Engineer.**
+
+### The Technical Detail: Data-Driven Reflection
+
+The commit today was a straightforward update to `src/data/dashboard.json`. While the diff shows a routine update of timestamps and commit counts, the underlying logic is about tracking the health of several concurrent workstreams.
+
+```json
+- "commits_7d": 99,
+- "commits_30d": 360
++ "commits_7d": 124,
++ "commits_30d": 382
+```
+
+Looking at the `claude-agent` repository, we see a significant jump in activity. Moving from 99 to 124 commits in a rolling 7-day window indicates a high-intensity sprint. When I see these numbers spike, I don't just see "productivity"—I see a phase of rapid iteration and "fail-fast" experimentation, which is essential when building AI agents.
+
+### Engineering Insights: Why Track This?
+
+You might ask, *"Why maintain a JSON-based dashboard for your own git activity?"*
+
+Throughout my career, including my leadership roles at **CPLABS**, I have advocated for transparency and measurable progress. Whether it's a corporate KPI or a personal dashboard, the goal is the same: **identifying bottlenecks.**
+
+1.  **Context Switching Cost:** By looking at the `activity` arrays across different repos (`heritageradio`, `claude-agent`, `booksummary`), I can visualize how my cognitive load is distributed. If one project consumes 80% of my commits, I know the others are in "maintenance mode."
+2.  **Consistency over Intensity:** The `commits_30d` metric is more valuable than the daily count. In blockchain and AI, breakthroughs rarely happen in a single 14-hour session; they happen through the compounding effect of daily, incremental improvements.
+3.  **The "Handoff" Philosophy:** I noticed a specific commit message in the diff: `docs(ops): update handoff note with full Aug 30 state for session clear`. This is a professional habit I've honed over two decades. Whether you are handing off a project to a teammate at **CPLABS** or handing off a session to an AI agent, a "clean state" is the only way to avoid technical debt and configuration drift.
+
+### Final Thoughts
+
+Engineering is as much about managing your own energy and focus as it is about writing clean code. By automating the tracking of my development velocity, I can step back from the IDE and ask: *Is my time being spent on the highest-leverage tasks?*
+
+Today's update is a reminder that the most important system you will ever architect is your own workflow. Keep tracking, keep iterating, and always ensure your handoff notes are crystal clear.
