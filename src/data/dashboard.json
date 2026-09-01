@@ -1,25 +1,93 @@
 {
-  "generated_at": "2026-08-31T23:00:01.601Z",
+  "generated_at": "2026-09-01T23:00:01.766Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-01",
+          "last_msg": "fix(build): backend 로컬 패치를 빌드 파이프라인에 연결 (회귀 �",
+          "branch": "master",
+          "activity": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 14
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-09-01",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-09-01",
-          "last_msg": "ops(m113): ops-surface audit reply — indexer method list measured, trace/rawTx",
+          "last_msg": "fix(fleet): match suffixed gmet binaries so 46/47 mainnet units are reported",
           "branch": "gram-jsong",
           "activity": [
-            7,
             39,
             20,
             21,
             27,
             11,
-            1
+            16,
+            0
           ],
-          "commits_7d": 129,
-          "commits_30d": 387
+          "commits_7d": 140,
+          "commits_30d": 400
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-09-01",
+          "last_msg": "wip: 「만무방」(김유정) 제작 중 — 렌더 진행 상태 저장",
+          "branch": "main",
+          "activity": [
+            3,
+            1,
+            5,
+            1,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 20,
+          "commits_30d": 64
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-09-01",
+          "last_msg": "DAEPA(대파) 콘텐츠 전면 제거",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 9
         },
         {
           "name": "heritageradio",
@@ -27,67 +95,16 @@
           "last_msg": "docs(canary): deep 스케줄 UTC/KST 주석 정정 — 실제 실행은 KST 화�",
           "branch": "dev",
           "activity": [
-            10,
             15,
             4,
             1,
             1,
             1,
+            0,
             0
           ],
           "commits_7d": 32,
           "commits_30d": 77
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-08-31",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-08-31",
-          "last_msg": "wip: 「수난이대」(하근찬) 제작 중 — 렌더 직전 상태 저장",
-          "branch": "main",
-          "activity": [
-            5,
-            3,
-            1,
-            5,
-            1,
-            2,
-            0
-          ],
-          "commits_7d": 21,
-          "commits_30d": 61
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-08-27",
-          "last_msg": "ops(ssh): 폐기된 무암호 키 참조를 aws-jsong.pem 으로 교체",
-          "branch": "master",
-          "activity": [
-            0,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 11
         },
         {
           "name": "company-page",
@@ -95,7 +112,7 @@
           "last_msg": "admin Visual Editor 제거 및 앱 stateless화",
           "branch": "dev",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -122,23 +139,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 1
-        },
-        {
-          "name": "cplabs_homepage",
-          "last_date": "2026-08-20",
-          "last_msg": "sitemap 에서 /notice/phishing 항목 제거 (직전 커밋 누락분)",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 8
         },
         {
           "name": "business",
@@ -622,55 +622,55 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "mirae",
-          "last_date": "2026-08-31",
-          "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
-          "branch": "main",
-          "activity": [
-            0,
-            1,
-            1,
-            0,
-            0,
-            0,
-            1
-          ],
-          "commits_7d": 3,
-          "commits_30d": 3
-        },
-        {
           "name": "go-metadium",
-          "last_date": "2026-08-31",
-          "last_msg": "params, README: bump version to 1.1.3",
-          "branch": "release/v1.1.3",
+          "last_date": "2026-09-01",
+          "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
+          "branch": "fix/downloadgenesis-102",
           "activity": [
-            0,
             0,
             0,
             11,
             2,
             2,
-            8
+            8,
+            1
           ],
-          "commits_7d": 23,
-          "commits_30d": 103
+          "commits_7d": 24,
+          "commits_30d": 104
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-08-31",
-          "last_msg": "8/31 종료 메모 — 9/1 아침 순서·회신 대기 목록",
+          "last_date": "2026-09-01",
+          "last_msg": "9/1 밤 — MicroDuck 영상 경로 biz 이관 추송(cplabs→맥북 SSH 실측",
           "branch": "mini-jsong",
           "activity": [
-            9,
             16,
             5,
             3,
             0,
             21,
-            7
+            7,
+            17
           ],
-          "commits_7d": 61,
-          "commits_30d": 142
+          "commits_7d": 69,
+          "commits_30d": 159
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-08-31",
+          "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
+          "branch": "main",
+          "activity": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 3
         },
         {
           "name": "business",
@@ -678,15 +678,15 @@
           "last_msg": "Record payer-side CE block: gap remeasurement needs Megazone report or payer set",
           "branch": "master",
           "activity": [
-            2,
             4,
             6,
             0,
             0,
             0,
-            3
+            3,
+            0
           ],
-          "commits_7d": 15,
+          "commits_7d": 13,
           "commits_30d": 82
         },
         {
@@ -697,8 +697,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -712,8 +712,8 @@
           "last_msg": "docs(standard): sync draft to v1.4 submitted for PG1006 2nd review",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -729,15 +729,15 @@
           "last_msg": "Queen's Elite Academy 조사 결과 정리 — 그룹 구조·시급 비교·확",
           "branch": "main",
           "activity": [
-            12,
             1,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 13,
+          "commits_7d": 2,
           "commits_30d": 31
         },
         {
