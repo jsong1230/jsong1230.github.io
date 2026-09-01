@@ -1,0 +1,54 @@
+---
+title: "The CTO’s Duality: Balancing Infrastructure Precision and Rapid Prototyping"
+date: "2026-09-01"
+lang: en
+excerpt: "Bridging the Gap: From RPC Audits to GPU Tunneling  As a CTO, my day rarely follows a linear path. One moment I'm diving into the minutiae of JSON-RPC..."
+---
+
+# Bridging the Gap: From RPC Audits to GPU Tunneling
+
+As a CTO, my day rarely follows a linear path. One moment I'm diving into the minutiae of JSON-RPC method parity for a mainnet upgrade, and the next, I'm architecting a low-cost GPU bridge for a demo. Today was a prime example of this duality—balancing the rigid precision required for infrastructure stability with the agile "hacking" needed to enable rapid prototyping.
+
+Here is a summary of today's technical milestones and the insights gained from the process.
+
+## 1. Infrastructure Rigor: The RPC Surface Audit
+A significant portion of today was dedicated to the `ops-surface` audit for the m113 upgrade. When dealing with blockchain indexers, "mostly compatible" isn't enough; a single mismatched response in a rare RPC method can lead to silent data corruption or indexer crashes.
+
+**The Problem:** We needed to ensure that the new node version (cand) produced identical results to the current production source (`api1`) across all methods actually used by the synchronizer.
+
+**The Technical Decision:** Instead of relying on a generic test suite, I performed a "literal extraction" from the `synchronizer.jar` to identify the exact method list being called. I then conducted A/B testing on critical methods like `debug_traceTransaction` and `getRawTransactionByHash`.
+
+**Insight:** 
+The diff shows a successful match: `trace/rawTx/batch A/B all match`. Interestingly, I found a discrepancy in `effectiveGasPrice` for batch calls, which was traced back to a specific fix (#106). This highlights why **differential testing** is superior to unit testing in infrastructure—it reveals the "delta" between two living systems.
+
+## 2. Agile Enablement: The Gemma-4 GPU Tunnel
+On the AI front, the goal was to provide the `daepa` demo environment with access to our high-performance internal GPU servers (H100 NVL x2) without incurring the massive costs of AWS P5 instances.
+
+**The Challenge:** The demo app resides in a private VPC with no NAT gateway or VPC endpoints, making traditional outbound connectivity to our office servers impossible.
+
+**The Solution: SSH-over-SSM Reverse Tunneling.**
+I implemented a reverse tunnel architecture:
+`Office GPU Server` $\rightarrow$ `AWS SSM` $\rightarrow$ `t4g.micro Landing EC2` $\rightarrow$ `Demo App`.
+
+By using `autossh` and a restricted SSH key (limited to port forwarding), I created a secure, self-healing bridge. 
+
+**Cost Optimization Insight:**
+I specifically chose a `t4g.micro` with a public IP for SSM outbound traffic. While a NAT Gateway is the "standard" enterprise approach, it costs ~$40/month. My workaround brings the cost down to **~$12/month** while maintaining a tight security posture (SSH port 22 closed, only port 18002 open to the VPC).
+
+```text
+[Demo App] --VPC Internal--> [daepa-llm-tunnel EC2 :18002]
+                                      ↑ Reverse SSH Tunnel (SSM)
+[Office GPU Server] vLLM gemma-4-31b-it (H100 NVL ×2)
+```
+
+## 3. Reflections on the "CTO Mindset"
+Looking at today's commits—ranging from `dashboard.json` updates to complex network tunneling—it's clear that the role of a technical leader is about **context switching**. 
+
+In the RPC audit, I acted as a **Quality Gatekeeper**, where the priority was zero risk. In the GPU tunnel project, I acted as an **Enabler**, where the priority was speed and cost-efficiency. 
+
+At **CPLABS**, we strive for this balance: the discipline to ensure our core blockchain infrastructure is bulletproof, and the creativity to leverage our internal resources to push the boundaries of what our AI demos can do.
+
+**Summary of the day:**
+- **RPC Audit:** 100% parity achieved; ready for the 9/2 gate.
+- **AI Infrastructure:** Gemma-4 (31B) successfully bridged to `daepa` VPC.
+- **Cost Savings:** Avoided expensive AWS GPU instances by utilizing internal H100s via a smart tunnel.
