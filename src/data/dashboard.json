@@ -1,36 +1,70 @@
 {
-  "generated_at": "2026-09-01T23:00:01.766Z",
+  "generated_at": "2026-09-02T23:00:01.383Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-09-01",
-          "last_msg": "fix(build): backend 로컬 패치를 빌드 파이프라인에 연결 (회귀 �",
-          "branch": "master",
+          "name": "claude-agent",
+          "last_date": "2026-09-03",
+          "last_msg": "docs(ops): record the c114cff add -A sweep; author mix question",
+          "branch": "gram-jsong",
           "activity": [
+            20,
+            21,
+            27,
+            11,
+            16,
+            40,
+            7
+          ],
+          "commits_7d": 181,
+          "commits_30d": 418
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-09-02",
+          "last_msg": "[main] feat(canary): Layer 1.5 dev cert/가용성 감시 신설 — 45일 사각",
+          "branch": "dev",
+          "activity": [
+            4,
             1,
-            0,
-            0,
-            0,
+            1,
+            1,
             0,
             3,
             0
           ],
-          "commits_7d": 4,
-          "commits_30d": 14
+          "commits_7d": 17,
+          "commits_30d": 80
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-02",
+          "last_msg": "docs(env): TELEGRAM_* 항목 .env.example 에 명시 (알림 무음 재발 차�",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 15
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-01",
+          "last_date": "2026-09-02",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -39,72 +73,38 @@
           "commits_30d": 68
         },
         {
-          "name": "claude-agent",
-          "last_date": "2026-09-01",
-          "last_msg": "fix(fleet): match suffixed gmet binaries so 46/47 mainnet units are reported",
-          "branch": "gram-jsong",
-          "activity": [
-            39,
-            20,
-            21,
-            27,
-            11,
-            16,
-            0
-          ],
-          "commits_7d": 140,
-          "commits_30d": 400
-        },
-        {
           "name": "booksummary",
-          "last_date": "2026-09-01",
-          "last_msg": "wip: 「만무방」(김유정) 제작 중 — 렌더 진행 상태 저장",
+          "last_date": "2026-09-02",
+          "last_msg": "wip: 「레디메이드 인생」(채만식) — NLM 비디오만 미완, 내일",
           "branch": "main",
           "activity": [
-            3,
             1,
             5,
             1,
             2,
             3,
+            2,
             0
           ],
-          "commits_7d": 20,
-          "commits_30d": 64
+          "commits_7d": 17,
+          "commits_30d": 66
         },
         {
           "name": "cplabs_homepage",
-          "last_date": "2026-09-01",
-          "last_msg": "DAEPA(대파) 콘텐츠 전면 제거",
+          "last_date": "2026-09-02",
+          "last_msg": "사칭 피싱 주의 팝업 내림 (게시 2026-08-20 → 종료 2026-09-02)",
           "branch": "master",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
+            1,
             1,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 9
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-08-31",
-          "last_msg": "docs(canary): deep 스케줄 UTC/KST 주석 정정 — 실제 실행은 KST 화�",
-          "branch": "dev",
-          "activity": [
-            15,
-            4,
-            1,
-            1,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 32,
-          "commits_30d": 77
+          "commits_7d": 2,
+          "commits_30d": 10
         },
         {
           "name": "company-page",
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -622,38 +622,55 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-09-02",
+          "last_msg": "QEA 심층 조사 — 온타리오 교육부 공식 등록 확인, 주소·리�",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "commits_7d": 4,
+          "commits_30d": 35
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-09-02",
+          "last_msg": "explorer block 큐 다중 메시지 원인 규명 — explorer 세션 인계",
+          "branch": "mini-jsong",
+          "activity": [
+            5,
+            3,
+            0,
+            21,
+            7,
+            17,
+            39
+          ],
+          "commits_7d": 92,
+          "commits_30d": 198
+        },
+        {
           "name": "go-metadium",
           "last_date": "2026-09-01",
           "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
           "branch": "fix/downloadgenesis-102",
           "activity": [
             0,
-            0,
             11,
             2,
             2,
             8,
-            1
+            1,
+            0
           ],
           "commits_7d": 24,
           "commits_30d": 104
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-01",
-          "last_msg": "9/1 밤 — MicroDuck 영상 경로 biz 이관 추송(cplabs→맥북 SSH 실측",
-          "branch": "mini-jsong",
-          "activity": [
-            16,
-            5,
-            3,
-            0,
-            21,
-            7,
-            17
-          ],
-          "commits_7d": 69,
-          "commits_30d": 159
         },
         {
           "name": "mirae",
@@ -662,14 +679,14 @@
           "branch": "main",
           "activity": [
             1,
-            1,
             0,
             0,
             0,
             1,
+            0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 2,
           "commits_30d": 3
         },
         {
@@ -678,15 +695,15 @@
           "last_msg": "Record payer-side CE block: gap remeasurement needs Megazone report or payer set",
           "branch": "master",
           "activity": [
-            4,
             6,
             0,
             0,
             0,
             3,
+            0,
             0
           ],
-          "commits_7d": 13,
+          "commits_7d": 9,
           "commits_30d": 82
         },
         {
@@ -696,8 +713,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -712,7 +729,7 @@
           "last_msg": "docs(standard): sync draft to v1.4 submitted for PG1006 2nd review",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -720,25 +737,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 4
-        },
-        {
-          "name": "life",
-          "last_date": "2026-08-26",
-          "last_msg": "Queen's Elite Academy 조사 결과 정리 — 그룹 구조·시급 비교·확",
-          "branch": "main",
-          "activity": [
-            1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 31
         },
         {
           "name": "wemix-dios",
@@ -772,7 +772,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 34
+          "commits_30d": 33
         },
         {
           "name": "MetaLotto",
