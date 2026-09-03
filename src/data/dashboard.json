@@ -1,69 +1,69 @@
 {
-  "generated_at": "2026-09-02T23:00:01.383Z",
+  "generated_at": "2026-09-03T23:00:01.539Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-09-03",
-          "last_msg": "docs(ops): record the c114cff add -A sweep; author mix question",
-          "branch": "gram-jsong",
-          "activity": [
-            20,
-            21,
-            27,
-            11,
-            16,
-            40,
-            7
-          ],
-          "commits_7d": 181,
-          "commits_30d": 418
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-09-02",
-          "last_msg": "[main] feat(canary): Layer 1.5 dev cert/가용성 감시 신설 — 45일 사각",
-          "branch": "dev",
-          "activity": [
-            4,
-            1,
-            1,
-            1,
-            0,
-            3,
-            0
-          ],
-          "commits_7d": 17,
-          "commits_30d": 80
-        },
-        {
           "name": "metadium-explorer-stack",
-          "last_date": "2026-09-02",
-          "last_msg": "docs(env): TELEGRAM_* 항목 .env.example 에 명시 (알림 무음 재발 차�",
+          "last_date": "2026-09-04",
+          "last_msg": "ops(logging): sync-consumer 로그 보존을 1GB 로 (알림 조사 가능하게",
           "branch": "master",
           "activity": [
             0,
             0,
             0,
+            3,
+            1,
+            16,
+            2
+          ],
+          "commits_7d": 22,
+          "commits_30d": 33
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-09-04",
+          "last_msg": "ops(backup): log the Telegram send result instead of assuming it",
+          "branch": "gram-jsong",
+          "activity": [
+            21,
+            27,
+            11,
+            16,
+            40,
+            13,
+            2
+          ],
+          "commits_7d": 145,
+          "commits_30d": 404
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-09-03",
+          "last_msg": "[main] infra(redis): ElastiCache → EC2 자체호스팅 전환 IaC (8/30~31 배",
+          "branch": "dev",
+          "activity": [
+            1,
+            1,
+            1,
             0,
             3,
             1,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 15
+          "commits_7d": 11,
+          "commits_30d": 79
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-02",
+          "last_date": "2026-09-03",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -74,20 +74,20 @@
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-02",
-          "last_msg": "wip: 「레디메이드 인생」(채만식) — NLM 비디오만 미완, 내일",
+          "last_date": "2026-09-03",
+          "last_msg": "feat: 「기억 속의 들꽃」·「레디메이드 인생」 업로드 + NLM �",
           "branch": "main",
           "activity": [
-            1,
             5,
             1,
             2,
             3,
             2,
+            1,
             0
           ],
-          "commits_7d": 17,
-          "commits_30d": 66
+          "commits_7d": 15,
+          "commits_30d": 67
         },
         {
           "name": "cplabs_homepage",
@@ -98,9 +98,9 @@
             0,
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0
           ],
           "commits_7d": 2,
@@ -622,6 +622,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "wemix-dios",
+          "last_date": "2026-09-03",
+          "last_msg": "9/2-9/3 변호인의견서 초안 검토 + 첨부 15 온체인기록 제작·제",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 26
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-09-03",
+          "last_msg": "cpdax 회신 반영 — 9/3 작업 없음, 조정 불요",
+          "branch": "mini-jsong",
+          "activity": [
+            3,
+            0,
+            21,
+            7,
+            17,
+            39,
+            15
+          ],
+          "commits_7d": 102,
+          "commits_30d": 213
+        },
+        {
           "name": "life",
           "last_date": "2026-09-02",
           "last_msg": "QEA 심층 조사 — 온타리오 교육부 공식 등록 확인, 주소·리�",
@@ -632,28 +666,11 @@
             0,
             0,
             0,
-            0,
-            4
+            4,
+            0
           ],
           "commits_7d": 4,
           "commits_30d": 35
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-02",
-          "last_msg": "explorer block 큐 다중 메시지 원인 규명 — explorer 세션 인계",
-          "branch": "mini-jsong",
-          "activity": [
-            5,
-            3,
-            0,
-            21,
-            7,
-            17,
-            39
-          ],
-          "commits_7d": 92,
-          "commits_30d": 198
         },
         {
           "name": "go-metadium",
@@ -661,12 +678,12 @@
           "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
           "branch": "fix/downloadgenesis-102",
           "activity": [
-            0,
             11,
             2,
             2,
             8,
             1,
+            0,
             0
           ],
           "commits_7d": 24,
@@ -678,15 +695,15 @@
           "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
           "branch": "main",
           "activity": [
-            1,
             0,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 3
         },
         {
@@ -695,15 +712,15 @@
           "last_msg": "Record payer-side CE block: gap remeasurement needs Megazone report or payer set",
           "branch": "master",
           "activity": [
-            6,
             0,
             0,
             0,
             3,
             0,
+            0,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 3,
           "commits_30d": 82
         },
         {
@@ -712,8 +729,8 @@
           "last_msg": "fix(scripts): 배포 스크립트 SSH 키를 삭제된 마스터 키(aws-jsong-n",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -739,23 +756,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 4
-        },
-        {
-          "name": "wemix-dios",
-          "last_date": "2026-08-24",
-          "last_msg": "HANDOFF 갱신일·먼저 읽을 것 최신화",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 25
         },
         {
           "name": "health",
