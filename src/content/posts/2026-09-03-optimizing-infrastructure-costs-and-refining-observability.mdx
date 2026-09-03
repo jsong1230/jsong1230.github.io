@@ -1,0 +1,56 @@
+---
+title: "Optimizing Infrastructure Costs and Refining Observability"
+date: "2026-09-03"
+lang: en
+excerpt: "Engineering Log: Optimizing Infrastructure Costs and Refining Observability  As a CTO, I often find that the most impactful engineering work isn't alw..."
+---
+
+# Engineering Log: Optimizing Infrastructure Costs and Refining Observability
+
+As a CTO, I often find that the most impactful engineering work isn't always about adding new features, but about refining the "invisible" parts of the system—infrastructure efficiency and operational clarity. Today's work focused on two primary goals: reducing unnecessary AWS spend through strategic architectural shifts and solving a "silent failure" problem in our alerting pipeline.
+
+## 1. Infrastructure Pivot: ElastiCache to EC2 Self-Hosting
+
+One of the most satisfying parts of infrastructure management is finding "leaks" in the budget. In the `heritageradio` project, I identified that our ElastiCache instance was not covered by our existing Compute Savings Plan (SP). Since we had significant underutilized SP capacity, it made financial sense to migrate Redis to a self-hosted EC2 instance.
+
+**The Technical Decision:**
+The shift from a managed service to self-hosting isn't just about changing a resource type; it's about taking over the operational burden. The cost reduction is stark: **from ~$11.8/month to roughly $0.73/month** (only the EBS volume cost remains).
+
+However, because this Redis instance serves as a **Celery broker and result backend**, data loss is not an option. A queue loss equals a task loss. Therefore, I implemented specific configurations:
+- `appendonly yes`: Ensuring durability.
+- `maxmemory-policy noeviction`: Preventing the broker from dropping tasks when memory limits are reached.
+
+**The Cutover Strategy:**
+To avoid downtime, I implemented a four-stage `redisMode` transition in the IaC:
+`elasticache` $\rightarrow$ `both` $\rightarrow$ `ec2` $\rightarrow$ `ec2-only`.
+
+This allowed us to spin up the EC2 instance, verify connectivity, shift the application traffic, and finally decommission the managed service only after confirming that `CacheHits` had dropped to zero.
+
+## 2. Solving the "Silent Alert" Mystery
+
+In the `metadium-explorer-stack`, we encountered a classic observability gap. We were receiving Telegram alerts, but we couldn't distinguish which specific instance was reporting the error. In a Dockerized environment, `InetAddress.getLocalHost()` returns the container ID, which changes every time a container is recreated.
+
+**The Problem:**
+Our alert headers looked like `[941cf0a08d92 | testnet | null]`. When running multiple testnets or dev environments, this is useless for rapid debugging.
+
+**The Fix:**
+I introduced a explicit `SERVER_INSTANCE` identifier and fixed the hostnames in `docker-compose.yml`:
+```yaml
+explorer-api:
+  hostname: dev189-api
+  environment:
+    SERVER_INSTANCE: ${SERVER_INSTANCE:-unknown}
+```
+Now, an alert arrives as `[dev189-sync-consumer | testnet | 189-testnet-dev]`, providing immediate context on where the failure occurred. This is a reminder that **standard environment variables are often insufficient; explicit identity injection is key for scalable monitoring.**
+
+## 3. AI Ops and Memory Management
+
+Finally, I spent time auditing my `claude-agent` memory repositories. Working with AI agents at scale requires a rigorous approach to "context hygiene." I implemented a new rule: **Ban `git add -A`**. 
+
+The "sweep" effect of `add -A` often pulls in unintended files from other sessions, polluting the git history and creating "noisy" commits. I've shifted to a targeted `memory-commit` script that only stages specific paths. This ensures that the AI's memory remains a clean, audit-able record of decision-making rather than a dump of the working directory.
+
+## Final Thoughts
+
+Today was a blend of macro-optimization (cost cutting) and micro-optimization (alert clarity). Whether it's saving $10 a month or saving 10 minutes of debugging time per alert, these marginal gains compound into a significantly more stable and professional production environment.
+
+At **CPLABS**, we strive for this level of technical depth—where every line of IaC and every alert string is intentional.
