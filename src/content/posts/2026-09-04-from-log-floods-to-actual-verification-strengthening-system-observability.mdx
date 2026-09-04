@@ -1,0 +1,61 @@
+---
+title: "From Log Floods to Actual Verification: Strengthening System Observability"
+date: "2026-09-04"
+lang: en
+excerpt: "[Dev Log] From Log Floods to \"Actual\" Verification: Strengthening System Observability  As a CTO and engineer, I've learned that the most dangerous st..."
+---
+
+# [Dev Log] From Log Floods to "Actual" Verification: Strengthening System Observability
+
+As a CTO and engineer, I've learned that the most dangerous state for a system isn't "down"—it's "silently failing." When a system tells you everything is fine while it's actually bleeding out, you lose the most precious resource in incident response: **time.**
+
+Today's work across the `metadium-explorer-stack` and my internal automation tools was centered around one theme: **eliminating assumptions in observability.**
+
+---
+
+### 1. Taming the Log Flood: Quality over Quantity
+
+In the `metadium-explorer-stack`, I encountered a classic case of "log noise" masking "critical signals." The `sync-consumer` was generating a staggering **9.8GB of logs per day** (roughly 7.25MB/min). 
+
+Because we had a global Docker logging limit of 150MB (50MB x 3 files), the logs were rotating every 20 minutes. When an alert fired, the evidence was already gone. I had to reverse-engineer the DB state because the logs had vanished.
+
+**The Technical Decision:**
+The culprit was `p6spy` (SQL logging) and ANSI escape codes.
+- **SQL Noise:** I disabled `p6spy` logging. While SQL logs are great for local debugging, in a high-throughput consumer, they are purely noise.
+- **ANSI Escape Codes:** I changed `spring.output.ansi.enabled` from `always` to `never`. In a Docker `json-file` driver, ANSI colors just add `ESC[32m` junk to the text, bloating file size and breaking `grep` commands.
+
+**The Insight:**
+I didn't want to increase the global log limit for all containers (to avoid a repeat of a previous 404GB disk-fill incident). Instead, I implemented a **tiered logging strategy** using Docker Compose anchors:
+```yaml
+x-logging-verbose: &verbose-logging
+  options:
+    max-size: "200m"
+    max-file: "5"
+```
+By reducing the daily volume from 9.8GB to ~400MB, a 1GB buffer now preserves about 2.5 days of history—enough to investigate any weekend alert on Monday morning.
+
+---
+
+### 2. "Probably Sent" vs. "Actually Sent"
+
+In my `claude-agent` backup scripts, I found a systemic flaw in how I handled notifications. The `notify()` function relied on `curl`'s exit code.
+
+**The Problem:**
+Telegram's API returns a `200 OK` HTTP response even if the token is invalid or the `chat_id` is wrong; the error is hidden in the JSON body (`{"ok":false}`). To `curl`, this is a success (rc=0). I discovered this the hard way when three production API hosts at **CPLABS** had been unable to send alerts for months due to dead tokens, yet the scripts reported success.
+
+**The Fix:**
+I shifted from **assumption-based** to **evidence-based** verification.
+1. **Body Parsing:** The script now captures the response and explicitly parses the `"ok": true` field.
+2. **Dedicated Audit Log:** I introduced `~/.backup-send.log` to record the actual result of every single notification attempt.
+3. **Morning Check:** The `backup-morning-check.sh` no longer says *"A checkmark was probably sent."* It now says *"Confirmed 1 successful send (Actual)."*
+
+**Security Hardening:**
+During this process, I noticed a potential leak: `curl ... 2>&1` was merging stderr into the response variable. If I ever added `-v` (verbose) for debugging, the bot token in the URL could have leaked into the logs. I structurally severed this by using `2>/dev/null`.
+
+---
+
+### Final Thoughts
+
+Whether it's adjusting log rotation for a blockchain explorer or fixing a shell script for backups, the lesson is the same: **Trust the data, not the exit code.** 
+
+High-level abstractions (like "the process finished successfully") often hide the very failures we need to see. By digging into the diffs and the raw logs, we move from "hoping the system works" to "knowing it works."
