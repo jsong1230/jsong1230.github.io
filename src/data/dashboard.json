@@ -1,68 +1,51 @@
 {
-  "generated_at": "2026-09-03T23:00:01.539Z",
+  "generated_at": "2026-09-04T23:00:01.121Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "metadium-explorer-stack",
+          "name": "validator",
           "last_date": "2026-09-04",
-          "last_msg": "ops(logging): sync-consumer 로그 보존을 1GB 로 (알림 조사 가능하게",
+          "last_msg": "bifrost v3.0.3 정비 창 준비 — 계획서·실행 스크립트·일지",
           "branch": "master",
           "activity": [
             0,
             0,
             0,
-            3,
-            1,
-            16,
-            2
-          ],
-          "commits_7d": 22,
-          "commits_30d": 33
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-04",
-          "last_msg": "ops(backup): log the Telegram send result instead of assuming it",
-          "branch": "gram-jsong",
-          "activity": [
-            21,
-            27,
-            11,
-            16,
-            40,
-            13,
-            2
-          ],
-          "commits_7d": 145,
-          "commits_30d": 404
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-09-03",
-          "last_msg": "[main] infra(redis): ElastiCache → EC2 자체호스팅 전환 IaC (8/30~31 배",
-          "branch": "dev",
-          "activity": [
-            1,
-            1,
-            1,
             0,
-            3,
+            0,
             1,
             0
           ],
-          "commits_7d": 11,
-          "commits_30d": 79
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-04",
+          "last_msg": "fix(189): crontab 스냅샷의 시간대 전제가 틀려 2건이 9시간 어긋",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            3,
+            1,
+            16,
+            12,
+            0
+          ],
+          "commits_7d": 32,
+          "commits_30d": 43
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-03",
+          "last_date": "2026-09-04",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -73,21 +56,55 @@
           "commits_30d": 68
         },
         {
+          "name": "claude-agent",
+          "last_date": "2026-09-04",
+          "last_msg": "docs(log): accept per-machine repo creation policy; record credential-copy rotat",
+          "branch": "gram-jsong",
+          "activity": [
+            27,
+            11,
+            16,
+            40,
+            13,
+            50,
+            0
+          ],
+          "commits_7d": 178,
+          "commits_30d": 427
+        },
+        {
           "name": "booksummary",
-          "last_date": "2026-09-03",
-          "last_msg": "feat: 「기억 속의 들꽃」·「레디메이드 인생」 업로드 + NLM �",
+          "last_date": "2026-09-04",
+          "last_msg": "docs: history.md 최상단에 세션 체크리스트 갱신 (2026-09-04)",
           "branch": "main",
           "activity": [
-            5,
             1,
             2,
             3,
             2,
             1,
+            2,
             0
           ],
-          "commits_7d": 15,
-          "commits_30d": 67
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-09-03",
+          "last_msg": "[main] infra(redis): ElastiCache → EC2 자체호스팅 전환 IaC (8/30~31 배",
+          "branch": "dev",
+          "activity": [
+            1,
+            1,
+            0,
+            3,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 7,
+          "commits_30d": 77
         },
         {
           "name": "cplabs_homepage",
@@ -97,9 +114,9 @@
           "activity": [
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0
           ],
@@ -622,6 +639,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-09-04",
+          "last_msg": "adopt per-machine repo creation policy, retire gram-proxy rule",
+          "branch": "mini-jsong",
+          "activity": [
+            0,
+            21,
+            7,
+            17,
+            39,
+            15,
+            28
+          ],
+          "commits_7d": 127,
+          "commits_30d": 241
+        },
+        {
           "name": "wemix-dios",
           "last_date": "2026-09-03",
           "last_msg": "9/2-9/3 변호인의견서 초안 검토 + 첨부 15 온체인기록 제작·제",
@@ -632,28 +666,11 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 26
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-03",
-          "last_msg": "cpdax 회신 반영 — 9/3 작업 없음, 조정 불요",
-          "branch": "mini-jsong",
-          "activity": [
-            3,
-            0,
-            21,
-            7,
-            17,
-            39,
-            15
-          ],
-          "commits_7d": 102,
-          "commits_30d": 213
         },
         {
           "name": "life",
@@ -665,8 +682,8 @@
             0,
             0,
             0,
-            0,
             4,
+            0,
             0
           ],
           "commits_7d": 4,
@@ -678,15 +695,15 @@
           "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
           "branch": "fix/downloadgenesis-102",
           "activity": [
-            11,
             2,
             2,
             8,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 24,
+          "commits_7d": 13,
           "commits_30d": 104
         },
         {
@@ -697,8 +714,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -714,8 +731,8 @@
           "activity": [
             0,
             0,
-            0,
             3,
+            0,
             0,
             0,
             0
@@ -729,7 +746,7 @@
           "last_msg": "fix(scripts): 배포 스크립트 SSH 키를 삭제된 마스터 키(aws-jsong-n",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -737,7 +754,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
