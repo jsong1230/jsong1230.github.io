@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-09-05T23:00:01.906Z",
+  "generated_at": "2026-09-06T23:00:01.504Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "metadium-explorer-stack",
+          "name": "validator",
           "last_date": "2026-09-06",
-          "last_msg": "docs(deploy): testnet sync 배포 완료 — sync·api 4대 전부 master 정렬",
+          "last_msg": "게이트 통과 — 9/6 오탐 가드 실전 검증",
           "branch": "master",
           "activity": [
             0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-06",
+          "last_msg": "docs: STATUS.md 를 역사 기록으로 정리 (STATUS-2026-04-17.md 로 개명)",
+          "branch": "master",
+          "activity": [
             3,
             1,
             16,
             12,
             10,
-            2
+            4,
+            0
           ],
-          "commits_7d": 44,
-          "commits_30d": 54
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-06",
-          "last_msg": "docs(log): trace n46/n47 sync.log root ownership to 2026-04-21 chown-before-crea",
-          "branch": "gram-jsong",
-          "activity": [
-            11,
-            16,
-            40,
-            13,
-            50,
-            10,
-            2
-          ],
-          "commits_7d": 169,
-          "commits_30d": 397
+          "commits_7d": 46,
+          "commits_30d": 56
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-05",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-09-06",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 70
         },
         {
-          "name": "validator",
-          "last_date": "2026-09-04",
-          "last_msg": "bifrost v3.0.3 정비 창 준비 — 계획서·실행 스크립트·일지",
-          "branch": "master",
+          "name": "claude-agent",
+          "last_date": "2026-09-06",
+          "last_msg": "docs(log): end-of-day wrap-up for 2026-09-06",
+          "branch": "gram-jsong",
           "activity": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
+            16,
+            40,
+            13,
+            50,
+            10,
+            14,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 1
+          "commits_7d": 154,
+          "commits_30d": 369
         },
         {
           "name": "booksummary",
@@ -78,15 +78,15 @@
           "last_msg": "docs: history.md 최상단에 세션 체크리스트 갱신 (2026-09-04)",
           "branch": "main",
           "activity": [
-            2,
             3,
             2,
             1,
             2,
             0,
+            0,
             0
           ],
-          "commits_7d": 11,
+          "commits_7d": 10,
           "commits_30d": 69
         },
         {
@@ -95,16 +95,16 @@
           "last_msg": "[main] infra(redis): ElastiCache → EC2 자체호스팅 전환 IaC (8/30~31 배",
           "branch": "dev",
           "activity": [
-            1,
             0,
             3,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 6,
-          "commits_30d": 72
+          "commits_7d": 5,
+          "commits_30d": 71
         },
         {
           "name": "cplabs_homepage",
@@ -112,9 +112,9 @@
           "last_msg": "사칭 피싱 주의 팝업 내림 (게시 2026-08-20 → 종료 2026-09-02)",
           "branch": "master",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
@@ -640,20 +640,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-09-05",
-          "last_msg": "close 9/5: mail triage, cron-cycle5 false positive resolved, HANDOFF 9/5 block",
+          "last_date": "2026-09-06",
+          "last_msg": "close 9/6 final: HANDOFF 9/6 block, briefick ready for 9/7",
           "branch": "mini-jsong",
           "activity": [
-            21,
             7,
             17,
             39,
             15,
             28,
-            3
+            4,
+            9
           ],
-          "commits_7d": 130,
-          "commits_30d": 243
+          "commits_7d": 119,
+          "commits_30d": 250
         },
         {
           "name": "wemix-dios",
@@ -664,8 +664,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -680,8 +680,8 @@
           "activity": [
             0,
             0,
-            0,
             4,
+            0,
             0,
             0,
             0
@@ -695,15 +695,15 @@
           "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
           "branch": "fix/downloadgenesis-102",
           "activity": [
-            2,
             8,
             1,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 11,
+          "commits_7d": 10,
           "commits_30d": 92
         },
         {
@@ -712,8 +712,8 @@
           "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -729,8 +729,8 @@
           "last_msg": "Record payer-side CE block: gap remeasurement needs Megazone report or payer set",
           "branch": "master",
           "activity": [
-            0,
             3,
+            0,
             0,
             0,
             0,
@@ -789,7 +789,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 33
+          "commits_30d": 32
         },
         {
           "name": "MetaLotto",
