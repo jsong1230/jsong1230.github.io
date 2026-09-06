@@ -1,0 +1,54 @@
+---
+title: "Infrastructure Stability: The Art of Deployment and the Discipline of Forensics"
+date: "2026-09-06"
+lang: en
+excerpt: "[Dev Log] Infrastructure Stability: The Art of Deployment and the Discipline of Forensics  As a CTO and engineer, I’ve learned that the most dangerous..."
+---
+
+# [Dev Log] Infrastructure Stability: The Art of Deployment and the Discipline of Forensics
+
+As a CTO and engineer, I’ve learned that the most dangerous moments in a system's lifecycle aren't the big feature launches, but the "routine" deployments and the "minor" anomalies in logs. Today was a day dedicated to both: aligning our production stack and performing a deep-dive forensic analysis on a permission issue that had persisted for months.
+
+## 1. Stack Alignment: Closing the Gap
+
+Today, I focused on synchronizing the `metadium-explorer-stack`. The goal was simple: ensure all sync and API nodes are aligned to the `master` branch (`e60f7d87`).
+
+While the end result—four nodes aligned—seems straightforward, the process revealed critical operational constraints. For instance, while mainnet nodes can be updated via rolling deployments to maintain uptime, the **testnet sync node is a single point of failure**. 
+
+As I noted in the deployment docs:
+> "Testnet has only one SYNC node, so rolling updates are impossible. Collection stops during restart."
+
+In practice, the downtime was minimal (36s stop + ~2min start), and the queue buffered the blocks, keeping the block age around 5-7 seconds. However, relying on "luck" or "buffers" is not an engineering strategy. I've explicitly documented that these updates must occur within a designated maintenance window.
+
+## 2. The "Invisible" Failure: sudo and Session Persistence
+
+During the deployment, I encountered two practical hurdles that serve as a reminder: **automation scripts are only as good as the environment they run in.**
+
+First, the `stopAll.sh` script uses `kill -15`. Because the SYNC process is owned by `root`, running the script as a standard `ubuntu` user results in an `EPERM` (Operation not permitted) error. The script, however, doesn't fail loudly; it simply enters an infinite "Still running..." loop.
+
+Second, I encountered the classic SSH timeout trap. Since the full stop-and-start cycle exceeds two minutes, a standard SSH session can drop, killing the process mid-stream.
+
+**The Technical Decision:**
+I've mandated the use of `sudo` and session detachment. The updated procedure is now:
+`sudo setsid nohup ./stopAll.sh > /tmp/stopAll.log 2>&1 &`
+By using `setsid` and `nohup`, we decouple the deployment from the terminal session, ensuring the process completes regardless of network stability.
+
+## 3. Digital Forensics: The Case of the Root-Owned Log
+
+The most intellectually satisfying part of today was solving a mystery regarding `sync.log` ownership on nodes n46 and n47. For months, these logs were owned by `root`, while others were owned by the `jsong` user.
+
+By analyzing `journald` logs down to the second, I traced the cause back to **April 21st**. The sequence of commands was the culprit:
+1. `sudo rm -f sync.log` (File deleted)
+2. `sudo chown -R jsong:jsong /data/...` (Chown executed, but the file was already gone)
+3. `sudo systemctl start gmet-testnet` (Systemd, running as root, created the file via `StandardOutput=append:`)
+
+Because systemd opens the file before dropping privileges, the file was created as `root:root 0644`. 
+
+**The Insight:**
+This highlighted a critical cognitive bias in debugging. I initially almost misread the timeline because the unit file's `mtime` was later than the log's creation date. I reminded myself: **File timestamps tell you when the current entity was created, but journals tell you the sequence of events.**
+
+## Final Thoughts
+
+Whether it's ensuring a deployment script is run with the correct privileges at CPLABS or tracing a file ownership bug back five months, the lesson is the same: **Precision in observation is the only way to eliminate guesswork.**
+
+When we see an anomaly, we shouldn't just "fix" it; we should understand the exact sequence of events that allowed it to happen. That is the difference between a patch and a solution.
