@@ -1,9 +1,60 @@
 {
-  "generated_at": "2026-09-06T23:00:01.504Z",
+  "generated_at": "2026-09-07T23:00:01.097Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-07",
+          "last_msg": "docs(deploy): sync 3대 #39·#40 배포 완료 (6251c329) + 정지확인 사고 ",
+          "branch": "master",
+          "activity": [
+            1,
+            16,
+            12,
+            10,
+            4,
+            2,
+            0
+          ],
+          "commits_7d": 48,
+          "commits_30d": 58
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-09-07",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-09-07",
+          "last_msg": "docs(log): notify both mini machines about memory conflict markers",
+          "branch": "gram-jsong",
+          "activity": [
+            40,
+            13,
+            50,
+            10,
+            14,
+            3,
+            0
+          ],
+          "commits_7d": 145,
+          "commits_30d": 362
+        },
         {
           "name": "validator",
           "last_date": "2026-09-06",
@@ -12,65 +63,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
             0,
             1,
+            0,
             0
           ],
           "commits_7d": 2,
           "commits_30d": 2
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-09-06",
-          "last_msg": "docs: STATUS.md 를 역사 기록으로 정리 (STATUS-2026-04-17.md 로 개명)",
-          "branch": "master",
-          "activity": [
-            3,
-            1,
-            16,
-            12,
-            10,
-            4,
-            0
-          ],
-          "commits_7d": 46,
-          "commits_30d": 56
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-09-06",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-06",
-          "last_msg": "docs(log): end-of-day wrap-up for 2026-09-06",
-          "branch": "gram-jsong",
-          "activity": [
-            16,
-            40,
-            13,
-            50,
-            10,
-            14,
-            0
-          ],
-          "commits_7d": 154,
-          "commits_30d": 369
         },
         {
           "name": "booksummary",
@@ -78,15 +78,15 @@
           "last_msg": "docs: history.md 최상단에 세션 체크리스트 갱신 (2026-09-04)",
           "branch": "main",
           "activity": [
-            3,
             2,
             1,
             2,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 8,
           "commits_30d": 69
         },
         {
@@ -95,15 +95,15 @@
           "last_msg": "[main] infra(redis): ElastiCache → EC2 자체호스팅 전환 IaC (8/30~31 배",
           "branch": "dev",
           "activity": [
-            0,
             3,
             1,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 5,
+          "commits_7d": 4,
           "commits_30d": 71
         },
         {
@@ -113,7 +113,7 @@
           "branch": "master",
           "activity": [
             1,
-            1,
+            0,
             0,
             0,
             0,
@@ -640,20 +640,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-09-06",
-          "last_msg": "close 9/6 final: HANDOFF 9/6 block, briefick ready for 9/7",
+          "last_date": "2026-09-07",
+          "last_msg": "log 9/7 mail review: TTA reply resolves blockers, relay MLFF October overlap",
           "branch": "mini-jsong",
           "activity": [
-            7,
             17,
             39,
             15,
             28,
             4,
-            9
+            9,
+            1
           ],
-          "commits_7d": 119,
-          "commits_30d": 250
+          "commits_7d": 113,
+          "commits_30d": 251
         },
         {
           "name": "wemix-dios",
@@ -663,8 +663,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -679,8 +679,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             4,
+            0,
             0,
             0,
             0,
@@ -695,23 +695,6 @@
           "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
           "branch": "fix/downloadgenesis-102",
           "activity": [
-            8,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 10,
-          "commits_30d": 92
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-08-31",
-          "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
-          "branch": "main",
-          "activity": [
             1,
             0,
             0,
@@ -721,6 +704,23 @@
             0
           ],
           "commits_7d": 1,
+          "commits_30d": 92
+        },
+        {
+          "name": "mirae",
+          "last_date": "2026-08-31",
+          "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
@@ -729,7 +729,7 @@
           "last_msg": "Record payer-side CE block: gap remeasurement needs Megazone report or payer set",
           "branch": "master",
           "activity": [
-            3,
+            0,
             0,
             0,
             0,
@@ -737,7 +737,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 0,
           "commits_30d": 82
         },
         {
