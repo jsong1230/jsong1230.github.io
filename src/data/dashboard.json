@@ -1,109 +1,109 @@
 {
-  "generated_at": "2026-09-07T23:00:01.097Z",
+  "generated_at": "2026-09-08T23:00:01.686Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-09-07",
-          "last_msg": "docs(deploy): sync 3대 #39·#40 배포 완료 (6251c329) + 정지확인 사고 ",
-          "branch": "master",
+          "name": "heritageradio",
+          "last_date": "2026-09-09",
+          "last_msg": "[admin] ops(w20): 9/21~9/27 사이클 빌드~freeze 완료 — 전 단계 실패",
+          "branch": "dev",
           "activity": [
             1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "commits_7d": 6,
+          "commits_30d": 73
+        },
+        {
+          "name": "validator",
+          "last_date": "2026-09-08",
+          "last_msg": "벤더 회신 반영 + 카나리아 실측 — bootstrap 은 offset 조정으로",
+          "branch": "master",
+          "activity": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 5
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-08",
+          "last_msg": "docs(deploy): did 3대 배포 완료 (39d5d1c6) + did 배포 절차(재기동 �",
+          "branch": "master",
+          "activity": [
             16,
             12,
             10,
             4,
             2,
+            5,
             0
           ],
-          "commits_7d": 48,
-          "commits_30d": 58
+          "commits_7d": 50,
+          "commits_30d": 63
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-07",
+          "last_date": "2026-09-08",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 68
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-07",
-          "last_msg": "docs(log): notify both mini machines about memory conflict markers",
+          "last_date": "2026-09-08",
+          "last_msg": "docs(log): answer dev:3 two pending questions from 9/4",
           "branch": "gram-jsong",
           "activity": [
-            40,
             13,
             50,
             10,
             14,
             3,
+            12,
             0
           ],
-          "commits_7d": 145,
-          "commits_30d": 362
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-09-06",
-          "last_msg": "게이트 통과 — 9/6 오탐 가드 실전 검증",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            1,
-            0,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 2
+          "commits_7d": 142,
+          "commits_30d": 365
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-04",
-          "last_msg": "docs: history.md 최상단에 세션 체크리스트 갱신 (2026-09-04)",
+          "last_date": "2026-09-08",
+          "last_msg": "feat: 책 선정에 '수요' 축 추가 — measure_search_demand.py",
           "branch": "main",
           "activity": [
-            2,
             1,
             2,
             0,
             0,
             0,
+            2,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 69
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-09-03",
-          "last_msg": "[main] infra(redis): ElastiCache → EC2 자체호스팅 전환 IaC (8/30~31 배",
-          "branch": "dev",
-          "activity": [
-            3,
-            1,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
+          "commits_7d": 7,
           "commits_30d": 71
         },
         {
@@ -112,7 +112,7 @@
           "last_msg": "사칭 피싱 주의 팝업 내림 (게시 2026-08-20 → 종료 2026-09-02)",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 10
         },
         {
@@ -639,21 +639,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-09-08",
+          "last_msg": "career: Alignerr Zara 인터뷰 준비 자료 추가",
+          "branch": "main",
+          "activity": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            39
+          ],
+          "commits_7d": 43,
+          "commits_30d": 74
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-09-07",
-          "last_msg": "log 9/7 mail review: TTA reply resolves blockers, relay MLFF October overlap",
+          "last_date": "2026-09-08",
+          "last_msg": "add 9/8 evening HANDOFF block; log meeting notes, phishing response, patent deci",
           "branch": "mini-jsong",
           "activity": [
-            17,
             39,
             15,
             28,
             4,
             9,
-            1
+            1,
+            3
           ],
-          "commits_7d": 113,
-          "commits_30d": 251
+          "commits_7d": 99,
+          "commits_30d": 254
         },
         {
           "name": "wemix-dios",
@@ -662,8 +679,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -673,29 +690,12 @@
           "commits_30d": 26
         },
         {
-          "name": "life",
-          "last_date": "2026-09-02",
-          "last_msg": "QEA 심층 조사 — 온타리오 교육부 공식 등록 확인, 주소·리�",
-          "branch": "main",
-          "activity": [
-            0,
-            4,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 35
-        },
-        {
           "name": "go-metadium",
           "last_date": "2026-09-01",
           "last_msg": "cmd/geth: make downloadGenesis read whole bodies, splice the config, and check i",
           "branch": "fix/downloadgenesis-102",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -703,7 +703,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 92
         },
         {
