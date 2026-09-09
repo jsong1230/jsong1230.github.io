@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T23:00:01.686Z",
+  "generated_at": "2026-09-09T23:00:01.088Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,64 +7,81 @@
         {
           "name": "heritageradio",
           "last_date": "2026-09-09",
-          "last_msg": "[admin] ops(w20): 9/21~9/27 사이클 빌드~freeze 완료 — 전 단계 실패",
+          "last_msg": "[admin] feat(명작): W38~W41 ep186~205 20편 집필·등록 — 편성 2027-02-",
           "branch": "dev",
           "activity": [
-            1,
             0,
             0,
             0,
             0,
             1,
-            1
+            10,
+            0
           ],
-          "commits_7d": 6,
-          "commits_30d": 73
+          "commits_7d": 12,
+          "commits_30d": 82
         },
         {
           "name": "validator",
-          "last_date": "2026-09-08",
-          "last_msg": "벤더 회신 반영 + 카나리아 실측 — bootstrap 은 offset 조정으로",
+          "last_date": "2026-09-09",
+          "last_msg": "유료 프로바이더 전환 안 함 — bitcoin·bootstrap 은 현행 방침�",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             1,
             0,
             3,
+            1,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 5
+          "commits_7d": 6,
+          "commits_30d": 6
         },
         {
           "name": "metadium-explorer-stack",
-          "last_date": "2026-09-08",
-          "last_msg": "docs(deploy): did 3대 배포 완료 (39d5d1c6) + did 배포 절차(재기동 �",
+          "last_date": "2026-09-09",
+          "last_msg": "chore(submodule): gitleaks reCAPTCHA 룰 머지 후 포인터 이동 (backend #5",
           "branch": "master",
           "activity": [
-            16,
             12,
             10,
             4,
             2,
             5,
+            18,
             0
           ],
-          "commits_7d": 50,
-          "commits_30d": 63
+          "commits_7d": 67,
+          "commits_30d": 81
+        },
+        {
+          "name": "meta-did-resolver",
+          "last_date": "2026-09-09",
+          "last_msg": "Merge pull request #28 from METADIUM/chore/gitleaks-recaptcha-rule",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          "commits_7d": 6,
+          "commits_30d": 6
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-08",
+          "last_date": "2026-09-09",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -74,37 +91,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-08",
-          "last_msg": "docs(log): answer dev:3 two pending questions from 9/4",
+          "last_date": "2026-09-09",
+          "last_msg": "docs(log): /clear handoff snapshot for 2026-09-09",
           "branch": "gram-jsong",
           "activity": [
-            13,
             50,
             10,
             14,
             3,
             12,
+            4,
             0
           ],
-          "commits_7d": 142,
-          "commits_30d": 365
+          "commits_7d": 99,
+          "commits_30d": 353
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-08",
-          "last_msg": "feat: 책 선정에 '수요' 축 추가 — measure_search_demand.py",
+          "last_date": "2026-09-09",
+          "last_msg": "feat: daily_pulse 에 새 선정 기준 9편 추적 추가",
           "branch": "main",
           "activity": [
-            1,
             2,
             0,
             0,
             0,
+            2,
             2,
             0
           ],
           "commits_7d": 7,
-          "commits_30d": 71
+          "commits_30d": 73
         },
         {
           "name": "cplabs_homepage",
@@ -120,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 10
         },
         {
@@ -639,38 +656,55 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "life",
-          "last_date": "2026-09-08",
-          "last_msg": "career: Alignerr Zara 인터뷰 준비 자료 추가",
+          "name": "health",
+          "last_date": "2026-09-09",
+          "last_msg": "9/9 진료 결과 반영: 비급여 5일치 수령, 다음 예약 9/16. 급여 �",
           "branch": "main",
           "activity": [
-            4,
             0,
             0,
             0,
             0,
             0,
-            39
+            0,
+            2
           ],
-          "commits_7d": 43,
-          "commits_30d": 74
+          "commits_7d": 2,
+          "commits_30d": 34
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-08",
-          "last_msg": "add 9/8 evening HANDOFF block; log meeting notes, phishing response, patent deci",
+          "last_date": "2026-09-09",
+          "last_msg": "log: send identityHub removal follow-up to Dr. Jung, closing the hub-side remain",
           "branch": "mini-jsong",
           "activity": [
-            39,
             15,
             28,
             4,
             9,
             1,
-            3
+            3,
+            10
           ],
-          "commits_7d": 99,
-          "commits_30d": 254
+          "commits_7d": 70,
+          "commits_30d": 264
+        },
+        {
+          "name": "life",
+          "last_date": "2026-09-08",
+          "last_msg": "linkedin: 글자수 실측치로 수정",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            42,
+            0
+          ],
+          "commits_7d": 42,
+          "commits_30d": 77
         },
         {
           "name": "wemix-dios",
@@ -678,8 +712,8 @@
           "last_msg": "9/2-9/3 변호인의견서 초안 검토 + 첨부 15 온체인기록 제작·제",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -704,7 +738,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 92
+          "commits_30d": 70
         },
         {
           "name": "mirae",
@@ -773,23 +807,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 4
-        },
-        {
-          "name": "health",
-          "last_date": "2026-08-23",
-          "last_msg": "건강회복 실천 계획 수립 — 탈모·발 진균·포진·전신 컨디�",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 32
         },
         {
           "name": "MetaLotto",
