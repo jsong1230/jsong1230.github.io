@@ -1,0 +1,56 @@
+---
+title: "Eliminating Log Noise: The Art of Precision in Production Monitoring"
+date: "2026-09-10"
+lang: en
+excerpt: "Eliminating Log Noise: The Art of Precision in Production Monitoring  In a production environment, logs are the primary eyes and ears of an engineer. ..."
+---
+
+# Eliminating Log Noise: The Art of Precision in Production Monitoring
+
+In a production environment, logs are the primary eyes and ears of an engineer. However, there is a thin line between "comprehensive logging" and "log noise." When your ERROR logs are flooded with thousands of entries that don't actually represent system failures, you risk suffering from "alert fatigue," where critical issues are buried under a mountain of trivialities.
+
+Today, I focused on a specific instance of this problem within the Metadium Explorer stack at **CPLABS**.
+
+## The Problem: 19,000 Lines of "False Alarms"
+
+While reviewing the production API logs, I noticed a staggering volume of ERROR logs—approximately 19,000 lines per day. Upon deep diving into the patterns, the culprit was clear:
+
+```text
+GET /api/int/v1/transactions/null   5,436건/일
+GET /api/int/v1/blocks/null         4,102건/일
+Source: meta-externalagent (Meta Crawler)
+```
+
+An external crawler was hitting endpoints with `null` as a parameter. Because the backend validator and the `GlobalExceptionHandler` both triggered ERROR-level logs for these invalid requests, every single "bad" request generated two lines of ERROR logs. From a business perspective, a client sending a `null` value is a `400 Bad Request` or `404 Not Found`—it is a client-side error, not a server-side failure.
+
+## The Technical Solution: Multi-Layered Guarding
+
+To solve this, I implemented a two-tier strategy to stop the noise before it reached the expensive logging pipeline.
+
+### 1. Frontend Pre-validation (The First Line of Defense)
+Instead of blindly calling the API, I updated the frontend `utils/identifier.js`. By validating the shape of the identifier before the request is even made, we can return a 404 internally without ever hitting the network. This reduces unnecessary load on the API gateway.
+
+### 2. Backend Log Level Optimization (The Safety Net)
+For requests that still reach the backend, I adjusted the logging severity:
+- **4xx Errors:** Downgraded from `ERROR` to `WARN`.
+- **Validators:** Changed `log.error` to `log.debug`. Since the `GlobalExceptionHandler` already captures the result, having the validator log an error as well was redundant.
+
+## Insight: The Danger of "404" as a Metric
+
+One of the most critical takeaways from today's deployment was the verification process. In many teams, a developer might say, *"I tested it, and I get a 404, so the guard is working."*
+
+**This is a dangerous assumption.**
+
+In a complex stack, a 404 can be returned by the Nginx ingress, the API gateway, or the backend application itself after a failed lookup. If the backend is still processing the request and logging an error before returning the 404, the "noise" still exists.
+
+To truly verify the fix, I didn't look at the HTTP response code; I looked at the **Nginx access logs** to count the actual number of requests forwarded to the API upstream.
+
+> **Verification Logic:**
+> - **Before:** Request $\rightarrow$ Nginx $\rightarrow$ API $\rightarrow$ Log ERROR $\rightarrow$ 404
+> - **After:** Request $\rightarrow$ Nginx $\rightarrow$ (Blocked/Filtered) $\rightarrow$ 404 (No API request)
+
+By counting the packets moving from the proxy to the container, I could confirm that the API was no longer being bothered by the crawler's `null` requests.
+
+## Final Thoughts
+
+As a CTO, I always emphasize that "clean logs are a feature." When you reduce the noise, the signal becomes clear. By moving the validation logic upstream and refining log levels, we've transformed 19,000 lines of noise into a manageable stream of meaningful data, ensuring that when an ERROR actually triggers, the team knows it's something that truly requires their attention.
