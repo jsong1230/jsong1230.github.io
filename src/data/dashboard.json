@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T23:00:02.005Z",
+  "generated_at": "2026-09-11T23:00:01.797Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,36 +7,87 @@
         {
           "name": "heritageradio",
           "last_date": "2026-09-11",
-          "last_msg": "[admin] feat(명작): W54~W57 ep266~285 20편 집필 — 연희·판화 신설, ",
+          "last_msg": "[admin] feat(audit): 테스트 잔재 탐지 스크립트 신설",
           "branch": "dev",
           "activity": [
-            0,
             0,
             0,
             1,
             10,
             4,
-            1
+            8,
+            0
           ],
-          "commits_7d": 16,
-          "commits_30d": 87
+          "commits_7d": 23,
+          "commits_30d": 94
+        },
+        {
+          "name": "go-delegator",
+          "last_date": "2026-09-11",
+          "last_msg": "feat(test): create_identity 시험 요청 생성기 + mainnet 빌드/검증 문�",
+          "branch": "develop",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 5
         },
         {
           "name": "metadium-explorer-stack",
           "last_date": "2026-09-11",
-          "last_msg": "chore(scripts): 9/10~9/11 상용 작업 스크립트 6종 + 프론트 conf 드�",
+          "last_msg": "feat(delegator): mainnet 양 노드 전환 완료 + 소크 감시로 교체",
           "branch": "master",
           "activity": [
-            10,
             4,
             2,
             5,
             18,
             3,
-            2
+            10,
+            0
           ],
-          "commits_7d": 54,
-          "commits_30d": 86
+          "commits_7d": 52,
+          "commits_30d": 94
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-09-11",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-09-11",
+          "last_msg": "feat: 업로드 직전 썸네일 텍스트 검사 + 고정 댓글 실험 판독(",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            2,
+            2,
+            1,
+            2,
+            0
+          ],
+          "commits_7d": 7,
+          "commits_30d": 71
         },
         {
           "name": "company-page",
@@ -48,8 +99,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -64,47 +115,13 @@
             0,
             0,
             0,
+            8,
+            8,
             0,
-            8,
-            8,
             0
           ],
           "commits_7d": 16,
           "commits_30d": 16
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-09-10",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            3,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-10",
-          "last_msg": "feat: 공개 전환 자동 점검 — verify_published.py + 18:05 cron",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            2,
-            2,
-            1,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 72
         },
         {
           "name": "validator",
@@ -112,15 +129,15 @@
           "last_msg": "유료 프로바이더 전환 안 함 — bitcoin·bootstrap 은 현행 방침�",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             3,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 5,
           "commits_30d": 6
         },
         {
@@ -129,16 +146,16 @@
           "last_msg": "docs(log): /clear handoff snapshot for 2026-09-09",
           "branch": "gram-jsong",
           "activity": [
-            10,
             14,
             3,
             12,
             4,
             0,
+            0,
             0
           ],
-          "commits_7d": 91,
-          "commits_30d": 350
+          "commits_7d": 43,
+          "commits_30d": 345
         },
         {
           "name": "gometa-ghsa-etcd",
@@ -148,14 +165,14 @@
           "activity": [
             0,
             0,
-            0,
             4,
             14,
+            0,
             0,
             0
           ],
           "commits_7d": 18,
-          "commits_30d": 80
+          "commits_30d": 70
         },
         {
           "name": "cplabs_homepage",
@@ -673,6 +690,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-09-11",
+          "last_msg": "close the personal mail triage and record the machine-account recovery path",
+          "branch": "mini-jsong",
+          "activity": [
+            4,
+            9,
+            1,
+            3,
+            11,
+            20,
+            27
+          ],
+          "commits_7d": 75,
+          "commits_30d": 306
+        },
+        {
           "name": "health",
           "last_date": "2026-09-10",
           "last_msg": "팩스 전송 완료 기록: 2026-09-10 12:23:58, 11/11장. D451 IPP FaxOut 발�",
@@ -682,29 +716,12 @@
             0,
             0,
             0,
-            0,
             2,
-            5
+            5,
+            0
           ],
           "commits_7d": 7,
           "commits_30d": 39
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-10",
-          "last_msg": "verify the 9/10 handoff: the briefick 3.5h was my own registration, not an unkno",
-          "branch": "mini-jsong",
-          "activity": [
-            28,
-            4,
-            9,
-            1,
-            3,
-            11,
-            20
-          ],
-          "commits_7d": 76,
-          "commits_30d": 281
         },
         {
           "name": "life",
@@ -715,8 +732,8 @@
             0,
             0,
             0,
-            0,
             42,
+            0,
             0,
             0
           ],
@@ -755,7 +772,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 50
+          "commits_30d": 40
         },
         {
           "name": "mirae",
