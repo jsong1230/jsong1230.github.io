@@ -1,0 +1,67 @@
+---
+title: "Eliminating the Blind Spot: The Art of Verification and Automation"
+date: "2026-09-11"
+lang: en
+excerpt: "Engineering Log: The Art of Verification and the Discipline of Automation  Today was a day of contrasting scales—from the meticulous curation of cultu..."
+---
+
+# Engineering Log: The Art of Verification and the Discipline of Automation
+
+Today was a day of contrasting scales—from the meticulous curation of cultural masterpieces to the rigorous automation of production infrastructure. Whether I am writing a script for a blockchain explorer or auditing a radio script, the core engineering challenge remains the same: **How do we eliminate the "blind spot" in our verification process?**
+
+Here are the technical highlights and insights from today's work.
+
+---
+
+## 1. The "Blind Spot" in Data Verification
+I spent a significant portion of the day drafting 20 episodes for a cultural program. While this seems like a content task, the "duplicate check" process is a classic data integrity problem.
+
+In previous cycles, I relied heavily on DB queries to ensure no overlapping topics. However, I encountered a recurring failure: **the "Alhambra" and "Hagia Sophia" incidents.** 
+
+The problem was a mismatch between the *recorded name* (the source of truth) and the *query string* (the search mechanism). For instance, searching for `아야소피아` (no space) returned zero results, even though `아야 소피아` (with space) existed in the records.
+
+**The Technical Pivot:**
+I realized that DB searches, no matter how many variations (ILIKE, etc.) are used, are fundamentally probabilistic. To achieve 100% certainty, I changed the verification pipeline:
+1. **Memory-First Audit:** Read the "Pre-occupied Terrain" table (the human-readable list) first.
+2. **Candidate Selection:** Design candidates to avoid those specific terrains.
+3. **DB Cross-Check:** Use the DB as a secondary safety net, not the primary filter.
+
+**Insight:** When the cost of a "false negative" is high, you cannot rely on a single tool. You need two different failure modes—in this case, a structural list (visual audit) and a keyword search (algorithmic audit)—working in tandem.
+
+---
+
+## 2. Hardening Production with "Drift Watchers"
+On the infrastructure side for the Metadium Explorer stack at **CPLABS**, I focused on eliminating "configuration drift." 
+
+A common pain point in DevOps is when a technician makes a "quick fix" directly on a production server, bypassing Git. This creates a silent divergence between the repository and the actual state of the system. To solve this, I implemented a **Frontend Conf Drift Watcher**.
+
+This script runs via cron, comparing the `nginx.conf` and `frontend.conf` of three production servers against the `HEAD` commit of the repository. If a mismatch is detected, it triggers an immediate alert.
+
+**Key Implementation Details & Traps:**
+While writing the automation scripts, I encountered several "real-world" traps that remind me why experienced engineering matters:
+*   **ALB DNS & SSL:** I found that using the default ALB DNS name requires `curl -k` because the Certificate CN often differs. Without this, the health check fails, and the script triggers an unnecessary automatic rollback.
+*   **JMESPath Flattening:** When filtering AWS SG rules, nesting filters like `IpRanges[?CidrIp=='x']` inside a projection often returns empty results. The solution is to flatten the array first: `IpRanges[].CidrIp`.
+*   **API Nuances:** I discovered the Explorer API uses `limit` and `offset` rather than `page` and `size`. Passing `page` was silently ignored, leading to a bug where I kept receiving the first 50 results.
+
+---
+
+## 3. Gas Trend Analysis via Binary Search
+Finally, I developed a Python tool to track gas consumption for delegator accounts. Since the nodes are pruned, I couldn't simply query historical balances. 
+
+Instead, I implemented a **binary search on the transaction offset** to find the exact boundary of monthly/quarterly timestamps. This allows me to calculate the precise number of transactions and average fees per period without fetching every single transaction since 2020.
+
+```python
+def find_offset(addr, cutoff, lo, hi):
+    """Binary search to find the first offset where timestamp < cutoff."""
+    while lo < hi:
+        mid = (lo + hi) // 2
+        t = stamp_at(addr, mid)
+        if t is None or t < cutoff:
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+```
+
+## Final Thoughts
+Today's work reinforces a core belief: **Trust, but verify—and then automate the verification.** Whether it's a spacing error in a historical name or a silent config change in Nginx, the goal is to move the detection of the error from "after the broadcast/outage" to "before the commit."
