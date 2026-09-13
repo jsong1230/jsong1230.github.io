@@ -1,0 +1,46 @@
+---
+title: "Engineering the Truth: Balancing Automation and Human Insight"
+date: "2026-09-13"
+lang: en
+excerpt: "Engineering the Truth: Balancing Automation and Human Insight  As a CTO, I often find myself oscillating between two worlds: the desire for perfect, s..."
+---
+
+# Engineering the Truth: Balancing Automation and Human Insight
+
+As a CTO, I often find myself oscillating between two worlds: the desire for perfect, scalable automation and the reality that high-quality output—whether it's a blockchain protocol or a curated content library—requires a "human-in-the-loop."
+
+Today's development work across several projects was a masterclass in this tension. From rigorous historical verification in `heritageradio` to the failure of a heuristic model in `booksummary`, the core theme was the same: **Data can provide the signal, but only experience can provide the context.**
+
+## 1. The Pitfalls of Heuristics: When Automation Lies
+In the `booksummary` project, I encountered a classic engineering trap. I had implemented an automated screening script (`screen_candidates.py`) to filter book candidates based on a "book-intent ratio" (the ratio of search queries actually intending to find the book versus general noise).
+
+I set a threshold of 0.4. On paper, it looked logical. In practice, it was a disaster.
+
+As noted in my commit:
+> "Automatic screening... gave the exact opposite judgment. If I cut at 0.4, even 'People of Wonmi-dong' (0.31) would be disqualified."
+
+The script was flagging low-demand "traps" as passes while rejecting high-demand classics like *Heo Saeng-jeon* because their search terms were too broad. The insight here is critical: **Quantitative metrics are a proxy, not the truth.** 
+
+I realized that the strongest signal wasn't a ratio, but the *nature* of the auto-complete suggestions (e.g., mentions of "textbooks," "middle school 2nd grade," or "CSAT"). I shifted the technical decision from "Automated Filtering" to "Automated Signal Gathering + Human Verdict."
+
+## 2. Data Integrity and the "Common Knowledge" Bug
+In the `heritageradio` project, the "bugs" weren't in the code, but in the historical data. When managing content for a wide audience, "common knowledge" is often a bug that needs patching.
+
+I spent a significant portion of the day performing "data cleaning" on historical figures. For example, the common belief that Galileo’s "And yet it moves" was spoken during his trial is a historical myth—it appeared in writings a century later. Similarly, the "Leaning Tower of Pisa" experiment lacks contemporary records.
+
+From a technical perspective, I treated these as **edge cases in data validation**. I implemented a verification layer:
+- **Calendar Conversion:** Converting lunar birthdays to solar dates to avoid scheduling gaps (e.g., the case of Monk Seongcheol).
+- **Conflict Resolution:** When Britannica and other sources disagreed on a birth date (e.g., Marian Anderson), the "fail-safe" was to drop the candidate rather than publish uncertain data.
+
+## 3. System Maintenance and Dashboarding
+Finally, I updated the central dashboard (`jsong1230.github.io`). While a simple JSON update, this serves as my personal "system monitor." Seeing the commit activity across `go-delegator` and `metadium-explorer-stack` helps me balance my cognitive load between high-level architecture and granular content work.
+
+## Final Thoughts: The CTO's Perspective
+Whether I am debugging a panic in a Go-based DID delegator or verifying the birth date of a 16th-century astronomer, the engineering principle remains the same: **Verify the source, challenge the assumption, and never trust a single metric.**
+
+Automation is meant to remove the drudgery, not the judgment. The most robust systems—and the most compelling stories—are those where the machine handles the scale, but the human handles the truth.
+
+***
+
+**Jeffrey Joo-Han Song**
+CTO, CPLABS
