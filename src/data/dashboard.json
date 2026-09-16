@@ -1,87 +1,53 @@
 {
-  "generated_at": "2026-09-15T23:00:01.606Z",
+  "generated_at": "2026-09-16T23:00:01.478Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-09-16",
-          "last_msg": "[admin] docs: W34~W37 자체집필 100편 집필·등록 완료 — gate_local�",
+          "last_date": "2026-09-17",
+          "last_msg": "[admin] docs: 110 복구 완료 기록 — pve-06 thin pool 100%가 원인, 호�",
           "branch": "dev",
           "activity": [
-            4,
             8,
             8,
             15,
             0,
             13,
-            1
+            4,
+            2
           ],
-          "commits_7d": 58,
-          "commits_30d": 124
+          "commits_7d": 54,
+          "commits_30d": 113
         },
         {
-          "name": "claude-agent",
+          "name": "metadium-explorer-stack",
           "last_date": "2026-09-16",
-          "last_msg": "docs(log): option C executed, both nodes restarted from genesis with published b",
-          "branch": "gram-jsong",
+          "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
+          "branch": "master",
           "activity": [
-            0,
-            0,
+            10,
             5,
             2,
-            4,
-            21,
-            3
-          ],
-          "commits_7d": 39,
-          "commits_30d": 350
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-16",
-          "last_msg": "docs: 「양반전」 재측정 — 경쟁이 진동, 범위 표기로 갱신",
-          "branch": "main",
-          "activity": [
-            1,
-            2,
-            8,
-            3,
-            1,
-            2,
-            1
-          ],
-          "commits_7d": 20,
-          "commits_30d": 74
-        },
-        {
-          "name": "go-metadium-m114",
-          "last_date": "2026-09-15",
-          "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
-          "branch": "HEAD",
-          "activity": [
-            13,
-            1,
-            5,
             0,
-            6,
-            4,
+            0,
+            1,
             0
           ],
-          "commits_7d": 44,
+          "commits_7d": 21,
           "commits_30d": 94
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-15",
+          "last_date": "2026-09-16",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -90,21 +56,55 @@
           "commits_30d": 68
         },
         {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-09-13",
-          "last_msg": "feat(watch): 소크 알림에 「전에도 있던 메시지인가」 자동 판�",
-          "branch": "master",
+          "name": "claude-agent",
+          "last_date": "2026-09-16",
+          "last_msg": "docs(log): briefick 2026-09-16 gram share registered (3.5h)",
+          "branch": "gram-jsong",
           "activity": [
-            3,
-            10,
+            0,
             5,
             2,
+            4,
+            21,
+            7,
+            0
+          ],
+          "commits_7d": 39,
+          "commits_30d": 352
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-09-16",
+          "last_msg": "docs: 「양반전」 재측정 — 경쟁이 진동, 범위 표기로 갱신",
+          "branch": "main",
+          "activity": [
+            2,
+            8,
+            3,
+            1,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 18,
+          "commits_30d": 70
+        },
+        {
+          "name": "go-metadium-m114",
+          "last_date": "2026-09-15",
+          "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
+          "branch": "HEAD",
+          "activity": [
+            1,
+            5,
             0,
+            6,
+            4,
             0,
             0
           ],
-          "commits_7d": 38,
-          "commits_30d": 93
+          "commits_7d": 29,
+          "commits_30d": 94
         },
         {
           "name": "go-delegator",
@@ -112,9 +112,9 @@
           "last_msg": "merge: 가용 노드 0 panic 수정 (DID 발급이 통째로 멈추던 자리)",
           "branch": "develop",
           "activity": [
-            0,
             5,
             2,
+            0,
             0,
             0,
             0,
@@ -129,9 +129,9 @@
           "last_msg": "docs: 동결 고지 — 2026-09-12 부로 이 저장소는 상용이 아니다",
           "branch": "master",
           "activity": [
-            0,
             7,
             1,
+            0,
             0,
             0,
             0,
@@ -146,7 +146,7 @@
           "last_msg": "docs: OBSOLETE 배너 — 현행 저장소는 cplabs-homepage / metadium-homepag",
           "branch": "dev",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -163,7 +163,7 @@
           "last_msg": "Merge pull request #32 from METADIUM/fix/import-attributes-with",
           "branch": "master",
           "activity": [
-            8,
+            0,
             0,
             0,
             0,
@@ -171,7 +171,7 @@
             0,
             0
           ],
-          "commits_7d": 16,
+          "commits_7d": 8,
           "commits_30d": 16
         },
         {
@@ -188,7 +188,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 6
         },
         {
@@ -205,7 +205,7 @@
             0,
             0
           ],
-          "commits_7d": 14,
+          "commits_7d": 0,
           "commits_30d": 63
         },
         {
@@ -257,7 +257,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 7
         },
         {
           "name": "meta-info-api",
@@ -724,55 +724,72 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "life",
-          "last_date": "2026-09-15",
-          "last_msg": "side-work: iTerm2 프로필 6개 등록, MetaMask·gram 세션 노출 주의",
+          "name": "health",
+          "last_date": "2026-09-16",
+          "last_msg": "2026-09-16 진료: 급여 적용 처방 개시, 80% 호전으로 격일 복용 �",
           "branch": "main",
           "activity": [
+            5,
             0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 7,
+          "commits_30d": 38
+        },
+        {
+          "name": "life",
+          "last_date": "2026-09-16",
+          "last_msg": "career: 리딩타운(ReadingTown) 개발팀장 2009.01~2014.09 경력 추가, CV",
+          "branch": "main",
+          "activity": [
             0,
             1,
             10,
             48,
             5,
-            10
+            10,
+            1
           ],
-          "commits_7d": 77,
+          "commits_7d": 75,
           "commits_30d": 150
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-15",
-          "last_msg": "close 2026-09-15 with a handover snapshot",
+          "last_date": "2026-09-16",
+          "last_msg": "log a day of three meetings, a POC kickoff and a machine-wide path change",
           "branch": "mini-jsong",
           "activity": [
-            11,
             20,
             27,
             1,
             1,
             0,
-            4
+            4,
+            2
           ],
-          "commits_7d": 64,
-          "commits_30d": 298
+          "commits_7d": 56,
+          "commits_30d": 296
         },
         {
-          "name": "health",
-          "last_date": "2026-09-10",
-          "last_msg": "팩스 전송 완료 기록: 2026-09-10 12:23:58, 11/11장. D451 IPP FaxOut 발�",
+          "name": "privacy-map",
+          "last_date": "2026-09-16",
+          "last_msg": "add the evaluation foundation: synthetic ground truth, scorer and I/O contract",
           "branch": "main",
           "activity": [
-            2,
-            5,
             0,
             0,
             0,
             0,
-            0
+            0,
+            0,
+            3
           ],
-          "commits_7d": 7,
-          "commits_30d": 38
+          "commits_7d": 3,
+          "commits_30d": 3
         },
         {
           "name": "wemix-dios",
@@ -840,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 54
+          "commits_30d": 48
         },
         {
           "name": "meta-zkbridge",
