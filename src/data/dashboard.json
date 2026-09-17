@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T23:00:01.478Z",
+  "generated_at": "2026-09-17T23:00:01.893Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,46 +7,29 @@
         {
           "name": "heritageradio",
           "last_date": "2026-09-17",
-          "last_msg": "[admin] docs: 110 복구 완료 기록 — pve-06 thin pool 100%가 원인, 호�",
+          "last_msg": "[main] fix(monitoring): NAT 알람 2건 — 통보가 아예 없었다. SNS + �",
           "branch": "dev",
           "activity": [
-            8,
             8,
             15,
             0,
             13,
             4,
-            2
-          ],
-          "commits_7d": 54,
-          "commits_30d": 113
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-09-16",
-          "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
-          "branch": "master",
-          "activity": [
-            10,
-            5,
-            2,
-            0,
-            0,
-            1,
+            7,
             0
           ],
-          "commits_7d": 21,
-          "commits_30d": 94
+          "commits_7d": 54,
+          "commits_30d": 118
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-16",
+          "last_date": "2026-09-17",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
@@ -57,20 +40,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-16",
-          "last_msg": "docs(log): briefick 2026-09-16 gram share registered (3.5h)",
+          "last_date": "2026-09-17",
+          "last_msg": "docs(log): briefick 2026-09-17 registered, 3.5h across 3 windows",
           "branch": "gram-jsong",
           "activity": [
-            0,
             5,
             2,
             4,
             21,
             7,
+            17,
             0
           ],
-          "commits_7d": 39,
-          "commits_30d": 352
+          "commits_7d": 56,
+          "commits_30d": 367
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-16",
+          "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
+          "branch": "master",
+          "activity": [
+            5,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 94
         },
         {
           "name": "booksummary",
@@ -78,15 +78,15 @@
           "last_msg": "docs: 「양반전」 재측정 — 경쟁이 진동, 범위 표기로 갱신",
           "branch": "main",
           "activity": [
-            2,
             8,
             3,
             1,
             2,
             1,
+            0,
             0
           ],
-          "commits_7d": 18,
+          "commits_7d": 17,
           "commits_30d": 70
         },
         {
@@ -95,16 +95,16 @@
           "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
           "branch": "HEAD",
           "activity": [
-            1,
             5,
             0,
             6,
             4,
             0,
+            0,
             0
           ],
-          "commits_7d": 29,
-          "commits_30d": 94
+          "commits_7d": 16,
+          "commits_30d": 92
         },
         {
           "name": "go-delegator",
@@ -112,8 +112,8 @@
           "last_msg": "merge: 가용 노드 0 panic 수정 (DID 발급이 통째로 멈추던 자리)",
           "branch": "develop",
           "activity": [
-            5,
             2,
+            0,
             0,
             0,
             0,
@@ -129,8 +129,8 @@
           "last_msg": "docs: 동결 고지 — 2026-09-12 부로 이 저장소는 상용이 아니다",
           "branch": "master",
           "activity": [
-            7,
             1,
+            0,
             0,
             0,
             0,
@@ -154,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 2
         },
         {
@@ -171,7 +171,7 @@
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 0,
           "commits_30d": 16
         },
         {
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 63
+          "commits_30d": 61
         },
         {
           "name": "cplabs_homepage",
@@ -257,7 +257,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 0
         },
         {
           "name": "meta-info-api",
@@ -724,55 +724,55 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "health",
-          "last_date": "2026-09-16",
-          "last_msg": "2026-09-16 진료: 급여 적용 처방 개시, 80% 호전으로 격일 복용 �",
-          "branch": "main",
-          "activity": [
-            5,
-            0,
-            0,
-            0,
-            0,
-            0,
-            2
-          ],
-          "commits_7d": 7,
-          "commits_30d": 38
-        },
-        {
           "name": "life",
-          "last_date": "2026-09-16",
-          "last_msg": "career: 리딩타운(ReadingTown) 개발팀장 2009.01~2014.09 경력 추가, CV",
+          "last_date": "2026-09-17",
+          "last_msg": "career: LinkedIn 문안·외부용 CV에 ReadingTown(2009~2014) 추가, 경력 �",
           "branch": "main",
           "activity": [
-            0,
             1,
             10,
             48,
             5,
             10,
-            1
+            1,
+            4
           ],
-          "commits_7d": 75,
-          "commits_30d": 150
+          "commits_7d": 79,
+          "commits_30d": 153
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-16",
-          "last_msg": "log a day of three meetings, a POC kickoff and a machine-wide path change",
+          "last_date": "2026-09-17",
+          "last_msg": "write up four meetings, and find the TTA membership was never the committee seat",
           "branch": "mini-jsong",
           "activity": [
-            20,
             27,
             1,
             1,
             0,
             4,
-            2
+            2,
+            1
           ],
-          "commits_7d": 56,
-          "commits_30d": 296
+          "commits_7d": 36,
+          "commits_30d": 287
+        },
+        {
+          "name": "health",
+          "last_date": "2026-09-16",
+          "last_msg": "2026-09-16 진료: 급여 적용 처방 개시, 80% 호전으로 격일 복용 �",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 37
         },
         {
           "name": "privacy-map",
@@ -785,8 +785,8 @@
             0,
             0,
             0,
-            0,
-            3
+            3,
+            0
           ],
           "commits_7d": 3,
           "commits_30d": 3
@@ -806,7 +806,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 6
         },
         {
           "name": "go-metadium",
@@ -823,7 +823,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 33
+          "commits_30d": 31
         },
         {
           "name": "mirae",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 48
+          "commits_30d": 41
         },
         {
           "name": "meta-zkbridge",
