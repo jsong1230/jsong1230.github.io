@@ -1,0 +1,64 @@
+---
+title: "The Danger of Thin Provisioning: Recovering from a \"Silent\" Storage Collapse"
+date: "2026-09-17"
+lang: en
+excerpt: "[Engineering Log] Recovering from a \"Silent\" Storage Collapse: The Danger of Thin Provisioning  As a CTO and engineer, I’ve spent over two decades nav..."
+---
+
+# [Engineering Log] Recovering from a "Silent" Storage Collapse: The Danger of Thin Provisioning
+
+As a CTO and engineer, I’ve spent over two decades navigating the delicate balance between resource efficiency and system stability. Today was a stark reminder that "efficiency" without proper visibility is a liability.
+
+I dealt with a critical outage of a development server (110 / `jsong-demo-01`) that appeared to be a total hardware or network failure at first glance. However, the root cause was far more insidious: a **Proxmox Thin Pool exhaustion.**
+
+## The Problem: The "Invisible" Full Disk
+
+At 02:31 KST, the server went completely dark. SSH, Tailscale, and Cloudflare Tunnels—all dead. My initial instinct was that the physical host had failed or the network was severed. But upon checking the hypervisor (`pve-06`), I found the VM was in an `io-error` state.
+
+The culprit? The thin pool had hit 100% capacity. 
+
+The most frustrating part was the discrepancy in reporting. Inside the Guest OS, `df` showed only **73% usage (718G/995G)**. Yet, the physical pool was completely full. This is the classic trap of thin provisioning: the guest believes it has space, but the underlying storage layer has no more physical blocks to allocate.
+
+## Technical Decision: Why `fstrim` from the Host?
+
+The critical technical challenge was that I couldn't simply boot the VM. In a 100% full thin pool, the act of booting triggers write operations (logs, temp files), which would immediately trigger another `io-error` and crash the VM again.
+
+I had to reclaim space **before** the VM started. Here is the sequence of decisions I made:
+
+1.  **Enable Discard:** The root cause was that `discard=on` was missing from the SCSI configuration. Without this, the hypervisor never knew when the guest deleted files, so it never reclaimed the blocks.
+2.  **Avoid Loop Mounts:** I initially considered `mount -o offset=`, but that doesn't support discard operations.
+3.  **Direct Mapping via `dmsetup`:** To pass the `trim` command from the Proxmox host directly to the thin pool, I had to map the disk manually:
+    ```bash
+    dmsetup create vm103p1 --table '0 2152724447 linear /dev/vmdata/vm-103-disk-0 2099200'
+    mount /dev/mapper/vm103p1 /mnt/vm103
+    fstrim -v /mnt/vm103 # Recovered 268.1 GiB
+    ```
+
+By manually triggering `fstrim` from the host, I reclaimed ~268GiB, bringing the pool usage down to 81.73% and allowing the VM to boot safely.
+
+## Insights and Lessons Learned
+
+This incident highlighted three major gaps in our current infrastructure at **CPLABS**:
+
+**1. The "Discard" Audit**
+This isn't the first time this happened; a similar issue occurred on `pve-04` back in July. It is now clear that we need a cluster-wide audit to ensure `discard=on` is enabled for all VMs using thin provisioning.
+
+**2. Monitoring the "Unmonitored"**
+We monitor guest disk usage, but we weren't monitoring the **Thin Pool Data%**. The guest's `df` is a lie when the pool is over-provisioned. We need to integrate `lvs` (Logical Volume Manager) metrics into our alerting system so we know when the pool hits 80%, not when it hits 100% and crashes.
+
+**3. The Danger of Automation Gaps**
+Because the server was down, several critical cron jobs (like `sync_to_aws_prod`) were missed. While these weren't catastrophic for production, they created "silent gaps" in our metadata.
+
+## Final Thoughts
+
+In the world of Web3 and AI, we often focus on high-level architecture and complex smart contracts. But as any seasoned engineer knows, the most sophisticated software is still at the mercy of the disk. 
+
+The lesson today: **Never trust the Guest OS's view of storage when using thin provisioning.** Always verify the hypervisor's reality.
+
+***
+
+**Current Status:**
+- [x] Server 110 Recovered (7 mins)
+- [x] `discard=on` enabled for permanent prevention
+- [ ] Audit all cluster nodes for `discard` settings
+- [ ] Implement thin pool usage monitoring with the infrastructure team
