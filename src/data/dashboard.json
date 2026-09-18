@@ -1,34 +1,51 @@
 {
-  "generated_at": "2026-09-17T23:00:01.893Z",
+  "generated_at": "2026-09-18T23:00:01.070Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-09-17",
-          "last_msg": "[main] fix(monitoring): NAT 알람 2건 — 통보가 아예 없었다. SNS + �",
+          "last_date": "2026-09-18",
+          "last_msg": "[main] fix(migrate): TTS 완료 판정에 큐를 넣는다 — 드라이버만�",
           "branch": "dev",
           "activity": [
-            8,
             15,
             0,
             13,
             4,
             7,
+            13,
             0
           ],
-          "commits_7d": 54,
-          "commits_30d": 118
+          "commits_7d": 60,
+          "commits_30d": 131
+        },
+        {
+          "name": "go-delegator",
+          "last_date": "2026-09-18",
+          "last_msg": "fix(metaresolver): resolver 주소 nil 역참조 panic — getAllServiceAddresse",
+          "branch": "fix/resolver-addr-nil-panic",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 8
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-17",
+          "last_date": "2026-09-18",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -40,20 +57,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-17",
-          "last_msg": "docs(log): briefick 2026-09-17 registered, 3.5h across 3 windows",
+          "last_date": "2026-09-18",
+          "last_msg": "docs(log): end-of-day snapshot for 2026-09-18",
           "branch": "gram-jsong",
           "activity": [
-            5,
             2,
             4,
             21,
             7,
             17,
+            12,
             0
           ],
-          "commits_7d": 56,
-          "commits_30d": 367
+          "commits_7d": 68,
+          "commits_30d": 378
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-09-18",
+          "last_msg": "chore: 측정 누적·댓글 처리 기록 갱신",
+          "branch": "main",
+          "activity": [
+            3,
+            1,
+            2,
+            1,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 18,
+          "commits_30d": 71
         },
         {
           "name": "metadium-explorer-stack",
@@ -61,33 +95,16 @@
           "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
           "branch": "master",
           "activity": [
-            5,
             2,
             0,
             0,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 16,
+          "commits_7d": 8,
           "commits_30d": 94
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-16",
-          "last_msg": "docs: 「양반전」 재측정 — 경쟁이 진동, 범위 표기로 갱신",
-          "branch": "main",
-          "activity": [
-            8,
-            3,
-            1,
-            2,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 17,
-          "commits_30d": 70
         },
         {
           "name": "go-metadium-m114",
@@ -95,33 +112,16 @@
           "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
           "branch": "HEAD",
           "activity": [
-            5,
             0,
             6,
             4,
             0,
             0,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 92
-        },
-        {
-          "name": "go-delegator",
-          "last_date": "2026-09-12",
-          "last_msg": "merge: 가용 노드 0 panic 수정 (DID 발급이 통째로 멈추던 자리)",
-          "branch": "develop",
-          "activity": [
-            2,
-            0,
-            0,
-            0,
-            0,
             0,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 7
+          "commits_7d": 12,
+          "commits_30d": 89
         },
         {
           "name": "go-delegator-prod",
@@ -129,7 +129,7 @@
           "last_msg": "docs: 동결 고지 — 2026-09-12 부로 이 저장소는 상용이 아니다",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 1,
           "commits_30d": 8
         },
         {
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 61
+          "commits_30d": 58
         },
         {
           "name": "cplabs_homepage",
@@ -724,72 +724,72 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "life",
-          "last_date": "2026-09-17",
-          "last_msg": "career: LinkedIn 문안·외부용 CV에 ReadingTown(2009~2014) 추가, 경력 �",
+          "name": "health",
+          "last_date": "2026-09-18",
+          "last_msg": "3차 청약으로 정정 — 비급여 1,000만 복원 확인, 납입기간 20�",
           "branch": "main",
           "activity": [
-            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            12
+          ],
+          "commits_7d": 14,
+          "commits_30d": 33
+        },
+        {
+          "name": "life",
+          "last_date": "2026-09-18",
+          "last_msg": "side-work: Mercor Go Codebase Q&A 불합격(9/18), Mercor 현황판·README 갱�",
+          "branch": "main",
+          "activity": [
             10,
             48,
             5,
             10,
             1,
+            4,
             4
           ],
-          "commits_7d": 79,
-          "commits_30d": 153
+          "commits_7d": 83,
+          "commits_30d": 157
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-17",
-          "last_msg": "write up four meetings, and find the TTA membership was never the committee seat",
+          "last_date": "2026-09-18",
+          "last_msg": "write up the exec meeting, and close the TTA committee registration",
           "branch": "mini-jsong",
           "activity": [
-            27,
             1,
             1,
             0,
             4,
             2,
-            1
+            1,
+            2
           ],
-          "commits_7d": 36,
-          "commits_30d": 287
-        },
-        {
-          "name": "health",
-          "last_date": "2026-09-16",
-          "last_msg": "2026-09-16 진료: 급여 적용 처방 개시, 80% 호전으로 격일 복용 �",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            2,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 37
+          "commits_7d": 11,
+          "commits_30d": 289
         },
         {
           "name": "privacy-map",
-          "last_date": "2026-09-16",
-          "last_msg": "add the evaluation foundation: synthetic ground truth, scorer and I/O contract",
+          "last_date": "2026-09-17",
+          "last_msg": "read the encryption key from a file instead of the environment",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
-            3,
+            10,
+            9,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 3
+          "commits_7d": 19,
+          "commits_30d": 19
         },
         {
           "name": "wemix-dios",
@@ -806,7 +806,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 6
+          "commits_30d": 5
         },
         {
           "name": "go-metadium",
@@ -823,7 +823,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 31
+          "commits_30d": 28
         },
         {
           "name": "mirae",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 41
+          "commits_30d": 36
         },
         {
           "name": "meta-zkbridge",
