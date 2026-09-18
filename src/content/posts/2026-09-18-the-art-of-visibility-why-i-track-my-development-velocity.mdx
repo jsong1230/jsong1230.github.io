@@ -1,0 +1,46 @@
+---
+title: "The Art of Visibility: Why I Track My Development Velocity"
+date: "2026-09-18"
+lang: en
+excerpt: "The Art of Visibility: Why I Track My Development Velocity  As an engineer and CTO with over two decades of experience, I’ve learned that the most dan..."
+---
+
+# The Art of Visibility: Why I Track My Development Velocity
+
+As an engineer and CTO with over two decades of experience, I’ve learned that the most dangerous state for a technical project isn't a bug—it's invisibility. When you're managing complex ecosystems across Web3, DID, and AI, it is incredibly easy to lose track of where the actual momentum is happening.
+
+Today’s update to my personal dashboard (`jsong1230.github.io`) might look like a simple JSON chore at first glance. But beneath the surface of `dashboard.json`, there is a philosophy of "Continuous Observability" that I apply not only to my personal projects but also to the engineering culture I've fostered at **CPLABS**.
+
+### The Technical Decision: Data-Driven Self-Reflection
+
+The change today was a routine update of my development metrics. If you look at the diff, you'll see the `generated_at` timestamp shifting and the `activity` arrays updating for various repositories:
+
+```json
+- "last_msg": "[admin] docs: 110 복구 완료 기록 — pve-06 thin pool 100%가 원인..."
++ "last_msg": "[main] fix(monitoring): NAT 알람 2건 — 통보가 아예 없었다. SNS + ..."
+```
+
+Specifically, I've been tracking the activity of several critical stacks, including the `claude-agent` and `metadium-explorer-stack`. The `claude-agent` repo, in particular, shows a significant spike in activity:
+
+```json
+"commits_7d": 56,
+"commits_30d": 367
+```
+
+Why do I bother automating this? In a high-pressure environment like **CPLABS**, we often deal with "invisible work"—the architectural refactoring, the security patching, and the deep-dive debugging that doesn't always result in a flashy new feature. By quantifying these commits and activity patterns, I can visualize the "heat map" of my focus.
+
+### Insights from the Code: Solving the "Silence" Problem
+
+One particular line in the update caught my eye: `fix(monitoring): NAT 알람 2건 — 통보가 아예 없었다`.
+
+This is a classic engineering nightmare: **The Silent Failure.** The system didn't crash; it just stopped telling me that it was failing. Whether it's a NAT gateway issue or a smart contract event failing to fire, the most expensive bug is the one you don't know exists.
+
+This reinforces a core principle I've championed throughout my career: **Monitoring is not an optional "extra"; it is a primary feature.** If a system is running but the alerts are silent, the system is effectively down.
+
+### Closing Thoughts
+
+Updating a JSON file might seem trivial, but it represents a commitment to transparency and measurement. In the fast-moving world of Web3 and AI, the ability to look back at your velocity—seeing exactly where your time went over the last 7 to 30 days—allows for a level of calibration that intuition alone cannot provide.
+
+Whether I'm leading a team at **CPLABS** or tinkering with my own agents, I believe in the power of the dashboard. When you measure your work, you don't just track progress; you identify the gaps in your attention.
+
+**Stay curious, keep coding, and for heaven's sake, check your alerts.**
