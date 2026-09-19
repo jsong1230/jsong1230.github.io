@@ -1,25 +1,76 @@
 {
-  "generated_at": "2026-09-18T23:00:01.070Z",
+  "generated_at": "2026-09-19T23:00:01.406Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-09-18",
-          "last_msg": "[main] fix(migrate): TTS 완료 판정에 큐를 넣는다 — 드라이버만�",
+          "last_date": "2026-09-19",
+          "last_msg": "[admin] flat 코너 TTS 1회 합성 + era 전파 — bulk_tts --eras 옵션 · �",
           "branch": "dev",
           "activity": [
-            15,
             0,
             13,
             4,
             7,
             13,
+            19,
             0
           ],
-          "commits_7d": 60,
-          "commits_30d": 131
+          "commits_7d": 69,
+          "commits_30d": 150
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-09-19",
+          "last_msg": "Auto-generate weekly book post",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-09-19",
+          "last_msg": "docs(log): close out 2026-09-18 briefick entry and add 9/19 soak result",
+          "branch": "gram-jsong",
+          "activity": [
+            4,
+            21,
+            7,
+            17,
+            12,
+            2,
+            0
+          ],
+          "commits_7d": 65,
+          "commits_30d": 379
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-09-19",
+          "last_msg": "feat: 「순이 삼촌」(현기영) 제작·업로드 + 썸네일 네이밍 규",
+          "branch": "main",
+          "activity": [
+            1,
+            2,
+            1,
+            0,
+            3,
+            1,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 72
         },
         {
           "name": "go-delegator",
@@ -31,63 +82,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 1,
           "commits_30d": 8
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-09-18",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            2,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-18",
-          "last_msg": "docs(log): end-of-day snapshot for 2026-09-18",
-          "branch": "gram-jsong",
-          "activity": [
-            2,
-            4,
-            21,
-            7,
-            17,
-            12,
-            0
-          ],
-          "commits_7d": 68,
-          "commits_30d": 378
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-18",
-          "last_msg": "chore: 측정 누적·댓글 처리 기록 갱신",
-          "branch": "main",
-          "activity": [
-            3,
-            1,
-            2,
-            1,
-            0,
-            3,
-            0
-          ],
-          "commits_7d": 18,
-          "commits_30d": 71
         },
         {
           "name": "metadium-explorer-stack",
@@ -95,15 +95,15 @@
           "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
           "branch": "master",
           "activity": [
-            2,
             0,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 8,
+          "commits_7d": 3,
           "commits_30d": 94
         },
         {
@@ -112,16 +112,16 @@
           "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
           "branch": "HEAD",
           "activity": [
-            0,
             6,
             4,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 12,
-          "commits_30d": 89
+          "commits_7d": 10,
+          "commits_30d": 85
         },
         {
           "name": "go-delegator-prod",
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 8
         },
         {
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 58
+          "commits_30d": 54
         },
         {
           "name": "cplabs_homepage",
@@ -223,7 +223,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 10
+          "commits_30d": 2
         },
         {
           "name": "metadium_homepage",
@@ -724,6 +724,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "mirae",
+          "last_date": "2026-09-19",
+          "last_msg": "fix: 신용/반대매매 지표 3개월 방치 데이터 갱신 + 신선도 가�",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 4
+        },
+        {
           "name": "health",
           "last_date": "2026-09-18",
           "last_msg": "3차 청약으로 정정 — 비급여 1,000만 복원 확인, 납입기간 20�",
@@ -732,10 +749,10 @@
             0,
             0,
             0,
-            0,
             2,
             0,
-            12
+            12,
+            0
           ],
           "commits_7d": 14,
           "commits_30d": 33
@@ -746,15 +763,15 @@
           "last_msg": "side-work: Mercor Go Codebase Q&A 불합격(9/18), Mercor 현황판·README 갱�",
           "branch": "main",
           "activity": [
-            10,
             48,
             5,
             10,
             1,
             4,
-            4
+            4,
+            0
           ],
-          "commits_7d": 83,
+          "commits_7d": 72,
           "commits_30d": 157
         },
         {
@@ -764,15 +781,15 @@
           "branch": "mini-jsong",
           "activity": [
             1,
-            1,
             0,
             4,
             2,
             1,
-            2
+            2,
+            0
           ],
-          "commits_7d": 11,
-          "commits_30d": 289
+          "commits_7d": 10,
+          "commits_30d": 285
         },
         {
           "name": "privacy-map",
@@ -783,9 +800,9 @@
             0,
             0,
             0,
-            0,
             10,
             9,
+            0,
             0
           ],
           "commits_7d": 19,
@@ -823,24 +840,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 28
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-08-31",
-          "last_msg": "chore: daily_pnl 현금성 표기 명확화 — 예수금+RP 합산임을 문자",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 24
         },
         {
           "name": "business",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 36
+          "commits_30d": 33
         },
         {
           "name": "meta-zkbridge",
