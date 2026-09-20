@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-09-19T23:00:01.406Z",
+  "generated_at": "2026-09-20T23:00:01.788Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-09-19",
-          "last_msg": "[admin] flat 코너 TTS 1회 합성 + era 전파 — bulk_tts --eras 옵션 · �",
+          "last_date": "2026-09-21",
+          "last_msg": "[main] fix(cron): prod DB sync 가 EC2 에서 죽어 있었다 + canary dev cert",
           "branch": "dev",
           "activity": [
-            0,
             13,
             4,
             7,
             13,
             19,
-            0
+            5,
+            1
           ],
-          "commits_7d": 69,
-          "commits_30d": 150
+          "commits_7d": 62,
+          "commits_30d": 144
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-19",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-09-20",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
             2,
-            2,
+            3,
             3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 70
         },
         {
           "name": "claude-agent",
@@ -44,16 +44,16 @@
           "last_msg": "docs(log): close out 2026-09-18 briefick entry and add 9/19 soak result",
           "branch": "gram-jsong",
           "activity": [
-            4,
             21,
             7,
             17,
             12,
             2,
+            0,
             0
           ],
-          "commits_7d": 65,
-          "commits_30d": 379
+          "commits_7d": 63,
+          "commits_30d": 369
         },
         {
           "name": "booksummary",
@@ -61,16 +61,16 @@
           "last_msg": "feat: 「순이 삼촌」(현기영) 제작·업로드 + 썸네일 네이밍 규",
           "branch": "main",
           "activity": [
-            1,
             2,
             1,
             0,
             3,
             1,
+            0,
             0
           ],
-          "commits_7d": 9,
-          "commits_30d": 72
+          "commits_7d": 8,
+          "commits_30d": 69
         },
         {
           "name": "go-delegator",
@@ -81,8 +81,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -96,14 +96,14 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 1,
           "commits_30d": 94
         },
         {
@@ -112,8 +112,8 @@
           "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
           "branch": "HEAD",
           "activity": [
-            6,
             4,
+            0,
             0,
             0,
             0,
@@ -734,11 +734,28 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 4
+        },
+        {
+          "name": "life",
+          "last_date": "2026-09-19",
+          "last_msg": "family: 9/19 가족 통화 회의록 요약(우혁 근무·급여 주기, 누룽",
+          "branch": "main",
+          "activity": [
+            5,
+            10,
+            1,
+            4,
+            4,
+            1,
+            0
+          ],
+          "commits_7d": 25,
+          "commits_30d": 158
         },
         {
           "name": "health",
@@ -748,31 +765,14 @@
           "activity": [
             0,
             0,
-            0,
             2,
             0,
             12,
+            0,
             0
           ],
           "commits_7d": 14,
           "commits_30d": 33
-        },
-        {
-          "name": "life",
-          "last_date": "2026-09-18",
-          "last_msg": "side-work: Mercor Go Codebase Q&A 불합격(9/18), Mercor 현황판·README 갱�",
-          "branch": "main",
-          "activity": [
-            48,
-            5,
-            10,
-            1,
-            4,
-            4,
-            0
-          ],
-          "commits_7d": 72,
-          "commits_30d": 157
         },
         {
           "name": "claude-agent",
@@ -780,16 +780,16 @@
           "last_msg": "write up the exec meeting, and close the TTA committee registration",
           "branch": "mini-jsong",
           "activity": [
-            1,
             0,
             4,
             2,
             1,
             2,
+            0,
             0
           ],
-          "commits_7d": 10,
-          "commits_30d": 285
+          "commits_7d": 9,
+          "commits_30d": 281
         },
         {
           "name": "privacy-map",
@@ -799,9 +799,9 @@
           "activity": [
             0,
             0,
-            0,
             10,
             9,
+            0,
             0,
             0
           ],
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 33
+          "commits_30d": 30
         },
         {
           "name": "meta-zkbridge",
