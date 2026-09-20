@@ -1,0 +1,43 @@
+---
+title: "The Engineering Value of Visibility: Why Automated Dashboards Matter"
+date: "2026-09-20"
+lang: en
+excerpt: "Maintaining the Pulse: The Engineering Value of an Automated Dashboard  As a CTO and engineer with over two decades in the trenches—spanning the evolu..."
+---
+
+# Maintaining the Pulse: The Engineering Value of an Automated Dashboard
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of blockchain, Web3, and AI—I’ve learned that the most overlooked part of a high-performing engineering culture is **visibility**. 
+
+Whether you are managing a small team or leading a large organization like CPLABS, the ability to see "where the energy is flowing" in real-time is invaluable. Today's work was a reflection of this philosophy: a routine but critical update to my personal development dashboard.
+
+### The Technical Context: Data-Driven Reflection
+
+Today's commit was a `chore: Update dashboard data` within my personal site's repository. While a JSON update might seem trivial to an outside observer, this file acts as a snapshot of my current technical velocity across multiple domains.
+
+Looking at the diff in `src/data/dashboard.json`, we can see the shift in activity:
+
+```json
+- "last_msg": "[main] fix(migrate): TTS 완료 판정에 큐를 넣는다 — 드라이버만�",
++ "last_msg": "[admin] flat 코너 TTS 1회 합성 + era 전파 — bulk_tts --eras 옵션 · �",
+```
+
+The shift in the `heritageradio` repository shows a transition from fixing migration logic to implementing bulk TTS (Text-to-Speech) synthesis and propagation. This is where the "practical experience" comes in: moving from a "fix" mindset to a "feature/optimization" mindset.
+
+### Technical Decisions and Insights
+
+The core decision behind this dashboard is the use of a **static data snapshot**. By automating the generation of `dashboard.json`, I avoid the overhead of maintaining a live database for a simple personal metric site, while still benefiting from a version-controlled history of my productivity.
+
+A few insights from today's data:
+
+1.  **Context Switching Management**: My activity is spread across `heritageradio` (AI/TTS), `claude-agent` (LLM Orchestration), and `booksummary` (Content Automation). In my years of leadership, I've found that the danger of context switching is high, but for an engineer-leader, it's a necessary skill to maintain a T-shaped expertise.
+2.  **Velocity Tracking**: The `commits_7d` and `commits_30d` metrics aren't about "counting lines of code"—a rookie mistake—but about identifying **momentum**. For instance, seeing `heritageradio` jump from 60 to 69 commits in a week indicates a high-intensity sprint phase.
+3.  **The "Soak Test" Mentality**: In the `claude-agent` repo, the commit message *"add 9/19 soak result"* highlights a critical engineering practice. Whether it's a Web3 smart contract or an AI agent, "soaking" (running a system under load for an extended period) is the only way to uncover the edge cases that unit tests miss.
+
+### Closing Thoughts
+
+Engineering is not just about writing the most elegant code; it's about building systems that allow you to monitor your own progress and the health of your projects. By treating my own development activity as a data stream, I can objectively analyze where I am spending my cognitive load.
+
+Consistency is the bridge between goals and accomplishment. Whether it's refining a DID protocol or updating a JSON file, the discipline remains the same.
+
+**Stay curious, stay technical.**
