@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T23:00:01.788Z",
+  "generated_at": "2026-09-21T23:00:01.142Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,87 +7,87 @@
         {
           "name": "heritageradio",
           "last_date": "2026-09-21",
-          "last_msg": "[main] fix(cron): prod DB sync 가 EC2 에서 죽어 있었다 + canary dev cert",
+          "last_msg": "[admin] feat(audit): 요일 회전 감사 — 「올해 새로 평일이 된 날",
           "branch": "dev",
           "activity": [
-            13,
             4,
             7,
             13,
             19,
             5,
-            1
+            5,
+            0
           ],
-          "commits_7d": 62,
-          "commits_30d": 144
+          "commits_7d": 55,
+          "commits_30d": 148
+        },
+        {
+          "name": "go-delegator",
+          "last_date": "2026-09-21",
+          "last_msg": "feat(sigcheck): 호출자 서명 검증을 거절 모드로 승격",
+          "branch": "feat/sigcheck-enforce",
+          "activity": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 11
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-20",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-09-21",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 70
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-19",
-          "last_msg": "docs(log): close out 2026-09-18 briefick entry and add 9/19 soak result",
+          "last_date": "2026-09-21",
+          "last_msg": "docs(log): post-clear status check — delegator reject mode cleared on real tra",
           "branch": "gram-jsong",
           "activity": [
-            21,
             7,
             17,
             12,
             2,
             0,
+            8,
             0
           ],
-          "commits_7d": 63,
-          "commits_30d": 369
+          "commits_7d": 67,
+          "commits_30d": 377
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-19",
-          "last_msg": "feat: 「순이 삼촌」(현기영) 제작·업로드 + 썸네일 네이밍 규",
+          "last_date": "2026-09-21",
+          "last_msg": "feat: 「박씨전」(작자 미상) 제작·업로드 — 재공급 1순위, �",
           "branch": "main",
           "activity": [
-            2,
             1,
             0,
             3,
             1,
             0,
+            4,
             0
           ],
-          "commits_7d": 8,
-          "commits_30d": 69
-        },
-        {
-          "name": "go-delegator",
-          "last_date": "2026-09-18",
-          "last_msg": "fix(metaresolver): resolver 주소 nil 역참조 panic — getAllServiceAddresse",
-          "branch": "fix/resolver-addr-nil-panic",
-          "activity": [
-            0,
-            0,
-            0,
-            1,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 8
+          "commits_7d": 11,
+          "commits_30d": 66
         },
         {
           "name": "metadium-explorer-stack",
@@ -95,8 +95,8 @@
           "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
           "branch": "master",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -112,7 +112,7 @@
           "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
           "branch": "HEAD",
           "activity": [
-            4,
+            0,
             0,
             0,
             0,
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 4,
           "commits_30d": 85
         },
         {
@@ -724,6 +724,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-09-21",
+          "last_msg": "notify meta that the comment period closes without a filing",
+          "branch": "mini-jsong",
+          "activity": [
+            4,
+            2,
+            1,
+            2,
+            0,
+            0,
+            11
+          ],
+          "commits_7d": 20,
+          "commits_30d": 286
+        },
+        {
+          "name": "privacy-map",
+          "last_date": "2026-09-21",
+          "last_msg": "record the synthetic corpus measurement under its own filename",
+          "branch": "main",
+          "activity": [
+            0,
+            10,
+            9,
+            10,
+            5,
+            2,
+            1
+          ],
+          "commits_7d": 37,
+          "commits_30d": 37
+        },
+        {
           "name": "mirae",
           "last_date": "2026-09-19",
           "last_msg": "fix: 신용/반대매매 지표 3개월 방치 데이터 갱신 + 신선도 가�",
@@ -733,8 +767,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -746,16 +780,16 @@
           "last_msg": "family: 9/19 가족 통화 회의록 요약(우혁 근무·급여 주기, 누룽",
           "branch": "main",
           "activity": [
-            5,
             10,
             1,
             4,
             4,
             1,
+            0,
             0
           ],
-          "commits_7d": 25,
-          "commits_30d": 158
+          "commits_7d": 20,
+          "commits_30d": 157
         },
         {
           "name": "health",
@@ -764,49 +798,15 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             2,
             0,
             12,
             0,
+            0,
             0
           ],
           "commits_7d": 14,
-          "commits_30d": 33
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-18",
-          "last_msg": "write up the exec meeting, and close the TTA committee registration",
-          "branch": "mini-jsong",
-          "activity": [
-            0,
-            4,
-            2,
-            1,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 281
-        },
-        {
-          "name": "privacy-map",
-          "last_date": "2026-09-17",
-          "last_msg": "read the encryption key from a file instead of the environment",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            10,
-            9,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 19,
-          "commits_30d": 19
+          "commits_30d": 24
         },
         {
           "name": "wemix-dios",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 30
+          "commits_30d": 28
         },
         {
           "name": "meta-zkbridge",
