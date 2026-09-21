@@ -1,0 +1,69 @@
+---
+title: "Solving Silent Failures and Race Conditions in Production Sync"
+date: "2026-09-21"
+lang: en
+excerpt: "Engineering Log: Solving the \"Silent Failure\" and Race Conditions in Production Sync  As a CTO and engineer, I've learned that the most dangerous bugs..."
+---
+
+# Engineering Log: Solving the "Silent Failure" and Race Conditions in Production Sync
+
+As a CTO and engineer, I've learned that the most dangerous bugs aren't the ones that crash your system with a loud error message—they are the ones that fail silently or, worse, corrupt data while reporting "Success." Today's work on the `heritageradio` project was a deep dive into exactly these kinds of edge cases: environment-dependent path failures and race conditions during file synchronization.
+
+## 1. The Danger of Hardcoded Home Directories
+
+I discovered that the production DB sync had been dead on the EC2 instance. The culprit? A classic mistake: relying on `$HOME`.
+
+In my local and staging environments, the path `$HOME/heritageradio` worked perfectly. However, after the cutover to EC2, the cron job was running under the `ubuntu` user, while the actual directory structure was tied to a different user's home or a specific path. Because the script couldn't find the `docker-compose.yml` or the `.env` files, it failed at step one.
+
+The "double failure" here was that the notification system also relied on those same missing `.env` files. The system was blind.
+
+**The Fix:**
+I shifted the logic to determine the root directory based on the script's own location using `BASH_SOURCE`.
+
+```bash
+# Before: Fragile dependency on the current user's HOME
+REPO_ROOT="$HOME/heritageradio"
+
+# After: Dynamic resolution based on script location
+REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+```
+
+**Insight:** Never assume the execution environment of a cron job matches your SSH session. Always use relative path resolution or explicit environment variables to ensure portability across different users and hosts.
+
+## 2. Preventing Data Corruption: The TTS Sync Race Condition
+
+The second major issue was a race condition between the TTS (Text-to-Speech) synthesis process and the S3 synchronization script. 
+
+The synthesis process generates `.wav` files and then runs `loudnorm` for audio normalization in-place. If the S3 sync cron (running every few hours) triggers while a file is being normalized, it might upload a partially written or "truncated" file to production.
+
+To solve this, I implemented a "Busy Check" mechanism. Instead of blindly syncing, the script now interrogates both the process list and the Redis queue.
+
+**Technical Decision:**
+I adopted a conservative approach: **"Unknown equals Busy."** If the script cannot reach the Redis container to check the queue length, it assumes the system is busy and skips the audio sync to prevent potential corruption.
+
+```bash
+tts_busy() {
+  # 1. Check if driver processes are running
+  if pgrep -f 'bulk_tts_4week|tts_generate_single' >/dev/null 2>&1; then
+    return 0
+  fi
+  # 2. Check Redis queue length
+  local q
+  if ! q=$(docker exec "$TTS_REDIS_CONTAINER" redis-cli llen generate 2>/dev/null); then
+    return 0 # Unknown status -> Treat as busy
+  fi
+  # ... logic to check if q > 0
+}
+```
+
+Following the **S5-C principle** (no silent skips), I ensured that any automatic skip triggers a Telegram notification with the exact command needed to manually "catch up" (`--skip-pg`), ensuring the operator is always in the loop.
+
+## 3. Fixing the Canary "False Positive"
+
+Lastly, I addressed a misleading failure in the canary certificate check. The script was attempting to hit a domain that resolved to the EC2's own EIP, resulting in a hairpinning failure (100% packet loss) despite the service being healthy.
+
+By switching the connection point to `127.0.0.1` while maintaining the SNI (Server Name Indication), I can still verify the SSL certificate's validity without being tripped up by network routing issues.
+
+## Final Thoughts
+
+Today was a reminder that "it works on my machine" is the beginning of a bug, not the end of a feature. Whether it's the way a shell resolves a path or the way a packet routes through an IGW, the infrastructure is as much a part of the code as the logic itself. At **CPLABS**, we strive for systems that are not just functional, but observable and resilient to the "silent failures" of the real world.
