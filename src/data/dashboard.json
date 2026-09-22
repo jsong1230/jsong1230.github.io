@@ -1,110 +1,110 @@
 {
-  "generated_at": "2026-09-21T23:00:01.142Z",
+  "generated_at": "2026-09-22T23:00:01.233Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-09-23",
+          "last_msg": "docs(log): R4 arrival notices injected into cplabs gmet and hub agent windows",
+          "branch": "gram-jsong",
+          "activity": [
+            17,
+            12,
+            2,
+            0,
+            8,
+            3,
+            2
+          ],
+          "commits_7d": 48,
+          "commits_30d": 380
+        },
+        {
           "name": "heritageradio",
-          "last_date": "2026-09-21",
-          "last_msg": "[admin] feat(audit): 요일 회전 감사 — 「올해 새로 평일이 된 날",
+          "last_date": "2026-09-22",
+          "last_msg": "[admin] feat(admin): 방송 사이클 선택기 1단계 — 연도를 파생값�",
           "branch": "dev",
           "activity": [
-            4,
             7,
             13,
             19,
             5,
             5,
+            4,
             0
           ],
-          "commits_7d": 55,
-          "commits_30d": 148
+          "commits_7d": 56,
+          "commits_30d": 152
         },
         {
           "name": "go-delegator",
-          "last_date": "2026-09-21",
-          "last_msg": "feat(sigcheck): 호출자 서명 검증을 거절 모드로 승격",
-          "branch": "feat/sigcheck-enforce",
+          "last_date": "2026-09-22",
+          "last_msg": "chore: 테스트 부산물 log/test.stderr 를 저장소에서 제거",
+          "branch": "develop",
+          "activity": [
+            0,
+            1,
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 13
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-09-22",
+          "last_msg": "chore(delegator): testnet 대납 쓰기 레이트리밋 60/120 → 5/30 (mainnet",
+          "branch": "master",
           "activity": [
             0,
             0,
-            1,
+            0,
             0,
             0,
             2,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 11
+          "commits_30d": 96
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-21",
+          "last_date": "2026-09-22",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-09-21",
-          "last_msg": "docs(log): post-clear status check — delegator reject mode cleared on real tra",
-          "branch": "gram-jsong",
-          "activity": [
-            7,
-            17,
-            12,
-            2,
-            0,
-            8,
-            0
-          ],
-          "commits_7d": 67,
-          "commits_30d": 377
+          "commits_30d": 68
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-21",
-          "last_msg": "feat: 「박씨전」(작자 미상) 제작·업로드 — 재공급 1순위, �",
+          "last_date": "2026-09-22",
+          "last_msg": "feat: 「옹고집전」(작자 미상) 제작·업로드 — 고전소설 축 3",
           "branch": "main",
           "activity": [
-            1,
             0,
             3,
             1,
             0,
             4,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 66
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-09-16",
-          "last_msg": "feat(scripts): resolver 롤백 자산 서버 원본 삭제 스크립트 (9/17 �",
-          "branch": "master",
-          "activity": [
             1,
-            0,
-            0,
-            0,
-            0,
-            0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 94
+          "commits_7d": 9,
+          "commits_30d": 65
         },
         {
           "name": "go-metadium-m114",
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 0,
           "commits_30d": 85
         },
         {
@@ -725,20 +725,37 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-09-21",
-          "last_msg": "notify meta that the comment period closes without a filing",
+          "last_date": "2026-09-22",
+          "last_msg": "record the briefick daily close: 14 entries at the 10.5h three-machine cap, no a",
           "branch": "mini-jsong",
           "activity": [
-            4,
             2,
             1,
             2,
             0,
             0,
-            11
+            13,
+            13
           ],
-          "commits_7d": 20,
-          "commits_30d": 286
+          "commits_7d": 31,
+          "commits_30d": 291
+        },
+        {
+          "name": "life",
+          "last_date": "2026-09-21",
+          "last_msg": "side-work: Mercor C·PDF Annotation 불합격(9/20), ChatGPT 파워유저 $50/hr",
+          "branch": "main",
+          "activity": [
+            1,
+            4,
+            4,
+            1,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 11,
+          "commits_30d": 152
         },
         {
           "name": "privacy-map",
@@ -746,13 +763,13 @@
           "last_msg": "record the synthetic corpus measurement under its own filename",
           "branch": "main",
           "activity": [
-            0,
             10,
             9,
             10,
             5,
             2,
-            1
+            1,
+            0
           ],
           "commits_7d": 37,
           "commits_30d": 37
@@ -766,8 +783,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -775,38 +792,21 @@
           "commits_30d": 4
         },
         {
-          "name": "life",
-          "last_date": "2026-09-19",
-          "last_msg": "family: 9/19 가족 통화 회의록 요약(우혁 근무·급여 주기, 누룽",
-          "branch": "main",
-          "activity": [
-            10,
-            1,
-            4,
-            4,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 20,
-          "commits_30d": 157
-        },
-        {
           "name": "health",
           "last_date": "2026-09-18",
           "last_msg": "3차 청약으로 정정 — 비급여 1,000만 복원 확인, 납입기간 20�",
           "branch": "main",
           "activity": [
-            0,
             2,
             0,
             12,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 14,
-          "commits_30d": 24
+          "commits_30d": 21
         },
         {
           "name": "wemix-dios",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 28
+          "commits_30d": 25
         },
         {
           "name": "meta-zkbridge",
