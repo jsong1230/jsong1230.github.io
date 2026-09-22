@@ -1,0 +1,54 @@
+---
+title: "Stability in the Face of Scale: Syncing, Signatures, and Systemic Rigor"
+date: "2026-09-22"
+lang: en
+excerpt: "Engineering Log: Stability in the Face of Scale — Syncing, Signatures, and Systemic Rigor  As a CTO and engineer, I’ve learned that the most dangerous..."
+---
+
+# Engineering Log: Stability in the Face of Scale — Syncing, Signatures, and Systemic Rigor
+
+As a CTO and engineer, I’ve learned that the most dangerous phase of any infrastructure deployment isn't the initial launch, but the "long tail" of synchronization and stabilization. When you are dealing with massive datasets—like a clean mainnet sync—the temptation is to rely on "point estimation" (predicting the end time based on current speed). However, experience has taught me that in distributed systems, the only truth is the trend, not the snapshot.
+
+Today's work centered around the critical path of a mainnet synchronization process and the enforcement of security protocols in our delegator service.
+
+### 1. The Art of the "Clean Sync": Avoiding the Point Estimation Trap
+
+The bulk of today's monitoring focused on the `151` node's clean sync. Looking at the logs, we saw a consistent throughput:
+
+> `9/21 23:52 → 9/22 07:22 26,992초(7.5h)간 +5,290,864 = 196.0 blk/s`
+
+The key technical insight here is the **validation of stability**. Previously, we observed a dip to 143 blk/s during overnight hours. Today, that dip did not recur, maintaining a steady 196.0 blk/s over a 7.5-hour window. 
+
+Despite this stability, I’ve maintained a strict rule: **No point estimation for external reporting.** When communicating with stakeholders at CPLABS, I specify "during Wednesday" rather than a precise hour. Why? Because block "weight" is not uniform. A surge in complex smart contract interactions in the remaining 16.1M blocks could throttle the sync speed. In high-stakes infrastructure, under-promising and over-delivering is the only way to maintain professional trust.
+
+### 2. Delegator Security: Moving from Observation to Enforcement
+
+On the development side, we've transitioned the `go-delegator` from a "monitoring" phase to an "enforcement" phase.
+
+**The Change:**
+`feat(sigcheck): 호출자 서명 검증을 거절 모드로 승격` (Promoting caller signature verification to reject mode).
+
+For the past few days, we ran the signature check in a "log-only" mode to ensure no legitimate traffic was being flagged. The data confirmed zero mismatches (`mismatch=0`). With this confidence, we flipped the switch to **Reject Mode**. 
+
+This is a classic "Canary" deployment pattern: 
+`Observe` $\rightarrow$ `Validate` $\rightarrow$ `Enforce`. 
+By doing this, we eliminate the risk of a catastrophic outage while ensuring that any unauthorized caller is now actively blocked at the gateway.
+
+### 3. Systemic Rigor: The "Pitfall" Documentation
+
+One of the most valuable parts of today's commit is the detailed "7 Pitfalls" list in the handoff snapshot. As a lead engineer, I believe that **knowledge transfer is as important as the code itself.**
+
+Whether it's the nuance of `TZ=UTC` vs `KST` or the specific behavior of `pgrep -f` matching its own SSH string, these "tribal knowledge" items are where most junior engineers (and even seniors) trip up during an incident. Documenting that `cplabs` pulls the `~/handover` directory every 2 minutes prevents accidental leaks of draft configurations.
+
+### Final Thoughts
+
+Today wasn't about writing thousands of lines of new code; it was about **verification, risk mitigation, and documentation.** In the Web3 and Blockchain space, where "code is law" and mistakes are often irreversible, the ability to maintain a disciplined observation window is what separates a prototype from production-grade infrastructure.
+
+We are now entering the final stretch of the sync. The focus remains on the R4 release notes—ensuring every MD5 hash and genesis block height is verified. No shortcuts.
+
+***
+
+**Summary of Today's Progress:**
+- **Mainnet Sync:** Stable at 196 blk/s; 86.5% complete.
+- **Delegator:** Signature verification now in active "Reject Mode" after successful soak test.
+- **Infrastructure:** Updated dashboard and finalized handoff protocols for CPLABS.
