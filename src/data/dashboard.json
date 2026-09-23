@@ -1,25 +1,59 @@
 {
-  "generated_at": "2026-09-22T23:00:01.233Z",
+  "generated_at": "2026-09-23T23:00:01.338Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "booksummary",
+          "last_date": "2026-09-24",
+          "last_msg": "feat: 「최척전」(조위한) 제작·업로드 — 고전소설 축 4편째",
+          "branch": "main",
+          "activity": [
+            3,
+            1,
+            0,
+            4,
+            1,
+            0,
+            1
+          ],
+          "commits_7d": 10,
+          "commits_30d": 61
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-09-23",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-09-23",
-          "last_msg": "docs(log): R4 arrival notices injected into cplabs gmet and hub agent windows",
+          "last_msg": "docs(log): 22:36 soak 13h clean, mainnet rolling deferred to Thursday daytime, a",
           "branch": "gram-jsong",
           "activity": [
-            17,
             12,
             2,
             0,
             8,
             3,
-            2
+            7,
+            0
           ],
-          "commits_7d": 48,
-          "commits_30d": 380
+          "commits_7d": 49,
+          "commits_30d": 378
         },
         {
           "name": "heritageradio",
@@ -27,15 +61,15 @@
           "last_msg": "[admin] feat(admin): 방송 사이클 선택기 1단계 — 연도를 파생값�",
           "branch": "dev",
           "activity": [
-            7,
             13,
             19,
             5,
             5,
             4,
+            0,
             0
           ],
-          "commits_7d": 56,
+          "commits_7d": 51,
           "commits_30d": 152
         },
         {
@@ -44,12 +78,12 @@
           "last_msg": "chore: 테스트 부산물 log/test.stderr 를 저장소에서 제거",
           "branch": "develop",
           "activity": [
-            0,
             1,
             0,
             0,
             2,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
@@ -65,46 +99,12 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 96
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-09-22",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-22",
-          "last_msg": "feat: 「옹고집전」(작자 미상) 제작·업로드 — 고전소설 축 3",
-          "branch": "main",
-          "activity": [
-            0,
-            3,
-            1,
-            0,
-            4,
-            1,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 65
+          "commits_7d": 2,
+          "commits_30d": 95
         },
         {
           "name": "go-metadium-m114",
@@ -240,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "business",
@@ -724,38 +724,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-09-23",
+          "last_msg": "side-work: TELUS Media Search Analyst Korea 소싱 메일(9/23) 기록",
+          "branch": "main",
+          "activity": [
+            4,
+            4,
+            1,
+            0,
+            1,
+            0,
+            2
+          ],
+          "commits_7d": 12,
+          "commits_30d": 146
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-09-22",
-          "last_msg": "record the briefick daily close: 14 entries at the 10.5h three-machine cap, no a",
+          "last_date": "2026-09-23",
+          "last_msg": "log the rollback cleanup check, the evening mail check, and the jeff-mbp jsong d",
           "branch": "mini-jsong",
           "activity": [
-            2,
             1,
             2,
             0,
             0,
             13,
-            13
+            14,
+            3
           ],
-          "commits_7d": 31,
-          "commits_30d": 291
-        },
-        {
-          "name": "life",
-          "last_date": "2026-09-21",
-          "last_msg": "side-work: Mercor C·PDF Annotation 불합격(9/20), ChatGPT 파워유저 $50/hr",
-          "branch": "main",
-          "activity": [
-            1,
-            4,
-            4,
-            1,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 152
+          "commits_7d": 33,
+          "commits_30d": 276
         },
         {
           "name": "privacy-map",
@@ -763,15 +763,15 @@
           "last_msg": "record the synthetic corpus measurement under its own filename",
           "branch": "main",
           "activity": [
-            10,
             9,
             10,
             5,
             2,
             1,
+            0,
             0
           ],
-          "commits_7d": 37,
+          "commits_7d": 27,
           "commits_30d": 37
         },
         {
@@ -782,8 +782,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -797,15 +797,15 @@
           "last_msg": "3차 청약으로 정정 — 비급여 1,000만 복원 확인, 납입기간 20�",
           "branch": "main",
           "activity": [
-            2,
             0,
             12,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 14,
+          "commits_7d": 12,
           "commits_30d": 21
         },
         {
@@ -823,7 +823,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 1
         },
         {
           "name": "go-metadium",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 25
+          "commits_30d": 15
         },
         {
           "name": "meta-zkbridge",
