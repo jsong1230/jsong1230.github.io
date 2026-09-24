@@ -1,0 +1,66 @@
+---
+title: "Dev Log: Performance Tuning, Next.js Metadata Pitfalls, and Mainnet Pre-checks"
+date: "2026-09-24"
+lang: en
+excerpt: "[Dev Log] Performance Tuning, Next.js Metadata Pitfalls, and Mainnet Pre-checks  Today was a day of contrasting scales—from optimizing a few milliseco..."
+---
+
+# [Dev Log] Performance Tuning, Next.js Metadata Pitfalls, and Mainnet Pre-checks
+
+Today was a day of contrasting scales—from optimizing a few milliseconds of a landing page load to verifying the stability of a 14-node mainnet cluster. As an engineer, I find that the most critical bugs often hide in the "convenience" features of frameworks, and the most critical risks hide in the hardware assumptions of infrastructure.
+
+Here is a summary of today's development work.
+
+---
+
+### 1. Next.js Metadata: The "Inheritance" Trap
+While working on the `heritageradio` landing page, I encountered a subtle but frustrating behavior in Next.js's `Metadata` API.
+
+**The Problem:**
+I noticed that the `og:image` (Open Graph image) was missing from the landing page. I had assumed that since the `layout.tsx` defined the global Open Graph settings, the `page.tsx` would simply inherit the images and only override the title and description.
+
+**The Technical Insight:**
+Next.js does **not** perform a deep merge of the `openGraph` object when a page defines its own. Instead, it **completely replaces** the layout's `openGraph` object with the page's version.
+
+> *“Next.js 는 page 가 openGraph 를 정의하면 layout.tsx 의 openGraph 를 통째로 교체한다 (필드 단위 상속이 아니다).”*
+
+The reason this wasn't caught earlier was due to the `opengraph-image.tsx` file convention, which automatically injects the image regardless of the metadata object. Once I removed the dynamic generation file to improve performance, the underlying configuration flaw was exposed.
+
+**The Fix:**
+I explicitly defined the `images` array within `page.tsx`. A lesson learned: when using Next.js metadata, if you define a nested object like `openGraph` or `twitter` at the page level, treat it as a full override, not an extension.
+
+---
+
+### 2. Eliminating Dynamic OG Image Generation
+Performance is a feature. I analyzed the ALB access logs and found that 69% of requests to the landing page were for `/opengraph-image`, with response times hovering around **1.9 seconds**.
+
+**The Decision:**
+The dynamic `ImageResponse` was rendering a static design. There was zero reason to compute this on every request. I captured the current design as a static PNG, replaced the asset in `/public`, and deleted the `opengraph-image.tsx` file.
+
+**The Result:**
+- **Latency:** 1.9s $\rightarrow$ Instant (Static file serving).
+- **Payload Size:** 365KB $\rightarrow$ 59KB (84% reduction).
+
+---
+
+### 3. Mainnet Phase 0: The Danger of Instance Stores
+On the blockchain side, I conducted a "read-only" pre-check of 14 mainnet nodes. The most critical discovery was the confirmation of **Instance Store (Local NVMe)** usage for `chaindata`.
+
+**The Risk:**
+Unlike EBS, data on an Instance Store is **ephemeral**. If an instance is stopped or rebooted, the data is wiped. 
+
+**Technical Decision:**
+I updated the rolling update strategy to strictly forbid `stop/start` or `reboot` operations. The update must be performed via **process restart only** (`gmet.sh stop` $\rightarrow$ binary swap $\rightarrow$ `gmet.sh start`). I developed a set of "Judge" and "Roll" scripts (`m114-judge.sh`, `m114-roll-node.sh`) to ensure the atomic replacement of binaries and validation of node health without touching the EC2 instance state.
+
+---
+
+### 4. Content Engineering: The "Competition vs. Demand" Curve
+Finally, in the `booksummary` project, I screened 47 classic Korean novels. The data revealed a clear trend: **The "Head" is blocked by competition, and the "Tail" is blocked by low demand.**
+
+Famous works like *Kuunmong* or *Hong Gildong-jeon* have massive demand but are already saturated by existing content. Conversely, niche works have no competition but insufficient search volume. The "Sweet Spot" is shrinking, requiring more granular screening of "textbook signals" versus actual user search intent.
+
+### Final Thoughts
+Whether it's a missing metadata field in a React app or a volatile disk in a blockchain node, the theme of the day was **verification**. Assumptions—whether about framework inheritance or cloud storage—are the primary source of production incidents. Always trust the logs and the `describe-instances` output over the documentation's "implied" behavior.
+
+**Jeffrey Joo-Han Song**
+CTO / Engineer at CPLABS
