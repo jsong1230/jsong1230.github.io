@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-09-24T23:00:01.236Z",
+  "generated_at": "2026-09-25T23:00:01.565Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
-          "last_date": "2026-09-24",
-          "last_msg": "[landing] 법적 고지 점검 — 버전 표기 오류 · 낡은 시점 기준 ",
-          "branch": "dev",
+          "name": "claude-agent",
+          "last_date": "2026-09-26",
+          "last_msg": "docs(log): 09-26 mini-home server_list corrections applied (3 items) and reply w",
+          "branch": "gram-jsong",
           "activity": [
-            19,
-            5,
-            5,
-            4,
             0,
+            8,
             3,
-            0
+            7,
+            30,
+            6,
+            3
           ],
-          "commits_7d": 49,
-          "commits_30d": 155
+          "commits_7d": 59,
+          "commits_30d": 407
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-24",
+          "last_date": "2026-09-25",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -39,21 +39,21 @@
           "commits_30d": 68
         },
         {
-          "name": "claude-agent",
+          "name": "heritageradio",
           "last_date": "2026-09-24",
-          "last_msg": "docs+tools: Phase 2 closed (BP 9/9 on m1.1.4, cplabs pass), pn1/pn2/api2 upgrade",
-          "branch": "gram-jsong",
+          "last_msg": "[landing] 법적 고지 점검 — 버전 표기 오류 · 낡은 시점 기준 ",
+          "branch": "dev",
           "activity": [
-            2,
+            5,
+            5,
+            4,
             0,
-            8,
             3,
-            7,
-            30,
+            0,
             0
           ],
-          "commits_7d": 62,
-          "commits_30d": 404
+          "commits_7d": 36,
+          "commits_30d": 137
         },
         {
           "name": "booksummary",
@@ -61,16 +61,16 @@
           "last_msg": "feat: 「정수정전」 업로드 · 「토끼전」 렌더 중 — 세션 인�",
           "branch": "main",
           "activity": [
-            1,
             0,
             4,
             1,
             0,
             7,
+            0,
             0
           ],
-          "commits_7d": 16,
-          "commits_30d": 63
+          "commits_7d": 13,
+          "commits_30d": 58
         },
         {
           "name": "go-delegator",
@@ -79,14 +79,14 @@
           "branch": "develop",
           "activity": [
             0,
+            2,
+            2,
             0,
-            2,
-            2,
             0,
             0,
             0
           ],
-          "commits_7d": 5,
+          "commits_7d": 4,
           "commits_30d": 13
         },
         {
@@ -97,8 +97,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "meta-did-resolver",
@@ -724,38 +724,38 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "life",
-          "last_date": "2026-09-24",
-          "last_msg": "side-work: Mercor Donatello 주 최대시간 20h→1h 계약 변경(9/23), Respo",
-          "branch": "main",
-          "activity": [
-            4,
-            1,
-            0,
-            1,
-            0,
-            2,
-            1
-          ],
-          "commits_7d": 9,
-          "commits_30d": 136
-        },
-        {
           "name": "claude-agent",
-          "last_date": "2026-09-24",
-          "last_msg": "log the addition of remote machine credentials to the company backup",
+          "last_date": "2026-09-25",
+          "last_msg": "log the reprimand for the unapproved relay and the cplabs acknowledgement",
           "branch": "mini-jsong",
           "activity": [
-            2,
             0,
             0,
             13,
             14,
             4,
-            10
+            10,
+            9
           ],
-          "commits_7d": 43,
-          "commits_30d": 278
+          "commits_7d": 50,
+          "commits_30d": 271
+        },
+        {
+          "name": "life",
+          "last_date": "2026-09-24",
+          "last_msg": "side-work: Mercor Donatello 주 최대시간 20h→1h 계약 변경(9/23), Respo",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 134
         },
         {
           "name": "privacy-map",
@@ -763,15 +763,15 @@
           "last_msg": "record how out/ was rebuilt after the working copy was deleted",
           "branch": "main",
           "activity": [
-            10,
             5,
             2,
             11,
             5,
             1,
+            0,
             0
           ],
-          "commits_7d": 34,
+          "commits_7d": 24,
           "commits_30d": 53
         },
         {
@@ -780,8 +780,8 @@
           "last_msg": "fix: 신용/반대매매 지표 3개월 방치 데이터 갱신 + 신선도 가�",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -789,7 +789,7 @@
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 4
+          "commits_30d": 3
         },
         {
           "name": "health",
@@ -797,7 +797,7 @@
           "last_msg": "3차 청약으로 정정 — 비급여 1,000만 복원 확인, 납입기간 20�",
           "branch": "main",
           "activity": [
-            12,
+            0,
             0,
             0,
             0,
@@ -805,7 +805,7 @@
             0,
             0
           ],
-          "commits_7d": 12,
+          "commits_7d": 0,
           "commits_30d": 21
         },
         {
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 9
         },
         {
           "name": "meta-zkbridge",
@@ -891,7 +891,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "MetaLotto",
