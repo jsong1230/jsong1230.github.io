@@ -1,42 +1,59 @@
 {
-  "generated_at": "2026-09-25T23:00:01.565Z",
+  "generated_at": "2026-09-26T23:00:01.932Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-09-26",
-          "last_msg": "docs(log): 09-26 mini-home server_list corrections applied (3 items) and reply w",
+          "last_date": "2026-09-27",
+          "last_msg": "docs(log): cplabs advance notice on PBFT dev merge release gates (no action yet)",
           "branch": "gram-jsong",
           "activity": [
-            0,
             8,
             3,
             7,
             30,
             6,
-            3
+            11,
+            1
           ],
-          "commits_7d": 59,
-          "commits_30d": 407
+          "commits_7d": 66,
+          "commits_30d": 372
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-25",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-09-26",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-09-26",
+          "last_msg": "feat: 「금방울전」(작자 미상) 제작·업로드 — 고전소설 축 9",
+          "branch": "main",
+          "activity": [
+            4,
+            1,
+            0,
+            7,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 14,
+          "commits_30d": 57
         },
         {
           "name": "heritageradio",
@@ -45,32 +62,15 @@
           "branch": "dev",
           "activity": [
             5,
-            5,
             4,
             0,
             3,
             0,
-            0
-          ],
-          "commits_7d": 36,
-          "commits_30d": 137
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-24",
-          "last_msg": "feat: 「정수정전」 업로드 · 「토끼전」 렌더 중 — 세션 인�",
-          "branch": "main",
-          "activity": [
-            0,
-            4,
-            1,
-            0,
-            7,
             0,
             0
           ],
-          "commits_7d": 13,
-          "commits_30d": 58
+          "commits_7d": 17,
+          "commits_30d": 130
         },
         {
           "name": "go-delegator",
@@ -78,9 +78,9 @@
           "last_msg": "chore: 테스트 부산물 log/test.stderr 를 저장소에서 제거",
           "branch": "develop",
           "activity": [
+            2,
+            2,
             0,
-            2,
-            2,
             0,
             0,
             0,
@@ -96,15 +96,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 95
+          "commits_30d": 94
         },
         {
           "name": "go-metadium-m114",
@@ -725,37 +725,37 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-09-25",
-          "last_msg": "log the reprimand for the unapproved relay and the cplabs acknowledgement",
+          "last_date": "2026-09-26",
+          "last_msg": "log the evening mail check: edp shortfall dispute in the people team report, pbf",
           "branch": "mini-jsong",
           "activity": [
-            0,
             0,
             13,
             14,
             4,
             10,
-            9
+            14,
+            3
           ],
-          "commits_7d": 50,
-          "commits_30d": 271
+          "commits_7d": 58,
+          "commits_30d": 274
         },
         {
           "name": "life",
-          "last_date": "2026-09-24",
-          "last_msg": "side-work: Mercor Donatello 주 최대시간 20h→1h 계약 변경(9/23), Respo",
+          "last_date": "2026-09-25",
+          "last_msg": "side-work: RWS Diamond/Echo 프로젝트 초대($10/h, 9/25), Respondent AI 배�",
           "branch": "main",
           "activity": [
-            1,
             0,
             1,
             0,
             2,
             1,
+            1,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 134
+          "commits_7d": 6,
+          "commits_30d": 135
         },
         {
           "name": "privacy-map",
@@ -763,15 +763,15 @@
           "last_msg": "record how out/ was rebuilt after the working copy was deleted",
           "branch": "main",
           "activity": [
-            5,
             2,
             11,
             5,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 24,
+          "commits_7d": 19,
           "commits_30d": 53
         },
         {
@@ -780,7 +780,7 @@
           "last_msg": "fix: 신용/반대매매 지표 3개월 방치 데이터 갱신 + 신선도 가�",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -788,8 +788,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 3
+          "commits_7d": 0,
+          "commits_30d": 2
         },
         {
           "name": "health",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 3
         },
         {
           "name": "meta-zkbridge",
