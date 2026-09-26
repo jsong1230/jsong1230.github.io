@@ -1,0 +1,43 @@
+---
+title: "Tightening the Perimeter: Nginx Filtering and Infrastructure Discipline"
+date: "2026-09-26"
+lang: en
+excerpt: "Tightening the Perimeter: Nginx Filtering and Infrastructure Discipline  As a CTO, my day is rarely just about writing new features; it's often about ..."
+---
+
+# Tightening the Perimeter: Nginx Filtering and Infrastructure Discipline
+
+As a CTO, my day is rarely just about writing new features; it's often about "tightening the screws"—refining security policies, cleaning up legacy configurations, and ensuring that the operational discipline of the team matches the technical requirements of the system. Today was a prime example of this.
+
+## Hardening the API Gateway: Removing the Allowlist
+
+The most critical task today was the removal of a specific IP allowlist exception (`34.198.53.234`) from the Nginx filters on `api1` and `api2`. 
+
+In the early stages of deployment or during specific partner integrations, it's common to open "holes" in the firewall or Nginx filters for debugging purposes. However, these exceptions often become "ghost configurations"—forgotten rules that leave a latent security vulnerability. After a thorough investigation, we determined that this specific IP was not an AWS asset and had no current legitimate need to access debug methods.
+
+**The Technical Execution:**
+I implemented the removal using a precise `grep` and `sed` workflow, though I encountered a small hiccup with literal backslash matching in the first attempt. Switching to `-F` (fixed strings) resolved this. 
+
+The verification process was rigorous. I didn't just check if the site was "up"; I verified the failure modes:
+- **Standard requests:** `eth_blockNumber` $\rightarrow$ `200 OK` (System functional)
+- **Debug requests (No XFF):** `debug_gcStats` $\rightarrow$ `403 Forbidden` (Blocked)
+- **Debug requests (With XFF 34.198.53.234):** `debug_gcStats` $\rightarrow$ `403 Forbidden` (Exception removed)
+- **Batch requests:** Mixed calls $\rightarrow$ `403 Forbidden` (Preventing bypass via batching)
+
+Seeing the `403` response for the previously allowed IP was a satisfying confirmation that the perimeter is now tighter.
+
+## Operational Discipline: The "Briefick" Protocol
+
+Beyond the code, I spent time updating our internal "Briefick" registration rules. We've adopted a new rule allowing weekend registrations under specific conditions, which required propagating this change across multiple agent configurations and memory repositories.
+
+This might seem like administrative overhead, but in a complex Web3/AI environment, **consistency is security**. When the rules for how we register and log changes differ across different "agents" or environments, it creates cognitive load and potential for error. By updating the `MEMORY.md` and global `CLAUDE.md` files, I'm ensuring that the AI agents assisting our development follow the same strict discipline as the human engineers.
+
+## Insights from the Dashboard
+
+Updating my personal dashboard (`dashboard.json`) provided a moment of reflection. Looking at the commit activity for `claude-agent` (jumping to 59 commits in 7 days and 407 in 30 days), it's clear that the synergy between LLM-based agents and infrastructure management is accelerating. We are moving toward a state where the "to-do list" is almost instantaneously translated into verified configuration changes.
+
+## Final Thoughts
+
+Today's work reminds me that the role of an engineer is as much about **deletion** as it is about **addition**. Removing a legacy allowlist, pruning outdated server lists, and refining rules are the tasks that prevent "technical debt" from becoming "security debt."
+
+At **CPLABS**, we prioritize this kind of hygiene. A clean, well-documented, and strictly filtered environment is the only way to scale securely in the volatile landscape of blockchain infrastructure.
