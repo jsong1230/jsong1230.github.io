@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-09-26T23:00:01.932Z",
+  "generated_at": "2026-09-27T23:00:01.269Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "heritageradio",
+          "last_date": "2026-09-27",
+          "last_msg": "[main] docs(CHANGELOG): prod 최신화 배포 기록 — EC2 빌드 호스트 �",
+          "branch": "dev",
+          "activity": [
+            4,
+            0,
+            3,
+            0,
+            0,
+            8,
+            0
+          ],
+          "commits_7d": 19,
+          "commits_30d": 134
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-09-27",
+          "last_msg": "Auto-generate weekly recap",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-09-27",
-          "last_msg": "docs(log): cplabs advance notice on PBFT dev merge release gates (no action yet)",
+          "last_msg": "docs(log): 09-27 briefick — h-main share registered (217, 2.5h); daily total 3",
           "branch": "gram-jsong",
           "activity": [
-            8,
             3,
             7,
             30,
             6,
             11,
-            1
-          ],
-          "commits_7d": 66,
-          "commits_30d": 372
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-09-26",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            3,
+            7,
             0
           ],
-          "commits_7d": 16,
-          "commits_30d": 69
+          "commits_7d": 72,
+          "commits_30d": 363
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-26",
-          "last_msg": "feat: 「금방울전」(작자 미상) 제작·업로드 — 고전소설 축 9",
+          "last_date": "2026-09-27",
+          "last_msg": "feat: 「조웅전」 업로드 — 고전소설 시리즈 12/12 완결, 2027-01",
           "branch": "main",
           "activity": [
-            4,
             1,
             0,
             7,
             0,
             2,
-            0
-          ],
-          "commits_7d": 14,
-          "commits_30d": 57
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-09-24",
-          "last_msg": "[landing] 법적 고지 점검 — 버전 표기 오류 · 낡은 시점 기준 ",
-          "branch": "dev",
-          "activity": [
-            5,
-            4,
-            0,
             3,
-            0,
-            0,
             0
           ],
           "commits_7d": 17,
-          "commits_30d": 130
+          "commits_30d": 59
         },
         {
           "name": "go-delegator",
@@ -79,7 +79,7 @@
           "branch": "develop",
           "activity": [
             2,
-            2,
+            0,
             0,
             0,
             0,
@@ -95,8 +95,8 @@
           "last_msg": "chore(delegator): testnet 대납 쓰기 레이트리밋 60/120 → 5/30 (mainnet",
           "branch": "master",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 85
+          "commits_30d": 74
         },
         {
           "name": "go-delegator-prod",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 54
+          "commits_30d": 43
         },
         {
           "name": "cplabs_homepage",
@@ -724,38 +724,38 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-09-26",
-          "last_msg": "log the evening mail check: edp shortfall dispute in the people team report, pbf",
-          "branch": "mini-jsong",
-          "activity": [
-            0,
-            13,
-            14,
-            4,
-            10,
-            14,
-            3
-          ],
-          "commits_7d": 58,
-          "commits_30d": 274
-        },
-        {
           "name": "life",
-          "last_date": "2026-09-25",
-          "last_msg": "side-work: RWS Diamond/Echo 프로젝트 초대($10/h, 9/25), Respondent AI 배�",
+          "last_date": "2026-09-27",
+          "last_msg": "side-work: Mercor 남은 지원 3건 불합격(9/27), 현황판·README 갱신",
           "branch": "main",
           "activity": [
-            0,
             1,
             0,
             2,
             1,
             1,
-            0
+            0,
+            1
           ],
           "commits_7d": 6,
-          "commits_30d": 135
+          "commits_30d": 136
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-09-27",
+          "last_msg": "record the third briefick entry for sunday, reaching the daily cap",
+          "branch": "mini-jsong",
+          "activity": [
+            13,
+            14,
+            4,
+            10,
+            14,
+            5,
+            10
+          ],
+          "commits_7d": 70,
+          "commits_30d": 283
         },
         {
           "name": "privacy-map",
@@ -763,15 +763,15 @@
           "last_msg": "record how out/ was rebuilt after the working copy was deleted",
           "branch": "main",
           "activity": [
-            2,
             11,
             5,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 19,
+          "commits_7d": 17,
           "commits_30d": 53
         },
         {
@@ -840,7 +840,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 24
+          "commits_30d": 13
         },
         {
           "name": "business",
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "meta-agents",
