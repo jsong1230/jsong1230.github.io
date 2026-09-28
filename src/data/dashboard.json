@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-09-27T23:00:01.269Z",
+  "generated_at": "2026-09-28T23:00:01.307Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-09-27",
-          "last_msg": "[main] docs(CHANGELOG): prod 최신화 배포 기록 — EC2 빌드 호스트 �",
+          "last_date": "2026-09-28",
+          "last_msg": "[main] fix(probe): DNS 조회도 3회 재시도 — 110 사내 resolver 순간 �",
           "branch": "dev",
           "activity": [
-            4,
             0,
             3,
             0,
             0,
             8,
+            11,
             0
           ],
-          "commits_7d": 19,
-          "commits_30d": 134
+          "commits_7d": 26,
+          "commits_30d": 144
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-27",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-09-28",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 70
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-27",
-          "last_msg": "docs(log): 09-27 briefick — h-main share registered (217, 2.5h); daily total 3",
+          "last_date": "2026-09-28",
+          "last_msg": "docs(log): 18:20 first automatic progress report of m1.2.0 clean syncs delivered",
           "branch": "gram-jsong",
           "activity": [
-            3,
             7,
             30,
             6,
             11,
             7,
+            8,
             0
           ],
           "commits_7d": 72,
-          "commits_30d": 363
+          "commits_30d": 350
         },
         {
           "name": "booksummary",
-          "last_date": "2026-09-27",
-          "last_msg": "feat: 「조웅전」 업로드 — 고전소설 시리즈 12/12 완결, 2027-01",
+          "last_date": "2026-09-28",
+          "last_msg": "feat: 「이대봉전」(작자 미상) 제작·업로드 — 고전소설 시�",
           "branch": "main",
           "activity": [
-            1,
             0,
             7,
             0,
             2,
             3,
+            2,
             0
           ],
-          "commits_7d": 17,
-          "commits_30d": 59
+          "commits_7d": 15,
+          "commits_30d": 56
         },
         {
           "name": "go-delegator",
@@ -78,7 +78,7 @@
           "last_msg": "chore: 테스트 부산물 log/test.stderr 를 저장소에서 제거",
           "branch": "develop",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -86,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 2,
           "commits_30d": 13
         },
         {
@@ -95,7 +95,7 @@
           "last_msg": "chore(delegator): testnet 대납 쓰기 레이트리밋 60/120 → 5/30 (mainnet",
           "branch": "master",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 74
+          "commits_30d": 72
         },
         {
           "name": "go-delegator-prod",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 43
+          "commits_30d": 41
         },
         {
           "name": "cplabs_homepage",
@@ -725,37 +725,37 @@
       "repos": [
         {
           "name": "life",
-          "last_date": "2026-09-27",
-          "last_msg": "side-work: Mercor 남은 지원 3건 불합격(9/27), 현황판·README 갱신",
+          "last_date": "2026-09-28",
+          "last_msg": "README: 진행 중 표 2026-09-28 기준 갱신(인프라 규칙·후속 메일 ",
           "branch": "main",
           "activity": [
-            1,
             0,
             2,
             1,
             1,
             0,
+            1,
             1
           ],
-          "commits_7d": 6,
-          "commits_30d": 136
+          "commits_7d": 7,
+          "commits_30d": 137
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-27",
-          "last_msg": "record the third briefick entry for sunday, reaching the daily cap",
+          "last_date": "2026-09-28",
+          "last_msg": "log the afternoon: edp brief artifact, court brief hand-off, prod ecr image clea",
           "branch": "mini-jsong",
           "activity": [
-            13,
             14,
             4,
             10,
             14,
             5,
-            10
+            10,
+            2
           ],
-          "commits_7d": 70,
-          "commits_30d": 283
+          "commits_7d": 61,
+          "commits_30d": 285
         },
         {
           "name": "privacy-map",
@@ -763,15 +763,15 @@
           "last_msg": "record how out/ was rebuilt after the working copy was deleted",
           "branch": "main",
           "activity": [
-            11,
             5,
             1,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 17,
+          "commits_7d": 6,
           "commits_30d": 53
         },
         {
@@ -840,7 +840,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 11
         },
         {
           "name": "business",
