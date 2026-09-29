@@ -1,0 +1,42 @@
+---
+title: "Engineering the Feedback Loop: Automating Visibility and System Resilience"
+date: "2026-09-29"
+lang: en
+excerpt: "Engineering the Feedback Loop: Automating Visibility and System Resilience  As a CTO and engineer, I’ve always believed that the most dangerous state ..."
+---
+
+# Engineering the Feedback Loop: Automating Visibility and System Resilience
+
+As a CTO and engineer, I’ve always believed that the most dangerous state for a system—or a development team—is "silent failure." Whether it's a network packet dropping without a trace or a developer working in a vacuum without visibility, silence is where technical debt and operational risks accumulate.
+
+Today’s work was a mix of maintaining my personal engineering dashboard and solving a critical stability issue in one of my active projects. While the git diff for my personal site (`jsong1230.github.io`) looks like a simple data update, it represents a larger philosophy I've applied throughout my career at **CPLABS**: the importance of the automated feedback loop.
+
+### The Power of the Dashboard: Measuring Velocity
+
+The commit `chore: Update dashboard data` might seem mundane, but it is the output of an automated pipeline that tracks my activity across multiple repositories. Looking at the diff, you can see the shift in focus:
+
+```json
+- "last_msg": "[main] docs(CHANGELOG): prod 최신화 배포 기록 — EC2 빌드 호스트"
++ "last_msg": "[main] fix(probe): DNS 조회도 3회 재시도 — 110 사내 resolver 순간"
+```
+
+This change in the `heritageradio` repo highlights a specific technical decision made today: **implementing a retry mechanism for DNS lookups.**
+
+In a distributed environment, we often treat DNS as a constant. However, as anyone who has managed large-scale infrastructure at **CPLABS** knows, internal resolvers can experience momentary "blips" or timeouts (the dreaded "momentary 110" error). By implementing a 3-time retry logic for the probe, I've shifted the system from a "fail-fast" approach to a "resilient" approach. In the context of monitoring probes, a single failed DNS lookup shouldn't trigger a critical alert; it should trigger a retry.
+
+### Insights from the Code: Activity and Focus
+
+Looking at the activity arrays in `dashboard.json`, I can see the distribution of my cognitive load. The `claude-agent` repository continues to show high velocity (72 commits in 7 days), while `booksummary` shows a steady, rhythmic pace of completion.
+
+This data-driven view of my own productivity allows me to make a conscious decision about where to allocate my "deep work" hours. If I see a spike in a specific repo, I can analyze whether that's due to a planned feature push or an unplanned fire-fighting session.
+
+### Technical Reflection: Resilience over Perfection
+
+The transition from "updating changelogs" to "fixing DNS probes" is a microcosm of the engineering lifecycle. We spend a lot of time building the "happy path," but the real value of a Senior Engineer or CTO lies in anticipating the "unhappy path."
+
+**Key takeaways from today's changes:**
+1. **Don't Trust the Network:** Whether it's a blockchain node or a simple DNS resolver, always assume the network is unreliable. Implement exponential backoff or simple retries for idempotent operations.
+2. **Automate Your Metrics:** By automating the `dashboard.json` update, I remove the friction of self-reporting. When the data is generated automatically, it becomes an objective mirror of my progress.
+3. **Context Switching Management:** By tracking activity across `go-delegator`, `claude-agent`, and others, I can visually identify when I am spread too thin across too many contexts.
+
+Engineering is not just about writing code that works; it's about building systems—both technical and personal—that provide the visibility needed to improve. Today was a step toward both.
