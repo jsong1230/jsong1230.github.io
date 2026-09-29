@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-09-28T23:00:01.307Z",
+  "generated_at": "2026-09-29T23:00:01.406Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "booksummary",
+          "last_date": "2026-09-30",
+          "last_msg": "feat: 「설공찬전」(채수) 제작·업로드 — 고전소설 시리즈 2 ",
+          "branch": "main",
+          "activity": [
+            7,
+            0,
+            2,
+            3,
+            2,
+            1,
+            1
+          ],
+          "commits_7d": 16,
+          "commits_30d": 57
+        },
+        {
           "name": "heritageradio",
-          "last_date": "2026-09-28",
-          "last_msg": "[main] fix(probe): DNS 조회도 3회 재시도 — 110 사내 resolver 순간 �",
+          "last_date": "2026-09-29",
+          "last_msg": "[main] fix(monitor): 일일 점검이 hcio GRACE 를 이상으로 세지 않게",
           "branch": "dev",
           "activity": [
-            0,
             3,
             0,
             0,
             8,
             11,
+            1,
             0
           ],
-          "commits_7d": 26,
+          "commits_7d": 23,
           "commits_30d": 144
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-09-28",
+          "last_date": "2026-09-29",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 68
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-09-28",
-          "last_msg": "docs(log): 18:20 first automatic progress report of m1.2.0 clean syncs delivered",
+          "last_date": "2026-09-29",
+          "last_msg": "docs(log): 09-29 clean-sync checks, full fleet survey, briefick registration (21",
           "branch": "gram-jsong",
           "activity": [
-            7,
             30,
             6,
             11,
             7,
             8,
-            0
-          ],
-          "commits_7d": 72,
-          "commits_30d": 350
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-09-28",
-          "last_msg": "feat: 「이대봉전」(작자 미상) 제작·업로드 — 고전소설 시�",
-          "branch": "main",
-          "activity": [
-            0,
-            7,
-            0,
-            2,
-            3,
             2,
             0
           ],
-          "commits_7d": 15,
-          "commits_30d": 56
+          "commits_7d": 69,
+          "commits_30d": 325
         },
         {
           "name": "go-delegator",
@@ -86,7 +86,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 13
         },
         {
@@ -103,7 +103,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 94
         },
         {
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 72
+          "commits_30d": 71
         },
         {
           "name": "go-delegator-prod",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 41
+          "commits_30d": 40
         },
         {
           "name": "cplabs_homepage",
@@ -725,20 +725,37 @@
       "repos": [
         {
           "name": "life",
-          "last_date": "2026-09-28",
-          "last_msg": "README: 진행 중 표 2026-09-28 기준 갱신(인프라 규칙·후속 메일 ",
+          "last_date": "2026-09-29",
+          "last_msg": "finance: 현대백화점카드 상품설명서 반영(사용처·5% 쿠폰·무�",
           "branch": "main",
           "activity": [
-            0,
             2,
             1,
             1,
             0,
             1,
+            1,
+            3
+          ],
+          "commits_7d": 9,
+          "commits_30d": 140
+        },
+        {
+          "name": "flex",
+          "last_date": "2026-09-29",
+          "last_msg": "init: flex DID collaboration session with the 2026-09-29 MOU and technical meeti",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1
           ],
-          "commits_7d": 7,
-          "commits_30d": 137
+          "commits_7d": 1,
+          "commits_30d": 1
         },
         {
           "name": "claude-agent",
@@ -746,16 +763,16 @@
           "last_msg": "log the afternoon: edp brief artifact, court brief hand-off, prod ecr image clea",
           "branch": "mini-jsong",
           "activity": [
-            14,
             4,
             10,
             14,
             5,
             10,
-            2
+            2,
+            0
           ],
-          "commits_7d": 61,
-          "commits_30d": 285
+          "commits_7d": 46,
+          "commits_30d": 264
         },
         {
           "name": "privacy-map",
@@ -763,15 +780,15 @@
           "last_msg": "record how out/ was rebuilt after the working copy was deleted",
           "branch": "main",
           "activity": [
-            5,
             1,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 1,
           "commits_30d": 53
         },
         {
@@ -840,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 10
         },
         {
           "name": "business",
