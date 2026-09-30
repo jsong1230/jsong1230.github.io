@@ -1,0 +1,53 @@
+---
+title: "Bridging the Gap Between Automation and Art: A CTO's Engineering Log"
+date: "2026-09-30"
+lang: en
+excerpt: "Bridging the Gap Between Automation and Art: Today's Engineering Log  As a CTO, my daily routine often oscillates between high-level architectural dec..."
+---
+
+# Bridging the Gap Between Automation and Art: Today's Engineering Log
+
+As a CTO, my daily routine often oscillates between high-level architectural decisions and the granular "grit" of implementation. Today was a perfect example of this duality. My work spanned from maintaining the observability of my personal development dashboard to the intricate pipeline of an AI-driven content creation project.
+
+Here is a summary of today's technical journey.
+
+### 1. Observability and the "Developer Heartbeat"
+I started the day by updating my personal dashboard data (`jsong1230.github.io`). While updating a JSON file might seem like a trivial `chore`, I view this as a form of **personal observability**. 
+
+By tracking commit velocity across various repositories—such as `claude-agent` and `heritageradio`—I can visualize my cognitive load and focus areas. For instance, seeing a spike in `claude-agent` activity (69 commits in 7 days) confirms that my current focus is heavily weighted toward autonomous agent orchestration. In a corporate environment at **CPLABS**, we apply this same principle to system monitoring: you cannot optimize what you do not measure.
+
+### 2. The "BookSummary" Pipeline: Engineering Content
+The bulk of today's deep work was dedicated to the `booksummary` project, specifically the production of a video summary for the classic Korean novel *The Tale of Seol Gongchan* (설공찬전). 
+
+This isn't just "making a video"; it is a complex data pipeline involving LLMs, image generation, and automated rendering.
+
+#### Technical Problem Solving: The "NotebookLM" Race Condition
+One of the most interesting fixes today was in `nlm_episode_oneshot.py`. I encountered a recurring failure where the script attempted to fetch data before the NotebookLM "notebook creation" process had finished.
+
+**The Decision:** I implemented a polling mechanism with a maximum timeout of 120 seconds.
+> `nlm_episode_oneshot`: 「노트북 생성 중」(/notebook/creating) 이 끝날 때까지 최대 120초 대기 — 소스 추가 전부 실패 재발 방지
+
+In distributed systems, we often deal with "eventual consistency." Here, the AI's internal processing is the asynchronous event. Adding a robust wait-state prevents the entire pipeline from collapsing due to a transient latency issue.
+
+#### Data Curation and Prompt Engineering
+For the visual layer, I utilized **Flux** for image generation. I realized that some generated images contained "hallucinated" text (a common issue with diffusion models), which broke the immersion.
+
+**The Fix:** I discarded 9 images containing garbled text and generated 40 new scenes via `gen_flux_seol.py`. By mixing 66 stock images with 31 high-quality Flux generations, I achieved a total of 97 assets, ensuring a seamless visual flow.
+
+### 3. Insights from the Diff
+Looking at the `booksummary` diff, the rigor of the source selection is evident. I didn't just feed the AI a Wikipedia link; I curated a multi-source dataset:
+- **Encyclopedic data** for structure.
+- **Wikipedia** for narrative detail.
+- **The Annals of the Joseon Dynasty (중종실록)** for primary historical evidence.
+
+This "triangulation" of data is exactly how we approach DID (Decentralized Identity) or Blockchain forensics—verifying a single truth across multiple independent sources to eliminate bias and error.
+
+### Final Thoughts
+Today reminded me that whether I am building a blockchain infrastructure at **CPLABS** or an AI content pipeline, the core engineering principles remain the same: **handle the edge cases (timeouts), validate your data sources, and never settle for "good enough" when the visual or technical output is flawed.**
+
+The intersection of AI and humanities is a fascinating frontier. By automating the mundane (rendering, data fetching), we free up the human mind to focus on the creative direction and historical accuracy.
+
+***
+
+**Jeffrey Joo-Han Song**
+*CTO & Engineer*
