@@ -1,0 +1,49 @@
+---
+title: "Engineering the Feedback Loop: The Value of an Automated Development Dashboard"
+date: "2026-10-03"
+lang: en
+excerpt: "Engineering the Feedback Loop: The Value of an Automated Development Dashboard  As a CTO and engineer with over two decades of experience, I’ve learne..."
+---
+
+# Engineering the Feedback Loop: The Value of an Automated Development Dashboard
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical leader is "blindness"—not knowing exactly where the momentum is shifting across various projects until a deadline is missed or a bug surfaces. Whether I am architecting a DID system or scaling AI agents, visibility is the prerequisite for optimization.
+
+Today's work was a "chore" in the git sense—updating the `dashboard.json` for my personal site—but it represents a larger technical philosophy I've applied throughout my career, including my time at **CPLABS**.
+
+### The Problem: The Fragmentation of Focus
+
+When you manage multiple repositories—ranging from validator nodes and AI agents (`claude-agent`) to content platforms (`heritageradio`)—it is easy to lose track of the "velocity" of each project. Standard git logs tell you *what* happened, but they don't easily tell you *where the energy is flowing* across a diverse portfolio of work.
+
+To solve this, I maintain a data-driven dashboard that aggregates commit activity, last-modified dates, and commit counts over 7-day and 30-day windows.
+
+### Technical Decisions: Data-Driven Visibility
+
+The recent update to `src/data/dashboard.json` reflects a shift in my current development priorities. Looking at the diff, we can see a significant uptick in activity for specific modules:
+
+```json
+"name": "heritageradio",
+"last_date": "2026-10-02",
+"last_msg": "[admin] fix(admin): 5월 조회 범위를 1일부터...",
+"commits_7d": 32,
+"commits_30d": 152
+```
+
+By quantifying activity (the `activity` array and `commits_7d` metrics), I can objectively analyze my productivity. For instance, seeing `heritageradio` jump to 32 commits in a week while the `validator` repo remains stable tells me that my focus has shifted from infrastructure maintenance to feature refinement and administrative fixes.
+
+### Insights from the Code
+
+One interesting part of today's update is the `validator` repository's last message: 
+`"bifrost validator 운영 런북 — 규칙·감시·장애대응·키 절차..."`
+
+This highlights a critical transition in the lifecycle of any high-stakes system (like a blockchain validator): moving from **active development** to **operational stability**. Writing a "Runbook" (런북) is often less glamorous than writing new features, but from my experience at **CPLABS**, the difference between a professional system and an amateur one is the quality of its disaster recovery and operational documentation. 
+
+If a validator kicks out a node at 3 AM, you don't want to be "innovating"—you want a checklist.
+
+### Final Thoughts
+
+While updating a JSON file might seem trivial, it is part of a larger system of self-monitoring. In the world of Web3 and AI, where the pace of change is exponential, the ability to zoom out and see your trajectory is invaluable. 
+
+The goal isn't just to write more code, but to ensure that the code being written aligns with the strategic goals of the moment. Today's data shows a healthy balance between maintaining critical infrastructure (Validator) and iterating on user-facing products (Heritage Radio).
+
+**Stay disciplined, stay visible.**
