@@ -1,0 +1,44 @@
+---
+title: "Maintaining the Pulse: The Importance of Automated Observability in Development"
+date: "2026-10-04"
+lang: en
+excerpt: "Maintaining the Pulse: The Importance of Automated Observability in Development  As an engineer and CTO with over two decades of experience, I’ve lear..."
+---
+
+# Maintaining the Pulse: The Importance of Automated Observability in Development
+
+As an engineer and CTO with over two decades of experience, I’ve learned that the most dangerous state for a project isn't a bug—it's silence. Whether you are managing a massive infrastructure at **CPLABS** or maintaining a personal suite of AI agents and blockchain validators, knowing exactly *where* the momentum is shifting is critical for effective resource allocation.
+
+Today’s work was a reflection of this philosophy. While the git diff might look like a simple data update, it represents the heartbeat of my current development ecosystem.
+
+### The Work: Syncing the Dashboard
+
+Today's primary task was updating the `dashboard.json` for my personal tracking site. This file acts as a centralized telemetry hub, aggregating activity across multiple repositories—ranging from the `heritageradio` project to my `claude-agent` and `booksummary` experiments.
+
+```json
+-  "generated_at": "2026-10-02T23:00:01.651Z",
++  "generated_at": "2026-10-03T23:00:01.955Z",
+```
+
+At first glance, this is a "chore" commit. However, from a technical perspective, this is the output of an automated pipeline designed to quantify productivity and project health. By tracking `commits_7d` and `commits_30d`, I can visualize the velocity of each project.
+
+### Technical Decisions & Insights
+
+Looking at the diff, a few interesting shifts stand out:
+
+**1. Security Hardening in Production**
+In the `heritageradio` repo, the commit message `"[admin] fix(audio): /audio/voice_refs/* 는 어드민 토큰이 있어야 서빙"` indicates a critical pivot toward tighter access control. In Web3 and DID-centric environments, we often talk about decentralization, but in practical application, the "Admin" layer must be ironclad. Ensuring that sensitive assets are served only via authenticated tokens is a fundamental security practice I've consistently implemented throughout my tenure at **CPLABS**.
+
+**2. The Iterative Nature of AI Experimentation**
+The `booksummary` update—`"feat: 제목 「줄거리」 실험 시작 — 처치 3편·대조 4편"`—highlights my current approach to AI content generation. I am treating LLM output not as a "final product," but as a scientific experiment. By using treatment (처치) and control (대조) groups, I can quantitatively measure which prompting strategies yield better summaries. This "A/B testing" mindset is the only way to move beyond the "vibes-based" evaluation of AI and toward actual engineering.
+
+**3. Fleet Management**
+The `claude-agent` logs (`full gmet fleet survey (no anomalies)`) show the shift from writing code to managing "agents." As we move further into the era of AI agents, the role of the CTO evolves into that of a "Fleet Commander," ensuring that autonomous processes are operating within expected parameters without anomalies.
+
+### Final Thoughts
+
+Many developers overlook the value of a personal dashboard, viewing it as vanity. But in my experience, **what is measured is managed.** 
+
+Whether it's monitoring a validator's uptime or tracking the commit velocity of an experimental AI agent, having a single source of truth allows me to spot stagnation before it becomes a problem. Today's update is a reminder that consistency—the daily act of syncing, reviewing, and adjusting—is what separates a successful project from a forgotten repository.
+
+Stay curious, and keep your telemetry running.
