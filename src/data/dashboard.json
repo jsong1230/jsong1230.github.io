@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-10-03T23:00:01.955Z",
+  "generated_at": "2026-10-04T23:00:01.214Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-10-03",
-          "last_msg": "[admin] fix(audio): /audio/voice_refs/* 는 어드민 토큰이 있어야 서빙",
+          "last_date": "2026-10-05",
+          "last_msg": "[admin] fix(cycle-confirm): 날짜 폴더 연도를 2026 고정 대신 오늘과",
           "branch": "dev",
           "activity": [
-            11,
             1,
             0,
             9,
             3,
             5,
-            0
+            7,
+            3
           ],
-          "commits_7d": 37,
-          "commits_30d": 156
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-03",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-03",
-          "last_msg": "docs(log): 10-03 151 sync checks and full gmet fleet survey (no anomalies)",
-          "branch": "gram-jsong",
-          "activity": [
-            8,
-            2,
-            2,
-            8,
-            1,
-            1,
-            0
-          ],
-          "commits_7d": 28,
-          "commits_30d": 255
+          "commits_7d": 39,
+          "commits_30d": 166
         },
         {
           "name": "booksummary",
-          "last_date": "2026-10-03",
-          "last_msg": "feat: 제목 「줄거리」 실험 시작 — 처치 3편·대조 4편, 11/03 �",
+          "last_date": "2026-10-05",
+          "last_msg": "feat: 「숙영낭자전」(작자 미상) 제작·업로드 — 고전소설 �",
           "branch": "main",
           "activity": [
-            2,
             1,
             1,
             1,
             0,
             2,
+            1,
+            1
+          ],
+          "commits_7d": 9,
+          "commits_30d": 52
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-04",
+          "last_msg": "Auto-generate weekly recap",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
             0
           ],
-          "commits_7d": 10,
-          "commits_30d": 52
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-04",
+          "last_msg": "docs(log): 10-04 full infra check (no anomalies; AWS scheduled reboot 10/9 noted",
+          "branch": "gram-jsong",
+          "activity": [
+            2,
+            2,
+            8,
+            1,
+            1,
+            2,
+            0
+          ],
+          "commits_7d": 24,
+          "commits_30d": 209
         },
         {
           "name": "validator",
@@ -80,14 +80,14 @@
           "activity": [
             0,
             0,
-            0,
             5,
             11,
+            0,
             0,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 22
+          "commits_30d": 21
         },
         {
           "name": "go-delegator",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 72
+          "commits_30d": 62
         },
         {
           "name": "go-metadium-m114",
@@ -724,55 +724,55 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "health",
+          "last_date": "2026-10-04",
+          "last_msg": "9/16 진료 시 혈액검사 언급 없었음 확인",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            8
+          ],
+          "commits_7d": 9,
+          "commits_30d": 30
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-04",
+          "last_msg": "log 10/4: imac mail originals deleted by user, wd copy is now the only copy",
+          "branch": "mini-jsong",
+          "activity": [
+            2,
+            0,
+            3,
+            6,
+            7,
+            2,
+            5
+          ],
+          "commits_7d": 25,
+          "commits_30d": 181
+        },
+        {
           "name": "life",
           "last_date": "2026-10-03",
           "last_msg": "family: 아내 토론토 1년 체류(9/30 출국, 2027-09 초 귀국 예정)·�",
           "branch": "main",
           "activity": [
             1,
-            1,
             3,
             2,
             0,
             0,
-            2
-          ],
-          "commits_7d": 9,
-          "commits_30d": 140
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-03",
-          "last_msg": "log 10/3: heritageradio dev audio exposure fixed, prod not exposed",
-          "branch": "mini-jsong",
-          "activity": [
-            10,
             2,
-            0,
-            3,
-            6,
-            7,
-            2
-          ],
-          "commits_7d": 32,
-          "commits_30d": 204
-        },
-        {
-          "name": "health",
-          "last_date": "2026-09-30",
-          "last_msg": "10/2 중간 처방 수령 계획 — 15정 유지·영수증·검사 결과지 �",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            1,
-            0,
-            0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 22
+          "commits_7d": 8,
+          "commits_30d": 140
         },
         {
           "name": "flex",
@@ -781,8 +781,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
