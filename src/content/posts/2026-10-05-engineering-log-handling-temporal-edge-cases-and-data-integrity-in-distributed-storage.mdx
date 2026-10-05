@@ -1,0 +1,55 @@
+---
+title: "Engineering Log: Handling Temporal Edge Cases and Data Integrity in Distributed Storage"
+date: "2026-10-05"
+lang: en
+excerpt: "Engineering Log: Handling Temporal Edge Cases and Data Integrity in Distributed Storage  As a CTO and engineer, I've learned that the most elusive bug..."
+---
+
+# Engineering Log: Handling Temporal Edge Cases and Data Integrity in Distributed Storage
+
+As a CTO and engineer, I've learned that the most elusive bugs often hide in the "obvious" assumptions—specifically regarding time and the definition of a "source of truth." Today's development work across the CPLABS ecosystem focused on refining these exact points: moving from hardcoded assumptions to dynamic logic and aligning local caches with cloud reality.
+
+## 1. Solving the "Year 2026" Trap: Dynamic Date Resolution
+
+In the `heritageradio` admin service, I encountered a classic temporal bug. The system was interpreting date folders (formatted as `MMDD`) by hardcoding the year to 2026. While this worked for the current operating cycle, it created a failure point for the transition into 2027.
+
+Because the day of the week shifts every year, interpreting a 2027 date using a 2026 calendar causes a mismatch. This led to the system failing to recognize Sundays, which in turn broke the "Saturday confirmation $\rightarrow$ Sunday confirmation" linkage in the `scan_status` logic.
+
+**The Technical Decision:**
+Instead of a fixed year, I implemented a "closest occurrence" logic. Since build folders typically exist within a few weeks of the current date, the system now evaluates the date across the previous, current, and next year, selecting the one closest to today.
+
+```python
+# Key logic: Find the closest date among y-1, y, y+1
+cands = []
+for y in (today.year - 1, today.year, today.year + 1):
+    try:
+        cands.append(datetime.date(y, mm, dd))
+    except ValueError:
+        continue  # Handle Feb 29th in non-leap years
+
+return min(cands, key=lambda d: (abs((d - today).days), d < today))
+```
+*Insight:* When dealing with recurring annual patterns, never hardcode the year. Always define a window of relevance.
+
+## 2. Redefining the Source of Truth: S3 vs. Local NVMe
+
+Another critical fix was applied to the `verify_news_era` script. After migrating to AWS, our builder reads exclusively from S3, while the local NVMe storage acts merely as a cache/copy. However, the verification script was still treating the local disk as the "source of truth."
+
+This resulted in "false positives" for missing files—specifically, 725 existing episodes were flagged as `file_missing` simply because the local copy hadn't been synced, even though the files were perfectly safe in S3.
+
+**The Fix:**
+I inverted the priority. S3 is now the primary authority.
+- **S3 Missing:** Critical error (`s3_missing`), as the builder cannot find the file.
+- **Local Missing:** Normal behavior. The system now falls back to DB duration values or downloads a temporary copy from S3 to perform loudness/silence spot checks.
+
+This shift ensures that our quality audits reflect the actual state of the production environment rather than the state of a local cache.
+
+## 3. Content Strategy: Data-Driven Selection in `booksummary`
+
+Beyond the infrastructure, I spent time on the `booksummary` project, applying a rigorous screening pipeline to select the next batch of literary works. 
+
+By analyzing Naver search demand and competition ratios, I identified a new "growth axis": **CSAT (Suneung) Special Lecture literature**. Works like *The Gift of a Bird* (은희경) show a recurring, high-intent demand from students every year. This is a repeatable pattern—similar to what we saw with classical novels—allowing us to move from "guessing" what's popular to "calculating" it.
+
+## Final Thoughts
+
+Today's work highlights a recurring theme in long-term system maintenance: **the decay of assumptions.** A hardcoded year or a local-first file check is a shortcut that eventually becomes a bug. By implementing dynamic date resolution and cloud-first verification, we've made the CPLABS infrastructure more resilient to the passage of time and the realities of distributed storage.
