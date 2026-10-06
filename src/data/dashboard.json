@@ -1,98 +1,13 @@
 {
-  "generated_at": "2026-10-05T23:00:01.465Z",
+  "generated_at": "2026-10-06T23:00:01.705Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "heritageradio",
-          "last_date": "2026-10-05",
-          "last_msg": "[admin] fix(cycle-confirm): 날짜 폴더 연도를 2026 고정 대신 오늘과",
-          "branch": "dev",
-          "activity": [
-            0,
-            9,
-            3,
-            5,
-            7,
-            3,
-            0
-          ],
-          "commits_7d": 28,
-          "commits_30d": 166
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-05",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-05",
-          "last_msg": "m1.2.1: cplabs gate-1 mainnet pass received; prepare t-exp01/t-api01 swap script",
-          "branch": "gram-jsong",
-          "activity": [
-            2,
-            8,
-            1,
-            1,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 18,
-          "commits_30d": 199
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-05",
-          "last_msg": "feat: 「새의 선물」(은희경) 제작·업로드 — 4차 풀 1순위, 첫",
-          "branch": "main",
-          "activity": [
-            1,
-            1,
-            0,
-            2,
-            1,
-            3,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 54
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-10-02",
-          "last_msg": "bifrost validator 운영 런북 — 규칙·감시·장애대응·키 절차·�",
-          "branch": "master",
-          "activity": [
-            0,
-            5,
-            11,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 21
-        },
-        {
           "name": "go-delegator",
-          "last_date": "2026-09-22",
-          "last_msg": "chore: 테스트 부산물 log/test.stderr 를 저장소에서 제거",
+          "last_date": "2026-10-06",
+          "last_msg": "merge: 노드 failover + 공개 forward 허용 목록 (mainnet 백엔드 이중�",
           "branch": "develop",
           "activity": [
             0,
@@ -100,16 +15,16 @@
             0,
             0,
             0,
-            0,
+            2,
             0
           ],
-          "commits_7d": 0,
-          "commits_30d": 13
+          "commits_7d": 2,
+          "commits_30d": 15
         },
         {
           "name": "metadium-explorer-stack",
-          "last_date": "2026-09-22",
-          "last_msg": "chore(delegator): testnet 대납 쓰기 레이트리밋 60/120 → 5/30 (mainnet",
+          "last_date": "2026-10-06",
+          "last_msg": "feat(delegator): 백엔드 이중화 배포 스크립트 (testnet 이미지 전�",
           "branch": "master",
           "activity": [
             0,
@@ -117,11 +32,96 @@
             0,
             0,
             0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 49
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-06",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-06",
+          "last_msg": "docs(log): 10-06 soak round-2 verdict pending",
+          "branch": "gram-jsong",
+          "activity": [
+            8,
+            1,
+            1,
+            2,
+            2,
+            22,
+            0
+          ],
+          "commits_7d": 38,
+          "commits_30d": 209
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-06",
+          "last_msg": "feat: 「하늘은 맑건만」(현덕) 제작·업로드 — 4차 풀 2순위, ",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            2,
+            1,
+            3,
+            1,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 55
+        },
+        {
+          "name": "heritageradio",
+          "last_date": "2026-10-05",
+          "last_msg": "[admin] fix(cycle-confirm): 날짜 폴더 연도를 2026 고정 대신 오늘과",
+          "branch": "dev",
+          "activity": [
+            9,
+            3,
+            5,
+            7,
+            3,
             0,
             0
           ],
-          "commits_7d": 0,
-          "commits_30d": 50
+          "commits_7d": 27,
+          "commits_30d": 166
+        },
+        {
+          "name": "validator",
+          "last_date": "2026-10-02",
+          "last_msg": "bifrost validator 운영 런북 — 규칙·감시·장애대응·키 절차·�",
+          "branch": "master",
+          "activity": [
+            5,
+            11,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 20
         },
         {
           "name": "go-metadium-m114",
@@ -724,21 +724,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-10-06",
+          "last_msg": "health: 매일 21:30 텔레그램 걷기 점검 알림 설정 기록",
+          "branch": "main",
+          "activity": [
+            2,
+            0,
+            0,
+            2,
+            0,
+            0,
+            6
+          ],
+          "commits_7d": 10,
+          "commits_30d": 146
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-10-05",
-          "last_msg": "log 10/5: mail check, people team weekly report analysis, heritageradio pending ",
+          "last_date": "2026-10-06",
+          "last_msg": "log 10/6: evening mail check",
           "branch": "mini-jsong",
           "activity": [
-            0,
             3,
             6,
             7,
             2,
             5,
-            1
+            1,
+            28
           ],
-          "commits_7d": 24,
-          "commits_30d": 179
+          "commits_7d": 52,
+          "commits_30d": 197
         },
         {
           "name": "health",
@@ -746,33 +763,16 @@
           "last_msg": "9/16 진료 시 혈액검사 언급 없었음 확인",
           "branch": "main",
           "activity": [
-            0,
             1,
             0,
             0,
             0,
             8,
+            0,
             0
           ],
           "commits_7d": 9,
           "commits_30d": 30
-        },
-        {
-          "name": "life",
-          "last_date": "2026-10-03",
-          "last_msg": "family: 아내 토론토 1년 체류(9/30 출국, 2027-09 초 귀국 예정)·�",
-          "branch": "main",
-          "activity": [
-            3,
-            2,
-            0,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 140
         },
         {
           "name": "flex",
@@ -780,7 +780,7 @@
           "last_msg": "init: flex DID collaboration session with the 2026-09-29 MOU and technical meeti",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -788,7 +788,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
