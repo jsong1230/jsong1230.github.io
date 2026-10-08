@@ -1,25 +1,110 @@
 {
-  "generated_at": "2026-10-07T23:00:01.221Z",
+  "generated_at": "2026-10-08T23:00:01.762Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-09",
+          "last_msg": "feat: 「소설가 구보씨의 일일」(박태원) 제작·업로드 — 5차 ",
+          "branch": "main",
+          "activity": [
+            2,
+            1,
+            3,
+            1,
+            3,
+            2,
+            1
+          ],
+          "commits_7d": 13,
+          "commits_30d": 59
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-10-08",
+          "last_msg": "chore(backend): 서브모듈 051ed9d3 — PR #58 (22P05·깊이 상한·null SQL",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            5,
+            0
+          ],
+          "commits_7d": 7,
+          "commits_30d": 48
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-08",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-08",
+          "last_msg": "docs(log): 10-08 gmet fleet survey 20:46",
+          "branch": "gram-jsong",
+          "activity": [
+            1,
+            2,
+            2,
+            22,
+            21,
+            9,
+            0
+          ],
+          "commits_7d": 58,
+          "commits_30d": 224
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-10-08",
+          "last_msg": "K-BTF 공공기관 도입 채널 이미지 교체 및 레이아웃 개선 (국/�",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          "commits_7d": 5,
+          "commits_30d": 5
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-10-07",
           "last_msg": "[admin] docs+chore: 10/02~10/07 진행 기록 · NEWS_ERA 블록 실행 도구 r",
           "branch": "dev",
           "activity": [
-            3,
             5,
             7,
             3,
             0,
             2,
+            0,
             0
           ],
-          "commits_7d": 29,
-          "commits_30d": 168
+          "commits_7d": 20,
+          "commits_30d": 166
         },
         {
           "name": "go-delegator",
@@ -30,9 +115,9 @@
             0,
             0,
             0,
+            2,
+            2,
             0,
-            2,
-            2,
             0
           ],
           "commits_7d": 4,
@@ -44,84 +129,16 @@
           "last_msg": "런북: 메모리 경보 기준 8GB 반영",
           "branch": "master",
           "activity": [
-            11,
             0,
             0,
             0,
             0,
             2,
+            0,
             0
           ],
-          "commits_7d": 18,
-          "commits_30d": 22
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-10-07",
-          "last_msg": "fix(delegator): 이중화 배포물을 0f68751 로 — 빈 method 헬스체크 �",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 48
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-07",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-07",
-          "last_msg": "docs(log): 10-07 gmet fleet survey 23:02",
-          "branch": "gram-jsong",
-          "activity": [
-            1,
-            1,
-            2,
-            2,
-            22,
-            21,
-            0
-          ],
-          "commits_7d": 54,
-          "commits_30d": 227
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-07",
-          "last_msg": "chore: 5차 후보 재공급 — 수특 신규작 수요 전멸, 미제작 통�",
-          "branch": "main",
-          "activity": [
-            0,
-            2,
-            1,
-            3,
-            1,
-            3,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 58
+          "commits_7d": 12,
+          "commits_30d": 19
         },
         {
           "name": "go-metadium-m114",
@@ -138,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 48
+          "commits_30d": 44
         },
         {
           "name": "go-delegator-prod",
@@ -206,24 +223,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 18
-        },
-        {
-          "name": "cplabs_homepage",
-          "last_date": "2026-09-02",
-          "last_msg": "사칭 피싱 주의 팝업 내림 (게시 2026-08-20 → 종료 2026-09-02)",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
+          "commits_30d": 14
         },
         {
           "name": "metadium_homepage",
@@ -725,54 +725,54 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-10-07",
-          "last_msg": "추석 요통: 다리저림 없음, 치료 없이 회복",
+          "last_date": "2026-10-08",
+          "last_msg": "추석 요통 강도 3/10",
           "branch": "main",
           "activity": [
-            0,
             0,
             0,
             8,
             0,
             0,
+            3,
+            1
+          ],
+          "commits_7d": 12,
+          "commits_30d": 34
+        },
+        {
+          "name": "life",
+          "last_date": "2026-10-08",
+          "last_msg": "health: 21:30 걷기 알림을 @vanjeffbot(mini-cplabs cron)으로 이전, gram ",
+          "branch": "main",
+          "activity": [
+            0,
+            2,
+            0,
+            0,
+            6,
+            0,
             3
           ],
           "commits_7d": 11,
-          "commits_30d": 33
+          "commits_30d": 110
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-10-07",
-          "last_msg": "log 10/7: iMac aws_backup.tar archived to R3, original removed",
+          "last_date": "2026-10-08",
+          "last_msg": "log 10/8: meta reply — #62 nudge posted, #22 closing via #39",
           "branch": "mini-jsong",
           "activity": [
-            6,
             7,
             2,
             5,
             1,
             28,
-            21
+            21,
+            27
           ],
-          "commits_7d": 70,
-          "commits_30d": 217
-        },
-        {
-          "name": "life",
-          "last_date": "2026-10-06",
-          "last_msg": "health: 매일 21:30 텔레그램 걷기 점검 알림 설정 기록",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            2,
-            0,
-            0,
-            6,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 146
+          "commits_7d": 91,
+          "commits_30d": 241
         },
         {
           "name": "flex",
