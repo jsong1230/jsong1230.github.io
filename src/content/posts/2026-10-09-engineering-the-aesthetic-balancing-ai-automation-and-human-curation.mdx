@@ -1,0 +1,55 @@
+---
+title: "Engineering the Aesthetic: Balancing AI Automation and Human Curation"
+date: "2026-10-09"
+lang: en
+excerpt: "Engineering the Aesthetic: Balancing AI Automation and Human Curation  As a CTO, I often find that the most challenging part of any project isn't the ..."
+---
+
+# Engineering the Aesthetic: Balancing AI Automation and Human Curation
+
+As a CTO, I often find that the most challenging part of any project isn't the initial architecture, but the "last mile"—the refinement process where raw technical output meets human quality standards. Today's work was a perfect reflection of this struggle, spanning from automated dashboard updates to the meticulous generation of AI-driven visual content for a literary project.
+
+## Automating the Pulse: Dashboard Maintenance
+
+The day started with a routine but essential update to my personal development dashboard (`jsong1230.github.io`). I’ve implemented a system that tracks my activity across various repositories—including work for **CPLABS** and several AI agent experiments—to maintain a transparent record of my technical trajectory.
+
+Looking at the diff in `dashboard.json`, you can see a significant spike in activity for the `claude-agent` repository:
+```json
+"name": "claude-agent",
+"last_msg": "docs(log): 10-08 gmet fleet survey 20:46",
+"commits_7d": 58,
+"commits_30d": 224
+```
+This reflects my current deep dive into AI agent orchestration. When managing multiple high-velocity projects, having a data-driven view of where my "engineering calories" are being spent is crucial for avoiding burnout and ensuring strategic alignment.
+
+## The "Last Mile" of Generative AI: The Kubo Project
+
+The core of today's effort was the production of a deep-dive analysis of Park Tae-won's *A Day in the Life of Kubo the Novelist*. While the pipeline (NotebookLM $\rightarrow$ TTS $\rightarrow$ Render) is largely automated, the visual layer—powered by Flux—presented a fascinating technical hurdle.
+
+### The Problem: The "Signage" Hallucination
+When prompting for "1934 Gyeongseong (Seoul)," the AI model had a tendency to over-populate the scenes with fake signage, calligraphy, and distorted text. In a professional production, these "AI artifacts" break immersion.
+
+**The technical failure:** My first batch of 88 images had an **80% rejection rate**. The model was trying too hard to be "authentic" by adding text to every wall and frame.
+
+### The Pivot: Negative Constraints via Prompt Engineering
+Instead of fighting the model with complex negative prompts, I made a strategic decision to change the *perspective* of the scenes. I shifted the focus from "exterior cityscapes" to "interior atmospheres" and "abstract details."
+
+I implemented a new generation script, `gen_flux_gubo.py`, with a specific strategy:
+- **Removal of Place Names:** Stripped specific location markers from the base prompt.
+- **Environmental Constraints:** Added keywords like `plain bare walls, no frames, no calligraphy`.
+- **Compositional Shift:** Focused on close-ups, back views, rainy streets, and still-life objects.
+
+The result? The usable rate jumped from 20% to over 70%. This is a prime example of how **domain knowledge (understanding the model's bias) outweighs brute-force iteration.**
+
+## Engineering Insights: The SSH Trap
+
+A small but interesting "gotcha" occurred during the rendering phase. I was using a remote command to check if the video creation process was still running:
+`ssh … 'pgrep -f 10_create_video'`
+
+I noticed the process never seemed to "finish." The insight? The `pgrep` pattern was so broad that **the SSH session itself**, which contained the string `10_create_video` in its command line, was being picked up by the search. I was essentially tracking the observer rather than the observed. The fix was simple: rely on the explicit "Production Complete" log entry rather than process IDs.
+
+## Final Thoughts
+
+Whether it's managing infrastructure at **CPLABS** or fine-tuning an AI art pipeline, the lesson remains the same: **Automation gets you 80% of the way, but the final 20% requires a critical eye and a willingness to pivot your technical approach.**
+
+True engineering isn't just about writing code that works; it's about refining the output until it meets the standard of excellence.
