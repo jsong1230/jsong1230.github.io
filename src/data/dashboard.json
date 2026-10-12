@@ -1,76 +1,76 @@
 {
-  "generated_at": "2026-10-11T23:00:01.673Z",
+  "generated_at": "2026-10-12T23:00:01.240Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-12",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-12",
+          "last_msg": "docs(log): 10-12 briefick explorer 0.5h, cap reached",
+          "branch": "gram-jsong",
+          "activity": [
+            21,
+            9,
+            5,
+            3,
+            1,
+            15,
+            0
+          ],
+          "commits_7d": 76,
+          "commits_30d": 239
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-12",
+          "last_msg": "fix: 업로드 재생목록이 숨기는 33편까지 채널 영상 열거 + 재�",
+          "branch": "main",
+          "activity": [
+            3,
+            2,
+            2,
+            1,
+            2,
+            4,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 52
+        },
         {
           "name": "validator",
           "last_date": "2026-10-11",
           "last_msg": "잔존 정지 컨테이너 2개 정리, telegram-bot 정지 유지",
           "branch": "master",
           "activity": [
-            0,
             2,
             0,
             0,
             1,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
           "commits_30d": 21
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-11",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-11",
-          "last_msg": "docs(log): 10-11 status check 16:07",
-          "branch": "gram-jsong",
-          "activity": [
-            22,
-            21,
-            9,
-            5,
-            3,
-            1,
-            0
-          ],
-          "commits_7d": 63,
-          "commits_30d": 229
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-11",
-          "last_msg": "feat: 「마의 산」(토마스 만) 제작·업로드 — 5차 풀 해외 장�",
-          "branch": "main",
-          "activity": [
-            1,
-            3,
-            2,
-            2,
-            1,
-            2,
-            0
-          ],
-          "commits_7d": 13,
-          "commits_30d": 58
         },
         {
           "name": "heritageradio",
@@ -78,16 +78,16 @@
           "last_msg": "[main] fix(probe): cert 만료일 읽기도 3회 재시도 — 단발 실패로 ",
           "branch": "dev",
           "activity": [
-            0,
             2,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 146
+          "commits_30d": 136
         },
         {
           "name": "metadium-explorer-stack",
@@ -96,15 +96,15 @@
           "branch": "master",
           "activity": [
             1,
-            1,
             5,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 7,
-          "commits_30d": 17
+          "commits_30d": 12
         },
         {
           "name": "cplabs_homepage",
@@ -113,8 +113,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             5,
+            0,
             0,
             0,
             0,
@@ -130,7 +130,7 @@
           "branch": "develop",
           "activity": [
             2,
-            2,
+            0,
             0,
             0,
             0,
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 12
+          "commits_30d": 10
         },
         {
           "name": "go-metadium-m114",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 10
         },
         {
           "name": "go-delegator-prod",
@@ -172,7 +172,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -724,21 +724,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "flex",
+          "last_date": "2026-10-12",
+          "last_msg": "notes: add DID design draft work plan",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 2
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-10-11",
-          "last_msg": "log 10/11: code review pilot reply sent to mini-home lab",
+          "last_date": "2026-10-12",
+          "last_msg": "log 10/12: swift#3 approved",
           "branch": "mini-jsong",
           "activity": [
-            1,
             28,
             21,
             27,
             9,
             1,
-            5
+            7,
+            61
           ],
-          "commits_7d": 92,
-          "commits_30d": 198
+          "commits_7d": 154,
+          "commits_30d": 260
         },
         {
           "name": "health",
@@ -747,9 +764,9 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             3,
             1,
+            0,
             0,
             0,
             0
@@ -763,33 +780,16 @@
           "last_msg": "health: 21:30 걷기 알림을 @vanjeffbot(mini-cplabs cron)으로 이전, gram ",
           "branch": "main",
           "activity": [
-            0,
             6,
             0,
             3,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 9,
-          "commits_30d": 107
-        },
-        {
-          "name": "flex",
-          "last_date": "2026-09-29",
-          "last_msg": "init: flex DID collaboration session with the 2026-09-29 MOU and technical meeti",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 96
         },
         {
           "name": "privacy-map",
