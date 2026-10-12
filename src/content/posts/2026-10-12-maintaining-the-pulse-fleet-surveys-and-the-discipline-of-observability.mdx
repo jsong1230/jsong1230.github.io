@@ -1,0 +1,47 @@
+---
+title: "Maintaining the Pulse: Fleet Surveys and the Discipline of Observability"
+date: "2026-10-12"
+lang: en
+excerpt: "Maintaining the Pulse: Fleet Surveys and the Discipline of Observability  As a CTO and engineer, I’ve learned that the most dangerous phrase in infras..."
+---
+
+# Maintaining the Pulse: Fleet Surveys and the Discipline of Observability
+
+As a CTO and engineer, I’ve learned that the most dangerous phrase in infrastructure management is *"It should be working."* In the world of blockchain nodes and validator fleets, "should" is not a metric. The only thing that matters is the current state of the ledger, the peer count, and the health of the process.
+
+Today’s work was a blend of high-level fleet auditing and the routine maintenance of my personal development dashboard. While these might seem like disparate tasks—one being a critical infrastructure check and the other a "chore" commit—they both stem from the same philosophy: **Observability.**
+
+## The Fleet Survey: Beyond the Green Light
+
+A significant portion of my day was spent conducting a comprehensive fleet survey for our `gmet` nodes. When managing 25+ units across mainnet and testnet, a simple "up/down" check is insufficient. 
+
+I performed a deep dive into the current state of the fleet, capturing a snapshot of the versioning (`1.2.1-stable`), block heights, syncing status, and peer counts. Looking at the raw data in my logs:
+
+```text
+bp1|mainnet BP(sealer)|/opt/meta|...|119744735|false|9|RocksDB
+...
+n183|사내 follower(testnet)|...|Fatal: Unable to attach to remote geth...|LevelDB
+```
+
+The value here isn't just in confirming that the sealers are functioning, but in identifying the anomalies. For instance, spotting the `Fatal` error on `n183` regarding the IPC socket (`gmet.ipc: connect: no such file or directory`) allows me to move from "monitoring" to "remediating" immediately. 
+
+At **CPLABS**, we prioritize this level of granularity. Whether it's a validator or an API indexer, knowing exactly which database engine (RocksDB vs. LevelDB) is being used on which node helps us diagnose performance bottlenecks that a generic monitoring tool would miss.
+
+## The Dashboard: Quantifying Momentum
+
+On the personal side, I updated my GitHub dashboard data. To some, updating a `dashboard.json` file feels like a chore. To me, it’s a way of tracking my "developer velocity."
+
+By analyzing the `commits_7d` and `commits_30d` metrics across my various repositories—from the `validator` logic to the `claude-agent` experiments—I can visualize where my intellectual energy is flowing. 
+
+Interestingly, the diff shows a shift in focus:
+- **Validator:** Increased activity (`commits_7d`: 3 $\rightarrow$ 5) as I cleaned up residual stopped containers and refined the Telegram bot status.
+- **Claude-agent:** A slight dip in frequency but a high volume of documentation and log entries, indicating a transition from active coding to system auditing.
+
+## Technical Insights & Reflections
+
+Today's work reinforces two core engineering principles:
+
+1. **The Power of Raw Logs:** While fancy GUIs are great for executives, raw text files (like the `.txt` fleet survey) are the gold standard for engineers. They are grep-able, version-controllable, and provide an immutable trail of evidence.
+2. **Pruning is as Important as Planting:** In the `validator` repo, the commit *"잔존 정지 컨테이너 2개 정리"* (Cleaning up 2 residual stopped containers) might seem minor. However, in a production environment, "ghost" resources lead to configuration drift and unexpected failures during scaling.
+
+Maintaining a blockchain infrastructure is less about the "big bang" deployments and more about the relentless, disciplined pursuit of stability. Whether it's auditing 25 nodes or updating a JSON file, the goal is the same: **Zero ambiguity.**
