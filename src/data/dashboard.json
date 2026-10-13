@@ -1,59 +1,76 @@
 {
-  "generated_at": "2026-10-12T23:00:01.240Z",
+  "generated_at": "2026-10-13T23:00:01.510Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-12",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
           "name": "claude-agent",
-          "last_date": "2026-10-12",
-          "last_msg": "docs(log): 10-12 briefick explorer 0.5h, cap reached",
+          "last_date": "2026-10-14",
+          "last_msg": "docs(log): 10-14 hub did-auth-db 8.4 plan received, cross-check notes",
           "branch": "gram-jsong",
           "activity": [
-            21,
             9,
             5,
             3,
             1,
             15,
+            22,
+            3
+          ],
+          "commits_7d": 79,
+          "commits_30d": 262
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-10-13",
+          "last_msg": "fix(nginx): 프론트 Baiduspider-render 403 + robots.txt Disallow — 프론트",
+          "branch": "master",
+          "activity": [
+            5,
+            0,
+            0,
+            0,
+            0,
+            1,
             0
           ],
-          "commits_7d": 76,
-          "commits_30d": 239
+          "commits_7d": 7,
+          "commits_30d": 11
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-13",
+          "last_msg": "Skip repos matching a local exclude list when scanning ~/dev",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 17,
+          "commits_30d": 69
         },
         {
           "name": "booksummary",
-          "last_date": "2026-10-12",
-          "last_msg": "fix: 업로드 재생목록이 숨기는 33편까지 채널 영상 열거 + 재�",
+          "last_date": "2026-10-13",
+          "last_msg": "data: 6차 후보 풀 재공급 — 축 확장 89건 스크리닝, 통과 10건",
           "branch": "main",
           "activity": [
-            3,
             2,
             2,
             1,
             2,
             4,
+            2,
             0
           ],
-          "commits_7d": 15,
-          "commits_30d": 52
+          "commits_7d": 16,
+          "commits_30d": 53
         },
         {
           "name": "validator",
@@ -61,11 +78,11 @@
           "last_msg": "잔존 정지 컨테이너 2개 정리, telegram-bot 정지 유지",
           "branch": "master",
           "activity": [
-            2,
             0,
             0,
             1,
             2,
+            0,
             0,
             0
           ],
@@ -78,33 +95,16 @@
           "last_msg": "[main] fix(probe): cert 만료일 읽기도 3회 재시도 — 단발 실패로 ",
           "branch": "dev",
           "activity": [
-            2,
             0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 136
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-10-08",
-          "last_msg": "chore(backend): 서브모듈 051ed9d3 — PR #58 (22P05·깊이 상한·null SQL",
-          "branch": "master",
-          "activity": [
-            1,
-            5,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 12
+          "commits_30d": 123
         },
         {
           "name": "cplabs_homepage",
@@ -112,8 +112,8 @@
           "last_msg": "K-BTF 공공기관 도입 채널 이미지 교체 및 레이아웃 개선 (국/�",
           "branch": "master",
           "activity": [
-            0,
             5,
+            0,
             0,
             0,
             0,
@@ -122,23 +122,6 @@
           ],
           "commits_7d": 5,
           "commits_30d": 5
-        },
-        {
-          "name": "go-delegator",
-          "last_date": "2026-10-07",
-          "last_msg": "merge: 빈 method 헬스체크 동작 복원",
-          "branch": "develop",
-          "activity": [
-            2,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 10
         },
         {
           "name": "go-metadium-m114",
@@ -156,23 +139,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 10
-        },
-        {
-          "name": "go-delegator-prod",
-          "last_date": "2026-09-12",
-          "last_msg": "docs: 동결 고지 — 2026-09-12 부로 이 저장소는 상용이 아니다",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -725,8 +691,8 @@
       "repos": [
         {
           "name": "flex",
-          "last_date": "2026-10-12",
-          "last_msg": "notes: add DID design draft work plan",
+          "last_date": "2026-10-13",
+          "last_msg": "outbox: add 10/1 plan reconciliation notice sent to hub",
           "branch": "main",
           "activity": [
             0,
@@ -734,28 +700,28 @@
             0,
             0,
             0,
-            0,
+            1,
             1
           ],
-          "commits_7d": 1,
-          "commits_30d": 2
+          "commits_7d": 2,
+          "commits_30d": 3
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-10-12",
-          "last_msg": "log 10/12: swift#3 approved",
+          "last_date": "2026-10-13",
+          "last_msg": "log 10/13: upgrade plan to gram",
           "branch": "mini-jsong",
           "activity": [
-            28,
             21,
             27,
             9,
             1,
             7,
-            61
+            64,
+            50
           ],
-          "commits_7d": 154,
-          "commits_30d": 260
+          "commits_7d": 179,
+          "commits_30d": 312
         },
         {
           "name": "health",
@@ -763,9 +729,9 @@
           "last_msg": "추석 요통 강도 3/10",
           "branch": "main",
           "activity": [
-            0,
             3,
             1,
+            0,
             0,
             0,
             0,
@@ -780,16 +746,16 @@
           "last_msg": "health: 21:30 걷기 알림을 @vanjeffbot(mini-cplabs cron)으로 이전, gram ",
           "branch": "main",
           "activity": [
-            6,
             0,
             3,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 9,
-          "commits_30d": 96
+          "commits_7d": 3,
+          "commits_30d": 48
         },
         {
           "name": "privacy-map",
@@ -880,23 +846,6 @@
           "name": "meta-zkbridge",
           "last_date": "2026-08-28",
           "last_msg": "fix(scripts): 배포 스크립트 SSH 키를 삭제된 마스터 키(aws-jsong-n",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "meta-agents",
-          "last_date": "2026-08-26",
-          "last_msg": "docs(standard): sync draft to v1.4 submitted for PG1006 2nd review",
           "branch": "main",
           "activity": [
             0,
