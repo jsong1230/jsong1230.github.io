@@ -5,6 +5,7 @@ import { spawnSync } from 'child_process';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { sanitizeMDX } from './lib/mdx-sanitize.js';
+import { excludeClause } from './lib/scan-exclude.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,10 +26,11 @@ const openai = new OpenAI({
 
 // ── Git activity collection ───────────────────────────────────────────────────
 
-const GIT_SCAN_SCRIPT = (date) => `
+const GIT_SCAN_SCRIPT = (date, exclude) => `
 find ~/dev -maxdepth 4 -name ".git" -type d 2>/dev/null | while IFS= read -r gitdir; do
   repo=$(dirname "$gitdir")
   reponame=$(basename "$repo")
+  ${exclude}
 
   # Commit messages + file stats
   log=$(git -C "$repo" log --since="${date} 00:00:00" --until="${date} 23:59:59" --stat --format="commit: %s" 2>/dev/null)
@@ -73,7 +75,13 @@ function runRemote(host, script) {
 }
 
 function collectGitActivity(date) {
-  const script = GIT_SCAN_SCRIPT(date);
+  const exclude = excludeClause('reponame');
+  if (!exclude) return [];
+  const script = GIT_SCAN_SCRIPT(date, exclude);
+  if (process.env.BLOG_SCAN_ONLY) {
+    process.stdout.write(runLocal(script));
+    process.exit(0);
+  }
   const machines = [
     { name: 'gram-jsong', runner: () => runLocal(script) },
     { name: 'mini-jsong', runner: () => runRemote('mini-jsong', script) },

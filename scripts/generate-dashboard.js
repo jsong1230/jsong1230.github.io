@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
+import { excludeClause } from './lib/scan-exclude.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,10 +28,11 @@ function runRemote(host, script) {
 
 // ── Repo stats collector ──────────────────────────────────────────────────────
 
-const REPO_SCRIPT = `
+const REPO_SCRIPT = (exclude) => `
 find ~/dev -maxdepth 4 -name ".git" -type d 2>/dev/null | while IFS= read -r gitdir; do
   repo=$(dirname "$gitdir")
   name=$(basename "$repo")
+  ${exclude}
 
   # last commit info
   last_hash=$(git -C "$repo" log -1 --format="%H" 2>/dev/null)
@@ -84,9 +86,16 @@ function parseRepos(output) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
+  const exclude = excludeClause('name');
+  const script = exclude ? REPO_SCRIPT(exclude) : null;
+  if (script && process.env.BLOG_SCAN_ONLY) {
+    process.stdout.write(runLocal(script));
+    return;
+  }
+  if (!script) return;  // fail closed: keep the previous dashboard.json
   const machines = [
-    { name: 'gram-jsong', runner: () => runLocal(REPO_SCRIPT) },
-    { name: 'mini-jsong', runner: () => runRemote('mini-jsong', REPO_SCRIPT) },
+    { name: 'gram-jsong', runner: () => runLocal(script) },
+    { name: 'mini-jsong', runner: () => runRemote('mini-jsong', script) },
   ];
 
   const result = {
