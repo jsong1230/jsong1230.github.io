@@ -1,0 +1,51 @@
+---
+title: "Precision Deployment and the Art of Edge-Case Handling"
+date: "2026-10-13"
+lang: en
+excerpt: "Engineering Log: Precision Deployment and the Art of Edge-Case Handling  As a CTO and engineer, I’ve learned that the difference between a \"successful..."
+---
+
+# Engineering Log: Precision Deployment and the Art of Edge-Case Handling
+
+As a CTO and engineer, I’ve learned that the difference between a "successful deployment" and a "stable deployment" lies in how you handle the anomalies—the edge cases that only appear when you move from a controlled environment to production.
+
+Today’s work focused on the pre-application of the **m1.2.3 stable version** to our in-house followers (nodes n183, 46, and 47). While the primary goal was a version upgrade, the real technical value came from the "discoveries" made during the process and the subsequent hardening of our automation tools.
+
+### The Challenge: Heterogeneous Environments
+When managing blockchain nodes across multiple machines, you often encounter "configuration drift." Even within the same organization, different nodes might have been set up at different times or by different hands. 
+
+During the rollout of the m1.2.3 update, I encountered two critical discrepancies on node `n183` that would have broken a standard automation script:
+
+1.  **Systemd Override Files:** Most nodes had their `ExecStart` defined in the main unit file (`/etc/systemd/system/...`). However, `n183` used a drop-in override file (`override.conf`). A naive script looking only at the main unit file would fail to find the target string and abort.
+2.  **Clock Skew/Timezone Mismatches:** The script originally relied on absolute timestamps (`date '+%F %T'`) to query `journalctl` for SIGKILL or failure logs. Since `n183` was set to UTC while the controller expected local time, the log query returned zero results—not because there were no errors, but because it was looking in the wrong time window.
+
+### Technical Decisions & Code Evolution
+
+To solve these, I updated the `m123-roll-follower.sh` tool to be more resilient. 
+
+**1. Dynamic Unit File Discovery**
+Instead of assuming the path, I implemented a lookup that queries both the main fragment and all drop-in paths:
+```bash
+UF=$(S "for f in \$(systemctl show $U -p FragmentPath --value) \$(systemctl show $U -p DropInPaths --value); do grep -q '^ExecStart=$OLDP' \$f 2>/dev/null && echo \$f; done | tail -1")
+```
+By iterating through all active configuration fragments and selecting the last one that matches the old binary path, the script now correctly identifies where the actual `ExecStart` is defined, regardless of whether it's in a main file or an override.
+
+**2. Relative Time Windowing for Logs**
+To eliminate timezone issues, I shifted from absolute timestamps to relative offsets:
+```bash
+K=$(S "sudo -n journalctl -u $U --since -10min --no-pager 2>/dev/null | grep -cE 'SIGKILL|Killing process|Failed with result'")
+```
+Using `--since -10min` ensures that we capture the restart event regardless of whether the system clock is UTC, KST, or anything else.
+
+### Insights from the Field
+
+This exercise reinforces a core principle I've held throughout my 20 years of engineering: **Never trust the "standard" configuration.** 
+
+In a large-scale Web3 infrastructure, "standard" is a myth. Whether it's a difference in the storage engine (LevelDB vs. RocksDB, as seen in nodes 46 and 47) or a slight variation in how a systemd service is wrapped, your automation must be "discovery-based" rather than "assumption-based."
+
+The result of today's work was the successful upgrade of 5 units with zero rollbacks and a significantly more robust deployment tool for the rest of the **CPLABS** infrastructure. We are now in a 24-hour observation period to ensure stability before the wider rollout.
+
+**Summary of results:**
+- **Nodes:** n183, 46, 47 (5 units total)
+- **Version:** 1.2.3-stable (Go 1.26.9)
+- **Status:** All units active; head gap 0~1; SIGKILL 0.
