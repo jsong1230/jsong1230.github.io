@@ -1,0 +1,56 @@
+---
+title: "Precision Alerting and the Art of Content Curation"
+date: "2026-10-14"
+lang: en
+excerpt: "[Dev Log] Precision Alerting and the Art of Content Curation  As a CTO, I’ve learned that the \"last mile\" of engineering isn't just about making a fea..."
+---
+
+# [Dev Log] Precision Alerting and the Art of Content Curation
+
+As a CTO, I’ve learned that the "last mile" of engineering isn't just about making a feature work—it's about how that feature communicates its state to the humans operating it. Today's work was a blend of refining critical infrastructure monitoring for our blockchain stack and managing a high-throughput content pipeline.
+
+## 1. Refining the Signal: Separating Mainnet from Testnet
+
+In any production environment, **alert fatigue** is a real danger. When a developer sees a notification in a "Mainnet Issue" channel, the adrenaline spike is immediate. However, if that channel is cluttered with Testnet errors, the psychological weight of the alert diminishes, and critical issues can be overlooked.
+
+I discovered that our delegator watchers (`sigcheck` and `soak`) were bundling alerts for `del1`, `del2`, and `tn` (testnet) into a single message sent to the Mainnet room. This led to a situation where a Testnet error (increasing from 30 to 32) triggered a Mainnet alert.
+
+### Technical Decision: Logical Routing in Shell
+Instead of splitting these into entirely separate scripts—which would violate the DRY (Don't Repeat Yourself) principle and complicate state management—I implemented a "context-switching" logic within the loop.
+
+```bash
+# Inside the node loop
+if [ "$NAME" = tn ]; then
+  A0="$ALERT"; S0="$SUMMARY"; ALERT="$ALERT_TN"; SUMMARY="$SUMMARY_TN"; 
+fi
+
+# ... processing logic ...
+
+if [ "$NAME" = tn ]; then
+  ALERT_TN="$ALERT"; SUMMARY_TN="$SUMMARY"; ALERT="$A0"; SUMMARY="$S0"; 
+fi
+```
+
+By temporarily swapping the alert buffers when the loop hits the `tn` node, I could collect Testnet-specific issues into a separate variable (`ALERT_TN`) and route them to a dedicated Testnet channel (`-1004406469969`), while keeping the promotion logic in the Mainnet room.
+
+**Insight:** When building monitoring scripts, always assume the "Dry Run" will be used. I updated the `notify` function to explicitly print the destination chat ID during dry runs. This prevents the "9/11 incident" where fake alarms hit production channels because the developer didn't realize which target was active.
+
+## 2. Content Engineering: Managing the "Text Problem" in AI Art
+
+Outside of the blockchain stack, I've been scaling a book summary project using Flux (AI Image Generation). Today's focus was "The Shop That Sells Time" (시간을 파는 상점).
+
+The technical challenge here is **visual noise**. In AI generation, "Modern Korea" often translates to "Signboard Hell"—images cluttered with illegible, distorted Korean text on shops, uniforms, and posters.
+
+### The "Curation by Exclusion" Strategy
+Rather than fighting the AI with complex negative prompts, I shifted to a **compositional strategy**. I analyzed the prompts and discarded 29 out of 80 images specifically because of "text pollution."
+
+*   **Failed:** Bakery storefronts, noodle shops, school name tags.
+*   **Successful:** Empty classrooms, hallways, rooftops, and close-ups of nature.
+
+By intentionally avoiding "text-heavy" environments in the prompt design, I ensured a cleaner, more professional aesthetic for the final render.
+
+## Closing Thoughts
+
+Whether it's routing Telegram alerts for CPLABS's blockchain infrastructure or filtering AI-generated images for a content project, the core engineering principle is the same: **Noise Reduction**. 
+
+In the first case, it's about reducing cognitive noise for the SRE team. In the second, it's about reducing visual noise for the viewer. Precision in what you *exclude* is often more important than what you *include*.
