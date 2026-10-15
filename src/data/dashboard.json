@@ -1,59 +1,76 @@
 {
-  "generated_at": "2026-10-14T23:00:01.769Z",
+  "generated_at": "2026-10-15T23:00:01.347Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-10-15",
-          "last_msg": "[admin] chore(build): w24(10/19~25) 주차 빌드 드라이버 — w23 절차 �",
+          "last_date": "2026-10-16",
+          "last_msg": "[admin] fix(hls-builder): 슬롯이 통째로 빠지면 빌드 실패 — 23칸 ",
           "branch": "dev",
           "activity": [
-            1,
             0,
             0,
             0,
             0,
             0,
+            4,
             1
           ],
-          "commits_7d": 2,
-          "commits_30d": 113
+          "commits_7d": 6,
+          "commits_30d": 114
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-15",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 17,
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
           "last_date": "2026-10-15",
-          "last_msg": "docs(log): 10-15 h-admin briefick 10/12 share received (none)",
+          "last_msg": "docs(log): 10-15 m1.2.3 A-plan testnet BP rollout (t-bp2, t-bp1), hub minutes, g",
           "branch": "gram-jsong",
           "activity": [
-            5,
             3,
             1,
             15,
             22,
             16,
-            1
+            7,
+            0
           ],
-          "commits_7d": 72,
-          "commits_30d": 272
+          "commits_7d": 69,
+          "commits_30d": 254
         },
         {
           "name": "booksummary",
           "last_date": "2026-10-15",
-          "last_msg": "feat: 「욕망이라는 이름의 전차」(테네시 윌리엄스) 업로드",
+          "last_msg": "feat: 「눈먼 자들의 도시」(주제 사라마구) 제작·업로드",
           "branch": "main",
           "activity": [
-            2,
             1,
             2,
             4,
             2,
             2,
-            1
+            2,
+            0
           ],
-          "commits_7d": 16,
-          "commits_30d": 55
+          "commits_7d": 14,
+          "commits_30d": 53
         },
         {
           "name": "validator",
@@ -61,12 +78,12 @@
           "last_msg": "런북: 일일 요약 DM 추가",
           "branch": "master",
           "activity": [
-            0,
             1,
             2,
             0,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
@@ -81,30 +98,13 @@
             0,
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0
           ],
-          "commits_7d": 7,
+          "commits_7d": 2,
           "commits_30d": 12
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-14",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 17,
-          "commits_30d": 69
         },
         {
           "name": "cplabs_homepage",
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 5,
+          "commits_7d": 0,
           "commits_30d": 5
         },
         {
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 0
         },
         {
           "name": "company-page",
@@ -690,21 +690,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-10-15",
+          "last_msg": "family: 형(송계한) 소송 도움 감사 신세계 상품권 50만원 선물(",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 34
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-10-14",
-          "last_msg": "log 10/15: forward IoC FYI",
+          "last_date": "2026-10-15",
+          "last_msg": "log 10/15: mail check, calendar RSVP check",
           "branch": "mini-jsong",
           "activity": [
-            27,
             9,
             1,
             7,
             64,
             50,
-            22
+            22,
+            25
           ],
-          "commits_7d": 180,
-          "commits_30d": 334
+          "commits_7d": 178,
+          "commits_30d": 355
         },
         {
           "name": "flex",
@@ -715,9 +732,9 @@
             0,
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0
           ],
           "commits_7d": 2,
@@ -729,7 +746,7 @@
           "last_msg": "추석 요통 강도 3/10",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -737,25 +754,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 27
-        },
-        {
-          "name": "life",
-          "last_date": "2026-10-08",
-          "last_msg": "health: 21:30 걷기 알림을 @vanjeffbot(mini-cplabs cron)으로 이전, gram ",
-          "branch": "main",
-          "activity": [
-            3,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 3,
-          "commits_30d": 43
         },
         {
           "name": "privacy-map",
