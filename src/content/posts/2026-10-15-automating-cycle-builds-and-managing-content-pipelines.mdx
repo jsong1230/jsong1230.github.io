@@ -1,0 +1,49 @@
+---
+title: "Automating Cycle Builds and Managing Content Pipelines"
+date: "2026-10-15"
+lang: en
+excerpt: "Engineering Log: Automating Cycle Builds and Managing Content Pipelines  As a CTO and engineer, I've found that the most dangerous part of any system ..."
+---
+
+# Engineering Log: Automating Cycle Builds and Managing Content Pipelines
+
+As a CTO and engineer, I've found that the most dangerous part of any system isn't the complex architecture, but the repetitive manual tasks that we *think* we have under control. Today's work was a prime example of transforming a manual, error-prone procedure into a structured, automated driver.
+
+## 1. Strengthening the Build Pipeline: `heritageradio`
+
+The primary focus today was the implementation of a manual build driver for the "w24" cycle (October 19–25). In large-scale media processing or data archiving, consistency is everything. When you're dealing with HLS (HTTP Live Streaming) segments across multiple "eras," a single missing directory or a failed verification can break the entire user experience.
+
+### Technical Decisions & Implementation
+I developed `_oneoff_build_w24.sh` to encapsulate the entire build-and-verify lifecycle. A few key technical decisions were made here:
+
+*   **Sequential Execution over Parallelism:** I explicitly added a warning in the script: `⚠️ workspace 가 date 공유라 날짜 병렬 금지`. When the workspace is shared, parallel builds lead to race conditions. In this case, stability outweighs the marginal speed gain of concurrency.
+*   **Hardlinking for Efficiency:** For Sunday's archive, rather than duplicating massive amounts of data, I used `cp -al`. This creates hard links to the Saturday archive, saving disk space and I/O while maintaining the directory structure required by the application.
+*   **Containerized Verification:** A critical lesson learned from previous cycles (w22) was that running verification on the EC2 host resulted in immediate failures because the host lacked `ffmpeg` and proper GPU tunneling for Whisper. 
+
+```bash
+# The fix: Execute verification inside the worker container with proper environment variables
+VERIFY_PY=(docker exec -e CYCLE_BASE=/app/hls
+           -e WHISPER_URL=http://gpu-host:9200/v1/audio/transcriptions
+           grnal-celery-worker python -u /app/scripts/verify_cycle_content.py)
+```
+
+By wrapping the verification logic in `docker exec`, we ensure that the environment is identical to the production runtime, eliminating "it works on my machine" (or in this case, "it fails on the host") bugs.
+
+## 2. Content Pipeline Management: `booksummary`
+
+Parallel to the infrastructure work, I managed the content pipeline for the `booksummary` project. I successfully uploaded and scheduled "A Streetcar Named Desire" by Tennessee Williams.
+
+From a data management perspective, I maintain a strict `candidates.md` and `processed_videos.json` to track demand-to-competition ratios. This allows us to prioritize content that has high search volume but low competition (e.g., the "Youth Recommended Books" axis), ensuring the highest possible organic reach.
+
+## 3. Insights and Reflections
+
+Today's work highlights a recurring theme in my 20 years of experience: **The importance of the "Driver" script.**
+
+Whether it's a blockchain node deployment or a media build cycle, having a single, version-controlled script that defines the *exact* sequence of operations is invaluable. It turns a "tribal knowledge" process ("First do this, then check that, then run the other command") into a reproducible engineering asset.
+
+At **CPLABS**, we strive for this level of rigor across all our projects. By automating the "boring" parts—the build drivers, the verification loops, and the data tracking—we free up the mental bandwidth to focus on higher-level architectural challenges and AI integration.
+
+**Summary of today's output:**
+- **Infrastructure:** Automated w24 build/verify driver with hardlink optimization.
+- **Content:** Expanded the book summary library with high-demand classic literature.
+- **Ops:** Updated personal dashboard metrics to reflect current repository activity.
