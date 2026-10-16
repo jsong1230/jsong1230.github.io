@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T23:00:01.347Z",
+  "generated_at": "2026-10-16T23:00:01.741Z",
   "machines": [
     {
       "name": "gram-jsong",
@@ -7,30 +7,47 @@
         {
           "name": "heritageradio",
           "last_date": "2026-10-16",
-          "last_msg": "[admin] fix(hls-builder): 슬롯이 통째로 빠지면 빌드 실패 — 23칸 ",
+          "last_msg": "[main] fix(prefetch): 음성 칸에 episode 가 없으면 공백으로 — 평�",
           "branch": "dev",
           "activity": [
             0,
             0,
             0,
             0,
-            0,
             4,
-            1
+            4,
+            0
           ],
-          "commits_7d": 6,
-          "commits_30d": 114
+          "commits_7d": 8,
+          "commits_30d": 112
+        },
+        {
+          "name": "validator",
+          "last_date": "2026-10-16",
+          "last_msg": "EBS IOPS 3000 원복 실행(10/16 저녁), 예약 취소",
+          "branch": "master",
+          "activity": [
+            2,
+            0,
+            0,
+            2,
+            0,
+            8,
+            0
+          ],
+          "commits_7d": 13,
+          "commits_30d": 31
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-10-15",
+          "last_date": "2026-10-16",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
             2,
             3,
+            2,
             2,
             2,
             0
@@ -40,54 +57,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-10-15",
-          "last_msg": "docs(log): 10-15 m1.2.3 A-plan testnet BP rollout (t-bp2, t-bp1), hub minutes, g",
+          "last_date": "2026-10-16",
+          "last_msg": "docs(log): 10-16 briefick registration (3.5h, 7 entries), log time corrections",
           "branch": "gram-jsong",
           "activity": [
-            3,
             1,
             15,
             22,
             16,
             7,
+            12,
             0
           ],
-          "commits_7d": 69,
-          "commits_30d": 254
+          "commits_7d": 76,
+          "commits_30d": 262
         },
         {
           "name": "booksummary",
-          "last_date": "2026-10-15",
-          "last_msg": "feat: 「눈먼 자들의 도시」(주제 사라마구) 제작·업로드",
+          "last_date": "2026-10-16",
+          "last_msg": "feat: 「지하로부터의 수기」(도스토옙스키) 제작·업로드",
           "branch": "main",
           "activity": [
-            1,
             2,
             4,
             2,
             2,
             2,
+            4,
             0
           ],
-          "commits_7d": 14,
-          "commits_30d": 53
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-10-14",
-          "last_msg": "런북: 일일 요약 DM 추가",
-          "branch": "master",
-          "activity": [
-            1,
-            2,
-            0,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 5,
-          "commits_30d": 23
+          "commits_7d": 17,
+          "commits_30d": 57
         },
         {
           "name": "metadium-explorer-stack",
@@ -97,14 +97,14 @@
           "activity": [
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 12
+          "commits_30d": 11
         },
         {
           "name": "cplabs_homepage",
@@ -690,6 +690,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-10-16",
+          "last_msg": "log 10/16: mail check",
+          "branch": "mini-jsong",
+          "activity": [
+            1,
+            7,
+            64,
+            50,
+            22,
+            25,
+            21
+          ],
+          "commits_7d": 191,
+          "commits_30d": 374
+        },
+        {
           "name": "life",
           "last_date": "2026-10-15",
           "last_msg": "family: 형(송계한) 소송 도움 감사 신세계 상품권 50만원 선물(",
@@ -700,28 +717,11 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
-          "commits_30d": 34
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-15",
-          "last_msg": "log 10/15: mail check, calendar RSVP check",
-          "branch": "mini-jsong",
-          "activity": [
-            9,
-            1,
-            7,
-            64,
-            50,
-            22,
-            25
-          ],
-          "commits_7d": 178,
-          "commits_30d": 355
+          "commits_30d": 33
         },
         {
           "name": "flex",
@@ -731,9 +731,9 @@
           "activity": [
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0
           ],
@@ -755,7 +755,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 27
+          "commits_30d": 25
         },
         {
           "name": "privacy-map",
@@ -772,7 +772,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 53
+          "commits_30d": 43
         },
         {
           "name": "mirae",
