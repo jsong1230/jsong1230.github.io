@@ -1,0 +1,64 @@
+---
+title: "The Danger of Silent Failures in Media Pipelines"
+date: "2026-10-16"
+lang: en
+excerpt: "Engineering Log: Preventing \"Silent Failures\" in Media Pipelines  As a CTO and engineer, one of the most dangerous phrases I've encountered in my 20 y..."
+---
+
+# Engineering Log: Preventing "Silent Failures" in Media Pipelines
+
+As a CTO and engineer, one of the most dangerous phrases I've encountered in my 20 years of experience is *"It finished successfully."* 
+
+When a process reports success (`ok=True`) but the actual output is corrupted or incomplete, you aren't dealing with a crash—you're dealing with a **silent failure**. These are the hardest bugs to track because they don't trigger alerts; they only trigger complaints from users (or in this case, listeners) when the timing of a broadcast is off.
+
+Today's work at **CPLABS** focused on exactly this: tightening the validation logic in our HLS (HTTP Live Streaming) builder to ensure that "almost correct" is treated as "incorrect."
+
+## The Problem: The "Missing Slot" Drift
+
+In our `hls-builder` service, we assemble audio segments into a cycle. I discovered a critical edge case where a specific slot in the schedule was completely missing its audio pieces. 
+
+Previously, the `_collect_pieces` function would simply `continue` (skip) the missing slot. The `build_cycle` function would then sum up the remaining slots and report that the build was successful because it had reached *some* total duration. 
+
+**The result?** A 24-slot cycle was being built with only 23 slots. This caused a cumulative timing drift—subsequent programs were pulled forward by 10 minutes. Because the system reported `ok=True`, the production sync proceeded, and the error only became apparent during playback.
+
+## Technical Decision: Fail-Fast over Graceful Degradation
+
+In many consumer apps, "graceful degradation" is a virtue. But in a scheduled broadcast pipeline, **precision is the primary requirement**. If a slot is missing, the entire cycle is logically broken.
+
+I implemented a strict validation check before the `ffmpeg` process begins. Instead of silently skipping, the system now compares the *expected* number of slots against the *actually built* slots.
+
+### Key Code Change
+
+I introduced a check to identify skipped slots and a new environment variable `ALLOW_SLOT_SKIP` for emergency overrides:
+
+```python
+# Identify missing slots by comparing expected slots vs built indices
+built_idx = {s["slot_idx"] for s in slot_data}
+skipped = [
+    f"[{i:02d}] {s['program_code']}"
+    for i, s in enumerate(slots) if i not in built_idx
+]
+
+if skipped:
+    # ... logging details ...
+    if not ALLOW_SLOT_SKIP:
+        logger.error("era=%s date=%s %s — 빌드 중단", era, date_str, msg)
+        return {
+            "era": era, "cycle_index": cycle_index, "ok": False,
+            "action": "slot_missing", "error": msg,
+        }
+```
+
+By returning `ok=False` and an action of `slot_missing`, the `inner.py` wrapper now exits with a non-zero status (`exit 1`). This triggers the cron job's failure notification and, crucially, **automatically blocks the production sync**.
+
+## Insights and Reflections
+
+This fix highlights a recurring theme in high-availability systems: **The danger of swallowing exceptions.** 
+
+In the diff, I noted that `AUDIO_STRICT` exceptions were being swallowed by a generic `except` block in the music-slot logic, which then flowed into the "skip" behavior. When you wrap complex logic in broad `try-except` blocks to "keep the system running," you often inadvertently hide the symptoms of a dying system.
+
+**My takeaway for today:** 
+1. **Explicit is better than implicit.** If a data dependency is missing, the system should scream, not whisper.
+2. **Control the "Emergency Valve."** By adding `ALLOW_SLOT_SKIP`, we maintain the ability to push a build in a genuine crisis, but we make that decision an explicit administrative action rather than a default behavior.
+
+Consistency is the bedrock of trust in any technical product—whether it's a blockchain ledger or a radio stream. Today was about ensuring that trust remains intact.
