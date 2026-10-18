@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-17T23:00:01.746Z",
+  "generated_at": "2026-10-18T23:00:01.603Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "key-backup-server",
-          "last_date": "2026-10-17",
-          "last_msg": "build: pin test dependency org.web3j:crypto to 4.8.7",
-          "branch": "build/pin-web3j-java8",
+          "name": "metadium-attestator",
+          "last_date": "2026-10-18",
+          "last_msg": "db: add PostgreSQL driver and make native query portable (current_date)",
+          "branch": "migration/postgresql",
           "activity": [
             0,
             0,
@@ -23,9 +23,60 @@
         },
         {
           "name": "mykeepin-identity-attestator",
-          "last_date": "2026-10-17",
-          "last_msg": "chore: snapshot of production deployment 0.7.2 (2026-10-17)",
-          "branch": "prod-snapshot/20261017",
+          "last_date": "2026-10-18",
+          "last_msg": "db: add PostgreSQL driver",
+          "branch": "migration/postgresql",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "meta-auth-service",
+          "last_date": "2026-10-18",
+          "last_msg": "deps: lock pg 8.7.3 (generated with npm 6 / Node 10)",
+          "branch": "migration/postgresql",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 3
+        },
+        {
+          "name": "mykeepin-aa-agecheck",
+          "last_date": "2026-10-18",
+          "last_msg": "db: PostgreSQL variant of insertAccessLog casting elapsed to integer",
+          "branch": "migration/postgresql",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 4
+        },
+        {
+          "name": "gatepass-aa-server",
+          "last_date": "2026-10-18",
+          "last_msg": "db: add PostgreSQL driver and replace MySQL if() with CASE in native queries",
+          "branch": "migration/postgresql",
           "activity": [
             0,
             0,
@@ -33,6 +84,74 @@
             0,
             0,
             1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 1
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-18",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            2,
+            2,
+            2,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-18",
+          "last_msg": "docs(did-auth-pg): testnet switched to dedicated PostgreSQL (plan B); app roles,",
+          "branch": "gram-jsong",
+          "activity": [
+            22,
+            16,
+            7,
+            12,
+            19,
+            15,
+            0
+          ],
+          "commits_7d": 106,
+          "commits_30d": 267
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-18",
+          "last_msg": "feat: 「제5도살장」(커트 보니것) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            4,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 17,
+          "commits_30d": 57
+        },
+        {
+          "name": "key-backup-server",
+          "last_date": "2026-10-17",
+          "last_msg": "build: pin test dependency org.web3j:crypto to 4.8.7",
+          "branch": "migration/postgresql",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -45,32 +164,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
             0,
             8,
             1,
+            0,
             0
           ],
-          "commits_7d": 13,
+          "commits_7d": 11,
           "commits_30d": 32
-        },
-        {
-          "name": "meta-auth-service",
-          "last_date": "2026-10-17",
-          "last_msg": "chore: snapshot of production deployment (auth server, 2026-10-17)",
-          "branch": "prod-snapshot/20261017",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 1
         },
         {
           "name": "mykeepin-sample-web-sp",
@@ -82,80 +184,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "mykeepin-aa-agecheck",
-          "last_date": "2026-10-17",
-          "last_msg": "build: vendor com.coinplug:mykeepin-verify-sdk:0.2.1",
-          "branch": "prod-snapshot/20261017",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            2,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 2
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-17",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            2,
-            2,
-            2,
-            3,
-            0
-          ],
-          "commits_7d": 17,
-          "commits_30d": 70
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-17",
-          "last_msg": "docs(log): 10-17 did-auth PG pg_cron event replacement test on temp PG",
-          "branch": "gram-jsong",
-          "activity": [
-            15,
-            22,
-            16,
-            7,
-            12,
-            19,
-            0
-          ],
-          "commits_7d": 92,
-          "commits_30d": 264
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-17",
-          "last_msg": "feat: 「그 많던 싱아는 누가 다 먹었을까」(박완서) 제작·업�",
-          "branch": "main",
-          "activity": [
-            4,
-            2,
-            2,
-            2,
-            4,
-            2,
-            0
-          ],
-          "commits_7d": 18,
-          "commits_30d": 59
         },
         {
           "name": "heritageradio",
@@ -165,14 +199,14 @@
           "activity": [
             0,
             0,
+            4,
+            4,
             0,
-            4,
-            4,
             0,
             0
           ],
           "commits_7d": 8,
-          "commits_30d": 107
+          "commits_30d": 94
         },
         {
           "name": "metadium-explorer-stack",
@@ -180,9 +214,9 @@
           "last_msg": "fix(watch): delegator 소크·sigcheck 알림을 망별 방으로 분리 — tn ",
           "branch": "master",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
@@ -434,23 +468,6 @@
           "last_date": "2026-05-20",
           "last_msg": "Add debugging cheatsheet to README",
           "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "metadium-attestator",
-          "last_date": "2026-05-19",
-          "last_msg": "배포 가이드 문서 추가",
-          "branch": "master",
           "activity": [
             0,
             0,
@@ -785,23 +802,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 0
-        },
-        {
-          "name": "gatepass-aa-server",
-          "last_date": "2021-09-24",
-          "last_msg": "VC 만료 체크 추가",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
         }
       ]
     },
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-10-17",
-          "last_msg": "log 10/17: People weekly attachments review",
+          "last_date": "2026-10-18",
+          "last_msg": "log 10/18: GitGuardian incident closed",
           "branch": "mini-jsong",
           "activity": [
-            7,
             64,
             50,
             22,
             25,
             21,
-            6
+            6,
+            3
           ],
-          "commits_7d": 195,
-          "commits_30d": 379
+          "commits_7d": 193,
+          "commits_30d": 380
         },
         {
           "name": "life",
@@ -834,13 +834,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 29
+          "commits_30d": 25
         },
         {
           "name": "flex",
@@ -848,9 +848,9 @@
           "last_msg": "outbox: add 10/1 plan reconciliation notice sent to hub",
           "branch": "main",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 25
+          "commits_30d": 13
         },
         {
           "name": "privacy-map",
@@ -891,7 +891,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 34
+          "commits_30d": 24
         },
         {
           "name": "mirae",
