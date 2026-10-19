@@ -1,0 +1,47 @@
+---
+title: "The PostgreSQL Migration Journey: Moving Toward Database Portability"
+date: "2026-10-19"
+lang: en
+excerpt: "Moving Toward Database Portability: The PostgreSQL Migration Journey  As a CTO and engineer, I’ve spent over two decades navigating the evolution of i..."
+---
+
+# Moving Toward Database Portability: The PostgreSQL Migration Journey
+
+As a CTO and engineer, I’ve spent over two decades navigating the evolution of infrastructure. One lesson that remains constant is that the "easy" choice during the early stages of a project—often a specific database or a proprietary cloud service—can become a significant bottleneck as the system scales or moves toward a more standardized enterprise environment.
+
+Today’s work focused on a critical transition across several of our core services: **migrating from legacy database dependencies to PostgreSQL.**
+
+### The Problem: The Cost of "Locked-in" Queries
+
+Looking at the updates in my dashboard data today, you'll see a pattern across multiple repositories: `metadium-attestator`, `mykeepin-identity-attestator`, `meta-auth-service`, and `mykeepin-aa-agecheck`. All of them are currently under the `migration/postgresql` branch.
+
+The primary challenge wasn't just adding a driver; it was the "hidden" logic embedded in native SQL queries. When you use native queries for performance or specific feature sets, you inadvertently bind your application to a specific database dialect. 
+
+For example, in the `metadium-attestator` changes, I focused on making native queries portable:
+> `db: add PostgreSQL driver and make native query portable (current_date)`
+
+The `current_date` function or the way dates are handled varies subtly between database engines. While it seems trivial, these discrepancies are exactly where production bugs hide during a migration.
+
+### Technical Decisions & Implementation
+
+The migration strategy I've implemented follows three main pillars:
+
+1.  **Driver Standardization:** The first step was the straightforward addition of the PostgreSQL drivers across the Java and Node.js stacks.
+2.  **Dependency Pinning:** In the `meta-auth-service`, I had to lock specific versions:
+    > `deps: lock pg 8.7.3 (generated with npm 6 / Node 10)`
+    Working with legacy environments (Node 10) requires a surgical approach to dependency management. You cannot simply run `npm update` and hope for the best; you must pin versions that are compatible with the runtime to avoid breaking the build pipeline.
+3.  **Type Casting and Portability:** In the `mykeepin-aa-agecheck` service, I encountered issues with how elapsed time was being handled.
+    > `db: PostgreSQL variant of insertAccessLog casting elapsed to integer`
+    PostgreSQL is stricter about types than some other databases. Explicit casting is not just a preference; it's a requirement for stability.
+
+### Insights from the Field
+
+Throughout my career, especially during my time at **CPLABS**, I have seen many teams underestimate the "migration tax." They assume that because they use an ORM (Object-Relational Mapping), the database is interchangeable. In reality, the moment you write a single native query for optimization, you've created a dependency.
+
+The insight here is that **portability is a feature**, and like any feature, it requires intentional engineering. By moving toward PostgreSQL, we are not just changing a database; we are reducing our architectural risk and aligning ourselves with a robust, industry-standard ecosystem that supports the high availability required for DID (Decentralized Identity) and Web3 attestators.
+
+### Closing Thoughts
+
+Today's commits might look like "chore" work—updating drivers and tweaking SQL syntax—but this is the foundational work that allows a system to grow. Whether it's pinning a Web3j dependency or casting an integer in a log table, the discipline is the same: **eliminate ambiguity to ensure reliability.**
+
+Onward to the next phase of the migration.
