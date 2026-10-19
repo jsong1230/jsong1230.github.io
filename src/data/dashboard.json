@@ -1,9 +1,77 @@
 {
-  "generated_at": "2026-10-18T23:00:01.603Z",
+  "generated_at": "2026-10-19T23:00:01.394Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "validator",
+          "last_date": "2026-10-19",
+          "last_msg": "10/19 구 RocksDB 삭제·1회 스냅샷 기록",
+          "branch": "master",
+          "activity": [
+            2,
+            0,
+            8,
+            1,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 12,
+          "commits_30d": 33
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-19",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-19",
+          "last_msg": "docs(log): 10-19 mini-cplabs power-on planned 10-20",
+          "branch": "gram-jsong",
+          "activity": [
+            16,
+            7,
+            12,
+            19,
+            15,
+            34,
+            0
+          ],
+          "commits_7d": 125,
+          "commits_30d": 299
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-19",
+          "last_msg": "docs: 세션 체크리스트 최상단을 10/19 저녁 상태로 갱신",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            4,
+            2,
+            1,
+            5,
+            0
+          ],
+          "commits_7d": 18,
+          "commits_30d": 61
+        },
         {
           "name": "metadium-attestator",
           "last_date": "2026-10-18",
@@ -14,8 +82,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -30,9 +98,9 @@
             0,
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0
           ],
           "commits_7d": 2,
@@ -47,9 +115,9 @@
             0,
             0,
             0,
-            0,
             1,
             2,
+            0,
             0
           ],
           "commits_7d": 3,
@@ -64,9 +132,9 @@
             0,
             0,
             0,
+            2,
+            2,
             0,
-            2,
-            2,
             0
           ],
           "commits_7d": 4,
@@ -82,63 +150,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-18",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            2,
-            2,
-            2,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-18",
-          "last_msg": "docs(did-auth-pg): testnet switched to dedicated PostgreSQL (plan B); app roles,",
-          "branch": "gram-jsong",
-          "activity": [
-            22,
-            16,
-            7,
-            12,
-            19,
-            15,
-            0
-          ],
-          "commits_7d": 106,
-          "commits_30d": 267
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-18",
-          "last_msg": "feat: 「제5도살장」(커트 보니것) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            4,
-            2,
-            1,
-            0
-          ],
-          "commits_7d": 17,
-          "commits_30d": 57
         },
         {
           "name": "key-backup-server",
@@ -149,30 +166,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 1
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-10-17",
-          "last_msg": "다운사이즈 폐기·인스턴스 스토리지 전환 검토안(분기 백업",
-          "branch": "master",
-          "activity": [
-            0,
-            2,
-            0,
-            8,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 32
         },
         {
           "name": "mykeepin-sample-web-sp",
@@ -183,8 +183,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -198,15 +198,15 @@
           "branch": "dev",
           "activity": [
             0,
+            4,
+            4,
             0,
-            4,
-            4,
             0,
             0,
             0
           ],
           "commits_7d": 8,
-          "commits_30d": 94
+          "commits_30d": 75
         },
         {
           "name": "metadium-explorer-stack",
@@ -215,7 +215,7 @@
           "branch": "master",
           "activity": [
             1,
-            1,
+            0,
             0,
             0,
             0,
@@ -809,38 +809,55 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-10-18",
-          "last_msg": "log 10/18: GitGuardian incident closed",
-          "branch": "mini-jsong",
-          "activity": [
-            64,
-            50,
-            22,
-            25,
-            21,
-            6,
-            3
-          ],
-          "commits_7d": 193,
-          "commits_30d": 380
-        },
-        {
-          "name": "life",
-          "last_date": "2026-10-15",
-          "last_msg": "family: 형(송계한) 소송 도움 감사 신세계 상품권 50만원 선물(",
+          "name": "health",
+          "last_date": "2026-10-19",
+          "last_msg": "임플란트 10/30 일정·회복 주의사항 기록",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            7
+          ],
+          "commits_7d": 7,
+          "commits_30d": 20
+        },
+        {
+          "name": "life",
+          "last_date": "2026-10-19",
+          "last_msg": "README: 11/15 골프 동반자(안민영·임세윤·윤태경) 반영",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
             1,
             0,
             0,
-            0
+            0,
+            4
           ],
-          "commits_7d": 1,
-          "commits_30d": 25
+          "commits_7d": 5,
+          "commits_30d": 29
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-19",
+          "last_msg": "log 10/19: late recheck",
+          "branch": "mini-jsong",
+          "activity": [
+            50,
+            22,
+            25,
+            21,
+            6,
+            3,
+            40
+          ],
+          "commits_7d": 170,
+          "commits_30d": 420
         },
         {
           "name": "flex",
@@ -849,32 +866,15 @@
           "branch": "main",
           "activity": [
             1,
-            1,
+            0,
             0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 3
-        },
-        {
-          "name": "health",
-          "last_date": "2026-10-08",
-          "last_msg": "추석 요통 강도 3/10",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 13
         },
         {
           "name": "privacy-map",
@@ -891,7 +891,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 24
+          "commits_30d": 19
         },
         {
           "name": "mirae",
@@ -908,7 +908,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "wemix-dios",
