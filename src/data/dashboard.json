@@ -1,59 +1,76 @@
 {
-  "generated_at": "2026-10-19T23:00:01.394Z",
+  "generated_at": "2026-10-20T23:00:01.514Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "heritageradio",
+          "last_date": "2026-10-20",
+          "last_msg": "[admin] docs(api): 등록 가이드 — 코너별 연도 자리(0000/19NN) 표 +",
+          "branch": "dev",
+          "activity": [
+            4,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 70
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-20",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-20",
+          "last_msg": "docs(log): 10-20 end-of-day snapshot",
+          "branch": "gram-jsong",
+          "activity": [
+            7,
+            12,
+            19,
+            15,
+            34,
+            28,
+            0
+          ],
+          "commits_7d": 128,
+          "commits_30d": 327
+        },
         {
           "name": "validator",
           "last_date": "2026-10-19",
           "last_msg": "10/19 구 RocksDB 삭제·1회 스냅샷 기록",
           "branch": "master",
           "activity": [
-            2,
             0,
             8,
             1,
             0,
             1,
+            0,
             0
           ],
           "commits_7d": 12,
           "commits_30d": 33
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-19",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-19",
-          "last_msg": "docs(log): 10-19 mini-cplabs power-on planned 10-20",
-          "branch": "gram-jsong",
-          "activity": [
-            16,
-            7,
-            12,
-            19,
-            15,
-            34,
-            0
-          ],
-          "commits_7d": 125,
-          "commits_30d": 299
         },
         {
           "name": "booksummary",
@@ -62,14 +79,14 @@
           "branch": "main",
           "activity": [
             2,
-            2,
             4,
             2,
             1,
             5,
+            0,
             0
           ],
-          "commits_7d": 18,
+          "commits_7d": 16,
           "commits_30d": 61
         },
         {
@@ -81,8 +98,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -97,9 +114,9 @@
           "activity": [
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0
           ],
@@ -114,9 +131,9 @@
           "activity": [
             0,
             0,
-            0,
             1,
             2,
+            0,
             0,
             0
           ],
@@ -131,9 +148,9 @@
           "activity": [
             0,
             0,
+            2,
+            2,
             0,
-            2,
-            2,
             0,
             0
           ],
@@ -149,8 +166,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -165,8 +182,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -182,8 +199,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -192,29 +209,12 @@
           "commits_30d": 1
         },
         {
-          "name": "heritageradio",
-          "last_date": "2026-10-16",
-          "last_msg": "[main] fix(prefetch): 음성 칸에 episode 가 없으면 공백으로 — 평�",
-          "branch": "dev",
-          "activity": [
-            0,
-            4,
-            4,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 75
-        },
-        {
           "name": "metadium-explorer-stack",
           "last_date": "2026-10-14",
           "last_msg": "fix(watch): delegator 소크·sigcheck 알림을 망별 방으로 분리 — tn ",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -222,7 +222,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 11
         },
         {
@@ -810,8 +810,8 @@
       "repos": [
         {
           "name": "health",
-          "last_date": "2026-10-19",
-          "last_msg": "임플란트 10/30 일정·회복 주의사항 기록",
+          "last_date": "2026-10-20",
+          "last_msg": "신한 증권 Documents로 이동, 암호 표기",
           "branch": "main",
           "activity": [
             0,
@@ -819,11 +819,28 @@
             0,
             0,
             0,
-            0,
-            7
+            7,
+            4
           ],
-          "commits_7d": 7,
-          "commits_30d": 20
+          "commits_7d": 11,
+          "commits_30d": 24
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-20",
+          "last_msg": "log 10/20: cpdax backdated briefick",
+          "branch": "mini-jsong",
+          "activity": [
+            22,
+            25,
+            21,
+            6,
+            3,
+            40,
+            34
+          ],
+          "commits_7d": 151,
+          "commits_30d": 454
         },
         {
           "name": "life",
@@ -832,32 +849,15 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
             0,
             0,
             0,
-            4
+            4,
+            0
           ],
           "commits_7d": 5,
-          "commits_30d": 29
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-19",
-          "last_msg": "log 10/19: late recheck",
-          "branch": "mini-jsong",
-          "activity": [
-            50,
-            22,
-            25,
-            21,
-            6,
-            3,
-            40
-          ],
-          "commits_7d": 170,
-          "commits_30d": 420
+          "commits_30d": 28
         },
         {
           "name": "flex",
@@ -865,7 +865,7 @@
           "last_msg": "outbox: add 10/1 plan reconciliation notice sent to hub",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -873,7 +873,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
@@ -891,7 +891,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 19
+          "commits_30d": 17
         },
         {
           "name": "mirae",
