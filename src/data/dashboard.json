@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-10-20T23:00:01.514Z",
+  "generated_at": "2026-10-21T23:00:01.626Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-10-20",
-          "last_msg": "[admin] docs(api): 등록 가이드 — 코너별 연도 자리(0000/19NN) 표 +",
+          "last_date": "2026-10-21",
+          "last_msg": "[admin] fix(audit-notify): cron 에 ssh-agent 가 없다 — 자동화 키 + EC2",
           "branch": "dev",
           "activity": [
-            4,
             4,
             0,
             0,
             0,
             1,
+            3,
             0
           ],
-          "commits_7d": 9,
-          "commits_30d": 70
+          "commits_7d": 11,
+          "commits_30d": 69
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-10-20",
+          "last_date": "2026-10-21",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
-            2,
             3,
+            2,
             2,
             2,
             2,
@@ -40,20 +40,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-10-20",
-          "last_msg": "docs(log): 10-20 end-of-day snapshot",
+          "last_date": "2026-10-21",
+          "last_msg": "docs(log): 10-21 record misreport correction",
           "branch": "gram-jsong",
           "activity": [
-            7,
             12,
             19,
             15,
             34,
             28,
+            7,
             0
           ],
-          "commits_7d": 128,
-          "commits_30d": 327
+          "commits_7d": 121,
+          "commits_30d": 326
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-21",
+          "last_msg": "feat: 「초정리 편지」(배유안) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            4,
+            2,
+            1,
+            5,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 59
         },
         {
           "name": "validator",
@@ -61,33 +78,16 @@
           "last_msg": "10/19 구 RocksDB 삭제·1회 스냅샷 기록",
           "branch": "master",
           "activity": [
-            0,
             8,
             1,
             0,
             1,
             0,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 33
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-19",
-          "last_msg": "docs: 세션 체크리스트 최상단을 10/19 저녁 상태로 갱신",
-          "branch": "main",
-          "activity": [
-            2,
-            4,
-            2,
-            1,
-            5,
             0,
             0
           ],
-          "commits_7d": 16,
-          "commits_30d": 61
+          "commits_7d": 10,
+          "commits_30d": 33
         },
         {
           "name": "metadium-attestator",
@@ -97,8 +97,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -113,9 +113,9 @@
           "branch": "migration/postgresql",
           "activity": [
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0
@@ -130,9 +130,9 @@
           "branch": "migration/postgresql",
           "activity": [
             0,
-            0,
             1,
             2,
+            0,
             0,
             0,
             0
@@ -147,9 +147,9 @@
           "branch": "migration/postgresql",
           "activity": [
             0,
+            2,
+            2,
             0,
-            2,
-            2,
             0,
             0,
             0
@@ -165,8 +165,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -181,8 +181,8 @@
           "branch": "migration/postgresql",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -198,8 +198,8 @@
           "branch": "prod-snapshot/20261017",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -222,7 +222,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 11
         },
         {
@@ -809,6 +809,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "mirae",
+          "last_date": "2026-10-21",
+          "last_msg": "fix: 코스피 지수 네이버 실시간 우선, FDR 폴백 — FDR 장중 스�",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-21",
+          "last_msg": "log 10/21: relay court correction",
+          "branch": "mini-jsong",
+          "activity": [
+            25,
+            21,
+            6,
+            3,
+            40,
+            34,
+            20
+          ],
+          "commits_7d": 149,
+          "commits_30d": 463
+        },
+        {
           "name": "health",
           "last_date": "2026-10-20",
           "last_msg": "신한 증권 Documents로 이동, 암호 표기",
@@ -818,29 +852,12 @@
             0,
             0,
             0,
-            0,
             7,
-            4
+            4,
+            0
           ],
           "commits_7d": 11,
           "commits_30d": 24
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-20",
-          "last_msg": "log 10/20: cpdax backdated briefick",
-          "branch": "mini-jsong",
-          "activity": [
-            22,
-            25,
-            21,
-            6,
-            3,
-            40,
-            34
-          ],
-          "commits_7d": 151,
-          "commits_30d": 454
         },
         {
           "name": "life",
@@ -848,12 +865,12 @@
           "last_msg": "README: 11/15 골프 동반자(안민영·임세윤·윤태경) 반영",
           "branch": "main",
           "activity": [
-            0,
             1,
             0,
             0,
             0,
             4,
+            0,
             0
           ],
           "commits_7d": 5,
@@ -891,24 +908,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 17
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-09-19",
-          "last_msg": "fix: 신용/반대매매 지표 3개월 방치 데이터 갱신 + 신선도 가�",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
+          "commits_30d": 6
         },
         {
           "name": "wemix-dios",
