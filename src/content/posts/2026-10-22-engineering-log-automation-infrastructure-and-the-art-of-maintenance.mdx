@@ -1,0 +1,46 @@
+---
+title: "Engineering Log: Automation, Infrastructure, and the Art of Maintenance"
+date: "2026-10-22"
+lang: en
+excerpt: "Engineering Log: Automation, Infrastructure, and the Art of Maintenance  As a CTO and engineer with two decades of experience, I’ve learned that the m..."
+---
+
+# Engineering Log: Automation, Infrastructure, and the Art of Maintenance
+
+As a CTO and engineer with two decades of experience, I’ve learned that the most critical part of any system isn't the initial launch, but the **maintenance and observability** of the ecosystem. Whether I was architecting large-scale systems at **CPLABS** or building personal tooling, the goal remains the same: reducing cognitive load through automation.
+
+Today’s work was a mix of infrastructure troubleshooting and updating my personal development dashboard. While a JSON update might seem trivial on the surface, the commit messages within that data reveal the real engineering challenges I tackled today.
+
+### Solving the "Invisible" Infrastructure Gap
+
+One of the most interesting updates in today's dashboard data is the commit for the `heritageradio` repository:
+`"[admin] fix(audit-notify): cron 에 ssh-agent 가 없다 — 자동화 키 + EC2"`
+
+This is a classic "gotcha" in Linux systems administration. When you run a script manually in a terminal, your `ssh-agent` is active, and your keys are loaded. However, when that same script is triggered by a `cron` job, it runs in a non-interactive shell with a stripped-down environment. The `ssh-agent` is missing, and suddenly, your automated backup or notification system fails because it can't authenticate via SSH.
+
+**The Technical Decision:**
+Instead of hardcoding keys into the script (a security nightmare) or attempting to source a full bash profile within cron, I implemented a more robust approach using a dedicated automation key managed via the EC2 instance's identity and a properly configured agent path. This ensures that the audit notification system remains decoupled from my personal user session while maintaining a strict security posture.
+
+### Observability Through Data: The Dashboard
+
+The bulk of today's git diff shows an update to `dashboard.json`. I maintain a custom dashboard to track my activity across multiple repositories (`claude-agent`, `booksummary`, `validator`, etc.). 
+
+```json
+"generated_at": "2026-10-21T23:00:01.626Z",
+"commits_7d": 121, 
+"commits_30d": 326
+```
+
+Looking at the `claude-agent` activity, the numbers are high. This reflects my current deep dive into AI agents—specifically how to make them more autonomous and reliable. When I see a spike in `commits_7d`, it's usually a sign of an "iteration loop": hypothesis $\rightarrow$ implementation $\rightarrow$ failure $\rightarrow$ correction.
+
+### Insights from the Diff
+
+Something that caught my eye in the diff was the shifting priority of repositories. The `booksummary` project is seeing an uptick in activity (`commits_7d` moving from 12 to 15), while the `validator` project has plateaued. 
+
+In a professional setting at **CPLABS**, we call this **Resource Allocation**. Even in a personal project, your "developer bandwidth" is a finite resource. By visualizing my commit velocity, I can objectively see where my curiosity—and my time—is flowing. It prevents the "guilt" of neglecting one project when you are making massive breakthroughs in another.
+
+### Final Thoughts
+
+Today was a reminder that engineering is as much about the "plumbing" (fixing cron jobs and SSH agents) as it is about the "architecture" (building AI agents). If the plumbing leaks, the architecture doesn't matter.
+
+**Key Takeaway:** Always test your automation in the actual environment it will run in. A script that works in your terminal is only half-finished; a script that works in `cron` is production-ready.
