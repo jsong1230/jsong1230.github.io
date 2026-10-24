@@ -1,76 +1,93 @@
 {
-  "generated_at": "2026-10-23T23:00:01.975Z",
+  "generated_at": "2026-10-24T23:00:01.950Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-10-24",
+          "last_msg": "docs(nginx): README 이력에 API gw offset 상한(10/24) 추가",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 13
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-24",
+          "last_msg": "Auto-generate weekly book post",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            0
+          ],
+          "commits_7d": 15,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-24",
+          "last_msg": "docs: 10-26 Zabbix runbook order (10:00 cutover, 14:14 W8)",
+          "branch": "gram-jsong",
+          "activity": [
+            34,
+            28,
+            7,
+            1,
+            4,
+            4,
+            0
+          ],
+          "commits_7d": 93,
+          "commits_30d": 295
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-24",
+          "last_msg": "feat: 「쇼코의 미소」(최은영) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            5,
+            0,
+            2,
+            0,
+            1,
+            1,
+            0
+          ],
+          "commits_7d": 10,
+          "commits_30d": 53
+        },
         {
           "name": "validator",
           "last_date": "2026-10-23",
           "last_msg": "일일 요약 메모리 기준점 10/20 으로 갱신(ParityDB 전환 후 정체",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             0,
             0,
             1,
+            0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 2,
           "commits_30d": 34
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-23",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 15,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-23",
-          "last_msg": "docs(log): 10-23 end-of-day handover snapshot",
-          "branch": "gram-jsong",
-          "activity": [
-            15,
-            34,
-            28,
-            7,
-            1,
-            4,
-            0
-          ],
-          "commits_7d": 108,
-          "commits_30d": 321
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-23",
-          "last_msg": "feat: 「지구 끝의 온실」(김초엽) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            1,
-            5,
-            0,
-            2,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 58
         },
         {
           "name": "heritageradio",
@@ -79,15 +96,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             1,
             3,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 65
+          "commits_30d": 62
         },
         {
           "name": "metadium-attestator",
@@ -95,7 +112,7 @@
           "last_msg": "db: add PostgreSQL driver and make native query portable (current_date)",
           "branch": "migration/postgresql",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -112,7 +129,7 @@
           "last_msg": "db: add PostgreSQL driver",
           "branch": "migration/postgresql",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -120,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 2
         },
         {
@@ -129,7 +146,7 @@
           "last_msg": "deps: lock pg 8.7.3 (generated with npm 6 / Node 10)",
           "branch": "migration/postgresql",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -137,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 2,
           "commits_30d": 3
         },
         {
@@ -146,7 +163,7 @@
           "last_msg": "db: PostgreSQL variant of insertAccessLog casting elapsed to integer",
           "branch": "migration/postgresql",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -154,7 +171,7 @@
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 2,
           "commits_30d": 4
         },
         {
@@ -163,7 +180,7 @@
           "last_msg": "db: add PostgreSQL driver and replace MySQL if() with CASE in native queries",
           "branch": "migration/postgresql",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -188,7 +205,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -205,25 +222,8 @@
             0,
             0
           ],
-          "commits_7d": 1,
-          "commits_30d": 1
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-10-14",
-          "last_msg": "fix(watch): delegator 소크·sigcheck 알림을 망별 방으로 분리 — tn ",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
           "commits_7d": 0,
-          "commits_30d": 9
+          "commits_30d": 1
         },
         {
           "name": "cplabs_homepage",
@@ -810,19 +810,19 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-10-23",
-          "last_msg": "log 2026-10-23: mail check 17:33, patent agenda v2",
+          "last_date": "2026-10-24",
+          "last_msg": "log 2026-10-24: briefick",
           "branch": "mini-jsong",
           "activity": [
-            6,
             3,
             40,
             34,
             20,
             19,
-            42
+            42,
+            11
           ],
-          "commits_7d": 164,
+          "commits_7d": 169,
           "commits_30d": 505
         },
         {
@@ -834,8 +834,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
@@ -849,9 +849,9 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             7,
             4,
+            0,
             0,
             0,
             0
@@ -866,15 +866,15 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             4,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 25
+          "commits_30d": 24
         },
         {
           "name": "flex",
@@ -908,7 +908,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "wemix-dios",
