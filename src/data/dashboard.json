@@ -1,9 +1,43 @@
 {
-  "generated_at": "2026-10-24T23:00:01.950Z",
+  "generated_at": "2026-10-25T23:00:02.041Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-25",
+          "last_msg": "Auto-generate weekly recap",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 70
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-25",
+          "last_msg": "ops(log): 10-25 mainnet gmet adhoc status, all normal (pre-cutover baseline)",
+          "branch": "gram-jsong",
+          "activity": [
+            28,
+            7,
+            1,
+            4,
+            4,
+            2,
+            0
+          ],
+          "commits_7d": 80,
+          "commits_30d": 288
+        },
         {
           "name": "metadium-explorer-stack",
           "last_date": "2026-10-24",
@@ -14,46 +48,12 @@
             0,
             0,
             0,
-            0,
             4,
+            0,
             0
           ],
           "commits_7d": 4,
           "commits_30d": 13
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-24",
-          "last_msg": "Auto-generate weekly book post",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            3,
-            0
-          ],
-          "commits_7d": 15,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-24",
-          "last_msg": "docs: 10-26 Zabbix runbook order (10:00 cutover, 14:14 W8)",
-          "branch": "gram-jsong",
-          "activity": [
-            34,
-            28,
-            7,
-            1,
-            4,
-            4,
-            0
-          ],
-          "commits_7d": 93,
-          "commits_30d": 295
         },
         {
           "name": "booksummary",
@@ -61,15 +61,15 @@
           "last_msg": "feat: 「쇼코의 미소」(최은영) 제작·업로드",
           "branch": "main",
           "activity": [
-            5,
             0,
             2,
             0,
             1,
             1,
+            0,
             0
           ],
-          "commits_7d": 10,
+          "commits_7d": 9,
           "commits_30d": 53
         },
         {
@@ -78,11 +78,11 @@
           "last_msg": "일일 요약 메모리 기준점 10/20 으로 갱신(ParityDB 전환 후 정체",
           "branch": "master",
           "activity": [
-            1,
             0,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
@@ -95,9 +95,9 @@
           "last_msg": "[admin] fix(audit-notify): cron 에 ssh-agent 가 없다 — 자동화 키 + EC2",
           "branch": "dev",
           "activity": [
-            0,
             1,
             3,
+            0,
             0,
             0,
             0,
@@ -120,7 +120,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 2
         },
         {
@@ -154,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 3
         },
         {
@@ -171,7 +171,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 4
         },
         {
@@ -188,7 +188,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 1
         },
         {
@@ -814,16 +814,16 @@
           "last_msg": "log 2026-10-24: briefick",
           "branch": "mini-jsong",
           "activity": [
-            3,
             40,
             34,
             20,
             19,
             42,
-            11
+            11,
+            0
           ],
-          "commits_7d": 169,
-          "commits_30d": 505
+          "commits_7d": 166,
+          "commits_30d": 496
         },
         {
           "name": "mirae",
@@ -833,8 +833,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -848,9 +848,9 @@
           "last_msg": "신한 증권 Documents로 이동, 암호 표기",
           "branch": "main",
           "activity": [
-            0,
             7,
             4,
+            0,
             0,
             0,
             0,
@@ -865,8 +865,8 @@
           "last_msg": "README: 11/15 골프 동반자(안민영·임세윤·윤태경) 반영",
           "branch": "main",
           "activity": [
-            0,
             4,
+            0,
             0,
             0,
             0,
