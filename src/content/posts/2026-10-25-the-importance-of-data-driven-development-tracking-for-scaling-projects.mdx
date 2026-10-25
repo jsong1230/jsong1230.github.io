@@ -1,0 +1,42 @@
+---
+title: "The Importance of Data-Driven Development Tracking for Scaling Projects"
+date: "2026-10-25"
+lang: en
+excerpt: "Maintaining Visibility: The Importance of Data-Driven Development Tracking  As a CTO and engineer with over two decades in the trenches—spanning the e..."
+---
+
+# Maintaining Visibility: The Importance of Data-Driven Development Tracking
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of blockchain, Web3, and now the integration of AI—I've learned that the biggest enemy of a scaling project isn't usually a technical bug, but a lack of visibility. When you are managing multiple repositories, from core validator nodes to AI agents and personal knowledge bases, it is easy to lose track of the "velocity" of each stream.
+
+Today's work was a focused update to my personal development dashboard (`jsong1230.github.io`), refreshing the `dashboard.json` to reflect the current state of my active projects. While a "chore" commit might seem mundane, the data it contains tells a story about current priorities and technical pivots.
+
+### The Technical Shift: From Validator to Explorer Stack
+
+One of the most interesting changes in today's diff is the shift in focus within my infrastructure repos. If you look at the updated `dashboard.json`, the primary activity has shifted from the `validator` repo to the `metadium-explorer-stack`.
+
+```json
+- "name": "validator",
+- "last_date": "2026-10-23",
+- "last_msg": "일일 요약 메모리 기준점 10/20 으로 갱신..."
++ "name": "metadium-explorer-stack",
++ "last_date": "2026-10-24",
++ "last_msg": "docs(nginx): README 이력에 API gw offset 상한(10/24) 추가",
+```
+
+This reflects a practical transition in my current engineering focus. While validator stability is a baseline requirement, the current priority has moved toward the **Explorer Stack**, specifically optimizing the API Gateway and Nginx configurations. In high-throughput Web3 environments, the "offset limit" of an API gateway is not just a configuration detail—it is a critical guardrail that prevents memory exhaustion and ensures the stability of the indexer during heavy query loads.
+
+### Insights from the Data
+
+Looking at the `activity` arrays and `commits_7d` metrics, a few insights emerge:
+
+1.  **AI Agent Momentum:** The `claude-agent` repo continues to show high velocity (93 commits in the last 7 days). This underscores my belief that the bridge between LLMs and operational runbooks (like the Zabbix cutover documentation mentioned in the commit) is where the most immediate productivity gains are happening.
+2.  **Consistency over Intensity:** My `booksummary` and `jsong1230.github.io` repos show a steady, rhythmic pulse. Whether it's automating weekly book posts or updating a summary of 「쇼코의 미소」, maintaining a "public log" is a discipline I've carried throughout my career. It forces a level of synthesis that purely technical coding does not.
+
+### The CTO's Perspective: Why Track This?
+
+At **CPLABS**, and throughout my leadership experience, I have always advocated for "Observable Engineering." This doesn't just apply to Prometheus metrics or ELK stacks in production; it applies to the development process itself.
+
+When I review a dashboard like this, I'm not just looking at numbers; I'm performing a **context switch audit**. If I see that my AI agent work is consuming 80% of my bandwidth while the core infrastructure is stagnating, I can make an informed decision to rebalance my focus. 
+
+Technical depth is essential, but the ability to step back and view your work as a data set allows you to manage your intellectual energy more effectively. Today's update was a reminder that in the fast-paced world of Web3 and AI, the most valuable tool an engineer can have is a clear mirror of their own progress.
