@@ -1,0 +1,45 @@
+---
+title: "The Art of Continuous Visibility: Automating the Engineering Dashboard"
+date: "2026-10-26"
+lang: en
+excerpt: "The Art of Continuous Visibility: Automating the Engineering Dashboard  As a CTO and engineer with over two decades in the trenches—spanning the evolu..."
+---
+
+# The Art of Continuous Visibility: Automating the Engineering Dashboard
+
+As a CTO and engineer with over two decades in the trenches—spanning the evolution of early distributed systems to the current frontiers of Web3, DID, and AI—I’ve learned that **visibility is the bedrock of velocity**. Whether you are managing a small team or a massive infrastructure at a place like CPLABS, you cannot optimize what you cannot measure.
+
+Today’s work was focused on a seemingly simple task: updating my personal development dashboard (`dashboard.json`). While a `chore` commit might look mundane in a git log, it represents a larger philosophy I hold regarding "Engineering Observability."
+
+### The Problem: The "Black Box" of Personal Productivity
+In high-pressure environments, especially when juggling multiple repositories across different domains (AI agents, blockchain explorers, and personal knowledge bases), it is easy to lose track of where the actual momentum is happening. 
+
+I don't believe in manual timesheets or vanity metrics. Instead, I prefer **automated telemetry**. By programmatically aggregating commit activity, last-message timestamps, and rolling 7-day/30-day commit counts, I create a real-time heatmap of my technical focus.
+
+### Technical Decisions & Implementation
+The update today reflects the synchronization of my activity across several key projects. Looking at the diff, you can see the shift in focus:
+
+```json
+- "last_msg": "docs: 10-26 Zabbix runbook order (10:00 cutover, 14:14 W8)",
++ "last_msg": "ops(log): 10-25 mainnet gmet adhoc status, all normal (pre-cutover baseline)",
+```
+
+This change in the `claude-agent` repo isn't just a text update; it marks a transition from **planning (runbook order)** to **execution (pre-cutover baseline)**. 
+
+From an architectural standpoint, keeping this data in a structured `JSON` format allows my frontend to render trends without needing a heavy backend database. It treats my GitHub activity as a "stateless" data source, which is a pattern I often advocate for in Web3 projects to reduce unnecessary centralization and overhead.
+
+### Insights from the Data
+Looking at the `activity` arrays in the diff, I noticed a significant spike in the `claude-agent` repository, with `commits_30d` hitting **288**. 
+
+This tells me two things:
+1. **AI Integration is the Current Priority:** The sheer volume of commits in the agentic workflow indicates that the "experimentation phase" has shifted into a "refinement phase."
+2. **Context Switching Cost:** When I see activity drop in `metadium-explorer-stack` while spiking in `claude-agent`, it serves as a visual reminder of the cognitive load associated with context switching between blockchain infrastructure and AI orchestration.
+
+### Final Thoughts
+Many engineers overlook the importance of a "Developer Dashboard," viewing it as a vanity project. However, throughout my career at CPLABS and beyond, I've found that the most successful engineers are those who treat their own productivity as a system to be engineered.
+
+By automating the tracking of my "technical footprint," I can step back from the code and ask: *“Am I spending my time on the right problems?”* 
+
+Today’s update confirms that the trajectory is correct. The baseline is set, the logs are normal, and the momentum is shifting toward the next cutover.
+
+**Stay curious, keep committing.**
