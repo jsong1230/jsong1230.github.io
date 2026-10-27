@@ -1,0 +1,52 @@
+---
+title: "Engineering Log: Validating the \"Doraji\" Hard Fork and System Observability"
+date: "2026-10-27"
+lang: en
+excerpt: "Engineering Log: Validating the \"Doraji\" Hard Fork and System Observability  As a CTO, I’ve always believed that the most critical part of a hard fork..."
+---
+
+# Engineering Log: Validating the "Doraji" Hard Fork and System Observability
+
+As a CTO, I’ve always believed that the most critical part of a hard fork isn't the code itself, but the **validation of the transition**. A successful deployment is not defined by the build passing, but by the network's behavior during the exact moment of the fork.
+
+Today's work focused on the rigorous private testing of the "Doraji" Hard Fork (HF) and maintaining my personal development dashboard.
+
+## 1. The "Doraji" Hard Fork: Phase A Validation
+
+The primary objective was to execute "Phase A" of the Doraji HF private test. This phase is designed to ensure that nodes of different versions can coexist and that the fork occurs exactly at the designated block height without compromising network stability.
+
+### Technical Decisions & Problem Solving
+One interesting challenge arose during the setup: **The Block Timing Mismatch.**
+Initially, the plan was to set the fork at block 3,000, assuming a 5-second block interval. However, real-world measurements showed a 2-second interval. At that speed, we wouldn't have had the necessary 30-minute observation window before the fork to verify stability.
+
+**Decision:** I pivoted and increased the fork height to **6,000**. I performed a `--clean` on the test directory and restarted the sequence to ensure the observation window (Phase A5) was sufficiently long.
+
+### Key Insights from the Results
+The results were textbook-perfect for a hard fork scenario:
+*   **Coexistence (A1-A4):** Mixed versions (v1.2.3 and v1.3.0) and different database engines (RocksDB and LevelDB) maintained hash consensus.
+*   **The "Fork Moment" (A6):** As expected, the old engine (v1.2.3) on `node4` stopped exactly at block 5,999, rejecting block 6,000 due to an `invalid merkle root`. This confirms that the hard fork logic is correctly implemented—old nodes *should* be unable to process the new fork's blocks.
+*   **Recovery:** Once `node4` was upgraded to the Doraji engine, it immediately synchronized and passed all e2e tests, including a `bigtx-e2e` (256KB code deposit), confirming that gas limits and transaction handling remain intact.
+
+## 2. Automation and Observability
+
+To avoid manual fatigue and human error during the 3-hour wait for the fork, I implemented an automation script: `a56-auto.sh`.
+
+```bash
+# Logic summary of a56-auto.sh
+# 1. A5: Periodic health checks (check.py) and tx verification via node4
+# 2. A6: Monitor block 6000 -> Capture rejection logs -> Upgrade node4 -> Run e2e tests
+```
+
+By automating the transition from observation (A5) to verification (A6), I ensured that the "rejection logs" from the old node were captured the millisecond they occurred. In high-stakes blockchain operations, these logs are the only way to prove the fork happened as intended.
+
+## 3. Dashboard Maintenance
+
+On the side, I updated my personal dashboard data (`dashboard.json`). While this seems like a chore, tracking commit velocity across different repositories (like `claude-agent` and `booksummary`) helps me maintain a high-level view of my productivity and the health of my various side projects.
+
+## Final Thoughts
+
+Working at **CPLABS**, I've learned that "hope is not a strategy." Whether it's a mainnet upgrade or a private test, the goal is to try and break the system in a controlled environment so that it remains unbreakable in production.
+
+Phase A is complete. We now move toward Phase B (long-term stability and history-window verification) and Phase C (clean sync across different engines).
+
+**Stay technical, stay curious.**
