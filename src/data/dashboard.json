@@ -1,42 +1,110 @@
 {
-  "generated_at": "2026-10-26T23:00:01.798Z",
+  "generated_at": "2026-10-27T23:00:01.446Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
+          "name": "heritageradio",
           "last_date": "2026-10-27",
-          "last_msg": "ops: 10-27 Doraji Phase A1-A4 passed; A5/A6 automated on 150",
-          "branch": "gram-jsong",
+          "last_msg": "[admin] chore(audit-notify): 원고 변경 감지 — 변화 있을 때만 전�",
+          "branch": "dev",
           "activity": [
-            7,
-            1,
-            4,
-            4,
+            0,
+            0,
+            0,
+            0,
+            0,
             2,
-            52,
-            1
+            0
           ],
-          "commits_7d": 99,
-          "commits_30d": 332
+          "commits_7d": 5,
+          "commits_30d": 56
+        },
+        {
+          "name": "validator",
+          "last_date": "2026-10-27",
+          "last_msg": "일일 요약: 정상은 무발송·월요일 주간 요약만, 경고는 즉시",
+          "branch": "master",
+          "activity": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 35
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-10-27",
+          "last_msg": "chore(front): 서브모듈을 상류 PR #104 머지(7c41d517)로 — node22 패�",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            4,
+            0,
+            0,
+            7,
+            0
+          ],
+          "commits_7d": 11,
+          "commits_30d": 20
+        },
+        {
+          "name": "meta-auth-service",
+          "last_date": "2026-10-27",
+          "last_msg": "fix(api): replace heapdump native addon with built-in v8.writeHeapSnapshot",
+          "branch": "ops/node22-ubuntu2404",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 2
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-10-26",
+          "last_date": "2026-10-27",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-27",
+          "last_msg": "docs(log): 10-27 briefick registration",
+          "branch": "gram-jsong",
+          "activity": [
+            1,
+            4,
+            4,
+            2,
+            52,
+            49,
+            0
+          ],
+          "commits_7d": 119,
+          "commits_30d": 374
         },
         {
           "name": "booksummary",
@@ -44,67 +112,16 @@
           "last_msg": "feat: 「나무를 심은 사람」(장 지오노) 제작·업로드",
           "branch": "main",
           "activity": [
-            2,
             0,
             1,
             1,
             0,
             3,
+            0,
             0
           ],
           "commits_7d": 7,
-          "commits_30d": 54
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-10-24",
-          "last_msg": "docs(nginx): README 이력에 API gw offset 상한(10/24) 추가",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            4,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 13
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-10-23",
-          "last_msg": "일일 요약 메모리 기준점 10/20 으로 갱신(ParityDB 전환 후 정체",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            1,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 34
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-10-21",
-          "last_msg": "[admin] fix(audit-notify): cron 에 ssh-agent 가 없다 — 자동화 키 + EC2",
-          "branch": "dev",
-          "activity": [
-            3,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 62
+          "commits_30d": 51
         },
         {
           "name": "metadium-attestator",
@@ -139,23 +156,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 2
-        },
-        {
-          "name": "meta-auth-service",
-          "last_date": "2026-10-18",
-          "last_msg": "deps: lock pg 8.7.3 (generated with npm 6 / Node 10)",
-          "branch": "migration/postgresql",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 3
         },
         {
           "name": "mykeepin-aa-agecheck",
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-10-26",
-          "last_msg": "patents: 10/26 agenda decisions and attorney reply",
+          "last_date": "2026-10-27",
+          "last_msg": "log 2026-10-27: briefick, GitGuardian false positive",
           "branch": "mini-jsong",
           "activity": [
-            34,
             20,
             19,
             42,
             11,
             0,
-            13
+            13,
+            8
           ],
-          "commits_7d": 139,
-          "commits_30d": 501
+          "commits_7d": 113,
+          "commits_30d": 497
         },
         {
           "name": "mirae",
@@ -831,8 +831,8 @@
           "last_msg": "fix: 코스피 지수 네이버 실시간 우선, FDR 폴백 — FDR 장중 스�",
           "branch": "main",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -848,7 +848,7 @@
           "last_msg": "신한 증권 Documents로 이동, 암호 표기",
           "branch": "main",
           "activity": [
-            4,
+            0,
             0,
             0,
             0,
@@ -856,7 +856,7 @@
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 0,
           "commits_30d": 24
         },
         {
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 23
+          "commits_30d": 22
         },
         {
           "name": "flex",
