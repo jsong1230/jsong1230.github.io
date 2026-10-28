@@ -1,14 +1,48 @@
 {
-  "generated_at": "2026-10-27T23:00:01.446Z",
+  "generated_at": "2026-10-28T23:00:01.120Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-10-27",
-          "last_msg": "[admin] chore(audit-notify): 원고 변경 감지 — 변화 있을 때만 전�",
+          "last_date": "2026-10-28",
+          "last_msg": "[admin] chore(build): w26+w27 주차 빌드 드라이버 (11/02~11/15)",
           "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 46
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-10-28",
+          "last_msg": "chore: 서브모듈을 Renovate 설정 머지본으로 — front PR #106(ae27a9c",
+          "branch": "master",
+          "activity": [
+            0,
+            4,
+            0,
+            0,
+            7,
+            3,
+            0
+          ],
+          "commits_7d": 14,
+          "commits_30d": 23
+        },
+        {
+          "name": "metadium_homepage",
+          "last_date": "2026-10-28",
+          "last_msg": "Renovate 설정 추가 (master 대상, node 24.x 고정)",
+          "branch": "master",
           "activity": [
             0,
             0,
@@ -18,8 +52,76 @@
             2,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 56
+          "commits_7d": 2,
+          "commits_30d": 2
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-28",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-28",
+          "last_msg": "ops: morning AI brief — GitHub scout fallback cron (09:40) + log of job payloa",
+          "branch": "gram-jsong",
+          "activity": [
+            4,
+            4,
+            2,
+            52,
+            49,
+            19,
+            0
+          ],
+          "commits_7d": 131,
+          "commits_30d": 385
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-28",
+          "last_msg": "feat: 「바냐 아저씨」(안톤 체호프) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            1,
+            1,
+            0,
+            3,
+            0,
+            3,
+            0
+          ],
+          "commits_7d": 8,
+          "commits_30d": 52
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-10-28",
+          "last_msg": "Renovate 설정 추가 (master 대상, node 24.x 고정)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 7
         },
         {
           "name": "validator",
@@ -27,33 +129,16 @@
           "last_msg": "일일 요약: 정상은 무발송·월요일 주간 요약만, 경고는 즉시",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             0,
             0,
             1,
+            0,
             0
           ],
           "commits_7d": 2,
           "commits_30d": 35
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-10-27",
-          "last_msg": "chore(front): 서브모듈을 상류 PR #104 머지(7c41d517)로 — node22 패�",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            4,
-            0,
-            0,
-            7,
-            0
-          ],
-          "commits_7d": 11,
-          "commits_30d": 20
         },
         {
           "name": "meta-auth-service",
@@ -65,63 +150,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
           "commits_30d": 2
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-27",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            3,
-            3,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-27",
-          "last_msg": "docs(log): 10-27 briefick registration",
-          "branch": "gram-jsong",
-          "activity": [
-            1,
-            4,
-            4,
-            2,
-            52,
-            49,
-            0
-          ],
-          "commits_7d": 119,
-          "commits_30d": 374
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-26",
-          "last_msg": "feat: 「나무를 심은 사람」(장 지오노) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            0,
-            1,
-            1,
-            0,
-            3,
-            0,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 51
         },
         {
           "name": "metadium-attestator",
@@ -226,23 +260,6 @@
           "commits_30d": 1
         },
         {
-          "name": "cplabs_homepage",
-          "last_date": "2026-10-08",
-          "last_msg": "K-BTF 공공기관 도입 채널 이미지 교체 및 레이아웃 개선 (국/�",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 5
-        },
-        {
           "name": "go-metadium-m114",
           "last_date": "2026-09-15",
           "last_msg": "Merge pull request #142 from METADIUM/release/v1.1.4",
@@ -298,23 +315,6 @@
           "last_date": "2026-09-09",
           "last_msg": "go.mod, metadium: upgrade embedded etcd to 3.5.16 (GHSA-739v-rxmh-crp8)",
           "branch": "HEAD",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 0
-        },
-        {
-          "name": "metadium_homepage",
-          "last_date": "2026-08-24",
-          "last_msg": "MetaArena 오픈베타 종료(8/31)에 따라 홈 hero 슬라이드 제거",
-          "branch": "master",
           "activity": [
             0,
             0,
@@ -809,21 +809,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-10-28",
+          "last_msg": "README: KT 선택약정 12개월 재가입(10/28) · family: 10/28 어머니 댁",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "commits_7d": 1,
+          "commits_30d": 22
+        },
+        {
           "name": "claude-agent",
-          "last_date": "2026-10-27",
-          "last_msg": "log 2026-10-27: briefick, GitGuardian false positive",
+          "last_date": "2026-10-28",
+          "last_msg": "log 2026-10-28: jeff-mbp-office screen check, non-AWS hosting billing lookup for",
           "branch": "mini-jsong",
           "activity": [
-            20,
             19,
             42,
             11,
             0,
             13,
-            8
+            8,
+            13
           ],
-          "commits_7d": 113,
-          "commits_30d": 497
+          "commits_7d": 106,
+          "commits_30d": 508
         },
         {
           "name": "mirae",
@@ -831,7 +848,7 @@
           "last_msg": "fix: 코스피 지수 네이버 실시간 우선, FDR 폴백 — FDR 장중 스�",
           "branch": "main",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -839,7 +856,7 @@
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 0,
           "commits_30d": 2
         },
         {
@@ -858,23 +875,6 @@
           ],
           "commits_7d": 0,
           "commits_30d": 24
-        },
-        {
-          "name": "life",
-          "last_date": "2026-10-19",
-          "last_msg": "README: 11/15 골프 동반자(안민영·임세윤·윤태경) 반영",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 22
         },
         {
           "name": "flex",
