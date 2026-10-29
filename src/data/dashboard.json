@@ -1,9 +1,60 @@
 {
-  "generated_at": "2026-10-28T23:00:01.120Z",
+  "generated_at": "2026-10-29T23:00:01.451Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-30",
+          "last_msg": "ops: Wazuh-to-Zabbix stage 3 metrics items, prototypes and triggers on csp-app",
+          "branch": "gram-jsong",
+          "activity": [
+            4,
+            2,
+            52,
+            49,
+            19,
+            17,
+            14
+          ],
+          "commits_7d": 161,
+          "commits_30d": 414
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-10-29",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-29",
+          "last_msg": "feat: 「순례 주택」(유은실) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            3,
+            0,
+            3,
+            3,
+            0
+          ],
+          "commits_7d": 11,
+          "commits_30d": 53
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-10-28",
@@ -13,13 +64,13 @@
             0,
             0,
             0,
-            0,
             2,
             1,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 46
+          "commits_30d": 45
         },
         {
           "name": "metadium-explorer-stack",
@@ -27,12 +78,12 @@
           "last_msg": "chore: 서브모듈을 Renovate 설정 머지본으로 — front PR #106(ae27a9c",
           "branch": "master",
           "activity": [
-            0,
             4,
             0,
             0,
             7,
             3,
+            0,
             0
           ],
           "commits_7d": 14,
@@ -48,63 +99,12 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0
           ],
           "commits_7d": 2,
           "commits_30d": 2
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-10-28",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-28",
-          "last_msg": "ops: morning AI brief — GitHub scout fallback cron (09:40) + log of job payloa",
-          "branch": "gram-jsong",
-          "activity": [
-            4,
-            4,
-            2,
-            52,
-            49,
-            19,
-            0
-          ],
-          "commits_7d": 131,
-          "commits_30d": 385
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-10-28",
-          "last_msg": "feat: 「바냐 아저씨」(안톤 체호프) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            1,
-            1,
-            0,
-            3,
-            0,
-            3,
-            0
-          ],
-          "commits_7d": 8,
-          "commits_30d": 52
         },
         {
           "name": "cplabs_homepage",
@@ -116,8 +116,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0
           ],
           "commits_7d": 2,
@@ -129,11 +129,11 @@
           "last_msg": "일일 요약: 정상은 무발송·월요일 주간 요약만, 경고는 즉시",
           "branch": "master",
           "activity": [
-            1,
             0,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
@@ -149,8 +149,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -809,6 +809,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "mirae",
+          "last_date": "2026-10-29",
+          "last_msg": "feat: krx_snapshot.sh — 15:35 KST KRX 정규장 종가 캐시 고정 (NXT 애�",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "commits_7d": 3,
+          "commits_30d": 5
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-29",
+          "last_msg": "log 2026-10-29: briefick registration, evening mail check",
+          "branch": "mini-jsong",
+          "activity": [
+            42,
+            11,
+            0,
+            13,
+            8,
+            13,
+            16
+          ],
+          "commits_7d": 103,
+          "commits_30d": 524
+        },
+        {
           "name": "life",
           "last_date": "2026-10-28",
           "last_msg": "README: KT 선택약정 12개월 재가입(10/28) · family: 10/28 어머니 댁",
@@ -819,45 +853,11 @@
             0,
             0,
             0,
-            0,
-            1
-          ],
-          "commits_7d": 1,
-          "commits_30d": 22
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-28",
-          "last_msg": "log 2026-10-28: jeff-mbp-office screen check, non-AWS hosting billing lookup for",
-          "branch": "mini-jsong",
-          "activity": [
-            19,
-            42,
-            11,
-            0,
-            13,
-            8,
-            13
-          ],
-          "commits_7d": 106,
-          "commits_30d": 508
-        },
-        {
-          "name": "mirae",
-          "last_date": "2026-10-21",
-          "last_msg": "fix: 코스피 지수 네이버 실시간 우선, FDR 폴백 — FDR 장중 스�",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            1,
             0
           ],
-          "commits_7d": 0,
-          "commits_30d": 2
+          "commits_7d": 1,
+          "commits_30d": 19
         },
         {
           "name": "health",
@@ -891,7 +891,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 3
+          "commits_30d": 2
         },
         {
           "name": "privacy-map",
