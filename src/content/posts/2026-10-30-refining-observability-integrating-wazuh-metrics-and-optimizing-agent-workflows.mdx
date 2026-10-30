@@ -1,0 +1,54 @@
+---
+title: "Refining Observability: Integrating Wazuh Metrics and Optimizing Agent Workflows"
+date: "2026-10-30"
+lang: en
+excerpt: "Refining Observability: Integrating Wazuh Metrics and Optimizing Agent Workflows  As a CTO and engineer, I’ve learned that the difference between a \"w..."
+---
+
+# Refining Observability: Integrating Wazuh Metrics and Optimizing Agent Workflows
+
+As a CTO and engineer, I’ve learned that the difference between a "working" system and a "reliable" system lies in the details of the observability pipeline. Today's work was a deep dive into exactly that—refining the integration between Wazuh and Zabbix to ensure that security events aren't just captured, but are actionable and noise-free.
+
+## Solving the "Noise" Problem in Security Monitoring
+
+The primary focus today was the progression of the Wazuh-to-Zabbix pipeline. We moved through Stage 2 verification and into Stage 3 metric implementation. 
+
+One of the most critical technical lessons of the day came from a mistake I made during the Stage 2 trigger setup. I had initially configured the trigger prototypes as `type=1` (multiple events). In a high-frequency monitoring environment, this is a recipe for disaster. Because the `nodata` timer was evaluating every 30 seconds, it generated a flood of new PROBLEM events.
+
+**The Fix:** I pivoted the trigger prototypes (27991~27993) to `type=0` (single event). 
+
+In my 20 years of engineering, I've seen this pattern repeatedly: the temptation to "capture everything" often leads to "alert fatigue." By switching to single-event triggers and utilizing tag-scoped maintenance, we ensure that the Ops team only sees what actually requires their attention, rather than a mirror of the system's internal polling heartbeat.
+
+## Stage 3: From Events to Metrics
+
+With Stage 2 stabilized, I implemented the Stage 3 metrics. The goal here was to move beyond simple alerts and into health telemetry. I configured a master item (`wazuh.metrics`) with several dependent items using JSONPath to extract specific data:
+- Active/Disconnected/Never Connected agents
+- Vulnerability status (`vuln_ok`)
+- Reboot requirements
+
+The technical challenge here is the dependency on Low-Level Discovery (LLD). As seen in the logs, the items were created, but they remained empty until a discovery cycle was triggered. I had to coordinate a manual discovery request to CPLABS to validate that the prototypes were correctly spawning actual items for each agent.
+
+## Optimizing the Developer Experience (DX)
+
+Beyond the infrastructure work, I spent time cleaning up the "plumbing" of my local development environment. I noticed that the standard keyring was causing hangs when accessing GitHub tokens.
+
+**Technical Decision:** I modified the `gh-user-token` helper to read tokens directly from `hosts.yml`. 
+```python
+# tools/zbx-cplabs-board.py (conceptual change)
+# Shifted from agent.ping to active agent availability for the honeycomb board
+```
+This small change removes a blocking dependency on the OS keyring, making the automation scripts more portable and resilient. I also recovered a `claude-memory` repo that had been stuck in a rebase since late September—a reminder that even the most automated workflows need occasional manual intervention.
+
+## Final Insights
+
+Today's work reinforces a core philosophy: **Observability is an iterative process.** You cannot build a perfect monitoring system in one go. You deploy, you observe the noise, you suppress the irrelevant, and you refine the triggers.
+
+Whether it's adjusting a Zabbix trigger type or streamlining how a GitHub token is read, the goal is always the same: reduce friction and increase signal.
+
+***
+
+**Summary of Changes:**
+- **Wazuh $\rightarrow$ Zabbix:** Completed Stage 2 verification; implemented Stage 3 metrics and LLD prototypes.
+- **Infrastructure:** Optimized CPLABS board "alive" criteria to use active availability.
+- **Tooling:** Implemented `gh-user-token` via `hosts.yml` to bypass keyring hangs.
+- **Maintenance:** Updated personal dashboard data and recovered stalled git rebases.
