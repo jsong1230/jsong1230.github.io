@@ -1,34 +1,17 @@
 {
-  "generated_at": "2026-10-29T23:00:01.451Z",
+  "generated_at": "2026-10-30T23:00:01.066Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
-          "name": "claude-agent",
-          "last_date": "2026-10-30",
-          "last_msg": "ops: Wazuh-to-Zabbix stage 3 metrics items, prototypes and triggers on csp-app",
-          "branch": "gram-jsong",
-          "activity": [
-            4,
-            2,
-            52,
-            49,
-            19,
-            17,
-            14
-          ],
-          "commits_7d": 161,
-          "commits_30d": 414
-        },
-        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-10-29",
+          "last_date": "2026-10-30",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -39,21 +22,38 @@
           "commits_30d": 68
         },
         {
-          "name": "booksummary",
-          "last_date": "2026-10-29",
-          "last_msg": "feat: 「순례 주택」(유은실) 제작·업로드",
-          "branch": "main",
+          "name": "claude-agent",
+          "last_date": "2026-10-30",
+          "last_msg": "log: briefick explorer share rebalanced within 3.5h cap",
+          "branch": "gram-jsong",
           "activity": [
-            1,
-            0,
-            3,
-            0,
-            3,
-            3,
+            2,
+            52,
+            49,
+            19,
+            17,
+            40,
             0
           ],
-          "commits_7d": 11,
-          "commits_30d": 53
+          "commits_7d": 183,
+          "commits_30d": 435
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-10-30",
+          "last_msg": "feat: 「알로하, 나의 엄마들」(이금이) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            0,
+            3,
+            0,
+            3,
+            3,
+            4,
+            0
+          ],
+          "commits_7d": 14,
+          "commits_30d": 57
         },
         {
           "name": "heritageradio",
@@ -63,9 +63,9 @@
           "activity": [
             0,
             0,
-            0,
             2,
             1,
+            0,
             0,
             0
           ],
@@ -78,11 +78,11 @@
           "last_msg": "chore: 서브모듈을 Renovate 설정 머지본으로 — front PR #106(ae27a9c",
           "branch": "master",
           "activity": [
-            4,
             0,
             0,
             7,
             3,
+            0,
             0,
             0
           ],
@@ -98,8 +98,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
@@ -115,8 +115,8 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
@@ -131,13 +131,13 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
           ],
-          "commits_7d": 2,
+          "commits_7d": 1,
           "commits_30d": 35
         },
         {
@@ -148,8 +148,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -809,6 +809,40 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "life",
+          "last_date": "2026-10-30",
+          "last_msg": "README: 11/1 민둥산 알레버스 예약 추가",
+          "branch": "main",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            4
+          ],
+          "commits_7d": 5,
+          "commits_30d": 21
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-10-30",
+          "last_msg": "log 2026-10-30: late afternoon mail check",
+          "branch": "mini-jsong",
+          "activity": [
+            11,
+            0,
+            13,
+            8,
+            13,
+            16,
+            4
+          ],
+          "commits_7d": 65,
+          "commits_30d": 525
+        },
+        {
           "name": "mirae",
           "last_date": "2026-10-29",
           "last_msg": "feat: krx_snapshot.sh — 15:35 KST KRX 정규장 종가 캐시 고정 (NXT 애�",
@@ -819,45 +853,11 @@
             0,
             0,
             0,
-            0,
-            3
+            3,
+            0
           ],
           "commits_7d": 3,
           "commits_30d": 5
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-10-29",
-          "last_msg": "log 2026-10-29: briefick registration, evening mail check",
-          "branch": "mini-jsong",
-          "activity": [
-            42,
-            11,
-            0,
-            13,
-            8,
-            13,
-            16
-          ],
-          "commits_7d": 103,
-          "commits_30d": 524
-        },
-        {
-          "name": "life",
-          "last_date": "2026-10-28",
-          "last_msg": "README: KT 선택약정 12개월 재가입(10/28) · family: 10/28 어머니 댁",
-          "branch": "main",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 19
         },
         {
           "name": "health",
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 24
+          "commits_30d": 23
         },
         {
           "name": "flex",
