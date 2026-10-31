@@ -1,0 +1,49 @@
+---
+title: "The Art of Quantifying Progress: Maintaining the Engineering Dashboard"
+date: "2026-10-31"
+lang: en
+excerpt: "The Art of Quantifying Progress: Maintaining the Engineering Dashboard  As a CTO and engineer with over two decades of experience, I’ve learned that v..."
+---
+
+# The Art of Quantifying Progress: Maintaining the Engineering Dashboard
+
+As a CTO and engineer with over two decades of experience, I’ve learned that visibility is the cornerstone of productivity. Whether you are managing a large-scale infrastructure at **CPLABS** or maintaining a personal suite of projects, the ability to quantify "velocity" is what separates a chaotic workflow from a disciplined one.
+
+Today’s work was a routine but essential update to my personal development dashboard (`jsong1230.github.io`). While a `chore: Update dashboard data` commit might seem trivial at first glance, it represents a larger philosophy I hold regarding engineering management: **The Feedback Loop.**
+
+### The Technical Context: Data-Driven Self-Management
+
+The change involves updating `src/data/dashboard.json`, which serves as the single source of truth for my activity tracking across various repositories. By updating the `generated_at` timestamp and the activity arrays, I am essentially performing a "heartbeat" check on my current projects.
+
+Looking at the diff, we can see the shift in focus across my active repositories:
+
+```json
+"name": "claude-agent",
+"last_msg": "log: briefick explorer share rebalanced within 3.5h cap",
+"activity": [2, 52, 49, 19, 17, 40, 0],
+"commits_7d": 183,
+"commits_30d": 435
+```
+
+The `claude-agent` project is clearly in a high-intensity phase, with 183 commits in the last seven days. In contrast, my `booksummary` project—a personal passion project—shows a steady, slower cadence.
+
+### Technical Decisions: Why a JSON-based Dashboard?
+
+Many developers rely on GitHub's native contribution graph (the "green squares"). However, for a professional who manages multiple identities (work, open source, and personal research), a native graph is often too noisy or too restrictive. 
+
+I chose a decoupled JSON data structure for several reasons:
+1. **Portability:** By storing the data in a JSON file, I can easily feed this into different frontend components or even an AI agent to analyze my productivity trends.
+2. **Custom Metrics:** I can track specific metrics—like `commits_7d` vs `commits_30d`—that provide a more nuanced view of momentum than a simple calendar view.
+3. **Automation:** This process is designed to be automated. The "Auto-generate daily posts" message in the `jsong1230.github.io` repo indicates a pipeline that reduces the friction of documentation.
+
+### Engineering Insights: The Psychology of the Commit
+
+There is a psychological advantage to seeing these numbers. When I see `commits_7d: 183` for a specific project, it validates the "deep work" state I've been in. Conversely, seeing a `0` in the activity array for a secondary project acts as a trigger to re-evaluate whether that project should be archived or revived.
+
+In my years leading technical teams at **CPLABS**, I always encouraged my engineers to keep their own "brag documents" or activity logs. It is incredibly difficult to recall exactly what technical hurdles you overcame six months ago during a performance review or a post-mortem. By maintaining a data-driven log, you transform subjective memory into objective history.
+
+### Closing Thoughts
+
+Today's update is a reminder that the "boring" parts of development—maintenance, data updates, and logging—are what sustain the "exciting" parts. Whether it's blockchain architecture, DID implementation, or a simple JSON update, the discipline of tracking progress is what allows an engineer to scale their impact.
+
+Stay disciplined, keep logging, and let the data guide your focus.
