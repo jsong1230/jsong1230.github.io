@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-10-30T23:00:01.066Z",
+  "generated_at": "2026-10-31T23:00:01.174Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-10-30",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-10-31",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-10-30",
-          "last_msg": "log: briefick explorer share rebalanced within 3.5h cap",
+          "last_date": "2026-10-31",
+          "last_msg": "log: server_list 10-31 update, legacy OS memory correction",
           "branch": "gram-jsong",
           "activity": [
-            2,
             52,
             49,
             19,
             17,
             40,
+            8,
             0
           ],
-          "commits_7d": 183,
-          "commits_30d": 435
+          "commits_7d": 187,
+          "commits_30d": 438
         },
         {
           "name": "booksummary",
-          "last_date": "2026-10-30",
-          "last_msg": "feat: 「알로하, 나의 엄마들」(이금이) 제작·업로드",
+          "last_date": "2026-10-31",
+          "last_msg": "feat: 「지구에서 한아뿐」(정세랑) 제작·업로드",
           "branch": "main",
           "activity": [
-            0,
             3,
             0,
             3,
             3,
             4,
+            2,
             0
           ],
-          "commits_7d": 14,
-          "commits_30d": 57
+          "commits_7d": 15,
+          "commits_30d": 58
         },
         {
           "name": "heritageradio",
@@ -62,15 +62,15 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             2,
             1,
+            0,
             0,
             0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 45
+          "commits_30d": 36
         },
         {
           "name": "metadium-explorer-stack",
@@ -79,14 +79,14 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             7,
             3,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 14,
+          "commits_7d": 10,
           "commits_30d": 23
         },
         {
@@ -97,8 +97,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -114,8 +114,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -130,15 +130,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 35
+          "commits_30d": 29
         },
         {
           "name": "meta-auth-service",
@@ -147,8 +147,8 @@
           "branch": "ops/node22-ubuntu2404",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -817,10 +817,10 @@
             0,
             0,
             0,
-            0,
             1,
             0,
-            4
+            4,
+            0
           ],
           "commits_7d": 5,
           "commits_30d": 21
@@ -831,16 +831,16 @@
           "last_msg": "log 2026-10-30: late afternoon mail check",
           "branch": "mini-jsong",
           "activity": [
-            11,
             0,
             13,
             8,
             13,
             16,
-            4
+            4,
+            0
           ],
-          "commits_7d": 65,
-          "commits_30d": 525
+          "commits_7d": 54,
+          "commits_30d": 519
         },
         {
           "name": "mirae",
@@ -852,8 +852,8 @@
             0,
             0,
             0,
-            0,
             3,
+            0,
             0
           ],
           "commits_7d": 3,
