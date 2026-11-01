@@ -1,0 +1,55 @@
+---
+title: "From Noise to Signal: Refactoring Infrastructure Alerts"
+date: "2026-11-01"
+lang: en
+excerpt: "Refactoring Infrastructure Alerts: Moving from \"Noise\" to \"Signal\"  As a CTO and engineer, one of the most critical lessons I've learned over the last..."
+---
+
+# Refactoring Infrastructure Alerts: Moving from "Noise" to "Signal"
+
+As a CTO and engineer, one of the most critical lessons I've learned over the last 20 years is that **too many notifications are the same as no notifications.** When a system sends "Success" messages every single day, the human brain begins to treat those alerts as background noise. The danger arises when a critical "Failure" alert is sent, but it's ignored because it looks just like the ten "Success" messages that preceded it.
+
+Today's work focused on cleaning up our backup infrastructure for the `heritageradio` project, specifically shifting our alerting philosophy from "reporting activity" to "reporting anomalies."
+
+### The Problem: The "False Positive" of Success
+We had a weekly backup script—`backup_110_assets_to_s3.sh`—that handled off-site backups of raw audio assets (KTV originals and voice references). These are Tier 0 DR (Disaster Recovery) assets; they aren't served to the public but are irreplaceable.
+
+Two main issues existed:
+1. **Naming Debt:** The script was named after "110," which referred to an old server location. Since we migrated to AWS EC2 via CPLABS infrastructure, the name was misleading.
+2. **Alert Fatigue:** The script sent a Telegram message every time it succeeded. More worryingly, if the source directory was missing, the script would simply "skip" the folder and still report a "Success" status. This meant we could have been missing backups for weeks without knowing it.
+
+### Technical Decisions & Implementation
+
+#### 1. Semantic Renaming without Data Migration
+I renamed the script to `backup_audio_assets_to_s3.sh`. However, I made a conscious decision to **keep the S3 prefix** as `backup/110-assets/`. 
+
+In a production environment, renaming a storage path for 2.5GB of data just for "aesthetic consistency" is a risk. It would trigger a full re-upload, create duplicate versions in S3, and complicate the lifecycle policy. I documented this clearly in the code to prevent future engineers from "fixing" the path and accidentally doubling our storage costs or breaking the versioning history.
+
+#### 2. Redefining "Success"
+I modified the logic to treat a missing source directory as a failure. 
+
+```bash
+if [[ ! -d "$SRC_DIR" ]]; then
+    # Previously: WARN and skip (reported as Success)
+    # Now: Mark as ERROR
+    echo "  ${asset}: 소스 없음 (${SRC_DIR})"
+    BACKUP_ERR=1
+    SUMMARY="${SUMMARY}%0A${asset}: ⚠️소스 없음"
+    continue
+fi
+```
+
+#### 3. Silent Success, Loud Failure
+I decoupled the notification logic. Instead of an immediate Telegram message upon success, the script now writes its result to a state file: `logs/backup_audio_assets.last`. 
+
+The `daily_monitor_digest.sh` script now reads this file at 08:30 AM. If the backup was successful, it appears as a single, quiet line in the daily digest. If it fails, the script triggers an immediate, high-priority Telegram alert.
+
+### Insights from the Code
+The transition from `backup_110_assets` to `backup_audio_assets` is more than just a string change; it's about aligning the code with the current architecture of CPLABS. 
+
+By moving the "Success" notification to a digest and treating "Skips" as "Failures," we have transformed the backup process from a **passive log** into an **active monitor**. In high-availability systems, silence is golden—provided you have a heartbeat mechanism (like our `daily_monitor_digest`) to ensure that silence actually means "everything is working" rather than "the monitor itself is dead."
+
+**Today's Summary:**
+- **Reduced Noise:** Eliminated redundant success alerts.
+- **Increased Reliability:** Fixed a bug where missing source files were ignored.
+- **Cleaned Technical Debt:** Updated legacy naming conventions to reflect the EC2 environment.
