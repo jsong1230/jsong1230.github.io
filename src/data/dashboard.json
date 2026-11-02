@@ -1,127 +1,127 @@
 {
-  "generated_at": "2026-11-01T23:00:01.634Z",
+  "generated_at": "2026-11-02T23:00:01.885Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-11-02",
+          "last_msg": "chore: 서브모듈을 Renovate 보안 묶음 머지본으로 — front PR #115(",
+          "branch": "master",
+          "activity": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 11,
+          "commits_30d": 24
+        },
+        {
+          "name": "metadium_homepage",
+          "last_date": "2026-11-02",
+          "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
+          "branch": "master",
+          "activity": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 4
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-11-02",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 69
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-11-02",
+          "last_msg": "log: privacy-map Zabbix warning status reply to cplabs",
+          "branch": "gram-jsong",
+          "activity": [
+            19,
+            17,
+            40,
+            8,
+            2,
+            15,
+            0
+          ],
+          "commits_7d": 149,
+          "commits_30d": 453
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-11-02",
+          "last_msg": "feat: 「좀머 씨 이야기」(파트리크 쥐스킨트) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            4,
+            2,
+            1,
+            1,
+            0
+          ],
+          "commits_7d": 14,
+          "commits_30d": 58
+        },
+        {
+          "name": "cplabs_homepage",
+          "last_date": "2026-11-02",
+          "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
+          "branch": "master",
+          "activity": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 9
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-11-01",
           "last_msg": "[admin] chore(audit-notify): 원고 변경 감지 — 변화 없으면 보내지",
           "branch": "dev",
           "activity": [
-            2,
             1,
             0,
             0,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 5,
-          "commits_30d": 35
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-11-01",
-          "last_msg": "Auto-generate weekly recap",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            2,
-            3,
-            3,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 70
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-01",
-          "last_msg": "log: h-admin notified of briefick share request",
-          "branch": "gram-jsong",
-          "activity": [
-            49,
-            19,
-            17,
-            40,
-            8,
-            2,
-            0
-          ],
-          "commits_7d": 187,
-          "commits_30d": 439
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-11-01",
-          "last_msg": "feat: 「데카메론」(조반니 보카치오) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            0,
-            3,
-            3,
-            4,
-            2,
-            1,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 59
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-10-28",
-          "last_msg": "chore: 서브모듈을 Renovate 설정 머지본으로 — front PR #106(ae27a9c",
-          "branch": "master",
-          "activity": [
-            7,
-            3,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 10,
-          "commits_30d": 23
-        },
-        {
-          "name": "metadium_homepage",
-          "last_date": "2026-10-28",
-          "last_msg": "Renovate 설정 추가 (master 대상, node 24.x 고정)",
-          "branch": "master",
-          "activity": [
-            0,
-            2,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 2
-        },
-        {
-          "name": "cplabs_homepage",
-          "last_date": "2026-10-28",
-          "last_msg": "Renovate 설정 추가 (master 대상, node 24.x 고정)",
-          "branch": "master",
-          "activity": [
-            0,
-            2,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 2,
-          "commits_30d": 7
+          "commits_30d": 30
         },
         {
           "name": "validator",
@@ -129,7 +129,7 @@
           "last_msg": "일일 요약: 정상은 무발송·월요일 주간 요약만, 경고는 즉시",
           "branch": "master",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -146,7 +146,7 @@
           "last_msg": "fix(api): replace heapdump native addon with built-in v8.writeHeapSnapshot",
           "branch": "ops/node22-ubuntu2404",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -809,38 +809,38 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-11-02",
+          "last_msg": "log 2026-11-02: fix entry time",
+          "branch": "mini-jsong",
+          "activity": [
+            8,
+            13,
+            16,
+            4,
+            0,
+            1,
+            8
+          ],
+          "commits_7d": 50,
+          "commits_30d": 519
+        },
+        {
           "name": "life",
           "last_date": "2026-11-01",
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
             0,
             4,
             0,
-            1
+            1,
+            0
           ],
           "commits_7d": 6,
-          "commits_30d": 22
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-01",
-          "last_msg": "log 2026-11-01: weekend mail, People team weekly report, briefick",
-          "branch": "mini-jsong",
-          "activity": [
-            13,
-            8,
-            13,
-            16,
-            4,
-            0,
-            1
-          ],
-          "commits_7d": 55,
-          "commits_30d": 513
+          "commits_30d": 20
         },
         {
           "name": "mirae",
@@ -850,8 +850,8 @@
           "activity": [
             0,
             0,
-            0,
             3,
+            0,
             0,
             0,
             0
