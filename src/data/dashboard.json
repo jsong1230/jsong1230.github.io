@@ -1,24 +1,75 @@
 {
-  "generated_at": "2026-11-02T23:00:01.885Z",
+  "generated_at": "2026-11-03T23:00:01.856Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "heritageradio",
+          "last_date": "2026-11-03",
+          "last_msg": "[admin] fix(audit-notify): 지난 점검 0칸일 때 「새로 생긴 칸」 목",
+          "branch": "dev",
+          "activity": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 4,
+          "commits_30d": 21
+        },
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-11-03",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            2,
+            2,
+            3,
+            3,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-11-03",
+          "last_msg": "log: briefick 11-03 gram registration 3.5h",
+          "branch": "gram-jsong",
+          "activity": [
+            17,
+            40,
+            8,
+            2,
+            15,
+            27,
+            0
+          ],
+          "commits_7d": 128,
+          "commits_30d": 478
+        },
         {
           "name": "metadium-explorer-stack",
           "last_date": "2026-11-02",
           "last_msg": "chore: 서브모듈을 Renovate 보안 묶음 머지본으로 — front PR #115(",
           "branch": "master",
           "activity": [
-            3,
             0,
             0,
             0,
             0,
             1,
+            0,
             0
           ],
-          "commits_7d": 11,
+          "commits_7d": 4,
           "commits_30d": 24
         },
         {
@@ -27,50 +78,16 @@
           "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
           "branch": "master",
           "activity": [
-            2,
             0,
             0,
             0,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 4,
           "commits_30d": 4
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-11-02",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            2,
-            2,
-            3,
-            3,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 69
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-02",
-          "last_msg": "log: privacy-map Zabbix warning status reply to cplabs",
-          "branch": "gram-jsong",
-          "activity": [
-            19,
-            17,
-            40,
-            8,
-            2,
-            15,
-            0
-          ],
-          "commits_7d": 149,
-          "commits_30d": 453
         },
         {
           "name": "booksummary",
@@ -79,15 +96,15 @@
           "branch": "main",
           "activity": [
             3,
-            3,
             4,
             2,
             1,
             1,
+            0,
             0
           ],
           "commits_7d": 14,
-          "commits_30d": 58
+          "commits_30d": 56
         },
         {
           "name": "cplabs_homepage",
@@ -95,24 +112,7 @@
           "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
           "branch": "master",
           "activity": [
-            2,
             0,
-            0,
-            0,
-            0,
-            2,
-            0
-          ],
-          "commits_7d": 4,
-          "commits_30d": 9
-        },
-        {
-          "name": "heritageradio",
-          "last_date": "2026-11-01",
-          "last_msg": "[admin] chore(audit-notify): 원고 변경 감지 — 변화 없으면 보내지",
-          "branch": "dev",
-          "activity": [
-            1,
             0,
             0,
             0,
@@ -120,8 +120,8 @@
             0,
             0
           ],
-          "commits_7d": 5,
-          "commits_30d": 30
+          "commits_7d": 4,
+          "commits_30d": 9
         },
         {
           "name": "validator",
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 19
         },
         {
@@ -154,7 +154,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 2
         },
         {
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-02",
-          "last_msg": "log 2026-11-02: fix entry time",
+          "last_date": "2026-11-03",
+          "last_msg": "log 2026-11-03: legal and business meeting notes, relays, EIP-7702 explainer",
           "branch": "mini-jsong",
           "activity": [
-            8,
             13,
             16,
             4,
             0,
             1,
-            8
+            8,
+            6
           ],
-          "commits_7d": 50,
-          "commits_30d": 519
+          "commits_7d": 48,
+          "commits_30d": 520
         },
         {
           "name": "life",
@@ -831,12 +831,12 @@
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
-            0,
             1,
             0,
             4,
             0,
             1,
+            0,
             0
           ],
           "commits_7d": 6,
@@ -849,8 +849,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             3,
+            0,
             0,
             0,
             0,
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 23
+          "commits_30d": 15
         },
         {
           "name": "flex",
