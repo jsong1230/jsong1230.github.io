@@ -1,36 +1,70 @@
 {
-  "generated_at": "2026-11-03T23:00:01.856Z",
+  "generated_at": "2026-11-04T23:00:01.688Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "heritageradio",
-          "last_date": "2026-11-03",
-          "last_msg": "[admin] fix(audit-notify): 지난 점검 0칸일 때 「새로 생긴 칸」 목",
+          "last_date": "2026-11-04",
+          "last_msg": "[admin] chore(build): w28 주차 빌드 드라이버 (11/16~11/22)",
           "branch": "dev",
           "activity": [
-            0,
             0,
             0,
             2,
             0,
             1,
+            1,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 21
+          "commits_30d": 22
+        },
+        {
+          "name": "validator",
+          "last_date": "2026-11-04",
+          "last_msg": "런북: v2.2.3·v2.2.4 보류 기록(소장님 A안)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 1,
+          "commits_30d": 20
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-11-04",
+          "last_msg": "chore(front): 189 빌드 node 24.22.1 → 24.22.2 — 상류 PR #116 맞춤",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          "commits_7d": 3,
+          "commits_30d": 26
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-03",
+          "last_date": "2026-11-04",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             0
@@ -40,37 +74,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-03",
-          "last_msg": "log: briefick 11-03 gram registration 3.5h",
+          "last_date": "2026-11-04",
+          "last_msg": "ops: revoke stale mykeepin admin 172.31.26.27/32 from did-auth RDS SG",
           "branch": "gram-jsong",
           "activity": [
-            17,
             40,
             8,
             2,
             15,
             27,
+            5,
             0
           ],
-          "commits_7d": 128,
-          "commits_30d": 478
+          "commits_7d": 114,
+          "commits_30d": 481
         },
         {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-11-02",
-          "last_msg": "chore: 서브모듈을 Renovate 보안 묶음 머지본으로 — front PR #115(",
-          "branch": "master",
+          "name": "booksummary",
+          "last_date": "2026-11-04",
+          "last_msg": "feat: 「시선으로부터」(정세랑) 제작·업로드",
+          "branch": "main",
           "activity": [
-            0,
-            0,
-            0,
-            0,
+            4,
+            2,
+            1,
             1,
             0,
+            1,
             0
           ],
-          "commits_7d": 4,
-          "commits_30d": 24
+          "commits_7d": 12,
+          "commits_30d": 55
         },
         {
           "name": "metadium_homepage",
@@ -81,30 +115,13 @@
             0,
             0,
             0,
-            0,
             2,
+            0,
             0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 2,
           "commits_30d": 4
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-11-02",
-          "last_msg": "feat: 「좀머 씨 이야기」(파트리크 쥐스킨트) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            3,
-            4,
-            2,
-            1,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 14,
-          "commits_30d": 56
         },
         {
           "name": "cplabs_homepage",
@@ -115,30 +132,13 @@
             0,
             0,
             0,
-            0,
             2,
             0,
+            0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 2,
           "commits_30d": 9
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-10-27",
-          "last_msg": "일일 요약: 정상은 무발송·월요일 주간 요약만, 경고는 즉시",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 0,
-          "commits_30d": 19
         },
         {
           "name": "meta-auth-service",
@@ -814,16 +814,16 @@
           "last_msg": "log 2026-11-03: legal and business meeting notes, relays, EIP-7702 explainer",
           "branch": "mini-jsong",
           "activity": [
-            13,
             16,
             4,
             0,
             1,
             8,
-            6
+            6,
+            0
           ],
-          "commits_7d": 48,
-          "commits_30d": 520
+          "commits_7d": 35,
+          "commits_30d": 519
         },
         {
           "name": "life",
@@ -831,15 +831,15 @@
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
-            1,
             0,
             4,
             0,
             1,
             0,
+            0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 5,
           "commits_30d": 20
         },
         {
@@ -848,8 +848,8 @@
           "last_msg": "feat: krx_snapshot.sh — 15:35 KST KRX 정규장 종가 캐시 고정 (NXT 애�",
           "branch": "main",
           "activity": [
-            0,
             3,
+            0,
             0,
             0,
             0,
