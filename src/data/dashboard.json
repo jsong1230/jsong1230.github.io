@@ -1,9 +1,60 @@
 {
-  "generated_at": "2026-11-04T23:00:01.688Z",
+  "generated_at": "2026-11-05T23:00:01.240Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-11-05",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-11-05",
+          "last_msg": "log: 11/04 briefick entries re-registered, CTO not under T-Flow",
+          "branch": "gram-jsong",
+          "activity": [
+            8,
+            2,
+            15,
+            27,
+            5,
+            17,
+            0
+          ],
+          "commits_7d": 100,
+          "commits_30d": 476
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-11-05",
+          "last_msg": "feat: 「작은 땅의 야수들」(김주혜) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            2,
+            1,
+            1,
+            0,
+            1,
+            4,
+            0
+          ],
+          "commits_7d": 13,
+          "commits_30d": 58
+        },
         {
           "name": "heritageradio",
           "last_date": "2026-11-04",
@@ -11,11 +62,11 @@
           "branch": "dev",
           "activity": [
             0,
-            0,
             2,
             0,
             1,
             1,
+            0,
             0
           ],
           "commits_7d": 4,
@@ -31,8 +82,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -46,65 +97,14 @@
           "activity": [
             0,
             0,
-            0,
             1,
             0,
             2,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 26
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-11-04",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-04",
-          "last_msg": "ops: revoke stale mykeepin admin 172.31.26.27/32 from did-auth RDS SG",
-          "branch": "gram-jsong",
-          "activity": [
-            40,
-            8,
-            2,
-            15,
-            27,
-            5,
-            0
-          ],
-          "commits_7d": 114,
-          "commits_30d": 481
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-11-04",
-          "last_msg": "feat: 「시선으로부터」(정세랑) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            4,
-            2,
-            1,
-            1,
-            0,
-            1,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 55
+          "commits_30d": 25
         },
         {
           "name": "metadium_homepage",
@@ -114,8 +114,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -131,8 +131,8 @@
           "activity": [
             0,
             0,
-            0,
             2,
+            0,
             0,
             0,
             0
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-03",
-          "last_msg": "log 2026-11-03: legal and business meeting notes, relays, EIP-7702 explainer",
+          "last_date": "2026-11-05",
+          "last_msg": "log 2026-11-05: Megazone ISMS account closure request, root email group update",
           "branch": "mini-jsong",
           "activity": [
-            16,
             4,
             0,
             1,
             8,
             6,
-            0
+            0,
+            4
           ],
-          "commits_7d": 35,
-          "commits_30d": 519
+          "commits_7d": 23,
+          "commits_30d": 495
         },
         {
           "name": "life",
@@ -831,16 +831,16 @@
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
-            0,
             4,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 5,
-          "commits_30d": 20
+          "commits_30d": 14
         },
         {
           "name": "mirae",
@@ -848,7 +848,7 @@
           "last_msg": "feat: krx_snapshot.sh — 15:35 KST KRX 정규장 종가 캐시 고정 (NXT 애�",
           "branch": "main",
           "activity": [
-            3,
+            0,
             0,
             0,
             0,
@@ -856,7 +856,7 @@
             0,
             0
           ],
-          "commits_7d": 3,
+          "commits_7d": 0,
           "commits_30d": 5
         },
         {
