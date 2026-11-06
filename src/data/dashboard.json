@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-05T23:00:01.240Z",
+  "generated_at": "2026-11-06T23:00:01.082Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-05",
+          "last_date": "2026-11-06",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -23,37 +23,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-05",
-          "last_msg": "log: 11/04 briefick entries re-registered, CTO not under T-Flow",
+          "last_date": "2026-11-06",
+          "last_msg": "log: server_list geps-dev row marked cost item closed",
           "branch": "gram-jsong",
           "activity": [
-            8,
             2,
             15,
             27,
             5,
             17,
+            9,
             0
           ],
-          "commits_7d": 100,
-          "commits_30d": 476
+          "commits_7d": 83,
+          "commits_30d": 464
         },
         {
           "name": "booksummary",
-          "last_date": "2026-11-05",
-          "last_msg": "feat: 「작은 땅의 야수들」(김주혜) 제작·업로드",
+          "last_date": "2026-11-06",
+          "last_msg": "feat: 「백의 그림자」(황정은) 제작·업로드",
           "branch": "main",
           "activity": [
-            2,
             1,
             1,
             0,
             1,
             4,
+            2,
             0
           ],
-          "commits_7d": 13,
-          "commits_30d": 58
+          "commits_7d": 11,
+          "commits_30d": 57
         },
         {
           "name": "heritageradio",
@@ -61,16 +61,16 @@
           "last_msg": "[admin] chore(build): w28 주차 빌드 드라이버 (11/16~11/22)",
           "branch": "dev",
           "activity": [
-            0,
             2,
             0,
             1,
             1,
             0,
+            0,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 22
+          "commits_30d": 20
         },
         {
           "name": "validator",
@@ -81,13 +81,13 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 20
+          "commits_30d": 18
         },
         {
           "name": "metadium-explorer-stack",
@@ -96,15 +96,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
             0,
             2,
             0,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 25
+          "commits_30d": 24
         },
         {
           "name": "metadium_homepage",
@@ -113,8 +113,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -130,8 +130,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-05",
-          "last_msg": "log 2026-11-05: Megazone ISMS account closure request, root email group update",
+          "last_date": "2026-11-06",
+          "last_msg": "log 2026-11-06: briefick registration",
           "branch": "mini-jsong",
           "activity": [
-            4,
             0,
             1,
             8,
             6,
             0,
-            4
+            4,
+            3
           ],
-          "commits_7d": 23,
-          "commits_30d": 495
+          "commits_7d": 22,
+          "commits_30d": 477
         },
         {
           "name": "life",
@@ -831,15 +831,15 @@
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
-            4,
             0,
             1,
             0,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 5,
+          "commits_7d": 1,
           "commits_30d": 14
         },
         {
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 15
+          "commits_30d": 12
         },
         {
           "name": "flex",
