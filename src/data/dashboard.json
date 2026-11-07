@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-11-06T23:00:01.082Z",
+  "generated_at": "2026-11-07T23:00:01.587Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-06",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-11-07",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-06",
-          "last_msg": "log: server_list geps-dev row marked cost item closed",
+          "last_date": "2026-11-07",
+          "last_msg": "log: mail check 11/07 - Megazone ISMS closure reply recorded",
           "branch": "gram-jsong",
           "activity": [
-            2,
             15,
             27,
             5,
             17,
             9,
+            1,
             0
           ],
-          "commits_7d": 83,
-          "commits_30d": 464
+          "commits_7d": 76,
+          "commits_30d": 456
         },
         {
           "name": "booksummary",
-          "last_date": "2026-11-06",
-          "last_msg": "feat: 「백의 그림자」(황정은) 제작·업로드",
+          "last_date": "2026-11-07",
+          "last_msg": "feat: 「인간의 굴레에서」(서머싯 몸) 제작·업로드",
           "branch": "main",
           "activity": [
-            1,
             1,
             0,
             1,
             4,
             2,
+            1,
             0
           ],
-          "commits_7d": 11,
-          "commits_30d": 57
+          "commits_7d": 10,
+          "commits_30d": 55
         },
         {
           "name": "heritageradio",
@@ -61,10 +61,10 @@
           "last_msg": "[admin] chore(build): w28 주차 빌드 드라이버 (11/16~11/22)",
           "branch": "dev",
           "activity": [
-            2,
             0,
             1,
             1,
+            0,
             0,
             0,
             0
@@ -80,8 +80,8 @@
           "activity": [
             0,
             0,
-            0,
             1,
+            0,
             0,
             0,
             0
@@ -95,16 +95,16 @@
           "last_msg": "chore(front): 189 빌드 node 24.22.1 → 24.22.2 — 상류 PR #116 맞춤",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             2,
             0,
             0,
+            0,
             0
           ],
           "commits_7d": 3,
-          "commits_30d": 24
+          "commits_30d": 19
         },
         {
           "name": "metadium_homepage",
@@ -112,8 +112,8 @@
           "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
           "branch": "master",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -129,8 +129,8 @@
           "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
           "branch": "master",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 2,
-          "commits_30d": 9
+          "commits_30d": 4
         },
         {
           "name": "meta-auth-service",
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-06",
-          "last_msg": "log 2026-11-06: briefick registration",
+          "last_date": "2026-11-07",
+          "last_msg": "log 2026-11-06~07: mail checks",
           "branch": "mini-jsong",
           "activity": [
-            0,
             1,
             8,
             6,
             0,
             4,
-            3
+            3,
+            1
           ],
-          "commits_7d": 22,
-          "commits_30d": 477
+          "commits_7d": 23,
+          "commits_30d": 451
         },
         {
           "name": "life",
@@ -831,8 +831,8 @@
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -840,7 +840,7 @@
             0
           ],
           "commits_7d": 1,
-          "commits_30d": 14
+          "commits_30d": 11
         },
         {
           "name": "mirae",
@@ -874,7 +874,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 12
+          "commits_30d": 11
         },
         {
           "name": "flex",
