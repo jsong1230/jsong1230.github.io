@@ -1,54 +1,54 @@
 {
-  "generated_at": "2026-11-07T23:00:01.587Z",
+  "generated_at": "2026-11-08T23:00:01.914Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-07",
-          "last_msg": "Auto-generate weekly book post",
+          "last_date": "2026-11-08",
+          "last_msg": "Auto-generate weekly recap",
           "branch": "main",
           "activity": [
-            2,
             2,
             2,
             2,
             2,
             3,
+            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 70
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-07",
-          "last_msg": "log: mail check 11/07 - Megazone ISMS closure reply recorded",
+          "last_date": "2026-11-08",
+          "last_msg": "log: cplabs soak notice - banner 2/3 is log retention limit, rounds 11/07-11/08 ",
           "branch": "gram-jsong",
           "activity": [
-            15,
             27,
             5,
             17,
             9,
             1,
+            3,
             0
           ],
-          "commits_7d": 76,
-          "commits_30d": 456
+          "commits_7d": 77,
+          "commits_30d": 454
         },
         {
           "name": "booksummary",
-          "last_date": "2026-11-07",
-          "last_msg": "feat: 「인간의 굴레에서」(서머싯 몸) 제작·업로드",
+          "last_date": "2026-11-08",
+          "last_msg": "feat: 「파견자들」(김초엽) 제작·업로드",
           "branch": "main",
           "activity": [
-            1,
             0,
             1,
             4,
             2,
+            1,
             1,
             0
           ],
@@ -61,16 +61,16 @@
           "last_msg": "[admin] chore(build): w28 주차 빌드 드라이버 (11/16~11/22)",
           "branch": "dev",
           "activity": [
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 4,
-          "commits_30d": 20
+          "commits_7d": 2,
+          "commits_30d": 19
         },
         {
           "name": "validator",
@@ -79,8 +79,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -95,9 +95,9 @@
           "last_msg": "chore(front): 189 빌드 node 24.22.1 → 24.22.2 — 상류 PR #116 맞춤",
           "branch": "master",
           "activity": [
-            1,
             0,
             2,
+            0,
             0,
             0,
             0,
@@ -112,7 +112,7 @@
           "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
           "branch": "master",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -129,7 +129,7 @@
           "last_msg": "Renovate: @types/node 26 이상 제외 (런타임 Node 24)",
           "branch": "master",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-07",
-          "last_msg": "log 2026-11-06~07: mail checks",
+          "last_date": "2026-11-08",
+          "last_msg": "log 2026-11-08: iTerm2 startup check, mail check",
           "branch": "mini-jsong",
           "activity": [
-            1,
             8,
             6,
             0,
             4,
             3,
+            1,
             1
           ],
           "commits_7d": 23,
-          "commits_30d": 451
+          "commits_30d": 444
         },
         {
           "name": "life",
@@ -831,7 +831,7 @@
           "last_msg": "trips: 11/1 민둥산 억새 산행 완료 기록, README 진행 중에서 제�",
           "branch": "main",
           "activity": [
-            1,
+            0,
             0,
             0,
             0,
@@ -839,7 +839,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 11
         },
         {
