@@ -1,0 +1,53 @@
+---
+title: "The Art of the Feedback Loop: Automating Visibility in Engineering"
+date: "2026-11-08"
+lang: en
+excerpt: "The Art of the Feedback Loop: Automating Visibility in Engineering  As a CTO and engineer with over two decades of experience, I’ve learned that the m..."
+---
+
+# The Art of the Feedback Loop: Automating Visibility in Engineering
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous state for a technical project is "silent progress." When development happens in a vacuum, stakeholders lose visibility, and engineers lose the sense of momentum. Throughout my career, including my time leading technical initiatives at **CPLABS**, I have consistently advocated for the automation of visibility.
+
+Today’s work was a modest but meaningful exercise in this philosophy. While the git diff shows a simple update to a JSON file, it represents a larger architectural decision: the implementation of an automated personal development dashboard.
+
+### The Problem: The "Invisible" Workload
+Many of us manage multiple repositories simultaneously—some for production, some for R&D, and some for personal growth. Tracking activity across these disparate streams often requires manual effort, which is the first thing to be dropped when the workload increases.
+
+I wanted a way to quantify my output and activity patterns without manually writing a "weekly report." The goal was to transform raw git metadata into a visual dashboard that reflects real-time velocity.
+
+### Technical Implementation & Decisions
+The change today involves updating `src/data/dashboard.json`. This file serves as the state layer for my personal dashboard. Instead of building a complex backend with a database and API, I opted for a **GitOps-driven approach**.
+
+By using a script to auto-generate this JSON file based on git logs and pushing it directly to the repository, I achieve several things:
+1. **Zero Infrastructure Cost**: The repository itself acts as the database.
+2. **Immutable History**: I can track how my activity patterns evolve over months by simply looking at the commit history of the JSON file.
+3. **Fast Rendering**: The frontend can consume a static JSON file, ensuring near-instant load times.
+
+Looking at the diff, you can see the `generated_at` timestamp updated and the `activity` arrays shifting:
+
+```json
+- "last_msg": "Auto-generate daily posts",
++ "last_msg": "Auto-generate weekly book post",
+...
+- "commits_7d": 83,
+- "commits_30d": 464
++ "commits_7d": 76,
++ "commits_30d": 456
+```
+
+The shift in `commits_7d` and the update to the `booksummary` repo (adding "Of Human Bondage" by Somerset Maugham) show the balance I strive for: maintaining high-velocity agent development (`claude-agent`) while ensuring intellectual growth through reading and synthesis.
+
+### Engineering Insights: The Value of Metrics
+There is a common debate in engineering: *Does counting commits actually measure productivity?* 
+
+My answer is: **No, but it measures activity.** 
+
+Commits are a proxy for engagement. When I see a dip in the `activity` array for a specific project, it’s a signal to ask *why*. Is the project stalled? Is it in a maintenance phase? Or am I over-indexing on one project at the expense of another? 
+
+At **CPLABS**, I always encouraged my teams to build "observability" not just for their code, but for their processes. Whether it's a DORA metric for a CI/CD pipeline or a simple JSON dashboard for personal habits, the act of measuring creates a feedback loop that drives improvement.
+
+### Closing Thoughts
+Today's update is a reminder that the most effective tools are often the simplest. By automating the boring part of reporting, I free up my cognitive load to focus on the complex parts of Web3 and AI engineering. 
+
+Stay curious, keep building, and always automate your visibility.
