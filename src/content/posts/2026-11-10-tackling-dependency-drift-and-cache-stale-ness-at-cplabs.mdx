@@ -1,0 +1,63 @@
+---
+title: "Tackling Dependency Drift and Cache Stale-ness at CPLABS"
+date: "2026-11-10"
+lang: en
+excerpt: "Stability and Freshness: Solving Dependency Drift and Cache Stale-ness  As an engineer, there is a particular kind of frustration that comes from \"inv..."
+---
+
+# Stability and Freshness: Solving Dependency Drift and Cache Stale-ness
+
+As an engineer, there is a particular kind of frustration that comes from "invisible" failures—the kind where the code hasn't changed, but the environment has. Today was a day spent tackling exactly those kinds of ghosts: dependency drift in our worker nodes and a subtle cache invalidation bug in our media pipeline.
+
+Here is a summary of today's technical deep dive and the solutions implemented at CPLABS.
+
+## 1. The Danger of "Loose" Dependencies
+
+The first fire to put out was a sudden failure of our Celery workers during a dev image rebuild. Three workers were stuck in a crash loop for about two minutes, throwing a `No module named packaging` error.
+
+The culprit? **Kombu**. 
+
+Kombu is a dependency of `celery[redis]`. Because it wasn't explicitly pinned in our `requirements.txt`, the build process pulled the latest version (5.7.0), which introduced a breaking change or a missing dependency relative to our Celery 5.4.0 version.
+
+**The Lesson:** In a production-grade pipeline, "mostly pinned" is not "pinned." If a critical package is a sub-dependency of another, it can still drift. I have now explicitly pinned `kombu==5.4.2` to align with the Celery 5.4.0 release cycle.
+
+```python
+# backend/requirements.txt
+celery[redis]==5.4.0
+redis==5.2.1
+# 2026-11-10: Fixed to prevent 'No module named packaging' during image rebuilds
+kombu==5.4.2 
+```
+
+## 2. Solving the "Same Path" Cache Trap
+
+The second issue was more insidious. We discovered that when a user uploaded a new audio file to the same S3 path as a previous version, the HLS builder continued to use the old cached version. The builder was simply checking if a file existed locally; if it did, it assumed the file was correct.
+
+To fix this, I implemented a "freshness check" using S3 `head_object`. Now, before using a cached file, the system compares the local file size and modification time (`mtime`) against the S3 metadata.
+
+### Technical Decisions:
+- **TTL for Freshness:** Since a single build might reference the same file dozens of times, calling S3 `head` every single time would be inefficient and potentially hit rate limits. I introduced `_FRESH_TTL_SEC = 600` (10 minutes) to cache the "freshness" result.
+- **Fail-Safe Mechanism:** If the S3 `head` request fails due to network issues, I decided to **log a warning and use the cache anyway**. In a broadcast environment, it is better to play a slightly outdated clip than to crash the entire build and have the day's broadcast go silent.
+
+```python
+def _cache_is_fresh(cache: Path, key: str) -> bool:
+    # ... (TTL check) ...
+    try:
+        head = _get_s3().head_object(Bucket=S3_AUDIO_BUCKET, Key=key)
+    except Exception as e:
+        logger.warning("S3 head fail... using cache: %s", e)
+        return True # Fail-safe: don't stop the build
+    
+    st = cache.stat()
+    if st.st_size != head["ContentLength"] or st.st_mtime < head["LastModified"].timestamp():
+        return False # Trigger redownload
+    return True
+```
+
+## 3. Infrastructure Monitoring
+
+Beyond the code, I spent time on the operational side—monitoring the GMET mainnet. Everything is stable across 15 nodes, with block lags kept to a minimum. I also tracked the testnet fork ETA, calculating it to be approximately 11:00 KST based on the current block height and the 2-second block time.
+
+## Final Thoughts
+
+Today was a reminder that **state is the enemy**. Whether it's the state of a Python environment (dependencies) or the state of a local disk (cache), assuming that "it was working yesterday" is a dangerous gamble. By implementing strict pinning and explicit metadata validation, we move from "hoping it works" to "knowing it's correct."
