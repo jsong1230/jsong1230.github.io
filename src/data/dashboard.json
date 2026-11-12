@@ -1,59 +1,76 @@
 {
-  "generated_at": "2026-11-11T23:00:02.039Z",
+  "generated_at": "2026-11-12T23:00:01.778Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "metadium-explorer-stack",
-          "last_date": "2026-11-11",
-          "last_msg": "chore: 서브모듈을 backend PR #61 머지본(09a6fbc5)으로 — backend 로�",
+          "last_date": "2026-11-12",
+          "last_msg": "chore(nginx): prod frontend.conf 정본을 0fcd8a78 로 — 크롤러 대역·Re",
           "branch": "master",
           "activity": [
-            0,
             0,
             0,
             1,
             1,
             7,
+            1,
             0
           ],
-          "commits_7d": 9,
+          "commits_7d": 10,
           "commits_30d": 28
         },
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-11",
+          "last_date": "2026-11-12",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
+            3,
+            3,
             2,
-            3,
-            3,
             2,
             2,
             2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 67
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-11",
-          "last_msg": "log: briefick 2026-11-11 registered - 3 entries 2.5h (252/218/391), 1.0h reserve",
+          "last_date": "2026-11-12",
+          "last_msg": "log: explorer window confirms front nginx canonical copy adb2a77 and testnet rol",
           "branch": "gram-jsong",
           "activity": [
-            9,
             1,
             3,
             5,
             13,
             5,
+            4,
             0
           ],
-          "commits_7d": 53,
-          "commits_30d": 458
+          "commits_7d": 40,
+          "commits_30d": 437
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-11-12",
+          "last_msg": "feat: 「대온실 수리 보고서」(김금희) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            1,
+            1,
+            1,
+            3,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 9,
+          "commits_30d": 51
         },
         {
           "name": "heritageradio",
@@ -64,30 +81,13 @@
             0,
             0,
             0,
-            0,
             3,
+            0,
             0,
             0
           ],
           "commits_7d": 3,
           "commits_30d": 22
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-11-10",
-          "last_msg": "feat: 「소피의 세계」(요슈타인 가아더) 제작·업로드 + 9차 �",
-          "branch": "main",
-          "activity": [
-            2,
-            1,
-            1,
-            1,
-            3,
-            0,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 52
         },
         {
           "name": "validator",
@@ -809,6 +809,23 @@
       "name": "mini-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-11-12",
+          "last_msg": "notes 2026-11-12: ETRI living-lab session 1 minutes (ETRI presentation), advisor",
+          "branch": "mini-jsong",
+          "activity": [
+            3,
+            1,
+            1,
+            8,
+            8,
+            6,
+            5
+          ],
+          "commits_7d": 32,
+          "commits_30d": 348
+        },
+        {
           "name": "life",
           "last_date": "2026-11-11",
           "last_msg": "README: 11/15 골프 티오프 07:59 → 08:27 변경",
@@ -819,28 +836,11 @@
             0,
             0,
             0,
-            0,
-            1
+            1,
+            0
           ],
           "commits_7d": 1,
           "commits_30d": 12
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-11",
-          "last_msg": "notes 2026-11-11: legal meeting follow-up (Taepyeongyang) notes to Notion, cpdax",
-          "branch": "mini-jsong",
-          "activity": [
-            4,
-            3,
-            1,
-            1,
-            8,
-            8,
-            6
-          ],
-          "commits_7d": 31,
-          "commits_30d": 396
         },
         {
           "name": "mirae",
@@ -891,7 +891,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "privacy-map",
