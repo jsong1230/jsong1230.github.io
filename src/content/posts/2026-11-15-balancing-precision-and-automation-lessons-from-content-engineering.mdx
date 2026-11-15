@@ -1,0 +1,42 @@
+---
+title: "Balancing Precision and Automation: Lessons from Content Engineering"
+date: "2026-11-15"
+lang: en
+excerpt: "Balancing Precision and Automation: Lessons from Content Engineering  As a CTO, I often find that the most interesting technical challenges aren't alw..."
+---
+
+# Balancing Precision and Automation: Lessons from Content Engineering
+
+As a CTO, I often find that the most interesting technical challenges aren't always found in the core architecture of a blockchain or an AI model, but in the **pipeline engineering** required to deliver high-quality, automated content at scale.
+
+Today's work focused on the intersection of data management and generative AI, specifically within my `booksummary` and `dashboard` projects. While the commits might look like simple "updates" or "feature additions," they represent a rigorous process of refining a production pipeline.
+
+## 1. Data-Driven Content Selection
+In the `booksummary` project, I completed the production of a summary for **"Bukhakui" (박제가)**. The technical decision-making here isn't about the writing, but the **selection criteria**.
+
+I use a data-driven approach to determine which books to process, tracking "Demand vs. Competition" ratios. In the diff for `data/candidates.md`, you can see a re-measurement of the demand:
+```diff
+- | **6** | **북학의** (박제가) | 680 | 1,246 (1회) | 5 · 책 1 | 0.55 | 실학 고전. 「북학론」 간섭
++ | ~~6~~ | ~~북학의 (박제가)~~ ✅ 11/14 `kCFOVdbq7Ug` | 680 → 600 | 1,246 → 1,247 (2회) | 5 · 책 1 | 0.55 | 실학 고전. 「북학론」 간섭
+```
+By adjusting the demand from 680 to 600 based on second-pass measurements, I ensure the content strategy remains grounded in actual search trends rather than optimistic first impressions.
+
+## 2. The "Hallucination" Battle in Generative AI
+The most challenging part of today's work was the visual generation using Flux. When automating historical content, the "AI aesthetic" often clashes with historical accuracy.
+
+I encountered a significant issue with **textual artifacts** (gibberish Hanja/Chinese characters) and **anachronisms** (modern power poles, striped shirts, and even yachts appearing in 18th-century Joseon).
+
+To solve this, I made a strategic decision in `scripts/gen_flux_bukhak.py` to move away from "scene-based" prompts to "element-based" prompts. Instead of prompting for a "market street" (which triggers the AI to generate fake signs), I shifted to:
+> *"wide dirt road / brick city wall seen from outside / close-up of goods"*
+
+This is a practical insight: **When AI fails to generate a specific element correctly, the most efficient engineering solution is to remove that element from the prompt entirely rather than trying to "fix" it with negative prompts.**
+
+The result? A high discard rate (24 out of 88 images), but a final set of 64 high-fidelity images that maintain the professional standard I expect.
+
+## 3. Maintaining the "Pulse" with Dashboards
+Finally, I updated the `dashboard.json` for my personal site. In a high-velocity environment—similar to how we monitor system health at **CPLABS**—having a visual representation of activity across multiple repositories (`claude-agent`, `booksummary`, etc.) is crucial. It prevents "developer blindness" by making the velocity of various workstreams explicit.
+
+## Final Thoughts
+Whether I'm building a DID system or an automated book summary pipeline, the principle remains the same: **Trust the data, but verify the output.** 
+
+Automation is a force multiplier, but without the "human-in-the-loop" to prune the AI's hallucinations (like a 18th-century scholar wearing a striped shirt), the quality degrades. The goal is not 100% automation, but **100% quality through automated pipelines.**
