@@ -1,25 +1,59 @@
 {
-  "generated_at": "2026-11-15T23:00:01.224Z",
+  "generated_at": "2026-11-16T23:00:01.988Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "claude-agent",
+          "last_date": "2026-11-17",
+          "last_msg": "log: briefick 11/16 registered on request - explorer 1.5h, cplabs zabbix 1.0h, m",
+          "branch": "gram-jsong",
+          "activity": [
+            5,
+            4,
+            6,
+            8,
+            0,
+            2,
+            1
+          ],
+          "commits_7d": 38,
+          "commits_30d": 403
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-11-16",
+          "last_msg": "chore: 서브모듈을 backend PR #62(f2582565)·front-ws PR #33(e2c67b4e) 머�",
+          "branch": "master",
+          "activity": [
+            7,
+            1,
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 12,
+          "commits_30d": 30
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-15",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-11-16",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 69
+          "commits_30d": 68
         },
         {
           "name": "booksummary",
@@ -27,33 +61,16 @@
           "last_msg": "feat: 「북학의」(박제가) 제작·업로드",
           "branch": "main",
           "activity": [
-            3,
             0,
             1,
             1,
             2,
             1,
-            0
-          ],
-          "commits_7d": 9,
-          "commits_30d": 47
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-14",
-          "last_msg": "log: status check 16:0x - 15 nodes ok, os-description notices from zabbix kernel",
-          "branch": "gram-jsong",
-          "activity": [
-            13,
-            5,
-            4,
-            6,
-            8,
             0,
             0
           ],
-          "commits_7d": 41,
-          "commits_30d": 419
+          "commits_7d": 8,
+          "commits_30d": 45
         },
         {
           "name": "heritageradio",
@@ -61,33 +78,16 @@
           "last_msg": "[admin] chore(build): w29 주차 빌드 드라이버 (11/23~11/29)",
           "branch": "dev",
           "activity": [
-            3,
             0,
             0,
             1,
             0,
             0,
+            0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 2,
           "commits_30d": 15
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-11-13",
-          "last_msg": "chore(189): front·front-ws Dockerfile Node 24.22.2 → 24.22.3 (상류 #133·#3",
-          "branch": "master",
-          "activity": [
-            1,
-            7,
-            1,
-            2,
-            0,
-            0,
-            0
-          ],
-          "commits_7d": 12,
-          "commits_30d": 29
         },
         {
           "name": "validator",
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 4
         },
         {
           "name": "metadium_homepage",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "metadium-attestator",
@@ -189,7 +189,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 2
+          "commits_30d": 1
         },
         {
           "name": "mykeepin-aa-agecheck",
@@ -206,7 +206,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 4
+          "commits_30d": 2
         },
         {
           "name": "gatepass-aa-server",
@@ -240,7 +240,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "mykeepin-sample-web-sp",
@@ -257,7 +257,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "go-metadium-m114",
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-13",
-          "last_msg": "log 2026-11-13: go-metadium dev-cron rerun passed",
+          "last_date": "2026-11-16",
+          "last_msg": "log 2026-11-16: Medium 7702 mail draft and send check, mail check (board meeting",
           "branch": "mini-jsong",
           "activity": [
-            8,
             8,
             6,
             5,
             5,
             0,
-            0
+            0,
+            3
           ],
-          "commits_7d": 32,
-          "commits_30d": 285
+          "commits_7d": 28,
+          "commits_30d": 282
         },
         {
           "name": "life",
@@ -832,8 +832,8 @@
           "branch": "main",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
