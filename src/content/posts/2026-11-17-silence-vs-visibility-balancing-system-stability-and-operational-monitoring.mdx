@@ -1,0 +1,44 @@
+---
+title: "Silence vs. Visibility: Balancing System Stability and Operational Monitoring"
+date: "2026-11-17"
+lang: en
+excerpt: "Balancing System Stability and Operational Visibility: A Day in the Life of a CTO  In the world of infrastructure and blockchain operations, there is ..."
+---
+
+# Balancing System Stability and Operational Visibility: A Day in the Life of a CTO
+
+In the world of infrastructure and blockchain operations, there is a constant tension between "silence" and "visibility." As an engineer, silence is often a sign of a healthy system. However, as a CTO, complete silence can be dangerous—it might mean your monitoring tools are failing to report a critical issue.
+
+Today's work was a practical exercise in managing this balance, focusing on infrastructure health checks, log refinement, and the meticulous tracking of operational hours.
+
+### Maintaining the Pulse: Mainnet and Zabbix Stability
+
+A significant portion of today's focus was on the stability of our mainnet nodes and the monitoring health of our Zabbix servers. In the blockchain space, node synchronization is the baseline of trust. Verifying that 15 mainnet nodes are aligned with negligible lag is a routine but non-negotiable task.
+
+One interesting point from today's logs:
+> `- Zabbix 서버 루트: CPLABS 51.06% · Metadium 31.44% (11/16 binlog 정리 뒤 유지)`
+
+We recently performed a binlog trim on the Zabbix servers. In high-traffic monitoring environments, database logs (binlogs) can grow exponentially, eating up root partition space and potentially crashing the monitoring system itself. By trimming these logs, we've stabilized the disk usage at roughly 51% for CPLABS and 31% for Metadium. It’s a reminder that the tools we use to monitor the system also require rigorous maintenance to remain reliable.
+
+### The Noise Problem: Tuning Wazuh and Alerts
+
+We also dealt with "alert fatigue." We encountered a scenario where updating to a new kernel triggered a flood of CVE (Common Vulnerabilities and Exposures) alerts from Wazuh. While security is paramount, a system that screams "Critical" every few minutes for known, non-exploitable kernel remnants becomes noise.
+
+The technical decision here was to implement exclusion rules for specific scan rules (e.g., rule 2350x) and temporarily deactivate triggers to verify the LLD (Low-Level Discovery) reflection. The goal is to reach a state where an alert actually means *action is required*, rather than just *information is available*.
+
+### The Discipline of Documentation
+
+Finally, I spent time updating my personal dashboard and operational logs. While updating a `dashboard.json` might seem like a "chore" in a git commit, it represents a broader philosophy of transparency and accountability.
+
+Whether it is tracking the hours spent on the Explorer or managing Zabbix Ops, documenting the "why" and "how" of operational tasks prevents knowledge silos. Even when dealing with "retroactive registrations" (exceptions to the usual rule), keeping a clear paper trail ensures that the evolution of the system—and the effort put into it—is preserved.
+
+### Final Insights
+
+Today's work reinforces a core truth of Web3 infrastructure: **The most critical code is often the code that manages the environment where the blockchain lives.** 
+
+From trimming binlogs to tuning security alerts, the "invisible" work of a CTO is about reducing entropy. When the infrastructure is stable and the monitoring is precise, the development team can innovate with confidence, knowing that the foundation is secure.
+
+***
+
+**Jeffrey Joo-Han Song**
+*CTO & Engineer | Blockchain, Web3, DID, and AI Expert*
