@@ -1,9 +1,60 @@
 {
-  "generated_at": "2026-11-19T23:00:01.503Z",
+  "generated_at": "2026-11-20T23:00:01.316Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
+        {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-11-20",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
+          "name": "claude-agent",
+          "last_date": "2026-11-20",
+          "last_msg": "log: briefick 11/20 registered (3.5h: 391 2.0, 356 1.0, 348 0.5)",
+          "branch": "gram-jsong",
+          "activity": [
+            0,
+            2,
+            5,
+            10,
+            3,
+            7,
+            0
+          ],
+          "commits_7d": 35,
+          "commits_30d": 343
+        },
+        {
+          "name": "booksummary",
+          "last_date": "2026-11-20",
+          "last_msg": "feat: 「바람이 분다, 가라」(한강) 제작·업로드",
+          "branch": "main",
+          "activity": [
+            1,
+            0,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "commits_7d": 7,
+          "commits_30d": 41
+        },
         {
           "name": "validator",
           "last_date": "2026-11-19",
@@ -14,8 +65,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
           "commits_7d": 1,
@@ -28,66 +79,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
             0,
             0,
             1,
+            0,
             0
           ],
-          "commits_7d": 4,
+          "commits_7d": 2,
           "commits_30d": 31
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-11-19",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            3,
-            3,
-            2,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
-        },
-        {
-          "name": "claude-agent",
-          "last_date": "2026-11-19",
-          "last_msg": "testnet: remove 67 old gmet binaries on 8 nodes (10.06GB, 0 held, exe unchanged)",
-          "branch": "gram-jsong",
-          "activity": [
-            8,
-            0,
-            2,
-            5,
-            10,
-            3,
-            0
-          ],
-          "commits_7d": 34,
-          "commits_30d": 343
-        },
-        {
-          "name": "booksummary",
-          "last_date": "2026-11-19",
-          "last_msg": "feat: 「댈러웨이 부인」(버지니아 울프) 제작·업로드",
-          "branch": "main",
-          "activity": [
-            2,
-            1,
-            0,
-            1,
-            0,
-            2,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 42
         },
         {
           "name": "heritageradio",
@@ -97,14 +97,14 @@
           "activity": [
             0,
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0
           ],
-          "commits_7d": 3,
-          "commits_30d": 16
+          "commits_7d": 2,
+          "commits_30d": 13
         },
         {
           "name": "cplabs_homepage",
@@ -114,9 +114,9 @@
           "activity": [
             0,
             0,
-            0,
             2,
             1,
+            0,
             0,
             0
           ],
@@ -137,7 +137,7 @@
             0,
             0
           ],
-          "commits_7d": 1,
+          "commits_7d": 0,
           "commits_30d": 5
         },
         {
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "life",
-          "last_date": "2026-11-18",
-          "last_msg": "README: 11/25 연구소 회의 취소 반영",
+          "last_date": "2026-11-20",
+          "last_msg": "README: 11/26 회의 조율은 소장님 직접",
           "branch": "main",
           "activity": [
             0,
             0,
             0,
-            0,
             3,
             2,
-            0
+            0,
+            2
           ],
-          "commits_7d": 5,
-          "commits_30d": 12
+          "commits_7d": 7,
+          "commits_30d": 14
         },
         {
           "name": "claude-agent",
@@ -831,16 +831,16 @@
           "last_msg": "log 2026-11-18: briefick registration (3.0h)",
           "branch": "mini-jsong",
           "activity": [
-            5,
             0,
             0,
             4,
             5,
             3,
+            0,
             0
           ],
-          "commits_7d": 17,
-          "commits_30d": 214
+          "commits_7d": 12,
+          "commits_30d": 194
         },
         {
           "name": "mirae",
@@ -857,7 +857,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 3
         },
         {
           "name": "health",
