@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-11-20T23:00:01.316Z",
+  "generated_at": "2026-11-21T23:00:01.278Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-20",
-          "last_msg": "Auto-generate daily posts",
+          "last_date": "2026-11-21",
+          "last_msg": "Auto-generate weekly book post",
           "branch": "main",
           "activity": [
+            2,
+            2,
+            2,
+            2,
+            2,
             3,
-            2,
-            2,
-            2,
-            2,
-            2,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 68
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-20",
-          "last_msg": "log: briefick 11/20 registered (3.5h: 391 2.0, 356 1.0, 348 0.5)",
+          "last_date": "2026-11-21",
+          "last_msg": "log: 11/21 14:0x status check (mainnet healthy, no new alerts; heritageradio rep",
           "branch": "gram-jsong",
           "activity": [
-            0,
             2,
             5,
             10,
             3,
             7,
+            1,
             0
           ],
-          "commits_7d": 35,
+          "commits_7d": 28,
           "commits_30d": 343
         },
         {
           "name": "booksummary",
-          "last_date": "2026-11-20",
-          "last_msg": "feat: 「바람이 분다, 가라」(한강) 제작·업로드",
+          "last_date": "2026-11-21",
+          "last_msg": "feat: 「등대로」(버지니아 울프) 제작·업로드",
           "branch": "main",
           "activity": [
-            1,
             0,
             1,
             0,
             2,
             1,
+            1,
             0
           ],
-          "commits_7d": 7,
-          "commits_30d": 41
+          "commits_7d": 5,
+          "commits_30d": 42
         },
         {
           "name": "validator",
@@ -64,8 +64,8 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0,
             0
           ],
@@ -78,11 +78,11 @@
           "last_msg": "chore: 서브모듈을 front-ws PR #34(4cf36bc1) 머지본으로 — client_late",
           "branch": "master",
           "activity": [
-            0,
             1,
             0,
             0,
             1,
+            0,
             0,
             0
           ],
@@ -96,9 +96,9 @@
           "branch": "dev",
           "activity": [
             0,
+            1,
+            1,
             0,
-            1,
-            1,
             0,
             0,
             0
@@ -113,9 +113,9 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             2,
             1,
+            0,
             0,
             0,
             0
@@ -816,11 +816,11 @@
           "activity": [
             0,
             0,
-            0,
             3,
             2,
             0,
-            2
+            2,
+            0
           ],
           "commits_7d": 7,
           "commits_30d": 14
@@ -832,15 +832,15 @@
           "branch": "mini-jsong",
           "activity": [
             0,
-            0,
             4,
             5,
             3,
             0,
+            0,
             0
           ],
           "commits_7d": 12,
-          "commits_30d": 194
+          "commits_30d": 175
         },
         {
           "name": "mirae",
