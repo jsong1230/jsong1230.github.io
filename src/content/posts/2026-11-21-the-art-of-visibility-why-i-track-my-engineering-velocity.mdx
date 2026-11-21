@@ -1,0 +1,48 @@
+---
+title: "The Art of Visibility: Why I Track My Engineering Velocity"
+date: "2026-11-21"
+lang: en
+excerpt: "The Art of Visibility: Why I Track My Engineering Velocity  As a CTO and engineer with over two decades of experience, I've learned that the most dang..."
+---
+
+# The Art of Visibility: Why I Track My Engineering Velocity
+
+As a CTO and engineer with over two decades of experience, I've learned that the most dangerous state for a technical leader is "invisible progress." In the fast-paced worlds of Web3, DID, and AI, it is incredibly easy to spend a week deep in the trenches of a complex bug or a research spike, only to realize that the business or the team has no visibility into the actual velocity of development.
+
+Today's update to my personal dashboard might seem like a simple "chore" commit—updating a JSON file—but it represents a larger philosophy I've applied throughout my career, including my time at **CPLABS**.
+
+### The Logic Behind the Dashboard
+
+The change in `src/data/dashboard.json` is an automated snapshot of my current activity across various repositories. If you look at the diff, you'll see the `generated_at` timestamp shifting and the `activity` arrays updating:
+
+```json
+"generated_at": "2026-11-20T23:00:01.316Z",
+...
+"name": "claude-agent",
+"last_msg": "log: briefick 11/20 registered...",
+"commits_7d": 35,
+"commits_30d": 343
+```
+
+By quantifying commits across different domains—ranging from the `claude-agent` (AI) to `validator` (Blockchain)—I can visualize where my cognitive load is being spent. 
+
+### Technical Decisions: Automation over Manual Logging
+
+Many engineers attempt to keep "dev logs," but manual logging is the first thing to be abandoned when a project hits a critical deadline. My approach is to treat my development metadata as a data source. 
+
+The decision to maintain this as a structured JSON file allows for:
+1. **Decoupling**: The data collection (git logs) is separate from the presentation (the dashboard UI).
+2. **Auditability**: By committing the data to Git, I have a historical record of my productivity trends over months and years.
+3. **Low Overhead**: The update is a `chore` commit, meaning it doesn't clutter the primary logic of my projects but keeps the visibility layer fresh.
+
+### Insights from the Diff
+
+Looking at today's changes, the `claude-agent` repository continues to show high intensity (`commits_30d: 343`). This reflects my current focus on integrating LLM agents into practical workflows. On the other hand, the `booksummary` repo shows a more rhythmic, steady pace—highlighting the importance of "context switching" between high-intensity engineering and creative, structured synthesis (like my recent upload of Han Kang's work).
+
+### Final Thoughts for Fellow Leads
+
+Whether you are managing a small team or leading the technical vision at a company like **CPLABS**, I highly recommend implementing some form of "velocity visibility." 
+
+It isn't about micromanagement or counting lines of code—which is a vanity metric. Instead, it's about **pattern recognition**. When you see a dip in activity in a critical repo, it's a signal to ask: *Is the team stuck? Is the architecture too complex? Or are we in a necessary research phase?*
+
+Data doesn't tell the whole story, but it tells you where to start asking the right questions.
