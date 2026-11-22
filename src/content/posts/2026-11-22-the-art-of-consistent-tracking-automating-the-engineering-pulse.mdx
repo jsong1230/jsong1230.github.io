@@ -1,0 +1,45 @@
+---
+title: "The Art of Consistent Tracking: Automating the Engineering Pulse"
+date: "2026-11-22"
+lang: en
+excerpt: "The Art of Consistent Tracking: Automating the Engineering Pulse  As a CTO and engineer with over two decades of experience, I’ve learned that the mos..."
+---
+
+# The Art of Consistent Tracking: Automating the Engineering Pulse
+
+As a CTO and engineer with over two decades of experience, I’ve learned that the most dangerous phase of any project isn't the initial build or the final deployment—it's the "silent middle." This is the period where incremental progress happens daily, but the overarching momentum becomes invisible. Whether you are managing a team at **CPLABS** or working on personal research in Web3 and AI, visibility into velocity is key to maintaining psychological momentum.
+
+Today's work was a reflection of this philosophy. While the git diff might look like a simple data update, it represents a broader system I've implemented to track my technical "pulse" across various repositories.
+
+### The Technical Implementation: Data-Driven Dashboards
+
+Today's commit focused on updating the `dashboard.json` file for my personal site. This file serves as the backend for a dashboard that aggregates activity across multiple repositories, including my work on `claude-agent`, `booksummary`, and `validator` nodes.
+
+```json
+-  "generated_at": "2026-11-20T23:00:01.316Z",
++  "generated_at": "2026-11-21T23:00:01.278Z",
+```
+
+At first glance, this is a "chore" commit. However, from an engineering perspective, this is the result of an automated pipeline. Instead of manually logging hours or writing weekly reports—which are often biased or forgotten—I’ve opted for a **Git-as-Source-of-Truth** approach. By parsing commit history and activity arrays, I can visualize my focus areas in real-time.
+
+### Insights from the Diff
+
+Looking at the changes, a few interesting patterns emerge:
+
+1.  **Context Switching vs. Deep Work**: The `claude-agent` repo continues to show the highest velocity (`commits_30d: 343`), reflecting my current deep dive into AI agentic workflows.
+2.  **The "Slow Burn" of Knowledge**: The `booksummary` repository saw a new entry: `feat: 「등대로」(버지니아 울프) 제작·업로드`. Integrating literary summaries into my technical workflow might seem unrelated, but I've found that the structured thinking required for summarizing complex narratives directly improves how I architect complex DID (Decentralized Identifier) systems.
+3.  **Infrastructure Maintenance**: The `validator` and other system repos show lower activity, which is actually a sign of health. In the world of blockchain infrastructure, "no news is good news." A stable validator should require minimal intervention.
+
+### Engineering Philosophy: Automation over Documentation
+
+Throughout my career, including my leadership roles at **CPLABS**, I have pushed for "living documentation." Traditional documentation dies the moment it is written. But a dashboard fueled by actual Git activity cannot lie.
+
+The decision to automate this dashboard solves two problems:
+- **Cognitive Load**: I don't have to remember what I did last Tuesday; the data is already there.
+- **Accountability**: Seeing the `activity` array (the 7-day rolling window) creates a visual incentive to maintain a steady cadence of contributions.
+
+### Closing Thoughts
+
+Many developers view "chore" commits or data updates as trivial. But as an experienced engineer, I see them as the heartbeat of a project. The ability to quantify your output and analyze your distribution of effort is what separates a coder from a technical leader.
+
+By automating the tracking of my progress, I free up my mental bandwidth to focus on the harder problems: scaling Web3 ecosystems and refining AI agents. Tomorrow, the data will update again, and the cycle of iterative improvement continues.
