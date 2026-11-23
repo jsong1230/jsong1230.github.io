@@ -1,42 +1,42 @@
 {
-  "generated_at": "2026-11-22T23:00:01.409Z",
+  "generated_at": "2026-11-23T23:00:01.452Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-22",
-          "last_msg": "Auto-generate weekly recap",
+          "last_date": "2026-11-23",
+          "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             2,
             2,
             2,
+            3,
+            3,
             2,
-            3,
-            3,
             0
           ],
           "commits_7d": 16,
-          "commits_30d": 70
+          "commits_30d": 69
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-22",
-          "last_msg": "kernel: purge 7.0.0-1014 on CPLABS Zabbix and csp-app (no reboot); add kernel101",
+          "last_date": "2026-11-23",
+          "last_msg": "incident: review of khs share v1.5 (5 corrections, instance role permission asse",
           "branch": "gram-jsong",
           "activity": [
-            5,
             10,
             3,
             7,
             1,
             1,
+            13,
             0
           ],
-          "commits_7d": 29,
-          "commits_30d": 340
+          "commits_7d": 39,
+          "commits_30d": 349
         },
         {
           "name": "booksummary",
@@ -44,16 +44,16 @@
           "last_msg": "feat: 「고리오 영감」(오노레 드 발자크) 제작·업로드",
           "branch": "main",
           "activity": [
-            1,
             0,
             2,
             1,
             1,
             1,
+            0,
             0
           ],
           "commits_7d": 6,
-          "commits_30d": 42
+          "commits_30d": 41
         },
         {
           "name": "validator",
@@ -62,8 +62,8 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
@@ -79,15 +79,15 @@
           "branch": "master",
           "activity": [
             0,
-            0,
             1,
+            0,
             0,
             0,
             0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 31
+          "commits_7d": 1,
+          "commits_30d": 27
         },
         {
           "name": "heritageradio",
@@ -96,7 +96,7 @@
           "branch": "dev",
           "activity": [
             1,
-            1,
+            0,
             0,
             0,
             0,
@@ -112,8 +112,8 @@
           "last_msg": "Renovate non-major + next 16.4.5 보안 패치 병합",
           "branch": "master",
           "activity": [
-            2,
             1,
+            0,
             0,
             0,
             0,
@@ -809,38 +809,38 @@
       "name": "mini-jsong",
       "repos": [
         {
-          "name": "life",
-          "last_date": "2026-11-20",
-          "last_msg": "README: 11/26 회의 조율은 소장님 직접",
-          "branch": "main",
-          "activity": [
-            0,
-            3,
-            2,
-            0,
-            2,
-            0,
-            0
-          ],
-          "commits_7d": 7,
-          "commits_30d": 14
-        },
-        {
           "name": "claude-agent",
-          "last_date": "2026-11-18",
-          "last_msg": "log 2026-11-18: briefick registration (3.0h)",
+          "last_date": "2026-11-23",
+          "last_msg": "logs 2026-11-19~23; notes: 11/19 meetings (3), 11/23 weekly report; research: Ja",
           "branch": "mini-jsong",
           "activity": [
-            4,
             5,
             3,
             0,
             0,
             0,
+            0,
+            1
+          ],
+          "commits_7d": 10,
+          "commits_30d": 123
+        },
+        {
+          "name": "life",
+          "last_date": "2026-11-20",
+          "last_msg": "README: 11/26 회의 조율은 소장님 직접",
+          "branch": "main",
+          "activity": [
+            3,
+            2,
+            0,
+            2,
+            0,
+            0,
             0
           ],
-          "commits_7d": 12,
-          "commits_30d": 133
+          "commits_7d": 7,
+          "commits_30d": 14
         },
         {
           "name": "mirae",
