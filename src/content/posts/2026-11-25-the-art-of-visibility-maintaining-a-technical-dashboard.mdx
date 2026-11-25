@@ -1,0 +1,50 @@
+---
+title: "The Art of Visibility: Maintaining a Technical Dashboard"
+date: "2026-11-25"
+lang: en
+excerpt: "The Art of Visibility: Maintaining a Technical Dashboard  In the fast-paced world of blockchain and AI development, it is easy to lose sight of the \"b..."
+---
+
+# The Art of Visibility: Maintaining a Technical Dashboard
+
+In the fast-paced world of blockchain and AI development, it is easy to lose sight of the "big picture." As a CTO and engineer with over two decades of experience, I’ve learned that while deep-diving into a specific bug or architectural challenge is necessary, maintaining a high-level view of one's productivity and project velocity is equally critical.
+
+Today’s work was a reflection of this philosophy. While the commit itself—`chore: Update dashboard data`—might seem like a routine administrative task, it represents a larger commitment to **observability in personal engineering.**
+
+### The Technical Context: Data-Driven Self-Reflection
+
+I maintain a personal dashboard (`jsong1230.github.io`) that aggregates activity across my various repositories. Today's update involved refreshing `dashboard.json`, the core data file that drives the visualization of my commit history, activity spikes, and repository health.
+
+Looking at the diff, we can see the movement of data across several key projects:
+
+```json
+- "commits_7d": 39,
+- "commits_30d": 349
++ "commits_7d": 51,
++ "commits_30d": 363
+```
+
+Specifically, the `claude-agent` repository showed a significant jump in activity. This isn't just a number; it's a signal. An increase from 39 to 51 commits in a week indicates a phase of rapid iteration—likely transitioning from a conceptual prototype to a functional implementation.
+
+### Technical Decisions and Insights
+
+Why bother with a manual or semi-automated dashboard instead of just relying on the GitHub contribution graph?
+
+1.  **Custom Metrics over Vanity Metrics:** The standard "green squares" on GitHub tell you *that* you worked, but not *where* your energy is flowing. By structuring my data into `machines` and `repos`, I can track the distribution of my efforts across different domains—be it AI agents, validator nodes, or content creation.
+2.  **Contextual History:** By capturing the `last_msg` in the JSON, I create a searchable, high-level index of my milestones. For instance, seeing the transition in `booksummary` from *Old Man Goriot* to *The Book Thief* allows me to track my intellectual consumption alongside my code production.
+3.  **The "Cooldown" Signal:** I noticed that some repositories, like the `validator` or `front-ws` projects, have shifted to a maintenance mode (near-zero activity). In a professional setting at **CPLABS**, identifying these "plateaus" is essential for resource allocation. If a project is stable, the lack of commits is actually a sign of success, not inactivity.
+
+### Personal Reflection: The Engineer's Ledger
+
+Throughout my career, from my early days in software engineering to my current role as a CTO, I have found that the most successful engineers are those who treat their own growth as a system to be optimized.
+
+Updating this dashboard is my way of "logging" my professional evolution. It forces me to ask: *Am I spending too much time on maintenance and not enough on innovation? Is my focus fragmented across too many repositories?*
+
+In the context of Web3 and AI, where the landscape changes weekly, this level of self-tracking prevents "technical drift." It ensures that my daily actions align with my long-term strategic goals.
+
+**Summary of today's pulse:**
+- **AI/Agentic Workflow:** High velocity (Claude-agent).
+- **Infrastructure:** Stable/Maintenance (Validator).
+- **Knowledge Management:** Consistent progress (Booksummary).
+
+Maintaining the dashboard is a small chore, but the insight it provides is invaluable. Stay disciplined, stay visible.
