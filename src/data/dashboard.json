@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-11-25T23:00:01.883Z",
+  "generated_at": "2026-11-26T23:00:01.519Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "jsong1230.github.io",
+          "last_date": "2026-11-26",
+          "last_msg": "Auto-generate daily posts",
+          "branch": "main",
+          "activity": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "commits_7d": 16,
+          "commits_30d": 68
+        },
+        {
           "name": "claude-agent",
           "last_date": "2026-11-26",
-          "last_msg": "log: explorer inspector residuals",
+          "last_msg": "alert-path-watch: daily telegram alert lambda failure check",
           "branch": "gram-jsong",
           "activity": [
-            7,
             1,
             1,
             13,
             16,
             33,
-            2
+            11,
+            0
           ],
-          "commits_7d": 76,
-          "commits_30d": 345
+          "commits_7d": 82,
+          "commits_30d": 306
         },
         {
           "name": "validator",
@@ -31,12 +48,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 4
+          "commits_7d": 1,
+          "commits_30d": 3
         },
         {
           "name": "metadium-explorer-stack",
@@ -48,29 +65,12 @@
             0,
             0,
             0,
-            0,
             1,
+            0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 28
-        },
-        {
-          "name": "jsong1230.github.io",
-          "last_date": "2026-11-25",
-          "last_msg": "Auto-generate daily posts",
-          "branch": "main",
-          "activity": [
-            2,
-            3,
-            3,
-            2,
-            2,
-            2,
-            0
-          ],
-          "commits_7d": 16,
-          "commits_30d": 68
+          "commits_7d": 1,
+          "commits_30d": 21
         },
         {
           "name": "booksummary",
@@ -80,13 +80,13 @@
           "activity": [
             1,
             1,
-            1,
             0,
             1,
+            0,
             0,
             0
           ],
-          "commits_7d": 6,
+          "commits_7d": 4,
           "commits_30d": 39
         },
         {
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 13
+          "commits_30d": 11
         },
         {
           "name": "cplabs_homepage",
@@ -155,7 +155,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 1
+          "commits_30d": 0
         },
         {
           "name": "metadium-attestator",
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-25",
-          "last_msg": "log 2026-11-25: evening mail check",
+          "last_date": "2026-11-26",
+          "last_msg": "log 2026-11-26: mail check, briefick registration",
           "branch": "mini-jsong",
           "activity": [
             0,
             0,
             0,
-            0,
             1,
             5,
-            10
+            10,
+            1
           ],
-          "commits_7d": 16,
-          "commits_30d": 125
+          "commits_7d": 17,
+          "commits_30d": 118
         },
         {
           "name": "life",
@@ -831,8 +831,8 @@
           "last_msg": "README: 11/26 회의 조율은 소장님 직접",
           "branch": "main",
           "activity": [
-            0,
             2,
+            0,
             0,
             0,
             0,
