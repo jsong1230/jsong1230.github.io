@@ -1,17 +1,51 @@
 {
-  "generated_at": "2026-11-26T23:00:01.519Z",
+  "generated_at": "2026-11-27T23:00:01.509Z",
   "machines": [
     {
       "name": "gram-jsong",
       "repos": [
         {
+          "name": "validator",
+          "last_date": "2026-11-27",
+          "last_msg": "런북: v2.2.5 보류 추가(소장님)",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 4
+        },
+        {
+          "name": "metadium-explorer-stack",
+          "last_date": "2026-11-27",
+          "last_msg": "feat(delegator): testnet develop-04d52ad 배포 스크립트(PR #1 legacy nonce ",
+          "branch": "master",
+          "activity": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "commits_7d": 2,
+          "commits_30d": 19
+        },
+        {
           "name": "jsong1230.github.io",
-          "last_date": "2026-11-26",
+          "last_date": "2026-11-27",
           "last_msg": "Auto-generate daily posts",
           "branch": "main",
           "activity": [
             3,
-            3,
+            2,
             2,
             2,
             2,
@@ -23,71 +57,37 @@
         },
         {
           "name": "claude-agent",
-          "last_date": "2026-11-26",
-          "last_msg": "alert-path-watch: daily telegram alert lambda failure check",
+          "last_date": "2026-11-27",
+          "last_msg": "log: briefick 11/27",
           "branch": "gram-jsong",
           "activity": [
-            1,
             1,
             13,
             16,
             33,
             11,
+            4,
             0
           ],
-          "commits_7d": 82,
-          "commits_30d": 306
-        },
-        {
-          "name": "validator",
-          "last_date": "2026-11-25",
-          "last_msg": "일일 요약: relayer 단발 재시작 표시(SSM docker inspect, 재시작 시",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 3
-        },
-        {
-          "name": "metadium-explorer-stack",
-          "last_date": "2026-11-25",
-          "last_msg": "chore: 서브모듈을 front-ws PR #35(76c324f6) 머지본으로 — 소켓당 1",
-          "branch": "master",
-          "activity": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
-            0
-          ],
-          "commits_7d": 1,
-          "commits_30d": 21
+          "commits_7d": 79,
+          "commits_30d": 291
         },
         {
           "name": "booksummary",
-          "last_date": "2026-11-24",
-          "last_msg": "feat: 「책도둑」(마커스 주삭) 제작·업로드",
+          "last_date": "2026-11-27",
+          "last_msg": "feat: 「열두 발자국」(정재승) 제작·업로드 + 10차 후보 재공�",
           "branch": "main",
           "activity": [
             1,
-            1,
             0,
             1,
             0,
             0,
+            1,
             0
           ],
           "commits_7d": 4,
-          "commits_30d": 39
+          "commits_30d": 37
         },
         {
           "name": "heritageradio",
@@ -104,7 +104,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 11
+          "commits_30d": 10
         },
         {
           "name": "cplabs_homepage",
@@ -121,7 +121,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 7
+          "commits_30d": 5
         },
         {
           "name": "metadium_homepage",
@@ -138,7 +138,7 @@
             0
           ],
           "commits_7d": 0,
-          "commits_30d": 5
+          "commits_30d": 3
         },
         {
           "name": "meta-auth-service",
@@ -810,20 +810,20 @@
       "repos": [
         {
           "name": "claude-agent",
-          "last_date": "2026-11-26",
-          "last_msg": "log 2026-11-26: mail check, briefick registration",
+          "last_date": "2026-11-27",
+          "last_msg": "log 2026-11-27: briefick registration",
           "branch": "mini-jsong",
           "activity": [
-            0,
             0,
             0,
             1,
             5,
             10,
-            1
+            1,
+            2
           ],
-          "commits_7d": 17,
-          "commits_30d": 118
+          "commits_7d": 19,
+          "commits_30d": 107
         },
         {
           "name": "life",
@@ -831,7 +831,7 @@
           "last_msg": "README: 11/26 회의 조율은 소장님 직접",
           "branch": "main",
           "activity": [
-            2,
+            0,
             0,
             0,
             0,
@@ -839,8 +839,8 @@
             0,
             0
           ],
-          "commits_7d": 2,
-          "commits_30d": 14
+          "commits_7d": 0,
+          "commits_30d": 13
         },
         {
           "name": "mirae",
