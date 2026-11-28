@@ -1,0 +1,47 @@
+---
+title: "The Discipline of the Engineering Dashboard: Maintaining Visibility in Web3 Development"
+date: "2026-11-28"
+lang: en
+excerpt: "Maintaining Visibility: The Discipline of the Engineering Dashboard  In the fast-paced environment of blockchain and Web3 development, it is incredibl..."
+---
+
+# Maintaining Visibility: The Discipline of the Engineering Dashboard
+
+In the fast-paced environment of blockchain and Web3 development, it is incredibly easy to lose track of the "big picture." When you are deep in the trenches of validator stability, explorer stacks, and AI agents, your day-to-date focus narrows down to the specific bug or feature in front of you. However, as a CTO, I’ve learned that maintaining a high-level view of operational velocity is not just a management task—it is a technical necessity.
+
+Today's work was focused on updating the data for my personal engineering dashboard (`jsong1230.github.io`). While a `chore: Update dashboard data` commit might seem trivial at first glance, it represents a critical habit: **the quantification of development momentum.**
+
+### The Technical Logic: Data-Driven Tracking
+
+The changes in `src/data/dashboard.json` reflect the current state of several critical repositories. By tracking `commits_7d` and `commits_30d`, along with a daily `activity` array, I can visualize where my cognitive load is being spent.
+
+Looking at the diff, we see a shift in activity across different domains:
+
+```json
+{
+  "name": "validator",
+  "last_msg": "런북: v2.2.5 보류 추가(소장님)",
+  "commits_7d": 2,
+  "commits_30d": 4
+},
+{
+  "name": "metadium-explorer-stack",
+  "last_msg": "feat(delegator): testnet develop-04d52ad 배포 스크립트...",
+  "commits_7d": 2,
+  "commits_30d": 19
+}
+```
+
+The updates to the `validator` and `metadium-explorer-stack` repos highlight a transition from heavy feature development to operational stability and "Runbook" documentation. In the world of infrastructure—especially when managing validators at **CPLABS**—the code is only half the battle. The other half is the documentation (the Runbook) that ensures the system can be recovered by anyone on the team during a 3 AM outage.
+
+### Insights from the Diff: Balancing AI and Infrastructure
+
+One interesting observation in the data is the activity in the `claude-agent` repository. While the daily commit volume has stabilized compared to the previous surge, the cumulative `commits_30d` remains high. This reflects a common pattern in AI integration: a period of explosive experimentation and rapid prototyping, followed by a "cooling" period of refinement and integration.
+
+As an engineer with over 20 years of experience, I've seen this cycle repeat across different paradigms—from the early days of SOA to the current Web3/AI convergence. The danger is often "prototype drift," where the excitement of the new tool leads to a neglect of the core infrastructure. By maintaining this dashboard, I can consciously balance my time between the cutting-edge (AI agents) and the foundational (Validator stability).
+
+### Final Thoughts
+
+Engineering is as much about *measurement* as it is about *creation*. Whether it's monitoring the TPS of a blockchain or the commit velocity of a development team, data removes the guesswork. 
+
+Updating a JSON file may not feel like "hard engineering," but the discipline of tracking one's own output is what allows a lead engineer to pivot quickly and ensure that no critical component of the ecosystem is left to rot. Tomorrow, the focus shifts back to the implementation, but today, the focus was on the map.
